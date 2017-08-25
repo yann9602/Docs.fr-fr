@@ -3,6 +3,6 @@ redirect_url: https://docs.microsoft.com/dotnet/articles/standard/choosing-core-
 ms.openlocfilehash: 00cbd43a8ac7bb22470864be3302f9abd00baaf8
 ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
 ms.translationtype: HT
-ms.contentlocale: de-DE
+ms.contentlocale: fr-FR
 ms.lasthandoff: 08/11/2017
 ---

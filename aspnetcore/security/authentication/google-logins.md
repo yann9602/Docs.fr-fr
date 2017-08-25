@@ -1,7 +1,6 @@
 ---
-uid: webhooks/sending/index
-redirect_url: /webhooks/senders
-ms.openlocfilehash: c2ff7a91faea3c64478828b7059c5cfe3b0a4a39
+redirect_url: /aspnet/core/security/authentication/social/google-logins
+ms.openlocfilehash: 1e3dff83ad94441287bfa65825419fde17b0ed25
 ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
 ms.translationtype: HT
 ms.contentlocale: fr-FR
