@@ -11,18 +11,18 @@ ms.assetid: 0a7286e4-6428-424e-b5c4-5c98815cf61c
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/servers/httpsys
-ms.openlocfilehash: 4173a2ef539859031674fb613b25031e3b343c67
-ms.sourcegitcommit: 74e22e08e3b08cb576e5184d16f4af5656c13c0c
+ms.openlocfilehash: cff6f171432febac5ec3e7adf9cf77953e0ece2d
+ms.sourcegitcommit: 4e84d8bf5f404bb77f3d41665cf7e7374fc39142
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2017
+ms.lasthandoff: 09/05/2017
 ---
 # <a name="httpsys-web-server-implementation-in-aspnet-core"></a>Implémentation du serveur web HTTP.sys dans ASP.NET Core
 
 Par [Tom Dykstra](http://github.com/tdykstra) et [Ross de Chris](https://github.com/Tratcher)
 
 > [!NOTE]
-> Cette rubrique s’applique uniquement à ASP.NET Core 2.0 et versions ultérieures. Dans les versions antérieures d’ASP.NET Core, HTTP.sys est nommé [WebListener](WebListener.md).
+> Cette rubrique s’applique uniquement à ASP.NET Core 2.0 et versions ultérieures. Dans les versions antérieures d’ASP.NET Core, HTTP.sys est nommé [WebListener](xref:fundamentals/servers/weblistener).
 
 HTTP.sys est un [serveur web pour ASP.NET Core](index.md) qui s’exécute uniquement sous Windows. Il repose sur le [pilote de mode noyau Http.Sys](https://msdn.microsoft.com/library/windows/desktop/aa364510.aspx). HTTP.sys est une alternative à [Kestrel](kestrel.md) qui offre des fonctionnalités qui ne de Kestel. **HTTP.sys ne peut pas être utilisée avec IIS ou IIS Express, car il n’est pas compatible avec le [ASP.NET Core Module](aspnet-core-module.md).**
 
@@ -80,7 +80,7 @@ Il existe également [paramètres de Registre Http.Sys](https://support.microsof
 
 * Appelez le `UseHttpSys` méthode d’extension sur `WebHostBuilder` dans votre `Main` méthode, en spécifiant les [HTTP.sys options](https://github.com/aspnet/HttpSysServer/blob/rel/2.0.0/src/Microsoft.AspNetCore.Server.HttpSys/HttpSysOptions.cs) dont vous avez besoin, comme indiqué dans l’exemple suivant :
 
-  [!code-csharp[](HttpSys/sample/Program.cs?name=snippet_Main&highlight=11-19)]
+  [!code-csharp[](httpsys/sample/Program.cs?name=snippet_Main&highlight=11-19)]
 
 ### <a name="configure-httpsys-options"></a>Configurer les options de HTTP.sys
 
@@ -90,7 +90,7 @@ Voici quelques-unes des limites que vous pouvez configurer les paramètres de HT
 
 Le nombre maximal de connexions TCP simultanées et ouvertes peut être défini pour l’application entière avec le code suivant dans *Program.cs*:
 
-[!code-csharp[](HttpSys/sample/Program.cs?name=snippet_Options&highlight=5)]
+[!code-csharp[](httpsys/sample/Program.cs?name=snippet_Options&highlight=5)]
 
 Le nombre maximal de connexions est illimité (null) par défaut.
 
@@ -107,7 +107,7 @@ public IActionResult MyActionMethod()
 
 Voici un exemple qui montre comment configurer la contrainte pour l’application entière, chaque demande :
 
-[!code-csharp[](HttpSys/sample/Program.cs?name=snippet_Options&highlight=6)]
+[!code-csharp[](httpsys/sample/Program.cs?name=snippet_Options&highlight=6)]
 
 Vous pouvez remplacer le paramètre sur une demande spécifique dans *Startup.cs*:
 
@@ -121,7 +121,7 @@ Pour plus d’informations sur les autres options de HTTP.sys, consultez [HttpSy
 
 Par défaut, ASP.NET Core lie à `http://localhost:5000`. Pour configurer les ports et les préfixes d’URL, vous pouvez utiliser la `UseUrls` méthode d’extension, le `urls` argument de ligne de commande, la variable d’environnement ASPNETCORE_URLS ou `UrlPrefixes` propriété sur [HttpSysOptions](https://github.com/aspnet/HttpSysServer/blob/rel/2.0.0/src/Microsoft.AspNetCore.Server.HttpSys/HttpSysOptions.cs). Le code suivant utilise des exemple `UrlPrefixes`.
 
-[!code-csharp[](HttpSys/sample/Program.cs?name=snippet_Main&highlight=17)]
+[!code-csharp[](httpsys/sample/Program.cs?name=snippet_Main&highlight=17)]
 
 Un avantage de `UrlPrefixes` est que vous obtenez un message d’erreur immédiatement si vous essayez d’ajouter un préfixe au format incorrect. Un avantage de `UseUrls` (partagé avec `urls` et ASPNETCORE_URLS) que vous pouvez plus facilement basculer entre Kestrel et HTTP.sys.
 

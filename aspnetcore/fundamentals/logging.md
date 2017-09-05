@@ -12,11 +12,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/logging
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 9e5c97ce868e281310aa75c16e73298e2aaa0d9d
-ms.sourcegitcommit: bd05f7ea8f87ad076ef6e8b704698ebcba5ca80c
+ms.openlocfilehash: 30e00e2a442225bbe04be0d343f7048efe484477
+ms.sourcegitcommit: 4e84d8bf5f404bb77f3d41665cf7e7374fc39142
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2017
+ms.lasthandoff: 09/05/2017
 ---
 # <a name="introduction-to-logging-in-aspnet-core"></a>Introduction à la journalisation dans ASP.NET Core
 
@@ -283,7 +283,7 @@ Les modèles de projet créent du code qui appelle `CreateDefaultBuilder` pour c
 
 Les données de configuration spécifient des niveaux de journalisation minimale par fournisseur et par catégorie, comme dans l’exemple suivant :
 
-[!code-json[](logging/sample2/AppSettings.json)]
+[!code-json[](logging/sample2/appsettings.json)]
 
 Ce JSON crée les six règles de filtre, une pour le fournisseur de débogage, 4 pour le fournisseur de la Console et celle qui s’applique à tous les fournisseurs. Vous verrez plus tard comment une de ces règles est choisie pour chaque fournisseur lorsqu’un `ILogger` objet est créé.
 
