@@ -1,0 +1,3 @@
+# <a name="aspnet-core-logging-sample-application"></a>Application d’exemple ASP.NET Core journalisation
+
+Cet exemple d’application est pour le [journalisation de ASP.NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/logging) l’article et est basé sur l’exemple créé pour le [première API Web avec ASP.NET MVC de base](https://docs.microsoft.com/aspnet/core/tutorials/first-web-api) didacticiel.
