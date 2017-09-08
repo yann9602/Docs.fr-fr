@@ -11,11 +11,11 @@ ms.assetid: 0dd63913-a041-48b6-96a4-3aeaedbdf5d0
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/complex-data-model
-ms.openlocfilehash: ad34a86c90c06dcddeeba7a0deba95f8057b4513
-ms.sourcegitcommit: def90564eff4adfeed0a8e511e4c201b040e9a5e
+ms.openlocfilehash: 7d216bc07d0a8d739f0cecbc5b571b6144c13e61
+ms.sourcegitcommit: 5355c96a1768e5a1d5698a98c190e7addcc4ded5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/26/2017
+ms.lasthandoff: 09/05/2017
 ---
 # <a name="creating-a-complex-data-model---ef-core-with-aspnet-core-mvc-tutorial-5-of-10"></a>Création d’un modèle de données complexes - Core EF avec le didacticiel d’ASP.NET MVC de base (5 sur 10)
 
@@ -55,7 +55,7 @@ Le `ApplyFormatInEditMode` paramètre spécifie que la mise en forme doit égale
 
 Vous pouvez utiliser la `DisplayFormat` attribut par lui-même, mais il est généralement judicieux d’utiliser le `DataType` également d’attribut. Le `DataType` attribut donne la sémantique des données par opposition à comment effectuer le rendu sur un écran et qu’il offre les avantages suivants que vous n’obtenez pas avec `DisplayFormat`:
 
-* Le navigateur peut activer des fonctionnalités HTML5 (par exemple pour afficher un contrôle de calendrier, le symbole monétaire approprié de paramètres régionaux, les liens de courrier électronique, certains côté client d’entrée validation, etc.).
+* Le navigateur peut activer des fonctionnalités HTML5 (par exemple pour afficher un contrôle de calendrier, le symbole monétaire approprié de paramètres régionaux, les liens de courrier électronique, certains côté client d’entrée validation, etc..).
 
 * Par défaut, le navigateur renvoie les données en utilisant le format approprié en fonction de vos paramètres régionaux.
 
@@ -142,7 +142,7 @@ Dans *Models/Student.cs*, remplacez le code que vous avez ajouté précédemment
 
 ### <a name="the-required-attribute"></a>L’attribut requis
 
-Le `Required` attribut rend les champs obligatoires de propriétés de nom. Le `Required` attribut n’est pas nécessaire pour les types non nullable tels que des types valeur (DateTime, int, double, float, etc.). Les types qui ne peut pas être null sont traitées automatiquement en tant que champs requis.
+Le `Required` attribut rend les champs obligatoires de propriétés de nom. Le `Required` attribut n’est pas nécessaire pour les types non nullable tels que des types valeur (DateTime, int, double, float, etc..). Les types qui ne peut pas être null sont traitées automatiquement en tant que champs requis.
 
 Vous pouvez supprimer la `Required` d’attribut et les remplacer par un paramètre de longueur minimale pour le `StringLength` attribut :
 
@@ -215,7 +215,7 @@ public int InstructorID { get; set; }
 
 Vous pouvez également utiliser le `Key` si l’entité n’a pas sa propre clé primaire, mais que vous souhaitez la propriété donner un nom autre que classnameID ou ID d’attribut
 
-Par défaut EF traite la touche non généré à la base de données, car la colonne est pour une relation d’identification.
+Par défaut, EF traite la touche non généré à la base de données, car la colonne est pour une relation d’identification.
 
 ### <a name="the-instructor-navigation-property"></a>La propriété de navigation de formateur
 

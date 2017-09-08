@@ -11,11 +11,11 @@ ms.assetid: 6e1cd570-40f1-4b24-8b6e-7d2d27758f18
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/crud
-ms.openlocfilehash: b99a58d77d4f1751753ae576ade4bd6dd981fbbf
-ms.sourcegitcommit: bd05f7ea8f87ad076ef6e8b704698ebcba5ca80c
+ms.openlocfilehash: 855f060a6404dedff310b288ada9738689069ceb
+ms.sourcegitcommit: 5355c96a1768e5a1d5698a98c190e7addcc4ded5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2017
+ms.lasthandoff: 09/05/2017
 ---
 # <a name="create-read-update-and-delete---ef-core-with-aspnet-core-mvc-tutorial-2-of-10"></a>Créer, lire, mettre à jour et supprimer - Core EF avec le didacticiel d’ASP.NET MVC de base (2 sur 10)
 
@@ -96,7 +96,7 @@ Pour plus d’informations sur les programmes d’assistance de balise, consulte
 
 ### <a name="add-enrollments-to-the-details-view"></a>Ajouter des inscriptions à l’affichage des détails
 
-Ouvrez *Views/Students/Details.cshtml*. Chaque champ est affiché à l’aide de `DisplayNameFor` et `DisplayFor` assistance, comme indiqué dans l’exemple suivant :
+Ouvrez *Views/Students/Details.cshtml*. Chaque champ est affiché à l’aide de `DisplayNameFor` et `DisplayFor` applications auxiliaires, comme indiqué dans l’exemple suivant :
 
 [!code-html[](intro/samples/cu/Views/Students/Details.cshtml?range=13-18&highlight=2,5)]
 
@@ -274,7 +274,7 @@ Cliquez sur **supprimer**. La page d’Index s’affiche sans l’étudiant supp
 
 Pour libérer les ressources contenant une connexion de base de données, l’instance de contexte doit être supprimée dès que possible lorsque vous avez terminé avec lui. La fonction intégrée ASP.NET Core [injection de dépendance](../../fundamentals/dependency-injection.md) prend en charge de cette tâche pour vous.
 
-Dans *Startup.cs* vous appelez le [méthode d’extension AddDbContext](https://github.com/aspnet/EntityFramework/blob/03bcb5122e3f577a84498545fcf130ba79a3d987/src/Microsoft.EntityFrameworkCore/EntityFrameworkServiceCollectionExtensions.cs) à configurer la `DbContext` classe dans le conteneur DI d’ASP.NET. Que méthode définit la durée de vie du service `Scoped` par défaut. `Scoped`signifie que la durée de vie contexte coïncide avec la durée de vie de demande web, et le `Dispose` méthode sera appelée automatiquement à la fin de la demande web.
+Dans *Startup.cs*, vous appelez le [méthode d’extension AddDbContext](https://github.com/aspnet/EntityFramework/blob/03bcb5122e3f577a84498545fcf130ba79a3d987/src/Microsoft.EntityFrameworkCore/EntityFrameworkServiceCollectionExtensions.cs) à configurer la `DbContext` classe dans le conteneur DI d’ASP.NET. Que méthode définit la durée de vie du service `Scoped` par défaut. `Scoped`signifie que la durée de vie contexte coïncide avec la durée de vie de demande web, et le `Dispose` méthode sera appelée automatiquement à la fin de la demande web.
 
 ## <a name="handling-transactions"></a>La gestion des Transactions
 

@@ -10,11 +10,11 @@ ms.assetid: e6c1ff3c-5673-43bf-9c2d-077f6ada1f29
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/sort-filter-page
-ms.openlocfilehash: 1140f4916ca39cb454eaa41fdf6adfe7ad26cc31
-ms.sourcegitcommit: dfd6af48cf66813eaf04b011cb9341339a751254
+ms.openlocfilehash: bc2896d0eeda7e84cef06ee3f235e637bfe04318
+ms.sourcegitcommit: 5355c96a1768e5a1d5698a98c190e7addcc4ded5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2017
+ms.lasthandoff: 09/05/2017
 ---
 # <a name="sorting-filtering-paging-and-grouping---ef-core-with-aspnet-core-mvc-tutorial-3-of-10"></a>Le tri, le filtrage, la pagination et le regroupement - Core EF avec le didacticiel ASP.NET Core MVC (partie 3 sur 10)
 
@@ -116,7 +116,7 @@ Pour ajouter la pagination à la page d’Index des étudiants, vous allez crée
 
 ![Page avec des liens de pagination d’index les étudiants](sort-filter-page/_static/paging.png)
 
-Dans le dossier du projet créer `PaginatedList.cs`, puis remplacez le code du modèle par le code suivant.
+Dans le dossier du projet, créez `PaginatedList.cs`, puis remplacez le code du modèle par le code suivant.
 
 [!code-csharp[Main](intro/samples/cu/PaginatedList.cs)]
 
@@ -213,7 +213,7 @@ Pour le site de Web Contoso University **sur** page, vous afficherez le nombre d
 
 Créer un *SchoolViewModels* dossier dans le *modèles* dossier.
 
-Dans le nouveau dossier, ajoutez un fichier de classe EnrollmentDateGroup.cs et remplacez le code de modèle par le code suivant :
+Dans le nouveau dossier, ajoutez un fichier de classe *EnrollmentDateGroup.cs* et remplacez le code de modèle par le code suivant :
 
 [!code-csharp[Main](intro/samples/cu/Models/SchoolViewModels/EnrollmentDateGroup.cs)]
 
