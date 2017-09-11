@@ -11,11 +11,11 @@ ms.assetid: 531bda08-aa5b-4471-8f08-96add22c8683
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/filters
-ms.openlocfilehash: bf90698bbac850b1917cd93dbf0a5fc5b6792aa0
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 6baeb472770daf1d54b2d9ea894fc710f4f40780
+ms.sourcegitcommit: 4693cb02d845adf2efa00e07ad432c81867bfa12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="filters"></a>Filtres
 
@@ -117,7 +117,7 @@ Un filtre peut être ajouté au pipeline à un des trois *étendues*. Vous pouve
 
 Lorsqu’il existe plusieurs filtres pour une étape spécifique du pipeline, la portée détermine l’ordre par défaut de l’exécution du filtre.  Filtres globaux entourent les filtres de classe, qui à son tour entourent les filtres de la méthode. Cela est parfois appelée l’imbrication « Poupée russe », car chaque augmentation dans l’étendue est autour de l’étendue précédente, comme un [d’imbrication poupée](https://en.wikipedia.org/wiki/Matryoshka_doll). En règle générale, vous obtenez le comportement de substitution souhaité sans avoir à déterminer explicitement le classement.
 
-Résultat asa de cette imbrication, le *après* code de filtres s’exécute dans l’ordre inverse de la *avant* code. La séquence ressemble à ceci :
+À la suite de cette imbrication, le *après* code de filtres s’exécute dans l’ordre inverse de la *avant* code. La séquence ressemble à ceci :
 
 * Le *avant* code de filtres appliqués globalement
   * Le *avant* code de filtres appliqués à des contrôleurs

@@ -11,11 +11,11 @@ ms.assetid: 668c320d-c050-45e3-8161-2f460dc93b2f
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/overview
-ms.openlocfilehash: a93ee8165be52e33c2e7da4d3fee2c8225864db9
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 318d8832dadadd6946c7ffe58f9d89aaf68f54fc
+ms.sourcegitcommit: 4693cb02d845adf2efa00e07ad432c81867bfa12
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="rendering-html-with-views-in-aspnet-core-mvc"></a>Rendu HTML avec des vues dans ASP.NET MVC de base
 
@@ -39,7 +39,7 @@ Les vues fournissent [séparation des préoccupations](http://deviq.com/separati
 
 ## <a name="creating-a-view"></a>Création d’une vue
 
-Les vues qui sont spécifiques à un contrôleur sont créées dans le *vues / [nom du contrôleur]* dossier. Les vues qui sont partagées entre les contrôleurs sont placées dans le */vues/Shared* dossier. Nommer le fichier de vue de la même que son action de contrôleur associé et ajouter la *.cshtml* extension de fichier. Par exemple, pour créer un affichage pour le *sur* action sur le *accueil* contrôleur, vous devez créer le *About.cshtml* de fichiers dans le   */vues/Home*dossier.
+Les vues qui sont spécifiques à un contrôleur sont créées dans le *vues / [nom du contrôleur]* dossier. Les vues qui sont partagées entre les contrôleurs sont placées dans le */vues/Shared* dossier. Nommer le fichier de vue de la même que son action de contrôleur associé et ajouter la *.cshtml* extension de fichier. Par exemple, pour créer un affichage pour le *sur* action sur le *accueil* contrôleur, vous devez créer le *About.cshtml* de fichiers dans le  * /vues/Home*dossier.
 
 Un exemple de fichier de vue (*About.cshtml*) :
 
@@ -69,14 +69,14 @@ Lorsqu’une action retourne une vue, un processus appelé *détection de la vue
 
 Lorsqu’une action retourne le `View` (méthode), par exemple `return View();`, le nom de l’action est utilisé en tant que le nom de la vue. Par exemple, si cela était appelé à partir d’une méthode d’action nommée « Index », il serait équivalent à passer un nom d’affichage de « Index ». Un nom de la vue peut être explicitement transmis à la méthode (`return View("SomeView");`). Dans ces deux cas, afficher les recherches de découverte pour un fichier de vue correspondant dans :
 
-   1. Vues /<ControllerName>/<ViewName>.cshtml
+   1. Vues /\<ControllerName > /\<ViewName > .cshtml
 
-   2. Les vues ouShared/<ViewName>.cshtml
+   2. Les vues ouShared/\<ViewName > .cshtml
 
 >[!TIP]
 > Nous vous recommandons d’appliquer la convention de simplement retourner `View()` à partir d’actions lorsque cela est possible, qu’elle provoque plus flexible et plus facile à refactoriser le code.
 
-Un chemin d’accès du fichier de vue peut être fourni au lieu d’un nom de la vue. Dans ce cas, le *.cshtml* extension doit être spécifiée en tant que partie du chemin du fichier. Le chemin d’accès doit être relatif à la racine de l’application (et peut éventuellement commencer par « / » ou « ~ / »). Par exemple :`return View("Views/Home/About.cshtml");`
+Un chemin d’accès du fichier de vue peut être fourni au lieu d’un nom de la vue. Si vous utilisez un chemin d’accès absolu, en commençant à la racine de l’application (éventuellement en commençant par « / » ou « ~ / »), le *.cshtml* extension doit être spécifiée en tant que partie du chemin du fichier. Par exemple : `return View("Views/Home/About.cshtml");`. Vous pouvez également utiliser un chemin d’accès relatif à partir du répertoire spécifique du contrôleur dans le *vues* active pour spécifier les vues dans des répertoires différents. Par exemple : `return View("../Manage/Index");` à l’intérieur de la *accueil* contrôleur. De même, vous pouvez parcourir le répertoire spécifique du contrôleur en cours : `return View("./About");`. Notez que les chemins d’accès relatifs ne pas utiliser le *.cshtml* extension. Comme mentionné précédemment, suivez la meilleure pratique d’organiser la structure de fichiers pour les vues afin de refléter les relations entre les contrôleurs, les actions et les vues à la facilité de maintenance et de clarté.
 
 > [!NOTE]
 > [Les vues partielles](partial.md) et [affichage des composants](view-components.md) utilisent des mécanismes de découverte similaires (mais non identiques).
