@@ -11,11 +11,11 @@ ms.assetid: 668c320d-c050-45e3-8161-2f460dc93b2f
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/overview
-ms.openlocfilehash: 318d8832dadadd6946c7ffe58f9d89aaf68f54fc
-ms.sourcegitcommit: 4693cb02d845adf2efa00e07ad432c81867bfa12
+ms.openlocfilehash: 7abfa7ef855eb95e1a27ba6a699dd923c9e4d7c0
+ms.sourcegitcommit: 6ece943781d8a56784bb6160f14da85210d3fcea
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 09/11/2017
 ---
 # <a name="rendering-html-with-views-in-aspnet-core-mvc"></a>Rendu HTML avec des vues dans ASP.NET MVC de base
 
@@ -76,7 +76,7 @@ Lorsqu’une action retourne le `View` (méthode), par exemple `return View();`,
 >[!TIP]
 > Nous vous recommandons d’appliquer la convention de simplement retourner `View()` à partir d’actions lorsque cela est possible, qu’elle provoque plus flexible et plus facile à refactoriser le code.
 
-Un chemin d’accès du fichier de vue peut être fourni au lieu d’un nom de la vue. Si vous utilisez un chemin d’accès absolu, en commençant à la racine de l’application (éventuellement en commençant par « / » ou « ~ / »), le *.cshtml* extension doit être spécifiée en tant que partie du chemin du fichier. Par exemple : `return View("Views/Home/About.cshtml");`. Vous pouvez également utiliser un chemin d’accès relatif à partir du répertoire spécifique du contrôleur dans le *vues* active pour spécifier les vues dans des répertoires différents. Par exemple : `return View("../Manage/Index");` à l’intérieur de la *accueil* contrôleur. De même, vous pouvez parcourir le répertoire spécifique du contrôleur en cours : `return View("./About");`. Notez que les chemins d’accès relatifs ne pas utiliser le *.cshtml* extension. Comme mentionné précédemment, suivez la meilleure pratique d’organiser la structure de fichiers pour les vues afin de refléter les relations entre les contrôleurs, les actions et les vues à la facilité de maintenance et de clarté.
+Un chemin d’accès du fichier de vue peut être fourni au lieu d’un nom de la vue. Si vous utilisez un chemin d’accès absolu, en commençant à la racine de l’application (éventuellement en commençant par « / » ou « ~ / »), le *.cshtml* extension doit être spécifiée en tant que partie du chemin du fichier (par exemple, `return View("Views/Home/About.cshtml");`). Vous pouvez également utiliser un chemin d’accès relatif à partir du répertoire spécifique du contrôleur dans le *vues* active pour spécifier les vues dans des répertoires différents (par exemple, `return View("../Manage/Index");` à l’intérieur de la `HomeController`). De même, vous pouvez parcourir le répertoire spécifique du contrôleur actuel (par exemple, `return View("./About");`). Notez que les chemins d’accès relatifs ne pas utiliser le *.cshtml* extension. Comme mentionné précédemment, suivez la meilleure pratique d’organiser la structure de fichiers pour les vues afin de refléter les relations entre les contrôleurs, les actions et les vues à la facilité de maintenance et de clarté.
 
 > [!NOTE]
 > [Les vues partielles](partial.md) et [affichage des composants](view-components.md) utilisent des mécanismes de découverte similaires (mais non identiques).
