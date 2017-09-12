@@ -11,11 +11,11 @@ ms.assetid: 4542cd37-b47c-454c-be19-d1b5810d67fe
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/introduction
-ms.openlocfilehash: bcf1ce5a272a374c9605e50dee5c5fb27305527d
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: b7391fffd5d512c01af5d709755a925f739b59ba
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="introduction-to-data-protection"></a>Introduction à la Protection des données
 
@@ -49,7 +49,7 @@ Nous avons commencé en identifiant les problèmes liés à la pile existante. U
 
 Avec ces principes à l’esprit que nous avons développées simple, [facile à utiliser](using-data-protection.md) pile de protection de données.
 
-L’API de protection des données ASP.NET Core ne sont pas destinées principalement pour la persistance indéfini de charges utiles confidentielles. Autres technologies telles que [DPAPI CNG de Windows](https://msdn.microsoft.com/library/windows/desktop/hh706794%28v=vs.85%29.aspx) et [Azure Rights Management](https://technet.microsoft.com/library/jj585024.aspx) les plus adaptés au scénario de stockage illimité, et ils ont des fonctionnalités de gestion de clé forte en conséquence. Ceci dit, rien interdire à un développeur à l’aide de l’API de protection des données ASP.NET Core pour la protection à long terme des données confidentielles.
+L’API de protection des données ASP.NET Core ne sont pas destinées principalement pour la persistance indéfini de charges utiles confidentielles. Autres technologies telles que [DPAPI CNG de Windows](https://msdn.microsoft.com/library/windows/desktop/hh706794%28v=vs.85%29.aspx) et [Azure Rights Management](https://docs.microsoft.com/rights-management/) les plus adaptés au scénario de stockage illimité, et ils ont des fonctionnalités de gestion de clé forte en conséquence. Ceci dit, rien interdire à un développeur à l’aide de l’API de protection des données ASP.NET Core pour la protection à long terme des données confidentielles.
 
 ## <a name="audience"></a>Public
 

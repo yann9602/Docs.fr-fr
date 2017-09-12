@@ -11,15 +11,15 @@ ms.assetid: 29f12d1f-9734-48bd-bf1a-cee53a8ab700
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/layout
-ms.openlocfilehash: 9a7f140722548b51bbce33d44389ff5646aa6047
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 25aa5fc730d9076fdcf9d29cb5d9dfa75a246a1a
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="layout"></a>Disposition
 
-Par [Steve Smith](http://ardalis.com)
+Par [Steve Smith](https://ardalis.com/)
 
 Vues partagent fréquemment des éléments visuels et par programmation. Dans cet article, vous allez apprendre à utiliser des dispositions courantes, partager des directives et exécuter le code commun avant le rendu des vues dans votre application ASP.NET.
 

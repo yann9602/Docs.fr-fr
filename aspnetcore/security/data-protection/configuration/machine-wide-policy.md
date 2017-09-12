@@ -11,11 +11,11 @@ ms.assetid: 285ae47d-e0bf-4b03-b0a8-2b1fb18bc3a1
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/configuration/machine-wide-policy
-ms.openlocfilehash: 513726e209401d158ac98d5874942765751ac07d
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 7ada940acfbb7fb0887fd7c0cd722bf62f211248
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="machine-wide-policy"></a>Stratégie ordinateur à l’échelle
 
@@ -77,4 +77,4 @@ Si EncryptionType est « géré », le système sera être configuré pour uti
 Si EncryptionType a toute autre valeur (autres que null / vide), le système de protection de données lève une exception au démarrage.
 
 >[!WARNING]
-> Lorsque vous configurez un paramètre de stratégie par défaut qui implique des noms de type (EncryptionAlgorithmType, ValidationAlgorithmType, KeyEscrowSinks), les types doivent être accessibles à l’application. Dans la pratique, cela signifie que pour les applications qui s’exécutent sur le CLR de bureau, les assemblys qui contiennent ces types doivent être GACed. Pour les applications ASP.NET Core s’exécutant sur [.NET Core](https://microsoft.com/net/core), les packages qui contiennent ces types doivent être installés.
+> Lorsque vous configurez un paramètre de stratégie par défaut qui implique des noms de type (EncryptionAlgorithmType, ValidationAlgorithmType, KeyEscrowSinks), les types doivent être accessibles à l’application. Dans la pratique, cela signifie que pour les applications qui s’exécutent sur le CLR de bureau, les assemblys qui contiennent ces types doivent être GACed. Pour les applications ASP.NET Core s’exécutant sur [.NET Core](https://www.microsoft.com/net/core), les packages qui contiennent ces types doivent être installés.

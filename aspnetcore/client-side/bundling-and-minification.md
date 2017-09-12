@@ -11,11 +11,11 @@ ms.assetid: d54230f9-8e5f-4861-a29c-1d3a14e0b0d9
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: client-side/bundling-and-minification
-ms.openlocfilehash: 810d89798330aeb1c387ec85eb05b1f4efde167a
-ms.sourcegitcommit: 275a5381b6172b4f0b5fcd1d252aff03d3dae166
+ms.openlocfilehash: d8512bdd49b61019f22a49900bdd65086d821a6b
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="bundling-and-minification-in-aspnet-core"></a>Groupement et la minimisation dans ASP.NET Core
 
@@ -91,8 +91,8 @@ Options de regroupement :
 * minimiser - options de réduction de la sortie de type. **facultatif**, *par défaut :`minify: { enabled: true }`*
   * Options de configuration sont disponibles par type de fichier de sortie.
     * [Minimisation CSS](https://github.com/madskristensen/BundlerMinifier/wiki/cssminifier)
-    * [Minimisation de JavaScript](https://github.com/madskristensen/BundlerMinifier/wiki/jsminifier)
-    * [Minimisation de HTML](https://github.com/madskristensen/BundlerMinifier/wiki/htmlminifier)
+    * [Minimisation de JavaScript](https://github.com/madskristensen/BundlerMinifier/wiki)
+    * [Minimisation de HTML](https://github.com/madskristensen/BundlerMinifier/wiki)
 * includeInProject - ajouter des fichiers générés au fichier projet. **facultatif**, *par défaut : false*
 * sourceMaps - générer des mappages de sources pour le fichier regroupé. **facultatif**, *par défaut : false*
 
@@ -106,7 +106,7 @@ Afficher les Extensions de sélectionner et d’installer le **textile & minimis
 
 ![Extension de BuildBundlerMinifier Suggestion](../client-side/bundling-and-minification/_static/view-extension.png)
 
-Une fois le redémarrage terminé, vous devez configurer la build pour exécuter les processus de réduction et de regroupement les composants côté client. Avec le bouton droit le `bundleconfig.json` fichier et sélectionnez *offre groupée d’activer sur la build...* .
+Une fois le redémarrage terminé, vous devez configurer la build pour exécuter les processus de réduction et de regroupement les composants côté client. Avec le bouton droit le `bundleconfig.json` fichier et sélectionnez *offre groupée d’activer sur la build... *.
 
 Générez le projet et le `bundleconfig.json` est inclus dans le processus de génération pour générer les fichiers de sortie en fonction de la configuration.
 
@@ -202,7 +202,7 @@ Si votre flux de travail groupement et la minimisation du application nécessite
 > [!NOTE]
 > Option conversion est disponible uniquement dans Visual Studio 2015 et 2017.
 
-Avec le bouton droit le `bundleconfig.json` et sélectionnez **convertir Gulp...** . Cette opération génère le `gulpfile.js` et installer les packages nécessaires npm.
+Avec le bouton droit le `bundleconfig.json` et sélectionnez **convertir Gulp... **. Cette opération génère le `gulpfile.js` et installer les packages nécessaires npm.
 
 ![Convertir en Gulp](../client-side/bundling-and-minification/_static/convert-togulp.png)
 
@@ -229,6 +229,6 @@ Pour activer les choses lors de la génération du projet dans Visual Studio 201
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
 * [Utilisation de Gulp](using-gulp.md)
-* [À l’aide de Grunt](using-grunt.md)
+* [Utilisation de Grunt](using-grunt.md)
 * [Utilisation de plusieurs environnements](../fundamentals/environments.md)
-* [Programmes d’assistance de balise](../mvc/views/tag-helpers/index.md)
+* [Tag Helpers](../mvc/views/tag-helpers/index.md)

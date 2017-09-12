@@ -11,15 +11,15 @@ ms.assetid: b355a48e-a15c-4d58-b69c-899763613a97
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/models/model-binding
-ms.openlocfilehash: 930ea062ffb914cbd4f1500308b813167c1f601b
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 597d4058a410e0b5991b1d5a74c9fc7bfe8171b8
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="model-binding"></a>Liaison de modèle
 
-Par [Rachel Appel](http://github.com/rachelappel)
+Par [Rachel Appel](https://github.com/rachelappel)
 
 ## <a name="introduction-to-model-binding"></a>Introduction à la liaison de modèle
 
@@ -103,7 +103,7 @@ Dans divers formats, notamment JSON, XML et bien d’autres peuvent provenir de 
 > Il peut y avoir au plus un paramètre par action décorée avec `[FromBody]`. La durée d’exécution ASP.NET MVC de base délègue la responsabilité de lire le flux de demande au formateur. Une fois que le flux de demande est en lecture pour un paramètre, il n’est généralement pas possible de lire le flux de demande de liaison des autres `[FromBody]` paramètres.
 
 > [!NOTE]
-> Le `JsonInputFormatter` est le formateur par défaut et est basée sur [Json.NET](http://www.newtonsoft.com/json).
+> Le `JsonInputFormatter` est le formateur par défaut et est basée sur [Json.NET](https://www.newtonsoft.com/json).
 
 ASP.NET sélectionne les formateurs d’entrée selon la [Content-Type](https://www.w3.org/Protocols/rfc1341/4_Content-Type.html) en-tête et le type du paramètre, sauf s’il existe un attribut appliqué en spécifiant dans le cas contraire. Si vous souhaitez utiliser des données XML ou un autre format vous devez le configurer dans le *Startup.cs* fichier, mais vous devrez peut-être d’abord avez obtenir une référence à `Microsoft.AspNetCore.Mvc.Formatters.Xml` à l’aide de NuGet. Votre code de démarrage doit ressembler à ceci :
 

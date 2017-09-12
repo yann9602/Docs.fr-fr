@@ -11,11 +11,11 @@ ms.assetid: f2bbbf4e-0945-43ce-be59-8bf19e448798
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/implementation/key-encryption-at-rest
-ms.openlocfilehash: cef7644d29168e9560d1175885ea85a525fec435
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 16a9385630d88c4c9f33954f83fce2bbce5be719
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="key-encryption-at-rest"></a>Chiffrement à clé au repos
 
@@ -74,7 +74,7 @@ Seuls les certificats avec des clés privées de CAPI sont pris en charge en rai
 
    Informatique en nuage, toutefois, requiert souvent des que contenu chiffré sur l’ordinateur être déchiffrée sur un autre. Par conséquent, Microsoft à partir de Windows 8, étendu l’idée de l’utilisation d’une API relativement simple pour englober les scénarios de cloud. Cette nouvelle API, appelée DPAPI-NG, permet de partager en toute sécurité les clés secrètes (clés, les mots de passe, le matériel de clé) et les messages en les protégeant à un ensemble d’entités de sécurité qui peut être utilisé pour déprotéger les sur des ordinateurs différents après authentification réussie et autorisation.
 
-   À partir de [https://msdn.microsoft.com/library/windows/desktop/hh706794 (v=vs.85).aspx](https://msdn.microsoft.com/library/windows/desktop/hh706794(v=vs.85).aspx)
+   À partir de [sur DPAPI de CNG](https://msdn.microsoft.com/library/windows/desktop/hh706794(v=vs.85).aspx)
 
 Le principal est encodé sous la règle de protection d’un descripteur. Considérez l’exemple ci-dessous, qui chiffre matériel de clé de telle sorte que seul l’utilisateur appartenant au domaine avec le SID spécifié peut déchiffrer le matériel de clé.
 
@@ -97,7 +97,7 @@ Dans ce scénario, le contrôleur de domaine Active Directory est responsable de
 
 ## <a name="certificate-based-encryption-with-windows-dpapi-ng"></a>Basée sur certificat de chiffrement avec Windows DPAPI-NG.
 
-Si vous êtes en cours d’exécution sur Windows 8.1 / Windows Server 2012 R2 ou version ultérieure, vous pouvez utiliser Windows DPAPI-NG pour effectuer un chiffrement basée sur certificat, même si l’application est en cours d’exécution [.NET Core](https://microsoft.com/net/core). Pour tirer parti de cela, utilisez la chaîne de descripteur de règle « certificat = HashId:thumbprint », où l’empreinte numérique est l’empreinte numérique SHA1 codé en hexadécimal du certificat à utiliser. Voir ci-dessous pour obtenir un exemple.
+Si vous êtes en cours d’exécution sur Windows 8.1 / Windows Server 2012 R2 ou version ultérieure, vous pouvez utiliser Windows DPAPI-NG pour effectuer un chiffrement basée sur certificat, même si l’application est en cours d’exécution [.NET Core](https://www.microsoft.com/net/core). Pour tirer parti de cela, utilisez la chaîne de descripteur de règle « certificat = HashId:thumbprint », où l’empreinte numérique est l’empreinte numérique SHA1 codé en hexadécimal du certificat à utiliser. Voir ci-dessous pour obtenir un exemple.
 
 ```csharp
 sc.AddDataProtection()

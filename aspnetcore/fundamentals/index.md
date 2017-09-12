@@ -12,11 +12,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/index
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 99fbe0e02be27a0fbbb7ff65bc15713aab58c003
-ms.sourcegitcommit: 74e22e08e3b08cb576e5184d16f4af5656c13c0c
+ms.openlocfilehash: 5d8ca35b0e2e4b6e9b1ec745a3a7cf7c3983c461
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="aspnet-core-fundamentals-overview"></a>Vue d’ensemble des notions de base d’ASP.NET Core
 
@@ -101,7 +101,7 @@ Pour plus d’informations, consultez [Intergiciel (middleware)](xref:fundamenta
 
 ## <a name="servers"></a>Serveurs
 
-Le modèle d’hébergement ASP.NET Core n’écoute pas directement les requêtes. Il compte plutôt sur une implémentation d’un serveur HTTP pour transférer la requête à l’application. La requête transférée est incluse dans un wrapper sous forme d’ensemble d’objets de fonctionnalités auxquels vous pouvez accéder via des interfaces. L’application compose cet ensemble dans `HttpContext`. ASP.NET Core inclut un serveur web multiplateforme géré, appelé [Kestrel](xref:fundamentals/servers/kestrel). Kestrel s’exécute généralement derrière un serveur web de production comme [IIS](https://iis.net) ou [nginx](http://nginx.org).
+Le modèle d’hébergement ASP.NET Core n’écoute pas directement les requêtes. Il compte plutôt sur une implémentation d’un serveur HTTP pour transférer la requête à l’application. La requête transférée est incluse dans un wrapper sous forme d’ensemble d’objets de fonctionnalités auxquels vous pouvez accéder via des interfaces. L’application compose cet ensemble dans `HttpContext`. ASP.NET Core inclut un serveur web multiplateforme géré, appelé [Kestrel](xref:fundamentals/servers/kestrel). Kestrel s’exécute généralement derrière un serveur web de production comme [IIS](https://www.iis.net/) ou [nginx](http://nginx.org).
 
 Pour plus d’informations, consultez [Serveurs](xref:fundamentals/servers/index) et [Hébergement](xref:fundamentals/hosting).
 

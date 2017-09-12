@@ -12,11 +12,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/using-gulp
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 05ea4d5f0a0be08cbbdd114320d3544aae054dd2
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: bd617a99ad348c545cbf50f6aa461ca8f456d3a8
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="introduction-to-using-gulp-in-aspnet-core"></a>Introduction à l’utilisation de Gulp dans ASP.NET Core 
 
@@ -29,7 +29,7 @@ Dans une application web moderne classique, le processus de génération peut :
 * Compilez inférieur ou SASS fichiers CSS.
 * Compiler des fichiers JavaScript CoffeeScript ou TypeScript.
 
-A *exécuteur de tâches* est un outil qui automatise les tâches de développement de routine et bien plus encore. Visual Studio fournit la prise en charge intégrée pour deux exécuteurs de tâches de base de JavaScript populaires : [Gulp](http://gulpjs.com) et [Grunt](using-grunt.md).
+A *exécuteur de tâches* est un outil qui automatise les tâches de développement de routine et bien plus encore. Visual Studio fournit la prise en charge intégrée pour deux exécuteurs de tâches de base de JavaScript populaires : [Gulp](https://gulpjs.com/) et [Grunt](using-grunt.md).
 
 ## <a name="gulp"></a>Gulp
 
@@ -266,7 +266,7 @@ IntelliSense fournit l’exécution de code, des descriptions de paramètre et d
 
 ![gulp IntelliSense](using-gulp/_static/08-IntelliSense.png)
 
-Pour plus d’informations sur IntelliSense, consultez [JavaScript IntelliSense](https://msdn.microsoft.com/library/bb385682).
+Pour plus d’informations sur IntelliSense, consultez [JavaScript IntelliSense](https://docs.microsoft.com/visualstudio/ide/javascript-intellisense).
 
 ## <a name="development-staging-and-production-environments"></a>Environnements de développement, intermédiaire et de production
 

@@ -11,11 +11,11 @@ ms.assetid: 5de0c8f7-50ce-4e2c-b3d4-a1bd9fdfcff5
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: hosting/aspnet-core-module
-ms.openlocfilehash: a676b695160b7219bd13f3915e291b722eef47c8
-ms.sourcegitcommit: 8f5277871eff86134ebf68d3737196cfd4a62c2c
+ms.openlocfilehash: 44fc8bd647ad869dd029d8ca4ced782962d71020
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="aspnet-core-module-configuration-reference"></a>Référence de configuration du Module de base ASP.NET
 
@@ -98,7 +98,7 @@ Alors que le *app_offline.htm* fichier est présent, le Module de base ASP.NET r
 
 ## <a name="start-up-error-page"></a>Page d’erreur de démarrage
 
-Si le Module de base ASP.NET ne parvient pas à lancer le processus principal ou que le début de la procédure principale mais ne parvient pas à l’écoute sur le port configuré, vous verrez une page de codes d’état HTTP 502.5. Pour supprimer cette page et revenir à la page de codes par défaut IIS 502 état, utiliser le `disableStartUpErrorPage` attribut. Pour plus d’informations sur la configuration des messages d’erreur personnalisés, consultez [erreurs HTTP `<httpErrors>` ](https://www.iis.net/configreference/system.webserver/httperrors).
+Si le Module de base ASP.NET ne parvient pas à lancer le processus principal ou que le début de la procédure principale mais ne parvient pas à l’écoute sur le port configuré, vous verrez une page de codes d’état HTTP 502.5. Pour supprimer cette page et revenir à la page de codes par défaut IIS 502 état, utiliser le `disableStartUpErrorPage` attribut. Pour plus d’informations sur la configuration des messages d’erreur personnalisés, consultez [erreurs HTTP `<httpErrors>` ](https://docs.microsoft.com/iis/configuration/system.webServer/httpErrors/).
 
 ![Page d’état 502](aspnet-core-module/_static/ANCM-502_5.png)
 
@@ -106,7 +106,7 @@ Si le Module de base ASP.NET ne parvient pas à lancer le processus principal ou
 
 Le Module de base ASP.NET redirige `stdout` et `stderr` journaux sur le disque si vous définissez la `stdoutLogEnabled` et `stdoutLogFile` les attributs de la `aspNetCore` élément. Tous les dossiers dans le `stdoutLogFile` chemin doit exister dans l’ordre pour le module créer le fichier journal. Une horodatage et extension de fichier est automatiquement ajoutée lorsque le fichier journal est créé. Les journaux n’a pas lieu, à moins que le recyclage de processus/redémarrage se produit. Il incombe à l’hébergeur pour limiter l’espace disque que les connexions à consommer. À l’aide de la `stdout` journal est recommandé uniquement pour résoudre les problèmes de démarrage d’application et non à des fins de journalisation généraux de l’application.
 
-Nom du fichier journal est composé en ajoutant l’ID de processus (PID), horodateur (*yyyyMdhms*) et l’extension de fichier (*.log*) pour le dernier segment de la `stdoutLogFile` chemin d’accès (généralement *stdout* ) délimités par des traits de soulignement. Par exemple si le `stdoutLogFile` chemin d’accès se termine par *stdout*, un journal pour une application avec un PID de 10652 créé sur 8/10/2017 à 12:05:02 a le nom de fichier *stdout_10652_20178101252.log*.
+Nom du fichier journal est composé en ajoutant l’ID de processus (PID), horodateur (*yyyyMdhms*) et l’extension de fichier (*.log*) pour le dernier segment de la `stdoutLogFile` chemin d’accès (généralement *stdout *) délimités par des traits de soulignement. Par exemple si le `stdoutLogFile` chemin d’accès se termine par *stdout*, un journal pour une application avec un PID de 10652 créé sur 8/10/2017 à 12:05:02 a le nom de fichier *stdout_10652_20178101252.log*.
 
 Voici un exemple `aspNetCore` élément configure `stdout` journalisation. Le `stdoutLogFile` chemin d’accès indiqué dans l’exemple est appropriée pour le Service d’applications Azure. Un chemin d’accès local ou un chemin d’accès du partage réseau est acceptable pour la connexion locale. Vérifiez que l’identité de pool d’applications l’utilisateur a l’autorisation d’écrire dans le chemin d’accès fourni.
 
@@ -120,7 +120,7 @@ Voici un exemple `aspNetCore` élément configure `stdout` journalisation. Le `s
 
 ## <a name="aspnet-core-module-with-an-iis-shared-configuration"></a>Configuration de Module ASP.NET Core avec un IIS partagée
 
-Le programme d’installation du Module de base ASP.NET s’exécute avec les privilèges de le **système** compte. Étant donné que le compte système local n’ont pas modifier l’autorisation pour le chemin d’accès de partage qui est utilisée par la Configuration partagée IIS, le programme d’installation sera atteint une erreur d’accès refusé lorsque vous tentez de configurer les paramètres de module dans  *applicationHost.config* sur le partage.
+Le programme d’installation du Module de base ASP.NET s’exécute avec les privilèges de le **système** compte. Étant donné que le compte système local n’ont pas modifier l’autorisation pour le chemin d’accès de partage qui est utilisée par la Configuration partagée IIS, le programme d’installation sera atteint une erreur d’accès refusé lorsque vous tentez de configurer les paramètres de module dans * applicationHost.config* sur le partage.
 
 La non prise en charge de la solution de contournement consiste à désactiver la Configuration partagée IIS, exécutez le programme d’installation, exporter la mise à jour *applicationHost.config* au partage de fichiers et de réactiver la Configuration partagée IIS.
 

@@ -11,17 +11,17 @@ ms.assetid: db9a86ab-46c2-40e0-baed-86e38c16af1f
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/middleware
-ms.openlocfilehash: 84c357ebbf28dffc4382f6c648921210e72ac854
-ms.sourcegitcommit: 26166785ad181a8519cb008800d71d96499b0499
+ms.openlocfilehash: 80e27c94b3c60a181c45f8e006126a7e7dd3d425
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/01/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="aspnet-core-middleware-fundamentals"></a>Notions de base ASP.NET Core intergiciel (middleware)
 
 <a name=fundamentals-middleware></a>
 
-Par [Rick Anderson](https://twitter.com/RickAndMSFT) et [Steve Smith](http://ardalis.com)
+Par [Rick Anderson](https://twitter.com/RickAndMSFT) et [Steve Smith](https://ardalis.com/)
 
 [Afficher ou télécharger l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/middleware/sample)
 
@@ -168,12 +168,12 @@ ASP.NET Core est fourni avec les composants d’intergiciel (middleware) suivant
 | ----- | ------- |
 | [Authentification](xref:security/authentication/identity) | Fournit la prise en charge de l’authentification. |
 | [CORS](xref:security/cors) | Configure le partage de ressources Cross-Origin. |
-| [Réponse mise en cache](xref:performance/caching/middleware) | Prend en charge la mise en cache des réponses. |
+| [Mise en cache des réponses](xref:performance/caching/middleware) | Prend en charge la mise en cache des réponses. |
 | [Compression de la réponse](xref:performance/response-compression) | Prend en charge la compression des réponses. |
 | [Routage](xref:fundamentals/routing) | Définit et contraint les itinéraires de la demande. |
 | [Session](xref:fundamentals/app-state) | Prend en charge la gestion des sessions utilisateur. |
 | [Fichiers statiques](xref:fundamentals/static-files) | Fournit la prise en charge pour traiter les fichiers statiques et l’exploration des répertoires. |
-| [Intergiciel (middleware) réécriture d’URL](xref:fundamentals/url-rewriting) | Prend en charge la réécriture d’URL et la redirection des demandes. |
+| [Intergiciel (middleware) de réécriture d’URL](xref:fundamentals/url-rewriting) | Prend en charge la réécriture d’URL et la redirection des demandes. |
 
 <a name=middleware-writing-middleware></a>
 
@@ -228,6 +228,6 @@ public class MyMiddleware
 ## <a name="resources"></a>Ressources
 
 * [Exemple de code utilisé dans ce document.](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/middleware/sample)
-* [Migration de Modules HTTP à un intergiciel (middleware)](../migration/http-modules.md)
+* [Migration des modules HTTP vers les intergiciels (middleware)](../migration/http-modules.md)
 * [Démarrage d’une application](startup.md)
-* [Fonctionnalités de demande](request-features.md)
+* [Fonctionnalités de requête](request-features.md)

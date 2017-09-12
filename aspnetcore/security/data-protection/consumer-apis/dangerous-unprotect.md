@@ -11,17 +11,17 @@ ms.assetid: 6c4e6591-45d2-4d25-855e-062ad352d648
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/consumer-apis/dangerous-unprotect
-ms.openlocfilehash: 44f21f380b994f46a8bb7368bca0cfc6e438ec4d
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 5d176515792045545add66ba5aedb0358d8bdc70
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="unprotecting-payloads-whose-keys-have-been-revoked"></a>Ôter la protection de charges utiles dont les clés ont été révoqués.
 
 <a name=data-protection-consumer-apis-dangerous-unprotect></a>
 
-L’API de protection des données ASP.NET Core ne sont pas destinées principalement pour la persistance indéfini de charges utiles confidentielles. Autres technologies telles que [DPAPI CNG de Windows](https://msdn.microsoft.com/library/windows/desktop/hh706794%28v=vs.85%29.aspx) et [Azure Rights Management](https://technet.microsoft.com/library/jj585024.aspx) les plus adaptés au scénario de stockage illimité, et ils ont des fonctionnalités de gestion de clé forte en conséquence. Ceci dit, rien interdire à un développeur à l’aide de l’API de protection des données ASP.NET Core pour la protection à long terme des données confidentielles. Les clés ne sont jamais supprimés à partir de l’anneau de clé, afin de IDataProtector.Unprotect peut toujours de récupérer des charges utiles existants tant que les clés sont disponibles et valides.
+L’API de protection des données ASP.NET Core ne sont pas destinées principalement pour la persistance indéfini de charges utiles confidentielles. Autres technologies telles que [DPAPI CNG de Windows](https://msdn.microsoft.com/library/windows/desktop/hh706794%28v=vs.85%29.aspx) et [Azure Rights Management](https://docs.microsoft.com/rights-management/) les plus adaptés au scénario de stockage illimité, et ils ont des fonctionnalités de gestion de clé forte en conséquence. Ceci dit, rien interdire à un développeur à l’aide de l’API de protection des données ASP.NET Core pour la protection à long terme des données confidentielles. Les clés ne sont jamais supprimés à partir de l’anneau de clé, afin de IDataProtector.Unprotect peut toujours de récupérer des charges utiles existants tant que les clés sont disponibles et valides.
 
 Toutefois, un problème survient lorsque le développeur tente d’ôter la protection des données qui a été protégées avec une clé révoquée, comme IDataProtector.Unprotect lève une exception dans ce cas. Cela peut être préci pour les charges temporaires (par exemple, des jetons d’authentification), car ces types de charges utiles peuvent facilement être recréés par le système, et au pire le visiteur du site peut être requise pour vous reconnecter. Mais pour les charges persistantes, ayant Unprotect lever peut entraîner une perte de données inacceptable.
 

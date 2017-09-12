@@ -11,15 +11,15 @@ ms.assetid: 531bda08-aa5b-4471-8f08-96add22c8683
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/filters
-ms.openlocfilehash: 6baeb472770daf1d54b2d9ea894fc710f4f40780
-ms.sourcegitcommit: 4693cb02d845adf2efa00e07ad432c81867bfa12
+ms.openlocfilehash: b96a70a2446cab7b1af9bd689469584868980595
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="filters"></a>Filtres
 
-Par [Tom Dykstra](https://github.com/tdykstra/) et [Steve Smith](http://ardalis.com)
+Par [Tom Dykstra](https://github.com/tdykstra/) et [Steve Smith](https://ardalis.com/)
 
 *Filtres* dans ASP.NET MVC de base vous autorise à exécuter du code avant ou après certaines étapes du pipeline de traitement de la demande.
 
@@ -115,7 +115,7 @@ Un filtre peut être ajouté au pipeline à un des trois *étendues*. Vous pouve
 
 ### <a name="default-order-of-execution"></a>Ordre par défaut de l’exécution
 
-Lorsqu’il existe plusieurs filtres pour une étape spécifique du pipeline, la portée détermine l’ordre par défaut de l’exécution du filtre.  Filtres globaux entourent les filtres de classe, qui à son tour entourent les filtres de la méthode. Cela est parfois appelée l’imbrication « Poupée russe », car chaque augmentation dans l’étendue est autour de l’étendue précédente, comme un [d’imbrication poupée](https://en.wikipedia.org/wiki/Matryoshka_doll). En règle générale, vous obtenez le comportement de substitution souhaité sans avoir à déterminer explicitement le classement.
+Lorsqu’il existe plusieurs filtres pour une étape spécifique du pipeline, la portée détermine l’ordre par défaut de l’exécution du filtre.  Filtres globaux entourent les filtres de classe, qui à son tour entourent les filtres de la méthode. Cela est parfois appelée l’imbrication « Poupée russe », car chaque augmentation dans l’étendue est autour de l’étendue précédente, comme un [d’imbrication poupée](https://wikipedia.org/wiki/Matryoshka_doll). En règle générale, vous obtenez le comportement de substitution souhaité sans avoir à déterminer explicitement le classement.
 
 À la suite de cette imbrication, le *après* code de filtres s’exécute dans l’ordre inverse de la *avant* code. La séquence ressemble à ceci :
 

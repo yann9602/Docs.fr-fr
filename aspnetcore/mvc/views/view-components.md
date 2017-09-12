@@ -11,15 +11,15 @@ ms.assetid: ab4705b7-59d7-4f31-bc97-ea7f292fe926
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/view-components
-ms.openlocfilehash: 68efa1f313c73e2aee3e0e3c2fcb9eba0e12a62f
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 07a2aca731b8017450a1b0da00ddef25306c122e
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="view-components"></a>Affichage des composants
 
-Par [Rick Anderson](https://twitter.com/RickAndMSFT)
+De [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 [Afficher ou télécharger l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/view-components/sample)
 
@@ -103,7 +103,7 @@ Pour ASP.NET Core 1.1 et versions ultérieures, vous pouvez appeler un composant
 
 [!code-html[Main](view-components/sample/ViewCompFinal/Views/Todo/IndexTagHelper.cshtml?range=37-38)]
 
-Paramètres de classe et méthode casse Pascal pour les programmes d’assistance de balise sont traduites en leur [réduire les cas rapide](http://stackoverflow.com/questions/11273282/whats-the-name-for-dash-separated-case/12273101#12273101). L’application d’assistance de balise pour appeler un composant de vue utilise le `<vc></vc>` élément. Le composant d’affichage est spécifié comme suit :
+Paramètres de classe et méthode casse Pascal pour les programmes d’assistance de balise sont traduites en leur [réduire les cas rapide](https://stackoverflow.com/questions/11273282/whats-the-name-for-dash-separated-case/12273101). L’application d’assistance de balise pour appeler un composant de vue utilise le `<vc></vc>` élément. Le composant d’affichage est spécifié comme suit :
 
 ```html
 <vc:[view-component-name]
@@ -250,4 +250,4 @@ Ajouter un `using` instruction pour votre Razor afficher le fichier et utiliser 
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-* [Injection de dépendance dans les vues](dependency-injection.md)
+* [Injection de dépendances dans les vues](dependency-injection.md)

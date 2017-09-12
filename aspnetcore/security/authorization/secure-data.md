@@ -10,11 +10,11 @@ ms.assetid: abeb2f8e-dfbf-4398-a04c-338a613a65bc
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: security/authorization/secure-data
-ms.openlocfilehash: 7ce59816d106cce9fabd8393ee764454bd0f7f27
-ms.sourcegitcommit: 4e84d8bf5f404bb77f3d41665cf7e7374fc39142
+ms.openlocfilehash: db05ffb585022c3d9512d32da28c54788f97129c
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="create-an-aspnet-core-app-with-user-data-protected-by-authorization"></a>Créer une application ASP.NET Core et de données utilisateur protégées par l’autorisation
 
@@ -103,7 +103,7 @@ dotnet ef database update
 
 ### <a name="require-ssl-and-authenticated-users"></a>Exiger SSL et les utilisateurs authentifiés
 
-Dans le `ConfigureServices` méthode de la *Startup.cs* , ajoutez le [RequireHttpsAttribute](http://docs.asp.net/projects/api/en/latest/autoapi/Microsoft/AspNetCore/Mvc/RequireHttpsAttribute/index.html.md#Microsoft.AspNetCore.Mvc.RequireHttpsAttribute.md) filtre d’autorisation :
+Dans le `ConfigureServices` méthode de la *Startup.cs* , ajoutez le [RequireHttpsAttribute](https://docs.microsoft.com/aspnet/core/api) filtre d’autorisation :
 
 [!code-csharp[Main](secure-data/samples/final/Startup.cs?name=snippet_SSL&highlight=1)]
 
@@ -161,7 +161,7 @@ Créer un `ContactAdministratorsAuthorizationHandler` classe dans le *autorisati
 
 ## <a name="register-the-authorization-handlers"></a>Inscrire les gestionnaires d’autorisation
 
-Services à l’aide d’Entity Framework Core doivent être inscrit pour [injection de dépendance](xref:fundamentals/dependency-injection) à l’aide de [AddScoped](http://docs.asp.net/projects/api/en/latest/autoapi/Microsoft/Extensions/DependencyInjection/ServiceCollectionServiceExtensions/index.html.md#Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddScoped.md). Le `ContactIsOwnerAuthorizationHandler` utilise ASP.NET Core [identité](xref:security/authentication/identity), qui est basé sur Entity Framework Core. Enregistrez les gestionnaires avec la collection de service afin qu’ils soient disponibles pour le `ContactsController` via [injection de dépendance](xref:fundamentals/dependency-injection). Ajoutez le code suivant à la fin de `ConfigureServices`:
+Services à l’aide d’Entity Framework Core doivent être inscrit pour [injection de dépendance](xref:fundamentals/dependency-injection) à l’aide de [AddScoped](https://docs.microsoft.com/aspnet/core/api). Le `ContactIsOwnerAuthorizationHandler` utilise ASP.NET Core [identité](xref:security/authentication/identity), qui est basé sur Entity Framework Core. Enregistrez les gestionnaires avec la collection de service afin qu’ils soient disponibles pour le `ContactsController` via [injection de dépendance](xref:fundamentals/dependency-injection). Ajoutez le code suivant à la fin de `ConfigureServices`:
 
 [!code-csharp[Main](secure-data/samples/final/Startup.cs?name=AuthorizationHandlers)]
 
@@ -264,7 +264,7 @@ Créer un contact dans le navigateur des administrateurs. Copier l’URL pour le
 
 Suivez ces instructions pour créer l’application de démarrage.
 
-* Créer un **Application ASP.NET Core Web** à l’aide de [Visual Studio 2017](https://www.visualstudio.com/visual-studio-homepage-vs.aspx) nommé « ContactManager »
+* Créer un **Application ASP.NET Core Web** à l’aide de [Visual Studio 2017](https://www.visualstudio.com/) nommé « ContactManager »
 
   * Créer l’application avec **comptes d’utilisateur individuels**.
   * Pour votre espace de noms correspond à l’utilisation de l’espace de noms dans l’exemple, nommez-Le « ContactManager ».
@@ -321,4 +321,4 @@ Test de l’application d’amorçage la base de données. La méthode de la val
 
 * [ASP.NET Core d’autorisation Lab](https://github.com/blowdart/AspNetAuthorizationWorkshop). Ce laboratoire présente en détail sur les fonctionnalités de sécurité présentées dans ce didacticiel.
 * [Autorisation dans ASP.NET Core : Simple, des rôles, basée sur les revendications et personnalisées](index.md)
-* [D’autorisation personnalisée basée sur des stratégies](policies.md)
+* [Autorisation basée sur des stratégies personnalisées](policies.md)

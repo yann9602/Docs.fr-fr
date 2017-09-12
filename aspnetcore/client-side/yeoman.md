@@ -11,11 +11,11 @@ ms.assetid: fda0c2a8-1743-4505-be1a-7f8ceeef8647
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/yeoman
-ms.openlocfilehash: 3a7cd83becc570d2f73014b356977fedb16f29bb
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 61561b55774faf375090c92b574a64f1a12f9647
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="introduction-to-building-projects-with-yeoman-in-aspnet-core"></a>Introduction à la génération de projets avec Yeoman dans ASP.NET Core
 
@@ -25,7 +25,7 @@ ms.lasthandoff: 08/11/2017
 
 ### <a name="prerequisites"></a>Conditions préalables
 
-Node.js et npm sont requis pour Yeoman. Télécharger à partir de [Node.js](https://nodejs.org/en/). Le programme d’installation inclut [Node.js](https://nodejs.org/en/) et [npm](https://www.npmjs.com/). Bower est également requis pour l’installation des infrastructures d’interface utilisateur tels que les données d’amorçage.
+Node.js et npm sont requis pour Yeoman. Télécharger à partir de [Node.js](https://nodejs.org/). Le programme d’installation inclut [Node.js](https://nodejs.org/) et [npm](https://www.npmjs.com/). Bower est également requis pour l’installation des infrastructures d’interface utilisateur tels que les données d’amorçage.
 
 Pour installer Yeoman et Bower, exécutez la commande suivante :
 
@@ -135,7 +135,7 @@ Ouvrez un navigateur web et accédez à `http://localhost:5000`.
 
 ## <a name="adding-to-your-project-with-sub-generators"></a>Ajout à votre projet avec des générateurs de sub
 
-À l’aide de Yeoman [sub générateurs](https://www.github.com/omnisharp/generator-aspnet#sub-generators), vous pouvez ajouter un `nuget.config` ou un `web.config` après la création du projet. Par exemple, exécutez la commande suivante à partir du répertoire dans lequel le fichier doit être créé :
+À l’aide de Yeoman [sub générateurs](https://github.com/omnisharp/generator-aspnet), vous pouvez ajouter un `nuget.config` ou un `web.config` après la création du projet. Par exemple, exécutez la commande suivante à partir du répertoire dans lequel le fichier doit être créé :
 
 ```console
 yo aspnet:nugetconfig

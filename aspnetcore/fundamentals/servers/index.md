@@ -11,17 +11,17 @@ ms.assetid: dba74f39-58cd-4dee-a061-6d15f7346959
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/servers/index
-ms.openlocfilehash: 1e6d0836f0da751fe433273b9a6896fcf259b69d
-ms.sourcegitcommit: 74e22e08e3b08cb576e5184d16f4af5656c13c0c
+ms.openlocfilehash: 17124f1ef181a4f1572d9375ae8cd27ce8845016
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="web-server-implementations-in-aspnet-core"></a>Implémentations de serveurs web dans ASP.NET Core
 
-De [Tom Dykstra](http://github.com/tdykstra), [Steve Smith](http://ardalis.com), [Stephen Halter](https://twitter.com/halter73) et [Chris Ross](https://github.com/Tratcher)
+De [Tom Dykstra](https://github.com/tdykstra), [Steve Smith](https://ardalis.com/), [Stephen Halter](https://twitter.com/halter73) et [Chris Ross](https://github.com/Tratcher)
 
-Une application ASP.NET Core s’exécute avec une implémentation de serveur HTTP in-process. L’implémentation du serveur écoute les requêtes HTTP et les expose à l’application sous forme de [fonctionnalités de requêtes](https://docs.asp.net/en/latest/fundamentals/request-features.html) composées dans `HttpContext`.
+Une application ASP.NET Core s’exécute avec une implémentation de serveur HTTP in-process. L’implémentation du serveur écoute les requêtes HTTP et les expose à l’application sous forme de [fonctionnalités de requêtes](https://docs.microsoft.com/aspnet/core/fundamentals/request-features) composées dans `HttpContext`.
 
 ASP.NET Core est livré avec deux implémentations de serveurs :
 
@@ -115,13 +115,13 @@ Dans le cas des réseaux internes, Kestrel est généralement recommandé pour o
 
 ## <a name="notes-about-aspnet-core-server-infrastructure"></a>Remarques sur l’infrastructure serveur d’ASP.NET Core
 
-Le [`IApplicationBuilder`](http://docs.asp.net/projects/api/en/latest/autoapi/Microsoft/AspNetCore/Builder/IApplicationBuilder/index.html#Microsoft.AspNetCore.Builder.IApplicationBuilder.md) disponible dans la méthode `Configure` de la classe `Startup` expose la propriété `ServerFeatures` de type [`IFeatureCollection`](http://docs.asp.net/projects/api/en/latest/autoapi/Microsoft/AspNetCore/Http/Features/IFeatureCollection/index.html#Microsoft.AspNetCore.Http.Features.IFeatureCollection.md). Kestrel et WebListener exposent uniquement la fonctionnalité [`IServerAddressesFeature`](http://docs.asp.net/projects/api/en/latest/autoapi/Microsoft/AspNetCore/Hosting/Server/Features/IServerAddressesFeature/index.html#Microsoft.AspNetCore.Hosting.Server.Features.IServerAddressesFeature.md) mais les autres implémentations de serveurs peuvent exposer des fonctionnalités supplémentaires.
+Le [`IApplicationBuilder`](https://docs.microsoft.com/aspnet/core/api) disponible dans la méthode `Configure` de la classe `Startup` expose la propriété `ServerFeatures` de type [`IFeatureCollection`](https://docs.microsoft.com/aspnet/core/api). Kestrel et WebListener exposent uniquement la fonctionnalité [`IServerAddressesFeature`](https://docs.microsoft.com/aspnet/core/api) mais les autres implémentations de serveurs peuvent exposer des fonctionnalités supplémentaires.
 
 `IServerAddressesFeature` permet de déterminer quel est le port lié à l’implémentation de serveur au moment de l’exécution.
 
 ## <a name="custom-servers"></a>Serveurs personnalisés
 
-Si les serveurs intégrés ne répondent pas à vos besoins, vous pouvez créer une implémentation de serveur personnalisé. Le [guide OWIN (Open Web Interface pour .NET)](../owin.md) montre comment écrire une implémentation [IServer](https://docs.microsoft.com/en-us/aspnet/core/api/microsoft.aspnetcore.hosting.server.iserver) basée sur [Nowin](https://github.com/Bobris/Nowin). Vous êtes libre d’implémenter uniquement les interfaces de fonctionnalités dont votre application a besoin. Toutefois, vous devez assurer au minimum la prise en charge de [IHttpRequestFeature](https://docs.microsoft.com/en-us/aspnet/core/api/microsoft.aspnetcore.http.features.ihttprequestfeature) et [IHttpResponseFeature](https://docs.microsoft.com/en-us/aspnet/core/api/microsoft.aspnetcore.http.features.ihttpresponsefeature).
+Si les serveurs intégrés ne répondent pas à vos besoins, vous pouvez créer une implémentation de serveur personnalisé. Le [guide OWIN (Open Web Interface pour .NET)](../owin.md) montre comment écrire une implémentation [IServer](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.hosting.server.iserver) basée sur [Nowin](https://github.com/Bobris/Nowin). Vous êtes libre d’implémenter uniquement les interfaces de fonctionnalités dont votre application a besoin. Toutefois, vous devez assurer au minimum la prise en charge de [IHttpRequestFeature](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.http.features.ihttprequestfeature) et [IHttpResponseFeature](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.http.features.ihttpresponsefeature).
 
 ## <a name="next-steps"></a>Étapes suivantes
 

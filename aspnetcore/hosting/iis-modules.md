@@ -11,11 +11,11 @@ ms.assetid: 492b3a7e-04c5-461b-b96a-38ecee5c64bc
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: hosting/iis-modules
-ms.openlocfilehash: 4d9d3d863e62373716ecd81b9e1880145a127e9b
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 353cd4c18cb2708f2dece5ba2b5271f452379d52
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="using-iis-modules-with-aspnet-core"></a>À l’aide des Modules IIS avec ASP.NET Core
 
@@ -36,12 +36,12 @@ Module | .NET core actif | Option ASP.NET Core
 **Document par défaut**<br>`DefaultDocumentModule` | Non | [Intergiciel de fichiers par défaut](xref:fundamentals/static-files#serving-a-default-document)
 **Authentification Digest**<br>`DigestAuthenticationModule` | Oui | 
 **Exploration des répertoires**<br>`DirectoryListingModule` | Non | [Intergiciel (middleware) exploration de répertoire](xref:fundamentals/static-files#enabling-directory-browsing)
-**Compression dynamique**<br>`DynamicCompressionModule` | Oui | [Intergiciel (middleware) de réponse Compression](xref:performance/response-compression)
+**Compression dynamique**<br>`DynamicCompressionModule` | Oui | [Intergiciel (middleware) de compression des réponses](xref:performance/response-compression)
 **Suivi**<br>`FailedRequestsTracingModule` | Oui | [Enregistrement d’ASP.NET Core](xref:fundamentals/logging#the-tracesource-provider)
-**La mise en cache du fichier**<br>`FileCacheModule` | Non | [Intergiciel (middleware) mise en cache de réponse](xref:performance/caching/middleware)
-**Mise en cache HTTP**<br>`HttpCacheModule` | Non | [Intergiciel (middleware) mise en cache de réponse](xref:performance/caching/middleware)
-**Journalisation HTTP**<br>`HttpLoggingModule` | Oui | [Enregistrement d’ASP.NET Core](xref:fundamentals/logging)<br>Implémentations : [elmah.io](https://github.com/elmahio/Elmah.Io.Extensions.Logging), [Loggr](https://github.com/imobile3/Loggr.Extensions.Logging), [NLog](https://github.com/NLog/NLog.Extensions.Logging), [Serilog](https://github.com/serilog/serilog-framework-logging)
-**Redirection HTTP**<br>`HttpRedirectionModule` | Oui | [Intergiciel (middleware) réécriture d’URL](xref:fundamentals/url-rewriting)
+**La mise en cache du fichier**<br>`FileCacheModule` | Non | [Intergiciel (middleware) de mise en cache des réponses](xref:performance/caching/middleware)
+**Mise en cache HTTP**<br>`HttpCacheModule` | Non | [Intergiciel (middleware) de mise en cache des réponses](xref:performance/caching/middleware)
+**Journalisation HTTP**<br>`HttpLoggingModule` | Oui | [Enregistrement d’ASP.NET Core](xref:fundamentals/logging)<br>Implémentations : [elmah.io](https://github.com/elmahio/Elmah.Io.Extensions.Logging), [Loggr](https://github.com/imobile3/Loggr.Extensions.Logging), [NLog](https://github.com/NLog/NLog.Extensions.Logging), [Serilog](https://github.com/serilog/serilog-extensions-logging)
+**Redirection HTTP**<br>`HttpRedirectionModule` | Oui | [Intergiciel (middleware) de réécriture d’URL](xref:fundamentals/url-rewriting)
 **Authentification par mappage de certificat Client IIS**<br>`IISCertificateMappingAuthenticationModule` | Oui | 
 **Restrictions IP et de domaine**<br>`IpRestrictionModule` | Oui | 
 **Filtres ISAPI**<br>`IsapiFilterModule` | Oui | [Intergiciel (middleware)](xref:fundamentals/middleware)
@@ -49,9 +49,9 @@ Module | .NET core actif | Option ASP.NET Core
 **Prise en charge du protocole**<br>`ProtocolSupportModule` | Oui | 
 **Filtrage des demandes**<br>`RequestFilteringModule` | Oui | [Intergiciel (middleware) réécriture d’URL`IRule`](xref:fundamentals/url-rewriting#irule-based-rule)
 **Observateur de demandes**<br>`RequestMonitorModule` | Oui | 
-**Réécriture d’URL**<br>`RewriteModule` | Yes† | [Intergiciel (middleware) réécriture d’URL](xref:fundamentals/url-rewriting)
+**Réécriture d’URL**<br>`RewriteModule` | Yes† | [Intergiciel (middleware) de réécriture d’URL](xref:fundamentals/url-rewriting)
 **Fichiers Include côté serveur**<br>`ServerSideIncludeModule` | Non | 
-**Compression statique**<br>`StaticCompressionModule` | Non | [Intergiciel (middleware) de réponse Compression](xref:performance/response-compression)
+**Compression statique**<br>`StaticCompressionModule` | Non | [Intergiciel (middleware) de compression des réponses](xref:performance/response-compression)
 **Contenu statique**<br>`StaticFileModule` | Non | [Intergiciel (middleware) de fichiers statiques](xref:fundamentals/static-files)
 **Mise en cache de jeton**<br>`TokenCacheModule` | Oui | 
 **La mise en cache URI**<br>`UriCacheModule` | Oui | 
@@ -67,13 +67,13 @@ AnonymousIdentification | Non |
 DefaultAuthentication | Non | 
 FileAuthorization | Non | 
 FormsAuthentication | Non | [Intergiciel (middleware) de cookie d’authentification](xref:security/authentication/cookie)
-OutputCache | Non | [Intergiciel (middleware) mise en cache de réponse](xref:performance/caching/middleware)
+OutputCache | Non | [Intergiciel (middleware) de mise en cache des réponses](xref:performance/caching/middleware)
 Profil | Non | 
 RoleManager | Non | 
 ScriptModule-4.0 | Non | 
 Session | Non | [Intergiciel (middleware) de session](xref:fundamentals/app-state)
 UrlAuthorization | Non | 
-UrlMappingsModule | Non | [Intergiciel (middleware) réécriture d’URL](xref:fundamentals/url-rewriting)
+UrlMappingsModule | Non | [Intergiciel (middleware) de réécriture d’URL](xref:fundamentals/url-rewriting)
 UrlRoutingModule-4.0 | Non | [Identité de ASP.NET Core](xref:security/authentication/identity)
 WindowsAuthentication | Non | 
 
@@ -84,7 +84,7 @@ Lorsque vous utilisez le Gestionnaire des services Internet pour configurer les 
 Si vous avez un module IIS configuré au niveau du serveur que vous voulez désactiver pour une application, vous pouvez le faire avec un ajout à votre *web.config* fichier. Conservez le module en place et désactiver à l’aide d’un paramètre de configuration (si disponible) ou supprimez le module de l’application.
 
 ### <a name="module-deactivation"></a>Désactivation du module
-Nombre de modules offre un paramètre de configuration qui vous permet de les désactiver sans les supprimer à partir de l’application. Il s’agit de la façon la plus simple et plus rapide pour désactiver un module. Par exemple, si vous souhaitez désactiver le Module de réécriture d’URL IIS, utilisez le `<httpRedirect>` comme indiqué ci-dessous. Pour plus d’informations sur la désactivation de modules avec les paramètres de configuration, suivez les liens dans le *des éléments enfants* section de [IIS `<system.webServer>` ](https://www.iis.net/configreference/system.webserver).
+Nombre de modules offre un paramètre de configuration qui vous permet de les désactiver sans les supprimer à partir de l’application. Il s’agit de la façon la plus simple et plus rapide pour désactiver un module. Par exemple, si vous souhaitez désactiver le Module de réécriture d’URL IIS, utilisez le `<httpRedirect>` comme indiqué ci-dessous. Pour plus d’informations sur la désactivation de modules avec les paramètres de configuration, suivez les liens dans le *des éléments enfants* section de [IIS `<system.webServer>` ](https://docs.microsoft.com/iis/configuration/system.webServer/).
 
 ```xml
 <configuration>
@@ -150,6 +150,6 @@ Les modules uniquement requis pour exécuter une application ASP.NET Core sont l
 
 ## <a name="resources"></a>Ressources
 * [Publication dans IIS](xref:publishing/iis)
-* [Vue d’ensemble des Modules IIS](https://www.iis.net/learn/get-started/introduction-to-iis/iis-modules-overview)
+* [Vue d’ensemble des Modules IIS](https://docs.microsoft.com/iis/get-started/introduction-to-iis/iis-modules-overview)
 * [Personnalisation de IIS 7.0 rôles et des Modules](https://technet.microsoft.com/library/cc627313.aspx)
-* [IIS`<system.webServer>`](https://www.iis.net/configreference/system.webserver)
+* [IIS`<system.webServer>`](https://docs.microsoft.com/iis/configuration/system.webServer/)

@@ -11,11 +11,11 @@ ms.assetid: 3606b251-8324-4485-8d52-582a2cd5cffb
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/extensibility/key-management
-ms.openlocfilehash: fb74905660015b9a83503e1f74b25c66ae9df9e3
-ms.sourcegitcommit: bd05f7ea8f87ad076ef6e8b704698ebcba5ca80c
+ms.openlocfilehash: ed84b6dc257d5fd9e4c1cf6106df3c8bd6e14f64
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="key-management-extensibility"></a>Extensibilité de la gestion de clés
 
@@ -37,11 +37,11 @@ L’interface IKey est la représentation sous forme de base d’une clé dans l
 
 * Identificateur de clé (GUID)
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 En outre, IKey expose une méthode CreateEncryptor qui peut être utilisée pour créer un [IAuthenticatedEncryptor](core-crypto.md#data-protection-extensibility-core-crypto-iauthenticatedencryptor) instance liée à cette clé.
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 En outre, IKey expose une méthode CreateEncryptorInstance qui peut être utilisée pour créer un [IAuthenticatedEncryptor](core-crypto.md#data-protection-extensibility-core-crypto-iauthenticatedencryptor) instance liée à cette clé.
 
@@ -67,11 +67,11 @@ L’interface IKeyManager représente un objet responsable de la manipulation, l
 
 ## <a name="xmlkeymanager"></a>XmlKeyManager
 
-Le type de XmlKeyManager est l’implémentation concrète de la boîte de réception de IKeyManager. Il fournit plusieurs installations utiles, y compris le dépôt de clé et le chiffrement des clés au repos. Dans ce système, les clés sont représentées comme des éléments XML (en particulier, [XElement](https://msdn.microsoft.com/library/system.xml.linq.xelement(v=vs.110).aspx)).
+Le type de XmlKeyManager est l’implémentation concrète de la boîte de réception de IKeyManager. Il fournit plusieurs installations utiles, y compris le dépôt de clé et le chiffrement des clés au repos. Dans ce système, les clés sont représentées comme des éléments XML (en particulier, [XElement](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/linq/xelement-class-overview).
 
 XmlKeyManager dépend de plusieurs autres composants au cours de l’exécution de ses tâches :
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 * AlgorithmConfiguration, qui détermine les algorithmes utilisés par les nouvelles clés.
 
@@ -81,7 +81,7 @@ XmlKeyManager dépend de plusieurs autres composants au cours de l’exécution 
 
 * IKeyEscrowSink de [facultatif], qui fournit des services de clé (Key escrow).
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 * IXmlRepository, qui contrôle où les clés sont rendues persistantes dans le stockage.
 
@@ -93,7 +93,7 @@ XmlKeyManager dépend de plusieurs autres composants au cours de l’exécution 
 
 Vous trouverez ci-dessous des diagrammes de haut niveau qui indiquent la façon dont ces composants sont reliés dans XmlKeyManager.
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
    ![Création de la clé](key-management/_static/keycreation2.png)
 
@@ -101,7 +101,7 @@ Vous trouverez ci-dessous des diagrammes de haut niveau qui indiquent la façon 
 
 Dans l’implémentation de CreateNewKey, le composant AlgorithmConfiguration est utilisé pour créer un IAuthenticatedEncryptorDescriptor unique, qui est ensuite sérialisé au format XML. Si un récepteur de clé (Key escrow) est présent, les données XML brutes (non chiffré) est fourni pour le récepteur pour le stockage à long terme. Le code XML non chiffré est alors exécuté via un IXmlEncryptor (si nécessaire) pour générer le document XML chiffré. Ce document chiffré est enregistré sur le stockage à long terme via la IXmlRepository. (Si aucun IXmlEncryptor n’est configuré, le document non chiffré est persistante dans le IXmlRepository).
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
    ![Création de la clé](key-management/_static/keycreation1.png)
 
@@ -111,11 +111,11 @@ Dans l’implémentation de CreateNewKey, le composant IAuthenticatedEncryptorCo
 
 ---
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
    ![Récupération de clés](key-management/_static/keyretrieval2.png)
    
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
    ![Récupération de clés](key-management/_static/keyretrieval1.png)
 

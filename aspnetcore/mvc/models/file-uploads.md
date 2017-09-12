@@ -11,15 +11,15 @@ ms.assetid: ebc98159-a028-4a94-b06c-43981c79c6be
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/models/file-uploads
-ms.openlocfilehash: 78cc9cd846f9b0963dbba9069c86ca295f7a32e4
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 3d42fd0657bcfb4b0fdab699bbcb572e5736688c
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="file-uploads-in-aspnet-core"></a>Téléchargements de fichiers dans ASP.NET Core
 
-Par [Steve Smith](http://ardalis.com)
+Par [Steve Smith](https://ardalis.com/)
 
 Actions d’ASP.NET MVC prend en charge le téléchargement d’un ou plusieurs fichiers à l’aide d’un modèle simple pour les fichiers plus petits de liaison ou de diffusion en continu pour les fichiers plus volumineux.
 
@@ -75,7 +75,7 @@ Lors du téléchargement de fichiers à l’aide de la liaison de modèle et la 
 
 [!code-csharp[Main](file-uploads/sample/FileUploadSample/Controllers/UploadFilesController.cs?name=snippet1)]
 
-Les fichiers téléchargés à l’aide de la `IFormFile` technique sont mis en mémoire tampon en mémoire ou sur disque sur le serveur web avant d’être traité. À l’intérieur de la méthode d’action, le `IFormFile` contenu est accessible en tant que flux. Outre le système de fichiers local, des fichiers peuvent être diffusées à [le stockage Blob Azure](https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-blobs) ou [Entity Framework](https://docs.microsoft.com/ef/core/index).
+Les fichiers téléchargés à l’aide de la `IFormFile` technique sont mis en mémoire tampon en mémoire ou sur disque sur le serveur web avant d’être traité. À l’intérieur de la méthode d’action, le `IFormFile` contenu est accessible en tant que flux. Outre le système de fichiers local, des fichiers peuvent être diffusées à [le stockage Blob Azure](https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-blobs/) ou [Entity Framework](https://docs.microsoft.com/ef/core/index).
 
 Pour stocker les données de fichier binaire dans une base de données à l’aide d’Entity Framework, définir une propriété de type `byte[]` sur l’entité :
 
@@ -197,7 +197,7 @@ Le paramètre par défaut est `30000000`, qui est d’environ 28,6 Mo. La valeur
 </system.webServer>
 ```
 
-Ce paramètre s’applique uniquement à IIS. Le comportement ne se produit par défaut lors de l’hébergement sur Kestrel. Pour plus d’informations, consultez [limites des demandes \<requestLimits\>](https://www.iis.net/configreference/system.webserver/security/requestfiltering/requestlimits).
+Ce paramètre s’applique uniquement à IIS. Le comportement ne se produit par défaut lors de l’hébergement sur Kestrel. Pour plus d’informations, consultez [limites des demandes \<requestLimits\>](https://docs.microsoft.com/iis/configuration/system.webServer/security/requestFiltering/requestLimits/).
 
 ### <a name="null-reference-exception-with-iformfile"></a>Exception de référence null avec IFormFile
 

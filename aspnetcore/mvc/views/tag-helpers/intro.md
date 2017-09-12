@@ -11,15 +11,15 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/tag-helpers/intro
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 8b1de37d93f5dca2d6b6be24c429b5971692e17e
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 53a31ed8ca6ff24a19a33a56c3a896aa58cbb62a
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="introduction-to-tag-helpers-in-aspnet-core"></a>Introduction aux applications d’assistance de balise dans ASP.NET Core 
 
-Par [Rick Anderson](https://twitter.com/RickAndMSFT)
+De [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 ## <a name="what-are-tag-helpers"></a>Quels sont les programmes d’assistance de balise ?
 
@@ -151,7 +151,7 @@ Dès qu’un attribut d’assistance de balise est entré, les polices de balise
 
 ![image](intro/_static/labelaspfor2.png)
 
-Vous pouvez entrer le Visual Studio *CompleteWord* contextuel (Ctrl + espace est la [par défaut](https://msdn.microsoft.com/library/da5kh0wa.aspx)) à l’intérieur des guillemets doubles (« »), et vous êtes maintenant en c#, tout comme vous serait dans une classe c#. IntelliSense affiche toutes les méthodes et propriétés sur le modèle de page. Les méthodes et propriétés sont disponibles, car le type de propriété est `ModelExpression`. Dans l’image ci-dessous, je vais modifier le `Register` vue, donc la `RegisterViewModel` n’est disponible.
+Vous pouvez entrer le Visual Studio *CompleteWord* contextuel (Ctrl + espace est la [par défaut](https://docs.microsoft.com/visualstudio/ide/default-keyboard-shortcuts-in-visual-studio) à l’intérieur des guillemets doubles (« »), et vous êtes maintenant en c#, tout comme vous serait dans une classe c#. IntelliSense affiche toutes les méthodes et propriétés sur le modèle de page. Les méthodes et propriétés sont disponibles, car le type de propriété est `ModelExpression`. Dans l’image ci-dessous, je vais modifier le `Register` vue, donc la `RegisterViewModel` n’est disponible.
 
 ![image](intro/_static/intellemail.png)
 
@@ -169,7 +169,7 @@ Programmes d’assistance de balise attachement à des éléments HTML dans les 
 @Html.Label("FirstName", "First Name:", new {@class="caption"})
 ```
 
-Au (`@`) symbole indique Razor correspond au début du code. Les deux paramètres (« FirstName » et « prénom : ») sont des chaînes, par conséquent, [IntelliSense](https://msdn.microsoft.com/library/hcw1s69b.aspx) ne peut aider. Le dernier argument :
+Au (`@`) symbole indique Razor correspond au début du code. Les deux paramètres (« FirstName » et « prénom : ») sont des chaînes, par conséquent, [IntelliSense](https://docs.microsoft.com/visualstudio/ide/using-intellisense) ne peut aider. Le dernier argument :
 
 ```html
 new {@class="caption"}
@@ -245,7 +245,7 @@ L’éditeur Visual Studio vous permet d’écrire **tous les** du balisage dans
 
 * Contrôles serveur Web utilisent des convertisseurs de type pour convertir des chaînes en objets. Avec les programmes d’assistance de balise, vous travaillez en mode natif en c#, vous n’avez pas besoin effectuer une conversion de type.
 
-* Utilisation de contrôles serveur Web [System.ComponentModel](https://msdn.microsoft.com/library/system.componentmodel%28v=vs.110%29.aspx) pour implémenter le comportement d’exécution et au moment du design des composants et des contrôles. `System.ComponentModel`inclut les classes de base et les interfaces pour l’implémentation des attributs et des convertisseurs de type, sources de liaison aux données et les licences des composants. Comparez cela à des programmes d’assistance de balise, généralement dérivés de `TagHelper`et le `TagHelper` classe de base expose deux méthodes uniquement `Process` et `ProcessAsync`.
+* Utilisation de contrôles serveur Web [System.ComponentModel](https://docs.microsoft.com/dotnet/api/system.componentmodel) pour implémenter le comportement d’exécution et au moment du design des composants et des contrôles. `System.ComponentModel`inclut les classes de base et les interfaces pour l’implémentation des attributs et des convertisseurs de type, sources de liaison aux données et les licences des composants. Comparez cela à des programmes d’assistance de balise, généralement dérivés de `TagHelper`et le `TagHelper` classe de base expose deux méthodes uniquement `Process` et `ProcessAsync`.
 
 ## <a name="customizing-the-tag-helper-element-font"></a>Personnalisation de la police d’élément d’assistance de balise
 
@@ -255,7 +255,7 @@ Vous pouvez personnaliser la police et la colorisation de **outils** > **Options
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-* [Création de programmes d’assistance de balise](authoring.md)
+* [Création de Tag Helpers](authoring.md)
 * [Utilisation des formulaires](../working-with-forms.md)
 * [TagHelperSamples sur GitHub](https://github.com/dpaquette/TagHelperSamples) contient des exemples d’assistance de balise pour l’utilisation des [Bootstrap](http://getbootstrap.com/).
 

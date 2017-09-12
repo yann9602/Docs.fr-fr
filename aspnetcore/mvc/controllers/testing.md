@@ -11,15 +11,15 @@ ms.assetid: dd4135ec-2b15-410c-b3fb-3d12eed4a1ac
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/testing
-ms.openlocfilehash: d5b2bd0200082000aeaf8015cfff9c8c1ec1bdd9
-ms.sourcegitcommit: 5355c96a1768e5a1d5698a98c190e7addcc4ded5
+ms.openlocfilehash: e8a464e75dea3a0ec08c13a11888884e6bb6a4c7
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="testing-controller-logic-in-aspnet-core"></a>Pour tester la logique de contrôleur dans ASP.NET Core
 
-Par [Steve Smith](http://ardalis.com)
+Par [Steve Smith](https://ardalis.com/)
 
 Contrôleurs dans les applications ASP.NET MVC doivent être petit et se concentrent sur les problèmes d’interface utilisateur. Contrôleurs de grande taille qui traitent des problèmes d’interface utilisateur sont plus difficiles à tester et mettre à jour.
 
@@ -47,7 +47,7 @@ Responsabilités du contrôleur classique :
 Si vous écrivez des filtres personnalisés, itinéraires, etc., vous devez le test unitaire leur, mais pas dans le cadre de vos tests sur une action de contrôleur spécifique. Ils doivent être testées de manière isolée.
 
 > [!TIP]
-> [Créer et exécuter des tests unitaires avec Visual Studio](https://www.visualstudio.com/get-started/code/create-and-run-unit-tests-vs).
+> [Créer et exécuter des tests unitaires avec Visual Studio](https://www.visualstudio.com/docs/code/create-and-run-unit-tests-vs).
 
 Pour illustrer les tests unitaires, passez en revue le contrôleur suivant. Il affiche la liste des sessions de réflexion et permet de nouvelles sessions sont créés avec une publication de réflexion :
 

@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/app-secrets
-ms.openlocfilehash: 99a1129549d6b9802315c7e5accfa22907994a41
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 56214c2fbdca84591c5c1a6b7f2451f33ee64ef0
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="safe-storage-of-app-secrets-during-development-in-aspnet-core"></a>Stockage sécurisé des secrets d’application pendant le développement dans ASP.NET Core
 
@@ -37,7 +37,7 @@ Par exemple, si vous créez une application web ASP.NET Core avec les comptes d�
 
 ## <a name="secret-manager"></a>Gestionnaire de clé secrète
 
-L’outil Gestionnaire de secret principal stocke des données sensibles pour les travaux de développement en dehors de l’arborescence de votre projet. L’outil Gestionnaire de la clé secrète est un outil de projet qui peut être utilisé pour stocker des secrets pour un [.NET Core](https://microsoft.com/net/core) projet pendant le développement. Avec l’outil Gestionnaire de la clé secrète, vous pouvez associer des secrets de l’application à un projet spécifique et les partager entre plusieurs projets.
+L’outil Gestionnaire de secret principal stocke des données sensibles pour les travaux de développement en dehors de l’arborescence de votre projet. L’outil Gestionnaire de la clé secrète est un outil de projet qui peut être utilisé pour stocker des secrets pour un [.NET Core](https://www.microsoft.com/net/core) projet pendant le développement. Avec l’outil Gestionnaire de la clé secrète, vous pouvez associer des secrets de l’application à un projet spécifique et les partager entre plusieurs projets.
 
 >[!WARNING]
 > Le Gestionnaire du Secret ne chiffre pas les clés secrètes stockées et ne doit pas être considérée comme un magasin approuvé. Il est uniquement à des fins de développement. Les clés et valeurs sont stockées dans un fichier de configuration JSON dans le répertoire de profil utilisateur.

@@ -11,11 +11,11 @@ ms.assetid: 1fb6fdc2-e199-4469-9012-b909d1913422
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/models/custom-formatters
-ms.openlocfilehash: 0285b40cfacb79745d3a6488401677130f55a95b
-ms.sourcegitcommit: 6ece943781d8a56784bb6160f14da85210d3fcea
+ms.openlocfilehash: 792e007232c751d3db9dc5e50adbedfb2bb1a7ae
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="custom-formatters-in-aspnet-core-mvc-web-apis"></a>Formateurs personnalisés dans les API de web ASP.NET MVC de base
 
@@ -29,7 +29,7 @@ ASP.NET Core MVC prend en charge pour l’échange de données dans l’API web 
 
 Utiliser un formateur personnalisé lorsque vous souhaitez que le [négociation de contenu](xref:mvc/models/formatting) processus pour prendre en charge un type de contenu qui n’est pas pris en charge par les formateurs intégrés (JSON, XML et texte brut).
 
-Par exemple, si certains des clients de votre API web peuvent gérer le [Protobuf](https://github.com/google/protobuf) format, vous souhaiterez utiliser Protobuf avec ces clients car il est plus efficace.  Vous pouvez également votre API web pour envoyer les noms de contact et les adresses de [vCard](https://en.wikipedia.org/wiki/VCard) format, un format couramment utilisé pour échanger des données de contact. L’exemple d’application fourni avec cet article implémente un formateur vCard simple.
+Par exemple, si certains des clients de votre API web peuvent gérer le [Protobuf](https://github.com/google/protobuf) format, vous souhaiterez utiliser Protobuf avec ces clients car il est plus efficace.  Vous pouvez également votre API web pour envoyer les noms de contact et les adresses de [vCard](https://wikipedia.org/wiki/VCard) format, un format couramment utilisé pour échanger des données de contact. L’exemple d’application fourni avec cet article implémente un formateur vCard simple.
 
 ## <a name="overview-of-how-to-use-a-custom-formatter"></a>Vue d’ensemble de l’utilisation d’un formateur personnalisé
 

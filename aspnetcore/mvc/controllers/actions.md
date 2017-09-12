@@ -11,15 +11,15 @@ ms.assetid: 9da9eb52-8583-4069-af91-155ba3529d7f
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/actions
-ms.openlocfilehash: b7d6341c0312b3f5f122acfb2ee01210151b33bb
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 5dc6c7dc70027bb79875f389d535119a2543b873
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="handling-requests-with-controllers-in-aspnet-core-mvc"></a>La gestion des requêtes avec des contrôleurs dans ASP.NET MVC de base
 
-Par [Steve Smith](http://ardalis.com) et [Scott Addie](https://github.com/scottaddie)
+Par [Steve Smith](https://ardalis.com/) et [Scott Addie](https://github.com/scottaddie)
 
 Contrôleurs, les actions et les résultats d’action sont un élément fondamental de comment créer des applications à l’aide d’ASP.NET MVC de base par les développeurs.
 
@@ -38,7 +38,7 @@ Un contrôleur est une classe Instanciable dans laquelle au moins une des condit
 
 Une classe de contrôleur ne doit pas être associé à `[NonController]` attribut.
 
-Contrôleurs doivent suivre le [principe de dépendances explicites](http://deviq.com/explicit-dependencies-principle). Il existe deux approches pour implémenter ce principe. Si plusieurs actions de contrôleur nécessitent le même service, envisagez d’utiliser [injection de constructeur](xref:mvc/controllers/dependency-injection#constructor-injection) pour demander ces dépendances. Si le service est requis par une seule méthode d’action unique, envisagez d’utiliser [Action Injection](xref:mvc/controllers/dependency-injection#action-injection-with-fromservices) pour demander la dépendance.
+Contrôleurs doivent suivre le [principe de dépendances explicites](http://deviq.com/explicit-dependencies-principle/). Il existe deux approches pour implémenter ce principe. Si plusieurs actions de contrôleur nécessitent le même service, envisagez d’utiliser [injection de constructeur](xref:mvc/controllers/dependency-injection#constructor-injection) pour demander ces dépendances. Si le service est requis par une seule méthode d’action unique, envisagez d’utiliser [Action Injection](xref:mvc/controllers/dependency-injection#action-injection-with-fromservices) pour demander la dépendance.
 
 Dans le **M**odèle -**V**UE -**C**ontroller modèle, un contrôleur est chargé pour le traitement initial de la demande et l’instanciation du modèle. En règle générale, les décisions commerciales doivent être effectuées dans le modèle.
 
@@ -104,6 +104,6 @@ Plus un filtrage des attributs, tels que `[Authorize]`, peuvent être appliquée
 
 Gestion des erreurs et la réponse mise en cache sont souvent des problèmes transversaux :
    * [Gestion des erreurs](xref:mvc/controllers/filters#exception-filters)
-   * [Réponse mise en cache](xref:performance/caching/response)
+   * [Mise en cache des réponses](xref:performance/caching/response)
 
 Nombreux problèmes transversaux peuvent être gérées à l’aide de filtres ou personnalisé [intergiciel (middleware)](xref:fundamentals/middleware).

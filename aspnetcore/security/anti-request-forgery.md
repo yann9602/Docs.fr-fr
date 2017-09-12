@@ -9,15 +9,15 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/anti-request-forgery
-ms.openlocfilehash: 466453bff68f3e0da8b90924edb13095c7548db5
-ms.sourcegitcommit: 4f075f2c22c5a4b5345ffa759be4365824110788
+ms.openlocfilehash: 3c0f90dd9894c362c0d7fef5d1f1da076991605c
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/14/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="preventing-cross-site-request-forgery-xsrfcsrf-attacks-in-aspnet-core"></a>Prévention des attaques Cross-Site Request Forgery (XSRF/CSRF) ASP.NET Core
 
-[Steve Smith](http://ardalis.com/), [Fiyaz Hasan](https://twitter.com/FiyazBinHasan), et [Rick Anderson](https://twitter.com/RickAndMSFT)
+[Steve Smith](https://ardalis.com/), [Fiyaz Hasan](https://twitter.com/FiyazBinHasan), et [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 ## <a name="what-attack-does-anti-forgery-prevent"></a>Les attaques anti-contrefaçon n’empêche ?
 
@@ -354,7 +354,7 @@ Lorsqu’un utilisateur est connecté à un système, une session utilisateur es
 
 ### <a name="user-tokens"></a>Jetons d’utilisateur
 
-L’authentification basée sur le jeton ne stocke pas session sur le serveur. En revanche, lorsqu’un utilisateur est connecté, ils sont émis un jeton (pas un jeton côté). Ce jeton conserve toutes les données qui sont nécessaire pour valider le jeton. Il contient également des informations d’utilisateur, sous la forme de [revendications](https://msdn.microsoft.com/library/ff359101.aspx). Lorsqu’un utilisateur souhaite accéder à une ressource de serveur nécessitant une authentification, le jeton est envoyé au serveur avec un en-tête d’autorisation supplémentaires sous forme de porteur {jeton}. Cela rend l’application sans état, car dans chaque demande ultérieure le jeton est passé dans la demande pour la validation côté serveur. Ce jeton n’est pas *chiffrées*; il s’agit plutôt *codé*. Sur le côté serveur, le jeton peut être décodé pour accéder aux informations brutes dans le jeton. Pour envoyer le jeton dans les demandes suivantes, vous pouvez soit l’enregistrer dans le stockage local du navigateur ou dans un cookie. Vous n’avez pas à vous soucier de vulnérabilité XSRF si ce dernier est stocké dans le stockage local, mais il s’agit d’un problème si le jeton est stocké dans un cookie.
+L’authentification basée sur le jeton ne stocke pas session sur le serveur. En revanche, lorsqu’un utilisateur est connecté, ils sont émis un jeton (pas un jeton côté). Ce jeton conserve toutes les données qui sont nécessaire pour valider le jeton. Il contient également des informations d’utilisateur, sous la forme de [revendications](https://docs.microsoft.com/dotnet/framework/security/claims-based-identity-model). Lorsqu’un utilisateur souhaite accéder à une ressource de serveur nécessitant une authentification, le jeton est envoyé au serveur avec un en-tête d’autorisation supplémentaires sous forme de porteur {jeton}. Cela rend l’application sans état, car dans chaque demande ultérieure le jeton est passé dans la demande pour la validation côté serveur. Ce jeton n’est pas *chiffrées*; il s’agit plutôt *codé*. Sur le côté serveur, le jeton peut être décodé pour accéder aux informations brutes dans le jeton. Pour envoyer le jeton dans les demandes suivantes, vous pouvez soit l’enregistrer dans le stockage local du navigateur ou dans un cookie. Vous n’avez pas à vous soucier de vulnérabilité XSRF si ce dernier est stocké dans le stockage local, mais il s’agit d’un problème si le jeton est stocké dans un cookie.
 
 ### <a name="multiple-applications-are-hosted-in-one-domain"></a>Plusieurs applications sont hébergées dans un domaine
 

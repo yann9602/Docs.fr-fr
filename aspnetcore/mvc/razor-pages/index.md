@@ -10,11 +10,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/razor-pages/index
-ms.openlocfilehash: 9301b99aed8fcb3bef91abf0fb269c4052cdb7e2
-ms.sourcegitcommit: 87900dffec8ad84a0f74357b23343e215f354dcb
+ms.openlocfilehash: 543399d99af127f943f7e9119fb5d84c8c5bc499
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/01/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>Présentation des pages Razor dans ASP.NET Core
 
@@ -28,7 +28,7 @@ Si vous avez besoin d’un didacticiel qui utilise l’approche Model-View-Contr
 
 ## <a name="aspnet-core-20-prerequisites"></a>Prérequis d’ASP.NET Core 2.0
 
-Installez [.NET Core](https://dot.net/core) 2.0.0 ou ultérieur.
+Installez [.NET Core](https://www.microsoft.com/net/core) 2.0.0 ou ultérieur.
 
 Si vous utilisez Visual Studio, installez [Visual Studio](https://www.visualstudio.com/vs/) 15.3 ou ultérieur avec les charges de travail suivantes :
 
@@ -222,7 +222,7 @@ Ajoutez un fichier *Pages/_ViewImports.cshtml* :
 
 [!code-cshtml[main](index/sample/RazorPagesContacts2/Pages/_ViewImports.cshtml)]
 
-`@namespace` est expliqué plus loin dans le didacticiel. La directive `@addTagHelper` permet de bénéficier des [Tag Helpers intégrés](https://docs.microsoft.com/aspnet/core/mvc/views/tag-helpers/built-in/) dans toutes les pages du dossier *Pages*.
+`@namespace` est expliqué plus loin dans le didacticiel. La directive `@addTagHelper` permet de bénéficier des [Tag Helpers intégrés](xref:mvc/views/tag-helpers/builtin-th/Index) dans toutes les pages du dossier *Pages*.
 
 <a name="namespace"></a>
 

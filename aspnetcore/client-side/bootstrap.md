@@ -11,17 +11,17 @@ ms.assetid: bd27832c-2877-4b7b-9337-e009361d845f
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/bootstrap
-ms.openlocfilehash: ff734c884a60d51a1703f6444cf6d2d49e9bffb0
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: fc00bcce24d586865bf6a1d3f2f7e782a2f1c703
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="building-beautiful-responsive-sites-with-bootstrap"></a>Création de sites et attrayantes et réactives avec les données d’amorçage
 
 <a name=bootstrap-index></a>
 
-Par [Steve Smith](http://ardalis.com)
+Par [Steve Smith](https://ardalis.com/)
 
 Programme d’amorçage est actuellement l’infrastructure web les plus populaires pour le développement d’applications web réactives. Il offre un nombre de fonctionnalités et avantages qui peuvent améliorer l’expérience de vos utilisateurs avec votre site web, si vous êtes un utilisateur débutant à la conception frontale et de développement ou d’un expert. Programme d’amorçage est déployé en tant qu’ensemble de fichiers CSS et JavaScript et est conçu pour évoluer vos application ou un site efficacement des téléphones jusqu’aux tablettes aux ordinateurs de bureau.
 

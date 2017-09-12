@@ -11,15 +11,15 @@ ms.assetid: ebd98159-a028-4a94-b06c-43981c79c6be
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/advanced/custom-model-binding
-ms.openlocfilehash: 8dae9cf1597ae2bddf2943af4a7ab9d50620825b
-ms.sourcegitcommit: 26166785ad181a8519cb008800d71d96499b0499
+ms.openlocfilehash: 2b95073bc0972908d0c0b2158a036e4374c7df4d
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/01/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="custom-model-binding"></a>Liaison de modèle personnalisé
 
-Par [Steve Smith](http://ardalis.com)
+Par [Steve Smith](https://ardalis.com/)
 
 Liaison de modèle autorise les actions de contrôleur travailler directement avec les types de modèle (transmis en tant qu’arguments de méthode), plutôt que les requêtes HTTP. Mappage entre les modèles de données et votre application demande entrantes est gérée par les classeurs de modèles. Les développeurs peuvent étendre les fonctionnalités de liaison de modèle intégrée en implémentant des classeurs de modèles personnalisés (même si en règle générale, vous n’avez pas besoin d’écrire votre propre fournisseur).
 
@@ -137,4 +137,4 @@ Ajout de votre fournisseur à la fin de la collection peut entraîner un classeu
 Classeurs de modèles personnalisé :
 - Déconseillé définir les codes d’état ou de retourner des résultats (par exemple, 404 introuvable). En cas de liaison de modèle, un [filtre d’action](xref:mvc/controllers/filters) ou logique dans la méthode d’action doit gérer l’échec.
 - Sont particulièrement utiles pour la suppression du code répétitif et problèmes transversaux à partir des méthodes d’action.
-- Ne doit généralement pas être utilisé pour convertir une chaîne en un type personnalisé, un [ `TypeConverter` ](https://msdn.microsoft.com/library/ayybcxe5.aspx) est généralement une meilleure option.
+- Ne doit généralement pas être utilisé pour convertir une chaîne en un type personnalisé, un [ `TypeConverter` ](https://docs.microsoft.com//dotnet/api/system.componentmodel.typeconverter) est généralement une meilleure option.

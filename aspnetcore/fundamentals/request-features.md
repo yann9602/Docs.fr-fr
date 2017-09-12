@@ -11,15 +11,15 @@ ms.assetid: d1fbd23c-2ff9-4216-b908-0201ff3afb7c
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/request-features
-ms.openlocfilehash: e8d04ef7df34fe1421b2c52f137511fc6baae674
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: a10aefe3819fb03019575c36274dd164faf7086c
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="request-features-in-aspnet-core"></a>Fonctionnalités de demande dans ASP.NET Core
 
-Par [Steve Smith](http://ardalis.com)
+Par [Steve Smith](https://ardalis.com/)
 
 Détails de l’implémentation serveur Web relatifs aux demandes HTTP et les réponses sont définies dans les interfaces. Ces interfaces sont utilisées par les implémentations de serveur et d’intergiciel (middleware) pour créer et modifier le pipeline d’hébergement de l’application.
 
@@ -78,4 +78,4 @@ Fonctionnalité interfaces définissent des fonctionnalités HTTP spécifiques u
 
 * [Intergiciel (middleware)](middleware.md)
 
-* [Ouvrir l’Interface Web pour .NET (OWIN)](owin.md)
+* [OWIN (Open Web Interface pour .NET)](owin.md)

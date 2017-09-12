@@ -4,7 +4,7 @@ Contoso University illustre l’utilisation de Entity Framework Core dans une ap
 
 ## <a name="build-it-from-scratch"></a>Générer à partir de zéro
 
-Vous pouvez générer l’application en suivant les étapes dans [une série de didacticiels](https://docs.asp.net/en/latest/data/ef-mvc/intro.html).
+Vous pouvez générer l’application en suivant les étapes dans [une série de didacticiels](https://docs.microsoft.com/aspnet/core/data/ef-mvc/intro).
 
 ## <a name="download-it"></a>Télécharger
 

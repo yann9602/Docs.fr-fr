@@ -12,15 +12,15 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: performance/caching/memory
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: f872cd0c355f7961ae8628c28c62d3b51c8db2c5
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 1e2d43d837ba76c6ef8b5136f3751edb44d6606a
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="introduction-to-in-memory-caching-in-aspnet-core"></a>Introduction à la mise en cache dans ASP.NET Core
 
-Par [Rick Anderson](https://twitter.com/RickAndMSFT), [John Luo](https://github.com/JunTaoLuo), et [Steve Smith](http://ardalis.com)
+Par [Rick Anderson](https://twitter.com/RickAndMSFT), [John Luo](https://github.com/JunTaoLuo), et [Steve Smith](https://ardalis.com/)
 
 [Afficher ou télécharger l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/memory/sample)
 
@@ -28,7 +28,7 @@ Par [Rick Anderson](https://twitter.com/RickAndMSFT), [John Luo](https://github.
 
 La mise en cache peut améliorer considérablement les performances et l’évolutivité d’une application en réduisant le travail requis pour générer le contenu. Mise en cache fonctionne mieux avec les données qui sont rarement modifiées. Mise en cache permet une copie des données qui peuvent être renvoyées beaucoup plus rapidement qu’à partir de la source d’origine. Vous devez écrire et tester votre application pour jamais dépendent des données mises en cache.
 
-ASP.NET Core prend en charge plusieurs caches différents. Le cache de la plus simple est basé sur le [IMemoryCache](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.imemorycache), qui représente un cache stocké dans la mémoire du serveur web. Les applications qui s’exécutent sur une batterie de serveurs de plusieurs serveurs devraient vous assurer que les sessions rémanentes lors de l’utilisation du cache en mémoire. Sessions rémanentes Assurez-vous que les requêtes ultérieures à partir d’un client tous les dirigé vers le même serveur. Par exemple, les utilisation d’applications Web Azure [Application Request Routing](http://www.iis.net/learn/extensions/planning-for-arr) (ARR) pour router toutes les demandes ultérieures au même serveur.
+ASP.NET Core prend en charge plusieurs caches différents. Le cache de la plus simple est basé sur le [IMemoryCache](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.imemorycache), qui représente un cache stocké dans la mémoire du serveur web. Les applications qui s’exécutent sur une batterie de serveurs de plusieurs serveurs devraient vous assurer que les sessions rémanentes lors de l’utilisation du cache en mémoire. Sessions rémanentes Assurez-vous que les requêtes ultérieures à partir d’un client tous les dirigé vers le même serveur. Par exemple, les utilisation d’applications Web Azure [Application Request Routing](https://www.iis.net/learn/extensions/planning-for-arr) (ARR) pour router toutes les demandes ultérieures au même serveur.
 
 Sessions non persistantes dans une batterie de serveurs web nécessitent un [cache distribué](distributed.md) pour éviter les problèmes de cohérence du cache. Pour certaines applications, un cache distribué peut prendre en charge la plus élevée de montée en charge qu’un cache en mémoire. À l’aide d’un cache distribué permet de décharger la mémoire cache pour un processus externe. 
 
@@ -100,5 +100,5 @@ L’exemple suivant montre comment le point d’expirer une entrée de cache si 
 
 ### <a name="other-resources"></a>Autres ressources
 
-* [Utilisation avec un Cache distribué](distributed.md)
+* [Utilisation d’un cache distribué](distributed.md)
 * [Intergiciel (middleware) mise en cache de réponse](middleware.md)

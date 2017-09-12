@@ -11,11 +11,11 @@ ms.assetid: d026a58c-67f4-411e-a410-c35f29c2c517
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/implementation/context-headers
-ms.openlocfilehash: 16da0a4f78875ee26fa9ca7c9920b8dafd0ce417
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 7befd983f6a45839868639708ec5cf45bf2df35f
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="context-headers"></a>En-têtes de contexte
 
@@ -23,7 +23,7 @@ ms.lasthandoff: 08/11/2017
 
 ## <a name="background-and-theory"></a>La théorie et arrière-plan
 
-Dans le système de protection de données, une « clé » signifie un objet qui peut fournir authentifié de services de chiffrement. Chaque clé est identifiée par un id unique (GUID), et elle comporte des informations algorithmiques et matériels entropic. Il vise que chaque clé contenir entropie unique, mais le système ne peut pas appliquer qui, et nous devons également prendre en compte pour les développeurs qui peuvent changer l’anneau de clé manuellement en modifiant les informations algorithmiques d’une clé existante dans l’anneau de clé. Pour atteindre nos exigences de sécurité étant donnés ces cas, le système de protection de données a un concept de [agilité de chiffrement](http://research.microsoft.com/apps/pubs/default.aspx?id=121045), ce qui permet en toute sécurité à l’aide d’une seule valeur entropic entre plusieurs algorithmes de chiffrement.
+Dans le système de protection de données, une « clé » signifie un objet qui peut fournir authentifié de services de chiffrement. Chaque clé est identifiée par un id unique (GUID), et elle comporte des informations algorithmiques et matériels entropic. Il vise que chaque clé contenir entropie unique, mais le système ne peut pas appliquer qui, et nous devons également prendre en compte pour les développeurs qui peuvent changer l’anneau de clé manuellement en modifiant les informations algorithmiques d’une clé existante dans l’anneau de clé. Pour atteindre nos exigences de sécurité étant donnés ces cas, le système de protection de données a un concept de [agilité de chiffrement](https://www.microsoft.com/research/publication/cryptographic-agility-and-its-relation-to-circular-encryption/?from=http%3A%2F%2Fresearch.microsoft.com%2Fapps%2Fpubs%2Fdefault.aspx%3Fid%3D121045), ce qui permet en toute sécurité à l’aide d’une seule valeur entropic entre plusieurs algorithmes de chiffrement.
 
 Pour cela, la plupart des systèmes qui prennent en charge agilité de chiffrement, y compris des informations d’identification sur l’algorithme à l’intérieur de la charge utile. Les OID de l’algorithme est généralement un bon candidat pour cela. Toutefois, nous avons rencontré un problème est qu’il existe plusieurs manières de spécifier le même algorithme : « AES » (CNG) et gérés Aes, AesManaged, AesCryptoServiceProvider, AesCng et RijndaelManaged (si les paramètres spécifiques) classes sont toutes en fait les mêmes chose et nous devez mettre à jour un mappage de tous ces éléments à l’identificateur d’objet correct. Si un développeur souhaitiez fournir un algorithme personnalisé (ou même une autre implémentation d’AES), ils auraient pas pour nous dire son OID. Cette étape d’inscription supplémentaires rend la configuration du système particulièrement difficile.
 
@@ -53,7 +53,7 @@ L’en-tête de contexte se compose des éléments suivants :
 
 Dans l’idéal, nous pourrions passer des vecteurs de zéros pour K_E et K_H. Toutefois, nous voulons éviter les situations où l’algorithme sous-jacent vérifie l’existence des clés faibles avant d’effectuer des opérations (notamment DES et 3DES), ce qui empêche à l’aide d’un modèle simple ou répétée comme un vecteur de zéros.
 
-Au lieu de cela, nous utilisons le KDF SP800-108 NIST en Mode de compteur (consultez [NIST SP800-108](http://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-108.pdf), s. 5.1) avec une clé de longueur nulle, étiquette, contexte et des HMACSHA512 comme le PRF sous-jacent. Nous utilisons | K_E | + | K_H | octets de sortie, puis décomposer le résultat K_E et K_H eux-mêmes. Mathématiquement, cela est représenté comme suit.
+Au lieu de cela, nous utilisons le KDF SP800-108 NIST en Mode de compteur (consultez [NIST SP800-108](http://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-108.pdf), s 5.1) avec une clé de longueur nulle, étiquette, contexte et des HMACSHA512 comme le PRF sous-jacent. Nous utilisons | K_E | + | K_H | octets de sortie, puis décomposer le résultat K_E et K_H eux-mêmes. Mathématiquement, cela est représenté comme suit.
 
 (K_E || K_H) = SP800_108_CTR (prf = HMACSHA512, clé = « », étiquette = « », contexte = « »)
 

@@ -12,15 +12,15 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/tag-helpers/authoring
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: f16af1184a29b891a9aab0b38ab833836c326c44
-ms.sourcegitcommit: e6a8f171f26fab1b2195a2d7f14e7d258a2e690e
+ms.openlocfilehash: 97013d06273c0993b74cdacfa16cb0d655c73667
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/23/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="authoring-tag-helpers-in-aspnet-core-a-walkthrough-with-samples"></a>Programmes d’assistance de balise dans ASP.NET Core, une procédure pas à pas avec les exemples de création
 
-Par [Rick Anderson](https://twitter.com/RickAndMSFT)
+De [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 [Afficher ou télécharger l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/tag-helpers/authoring/sample)
 
@@ -98,7 +98,7 @@ Mise à jour la `EmailTagHelper` classe par le code suivant :
 
 **Remarques :**
 
-* Noms de classe et la propriété casse Pascal pour les programmes d’assistance de balise sont traduites en leur [réduire les cas rapide](http://stackoverflow.com/questions/11273282/whats-the-name-for-dash-separated-case/12273101#12273101). Par conséquent, pour utiliser le `MailTo` attribut, vous allez utiliser `<email mail-to="value"/>` équivalent.
+* Noms de classe et la propriété casse Pascal pour les programmes d’assistance de balise sont traduites en leur [réduire les cas rapide](https://stackoverflow.com/questions/11273282/whats-the-name-for-dash-separated-case/12273101). Par conséquent, pour utiliser le `MailTo` attribut, vous allez utiliser `<email mail-to="value"/>` équivalent.
 
 * La dernière ligne définit le contenu terminé pour notre programme d’assistance de balise fonctionnel au minimum.
 
@@ -193,7 +193,7 @@ Vous pouvez également utiliser le `[HtmlTargetElement]` pour modifier le nom de
     
     **Remarques :**
     
-    * Comme mentionné précédemment, les programmes d’assistance de balise traduit les noms de classe C# casse Pascal et des propriétés pour les programmes d’assistance de balise dans [réduire les cas rapide](http://c2.com/cgi/wiki?KebabCase). Par conséquent, pour utiliser le `WebsiteInformationTagHelper` dans Razor, vous allez écrire `<website-information />`.
+    * Comme mentionné précédemment, les programmes d’assistance de balise traduit les noms de classe C# casse Pascal et des propriétés pour les programmes d’assistance de balise dans [réduire les cas rapide](http://wiki.c2.com/?KebabCase). Par conséquent, pour utiliser le `WebsiteInformationTagHelper` dans Razor, vous allez écrire `<website-information />`.
     
     * Vous ne sont pas identifiant explicitement l’élément cible avec le `[HtmlTargetElement]` attribut, la valeur par défaut de `website-information` sont ciblés. Si vous avez appliqué l’attribut suivant (Notez qu’il n’est pas rapide cas mais il correspond au nom de la classe) :
     
@@ -209,7 +209,7 @@ Vous pouvez également utiliser le `[HtmlTargetElement]` pour modifier le nom de
     
     * Les éléments qui sont de fermeture automatique ont aucun contenu. Pour cet exemple, le balisage Razor utilise une balise de fermeture automatique, mais l’application d’assistance de balise créeront un [section](http://www.w3.org/TR/html5/sections.html#the-section-element) élément (qui n’est pas une fermeture automatique et que vous écrivez le contenu à l’intérieur du `section` élément). Par conséquent, vous devez définir `TagMode` à `StartTagAndEndTag` pour écrire la sortie. Ou bien, vous pouvez placer en commentaire le paramètre de ligne `TagMode` et écrire les balises avec une balise de fermeture. (Le balisage de l’exemple est fourni plus loin dans ce didacticiel.)
     
-    * Le `$` (signe dollar) dans la ligne suivante utilise une [interpolées chaîne](https://msdn.microsoft.com/library/Dn961160.aspx):
+    * Le `$` (signe dollar) dans la ligne suivante utilise une [interpolées chaîne](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/interpolated-strings):
     
     ```cshtml
     $@"<ul><li><strong>Version:</strong> {Info.Version}</li>
@@ -272,11 +272,11 @@ L’application d’assistance de balise condition restitue la sortie lorsqu’i
 4.  Exécuter l’application et accédez à la page d’accueil. Le balisage de l’attribut conditional `div` ne sont pas rendus. Ajouter la chaîne de requête `?approved=true` à l’URL (par exemple, `http://localhost:1235/Home/Index?approved=true`). `approved`a la valeur true et que l’attribut conditional balisage s’affichera.
 
 >[!NOTE]
->Utilisez le [nameof](https://msdn.microsoft.com/library/dn986596.aspx) opérateur pour spécifier l’attribut cible, plutôt que de spécifier une chaîne comme vous le faisiez avec l’application d’assistance de balise en gras :
+>Utilisez le [nameof](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/nameof) opérateur pour spécifier l’attribut cible, plutôt que de spécifier une chaîne comme vous le faisiez avec l’application d’assistance de balise en gras :
 >
 >[!code-csharp[Main](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/zConditionTagHelperCopy.cs?highlight=1,2,5&range=5-18)]
 >
->Le [nameof](https://msdn.microsoft.com/library/dn986596.aspx) opérateur protège le code doit il jamais être refactorisé (nous voulons modifier le nom à `RedCondition`).
+>Le [nameof](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/nameof) opérateur protège le code doit il jamais être refactorisé (nous voulons modifier le nom à `RedCondition`).
 
 ### <a name="avoiding-tag-helper-conflicts"></a>Prévention des conflits d’application d’assistance de balise
 
@@ -289,7 +289,7 @@ Dans cette section, vous écrivez une paire de liaison automatique les programme
     [!code-csharp[Main](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/z1AutoLinker.cs?range=7-19)]
 
     >[!NOTE]
-    >Le `AutoLinkerHttpTagHelper` classe cibles `p` éléments et utilise [Regex](https://msdn.microsoft.com/library/system.text.regularexpressions.regex.aspx) pour créer le point d’ancrage.
+    >Le `AutoLinkerHttpTagHelper` classe cibles `p` éléments et utilise [Regex](https://docs.microsoft.com/dotnet/standard/base-types/regular-expression-language-quick-reference) pour créer le point d’ancrage.
 
 2.  Ajoutez le balisage suivant à la fin de la *Views/Home/Contact.cshtml* fichier :
 

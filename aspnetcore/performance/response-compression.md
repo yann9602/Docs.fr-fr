@@ -11,11 +11,11 @@ ms.assetid: de621887-c5c9-4ac8-9efd-f5cc0457a134
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: performance/response-compression
-ms.openlocfilehash: b79d86358a8f1552118fac508c4cc02cf674f169
-ms.sourcegitcommit: 74e22e08e3b08cb576e5184d16f4af5656c13c0c
+ms.openlocfilehash: 5705e9f879af4be3fe338716a4310bf9f0530039
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="response-compression-middleware-for-aspnet-core"></a>Intergiciel (middleware) de réponse Compression pour ASP.NET Core
 
@@ -78,11 +78,11 @@ Pour inclure l’intergiciel (middleware) dans votre projet, ajoutez une référ
 ## <a name="configuration"></a>Configuration
 Le code suivant illustre l’activation de l’intergiciel de compression de la réponse avec l’avec la compression gzip par défaut et pour les types MIME par défaut.
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 [!code-csharp[Main](response-compression/samples/2.x/StartupBasic.cs?name=snippet1&highlight=4,8)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 [!code-csharp[Main](response-compression/samples/1.x/StartupBasic.cs?name=snippet1&highlight=3,8)]
 
@@ -112,11 +112,11 @@ Le fournisseur de la compression gzip par défaut est le niveau de compression p
 | `CompressionLevel.Optimal`       | Les réponses doivent être compressées optimale, même si la compression prend plus de temps pour terminer.                |
 
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 [!code-csharp[Main](response-compression/samples/2.x/Program.cs?name=snippet1&highlight=3,8-11)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 [!code-csharp[Main](response-compression/samples/1.x/Startup.cs?name=snippet2&highlight=5,10-13)]
 
@@ -135,11 +135,11 @@ L’intergiciel (middleware) spécifie un ensemble par défaut des types MIME po
 
 Vous pouvez remplacer ou ajouter des types MIME avec les options de l’intergiciel de compression de la réponse. Notez que les caractères génériques MIME types, tels que `text/*` ne sont pas pris en charge. L’exemple d’application ajoute un type MIME pour `image/svg+xml` et compresse et sert les ASP.NET Core image de bannière (*banner.svg*).
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 [!code-csharp[Main](response-compression/samples/2.x/Program.cs?name=snippet1&highlight=5)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 [!code-csharp[Main](response-compression/samples/1.x/Startup.cs?name=snippet2&highlight=7)]
 
@@ -150,13 +150,13 @@ Vous pouvez créer des implémentations personnalisées de la compression avec `
 
 À l’aide de l’exemple d’application, le client envoie une demande avec le `Accept-Encoding: mycustomcompression` en-tête. L’intergiciel (middleware) utilise l’implémentation personnalisée de la compression et retourne la réponse avec un `Content-Encoding: mycustomcompression` en-tête. Le client doit être en mesure de décompresser l’encodage personnalisé dans l’ordre pour une implémentation personnalisée de la compression fonctionne.
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 [!code-csharp[Main](response-compression/samples/2.x/Program.cs?name=snippet1&highlight=4)]
 
 [!code-csharp[Main](response-compression/samples/2.x/CustomCompressionProvider.cs?name=snippet1)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 [!code-csharp[Main](response-compression/samples/1.x/Startup.cs?name=snippet2&highlight=6)]
 
@@ -169,7 +169,7 @@ Soumettre une demande pour l’exemple d’application avec le `Accept-Encoding:
 ![Fenêtre Fiddler affichant le résultat d’une demande avec l’en-tête Accept-Encoding et la valeur mycustomcompression. Les en-têtes Content-Encoding et de variable sont ajoutés à la réponse.](response-compression/_static/request-custom-compression.png)
 
 ## <a name="compression-with-secure-protocol"></a>Compression avec un protocole sécurisé
-Les réponses compressées via des connexions sécurisées peuvent être contrôlées par le `EnableForHttps` option, qui est désactivée par défaut. À l’aide de la compression des pages générées dynamiquement permettre entraîner des problèmes de sécurité telles que la [CRIME](https://en.wikipedia.org/wiki/CRIME_(security_exploit)) et [violation](https://en.wikipedia.org/wiki/BREACH_(security_exploit)) attaques.
+Les réponses compressées via des connexions sécurisées peuvent être contrôlées par le `EnableForHttps` option, qui est désactivée par défaut. À l’aide de la compression des pages générées dynamiquement permettre entraîner des problèmes de sécurité telles que la [CRIME](https://wikipedia.org/wiki/CRIME_(security_exploit)) et [violation](https://wikipedia.org/wiki/BREACH_(security_exploit)) attaques.
 
 ## <a name="adding-the-vary-header"></a>Ajout de l’en-tête Vary
 Si la compression des réponses basée sur la `Accept-Encoding` en-tête, il existe potentiellement plusieurs versions compressées de la réponse et une version non compressée. Afin d’indiquer les caches de client et le proxy que plusieurs versions existent et doivent être stockées, les `Vary` en-tête est ajouté avec un `Accept-Encoding` valeur. Dans ASP.NET Core 1.x, ajout de la `Vary` en-tête dans la réponse s’effectue manuellement. Dans ASP.NET Core ajoute de l’intergiciel (middleware) 2.x, le `Vary` en-tête automatiquement lors de la réponse est compressée.

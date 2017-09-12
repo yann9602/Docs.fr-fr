@@ -11,11 +11,11 @@ ms.assetid: 8c65179b-688c-4af1-8f5e-1862920cda95
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/facebook-logins
-ms.openlocfilehash: 9554d66712f93df6d2c50503b60162757986e707
-ms.sourcegitcommit: 74e22e08e3b08cb576e5184d16f4af5656c13c0c
+ms.openlocfilehash: da019ad3fd6cefa23b8331c98cc36e50ac9c1105
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="configuring-facebook-authentication"></a>Configuration de l’authentification Facebook
 
@@ -23,11 +23,11 @@ ms.lasthandoff: 08/25/2017
 
 Par [Valeriy Novytskyy](https://github.com/01binary) et [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Ce didacticiel vous montre comment permettre aux utilisateurs de se connecter avec leur compte Facebook à l’aide d’un exemple de projet ASP.NET Core 2.0 créé sur le [page précédente](index.md). Nous commençons par créer un ID d’application Facebook en suivant le [étapes officiels](https://developers.facebook.com/docs/apps/register).
+Ce didacticiel vous montre comment permettre aux utilisateurs de se connecter avec leur compte Facebook à l’aide d’un exemple de projet ASP.NET Core 2.0 créé sur le [page précédente](index.md). Nous commençons par créer un ID d’application Facebook en suivant le [étapes officiels](https://www.facebook.com/unsupportedbrowser).
 
 ## <a name="create-the-app-in-facebook"></a>Créer l’application en Facebook
 
-*  Accédez à la [Facebook pour les développeurs](https://developers.facebook.com/apps) page et vous connecter. Si vous n’avez pas déjà un compte Facebook, utilisez le **souscrire à Facebook** sur la page de connexion pour créer un lien.
+*  Accédez à la [Facebook pour les développeurs](https://www.facebook.com/unsupportedbrowser) page et vous connecter. Si vous n’avez pas déjà un compte Facebook, utilisez le **souscrire à Facebook** sur la page de connexion pour créer un lien.
 
 * Appuyez sur la **créer application** bouton dans le coin supérieur droit pour créer un nouvel ID d’application.
 
@@ -74,7 +74,7 @@ Le modèle de projet utilisé dans ce didacticiel garantit que [Microsoft.AspNet
 
    `dotnet add package Microsoft.AspNetCore.Authentication.Facebook`
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 Ajoutez le service de Facebook dans le `ConfigureServices` méthode dans le *Startup.cs* fichier :
 
@@ -88,7 +88,7 @@ services.AddAuthentication().AddFacebook(facebookOptions =>
 
 Le `AddAuthentication` méthode doit uniquement être appelée qu’une seule fois lors de l’ajout de plusieurs fournisseurs d’authentification. Les appels suivants à ce dernier ont la possibilité de remplacement de tous configurés précédemment [AuthenticationOptions](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.authenticationoptions) propriétés.
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 Ajouter l’intergiciel (middleware) Facebook dans le `Configure` méthode dans *Startup.cs* fichier :
 

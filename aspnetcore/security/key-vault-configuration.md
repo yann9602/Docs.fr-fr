@@ -10,24 +10,24 @@ ms.topic: article
 ms.assetid: 0292bdae-b3ed-4637-bd67-19b9bb8b65cb
 ms.prod: asp.net-core
 uid: security/key-vault-configuration
-ms.openlocfilehash: b9b03dab6446aed7ee875916cd2e64acbb226e8f
-ms.sourcegitcommit: 70089de5bfd8ecd161261aa95faf07a4e1534cf8
+ms.openlocfilehash: 72b6098b2a71957da338ef36beff4808201773f4
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/23/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="azure-key-vault-configuration-provider"></a>Fournisseur de configuration du coffre de clés Azure
 
 Par [Luke Latham](https://github.com/GuardRex) et [Andrew Stanton-infirmière](https://github.com/anurse)
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 Afficher ou télécharger l’exemple de code pour 2.x :
 
 * [Exemple de base](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/key-vault-configuration/samples/basic-sample/2.x) -lit les valeurs des secrets dans une application.
 * [Exemple de préfixe de nom de la clé](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/key-vault-configuration/samples/key-name-prefix-sample/2.x) - lit les valeurs des secrets à l’aide d’un préfixe de nom de la clé qui représente la version d’une application, ce qui vous permet de charger un ensemble différent de valeurs de clé secrètes pour chaque version de l’application.
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 Afficher ou télécharger l’exemple de code pour 1.x :
 
@@ -161,4 +161,4 @@ Lorsque l’application ne parvient pas à charger la configuration de l’utili
 * [Microsoft Azure : Coffre de clés](https://azure.microsoft.com/services/key-vault/)
 * [Microsoft Azure : Documentation de coffre de clés](https://docs.microsoft.com/azure/key-vault/)
 * [Comment générer et transférer protégée par HSM clés pour le coffre de clés Azure](https://docs.microsoft.com/azure/key-vault/key-vault-hsm-protected-keys)
-* [Classe de KeyVaultClient](https://msdn.microsoft.com/library/microsoft.azure.keyvault.keyvaultclient.aspx)
+* [Classe de KeyVaultClient](https://docs.microsoft.com/dotnet/api/microsoft.azure.keyvault.keyvaultclient)

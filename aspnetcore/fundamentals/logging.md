@@ -12,23 +12,23 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/logging
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 15abe93d881aed3b6950a859dc9445ec50ee9bb5
-ms.sourcegitcommit: 5355c96a1768e5a1d5698a98c190e7addcc4ded5
+ms.openlocfilehash: b9a4ae6e7d9b2fa998b91e643e63657239d4866b
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="introduction-to-logging-in-aspnet-core"></a>Introduction à la journalisation dans ASP.NET Core
 
-Par [Steve Smith](http://ardalis.com) et [Tom Dykstra](https://github.com/tdykstra)
+Par [Steve Smith](https://ardalis.com/) et [Tom Dykstra](https://github.com/tdykstra)
 
 ASP.NET Core prend en charge une API de journalisation qui fonctionne avec une gamme de fournisseurs de journalisation. Les fournisseurs intégrés vous permettent d’envoyer les journaux à une ou plusieurs destinations, et vous pouvez incorporer dans une infrastructure de journalisation de l’application tierce. Cet article explique comment utiliser les API de journalisation intégrés et les fournisseurs dans votre code.
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 [Afficher ou télécharger l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/logging/sample2)
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 [Afficher ou télécharger l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/logging/sample)
 
@@ -50,7 +50,7 @@ ASP.NET Core ne fournit pas asynchrone des méthodes de journalisation, car la j
 
 ## <a name="how-to-add-providers"></a>Comment ajouter des fournisseurs
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 Un fournisseur de journalisation extrait les messages que vous créez avec un `ILogger` de l’objet et affiche les stocke. Par exemple, le fournisseur de la Console affiche des messages sur la console, et le fournisseur de services d’application Azure de les stocker dans le stockage blob Azure.
 
@@ -62,7 +62,7 @@ Le modèle de projet par défaut configure de la journalisation de la façon de 
 
 [!code-csharp[](logging/sample2/Program.cs?name=snippet_TemplateCode&highlight=7)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 Un fournisseur de journalisation extrait les messages que vous créez avec un `ILogger` de l’objet et affiche les stocke. Par exemple, le fournisseur de la Console affiche des messages sur la console, et le fournisseur de services d’application Azure de les stocker dans le stockage blob Azure.
 
@@ -244,7 +244,7 @@ Le message du journal résultante ressemble à ceci :
 Parameter values: parm1, parm2
 ```
 
-L’infrastructure de journalisation de message de cette façon à permettre aux fournisseurs de journalisation implémenter la mise en forme [journalisation sémantique, également appelée enregistrement structuré](http://programmers.stackexchange.com/questions/312197/benefits-of-structured-logging-vs-basic-logging). Étant donné que les arguments eux-mêmes sont transmis au système de journalisation, pas seulement la chaîne de message mis en forme, les fournisseurs de journalisation peuvent stocker les valeurs de paramètre en tant que champs en plus de la chaîne de message. Par exemple, si vous envoyez votre journal de sortie pour le stockage de Table Azure et votre appel de méthode enregistreur d’événements ressemble à ceci :
+L’infrastructure de journalisation de message de cette façon à permettre aux fournisseurs de journalisation implémenter la mise en forme [journalisation sémantique, également appelée enregistrement structuré](https://softwareengineering.stackexchange.com/questions/312197/benefits-of-structured-logging-vs-basic-logging). Étant donné que les arguments eux-mêmes sont transmis au système de journalisation, pas seulement la chaîne de message mis en forme, les fournisseurs de journalisation peuvent stocker les valeurs de paramètre en tant que champs en plus de la chaîne de message. Par exemple, si vous envoyez votre journal de sortie pour le stockage de Table Azure et votre appel de méthode enregistreur d’événements ressemble à ceci :
 
 ```csharp
 _logger.LogInformation("Getting item {ID} at {RequestTime}", id, DateTime.Now);
@@ -269,7 +269,7 @@ System.Exception: Item not found exception.
 
 ## <a name="log-filtering"></a>Filtrage de journal
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 Vous pouvez spécifier un niveau de journal minimale pour une catégorie et un fournisseur spécifique ou pour tous les fournisseurs ou toutes les catégories.  Tous les journaux sous le niveau minimal ne sont pas transmis à ce fournisseur, donc n’obtenir affichées ou stockées. 
 
@@ -351,7 +351,7 @@ Vous pouvez écrire du code dans une fonction de filtre à appliquer les règles
 
 [!code-csharp[](logging/sample2/Program.cs?name=snippet_FilterFunction&highlight=5-13)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 Certains fournisseurs de journalisation vous permettent de spécifier quand des journaux doivent être écrites dans un support de stockage ou ignorés en fonction de la catégorie et le niveau de journal.
 
@@ -381,13 +381,13 @@ Une étendue est un `IDisposable` type qui est retourné par la `ILogger.BeginSc
 
 Le code suivant permet d’étendues pour le fournisseur de la console :
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 Dans *Program.cs*:
 
 [!code-csharp[](logging/sample2/Program.cs?name=snippet_Scopes&highlight=4)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 Dans *Startup.cs*:
 
@@ -422,13 +422,13 @@ ASP.NET Core fourni les fournisseurs suivants :
 
 Le [Microsoft.Extensions.Logging.Console](https://www.nuget.org/packages/Microsoft.Extensions.Logging.Console) package de fournisseur envoie la sortie de journal dans la console. 
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 ```csharp
 logging.AddConsole()
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 ```csharp
 loggerFactory.AddConsole()
@@ -459,13 +459,13 @@ Le [Microsoft.Extensions.Logging.Debug](https://www.nuget.org/packages/Microsoft
 
 Sur Linux, ce fournisseur écrit des journaux sur */var/log/message*.
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 ```csharp
 logging.AddDebug()
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 ```csharp
 loggerFactory.AddDebug()
@@ -480,13 +480,13 @@ loggerFactory.AddDebug()
 
 Pour les applications qui ciblent ASP.NET Core 1.1.0 ou une version ultérieure, le [Microsoft.Extensions.Logging.EventSource](https://www.nuget.org/packages/Microsoft.Extensions.Logging.EventSource) package de fournisseur peut implémenter le suivi d’événements. Sous Windows, il utilise [ETW](https://msdn.microsoft.com/library/windows/desktop/bb968803). Le fournisseur est inter-plateformes, mais il en existe aucun événement collecte et l’affichage des outils pour Linux ou macOS. 
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 ```csharp
 logging.AddEventSourceLogger()
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 ```csharp
 loggerFactory.AddEventSourceLogger()
@@ -514,7 +514,7 @@ Capture des événements sur Nano Server requiert une installation supplémentai
   New-EtwTraceSession -Name "MyAppTrace" -LocalFilePath C:\trace.etl
   ```
 
-* Ajouter des fournisseurs ETW pour [CLR](https://msdn.microsoft.com/library/ff357718), ASP.NET Core et autres en fonction des besoins. Le fournisseur ASP.NET Core GUID est `3ac73b97-af73-50e9-0822-5da4367920d0`. 
+* Ajouter des fournisseurs ETW pour [CLR](https://docs.microsoft.com/dotnet/framework/performance/clr-etw-providers), ASP.NET Core et autres en fonction des besoins. Le fournisseur ASP.NET Core GUID est `3ac73b97-af73-50e9-0822-5da4367920d0`. 
 
   ```powershell
   Add-EtwTraceProvider -Guid "{e13c0d23-ccbc-4e12-931b-d9cc2eee27e4}" -SessionName MyAppTrace
@@ -536,13 +536,13 @@ Résultant *C:\trace.etl* fichier peut être analysé avec PerfView comme sur le
 
 Le [Microsoft.Extensions.Logging.EventLog](https://www.nuget.org/packages/Microsoft.Extensions.Logging.EventLog) package de fournisseur envoie la sortie de journal dans le journal des événements Windows.
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 ```csharp
 logging.AddEventLog()
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 ```csharp
 loggerFactory.AddEventLog()
@@ -555,15 +555,15 @@ loggerFactory.AddEventLog()
 <a id="tracesource"></a>
 ### <a name="the-tracesource-provider"></a>Le fournisseur de TraceSource
 
-Le [Microsoft.Extensions.Logging.TraceSource](https://www.nuget.org/packages/Microsoft.Extensions.Logging.TraceSource) fournisseur package utilise le [System.Diagnostics.TraceSource](https://msdn.microsoft.com/library/system.diagnostics.tracesource.aspx) bibliothèques et les fournisseurs.
+Le [Microsoft.Extensions.Logging.TraceSource](https://www.nuget.org/packages/Microsoft.Extensions.Logging.TraceSource) fournisseur package utilise le [System.Diagnostics.TraceSource](https://docs.microsoft.com/dotnet/api/system.diagnostics.tracesource) bibliothèques et les fournisseurs.
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 ```csharp
 logging.AddTraceSource(sourceSwitchName);
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 ```csharp
 loggerFactory.AddTraceSource(sourceSwitchName);
@@ -573,7 +573,7 @@ loggerFactory.AddTraceSource(sourceSwitchName);
 
 [Les surcharges AddTraceSource](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.logging.tracesourcefactoryextensions) permettent de vous transmettez un changement de source et un écouteur de suivi.
 
-Pour utiliser ce fournisseur, une application doit s’exécuter sur le .NET Framework (plutôt que du .NET Core). Le permet de fournisseur pour router des messages à une variété de [écouteurs](https://msdn.microsoft.com/library/4y5y10s7), telles que la [TextWriterTraceListener](https://msdn.microsoft.com/library/system.diagnostics.textwritertracelistener) utilisé dans l’exemple d’application.
+Pour utiliser ce fournisseur, une application doit s’exécuter sur le .NET Framework (plutôt que du .NET Core). Le permet de fournisseur pour router des messages à une variété de [écouteurs](https://docs.microsoft.com/dotnet/framework/debug-trace-profile/trace-listeners), telles que la [TextWriterTraceListener](https://docs.microsoft.com/dotnet/api/system.diagnostics.textwritertracelistenerr) utilisé dans l’exemple d’application.
 
 L’exemple suivant configure un `TraceSource` fournisseur qui enregistre des `Warning` et des messages plus élevées dans la fenêtre de console.
 
@@ -584,14 +584,14 @@ L’exemple suivant configure un `TraceSource` fournisseur qui enregistre des `W
 
 Le [Microsoft.Extensions.Logging.AzureAppServices](https://www.nuget.org/packages/Microsoft.Extensions.Logging.AzureAppServices) package de fournisseur écrit des journaux dans des fichiers texte dans le système de fichiers d’une application de Service d’applications Azure et en [stockage d’objets blob](https://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-blobs/#what-is-blob-storage) dans un compte de stockage Azure. Le fournisseur est disponible uniquement pour les applications qui ciblent ASP.NET Core 1.1.0 ou ultérieure. 
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 > [!NOTE]
 > ASP.NET Core 2.0 est en version préliminaire.  Les applications créées avec la dernière version de l’aperçu peut ne pas fonctionner lors du déploiement vers Azure App Service. Quand ASP.NET Core 2.0 est publiée, Azure App Service s’exécutera 2.0 applications et le Service d’application Azure fournisseur fonctionne comme indiqué ici.
 
 Vous n’êtes pas obligé d’installer le package du fournisseur ou appelez le `AddAzureWebAppDiagnostics` méthode d’extension.  Le fournisseur est automatiquement disponible pour votre application lorsque vous déployez l’application sur Azure App Service.
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 ```csharp
 loggerFactory.AddAzureWebAppDiagnostics();
@@ -621,9 +621,9 @@ Voici certaines infrastructures de journalisation de l’application tierce qui 
 
 * [NLog](https://github.com/NLog/NLog.Extensions.Logging) -fournisseur pour la bibliothèque NLog
 
-* [Serilog](https://github.com/serilog/serilog-framework-logging) -fournisseur pour la bibliothèque Serilog
+* [Serilog](https://github.com/serilog/serilog-extensions-logging) -fournisseur pour la bibliothèque Serilog
 
-Certaines infrastructures tierces faire [journalisation sémantique, également appelée enregistrement structuré](http://programmers.stackexchange.com/questions/312197/benefits-of-structured-logging-vs-basic-logging).
+Certaines infrastructures tierces faire [journalisation sémantique, également appelée enregistrement structuré](https://softwareengineering.stackexchange.com/questions/312197/benefits-of-structured-logging-vs-basic-logging).
 
 À l’aide d’une infrastructure tierce est semblable à celle des fournisseurs intégrés : ajouter un package NuGet à votre projet et appeler une méthode d’extension sur `ILoggerFactory`. Pour plus d’informations, consultez la documentation de chaque framework.
 

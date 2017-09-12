@@ -10,21 +10,21 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/accconfirm
-ms.openlocfilehash: aaed75c78a99e59954add959a76a2fd68ea5f3fc
-ms.sourcegitcommit: f2fb0b45284e4f8c4a9c422bec790aede7c1f0ac
+ms.openlocfilehash: 2f99a5d3db84c3fd3f7ebcb8bccd9a4b8bc8e2b8
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/17/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="account-confirmation-and-password-recovery-in-aspnet-core"></a>Confirmation du compte et récupération de mot de passe dans ASP.NET Core
 
-Par [Rick Anderson](https://twitter.com/RickAndMSFT)
+De [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 Ce didacticiel vous montre comment créer une application ASP.NET Core à la réinitialisation par courrier électronique de confirmation et le mot de passe.
 
 ## <a name="create-a-new-aspnet-core-project"></a>Créez un nouveau projet ASP.NET Core
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 Cette étape s’applique à Visual Studio sous Windows. Consultez la section suivante pour obtenir des instructions de l’interface CLI.
 
@@ -37,7 +37,7 @@ Le didacticiel requiert Visual Studio 2017 (Preview) 2 ou version ultérieure.
 
 ![Nouvelle boîte de dialogue projet indiquant « Radio de comptes d’utilisateur individuels » sélectionnée](accconfirm/_static/2.png)
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 Le didacticiel requiert Visual Studio 2017 ou version ultérieure.
 
@@ -62,7 +62,7 @@ dotnet new mvc --auth Individual
 
 ## <a name="test-new-user-registration"></a>Nouvelle inscription de l’utilisateur de test
 
-Exécuter l’application, sélectionnez le **inscrire** lier et inscrire un utilisateur. Suivez les instructions pour exécuter les migrations d’Entity Framework Core. À ce stade, la seule validation de l’adresse de messagerie est avec le [[EmailAddress]](http://msdn.microsoft.com/library/system.componentmodel.dataannotations.emailaddressattribute(v=vs.110).aspx) attribut. Une fois que vous soumettez l’inscription, vous êtes connecté à l’application. Plus loin dans ce didacticiel, nous allons modifier cela pour les nouveaux utilisateurs ne peuvent pas se connecter jusqu'à ce que leur courrier électronique a été validée.
+Exécuter l’application, sélectionnez le **inscrire** lier et inscrire un utilisateur. Suivez les instructions pour exécuter les migrations d’Entity Framework Core. À ce stade, la seule validation de l’adresse de messagerie est avec le [[EmailAddress]](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.emailaddressattribute) attribut. Une fois que vous soumettez l’inscription, vous êtes connecté à l’application. Plus loin dans ce didacticiel, nous allons modifier cela pour les nouveaux utilisateurs ne peuvent pas se connecter jusqu'à ce que leur courrier électronique a été validée.
 
 ## <a name="view-the-identity-database"></a>Afficher la base de données d’identité
 
@@ -96,12 +96,12 @@ En règle générale, vous souhaitez empêcher les nouveaux utilisateurs à part
 
 Mise à jour `ConfigureServices` pour exiger un message électronique de confirmation :
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 [!code-csharp[Main](accconfirm/sample/WebPW/Startup.cs?name=snippet1&highlight=6-9)]
 
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 [!code-csharp[Main](accconfirm/sample/WebApp1/Startup.cs?name=snippet1&highlight=13-16)]
 
@@ -145,11 +145,11 @@ Le contenu de la *secrets.json* fichier ne sont pas chiffrés. Le *secrets.json*
 
 Ajouter `AuthMessageSenderOptions` au conteneur de service à la fin de la `ConfigureServices` méthode dans le *Startup.cs* fichier :
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 [!code-csharp[Main](accconfirm/sample/WebPW/Startup.cs?name=snippet1&highlight=18)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 [!code-csharp[Main](accconfirm/sample/WebApp1/Startup.cs?name=snippet1&highlight=26)]
 
 ---
@@ -166,14 +166,14 @@ Ce didacticiel montre comment ajouter des notifications par courrier électroniq
 
 #### <a name="configure-sendgrid"></a>Configurer SendGrid
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 * Ajoutez le code dans *Services/EmailSender.cs* similaire à ce qui suit pour configurer SendGrid :
 
 [!code-csharp[Main](accconfirm/sample/WebPW/Services/EmailSender.cs)]
 
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 * Ajoutez le code dans *Services/MessageServices.cs* similaire à ce qui suit pour configurer SendGrid :
 
 [!code-csharp[Main](accconfirm/sample/WebApp1/Services/MessageServices.cs)]
@@ -184,7 +184,7 @@ Ce didacticiel montre comment ajouter des notifications par courrier électroniq
 
 Le modèle a le code pour la récupération de confirmation et le mot de passe du compte. Rechercher les `[HttpPost] Register` méthode dans le *AccountController.cs* fichier.
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 Interdire nouvellement inscrit qui est automatiquement connecté en supprimant la ligne suivante :
 
@@ -196,7 +196,7 @@ La méthode complète s’affiche avec la ligne modifiée mis en surbrillance :
 
 [!code-csharp[Main](accconfirm/sample/WebPW/Controllers/AccountController.cs?highlight=19&name=snippet_Register)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 Ne pas commenter le code pour activer la confirmation du compte.
 
@@ -239,14 +239,14 @@ Vous devrez peut-être développer la barre de navigation pour afficher le nom d
 
 ![barre de navigation](accconfirm/_static/x.png)
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 La page de gestion s’affiche avec le **profil** onglet sélectionné. Le **messagerie** affiche une case à cocher indiquant l’adresse de messagerie a été confirmée. 
 
 ![page Gérer](accconfirm/_static/rick2.png)
 
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 Nous parlerons de cette page plus tard dans le didacticiel.
 ![page Gérer](accconfirm/_static/rick2.png)

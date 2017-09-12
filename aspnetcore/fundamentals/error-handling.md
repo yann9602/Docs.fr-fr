@@ -12,15 +12,15 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/error-handling
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 5898892c63e978adfabf9939394fef4ea1848d49
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 96a4fed19887a7a9eba08ec70296147f22e41569
+ms.sourcegitcommit: 368aabde4de3728a8e5a8c016a2ec61f9c0854bf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="introduction-to-error-handling-in-aspnet-core"></a>Introduction à la gestion des erreurs dans ASP.NET Core
 
-Par [Steve Smith](http://ardalis.com) et [Tom Dykstra](https://github.com/tdykstra/)
+Par [Steve Smith](https://ardalis.com/) et [Tom Dykstra](https://github.com/tdykstra/)
 
 Cet article traite des appoaches commune pour la gestion des erreurs dans les applications ASP.NET Core.
 
@@ -111,13 +111,13 @@ En outre, sachez qu’une fois que les en-têtes de réponse ont été envoyés,
 
 ## <a name="server-exception-handling"></a>Gestion des exceptions de serveur
 
-En plus de la logique de votre application, de gestion des exceptions la [server](servers/index.md) qui héberge votre application effectue certaines exceptions. Si le serveur intercepte une exception avant des en-têtes ont été envoyés, il envoie une réponse d’erreur de serveur interne 500 sans corps. Si elle intercepte une exception une fois que les en-têtes ont été envoyés, il ferme la connexion. Les demandes qui ne sont pas gérées par votre application seront gérées par le serveur, et toute exception qui se produit sera gérée par l’exception de celle du serveur gestion. Toutes les pages d’erreurs personnalisées ou les exceptions d’intergiciel (middleware) ou les filtres que vous avez configurée pour votre application n’affectera pas ce comportement.
+En plus de la logique de votre application, de gestion des exceptions la [server](servers/index.md) qui héberge votre application effectue certaines exceptions. Si le serveur intercepte une exception avant des en-têtes sont envoyés, le serveur envoie une réponse d’erreur de serveur interne 500 sans corps. Si le serveur intercepte une exception une fois que les en-têtes ont été envoyés, le serveur ferme la connexion. Les demandes qui ne sont pas gérés par votre application sont gérées par le serveur. Toute exception qui se produit est gérée par l’exception de celle du serveur gestion. Une configuré des pages d’erreurs personnalisées ou d’intergiciel (middleware) de la gestion des exceptions ou des filtres n’affectent pas ce comportement.
 
 ## <a name="startup-exception-handling"></a>Gestion des exceptions de démarrage
 
-Uniquement la couche d’hébergement peut gérer les exceptions qui se produisent lors du démarrage de l’application. Les exceptions qui se produisent pendant le démarrage de l’application peuvent avoir un impact sur le comportement du serveur. Par exemple, si une exception se produit avant d’appeler `KestrelServerOptions.UseHttps`, la couche d’hébergement intercepte l’exception, démarre le serveur et affiche une page d’erreur sur le port non-SSL. Si une exception se produit après l’exécution de cette ligne, la page d’erreur est pris en charge via le protocole HTTPS à la place.
+Uniquement la couche d’hébergement peut gérer les exceptions qui se produisent lors du démarrage de l’application. Vous pouvez [configurer le comporte de l’ordinateur hôte en réponse aux erreurs lors du démarrage de](hosting.md#detailed-errors) à l’aide de `captureStartupErrors` et `detailedErrors` clé.
 
-Vous pouvez [configurer le comporte de l’ordinateur hôte en réponse aux erreurs lors du démarrage de](hosting.md#configuring-a-host) à l’aide de `CaptureStartupErrors` et `detailedErrors` clé.
+Hébergement peut uniquement afficher une page d’erreur pour une erreur de démarrage capturé si l’erreur se produit une fois l’hôte adresse/port de liaison. Si n’importe quelle liaison échoue pour une raison quelconque, la couche d’hébergement enregistre une exception critique, les blocages de processus dotnet, et aucune page d’erreur ne s’affiche.
 
 ## <a name="aspnet-mvc-error-handling"></a>Gestion des erreurs de ASP.NET MVC
 

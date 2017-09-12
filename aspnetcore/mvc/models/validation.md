@@ -12,15 +12,15 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/models/validation
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 514c7770b7f508893a059c1adcf56204160aceda
-ms.sourcegitcommit: 275a5381b6172b4f0b5fcd1d252aff03d3dae166
+ms.openlocfilehash: be130c24f5baf643a4c9493a33ec45bdd4cc66ed
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="introduction-to-model-validation-in-aspnet-core-mvc"></a>Introduction à la validation de modèle dans ASP.NET MVC de base
 
-Par [Rachel Appel](http://github.com/rachelappel)
+Par [Rachel Appel](https://github.com/rachelappel)
 
 ## <a name="introduction-to-model-validation"></a>Introduction à la validation du modèle
 
@@ -58,7 +58,7 @@ En lisant simplement le modèle, vous affichez les règles concernant les donné
 
 * `[Url]`: Valide la propriété a un format d’URL.
 
-MVC prend en charge tout attribut qui dérive de `ValidationAttribute` à des fins de validation. Vous trouverez d’attributs de validation utile dans les [System.ComponentModel.DataAnnotations](https://msdn.microsoft.com/library/system.componentmodel.dataannotations(v=vs.110).aspx) espace de noms.
+MVC prend en charge tout attribut qui dérive de `ValidationAttribute` à des fins de validation. Vous trouverez d’attributs de validation utile dans les [System.ComponentModel.DataAnnotations](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations) espace de noms.
 
 Il peut y avoir des instances où vous avez besoin de davantage de fonctionnalités pour fournissent des attributs prédéfinis. Dans ces cas, vous pouvez créer des attributs de validation personnalisé en dérivant de `ValidationAttribute` ou la modification de votre modèle à mettre en œuvre `IValidatableObject`.
 

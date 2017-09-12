@@ -11,15 +11,15 @@ ms.assetid: 3155cc9e-d0c9-424b-886c-35c0ec6f9f4e
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: migration/mvc
-ms.openlocfilehash: ccdceed927d90a1f3201be9d9f92ebb4f2f66e66
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 2bd689626e867e0ea82fbebdf92447a6029aa35b
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="migrating-from-aspnet-mvc-to-aspnet-core-mvc"></a>Migration à partir de ASP.NET MVC à cœur d’ASP.NET MVC
 
-Par [Rick Anderson](https://twitter.com/RickAndMSFT), [Michel Roth](https://github.com/danroth27), [Steve Smith](http://ardalis.com), et [Scott Addie](https://scottaddie.com)
+Par [Rick Anderson](https://twitter.com/RickAndMSFT), [Michel Roth](https://github.com/danroth27), [Steve Smith](https://ardalis.com/), et [Scott Addie](https://scottaddie.com)
 
 Cet article explique comment commencer la migration d’un projet ASP.NET MVC à [ASP.NET Core MVC](../mvc/overview.md). Dans le processus, il présente la plupart des éléments qui ont été modifiés dans ASP.NET MVC. Migration à partir d’ASP.NET MVC est un processus en plusieurs étapes, et cet article couvre la configuration initiale, contrôleurs de base et les vues, contenu statique et dépendances du côté client. Autres articles couvrent la migration de la configuration et le code d’identité trouvée dans de nombreux projets ASP.NET MVC.
 
@@ -138,9 +138,9 @@ Dans les versions précédentes d’ASP.NET MVC, contenu statique a été héber
 
 L’ancien ASP.NET MVC project utilise [Bootstrap](http://getbootstrap.com/) pour que son style et le programme d’amorçage des fichiers dans le *contenu* et *Scripts* dossiers. Le modèle, ce qui a généré l’ancien projet ASP.NET MVC, fait référence à l’amorçage dans le fichier de disposition (*Views/Shared/_Layout.cshtml*). Vous pouvez copier le *bootstrap.js* et *bootstrap.css* à partir de l’ASP.NET MVC, les fichiers de projet pour le *wwwroot* n’utilise pas de dossier dans le nouveau projet, mais cette approche le mécanisme améliorée pour la gestion des dépendances de côté client dans ASP.NET Core.
 
-Dans le nouveau projet, nous allons ajouter la prise en charge des données d’amorçage (et d’autres bibliothèques côté client) à l’aide de [Bower](http://bower.io/):
+Dans le nouveau projet, nous allons ajouter la prise en charge des données d’amorçage (et d’autres bibliothèques côté client) à l’aide de [Bower](https://bower.io/):
 
-* Ajouter un [Bower](http://bower.io/) fichier de configuration nommé *bower.json* à la racine du projet (avec le bouton droit sur le projet, puis **Ajouter > nouvel élément > fichier de Configuration Bower**). Ajouter [Bootstrap](http://getbootstrap.com/) et [jQuery](https://jquery.com/) au fichier (voir les lignes en surbrillance ci-dessous).
+* Ajouter un [Bower](https://bower.io/) fichier de configuration nommé *bower.json* à la racine du projet (avec le bouton droit sur le projet, puis **Ajouter > nouvel élément > fichier de Configuration Bower**). Ajouter [Bootstrap](http://getbootstrap.com/) et [jQuery](https://jquery.com/) au fichier (voir les lignes en surbrillance ci-dessous).
 
   [!code-json[Main](mvc/sample/bower.json?highlight=5-6)]
 
@@ -228,4 +228,4 @@ Consultez **à l’aide de la Page d’Exception Developer** dans [gestion des e
 
 * [Développement côté client](../client-side/index.md)
 
-* [Programmes d’assistance de balise](../mvc/views/tag-helpers/index.md)
+* [Tag Helpers](../mvc/views/tag-helpers/index.md)

@@ -11,15 +11,15 @@ ms.assetid: 4eb7e52f-5665-41a4-a3e3-e348d07337f2
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/application-model
-ms.openlocfilehash: 18046389becd17135ff831e71e700244d48552d3
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 1a5d461809afeef0f485fd3a665250631d855b36
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="working-with-the-application-model"></a>Utilisation du modèle d’Application
 
-Par [Steve Smith](http://ardalis.com)
+Par [Steve Smith](https://ardalis.com/)
 
 ASP.NET MVC de base définit un *modèle d’application* représentant les composants d’une application MVC. Vous pouvez lire et manipuler ce modèle pour modifier le comportement des éléments MVC. Par défaut, MVC suit certaines conventions pour déterminer les classes qui sont considérés comme étant des contrôleurs, les méthodes sur ces classes sont des actions et le comportement des paramètres et le routage. Vous pouvez personnaliser ce comportement en fonction des besoins de votre application en créant vos propres conventions et de les appliquer globalement ou en tant qu’attributs.
 
@@ -70,13 +70,13 @@ Le `DefaultApplicationModelProvider` établit la plupart des comportements par d
 
 Certains comportements intégrés sont implémentées par le `DefaultApplicationModelProvider`. Ce fournisseur est responsable de la construction de la [ `ControllerModel` ](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.applicationmodels.controllermodel), qui à son tour fait référence à [ `ActionModel` ](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.applicationmodels.actionmodel#Microsoft_AspNetCore_Mvc_ApplicationModels_ActionModel), [ `PropertyModel` ](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.applicationmodels.propertymodel), et [ `ParameterModel` ](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.applicationmodels.parametermodel#Microsoft_AspNetCore_Mvc_ApplicationModels_ParameterModel) instances. La `DefaultApplicationModelProvider` classe est un détail d’implémentation interne de framework qui peuvent et ne changera à l’avenir. 
 
-Le `AuthorizationApplicationModelProvider` est chargé d’appliquer le comportement associé à la `AuthorizeFilter` et `AllowAnonymousFilter` attributs. [En savoir plus sur ces attributs](https://docs.microsoft.com/aspnet/core/security/authorization/simple).
+Le `AuthorizationApplicationModelProvider` est chargé d’appliquer le comportement associé à la `AuthorizeFilter` et `AllowAnonymousFilter` attributs. [En savoir plus sur ces attributs](xref:security/authorization/simple).
 
-Le `CorsApplicationModelProvider` implémente le comportement associé à la `IEnableCorsAttribute` et `IDisableCorsAttribute`et le `DisableCorsAuthorizationFilter`. [En savoir plus sur les règles CORS](https://docs.microsoft.com/aspnet/core/security/cors).
+Le `CorsApplicationModelProvider` implémente le comportement associé à la `IEnableCorsAttribute` et `IDisableCorsAttribute`et le `DisableCorsAuthorizationFilter`. [En savoir plus sur les règles CORS](xref:security/cors).
 
 ## <a name="conventions"></a>Conventions
 
-Le modèle d’application définit les abstractions de convention qui fournissent un moyen plus simple pour personnaliser le comportement des modèles de substitution de l’ensemble du modèle ou le fournisseur. Ces abstractions sont la méthode recommandée pour modifier le comportement de votre application. Conventions permettent de vous permet d’écrire du code qui s’appliquent dynamiquement les personnalisations. Alors que [filtres](https://docs.microsoft.com/aspnet/core/mvc/controllers/filters) fournissent un moyen de la modification de comportement de l’infrastructure, les personnalisations vous permettent de contrôler la façon dont l’application entière est reliée entre elles.
+Le modèle d’application définit les abstractions de convention qui fournissent un moyen plus simple pour personnaliser le comportement des modèles de substitution de l’ensemble du modèle ou le fournisseur. Ces abstractions sont la méthode recommandée pour modifier le comportement de votre application. Conventions permettent de vous permet d’écrire du code qui s’appliquent dynamiquement les personnalisations. Alors que [filtres](xref:mvc/controllers/filters) fournissent un moyen de la modification de comportement de l’infrastructure, les personnalisations vous permettent de contrôler la façon dont l’application entière est reliée entre elles.
 
 Les conventions suivantes sont disponibles :
 
@@ -85,7 +85,7 @@ Les conventions suivantes sont disponibles :
 * [`IActionModelConvention`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.applicationmodels.iactionmodelconvention)
 * [`IParameterModelConvention`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.applicationmodels.iparametermodelconvention)
 
-Les conventions sont appliquées en les ajoutant aux options de MVC ou en implémentant `Attribute`s et les appliquer aux contrôleurs, les actions ou les paramètres d’action (semblable à [ `Filters` ](https://docs.microsoft.com/aspnet/core/mvc/controllers/filters)). Contrairement aux filtres, les conventions sont uniquement exécutées lors du démarrage de l’application, pas dans le cadre de chaque demande.
+Les conventions sont appliquées en les ajoutant aux options de MVC ou en implémentant `Attribute`s et les appliquer aux contrôleurs, les actions ou les paramètres d’action (semblable à [ `Filters` ](xref:mvc/controllers/filters)). Contrairement aux filtres, les conventions sont uniquement exécutées lors du démarrage de l’application, pas dans le cadre de chaque demande.
 
 ### <a name="sample-modifying-the-applicationmodel"></a>Exemple : Modification de la ApplicationModel
 
@@ -159,7 +159,7 @@ La convention est ajoutée en tant qu’option de démarrage.
 [!code-csharp[Main](./application-model/sample/src/AppModelSample/Startup.cs?name=ConfigureServices&highlight=6)]
 
 > [!TIP]
-> Vous pouvez ajouter des conventions pour votre [intergiciel (middleware)](https://docs.microsoft.com/aspnet/core/fundamentals/middleware) en accédant à `MvcOptions` à l’aide de`services.Configure<MvcOptions>(c => c.Conventions.Add(YOURCONVENTION));`
+> Vous pouvez ajouter des conventions pour votre [intergiciel (middleware)](xref:fundamentals/middleware) en accédant à `MvcOptions` à l’aide de`services.Configure<MvcOptions>(c => c.Conventions.Add(YOURCONVENTION));`
 
 Cet exemple s’applique à cette convention pour les itinéraires qui n’utilisent pas l’attribut routage où le contrôleur a « Namespace » dans son nom. Le contrôleur suivant illustre cette convention :
 
@@ -170,7 +170,7 @@ Cet exemple s’applique à cette convention pour les itinéraires qui n’utili
 ASP.NET Core MVC utilise un autre ensemble de conventions d’ASP.NET Web API 2. À l’aide des conventions personnalisées, vous pouvez modifier le comportement d’une application ASP.NET MVC de base pour être cohérent avec celui d’une application API Web. Est fourni avec Microsoft le [WebApiCompatShim](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.WebApiCompatShim/) spécialement dans ce but.
 
 > [!NOTE]
-> En savoir plus sur [migration à partir de l’API Web ASP.NET](https://docs.microsoft.com/aspnet/core/migration/webapi)).
+> En savoir plus sur [migration à partir de l’API Web ASP.NET](xref:migration/webapi).
 
 Pour utiliser le Shim de compatibilité d’API Web, vous devez ajouter le package à votre projet, puis ajouter les conventions pour MVC en appelant `AddWebApiConventions` dans `Startup`:
 
@@ -199,7 +199,7 @@ Le `UseWebApiParameterConventionsAttribute` est utilisé pour appliquer la `WebA
 
 ### <a name="routes"></a>Itinéraires
 
-Le `UseWebApiRoutesAttribute` contrôles si le `WebApiApplicationModelConvention` convention de contrôleur est appliquée. Lorsque activé, cette convention est utilisée pour ajouter la prise en charge de [zones](https://docs.microsoft.com/aspnet/core/mvc/controllers/areas) vers l’itinéraire.
+Le `UseWebApiRoutesAttribute` contrôles si le `WebApiApplicationModelConvention` convention de contrôleur est appliquée. Lorsque activé, cette convention est utilisée pour ajouter la prise en charge de [zones](xref:mvc/controllers/areas) vers l’itinéraire.
 
 En plus d’un ensemble de conventions, le package de compatibilité inclut un `System.Web.Http.ApiController` classe de base qui remplace celui fourni par l’API Web. Ainsi, vos contrôleurs écrits pour API Web et l’héritage à partir de son `ApiController` fonctionne comme prévus, lors de l’exécution d’ASP.NET MVC de base. Cette classe de base de contrôleur est décorée avec tous les `UseWebApi*` attributs répertoriés ci-dessus. Le `ApiController` expose les propriétés, méthodes et types de résultats qui sont compatibles avec ceux de l’API Web.
 

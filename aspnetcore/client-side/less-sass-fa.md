@@ -11,17 +11,17 @@ ms.assetid: 94c988f9-95fd-425d-b37e-7f846598c6d4
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/less-sass-fa
-ms.openlocfilehash: 4282e992ea80420181f9d7a2e3d6a55d6614c4de
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 128612eb2f7c6c8fdd0cc01f10b8e522df46dcf6
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="introduction-to-styling-applications-with-less-sass-and-font-awesome-in-aspnet-core"></a>Introduction aux applications de style avec moins, Sass et police impressionnant dans ASP.NET Core
 
-Par [Steve Smith](http://ardalis.com)
+Par [Steve Smith](https://ardalis.com/)
 
-Les utilisateurs d’applications web ont des exigences plus élevées lorsqu’il s’agit du style et expérience globale. Les applications web modernes fréquemment tirer parti des outils riches et infrastructures pour définir et gérer leur apparence et la convivialité de façon cohérente. Comme les infrastructures [Bootstrap](http://getbootstrap.com/) peuvent accéder permettent de définir un ensemble commun des styles et options de disposition pour les sites web. Toutefois, la plupart des sites non trivial également bénéficier de pouvoir définir et mettre à jour les styles et les fichiers de feuille de style en cascade de manière efficace, mais aussi ayant un accès facile aux icônes non-image qui permettent d’interface du site plus intuitive. C’est là langages et outils qui prennent en charge [moins](http://lesscss.org/) et [Sass](http://sass-lang.com/), et les bibliothèques telles que [police impressionnant](http://fortawesome.github.io/Font-Awesome/), sont disponibles dans.
+Les utilisateurs d’applications web ont des exigences plus élevées lorsqu’il s’agit du style et expérience globale. Les applications web modernes fréquemment tirer parti des outils riches et infrastructures pour définir et gérer leur apparence et la convivialité de façon cohérente. Comme les infrastructures [Bootstrap](http://getbootstrap.com/) peuvent accéder permettent de définir un ensemble commun des styles et options de disposition pour les sites web. Toutefois, la plupart des sites non trivial également bénéficier de pouvoir définir et mettre à jour les styles et les fichiers de feuille de style en cascade de manière efficace, mais aussi ayant un accès facile aux icônes non-image qui permettent d’interface du site plus intuitive. C’est là langages et outils qui prennent en charge [moins](http://lesscss.org/) et [Sass](http://sass-lang.com/), et les bibliothèques telles que [police impressionnant](http://fontawesome.io/), sont disponibles dans.
 
 ## <a name="css-preprocessor-languages"></a>Langues de préprocesseur CSS
 

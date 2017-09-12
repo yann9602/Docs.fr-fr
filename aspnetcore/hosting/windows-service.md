@@ -11,17 +11,17 @@ ms.assetid: d9a65066-d7cb-47df-b046-64629c4d2c6f
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: hosting/windows-service
-ms.openlocfilehash: 1b3cdc18ded89ebdf7b7afa9f43af9669748eff4
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 33a4eca48a04f9b29c60a446f4191d39d21e7e7d
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="host-an-aspnet-core-app-in-a-windows-service"></a>Héberger une application ASP.NET Core dans un Service Windows
 
 Par [Tom Dykstra](https://github.com/tdykstra)
 
-La méthode recommandée pour héberger une application ASP.NET Core sur Windows quand vous n’utilisez pas IIS consiste à exécuter dans un [Service Windows](https://msdn.microsoft.com/library/d56de412). De cette façon qu’il peut démarrer automatiquement après les redémarrages et les blocages, sans attendre d’une personne pour se connecter.
+La méthode recommandée pour héberger une application ASP.NET Core sur Windows quand vous n’utilisez pas IIS consiste à exécuter dans un [Service Windows](https://docs.microsoft.com/dotnet/framework/windows-services/introduction-to-windows-service-applications). De cette façon qu’il peut démarrer automatiquement après les redémarrages et les blocages, sans attendre d’une personne pour se connecter.
 
 [Afficher ou télécharger l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/hosting/windows-service/sample) voir le [étapes](#next-steps) section pour obtenir des instructions sur la façon de l’exécuter.
 
@@ -33,7 +33,7 @@ La méthode recommandée pour héberger une application ASP.NET Core sur Windows
 
   Lorsque vous créez un projet dans Visual Studio, utilisez le **ASP.NET Core Application (.NET Framework)** modèle.
 
-* Si l’application obtiendra-t-elle les demandes à partir d’internet (pas uniquement à partir d’un réseau interne), elle doit utiliser le [WebListener](xref:fundamentals/servers/weblistener) serveur web au lieu de [Kestrel](xref:fundamentals/servers/kestrel).  Kestrel doit être utilisé avec IIS pour les déploiements de bord.  Pour plus d’informations, consultez [quand utiliser Kestrel avec un proxy inverse](xref:fundamentals/servers/kestrel#when-to-use-kestrel-with-a-reverse-proxy).
+* Si l’application obtiendra-t-elle les demandes à partir d’internet (pas uniquement à partir d’un réseau interne), elle doit utiliser le [WebListener](xref:fundamentals/servers/weblistener) serveur web au lieu de [Kestrel](xref:fundamentals/servers/kestrel).  Kestrel doit être utilisé avec IIS pour les déploiements de bord.  Pour plus d’informations, consultez [Quand utiliser Kestrel avec un proxy inverse ?](xref:fundamentals/servers/kestrel#when-to-use-kestrel-with-a-reverse-proxy).
 
 ## <a name="getting-started"></a>Bien démarrer
 
@@ -121,5 +121,5 @@ Si l’application ne démarre pas comme prévu lors de l’exécution dans un s
 
 Cet article a été écrit à l’aide de sources qui ont été déjà publiés. Au plus tôt et plus utiles d'entre eux ont été ceux-ci :
 
-* [Hébergement ASP.NET Core en tant que service Windows](http://stackoverflow.com/questions/37346383/hosting-asp-net-core-as-windows-service/37464074#37464074)
-* [L’hébergement de base ASP.NET dans un Service Windows](http://dotnetthoughts.net/how-to-host-your-aspnet-core-in-a-windows-service/)
+* [Hébergement ASP.NET Core en tant que service Windows](https://stackoverflow.com/questions/37346383/hosting-asp-net-core-as-windows-service/37464074)
+* [L’hébergement de base ASP.NET dans un Service Windows](https://dotnetthoughts.net/how-to-host-your-aspnet-core-in-a-windows-service/)

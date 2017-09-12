@@ -12,11 +12,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/spa-services
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 300e90912a03980d1dcde2edaf34677d80cab136
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 0dbe5e3567bb4feea7e56cff3dcf75be5df88310
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="using-javascriptservices-for-creating-single-page-applications-with-aspnet-core"></a>À l’aide de JavaScriptServices pour la création d’Applications à Page unique avec ASP.NET Core
 
@@ -33,9 +33,9 @@ Une Application à Page unique (SPA) est un type d’application web en raison d
 JavaScriptServices est une collection de technologies côté client pour ASP.NET Core. Son objectif est de positionner ASP.NET Core en tant que plateforme par défaut côté serveur développeurs de génération SPAs.
 
 JavaScriptServices se compose de trois packages NuGet distinctes :
-* [Microsoft.AspNetCore.NodeServices](http://www.nuget.org/packages/Microsoft.AspNetCore.NodeServices/) (NodeServices)
-* [Microsoft.AspNetCore.SpaServices](http://www.nuget.org/packages/Microsoft.AspNetCore.SpaServices/) (SpaServices)
-* [Microsoft.AspNetCore.SpaTemplates](http://www.nuget.org/packages/Microsoft.AspNetCore.SpaTemplates/) (SpaTemplates)
+* [Microsoft.AspNetCore.NodeServices](https://www.nuget.org/packages/Microsoft.AspNetCore.NodeServices/) (NodeServices)
+* [Microsoft.AspNetCore.SpaServices](https://www.nuget.org/packages/Microsoft.AspNetCore.SpaServices/) (SpaServices)
+* [Microsoft.AspNetCore.SpaTemplates](https://www.nuget.org/packages/Microsoft.AspNetCore.SpaTemplates/) (SpaTemplates)
 
 Ces packages sont utiles si vous :
 * Exécuter JavaScript sur le serveur
@@ -75,7 +75,7 @@ Remarque : Si vous effectuez un déploiement vers un site web Azure, vous n’a
 * [Kit de développement .NET core](https://www.microsoft.com/net/download/core) 1.0 (ou version ultérieure)
     * Si vous êtes sous Windows, cela peut être installé en sélectionnant de 2017 Visual Studio **.NET Core le développement multiplateforme** la charge de travail.
 
-* [Microsoft.AspNetCore.SpaServices](http://www.nuget.org/packages/Microsoft.AspNetCore.SpaServices/) package NuGet
+* [Microsoft.AspNetCore.SpaServices](https://www.nuget.org/packages/Microsoft.AspNetCore.SpaServices/) package NuGet
 
 <a name="server-prerendering"></a>
 
@@ -87,7 +87,7 @@ ASP.NET Core [programmes d’assistance de balise](xref:mvc/views/tag-helpers/in
 
 ### <a name="prerequisites"></a>Conditions préalables
 
-Installer les éléments suivants :
+Installez les éléments suivants :
 * [ASPNET-pré-rendu](https://www.npmjs.com/package/aspnet-prerendering) package npm :
 
     ```console
@@ -144,7 +144,7 @@ Le `postList` tableau défini à l’intérieur de la `globals` objet est attach
 
 ### <a name="prerequisites"></a>Conditions préalables
 
-Installer les éléments suivants :
+Installez les éléments suivants :
 * [ASPNET-webpack](https://www.npmjs.com/package/aspnet-webpack) package npm :
 
     ```console
@@ -171,7 +171,7 @@ Pensez à Webpack [remplacement d’un Module à chaud](https://webpack.github.i
 
 ### <a name="prerequisites"></a>Conditions préalables
 
-Installer les éléments suivants :
+Installez les éléments suivants :
 * [intergiciel Webpack à chaud](https://www.npmjs.com/package/webpack-hot-middleware) package npm :
 
     ```console
@@ -208,7 +208,7 @@ Considérez le scénario dans lequel un itinéraire sans extension de `/some/pag
 
 ### <a name="prerequisites"></a>Conditions préalables
 
-Installer les éléments suivants :
+Installez les éléments suivants :
 * Le package npm de routage côté client. À l’aide d’angulaire par exemple :
 
     ```console
@@ -264,7 +264,7 @@ Il existe deux modes de configuration principal d’exécution :
     * Exclut les mappages de sources.
     * Optimise le code côté client via une minimisation & de regroupement.
 
-ASP.NET Core utilise une variable d’environnement nommée `ASPNETCORE_ENVIRONMENT` pour stocker le mode de configuration. Consultez  **[définition de l’environnement](xref:fundamentals/environments#setting-the-environment)**  pour plus d’informations.
+ASP.NET Core utilise une variable d’environnement nommée `ASPNETCORE_ENVIRONMENT` pour stocker le mode de configuration. Consultez ** [définition de l’environnement](xref:fundamentals/environments#setting-the-environment) ** pour plus d’informations.
 
 ### <a name="running-with-net-core-cli"></a>En cours d’exécution avec le .NET Core CLI
 

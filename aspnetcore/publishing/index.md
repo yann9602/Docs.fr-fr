@@ -11,11 +11,11 @@ ms.assetid: f0930c68-4d17-4748-adbf-801e17601eb6
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: publishing/index
-ms.openlocfilehash: d030b4f16727080488056c9cde48c31a14a166bf
-ms.sourcegitcommit: bd05f7ea8f87ad076ef6e8b704698ebcba5ca80c
+ms.openlocfilehash: df3c1f0c2768b89c3ea5dc901782170c530a542e
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="hosting-and-deployment-overview-for-aspnet-core-apps"></a>Présentation de l’hébergement et du déploiement pour les applications ASP.NET Core
 
@@ -57,7 +57,7 @@ Si votre application utilise le serveur web [Kestrel](xref:fundamentals/servers/
 
 Le déploiement nécessite souvent des tâches supplémentaires en plus de la copie de la sortie de `dotnet publish` vers un serveur. Par exemple, vous souhaiterez peut-être inclure des fichiers supplémentaires dans le dossier *publish*, ou en exclure certains. Visual Studio utilise MSBuild pour le déploiement web, et vous pouvez personnaliser MSBuild pour effectuer de nombreuses autres tâches pendant le déploiement. Pour plus d’informations, consultez [Profils de publication dans Visual Studio](xref:publishing/web-publishing-vs) et l’ouvrage [Using MSBuild and Team Foundation Build](http://msbuildbook.com/) (Utilisation de MSBuild et Team Foundation Build).
 
-Vous pouvez déployer directement à partir de Visual Studio sur Azure App Service à l’aide de la [fonctionnalité de publication web](xref:tutorials/publish-to-azure-webapp-using-vs) ou de la [prise en charge intégrée de Git](xref:publishing/azure-continuous-deployment). Visual Studio Team Services prend en charge le [déploiement continu sur Azure App Service](https://www.visualstudio.com/en-us/docs/build/aspnet/core/quick-to-azure).
+Vous pouvez déployer directement à partir de Visual Studio sur Azure App Service à l’aide de la [fonctionnalité de publication web](xref:tutorials/publish-to-azure-webapp-using-vs) ou de la [prise en charge intégrée de Git](xref:publishing/azure-continuous-deployment). Visual Studio Team Services prend en charge le [déploiement continu sur Azure App Service](https://www.visualstudio.com/docs/build/aspnet/core/quick-to-azure).
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 

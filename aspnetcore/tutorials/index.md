@@ -10,11 +10,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/index
-ms.openlocfilehash: b2b429ea591809a7a1bc58115c48b8b3ed8e4249
-ms.sourcegitcommit: d7e0df365a6112240b5560212759b1e3525850a2
+ms.openlocfilehash: bf9a5b58d3c0a6a2e90dd4ee9a316de90640c79e
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="aspnet-core-tutorials"></a>Didacticiels ASP.NET Core
 
@@ -58,7 +58,7 @@ Les [pages Razor](xref:mvc/razor-pages/index) constituent l’approche recommand
 * [Utilisation de Gulp](../client-side/using-gulp.md)
 * [Utilisation de Grunt](../client-side/using-grunt.md)
 * [Gérer les packages côté client avec Bower](../client-side/bower.md)
-* [Création de sites attrayants et réactifs avec Bootstrap](../client-side/bootstrap.md)
+* [Création de sites attrayants et dynamiques avec Bootstrap](../client-side/bootstrap.md)
 
 ## <a name="testing"></a>Test
 * [Effectuer des tests unitaires dans .NET Core à l’aide de dotnet test](https://docs.microsoft.com/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
@@ -72,6 +72,6 @@ Les [pages Razor](xref:mvc/razor-pages/index) constituent l’approche recommand
 
 <a name="download"></a> 
 ## <a name="how-to-download-a-sample"></a>Comment télécharger un exemple
-1. [Téléchargez le fichier zip du référentiel ASP.NET](https://github.com/aspnet/docs/archive/master.zip).
+1. [Téléchargez le fichier zip du référentiel ASP.NET](https://codeload.github.com/aspnet/Docs/zip/master).
 1. Décompressez le fichier *Docs-master.zip*.
 1. Utilisez l’URL contenue dans l’exemple de lien pour vous aider à naviguer dans l’exemple de répertoire. 

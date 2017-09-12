@@ -12,17 +12,17 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/bower
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 409f7afba8dd7d03b7b9aa27d93ec9167252b965
-ms.sourcegitcommit: 4e84d8bf5f404bb77f3d41665cf7e7374fc39142
+ms.openlocfilehash: f5d208072f55d78de6ec8c238ebbe723cc0ec598
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="manage-client-side-packages-with-bower-in-aspnet-core"></a>Gérer les packages côté client avec Bower dans ASP.NET Core
 
-Par [Rick Anderson](https://twitter.com/RickAndMSFT), [Noel riz](http://blog.falafel.com/author/noel-rice/), et [Scott Addie](https://scottaddie.com) 
+Par [Rick Anderson](https://twitter.com/RickAndMSFT), [Noel riz](https://blog.falafel.com/falafel-software-recognized-sitefinity-website-year/), et [Scott Addie](https://scottaddie.com) 
 
-[Bower](https://bower.io/) s’appelle elle-même « Gestionnaire de package pour le web. » Dans l’écosystème .NET, il remplit le vide laissé par l’impossibilité de NuGet pour remettre les fichiers de contenu statique. Pour les projets ASP.NET Core, ces fichiers statiques sont inhérents aux bibliothèques côté client comme [jQuery](http://jquery.com/) et [Bootstrap](http://getbootstrap.com/). Pour les bibliothèques .NET, vous utilisez toujours [NuGet](https://nuget.org/) Gestionnaire de package.
+[Bower](https://bower.io/) s’appelle elle-même « Gestionnaire de package pour le web. » Dans l’écosystème .NET, il remplit le vide laissé par l’impossibilité de NuGet pour remettre les fichiers de contenu statique. Pour les projets ASP.NET Core, ces fichiers statiques sont inhérents aux bibliothèques côté client comme [jQuery](http://jquery.com/) et [Bootstrap](http://getbootstrap.com/). Pour les bibliothèques .NET, vous utilisez toujours [NuGet](https://www.nuget.org/) Gestionnaire de package.
 
 Processus de génération de nouveaux projets créés avec les modèles de projet ASP.NET Core configuration côté client. [jQuery](http://jquery.com/) et [Bootstrap](http://getbootstrap.com/) sont installés, et Bower est pris en charge.
 
@@ -36,7 +36,7 @@ Dans ce didacticiel, nous allons ajouter la prise en charge de [police impressio
 
 * Cliquez sur le projet dans l’Explorateur de solutions et sélectionnez **gérer les Packages Bower** (également dans le menu principal, **projet** > **gérer les Packages Bower**).
 
-* Dans le **Bower : \<nom du projet\>**  fenêtre, cliquez sur l’onglet « Parcourir », puis filtrer la liste de packages en entrant `font-awesome` dans la zone de recherche :
+* Dans le **Bower : \<nom du projet\> ** fenêtre, cliquez sur l’onglet « Parcourir », puis filtrer la liste de packages en entrant `font-awesome` dans la zone de recherche :
 
  ![gérer les packages bower](bower/_static/manage-bower-packages.png)
 

@@ -12,11 +12,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/working-with-forms
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: bd69e008a81abc4f6785d93b89823c03e1a7df83
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: c3f7792d7458013f837a48ca2caa459f35658f02
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="introduction-to-using-tag-helpers-in-forms-in-aspnet-core"></a>Introduction à l’utilisation de programmes d’assistance de balise dans les formulaires dans ASP.NET Core
 
@@ -34,7 +34,7 @@ Le [formulaire](https://www.w3.org/TR/html401/interact/forms.html) d’assistanc
 
 * Génère le code HTML [ \<formulaire >](https://www.w3.org/TR/html401/interact/forms.html) `action` valeur d’attribut pour un itinéraire nommé ou une action de contrôleur MVC
 
-* Génère un texte masqué [jeton de demande de vérification](http://www.asp.net/mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages) pour empêcher la falsification de requête (lorsqu’il est utilisé avec le `[ValidateAntiForgeryToken]` attribut dans la méthode d’action HTTP Post)
+* Génère un texte masqué [jeton de demande de vérification](https://docs.microsoft.com/aspnet/mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages) pour empêcher la falsification de requête (lorsqu’il est utilisé avec le `[ValidateAntiForgeryToken]` attribut dans la méthode d’action HTTP Post)
 
 * Fournit la `asp-route-<Parameter Name>` attribut, où `<Parameter Name>` est ajoutée pour les valeurs d’itinéraire. Le `routeValues` paramètres `Html.BeginForm` et `Html.BeginRouteForm` fournissent des fonctionnalités similaires.
 
@@ -53,7 +53,7 @@ L’assistance de balise de formulaire ci-dessus génère le code HTML suivant 
     </form>
    ```
 
-Le runtime MVC génère le `action` valeur d’attribut à partir des attributs d’assistance de balise de formulaire `asp-controller` et `asp-action`. L’application d’assistance de balise de formulaire génère également un masqué [jeton de demande de vérification](http://www.asp.net/mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages) pour empêcher la falsification de requête (lorsqu’il est utilisé avec le `[ValidateAntiForgeryToken]` attribut dans la méthode d’action HTTP Post). Un formulaire HTML pur empêcher la falsification de requête est difficile, l’application d’assistance de balise de formulaire fournit ce service pour vous.
+Le runtime MVC génère le `action` valeur d’attribut à partir des attributs d’assistance de balise de formulaire `asp-controller` et `asp-action`. L’application d’assistance de balise de formulaire génère également un masqué [jeton de demande de vérification](https://docs.microsoft.com/aspnet/mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages) pour empêcher la falsification de requête (lorsqu’il est utilisé avec le `[ValidateAntiForgeryToken]` attribut dans la méthode d’action HTTP Post). Un formulaire HTML pur empêcher la falsification de requête est difficile, l’application d’assistance de balise de formulaire fournit ce service pour vous.
 
 ### <a name="using-a-named-route"></a>À l’aide d’un itinéraire nommé
 
@@ -61,7 +61,7 @@ Le `asp-route` attribut d’assistance de balise peut également générer le ba
 
 [!code-HTML[Main](../../mvc/views/working-with-forms/sample/final/Views/Demo/RegisterRoute.cshtml)]
 
-Un grand nombre des vues dans le *Views/Account* dossier (généré lorsque vous créez une application web avec *comptes d’utilisateur individuels*) contiennent le [asp-itinéraire-returnurl](http://docs.asp.net/en/latest/mvc/views/working-with-forms.html#the-form-tag-helper) attribut :
+Un grand nombre des vues dans le *Views/Account* dossier (généré lorsque vous créez une application web avec *comptes d’utilisateur individuels*) contiennent le [asp-itinéraire-returnurl](https://docs.microsoft.com/aspnet/core/mvc/views/working-with-forms) attribut :
 
 <!-- literal_block {"ids": [], "linenos": false, "xml:space": "preserve", "language": "none", "highlight_args": {"hl_lines": [2]}} -->
 
@@ -88,11 +88,11 @@ L’application d’assistance de balise d’entrée :
 
 * Génère le `id` et `name` attributs HTML pour le nom de l’expression spécifiée dans le `asp-for` attribut. `asp-for="Property1.Property2"` équivaut à `m => m.Property1.Property2`. Le nom de l’expression est celui qui est utilisé pour la `asp-for` valeur d’attribut. Consultez le [noms d’expressions](#expression-names) section pour plus d’informations.
 
-* Définit le code HTML `type` en fonction du type de modèle de valeur d’attribut et [annotation de données](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx) attributs appliqués à la propriété du modèle
+* Définit le code HTML `type` en fonction du type de modèle de valeur d’attribut et [annotation de données](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.dataannotations.iattributeadapter) attributs appliqués à la propriété du modèle
 
 * Ne remplace pas le code HTML `type` valeur d’attribut s’il est spécifié
 
-* Génère [HTML5](https://developer.mozilla.org/docs/Web/Guide/HTML/HTML5) validation des attributs à partir de [annotation de données](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx) attributs appliqués aux propriétés de modèle
+* Génère [HTML5](https://developer.mozilla.org/docs/Web/Guide/HTML/HTML5) validation des attributs à partir de [annotation de données](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.dataannotations.iattributeadapter) attributs appliqués aux propriétés de modèle
 
 * Est une fonctionnalité du programme d’assistance HTML se chevauchent avec `Html.TextBoxFor` et `Html.EditorFor`. Consultez le **alternatives de programme d’assistance HTML à l’application d’assistance de balise d’entrée** pour plus d’informations.
 
@@ -121,7 +121,7 @@ Le `Input` application d’assistance de balise définit le code HTML `type` att
 |Single, Double|type = « number »|
 
 
-Le tableau suivant présente certaines commun [annotations de données](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx) attributs l’application d’assistance de balise d’entrée est mappés à des types spécifiques d’entrée (pas de chaque attribut de validation est répertorié) :
+Le tableau suivant présente certaines commun [annotations de données](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.dataannotations.iattributeadapter) attributs l’application d’assistance de balise d’entrée est mappés à des types spécifiques d’entrée (pas de chaque attribut de validation est répertorié) :
 
 
 |Attribut|Type d’entrée|
@@ -260,7 +260,7 @@ Le *Views/Shared/EditorTemplates/ToDoItem.cshtml* modèle :
 
 Le `Textarea Tag Helper` application d’assistance de balise est similaire à l’application d’assistance de balise d’entrée.
 
-* Génère le `id` et `name` attributs et les attributs de validation de données à partir du modèle pour un [ \<textarea >](http://www.w3.org/wiki/HTML/Elements/textarea) élément.
+* Génère le `id` et `name` attributs et les attributs de validation de données à partir du modèle pour un [ \<textarea >](https://www.w3.org/wiki/HTML/Elements/textarea) élément.
 
 * Fournit un typage fort.
 
@@ -324,7 +324,7 @@ Il existe deux programmes d’assistance de balise de Validation. Le `Validation
 
 ### <a name="the-validation-message-tag-helper"></a>L’assistance de balise de Message de Validation
 
-* Ajoute le [HTML5](https://developer.mozilla.org/docs/Web/Guide/HTML/HTML5) `data-valmsg-for="property"` d’attribut pour le [span](https://developer.mozilla.org/docs/Web/HTML/Element/span) élément, ce qui joint les messages d’erreur de validation sur le champ d’entrée de la propriété de modèle spécifié.   Lorsqu’une erreur de validation côté client se produit, [jQuery](https://jquery.com/) affiche le message d’erreur dans le `<span>` élément.
+* Ajoute le [HTML5](https://developer.mozilla.org/docs/Web/Guide/HTML/HTML5) `data-valmsg-for="property"` d’attribut pour le [span](https://developer.mozilla.org/docs/Web/HTML/Element/span) élément, ce qui joint les messages d’erreur de validation sur le champ d’entrée de la propriété de modèle spécifié. Lorsqu’une erreur de validation côté client se produit, [jQuery](https://jquery.com/) affiche le message d’erreur dans le `<span>` élément.
 
 * La validation a également lieu sur le serveur. Les clients peuvent avoir désactivé JavaScript et une validation peut uniquement être effectuée sur le côté serveur.
 
@@ -590,16 +590,16 @@ Le bon `<option>` élément est sélectionné (contiennent le `selected="selecte
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-* [Programmes d’assistance de balise](tag-helpers/intro.md)
+* [Tag Helpers](tag-helpers/intro.md)
 
 * [Élément de formulaire HTML](https://www.w3.org/TR/html401/interact/forms.html)
 
-* [Jeton de demande de vérification](http://www.asp.net/mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages)
+* [Jeton de demande de vérification](https://docs.microsoft.com/aspnet/mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages)
 
-* [Liaison de modèle](../models/model-binding.md)
+* [Liaison de données](../models/model-binding.md)
 
 * [Validation du modèle](../models/validation.md)
 
-* [annotations de données](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx)
+* [annotations de données](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.dataannotations.iattributeadapter)
 
 * [Extraits de code pour ce document de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/forms/sample).

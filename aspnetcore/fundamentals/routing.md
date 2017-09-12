@@ -11,15 +11,15 @@ ms.assetid: bbbcf9e4-3c4c-4f50-b91e-175fe9cae4e2
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/routing
-ms.openlocfilehash: 98756e2c5b336aabcf5155d929160b616baaf2ee
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 431b837dc93abdf305b77615409883fd54b99455
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="routing-in-aspnet-core"></a>Le routage ASP.NET Core
 
-Par [Ryan Nowak](https://github.com/rynowak), [Steve Smith](http://ardalis.com), et [Rick Anderson](https://twitter.com/RickAndMSFT)
+Par [Ryan Nowak](https://github.com/rynowak), [Steve Smith](https://ardalis.com/), et [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 Fonctionnalité de routage est chargée pour le mappage d’une demande entrante vers un gestionnaire d’itinéraire. Les itinéraires sont définis dans l’application ASP.NET et configurés au démarrage de l’application. Un itinéraire peut éventuellement extraire les valeurs à partir de l’URL contenue dans la demande, et ces valeurs peuvent ensuite être utilisées pour traiter une demande. À l’aide des informations d’itinéraire à partir de l’application ASP.NET, la fonctionnalité de routage peut également générer des URL qui mappent aux gestionnaires d’itinéraire. Par conséquent, le routage peut trouver un gestionnaire d’itinéraires basé sur une URL ou l’URL correspondant à un gestionnaire d’itinéraire donné en fonction des informations de gestionnaire d’itinéraire.
 
@@ -325,9 +325,9 @@ Le tableau suivant illustre certaines contraintes d’itinéraire et leur compor
 
 ## <a name="regular-expressions"></a>Expressions régulières 
 
-L’infrastructure ASP.NET Core ajoute `RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.CultureInvariant` au constructeur d’expression régulière. Consultez [RegexOptions, énumération](https://msdn.microsoft.com/library/system.text.regularexpressions.regexoptions(v=vs.110).aspx) pour obtenir une description de ces membres.
+L’infrastructure ASP.NET Core ajoute `RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.CultureInvariant` au constructeur d’expression régulière. Consultez [RegexOptions, énumération](https://docs.microsoft.com/dotnet/api/system.text.regularexpressions.regexoptions) pour obtenir une description de ces membres.
 
-Expressions régulières utilisent les délimiteurs et les jetons semblables à celles utilisées par le routage et le langage c#. Jetons d’expression régulière doivent être échappés. Par exemple, pour utiliser l’expression régulière `^\d{3}-\d{2}-\d{4}$` de routage, il doit avoir le `\` caractères tapées comme `\\` dans le fichier source c# pour échapper le `\` caractère d’échappement de chaîne (sauf à l’aide de [textuel littéraux de chaîne](https://msdn.microsoft.com/library/aa691090(v=vs.71).aspx)). Le `{` , `}` , ' [' et ']' caractères doivent être doublée pour échapper les caractères de délimitation des paramètres de routage.  Le tableau ci-dessous montre une expression régulière et la version.
+Expressions régulières utilisent les délimiteurs et les jetons semblables à celles utilisées par le routage et le langage c#. Jetons d’expression régulière doivent être échappés. Par exemple, pour utiliser l’expression régulière `^\d{3}-\d{2}-\d{4}$` de routage, il doit avoir le `\` caractères tapées comme `\\` dans le fichier source c# pour échapper le `\` caractère d’échappement de chaîne (sauf à l’aide de [textuel littéraux de chaîne](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/string). Le `{` , `}` , ' [' et ']' caractères doivent être doublée pour échapper les caractères de délimitation des paramètres de routage.  Le tableau ci-dessous montre une expression régulière et la version.
 
 | Expression               | Remarque |
 | ----------------- | ------------ | 
@@ -347,7 +347,7 @@ Souvent des expressions régulières utilisées dans le routage commence par la 
 | `^[a-z]{2}$` |  hello | Non | consultez `^` et `$` ci-dessus |
 | `^[a-z]{2}$` |  123abc456 | Non | consultez `^` et `$` ci-dessus |
 
-Reportez-vous à [Expressions régulières .NET Framework](https://msdn.microsoft.com/library/hs600312(v=vs.110).aspx) pour plus d’informations sur la syntaxe d’expression régulière.
+Reportez-vous à [Expressions régulières .NET Framework](https://docs.microsoft.com/dotnet/standard/base-types/regular-expression-language-quick-reference) pour plus d’informations sur la syntaxe d’expression régulière.
 
 Pour contraindre un paramètre à un jeu connu de valeurs possibles, utilisez une expression régulière. Par exemple `{action:regex(^(list|get|create)$)}` correspond uniquement à la `action` acheminer la valeur à `list`, `get`, ou `create`. Si passé dans le dictionnaire de contraintes, la chaîne « ^ (liste | get | créer) $» serait équivalent. Les contraintes qui sont passées dans le dictionnaire de contraintes (pas inline dans un modèle) et qui ne correspondent pas l’une des contraintes connus sont également traités comme des expressions régulières.
 

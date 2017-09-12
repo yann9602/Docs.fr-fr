@@ -11,15 +11,15 @@ ms.assetid: 0a7286e4-6428-424e-b5c4-5c98815cf61c
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/servers/httpsys
-ms.openlocfilehash: cff6f171432febac5ec3e7adf9cf77953e0ece2d
-ms.sourcegitcommit: 4e84d8bf5f404bb77f3d41665cf7e7374fc39142
+ms.openlocfilehash: 5ffe6b5d55d88cbcfa62dfacf1e6e896f1304e39
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="httpsys-web-server-implementation-in-aspnet-core"></a>Implémentation du serveur web HTTP.sys dans ASP.NET Core
 
-Par [Tom Dykstra](http://github.com/tdykstra) et [Ross de Chris](https://github.com/Tratcher)
+Par [Tom Dykstra](https://github.com/tdykstra) et [Ross de Chris](https://github.com/Tratcher)
 
 > [!NOTE]
 > Cette rubrique s’applique uniquement à ASP.NET Core 2.0 et versions ultérieures. Dans les versions antérieures d’ASP.NET Core, HTTP.sys est nommé [WebListener](xref:fundamentals/servers/weblistener).
@@ -161,14 +161,14 @@ netsh http add sslcert ipport=0.0.0.0:443 certhash=MyCertHash_Here appid={000000
 
 Voici la documentation de référence *netsh.exe*:
 
-* [Commandes Netsh pour Hypertext Transfer Protocol (HTTP)](http://technet.microsoft.com/library/cc725882.aspx)
+* [Commandes Netsh pour Hypertext Transfer Protocol (HTTP)](https://technet.microsoft.com/library/cc725882.aspx)
 * [Chaînes UrlPrefix](https://msdn.microsoft.com/library/windows/desktop/aa364698.aspx)
 
 Les ressources suivantes fournissent des instructions détaillées pour plusieurs scénarios. Les articles qui font référence à HttpListener s’appliquent également à HTTP.sys, comme les deux reposent sur Http.Sys.
 
-* [Comment : configurer un Port avec un certificat SSL](http://msdn.microsoft.com/library/ms733791.aspx)
+* [Comment : configurer un Port avec un certificat SSL](https://docs.microsoft.com/dotnet/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate)
 * [Les communications HTTPS - HttpListener basé hébergement et la Certification Client](http://sunshaking.blogspot.com/2012/11/https-communication-httplistener-based.html) blog de tiers et est assez ancien mais dispose toujours des informations utiles.
-* [Comment : HttpListener à l’aide de procédure pas à pas ou le serveur Http du code non managé (C++) comme serveur SSL Simple](http://blogs.msdn.com/b/jpsanders/archive/2009/09/29/walkthrough-using-httplistener-as-an-ssl-simple-server.aspx) ce qui est également un blog plus anciens avec des informations utiles.
+* [Comment : HttpListener à l’aide de procédure pas à pas ou le serveur Http du code non managé (C++) comme serveur SSL Simple](https://blogs.msdn.microsoft.com/jpsanders/2009/09/29/how-to-walkthrough-using-httplistener-or-http-server-unmanaged-code-c-as-an-ssl-simple-server/) ce qui est également un blog plus anciens avec des informations utiles.
 
 Voici certains des outils tiers qui peuvent être plus faciles à utiliser que les *netsh.exe* ligne de commande. Ils ne sont pas fournies par ou recommandés par Microsoft. Les outils exécutés en tant qu’administrateur par défaut, depuis *netsh.exe* lui-même requiert des privilèges d’administrateur.
 
@@ -181,6 +181,6 @@ Voici certains des outils tiers qui peuvent être plus faciles à utiliser que l
 
 Pour plus d'informations, reportez-vous aux ressources suivantes :
 
-* [Exemple d’application pour cet article](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/servers/HttpSys/sample)
+* [Exemple d’application pour cet article](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/servers/httpsys/sample)
 * [Code source de HTTP.sys](https://github.com/aspnet/HttpSysServer/)
 * [Hébergement d’applications WPF](xref:fundamentals/hosting)

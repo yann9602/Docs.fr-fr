@@ -11,15 +11,15 @@ ms.assetid: 40d534f2-89b3-4b09-9c2c-3494bf9991c9
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: testing/integration-testing
-ms.openlocfilehash: d30af6edc31fbce2ebb77c57be3fd78231c54b50
-ms.sourcegitcommit: 418e6aa4ab79474ecc4d0a6af573a3759b113fe4
+ms.openlocfilehash: 02018299c9bd1d194c2c70c14f518786e803d572
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="integration-testing-in-aspnet-core"></a>Tests d’intégration dans ASP.NET Core
 
-Par [Steve Smith](http://ardalis.com)
+Par [Steve Smith](https://ardalis.com/)
 
 Tests d’intégration garantit que les composants d’une application fonctionnent correctement lors de l’assemblage. ASP.NET Core prend en charge aux tests d’intégration à l’aide des infrastructures de tests unitaires et un hôte web test intégré qui peut être utilisé pour gérer les demandes sans la surcharge du réseau.
 
@@ -130,10 +130,10 @@ Avec cet intergiciel (middleware) en place et certaines utile méthodes d’exte
 Après cette refactorisation, vous êtes certain que l’application web fonctionne toujours comme avant, étant donné que vos tests d’intégration sont passage.
 
 > [!NOTE]
-> Il est conseillé de valider les modifications apportées au contrôle de code source une fois que vous effectuez une opération de refactorisation et vos tests. Si vous êtes qui emploient développement piloté par Test [envisagez d’ajouter la validation à votre cycle de rouge-vert-refactoriser](http://ardalis.com/rgrc-is-the-new-red-green-refactor-for-test-first-development).
+> Il est conseillé de valider les modifications apportées au contrôle de code source une fois que vous effectuez une opération de refactorisation et vos tests. Si vous êtes qui emploient développement piloté par Test [envisagez d’ajouter la validation à votre cycle de rouge-vert-refactoriser](https://ardalis.com/rgrc-is-the-new-red-green-refactor-for-test-first-development).
 
 ## <a name="resources"></a>Ressources
 
-* [Tests unitaires](https://docs.microsoft.com/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
+* [Test unitaire](https://docs.microsoft.com/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
 * [Intergiciel (middleware)](xref:fundamentals/middleware)
-* [Contrôleurs de tests](xref:mvc/controllers/testing)
+* [Test des contrôleurs](xref:mvc/controllers/testing)

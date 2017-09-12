@@ -10,7 +10,7 @@
   dotnet ef database update
   ```
   
-  [.NET core](http://go.microsoft.com/fwlink/?LinkID=517853) est une implémentation multiplateforme de .NET. Voici comment ces commandes :
+  [.NET core](https://docs.microsoft.com/dotnet/core/tools/index) est une implémentation multiplateforme de .NET. Voici comment ces commandes :
 
   * `dotnet restore`: Télécharge les packages NuGet spécifiés dans le *.csproj* fichier.
   * `dotnet ef migrations add Initial`Exécute la commande de migrations Entity Framework .NET Core CLI et crée la migration initiale. Le paramètre après « ajouter » est un nom que vous attribuez à la migration. Ici vous nommez la migration « Initial », car il s’agit de la migration de base de données initiale. Cette opération crée le */Migrations de données/\<date-heure > _Initial.cs* fichier contenant les commandes de migration pour ajouter le *film* table à la base de données.

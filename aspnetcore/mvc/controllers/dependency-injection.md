@@ -11,17 +11,17 @@ ms.assetid: bc8b4ba3-e9ba-48fd-b1eb-cd48ff6bc7a1
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/dependency-injection
-ms.openlocfilehash: 371fb0f721797e4d8f7a26858ae0a709cb5cd39e
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: b83bd4a24ccf7e90e9df06d6a8e229a2d5c6699a
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="dependency-injection-into-controllers"></a>Injection de dépendance dans les contrôleurs
 
 <a name=dependency-injection-controllers></a>
 
-Par [Steve Smith](http://ardalis.com)
+Par [Steve Smith](https://ardalis.com/)
 
 Les contrôleurs MVC ASP.NET Core doivent demander leurs dépendances explicitement par le biais de leurs constructeurs. Dans certains cas, les actions de contrôleur individuels peuvent nécessiter un service, et il ne peut pas judicieux de demander au niveau du contrôleur. Dans ce cas, vous pouvez également choisir d’injecter un service en tant que paramètre dans la méthode d’action.
 
@@ -29,7 +29,7 @@ Les contrôleurs MVC ASP.NET Core doivent demander leurs dépendances explicitem
 
 ## <a name="dependency-injection"></a>Injection de dépendance
 
-Injection de dépendances est une technique qui suit le [principe d’Inversion de dépendance](http://deviq.com/dependency-inversion-principle), ce qui permet aux applications de se composer de modules faiblement couplées. ASP.NET Core a une prise en charge intégrée pour [injection de dépendance](../../fundamentals/dependency-injection.md), ce qui facilite la tester et à gérer des applications.
+Injection de dépendances est une technique qui suit le [principe d’Inversion de dépendance](http://deviq.com/dependency-inversion-principle/), ce qui permet aux applications de se composer de modules faiblement couplées. ASP.NET Core a une prise en charge intégrée pour [injection de dépendance](../../fundamentals/dependency-injection.md), ce qui facilite la tester et à gérer des applications.
 
 ## <a name="constructor-injection"></a>Injection de constructeurs
 
@@ -70,7 +70,7 @@ Une fois que le service a été configuré, l’application en cours d’exécut
 ![Message d’accueil du serveur](dependency-injection/_static/server-greeting.png)
 
 >[!TIP]
-> Consultez [logique du contrôleur de test](testing.md) pour savoir comment demander explicitement les dépendances [http://deviq.com/explicit-dependencies-principle](http://deviq.com/explicit-dependencies-principle) dans les contrôleurs rend le code plus facile à tester.
+> Consultez [logique du contrôleur de test](testing.md) pour savoir comment demander explicitement les dépendances [http://deviq.com/explicit-dependencies-principle/](http://deviq.com/explicit-dependencies-principle/) dans les contrôleurs rend le code plus facile à tester.
 
 Injection de dépendance intégrée d’ASP.NET Core qu’un seul constructeur pour les classes de demande de services prend en charge. Si vous avez plus d’un constructeur, vous pouvez recevoir une exception indiquant :
 
