@@ -11,11 +11,11 @@ ms.assetid: 66DB4B94-C78C-4005-BA03-3D982B87C268
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/microsoft-logins
-ms.openlocfilehash: cc2d119ae2f7cf06ed0ea4b8a91fd8fa15804468
-ms.sourcegitcommit: fb518f856f31fe53c09196a13309eacb85b37a22
+ms.openlocfilehash: 70cbeea15199498c592307dccc125e60206dadbf
+ms.sourcegitcommit: b02db6da115e55140da91b67355aaf56aae1703f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 09/11/2017
 ---
 # <a name="configuring-microsoft-account-authentication"></a>Configuration de l’authentification Microsoft Account
 
@@ -31,7 +31,7 @@ Ce didacticiel vous montre comment permettre aux utilisateurs de se connecter av
 
 ![Boîte de dialogue se connecter](index/_static/MicrosoftDevLogin.png)
 
-Si vous n’avez pas déjà un compte Microsoft, appuyez sur  **[créez-en un !](https://signup.live.com/signup?wa=wsignin1.0&rpsnv=13&ct=1478151035&rver=6.7.6643.0&wp=SAPI_LONG&wreply=https%3a%2f%2fapps.dev.microsoft.com%2fLoginPostBack&id=293053&aadredir=1&contextid=D70D4F21246BAB50&bk=1478151036&uiflavor=web&uaid=f0c3de863a914c358b8dc01b1ff49e85&mkt=EN-US&lc=1033&lic=1)** Une fois connecté, vous êtes redirigé vers **mes applications** page :
+Si vous n’avez pas déjà un compte Microsoft, appuyez sur ** [créez-en un !](https://signup.live.com/signup?wa=wsignin1.0&rpsnv=13&ct=1478151035&rver=6.7.6643.0&wp=SAPI_LONG&wreply=https%3a%2f%2fapps.dev.microsoft.com%2fLoginPostBack&id=293053&aadredir=1&contextid=D70D4F21246BAB50&bk=1478151036&uiflavor=web&uaid=f0c3de863a914c358b8dc01b1ff49e85&mkt=EN-US&lc=1033&lic=1)** Une fois connecté, vous êtes redirigé vers **mes applications** page :
 
 ![Portail des développeurs Microsoft ouvert dans Microsoft Edge](index/_static/MicrosoftDev.png)
 
@@ -41,7 +41,7 @@ Si vous n’avez pas déjà un compte Microsoft, appuyez sur  **[créez-en un !
 
 * Pour les besoins de ce didacticiel, désactivez le **guidée par le programme d’installation** case à cocher.
 
-* Appuyez sur **créer** pour continuer au **inscription** page :
+* Appuyez sur **créer** pour continuer au **inscription** page. Fournir un **nom** et notez la valeur de la **Id d’Application**, que vous utilisez comme `ClientId` plus loin dans le didacticiel :
 
 ![Page d’inscription](index/_static/MicrosoftDevAppReg.png)
 
@@ -78,7 +78,7 @@ Le modèle de projet utilisé dans ce didacticiel garantit que [Microsoft.AspNet
 
    `dotnet add package Microsoft.AspNetCore.Authentication.MicrosoftAccount`
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 Ajoutez le service de Account Microsoft dans le `ConfigureServices` méthode dans *Startup.cs* fichier :
 
@@ -92,7 +92,7 @@ services.AddAuthentication().AddMicrosoftAccount(microsoftOptions =>
 
 Le `AddAuthentication` méthode doit uniquement être appelée qu’une seule fois lors de l’ajout de plusieurs fournisseurs d’authentification. Les appels suivants à ce dernier ont la possibilité de remplacement de tous configurés précédemment [AuthenticationOptions](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.authenticationoptions) propriétés.
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 Ajouter l’intergiciel (middleware) Microsoft Account dans les `Configure` méthode dans *Startup.cs* fichier :
 
