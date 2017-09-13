@@ -11,15 +11,15 @@ ms.assetid: 471112e9-2c33-454b-96fc-32916102ce73
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/using-grunt
-ms.openlocfilehash: df20c3a31fce81ab039ef2f63bf38ed9943c7c6c
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 8ae50514ce24c7f9e3bb1e347d5d860e1de43c5f
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="using-grunt-in-aspnet-core"></a>À l’aide de Grunt dans ASP.NET Core 
 
-Par [Noel riz](http://blog.falafel.com/author/noel-rice/)
+Par [Noel riz](https://blog.falafel.com/falafel-software-recognized-sitefinity-website-year/)
 
 Grunt est un exécuteur de tâches JavaScript qui automatise une minimisation du script, la compilation TypeScript, outils « lint » qualité du code, les processeurs avant CSS et pratiquement n’importe quel, répétitive qui doit effectuer pour prendre en charge le développement de clients. Grunt est entièrement pris en charge dans Visual Studio, bien que les modèles de projet ASP.NET utilisent Gulp par défaut (voir [à l’aide de Gulp](using-gulp.md)).
 
@@ -211,7 +211,7 @@ Grunt est configuré à l’aide d’un manifeste nommé *Gruntfile.js* qui déf
 
 10.  Ajouter le `uglify` de tâches en utilisant le code ci-dessous.
 
-    La tâche minimise le *combined.js* fichier trouvé dans le répertoire temporaire et crée le fichier de résultats en suivant la convention d’affectation de noms standard wwwroot/lib  *\<nom de fichier\>. min.js*.
+    La tâche minimise le *combined.js* fichier trouvé dans le répertoire temporaire et crée le fichier de résultats en suivant la convention d’affectation de noms standard wwwroot/lib * \<nom de fichier\>. min.js*.
     
     ```javascript
     uglify: {
@@ -280,7 +280,7 @@ Avec le bouton droit de la tâche de suivi dans l’Explorateur d’exécuteur d
 
 ## <a name="binding-to-visual-studio-events"></a>Liaison à des événements Visual Studio
 
-Sauf si vous souhaitez démarrer manuellement vos tâches chaque fois que vous travaillez dans Visual Studio, vous pouvez lier des tâches **avant de générer**, **après génération**, **Clean**, et  **Projet ouvert** événements.
+Sauf si vous souhaitez démarrer manuellement vos tâches chaque fois que vous travaillez dans Visual Studio, vous pouvez lier des tâches **avant de générer**, **après génération**, **Clean**, et ** Projet ouvert** événements.
 
 Nous allons lier `watch` afin qu’elle s’exécute chaque fois que Visual Studio s’ouvre. Dans l’Explorateur d’exécuteur de tâche, avec le bouton droit de la tâche de surveillance, puis sélectionnez **liaisons > ouverture du projet** dans le menu contextuel.
 
