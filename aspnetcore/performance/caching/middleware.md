@@ -10,11 +10,11 @@ ms.topic: article
 ms.assetid: f9267eab-2762-42ac-1638-4a25d2c9d67c
 ms.prod: asp.net-core
 uid: performance/caching/middleware
-ms.openlocfilehash: 7790f38dda61eabd3cbbc6088ad455c07289b739
-ms.sourcegitcommit: 70089de5bfd8ecd161261aa95faf07a4e1534cf8
+ms.openlocfilehash: 4013619f738b3b8b58e45d9dfd205e7b75e056b4
+ms.sourcegitcommit: 029dd7fbc0793e84b9ed91f2b45624bbc187fb32
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/23/2017
+ms.lasthandoff: 09/14/2017
 ---
 # <a name="response-caching-middleware-in-aspnet-core"></a>Réponse mise en cache d’intergiciel (middleware) dans ASP.NET Core
 
@@ -30,11 +30,11 @@ Pour inclure l’intergiciel (middleware) dans un projet, ajoutez une référenc
 ## <a name="configuration"></a>Configuration
 Dans `ConfigureServices`, ajoutez l’intergiciel (middleware) à la collection de service.
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 [!code-csharp[Main](middleware/samples/2.x/Program.cs?name=snippet1&highlight=4)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 [!code-csharp[Main](middleware/samples/1.x/Startup.cs?name=snippet1&highlight=3)]
 
@@ -42,11 +42,11 @@ Dans `ConfigureServices`, ajoutez l’intergiciel (middleware) à la collection 
 
 Configurer l’application pour utiliser l’intergiciel (middleware) avec la `UseResponseCaching` méthode d’extension, qui ajoute l’intergiciel (middleware) au pipeline de traitement de la demande. L’exemple d’application ajoute un [ `Cache-Control` ](https://tools.ietf.org/html/rfc7234#section-5.2) en-tête dans la réponse qui met en cache les réponses de mise en cache pendant 10 secondes. L’exemple envoie une [ `Vary` ](https://tools.ietf.org/html/rfc7231#section-7.1.4) en-tête pour configurer l’intergiciel (middleware) pour servir une réponse mise en cache d’uniquement si le [ `Accept-Encoding` ](https://tools.ietf.org/html/rfc7231#section-5.3.4) en-tête des demandes ultérieures correspond à celle de la demande d’origine.
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 [!code-csharp[Main](middleware/samples/2.x/Program.cs?name=snippet1&highlight=8)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 [!code-csharp[Main](middleware/samples/1.x/Startup.cs?name=snippet2&highlight=3)]
 
@@ -125,7 +125,7 @@ Lorsque les tests et le dépannage du comportement de mise en cache, un navigate
 * Le `Set-Cookie` en-tête ne doit pas être présent.
 * `Vary`paramètres de l’en-tête doivent être valide et non égal à `*`.
 * Le `Content-Length` valeur d’en-tête (si défini) doit correspondre à la taille du corps de réponse.
-* Le `HttpSendFileFeature` n’est pas utilisé.
+* Le [IHttpSendFileFeature](/aspnet/core/api/microsoft.aspnetcore.http.features.ihttpsendfilefeature) n’est pas utilisé.
 * La réponse ne doit pas être périmée tel que spécifié par le `Expires` en-tête et le `max-age` et `s-maxage` directives de cache.
 * Mise en mémoire tampon de réponse réussit et que la taille de la réponse est inférieure à la configuration ou par défaut `SizeLimit`.
 * La réponse doit être mise en cache en fonction de la [RFC 7234](https://tools.ietf.org/html/rfc7234) spécifications. Par exemple, le `no-store` directive ne doit pas exister dans les champs d’en-tête de demande ou de réponse. Consultez *Section 3 : le stockage des réponses dans les Caches* de [RFC 7234](https://tools.ietf.org/html/rfc7234) pour plus d’informations.
