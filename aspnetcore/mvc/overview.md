@@ -11,15 +11,15 @@ ms.assetid: 89af38d1-52e0-4db7-b791-dbce909b0714
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/overview
-ms.openlocfilehash: 3e95ccd8aeda54a050cd656ea0c831fd928f53a2
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 67394b066c18a149a97b957d6478ba8301ea8147
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="overview-of-aspnet-core-mvc"></a>Vue d’ensemble des principaux d’ASP.NET MVC
 
-Par [Steve Smith](http://ardalis.com)
+Par [Steve Smith](https://ardalis.com/)
 
 Le cœur de ASP.NET MVC est une infrastructure riche pour la création d’applications web et API à l’aide du modèle-Vue-contrôleur concevoir le modèle.
 
@@ -77,7 +77,7 @@ Base d’ASP.NET MVC inclut les éléments suivants :
 * [Testabilité](#testability)
 * [Moteur d’affichage Razor](#razor-view-engine)
 * [Vues fortement typées](#strongly-typed-views)
-* [Programmes d’assistance de balise](#tag-helpers)
+* [Tag Helpers](#tag-helpers)
 * [Affichage des composants](#view-components)
 
 ### <a name="routing"></a>Routage
@@ -153,7 +153,7 @@ public async Task<IActionResult> Login(LoginViewModel model, string returnUrl = 
 }
 ```
 
-Le framework gère la validation des données de demande à la fois sur le client et sur le serveur. La logique de validation spécifiée sur les types de modèle est ajoutée aux vues rendus sous forme d’annotations discrètes et est appliquée dans le navigateur avec [jQuery Validation](http://jqueryvalidation.org/).
+Le framework gère la validation des données de demande à la fois sur le client et sur le serveur. La logique de validation spécifiée sur les types de modèle est ajoutée aux vues rendus sous forme d’annotations discrètes et est appliquée dans le navigateur avec [jQuery Validation](https://jqueryvalidation.org/).
 
 ### <a name="dependency-injection"></a>Injection de dépendance
 

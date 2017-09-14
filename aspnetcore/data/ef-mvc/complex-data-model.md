@@ -11,11 +11,11 @@ ms.assetid: 0dd63913-a041-48b6-96a4-3aeaedbdf5d0
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/complex-data-model
-ms.openlocfilehash: 7d216bc07d0a8d739f0cecbc5b571b6144c13e61
-ms.sourcegitcommit: 5355c96a1768e5a1d5698a98c190e7addcc4ded5
+ms.openlocfilehash: a9e255040c300bc5ce55a356e17e6912dbaeaf88
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="creating-a-complex-data-model---ef-core-with-aspnet-core-mvc-tutorial-5-of-10"></a>Création d’un modèle de données complexes - Core EF avec le didacticiel d’ASP.NET MVC de base (5 sur 10)
 
@@ -93,7 +93,7 @@ dotnet ef migrations add MaxLengthOnNames
 dotnet ef database update
 ```
 
-Le `migrations add` commande vous avertit qu’une perte de données peut-être se produire, car la modification la plus courte pour les deux colonnes de longueur maximale.  Migrations crée un fichier nommé  *\<timeStamp > _MaxLengthOnNames.cs*. Ce fichier contient le code dans la `Up` méthode qui met à jour la base de données correspond au modèle de données en cours. Le `database update` commande exécution de ce code.
+Le `migrations add` commande vous avertit qu’une perte de données peut-être se produire, car la modification la plus courte pour les deux colonnes de longueur maximale.  Migrations crée un fichier nommé * \<timeStamp > _MaxLengthOnNames.cs*. Ce fichier contient le code dans la `Up` méthode qui met à jour la base de données correspond au modèle de données en cours. Le `database update` commande exécution de ce code.
 
 L’horodateur le préfixe au nom de fichier migrations est utilisée par Entity Framework pour classer les migrations. Vous pouvez créer plusieurs migrations avant d’exécuter la commande de base de données de mise à jour, puis toutes les migrations sont appliquées dans l’ordre dans lequel ils ont été créés.
 
@@ -374,7 +374,7 @@ Une table de jointure est requis dans la base de données pour la relation plusi
 
 Étant donné que les clés étrangères ne sont pas nullables et ensemble identifie de façon unique identifier chaque ligne de la table, il n’est pas nécessaire pour une clé primaire distincte. Le *InstructorID* et *CourseID* propriétés doivent fonctionner comme une clé primaire composite. La seule façon pour identifier les clés primaires composites EF est à l’aide de la *API fluent* (il ne peut pas être effectuée à l’aide d’attributs). Vous allez apprendre à configurer la clé primaire composite dans la section suivante.
 
-La clé composite permet de s’assurer que vous pouvez avoir plusieurs lignes pour un cours et plusieurs lignes pour un formateur, vous ne peut pas avoir plusieurs lignes pour le même formateur et de cours. Le `Enrollment` jointure entité définit sa propre clé primaire, les doublons de ce type sont possibles. Pour éviter ces doublons, vous pourriez ajouter un index unique sur les champs de clé étrangères, ou configurez `Enrollment` avec une clé primaire composite similaire à `CourseAssignment`. Pour plus d’informations, consultez [index](https://docs.efproject.net/en/latest/modeling/indexes.html).
+La clé composite permet de s’assurer que vous pouvez avoir plusieurs lignes pour un cours et plusieurs lignes pour un formateur, vous ne peut pas avoir plusieurs lignes pour le même formateur et de cours. Le `Enrollment` jointure entité définit sa propre clé primaire, les doublons de ce type sont possibles. Pour éviter ces doublons, vous pourriez ajouter un index unique sur les champs de clé étrangères, ou configurez `Enrollment` avec une clé primaire composite similaire à `CourseAssignment`. Pour plus d’informations, consultez [index](https://docs.microsoft.com/ef/core/modeling/indexes).
 
 ## <a name="update-the-database-context"></a>Mettre à jour le contexte de base de données
 

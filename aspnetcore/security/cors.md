@@ -11,11 +11,11 @@ ms.assetid: f9d95e88-4d7e-4d0c-a8e1-47de1128d505
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/cors
-ms.openlocfilehash: 44936c6db8a003a61091ec9a7fd3be5786d89b5b
-ms.sourcegitcommit: 8cafdd1dd409d5070d227100ba0e094c779ac47b
+ms.openlocfilehash: e441ce1c50139a5b33865eec8e8d99764258730d
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="enabling-cross-origin-requests-cors"></a>L’activation de demandes de Cross-Origin (CORS)
 
@@ -23,7 +23,7 @@ Par [Mike Wasson](https://github.com/mikewasson), [Shayne Boyer](https://twitter
 
 Sécurité du navigateur empêche une page web d’effectuer des demandes AJAX vers un autre domaine. Cette restriction est appelée le *stratégie de même origine*et un site malveillant empêche de lire des données sensibles à partir d’un autre site. Toutefois, vous pouvez parfois permettent aux autres sites demandes cross-origin à votre API web.
 
-[Cross-origine partage des ressources](http://www.w3.org/TR/cors/) (CORS) est une norme W3C qui permet à un serveur d’abaisser la stratégie de même origine. À l’aide de CORS, un serveur peut autoriser explicitement les certaines demandes cross-origin lors du refus d’autres. CORS est plus sûre et plus flexible qu’antérieures techniques telles que [JSONP](http://en.wikipedia.org/wiki/JSONP). Cette rubrique montre comment activer les CORS dans une application ASP.NET Core.
+[Cross-origine partage des ressources](http://www.w3.org/TR/cors/) (CORS) est une norme W3C qui permet à un serveur d’abaisser la stratégie de même origine. À l’aide de CORS, un serveur peut autoriser explicitement les certaines demandes cross-origin lors du refus d’autres. CORS est plus sûre et plus flexible qu’antérieures techniques telles que [JSONP](https://wikipedia.org/wiki/JSONP). Cette rubrique montre comment activer les CORS dans une application ASP.NET Core.
 
 ## <a name="what-is-same-origin"></a>Quelle est la « même origine » ?
 

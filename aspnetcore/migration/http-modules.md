@@ -11,17 +11,17 @@ ms.assetid: 9c826a76-fbd2-46b5-978d-6ca6df53531a
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: migration/http-modules
-ms.openlocfilehash: f99c2751138ac789e7105ff256ce7254e280463e
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: e14664133abf010b80374036e4855fdff71d1d5f
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="migrating-http-handlers-and-modules-to-aspnet-core-middleware"></a>Migration des gestionnaires HTTP et des modules pour ASP.NET Core intergiciel (middleware) 
 
 Par [Matt Perdeck](https://www.linkedin.com/in/mattperdeck)
 
-Cet article explique comment migrer ASP.NET existants [modules HTTP et des gestionnaires de](https://msdn.microsoft.com/library/bb398986.aspx) à ASP.NET Core [intergiciel (middleware)](../fundamentals/middleware.md).
+Cet article explique comment migrer ASP.NET existants [modules HTTP et des gestionnaires à partir de system.webserver](https://docs.microsoft.com/iis/configuration/system.webserver/) à ASP.NET Core [intergiciel (middleware)](../fundamentals/middleware.md).
 
 ## <a name="modules-and-handlers-revisited"></a>Modules et les gestionnaires revisitées
 
@@ -31,15 +31,15 @@ Avant de procéder à un intergiciel (middleware) ASP.NET Core, tout d’abord r
 
 **Les gestionnaires sont :**
 
-   * Classes qui implémentent [IHttpHandler](https://msdn.microsoft.com/library/system.web.ihttphandler.aspx)
+   * Classes qui implémentent [IHttpHandler](https://docs.microsoft.com/dotnet/api/system.web.ihttphandler)
 
    * Permet de gérer les demandes avec un nom de fichier donné ou une extension, tel que *report*
 
-   * [Configuré](https://msdn.microsoft.com/library/46c5ddfy.aspx) dans *Web.config*
+   * [Configuré](https://docs.microsoft.com//iis/configuration/system.webserver/handlers/) dans *Web.config*
 
 **Les modules sont :**
 
-   * Classes qui implémentent [IHttpModule](https://msdn.microsoft.com/library/system.web.ihttpmodule.aspx)
+   * Classes qui implémentent [IHttpModule](https://docs.microsoft.com/dotnet/api/system.web.ihttpmodule)
 
    * Appelé pour chaque demande
 
@@ -47,11 +47,11 @@ Avant de procéder à un intergiciel (middleware) ASP.NET Core, tout d’abord r
 
    * En mesure d’ajouter à la réponse HTTP, ou créer leurs propres
 
-   * [Configuré](https://msdn.microsoft.com/library/ms227673.aspx) dans *Web.config*
+   * [Configuré](https://docs.microsoft.com//iis/configuration/system.webserver/modules/) dans *Web.config*
 
 **L’ordre dans lequel les modules de traitent les demandes entrantes est déterminé par :**
 
-   1. Le [cycle de vie d’application](https://msdn.microsoft.com/library/ms227673.aspx), qui est représenté par une série déclenchés par ASP.NET : [BeginRequest](https://msdn.microsoft.com/library/system.web.httpapplication.beginrequest.aspx), [AuthenticateRequest](https://msdn.microsoft.com/library/system.web.httpapplication.authenticaterequest.aspx), etc.. Chaque module peut créer un gestionnaire pour un ou plusieurs événements.
+   1. Le [cycle de vie d’application](https://msdn.microsoft.com/library/ms227673.aspx), qui est représenté par une série déclenchés par ASP.NET : [BeginRequest](https://docs.microsoft.com/dotnet/api/system.web.httpapplication.beginrequest), [AuthenticateRequest](https://docs.microsoft.com/dotnet/api/system.web.httpapplication.authenticaterequest), etc.. Chaque module peut créer un gestionnaire pour un ou plusieurs événements.
 
    2. Pour le même événement, l’ordre dans lequel ils sont configurés dans *Web.config*.
 
@@ -245,7 +245,7 @@ Vous savez que la `Invoke` méthode dans votre intergiciel (middleware) prend un
 public async Task Invoke(HttpContext context)
 ```
 
-`HttpContext`a changé de manière significative dans ASP.NET Core. Cette section montre comment traduire les propriétés couramment utilisées de [System.Web.HttpContext](https://msdn.microsoft.com/library/system.web.httpcontext.aspx) au nouveau `Microsoft.AspNetCore.Http.HttpContext`.
+`HttpContext`a changé de manière significative dans ASP.NET Core. Cette section montre comment traduire les propriétés couramment utilisées de [System.Web.HttpContext](https://docs.microsoft.com/dotnet/api/system.web.httpcontext) au nouveau `Microsoft.AspNetCore.Http.HttpContext`.
 
 ### <a name="httpcontext"></a>HttpContext
 
@@ -382,7 +382,7 @@ Le `SetCookies` méthode de rappel se présente comme suit :
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-* [Vue d’ensemble des Modules HTTP et les gestionnaires HTTP](https://msdn.microsoft.com/library/bb398986.aspx)
+* [Vue d’ensemble des Modules HTTP et les gestionnaires HTTP](https://docs.microsoft.com/iis/configuration/system.webserver/)
 
 * [Configuration](../fundamentals/configuration.md)
 

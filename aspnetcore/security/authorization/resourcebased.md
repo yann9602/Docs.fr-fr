@@ -11,11 +11,11 @@ ms.assetid: 0902ba17-5304-4a12-a2d4-e0904569e988
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authorization/resourcebased
-ms.openlocfilehash: 2f799588ba4aca4664e1679e4c34657e7ca121fb
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 7f7df52bf51a81558818836450997281a21b5839
+ms.sourcegitcommit: f303a457644ed034a49aa89edecb4e79d9028cb1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="resource-based-authorization"></a>Autorisation basée sur les ressources
 
@@ -52,7 +52,7 @@ Task<bool> AuthorizeAsync(ClaimsPrincipal user,
 
 <a name=security-authorization-resource-based-imperative></a>
 
-Pour appeler la charge du service de votre ressource au sein de votre action puis appelez le `AuthorizeAsync` surcharge que vous avez besoin. Exemple :
+Pour appeler le service, charger votre ressource au sein de votre action puis appelez le `AuthorizeAsync` surcharge que vous avez besoin. Exemple :
 
 ```csharp
 public async Task<IActionResult> Edit(Guid documentId)
@@ -77,12 +77,12 @@ public async Task<IActionResult> Edit(Guid documentId)
 
 ## <a name="writing-a-resource-based-handler"></a>Écriture d’un gestionnaire de ressources
 
-Écriture d’un gestionnaire pour l’autorisation de ressource en fonction pas qui est très différent de [écriture d’un gestionnaire d’exigences brut](policies.md#security-authorization-policies-based-authorization-handler). Vous créez une spécification et ensuite implémentez un gestionnaire pour la demande, en spécifiant la configuration requise comme avant, ainsi que le type de ressource. Par exemple, un gestionnaire qui peut accepter une ressource Document ressemble comme suit :
+Écriture d’un gestionnaire pour l’autorisation de ressource en fonction pas qui est très différent de [écriture d’un gestionnaire d’exigences brut](policies.md#security-authorization-policies-based-authorization-handler). Vous créez une spécification et ensuite implémentez un gestionnaire pour la demande, en spécifiant la configuration requise comme avant, ainsi que le type de ressource. Par exemple, un gestionnaire qui peut accepter une ressource Document se présenterait comme suit :
 
 ```csharp
 public class DocumentAuthorizationHandler : AuthorizationHandler<MyRequirement, Document>
 {
-    public override Task HandleRequirementAsync(AuthorizationHandlerContext context,
+    protected override Task HandleRequirementAsync(AuthorizationHandlerContext context,
                                                 MyRequirement requirement,
                                                 Document resource)
     {
@@ -93,7 +93,7 @@ public class DocumentAuthorizationHandler : AuthorizationHandler<MyRequirement, 
 }
 ```
 
-N’oubliez pas vous devez également inscrire votre gestionnaire dans le `ConfigureServices` méthode ;
+N’oubliez pas vous devez également inscrire votre gestionnaire dans le `ConfigureServices` méthode :
 
 ```csharp
 services.AddSingleton<IAuthorizationHandler, DocumentAuthorizationHandler>();
@@ -101,7 +101,7 @@ services.AddSingleton<IAuthorizationHandler, DocumentAuthorizationHandler>();
 
 ### <a name="operational-requirements"></a>Spécifications opérationnelles
 
-Si vous prenez des décisions basées sur les opérations de lecture, écriture, mise à jour et suppression, vous pouvez utiliser la `OperationAuthorizationRequirement` classe dans le `Microsoft.AspNetCore.Authorization.Infrastructure` espace de noms. Cette classe d’exigence prégénérées permet d’écrire un seul gestionnaire qui porte un nom d’opération paramétrées, plutôt que de créer des classes individuelles pour chaque opération. Pour utiliser, il fournit des noms d’opération :
+Si vous prenez des décisions basées sur les opérations de lecture, écriture, mise à jour et suppression, vous pouvez utiliser la `OperationAuthorizationRequirement` classe dans le `Microsoft.AspNetCore.Authorization.Infrastructure` espace de noms. Cette classe d’exigence prégénérées permet d’écrire un seul gestionnaire qui porte un nom d’opération paramétrées, plutôt que de créer des classes individuelles pour chaque opération. Pour l’utiliser, fournir des noms d’opération :
 
 ```csharp
 public static class Operations
@@ -117,7 +117,7 @@ public static class Operations
 }
 ```
 
-Votre gestionnaire peut ensuite être implémenté, procédez comme suit à l’aide d’un hypothétique `Document` classe en tant que la ressource ;
+Votre gestionnaire peut ensuite être implémenté, procédez comme suit à l’aide d’un hypothétique `Document` classe en tant que la ressource :
 
 ```csharp
 public class DocumentAuthorizationHandler :
@@ -137,7 +137,7 @@ public class DocumentAuthorizationHandler :
 
 Vous pouvez voir le fonctionnement du gestionnaire sur `OperationAuthorizationRequirement`. Le code dans le gestionnaire doit prendre la propriété de nom de la spécification fournie en compte lors de l’établissement de ses évaluations.
 
-Pour appeler un gestionnaire de ressources opérationnels que vous devez spécifier l’opération lors de l’appel `AuthorizeAsync` dans l’action. Exemple :
+Pour appeler un gestionnaire de ressources opérationnels que vous devez spécifier l’opération lors de l’appel `AuthorizeAsync` dans l’action. Exemple :
 
 ```csharp
 if (await _authorizationService.AuthorizeAsync(User, document, Operations.Read))

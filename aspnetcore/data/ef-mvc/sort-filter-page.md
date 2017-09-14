@@ -10,11 +10,11 @@ ms.assetid: e6c1ff3c-5673-43bf-9c2d-077f6ada1f29
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/sort-filter-page
-ms.openlocfilehash: bc2896d0eeda7e84cef06ee3f235e637bfe04318
-ms.sourcegitcommit: 5355c96a1768e5a1d5698a98c190e7addcc4ded5
+ms.openlocfilehash: 9de39ce59633036c0dd850a7552bd3f4806c5431
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="sorting-filtering-paging-and-grouping---ef-core-with-aspnet-core-mvc-tutorial-3-of-10"></a>Le tri, le filtrage, la pagination et le regroupement - Core EF avec le didacticiel ASP.NET Core MVC (partie 3 sur 10)
 
@@ -94,7 +94,7 @@ Dans *Views/Student/Index.cshtml*, ajoutez le code en surbrillance immédiatemen
 
 [!code-html[](intro/samples/cu/Views/Students/Index3.cshtml?range=9-23&highlight=5-13)]
 
-Ce code utilise le `<form>` [d’assistance de balise](https://docs.asp.net/en/latest/mvc/views/tag-helpers/intro.html) pour ajouter la zone de texte de recherche et le bouton. Par défaut, le `<form>` application d’assistance de balise envoie des données de formulaire avec une publication, ce qui signifie que les paramètres sont passés dans le corps du message HTTP et non dans l’URL sous forme de chaînes de requête. Lorsque vous spécifiez HTTP GET, les données du formulaire sont passées dans l’URL sous forme de chaînes de requête, ce qui permet aux utilisateurs de l’URL de signet. W3C instructions il est conseillé que vous devez utiliser obtenir lors de l’action n’entraîne pas une mise à jour.
+Ce code utilise le `<form>` [d’assistance de balise](https://docs.microsoft.com/aspnet/core/mvc/views/tag-helpers/intro) pour ajouter la zone de texte de recherche et le bouton. Par défaut, le `<form>` application d’assistance de balise envoie des données de formulaire avec une publication, ce qui signifie que les paramètres sont passés dans le corps du message HTTP et non dans l’URL sous forme de chaînes de requête. Lorsque vous spécifiez HTTP GET, les données du formulaire sont passées dans l’URL sous forme de chaînes de requête, ce qui permet aux utilisateurs de l’URL de signet. W3C instructions il est conseillé que vous devez utiliser obtenir lors de l’action n’entraîne pas une mise à jour.
 
 Exécutez la page, entrez une chaîne de recherche et cliquez sur Rechercher pour vérifier que le filtrage fonctionne.
 
