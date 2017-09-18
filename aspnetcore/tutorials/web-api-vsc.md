@@ -11,11 +11,11 @@ ms.assetid: 830b4bf5-dd14-423e-9f59-764a6f13a8f6
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/web-api-vsc
-ms.openlocfilehash: abe088f2c9df94135209ce71540e6b345186ee70
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 17687e38aae066bdab4663268a2af54f20a6ad75
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="create-a-web-api-with-aspnet-core-mvc-and-visual-studio-code-on-linux-macos-and-windows"></a>Créer une API web avec ASP.NET Core MVC et Visual Studio Code sur Linux, macOS et Windows
 
@@ -36,7 +36,7 @@ Il existe trois versions de ce didacticiel :
 ## <a name="set-up-your-development-environment"></a>Configurer votre environnement de développement
 
 Téléchargez et installez :
-- [.NET Core](https://microsoft.com/net/core)
+- [.NET Core](https://www.microsoft.com/net/core)
 - [Visual Studio Code](https://code.visualstudio.com)
 - [Extension C#](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp) Visual Studio Code
 
@@ -114,9 +114,9 @@ Dans VS Code, appuyez sur F5 pour lancer l’application. Accédez à http://loc
 - [Terminal intégré](https://code.visualstudio.com/docs/editor/integrated-terminal)
 - [Raccourcis clavier](https://code.visualstudio.com/docs/getstarted/keybindings#_keyboard-shortcuts-reference)
 
-  - [Raccourcis clavier Mac](https://go.microsoft.com/fwlink/?linkid=832143)
-  - [Raccourcis clavier Linux](https://go.microsoft.com/fwlink/?linkid=832144)
-  - [Raccourcis clavier Windows](https://go.microsoft.com/fwlink/?linkid=832145)
+  - [Raccourcis clavier Mac](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf)
+  - [Raccourcis clavier Linux](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf)
+  - [Raccourcis clavier Windows](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf)
 
 [!INCLUDE[next steps](../includes/webApi/next.md)]
 

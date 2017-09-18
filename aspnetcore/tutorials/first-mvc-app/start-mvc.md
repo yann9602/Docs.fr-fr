@@ -10,11 +10,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/first-mvc-app/start-mvc
-ms.openlocfilehash: 9636e0e51e506d294ffb50a21165195c9d04fe20
-ms.sourcegitcommit: bd05f7ea8f87ad076ef6e8b704698ebcba5ca80c
+ms.openlocfilehash: 283a3869300b83235197951cbbee92a82532c6e3
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="getting-started-with-aspnet-core-mvc-and-visual-studio"></a>Bien démarrer avec ASP.NET Core MVC et Visual Studio
 
@@ -40,7 +40,7 @@ Pour obtenir la version Visual Studio 2015 de ce didacticiel, consultez la [vers
 
 Installez Visual Studio Community 2017. Sélectionnez le téléchargement Community. Ignorez cette étape si Visual Studio 2017 est installé sur votre ordinateur.
 
-* [Page d’accueil du programme d’installation de Visual Studio 2017](https://www.visualstudio.com/visual-studio-homepage-vs.aspx)
+* [Page d’accueil du programme d’installation de Visual Studio 2017](https://www.visualstudio.com/)
 
 Exécutez le programme d’installation et sélectionnez les charges de travail suivantes :
 
@@ -98,8 +98,8 @@ Appuyez sur **F5** pour exécuter l’application en mode débogage ou sur **Ctr
 <!-- These images are also used by uid: tutorials/first-mvc-app-xplat/start-mvc -->
 ![application en cours d’exécution](start-mvc/_static/1.png)
 
-* Visual Studio démarre [IIS Express](http://www.iis.net/learn/extensions/introduction-to-iis-express/iis-express-overview) et exécute votre application. Notez que la barre d’adresse affiche `localhost:port#`, et non quelque chose comme `example.com`. C’est parce que `localhost` est le nom d’hôte standard de votre ordinateur local. Quand Visual Studio crée un projet web, un port aléatoire est utilisé pour le serveur web. Dans l’image ci-dessus, le numéro de port est 5000. Quand vous exécuterez l’application, un numéro de port différent sera affiché.
-* Lancer l’application avec **Ctrl+F5** (mode non-débogage) vous permet d’apporter des modifications au code, d’enregistrer le fichier, d’actualiser le navigateur et de voir les modifications du code. De nombreux développeurs préfèrent utiliser le mode non-débogage pour lancer rapidement l’application et voir les modifications.
+* Visual Studio démarre [IIS Express](https://docs.microsoft.com/iis/extensions/introduction-to-iis-express/iis-express-overview) et exécute votre application. Notez que la barre d’adresse affiche `localhost:port#`, et non quelque chose comme `example.com`. C’est parce que `localhost` est le nom d’hôte standard de votre ordinateur local. Quand Visual Studio crée un projet web, un port aléatoire est utilisé pour le serveur web. Dans l’image ci-dessus, le numéro de port est 5000. Quand vous exécuterez l’application, un numéro de port différent sera affiché.
+* Si vous lancez l’application avec **Ctrl+F5** (mode sans débogage), vous pouvez effectuer des modifications du code, enregistrer le fichier, actualiser le navigateur et afficher les modifications du code. De nombreux développeurs préfèrent utiliser le mode non-débogage pour lancer rapidement l’application et voir les modifications.
 * Vous pouvez lancer l’application en mode débogage ou non-débogage à partir de l’élément de menu **Déboguer** :
 
 ![Menu Déboguer](start-mvc/_static/debug_menu.png)
@@ -117,4 +117,4 @@ Si vous exécutiez l’application en mode débogage, appuyez sur **Maj-F5** pou
 Dans la prochaine partie de ce didacticiel, nous allons découvrir MVC et commencer à écrire du code.
 
 >[!div class="step-by-step"]
-[Suivant](adding-controller.md)  
+[Next](adding-controller.md)  

@@ -11,11 +11,11 @@ ms.assetid: 1d18b589-1638-4dc6-1638-fb0f41998d78
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/first-mvc-app-xplat/start-mvc
-ms.openlocfilehash: 82ce5bbc695b190759ac2c05cdceebb5f7854eb7
-ms.sourcegitcommit: e6a8f171f26fab1b2195a2d7f14e7d258a2e690e
+ms.openlocfilehash: cfce91271ca21dd800fb68a14389606ce6d835f5
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/23/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="getting-started-with-aspnet-core-mvc--on-mac-linux-or-windows"></a>Bien démarrer avec ASP.NET Core MVC sur Mac, Linux ou Windows
 
@@ -31,11 +31,11 @@ Il existe trois versions de ce didacticiel :
 
 ## <a name="install-vs-code-and-net-core"></a>Installer VS Code et .NET Core
 
-Ce didacticiel nécessite le [SDK .NET Core 2.0.0](https://dot.net/core) ou version ultérieure. Consultez [ce fichier PDF](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/first-mvc-app-mac/start-mvc/8-23-17.pdf) pour la version ASP.NET Core 1.1.
+Ce didacticiel nécessite le [SDK .NET Core 2.0.0](https://www.microsoft.com/net/core) ou version ultérieure. Consultez [ce fichier PDF](https://github.com/aspnet/Docs/blob/master/aspnetcore/tutorials/first-mvc-app-mac/start-mvc/8-23-17.pdf) pour la version ASP.NET Core 1.1.
 
 Installez les éléments suivants :
 
-* [SDK .NET Core 2.0.0](https://dot.net/core) ou version ultérieure
+* [SDK .NET Core 2.0.0](https://www.microsoft.com/net/core) ou version ultérieure
 * [Visual Studio Code](https://code.visualstudio.com)
 * [Extension C#](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp) VS Code 
 
@@ -70,14 +70,14 @@ Dans la prochaine partie de ce didacticiel, nous allons découvrir MVC et commen
 
 ## <a name="visual-studio-code-help"></a>Aide de Visual Studio Code
 
-- [Bien démarrer](https://code.visualstudio.com/docs)
+- [Prise en main](https://code.visualstudio.com/docs)
 - [Débogage](https://code.visualstudio.com/docs/editor/debugging)
 - [Terminal intégré](https://code.visualstudio.com/docs/editor/integrated-terminal)
 - [Raccourcis clavier](https://code.visualstudio.com/docs/getstarted/keybindings#_keyboard-shortcuts-reference)
 
-  - [Raccourcis clavier Mac](https://go.microsoft.com/fwlink/?linkid=832143)
-  - [Raccourcis clavier Linux](https://go.microsoft.com/fwlink/?linkid=832144)
-  - [Raccourcis clavier Windows](https://go.microsoft.com/fwlink/?linkid=832145)
+  - [Raccourcis clavier Mac](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf)
+  - [Raccourcis clavier Linux](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf)
+  - [Raccourcis clavier Windows](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf)
 
 >[!div class="step-by-step"]
 [Suivant - Ajouter un contrôleur](adding-controller.md)

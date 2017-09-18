@@ -12,11 +12,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/hosting
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: a1a789ff1bc6b3e3af99419e7d74d3fb46bb2345
-ms.sourcegitcommit: 368aabde4de3728a8e5a8c016a2ec61f9c0854bf
+ms.openlocfilehash: 4eb57cf80399abdb7c6d05546ea2b0d5718c56c3
+ms.sourcegitcommit: 0a3f215b4f665afc6f2678642968eea698102346
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 09/18/2017
 ---
 # <a name="hosting-in-aspnet-core"></a>Hébergement dans ASP.NET Core
 
@@ -34,7 +34,7 @@ Créer un hôte à l’aide d’une instance de [WebHostBuilder](/dotnet/api/mic
 
 `CreateDefaultBuilder`effectue les tâches suivantes :
 
-* Configure [Kestrel](servers/kestrel.md) que le serveur web.
+* Configure [Kestrel](servers/kestrel.md) que le serveur web. Pour les options par défaut Kestrel, consultez [le Kestrel options section d’implémentation du serveur web Kestrel ASP.NET Core](xref:fundamentals/servers/kestrel#kestrel-options).
 * Affecte à la racine du contenu [Directory.GetCurrentDirectory](/dotnet/api/system.io.directory.getcurrentdirectory).
 * Configuration facultative de charge à partir de :
   * *appSettings.JSON*.
@@ -43,7 +43,7 @@ Créer un hôte à l’aide d’une instance de [WebHostBuilder](/dotnet/api/mic
   * Variables d'environnement.
   * Arguments de ligne de commande.
 * Configure [journalisation](xref:fundamentals/logging) pour la sortie de console et de débogage avec [filtrage de journal](xref:fundamentals/logging#log-filtering) les règles spécifiées dans une section de configuration de journalisation d’un *appsettings.json* ou *appsettings. {Environnement} .json* fichier.
-* Lorsque vous exécutez derrière IIS, permet l’intégration des services Internet en configurant le chemin d’accès de base et le port que le serveur doit écouter lors de l’utilisation du [ASP.NET Core Module](xref:fundamentals/servers/aspnet-core-module). Le module crée un proxy inverse entre Kestrel et IIS. Configure également l’application de [capturer les erreurs de démarrage](#capture-startup-errors).
+* En cas de retard IIS, Active [intégration des services Internet](xref:publishing/iis) en configurant le chemin d’accès de base et le port du serveur doit écouter lors de l’utilisation du [ASP.NET Core Module](xref:fundamentals/servers/aspnet-core-module). Le module crée un proxy inverse entre IIS et Kestrel. Configure également l’application de [capturer les erreurs de démarrage](#capture-startup-errors). Pour les options par défaut d’IIS, consultez [IIS options de section de l’hôte ASP.NET Core sur Windows avec IIS](xref:publishing/iis#iis-options).
 
 Le *racine du contenu* détermine où l’hôte recherche les fichiers de contenu, tels que les fichiers de vue MVC. La racine de contenu par défaut est [Directory.GetCurrentDirectory](/dotnet/api/system.io.directory.getcurrentdirectory). Cela entraîne l’utilisation de dossier racine du projet web en tant que la racine de contenu lors de l’application est lancée à partir du dossier racine (par exemple, l’appel [dotnet exécuter](/dotnet/core/tools/dotnet-run) à partir du dossier du projet). Ceci est la valeur par défaut utilisée dans [Visual Studio](https://www.visualstudio.com/) et [dotnet nouveaux modèles](/dotnet/core/tools/dotnet-new).
 

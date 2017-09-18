@@ -1,21 +1,21 @@
 ---
 title: "Créer une API web avec ASP.NET Core et Visual Studio pour Mac"
-author: rick-anderson
 description: "Créer une API web avec ASP.NET Core MVC et Visual Studio pour Mac"
-keywords: ASP.NET Core, APIweb, API web, REST, mac, macOS, HTTP, Service, Service HTTP
+author: rick-anderson
 ms.author: riande
-manager: wpickett
-ms.date: 5/24/2017
+ms.date: 09/15/2017
 ms.topic: get-started-article
-ms.assetid: 830b4af5-ed14-1638-7734-764a6f13a8f6
-ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/first-web-api-mac
-ms.openlocfilehash: 08619d3b4ab2d6fdb04794dcbafac0b696dd8504
-ms.sourcegitcommit: 3273675dad5ac3e1dc1c589938b73db3f7d6660a
+helpviewer_heywords: ASP.NET Core, WebAPI, Web API, REST, mac, macOS, HTTP, Service, HTTP Service
+ms.technology: aspnet
+keywords: ASP.NET Core, APIweb, API web, REST, mac, macOS, HTTP, Service, Service HTTP
+manager: wpickett
+ms.openlocfilehash: 992059f7abd7650f82c1307acf3ba3219a6fcbb5
+ms.sourcegitcommit: 0a3f215b4f665afc6f2678642968eea698102346
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2017
+ms.lasthandoff: 09/18/2017
 ---
 # <a name="create-a-web-api-with-aspnet-core-mvc-and-visual-studio-for-mac"></a>Créer une API web avec ASP.NET Core MVC et Visual Studio pour Mac
 
@@ -35,7 +35,7 @@ Il existe trois versions de ce didacticiel :
 
 * Pour obtenir un exemple qui utilise une base de données persistante, consultez [Introduction à ASP.NET Core MVC sur Mac ou Linux](xref:tutorials/first-mvc-app-xplat/index).
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Conditions préalables
 
 Installez les éléments suivants :
 
@@ -77,7 +77,7 @@ Installez le fournisseur de base de données [Entity Framework Core InMemory](ht
 
 ### <a name="add-a-model-class"></a>Ajouter une classe de modèle
 
-Un modèle est un objet qui représente les données dans votre application. Ici, le seul modèle est une tâche à effectuer.
+Un modèle est un objet qui représente les données dans votre application. Dans le cas présent, le seul modèle est une tâche.
 
 Ajoutez un dossier nommé *Models*. Dans l’Explorateur de solutions, cliquez avec le bouton droit sur le projet. Sélectionnez **Ajouter** > **Nouveau dossier**. Nommez le dossier *Models*.
 
@@ -127,15 +127,15 @@ Accédez au contrôleur `Todo` à l’adresse `http://localhost:port/api/todo` :
 
 ## <a name="implement-the-other-crud-operations"></a>Implémenter les autres opérations CRUD
 
-Nous allons ajouter des méthodes `Create`, `Update` et `Delete` au contrôleur. Comme il s’agit de variations sur un thème, je vais simplement montrer le code et mettre en évidence les principales différences. Générez le projet après avoir ajouté ou modifier du code.
+Nous allons ajouter les méthodes `Create`, `Update` et `Delete` au contrôleur. Comme il s’agit de variations sur un même thème, je vais simplement montrer le code et mettre en évidence les principales différences. Générez le projet après avoir ajouté ou modifié du code.
 
-### <a name="create"></a>Create
+### <a name="create"></a>Créer
 
 [!code-csharp[Main](first-web-api/sample/TodoApi/Controllers/TodoController.cs?name=snippet_Create)]
 
-Il s’agit d’une méthode HTTP POST, indiquée par l’attribut [`[HttpPost]`](https://docs.asp.net/projects/api/en/latest/autoapi/Microsoft/AspNetCore/Mvc/HttpPostAttribute/index.html). L’attribut [`[FromBody]`](https://docs.asp.net/projects/api/en/latest/autoapi/Microsoft/AspNetCore/Mvc/FromBodyAttribute/index.html) indique à MVC qu’il faut obtenir la tâche à partir du corps de la requête HTTP.
+Il s’agit d’une méthode HTTP POST, indiquée par l’attribut [`[HttpPost]`](https://docs.microsoft.com/aspnet/core/api). L’attribut [`[FromBody]`](https://docs.microsoft.com/aspnet/core/api) indique à MVC qu’il faut obtenir la valeur de l’élément d’action à partir du corps de la requête HTTP.
 
-La méthode `CreatedAtRoute` retourne une réponse 201, qui constitue la réponse standard pour une méthode HTTP POST qui crée une ressource sur le serveur. `CreatedAtRoute` ajoute également un en-tête Location dans la réponse. L’en-tête Location spécifie l’URI de la tâche qui vient d’être créée. Voir [10.2.2 201 Created](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html).
+La méthode `CreatedAtRoute` retourne une réponse 201, qui constitue la réponse standard pour une méthode HTTP POST qui crée une ressource sur le serveur. `CreatedAtRoute` ajoute également un en-tête Location à la réponse. L’en-tête Location spécifie l’URI de l’élément d’action qui vient d’être créé. Consultez [10.2.2 201 Created](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html).
 
 ### <a name="use-postman-to-send-a-create-request"></a>Utiliser Postman pour envoyer une requête Create
 
@@ -147,8 +147,8 @@ La méthode `CreatedAtRoute` retourne une réponse 201, qui constitue la répons
 * Affectez la valeur `POST` à la méthode HTTP.
 * Sélectionnez la case d’option **Body**.
 * Sélectionnez la case d’option **raw**.
-* Sélectionnez JSON comme type.
-* Dans l’éditeur de valeur de clé, entrez une tâche telle que
+* Sélectionnez le type JSON.
+* Dans l’éditeur de clé-valeur, entrez un élément d’action comme
 
 ```json
 {
@@ -163,18 +163,18 @@ La méthode `CreatedAtRoute` retourne une réponse 201, qui constitue la répons
 
 ![Onglet Headers de la console Postman](first-web-api/_static/pmget.png)
 
-Vous pouvez utiliser l’URI d’en-tête Location pour accéder à la ressource que vous venez de créer. Rappelez la méthode `GetById` qui a créé l’itinéraire nommé `"GetTodo"` :
+Vous pouvez utiliser l’URI d’en-tête Location pour accéder à la ressource que vous venez de créer. Rappelez la méthode `GetById` qui a créé la route nommée `"GetTodo"` :
 
 ```csharp
 [HttpGet("{id}", Name = "GetTodo")]
 public IActionResult GetById(string id)
 ```
 
-### <a name="update"></a>Update
+### <a name="update"></a>Mise à jour
 
 [!code-csharp[Main](first-web-api/sample/TodoApi/Controllers/TodoController.cs?name=snippet_Update)]
 
-`Update` est semblable à `Create`, mais utilise HTTP PUT. La réponse est [204 (Pas de contenu)](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html). D’après la spécification HTTP, une requête PUT exige que le client envoie l’entité mise à jour entière, et pas seulement les deltas. Pour prendre en charge les mises à jour partielles, utilisez HTTP PATCH.
+`Update` est similaire à `Create`, mais utilise HTTP PUT. La réponse est [204 (Pas de contenu)](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html). D’après la spécification HTTP, une requête PUT nécessite que le client envoie toute l’entité mise à jour, et pas seulement les différences. Pour prendre en charge les mises à jour partielles, utilisez HTTP PATCH.
 
 ```json
 {
@@ -186,7 +186,7 @@ public IActionResult GetById(string id)
 
 ![Console Postman montrant la réponse 204 (Pas de contenu)](first-web-api/_static/pmcput.png)
 
-### <a name="delete"></a>Delete
+### <a name="delete"></a>Supprimer
 
 [!code-csharp[Main](first-web-api/sample/TodoApi/Controllers/TodoController.cs?name=snippet_Delete)]
 
@@ -196,8 +196,8 @@ La réponse est [204 (Pas de contenu)](http://www.w3.org/Protocols/rfc2616/rfc26
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-* [Routage vers les actions de contrôleur](xref:mvc/controllers/routing)
+* [Routage vers les actions du contrôleur](xref:mvc/controllers/routing)
 * Pour plus d’informations sur le déploiement de votre API, consultez [Publication et déploiement](../publishing/index.md).
 * [Afficher ou télécharger l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/first-web-api/sample)
 * [Postman](https://www.getpostman.com/)
-* [Fiddler](http://www.fiddler2.com/fiddler2/)
+* [Fiddler](https://www.telerik.com/download/fiddler)

@@ -11,18 +11,18 @@ ms.assetid: 062f8353-d1bc-4e99-a821-c1d1bb162c47
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: aspnetcore-1.1
-ms.openlocfilehash: 7fdb00bc64cb20bd0e658b3a81814059404476d2
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 6b1c6648a55e966f448a383440b2b4f0d8e5afa1
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="whats-new-in-aspnet-core-11"></a>Nouveautés d’ASP.NET Core 1.1
 
 ASP.NET Core 1.1 inclut les nouvelles fonctionnalités suivantes :
 
-- [Intergiciel de réécriture d’URL](https://docs.microsoft.com/aspnet/core/fundamentals/url-rewriting)
-- [Intergiciel de mise en cache des réponses](https://docs.microsoft.com/aspnet/core/performance/caching/middleware)
+- [Intergiciel de réécriture d’URL](xref:fundamentals/url-rewriting)
+- [Intergiciel de mise en cache des réponses](xref:performance/caching/middleware)
 - [Afficher les composants sous forme de Tag Helpers](xref:mvc/views/view-components#invoking-a-view-component-as-a-tag-helper)
 - [Intergiciel en tant que filtres MVC](xref:mvc/controllers/filters#using-middleware-in-the-filter-pipeline)
 - [Fournisseur de TempData basé sur les cookies](xref:fundamentals/app-state#cookie-based-tempdata-provider )

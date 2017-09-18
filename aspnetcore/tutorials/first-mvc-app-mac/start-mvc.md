@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/first-mvc-app-mac/start-mvc
-ms.openlocfilehash: b2e447cac0012ac41d06a70b1452c7d0523546cf
-ms.sourcegitcommit: e6a8f171f26fab1b2195a2d7f14e7d258a2e690e
+ms.openlocfilehash: 028d6d3246908a9cd44a6834449d2fdbc9cae0b8
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/23/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="getting-started-with-aspnet-core-mvc-and-visual-studio-for-mac"></a>Bien démarrer avec ASP.NET Core MVC et Visual Studio pour Mac
 
@@ -28,13 +28,13 @@ Il existe trois versions de ce didacticiel :
 * Windows : [Créer une application ASP.NET Core MVC avec Visual Studio](xref:tutorials/first-mvc-app/start-mvc)
 * Linux, macOS et Windows : [Créer une application ASP.NET Core MVC avec Visual Studio Code](xref:tutorials/first-mvc-app-xplat/start-mvc)
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Conditions préalables
 
-Ce didacticiel nécessite le [SDK .NET Core 2.0.0](https://dot.net/core) ou version ultérieure. Consultez [ce fichier PDF](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/first-mvc-app-mac/start-mvc/8-23-17.pdf) pour la version ASP.NET Core 1.1.
+Ce didacticiel nécessite le [SDK .NET Core 2.0.0](https://www.microsoft.com/net/core) ou version ultérieure. Consultez [ce fichier PDF](https://github.com/aspnet/Docs/blob/master/aspnetcore/tutorials/first-mvc-app-mac/start-mvc/8-23-17.pdf) pour la version ASP.NET Core 1.1.
 
 Installez les éléments suivants :
 
-- [SDK .NET Core 2.0.0 ](https://dot.net/core) ou version ultérieure
+- [SDK .NET Core 2.0.0 ](https://www.microsoft.com/net/core) ou version ultérieure
 - [Visual Studio pour Mac](https://www.visualstudio.com/vs/visual-studio-mac/)
 
 ## <a name="create-a-web-app"></a>Créer une application web
@@ -53,7 +53,7 @@ Nommez le projet **MvcMovie**, puis sélectionnez **Créer**.
 
 ### <a name="launch-the-app"></a>Lancer l’application
 
-Dans Visual Studio, sélectionnez **Exécuter > Exécuter sans débogage** pour lancer l’application. Visual Studio démarre [IIS Express](http://www.iis.net/learn/extensions/introduction-to-iis-express/iis-express-overview), lance un navigateur et accède à `http://localhost:port`, où *port* est un numéro de port choisi au hasard.
+Dans Visual Studio, sélectionnez **Exécuter > Exécuter sans débogage** pour lancer l’application. Visual Studio démarre [IIS Express](https://docs.microsoft.com/iis/extensions/introduction-to-iis-express/iis-express-overview), lance un navigateur et accède à `http://localhost:port`, où *port* est un numéro de port choisi au hasard.
 
 ![Navigateur avec le nouveau projet](start-mvc/b1.png)
 

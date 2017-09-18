@@ -11,17 +11,17 @@ ms.assetid: 16efbacf-fe7b-4b41-84b0-06a1574b95c2
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/first-mvc-app/new-field
-ms.openlocfilehash: 52fe9ee7bf006553c7dcb17c00ff659d3797b204
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 7d7e7055dd6dc0a2aefd8f4a0a170483b8504267
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="adding-a-new-field"></a>Ajout d’un nouveau champ
 
 Par [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Dans cette section, vous allez utiliser Migrations [Entity Framework](http://docs.efproject.net/en/latest/platforms/aspnetcore/new-db.html) Code First pour ajouter un nouveau champ au modèle et migrer ce changement dans la base de données.
+Dans cette section, vous allez utiliser la fonctionnalité Migrations Code First [d’Entity Framework](https://docs.microsoft.com/ef/core/get-started/aspnetcore/new-db) pour ajouter un nouveau champ au modèle et migrer ce changement dans la base de données.
 
 Quand vous utilisez EF Code First pour créer automatiquement une base de données, Code First ajoute une table à la base de données pour déterminer si le schéma de la base de données est synchronisé avec les classes de modèle à partir desquelles il a été généré. S’ils ne sont pas synchronisés, EF lève une exception. Cela facilite la recherche de problèmes d’incohérence de code/de bases de données.
 
@@ -71,7 +71,7 @@ Mettez à jour la classe `SeedData` pour qu’elle fournisse une valeur pour la 
 
 Générez la solution.
 
-Dans le menu **Outils**, sélectionnez **Gestionnaire de package NuGet > Console du Gestionnaire de package**.
+Dans le menu **Outils**, sélectionnez **Gestionnaire de package NuGet > Console du gestionnaire de package**.
 
   ![Menu Console du Gestionnaire de package](adding-model/_static/pmc.png)
 

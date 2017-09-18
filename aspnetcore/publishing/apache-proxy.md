@@ -11,19 +11,19 @@ ms.assetid: fa9b0cb7-afb3-4361-9e7e-33afffeaca0c
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: publishing/apache-proxy
-ms.openlocfilehash: 831e2fa148e52f6447e9065f5949785627d5e248
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 9dc22ea20a6ae2e2477f9e6db95ddabecc038dcb
+ms.sourcegitcommit: f8f6b5934bd071a349f5bc1e389365c52b1c00fa
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/14/2017
 ---
 # <a name="set-up-a-hosting-environment-for-aspnet-core-on-linux-with-apache-and-deploy-to-it"></a>Configurer un environnement d’hébergement pour ASP.NET Core sur Linux avec Apache et déployer sur celui-ci
 
-Par [Shayne Boyer](https://www.github.com/spboyer)
+Par [Shayne Boyer](https://github.com/spboyer)
 
 Apache est un serveur HTTP très répandu et qui peut être configuré comme proxy pour rediriger le trafic HTTP, de façon similaire à nginx. Dans ce guide, vous découvrez comment configurer Apache sur CentOS 7, et comment l’utiliser comme proxy inverse pour accueillir les connexions entrantes et les rediriger vers l’application ASP.NET Core s’exécutant sur Kestrel. Pour cela, nous utiliserons l’extension *mod_proxy* et d’autres modules Apache associés.
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Conditions préalables
 
 1. Un serveur exécutant CentOS 7 avec un compte d’utilisateur standard disposant du privilège sudo.
 2. Une application ASP.NET Core existante. 
@@ -134,7 +134,8 @@ Un exemple de fichier de service pour notre application.
     WorkingDirectory=/var/aspnetcore/hellomvc
     ExecStart=/usr/local/bin/dotnet /var/aspnetcore/hellomvc/hellomvc.dll
     Restart=always
-    RestartSec=10                                          # Restart service after 10 seconds if dotnet service crashes
+    # Restart service after 10 seconds if dotnet service crashes
+    RestartSec=10
     SyslogIdentifier=dotnet-example
     User=apache
     Environment=ASPNETCORE_ENVIRONMENT=Production 

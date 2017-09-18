@@ -11,11 +11,11 @@ ms.assetid: ff8fd9b8-7c98-424d-8641-7524e23bf541
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/first-mvc-app/working-with-sql
-ms.openlocfilehash: dd8b8603d8444c95f086fd593aabe86d60f93ad4
-ms.sourcegitcommit: eb025f2166023e1c394a0213c7ed8a9ca7190da5
+ms.openlocfilehash: d06a957f41d4d8928f825c7a795b3d1518ab4421
+ms.sourcegitcommit: c496ec8d5483e7de79b20d06127da7a6cbdac108
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2017
+ms.lasthandoff: 09/13/2017
 ---
 # <a name="working-with-sql-server-localdb"></a>Utilisation de SQL Server LocalDB
 
@@ -29,7 +29,7 @@ Le système de [configuration](xref:fundamentals/configuration) d’ASP.NET Core
 
 [!code-javascript[Main](start-mvc/sample/MvcMovie/appsettings.json?highlight=2&range=8-10)]
 
-Quand vous déployez l’application sur un serveur de test ou de production, vous pouvez utiliser une variable d’environnement ou une autre approche pour définir un serveur SQL réel comme chaîne de connexion. Pour plus d’informations, consultez [Configuration](xref:fundamentals/configuration).
+Quand vous déployez l’application sur un serveur de test ou de production, vous pouvez utiliser une variable d’environnement ou une autre approche pour définir un serveur SQL Server réel comme chaîne de connexion. Pour plus d’informations, consultez [Configuration](xref:fundamentals/configuration).
 
 ## <a name="sql-server-express-localdb"></a>SQL Server Express LocalDB
 
@@ -55,7 +55,7 @@ Notez l’icône de clé en regard de `ID`. Par défaut, EF fait d’une propri�
 
 ## <a name="seed-the-database"></a>Amorcer la base de données
 
-Créez une classe nommée `SeedData` dans l’espace de noms *Models*. Remplacez le code généré par ce qui suit :
+Créez une classe nommée `SeedData` dans l’espace de noms *Modèles*. Remplacez le code généré par ce qui suit :
 
 [!code-csharp[Main](start-mvc/sample/MvcMovie/Models/SeedData.cs?name=snippet_1)]
 
@@ -75,7 +75,7 @@ if (context.Movie.Any())
 
 Ajoutez l’initialiseur de valeur initiale à la méthode `Main` dans le fichier *Program.cs* :
 
-[!code-csharp[Main](start-mvc/sample/MvcMovie/Program.cs?highlight=6,16-32)]
+[!code-csharp[Main](start-mvc/sample/MvcMovie/Program.cs?highlight=6,14-32)]
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 

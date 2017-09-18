@@ -10,11 +10,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: tutorials/razor-pages-mac/razor-pages-start
-ms.openlocfilehash: caadc3fcb3bb71abe0773aed4f6ff60a043e3a02
-ms.sourcegitcommit: d9ec19e5452af83648074db5d96c0a0f4f9e7f9a
+ms.openlocfilehash: 56ff18589d189b0d2760c761c58b5b030d02940b
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/29/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="getting-started-with-razor-pages-in-aspnet-core-with-visual-studio-for-mac"></a>Bien démarrer avec des pages Razor dans ASP.NET Core avec Visual Studio pour Mac
 
@@ -22,11 +22,11 @@ De [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 Ce didacticiel décrit les principes fondamentaux liés à la génération d’une application web de pages Razor dans ASP.NET Core. Nous vous recommandons d’effectuer l’étape [Présentation des pages Razor](xref:mvc/razor-pages/index) avant de commencer ce didacticiel. L’utilisation de pages Razor est la méthode recommandée pour générer l’IU d’applications web dans ASP.NET Core.
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Conditions préalables
 
-Installez les éléments suivants :
+Installez les éléments suivants :
 
-* [Kit .NET Core 2.0.0 SDK](https://dot.net/core) ou ultérieur
+* [SDK .NET Core 2.0.0 ](https://www.microsoft.com/net/core) ou version ultérieure
 * [Visual Studio pour Mac](https://www.visualstudio.com/vs/visual-studio-mac/)
 
 ## <a name="create-a-razor-web-app"></a>Créer une application web Razor
@@ -53,7 +53,7 @@ Dans Visual Studio, sélectionnez **Fichier > Ouvrir**, puis sélectionnez le fi
 
 ### <a name="launch-the-app"></a>Lancer l’application
 
-Dans Visual Studio, sélectionnez **Exécuter > Exécuter sans débogage** pour lancer l’application. Visual Studio démarre [IIS Express](http://www.iis.net/learn/extensions/introduction-to-iis-express/iis-express-overview), lance un navigateur, puis accède à `http://localhost:5000`.
+Dans Visual Studio, sélectionnez **Exécuter > Exécuter sans débogage** pour lancer l’application. Visual Studio démarre [IIS Express](https://docs.microsoft.com/iis/extensions/introduction-to-iis-express/iis-express-overview), lance un navigateur, puis accède à `http://localhost:5000`.
 
 Dans le prochain didacticiel, nous allons ajouter un modèle au projet.
 

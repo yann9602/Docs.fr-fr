@@ -3,7 +3,7 @@
 Le code précédent :
 
 * Définit une classe de contrôleur vide. Dans les sections suivantes, nous ajoutons des méthodes pour implémenter l’API.
-* Le constructeur utilise une [injection de dépendance](xref:fundamentals/dependency-injection) pour injecter le contexte de base de données (`TodoContext `) dans le contrôleur. Le contexte de base de données est utilisé dans chacune des méthodes la [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) du contrôleur.
+* Le constructeur utilise une [injection de dépendance](xref:fundamentals/dependency-injection) pour injecter le contexte de base de données (`TodoContext `) dans le contrôleur. Le contexte de base de données est utilisé dans chacune des méthodes la [CRUD](https://wikipedia.org/wiki/Create,_read,_update_and_delete) du contrôleur.
 * Le constructeur ajoute un élément à la base de données en mémoire s’il n’existe pas.
 
 ## <a name="getting-to-do-items"></a>Obtention des éléments d’action

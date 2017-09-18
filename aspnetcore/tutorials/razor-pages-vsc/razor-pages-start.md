@@ -10,11 +10,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: tutorials/razor-pages-vsc/razor-pages-start
-ms.openlocfilehash: aa39de71addb2499af6d322db6da0ec635c54970
-ms.sourcegitcommit: d9ec19e5452af83648074db5d96c0a0f4f9e7f9a
+ms.openlocfilehash: 096a60dae171ac5dbfa935be4c16e0903d8f5bb3
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/29/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="getting-started-with-razor-pages-in-aspnet-core-with-visual-studio-code"></a>Bien démarrer avec des pages Razor dans ASP.NET Core avec Visual Studio Code
 
@@ -22,11 +22,11 @@ De [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 Ce didacticiel décrit les principes fondamentaux liés à la génération d’une application web de pages Razor dans ASP.NET Core. Nous vous recommandons d’effectuer l’étape [Présentation des pages Razor](xref:mvc/razor-pages/index) avant de commencer ce didacticiel. L’utilisation de pages Razor est la méthode recommandée pour générer l’IU d’applications web dans ASP.NET Core.
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Conditions préalables
 
-Installez les éléments suivants :
+Installez les éléments suivants :
 
-* [Kit .NET Core 2.0.0 SDK](https://dot.net/core) ou ultérieur
+* [SDK .NET Core 2.0.0 ](https://www.microsoft.com/net/core) ou version ultérieure
 * [Visual Studio Code](https://code.visualstudio.com)
 * [Extension C#](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp) VS Code 
 

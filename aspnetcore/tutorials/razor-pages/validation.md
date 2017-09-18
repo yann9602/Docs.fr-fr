@@ -10,11 +10,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: tutorials/razor-pages/validation
-ms.openlocfilehash: 734dad7778eba41780f9d3ac0685879687288d47
-ms.sourcegitcommit: 8f5277871eff86134ebf68d3737196cfd4a62c2c
+ms.openlocfilehash: ed1ad71b6b1395bce1dd287e86e499e23446f190
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="adding-validation-to-a-razor-page"></a>Ajout de la validation à une page Razor
 
@@ -24,13 +24,13 @@ Dans cette section, une logique de validation est ajoutée au modèle `Movie`. L
 
 ## <a name="validation"></a>Validation
 
-[DRY](http://en.wikipedia.org/wiki/Don%27t_repeat_yourself) (« **D**on't **R**epeat **Y**ourself », Ne vous répétez pas) constitue un principe clé du développement de logiciel. Les pages Razor favorisent le développement dans lequel une fonctionnalité est spécifiée une seule fois et sont répercutées dans toute l’application. Le principe DRY réduit la quantité de code dans une application. Il rend le code moins sujet aux erreurs, plus facile à tester et plus facile à gérer.
+[DRY](https://wikipedia.org/wiki/Don%27t_repeat_yourself) (« **D**on't **R**epeat **Y**ourself », Ne vous répétez pas) constitue un principe clé du développement de logiciel. Les pages Razor favorisent le développement dans lequel une fonctionnalité est spécifiée une seule fois et sont répercutées dans toute l’application. Le principe DRY réduit la quantité de code dans une application. Il rend le code moins sujet aux erreurs, plus facile à tester et plus facile à gérer.
 
 La prise en charge de la validation fournie par les pages Razor et Entity Framework est un bon exemple du principe DRY. Des règles de validation sont spécifiées de façon déclarative à un seul emplacement (dans la classe de modèle), et sont appliquées partout dans l’application.
 
 ### <a name="adding-validation-rules-to-the-movie-model"></a>Ajout de règles de validation au modèle Movie
 
-Ouvrez le fichier *Movie.cs*. [DataAnnotations](http://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx) fournit un ensemble intégré d’attributs de validation qui sont appliqués de manière déclarative à une classe ou une propriété. DataAnnotations contient également des attributs de mise en forme comme `DataType` qui aident à effectuer la mise en forme et ne fournissent aucune validation.
+Ouvrez le fichier *Movie.cs*. [DataAnnotations](https://docs.microsoft.com/aspnet/mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6) fournit un ensemble intégré d’attributs de validation qui sont appliqués de manière déclarative à une classe ou une propriété. DataAnnotations contient également des attributs de mise en forme comme `DataType` qui aident à effectuer la mise en forme et ne fournissent aucune validation.
 
 Mettez à jour la classe `Movie` pour tirer parti des attributs de validation `Required`, `StringLength`, `RegularExpression` et `Range`.
 
@@ -49,7 +49,7 @@ Sélectionnez le lien **Créer nouveau**. Complétez le formulaire avec des vale
 ![Formulaire de vue Movie avec plusieurs erreurs de validation jQuery côté client](validation/_static/val.png)
 
 > [!NOTE]
-> Vous ne pourrez peut-être pas entrer des séparateurs décimaux ou des virgules dans le champ `Price`. Pour prendre en charge la [validation jQuery](http://jqueryvalidation.org/) dans les paramètres régionaux autres que l’anglais qui utilisent une virgule (« , ») comme séparateur décimal et des formats de date autres que l’anglais des États-Unis, vous devez effectuer des étapes pour localiser votre application. Pour plus d’informations, consultez [Ressources supplémentaires](#additional-resources). Pour le moment, entrez simplement des nombres entiers tels que 10.
+> Vous ne pourrez peut-être pas entrer des séparateurs décimaux ou des virgules dans le champ `Price`. Pour prendre en charge la [validation jQuery](https://jqueryvalidation.org/) dans les paramètres régionaux autres que l’anglais qui utilisent une virgule (« , ») comme séparateur décimal et des formats de date autres que l’anglais des États-Unis, vous devez effectuer des étapes pour localiser votre application. Pour plus d’informations, consultez [Ressources supplémentaires](#additional-resources). Pour le moment, entrez simplement des nombres entiers tels que 10.
 
 Notez que le formulaire a affiché automatiquement un message d’erreur de validation dans chaque champ contenant une valeur non valide. Les erreurs sont appliquées à la fois côté client (à l’aide de JavaScript et de jQuery) et côté serveur (quand JavaScript est désactivé pour un utilisateur).
 
@@ -83,7 +83,7 @@ Le code suivant affiche la partie de la page *Create.cshtml* pour laquelle vous 
 
 [!code-cshtml[Main](razor-pages-start/sample/RazorPagesMovie/Pages/Movies/Create.cshtml?range=14-20)]
 
-Le [Tag Helper d’entrée](xref:mvc/views/working-with-forms) utilise les attributs [DataAnnotations](http://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx) et produit les attributs HTML nécessaires à la validation jQuery côté client. Le [Tag Helper de validation](xref:mvc/views/working-with-forms#the-validation-tag-helpers) affiche les erreurs de validation. Pour plus d’informations, consultez [Validation](xref:mvc/models/validation).
+Le [Tag Helper d’entrée](xref:mvc/views/working-with-forms) utilise les attributs [DataAnnotations](https://docs.microsoft.com/aspnet/mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6) et produit les attributs HTML nécessaires à la validation jQuery côté client. Le [Tag Helper de validation](xref:mvc/views/working-with-forms#the-validation-tag-helpers) affiche les erreurs de validation. Pour plus d’informations, consultez [Validation](xref:mvc/models/validation).
 
 Les pages Créer et Modifier ne contiennent pas de règles de validation. Les règles de validation et les chaînes d’erreur sont spécifiées uniquement dans la classe `Movie`. Ces règles de validation sont automatiquement appliquées aux pages Razor qui modifient le modèle `Movie`.
 

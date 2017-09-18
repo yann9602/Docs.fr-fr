@@ -11,11 +11,11 @@ ms.assetid: 2707c7a8-2350-4304-9856-fda58e5c0a16
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: publishing/azure-continuous-deployment
-ms.openlocfilehash: b576ef6bce3b211afe7465f33dfe62c25dac1f62
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: a9efad38b1c75bd3a186b4ec85861357ecf744b9
+ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="continuous-deployment-to-azure-for-aspnet-core-with-visual-studio-and-git"></a>Déploiement continu sur Azure pour ASP.NET Core, avec Visual Studio et Git
 
@@ -26,17 +26,17 @@ Ce didacticiel vous montre comment créer une application web ASP.NET Core à l�
 Consultez aussi [Use VSTS to Build and Publish to an Azure Web App with Continuous Deployment](https://www.visualstudio.com/docs/build/get-started/aspnet-4-ci-cd-azure-automatic), qui montre comment configurer un workflow de livraison continue pour [Azure App Service](https://azure.microsoft.com/documentation/articles/app-service-changes-existing-services/) en utilisant Visual Studio Team Services. La livraison continue Azure dans Team Services simplifie la configuration d’un pipeline de déploiement fiable pour publier les mises à jour de votre application dans Azure App Service. Le pipeline peut être configuré à partir du portail Azure pour générer, exécuter des tests, déployer sur un emplacement de préproduction, puis déployer en production.
 
 > [!NOTE]
-> Pour effectuer ce didacticiel, vous avez besoin d’un compte Microsoft Azure. Si vous n’avez pas de compte, vous pouvez [activer vos avantages d’abonné MSDN](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) ou [vous inscrire pour une évaluation gratuite](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A261C142F).
+> Pour effectuer ce didacticiel, vous avez besoin d’un compte Microsoft Azure. Si vous n’avez pas de compte, vous pouvez [activer vos avantages d’abonné MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) ou [vous inscrire pour une évaluation gratuite](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A261C142F).
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Conditions préalables
 
 Ce didacticiel suppose que vous avez déjà installé les éléments suivants :
 
 * [Visual Studio](https://www.visualstudio.com)
 
-* [ASP.NET Core](http://go.microsoft.com/fwlink/?LinkId=627627) (runtime et outils)
+* [ASP.NET Core](https://download.microsoft.com/download/F/6/E/F6ECBBCC-B02F-424E-8E03-D47E9FA631B7/DotNetCore.1.0.1-VS2015Tools.Preview2.0.3.exe) (runtime et outils)
 
-* [Git](http://git-scm.com/downloads) pour Windows
+* [Git](https://git-scm.com/downloads) pour Windows
 
 ## <a name="create-an-aspnet-core-web-app"></a>Créer une application web ASP.NET Core
 
