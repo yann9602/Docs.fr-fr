@@ -1,20 +1,20 @@
 ---
-title: "Stockage sécurisé des secrets d’application au cours de développement dans ASP.NET Core"
+title: "Stockage sécurisé des secrets d’application pendant le développement dans ASP.NET Core"
 author: rick-anderson
 description: "Montre comment stocker des clés secrètes en toute sécurité pendant le développement"
 keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
-ms.date: 7/14/2017
+ms.date: 09/15/2017
 ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/app-secrets
-ms.openlocfilehash: 56214c2fbdca84591c5c1a6b7f2451f33ee64ef0
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: e112cc5ef9cba5aff6470ce4b9b1091a3c2b2600
+ms.sourcegitcommit: f1271b218d7dfdc806ec8f411c81f3750130463d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 09/15/2017
 ---
 # <a name="safe-storage-of-app-secrets-during-development-in-aspnet-core"></a>Stockage sécurisé des secrets d’application pendant le développement dans ASP.NET Core
 
@@ -42,36 +42,19 @@ L’outil Gestionnaire de secret principal stocke des données sensibles pour le
 >[!WARNING]
 > Le Gestionnaire du Secret ne chiffre pas les clés secrètes stockées et ne doit pas être considérée comme un magasin approuvé. Il est uniquement à des fins de développement. Les clés et valeurs sont stockées dans un fichier de configuration JSON dans le répertoire de profil utilisateur.
 
-### <a name="visual-studio-2017-installing-the-secret-manager-tool"></a>Visual Studio 2017 : L’installation de l’outil Gestionnaire de la clé secrète
+## <a name="installing-the-secret-manager-tool"></a>Installation de l’outil Gestionnaire de la clé secrète
+
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
 Cliquez sur le projet dans l’Explorateur de solutions, puis sélectionnez **modifier \<project_name\>.csproj** dans le menu contextuel. Ajoutez la ligne en surbrillance à le *.csproj* de fichiers et enregistrer pour restaurer le package NuGet associé :
 
-[!code-xml[Main](app-secrets/sample/UserSecrets/UserSecrets.csproj?highlight=21)]
+[!code-xml[Main](app-secrets/sample/UserSecrets/UserSecrets-before.csproj?highlight=10)]
 
-Cliquez sur le projet dans l’Explorateur de solutions, puis sélectionnez **gérer les Secrets utilisateur** dans le menu contextuel. Cette opération ajoute un nouveau `UserSecretsId` nœud au sein d’un `PropertyGroup` de la *.csproj* fichier. Il ouvre également une `secrets.json` fichier dans l’éditeur de texte.
+Cliquez à nouveau sur le projet dans l’Explorateur de solutions, puis sélectionnez **gérer les Secrets utilisateur** dans le menu contextuel. Cette opération ajoute un nouveau `UserSecretsId` nœud au sein d’un `PropertyGroup` de la *.csproj* fichier, comme illustré dans l’exemple suivant :
 
-Ajoutez le code suivant à `secrets.json` :
+[!code-xml[Main](app-secrets/sample/UserSecrets/UserSecrets-after.csproj?highlight=4)]
 
-```json
-{
-    "MySecret": "ValueOfMySecret"
-}
-```
-
-### <a name="visual-studio-2015-installing-the-secret-manager-tool"></a>Visual Studio 2015 : L’installation de l’outil Gestionnaire de la clé secrète
-
-Ouvrez le projet `project.json` fichier. Ajoutez une référence à `Microsoft.Extensions.SecretManager.Tools` dans le `tools` propriété et enregistrer pour restaurer le package NuGet associé :
-
-```json
-"tools": {
-    "Microsoft.Extensions.SecretManager.Tools": "1.0.0-preview2-final",
-    "Microsoft.AspNetCore.Server.IISIntegration.Tools": "1.0.0-preview2-final"
-},
-```
-
-Cliquez sur le projet dans l’Explorateur de solutions, puis sélectionnez **gérer les Secrets utilisateur** dans le menu contextuel. Cette opération ajoute un nouveau `userSecretsId` propriété `project.json`. Il ouvre également une `secrets.json` fichier dans l’éditeur de texte.
-
-Ajoutez le code suivant à `secrets.json` :
+L’enregistrement modifié *.csproj* fichier également s’ouvre un `secrets.json` fichier dans l’éditeur de texte. Remplacez le contenu de la `secrets.json` fichier avec le code suivant :
 
 ```json
 {
@@ -79,11 +62,11 @@ Ajoutez le code suivant à `secrets.json` :
 }
 ```
 
-### <a name="visual-studio-code-or-command-line-installing-the-secret-manager-tool"></a>Visual Studio Code ou ligne de commande : installation de l’outil Gestionnaire de la clé secrète
+# <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
 
-Ajouter `Microsoft.Extensions.SecretManager.Tools` à la *.csproj* et exécutez `dotnet restore`.
+Ajouter `Microsoft.Extensions.SecretManager.Tools` à la *.csproj* et exécutez `dotnet restore`. Vous pouvez utiliser les mêmes étapes pour installer le Gestionnaire de la clé secrète à l’aide de la ligne de commande.
 
-[!code-xml[Main](app-secrets/sample/UserSecrets/UserSecrets.csproj?highlight=21)]
+[!code-xml[Main](app-secrets/sample/UserSecrets/UserSecrets-before.csproj?highlight=10)]
 
 Tester l’outil Gestionnaire de secret principal en exécutant la commande suivante :
 
@@ -100,7 +83,7 @@ L’outil Gestionnaire de Secret opère sur les paramètres de configuration de 
 
 Ajouter un `UserSecretsId` pour votre projet dans le *.csproj* fichier :
 
-[!code-xml[Main](app-secrets/sample/UserSecrets/UserSecrets.csproj?range=7-9&highlight=2)]
+[!code-xml[Main](app-secrets/sample/UserSecrets/UserSecrets-after.csproj?highlight=4)]
 
 Utilisez l’outil Gestionnaire de Secret pour définir une clé secrète. Par exemple, dans une fenêtre de commande à partir du répertoire de projet, entrez les éléments suivants :
 
@@ -115,6 +98,8 @@ dotnet user-secrets set MySecret ValueOfMySecret --project c:\work\WebApp1\src\w
 ```
 
 Vous pouvez également utiliser l’outil Gestionnaire de Secret répertorier, supprimer et effacer les secrets de l’application.
+
+-----
 
 ## <a name="accessing-user-secrets-via-configuration"></a>L’accès à des secrets de l’utilisateur via la configuration
 

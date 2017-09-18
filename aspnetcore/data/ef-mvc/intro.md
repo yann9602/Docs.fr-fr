@@ -11,11 +11,11 @@ ms.assetid: b67c3d4a-f2bf-4132-a48b-4b0d599d7981
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/intro
-ms.openlocfilehash: 949733119b4e3a4b8716f2bcc1f631949d5049bc
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: 6bde59ddbf153ada36034765b390892ec2ed5997
+ms.sourcegitcommit: 98ecb0f1bae4886507b090c84ecd99ff1e5c46ed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 09/17/2017
 ---
 # <a name="getting-started-with-aspnet-core-mvc-and-entity-framework-core-using-visual-studio-1-of-10"></a>Mise en route avec ASP.NET MVC de base et d’Entity Framework Core, à l’aide de Visual Studio (1 / 10)
 
@@ -30,7 +30,7 @@ L’exemple d’application est un site web pour une université fictif de Conto
 EF Core 2.0 est la dernière version de EF mais n’a pas encore de toutes les fonctionnalités EF 6.x. Pour plus d’informations sur comment choisir entre EF 6.x et EF Core, consultez [EF Core vs. EF6.x](https://docs.microsoft.com/ef/efcore-and-ef6/). Si vous choisissez EF 6.x, consultez [la version précédente de cette série de didacticiels](https://docs.microsoft.com/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application).
 
 > [!NOTE]
-> * Pour la version 1.1 de base ASP.NET de ce didacticiel, consultez le [version VS 2017 mise à jour 2 de ce didacticiel au format PDF](https://github.com/aspnet/Docs/blob/master/aspnetcore/data/efmvc/intro/_static/efmvc1.1.pdf).
+> * Pour la version 1.1 de base ASP.NET de ce didacticiel, consultez le [version VS 2017 mise à jour 2 de ce didacticiel au format PDF](https://github.com/aspnet/Docs/blob/master/aspnetcore/data/ef-mvc/intro/_static/efmvc1.1.pdf).
 > * Pour obtenir la version Visual Studio 2015 de ce didacticiel, consultez la [version VS 2015 de la documentation ASP.NET Core au format PDF](https://github.com/aspnet/Docs/blob/master/aspnetcore/common/_static/aspnet-core-project-json.pdf).
 
 ## <a name="prerequisites"></a>Conditions préalables
@@ -204,7 +204,7 @@ Ouvrez le *appsettings.json* et ajoutez une chaîne de connexion comme indiqué 
 
 ### <a name="sql-server-express-localdb"></a>SQL Server Express LocalDB
 
-La chaîne de connexion spécifie une base de données de la base de données SQL Server locale. LocalDB est une version légère de SQL Server Express Database Engine et est conçue pour le développement d’applications, pas les fins de production. LocalDB démarre à la demande et s’exécute en mode utilisateur, il n’existe aucune configuration complexe. Par défaut, LocalDB crée *.mdf* dans les fichiers de base de données la `C:/Users/<user>` active.
+La chaîne de connexion spécifie une base de données de la base de données SQL Server locale. LocalDB est une version légère de SQL Server Express Database Engine et est conçue pour le développement d’applications, pas les fins de production. LocalDB démarre à la demande et s’exécute en mode utilisateur, ce qui n’implique aucune configuration complexe. Par défaut, LocalDB crée *.mdf* dans les fichiers de base de données la `C:/Users/<user>` active.
 
 ## <a name="add-code-to-initialize-the-database-with-test-data"></a>Ajoutez du code pour initialiser la base de données de test
 
@@ -242,7 +242,7 @@ La création automatique de méthodes d’action CRUD et de vues est appelée à
 
 * Avec le bouton droit le **contrôleurs** dossier **l’Explorateur de solutions** et sélectionnez **Ajouter > nouvel élément structuré**.
 
-* Dans le **ajouter des dépendances MVC** boîte de dialogue, sélectionnez **dépendances minimales**, puis sélectionnez **ajouter**.
+* Dans la boîte de dialogue **Ajouter des dépendances MVC**, sélectionnez **Dépendances minimales**, puis **Ajouter**.
 
   ![Ajouter des dépendances](intro/_static/add-depend.png)
 

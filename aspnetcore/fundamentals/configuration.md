@@ -11,14 +11,12 @@ ms.assetid: b3a5984d-e172-42eb-8a48-547e4acb6806
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/configuration
-ms.openlocfilehash: 041bb04a3a3699a166a03338865da154403d8c07
-ms.sourcegitcommit: f535ce61c6a5e615bc6399b5d763c734396231f4
+ms.openlocfilehash: 7d591259587766a932a14bb030c76274101d16ac
+ms.sourcegitcommit: f8f6b5934bd071a349f5bc1e389365c52b1c00fa
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2017
+ms.lasthandoff: 09/14/2017
 ---
-<a name=fundamentals-configuration></a>
-
 # <a name="configuration-in-aspnet-core"></a>Configuration dans ASP.NET Core
 
 [Rick Anderson](https://twitter.com/RickAndMSFT), [marque Michaelis](http://intellitect.com/author/mark-michaelis/), [Steve Smith](https://ardalis.com/), et [Michel Roth](https://github.com/danroth27)
@@ -287,7 +285,7 @@ Notez que l’exemple ajoute personnalisé `EFConfigProvider` lorsque le fournis
 
 [!code-json[Main](configuration/sample/CustomConfigurationProvider/appsettings.json)]
 
-Affiche les informations suivantes :
+Le résultat suivant s’affiche :
 
 ```console
 key1=value_from_ef_1
