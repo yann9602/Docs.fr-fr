@@ -5,17 +5,17 @@ description: "Didacticiel rapide qui crée et exécute une application Hello Wor
 keywords: "ASP.NET Core,didacticiel,bien démarrer"
 ms.author: riande
 manager: wpickett
-ms.date: 08/07/2017
+ms.date: 08/30/2017
 ms.topic: get-started-article
 ms.assetid: 73543e9d-d9d5-47d6-9664-17a9beea6cd3
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: getting-started
-ms.openlocfilehash: 3399df3958093da9117b013736b1cb370fd6beb2
-ms.sourcegitcommit: 297ee5d2f3b3b24eb8a2c4a25195c9e2973cb91b
+ms.openlocfilehash: f7852f0dddb0585089f5ccd8f4c865f5b87b049b
+ms.sourcegitcommit: fb518f856f31fe53c09196a13309eacb85b37a22
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/14/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="getting-started-with-aspnet-core"></a>Bien démarrer avec ASP.NET Core
 
@@ -28,21 +28,26 @@ ms.lasthandoff: 08/14/2017
 
    Sur macOS et Linux, ouvrez une fenêtre de terminal. Sur Windows, ouvrez une invite de commandes.
 
-   ```terminal
-   mkdir aspnetcoreapp
-   cd aspnetcoreapp
-   dotnet new web
-   ```
+    ```terminal
+    dotnet new razor -o aspnetcoreapp
+    ```
     
 4. Exécutez l’application.
 
-   La commande `dotnet run` commence par générer l’application, si nécessaire.
+    Exécutez les commandes suivantes pour exécuter l’application :
 
-   ```terminal
-   dotnet run
-   ```
+    ```terminal
+    cd aspnetcoreapp
+    dotnet run
+    ```
 
-5. Accédez à `http://localhost:5000`.
+5. Accédez à [http://localhost:5000](http://localhost:5000)
+
+6. Ouvrez *Pages/About.cshtml*, puis modifiez la page de façon à afficher le message « Hello, world! The time on the server is @DateTime.Now » :
+
+    [!code-html[Main](getting-started/sample/getting-started/about.cshtml?highlight=9&range=1-9)]
+
+7. Accédez à [http://localhost:5000/About](http://localhost:5000/About), puis vérifiez les modifications.
 
 ### <a name="next-steps"></a>Étapes suivantes
 

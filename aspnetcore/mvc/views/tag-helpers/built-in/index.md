@@ -5,25 +5,25 @@ description: "Tag Helpers intégrés d’ASP.NET Core"
 keywords: ASP.NET Core,tag helper
 ms.author: riande
 manager: wpickett
-ms.date: 7/11/2017
+ms.date: 09/13/2017
 ms.topic: article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: mvc/views/tag-helpers/builtin-th/Index
-ms.openlocfilehash: 3f47cc571eff0c522aaf6543de58f158835384d4
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: e7c8c64283ca3740698300689b10497f984cfd3e
+ms.sourcegitcommit: d022d4b96795ee473fa3847a1d8a8c7430423a86
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/13/2017
 ---
 # <a name="aspnet-core-built-in-tag-helpers"></a>Tag Helpers intégrés d’ASP.NET Core
 
 Par [Peter Kellner](http://peterkellner.net) 
 
-Le framework ASP.NET Core inclut plusieurs Tag Helpers qui peuvent vous aider à être plus productif dans l’écriture d’un code robuste. Cette section donne une vue d’ensemble de tous les Tag Helpers intégrés.
+ASP.NET Core inclut de nombreux Tag Helpers intégrés permettant d’augmenter votre productivité. Cette section donne une vue d’ensemble de ces Tag Helpers.
 
 > [!NOTE]
-> Certains Tag Helpers intégrés ne sont pas abordés, car ils sont utilisés en interne par le moteur d’affichage de [Razor](xref:mvc/views/razor). Ceci inclut un Tag Helper pour le caractère ~ qui se développe en chemin racine du site web.
+> Certains Tag Helpers intégrés ne sont pas abordés, car ils sont utilisés en interne par le moteur d’affichage [Razor](xref:mvc/views/razor). Cela inclut notamment un Tag Helper pour le caractère ~ qui développe le chemin racine du site web.
 
 ## <a name="built-in-aspnet-core-tag-helpers"></a>Tag Helpers intégrés d’ASP.NET Core
 
@@ -37,13 +37,13 @@ Le framework ASP.NET Core inclut plusieurs Tag Helpers qui peuvent vous aider à
 
 [comment]: **[FormActionTagHelper](xref:mvc/views/tag-helpers/builtin-th/FormActionTagHelper)**
 
-[comment]: **[FormTagTagHelper](xref:mvc/views/tag-helpers/builtin-th/FormTagHelper)**
+**[Tag Helper Form](xref:mvc/views/working-with-forms#the-form-tag-helper)**
 
 **[Tag Helper d’image](xref:mvc/views/tag-helpers/builtin-th/ImageTagHelper)**
 
-[comment]: **[InputTagHelper](xref:mvc/views/tag-helpers/builtin-th/InputTagHelper)**
+**[Tag Helper Input](xref:mvc/views/working-with-forms#the-input-tag-helper)**
 
-[comment]: **[LabelTagHelper](xref:mvc/views/tag-helpers/builtin-th/LabelTagHelper)**
+**[Tag Helper Label](xref:mvc/views/working-with-forms#the-label-tag-helper)**
 
 [comment]: **[LinkTagHelper](xref:mvc/views/tag-helpers/builtin-th/LinkTagHelper)**
 
@@ -51,21 +51,15 @@ Le framework ASP.NET Core inclut plusieurs Tag Helpers qui peuvent vous aider à
 
 [comment]: **[ScriptTagHelper](xref:mvc/views/tag-helpers/builtin-th/ScriptTagTagHelper)**
 
-[comment]: **[SelectTagHelper](xref:mvc/views/tag-helpers/builtin-th/SelectTagTagHelper)**
+**[Tag Helper Select](xref:mvc/views/working-with-forms#the-select-tag-helper)**
 
-[comment]: **[TextAreaTagHelper](xref:mvc/views/tag-helpers/builtin-th/TextAreaTagHelper)**
+**[Tag Helper Textarea](xref:mvc/views/working-with-forms#the-textarea-tag-helper)**
 
-[comment]: **[ValidationMessageTagHelper](xref:mvc/views/tag-helpers/builtin-th/ValidationMessageTagHelper)**
+**[Tag Helper de message de validation](xref:mvc/views/working-with-forms#the-validation-message-tag-helper)**
 
-[comment]: **[ValidationSummaryTagHelper](xref:mvc/views/tag-helpers/builtin-th/ValidationSummaryTagHelper)**  
-  
-  
-<!--
+**[Tag Helper de résumé de validation](xref:mvc/views/working-with-forms#the-validation-summary-tag-helper)**
 
-## Additional Resources
+## <a name="additional-resources"></a>Ressources supplémentaires
 
-REQUIRED These must be xref links, not relative, that is ../../
-* [Client-Side Development](../../../client-side/index.md)
-
+* [Développement côté client](xref:client-side/index)
 * [Tag Helpers](xref:mvc/views/tag-helpers/intro)
--->
