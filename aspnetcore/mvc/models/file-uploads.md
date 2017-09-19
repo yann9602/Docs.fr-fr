@@ -5,17 +5,17 @@ description: "Comment utiliser la liaison de modèle et de diffusion en continu 
 keywords: "ASP.NET Core, le téléchargement du fichier de modèle de liaison, IFormFile, diffusion en continu"
 ms.author: riande
 manager: wpickett
-ms.date: 7/5/2017
+ms.date: 07/05/2017
 ms.topic: article
 ms.assetid: ebc98159-a028-4a94-b06c-43981c79c6be
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/models/file-uploads
-ms.openlocfilehash: 3d42fd0657bcfb4b0fdab699bbcb572e5736688c
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: 3d114f8d13345cb260430847e80a61500de170b4
+ms.sourcegitcommit: 67f54fabbfa4e3942f5bfe1f8a7fdfe4a7a75358
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 09/19/2017
 ---
 # <a name="file-uploads-in-aspnet-core"></a>Téléchargements de fichiers dans ASP.NET Core
 

@@ -11,11 +11,11 @@ ms.assetid: dba74f39-58cd-4dee-a061-6d15f7346959
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/servers/index
-ms.openlocfilehash: 17124f1ef181a4f1572d9375ae8cd27ce8845016
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: 54c8e1ad7d4de7f953d9801c214c0bd577304f46
+ms.sourcegitcommit: 67f54fabbfa4e3942f5bfe1f8a7fdfe4a7a75358
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 09/19/2017
 ---
 # <a name="web-server-implementations-in-aspnet-core"></a>Implémentations de serveurs web dans ASP.NET Core
 
@@ -115,7 +115,7 @@ Dans le cas des réseaux internes, Kestrel est généralement recommandé pour o
 
 ## <a name="notes-about-aspnet-core-server-infrastructure"></a>Remarques sur l’infrastructure serveur d’ASP.NET Core
 
-Le [`IApplicationBuilder`](https://docs.microsoft.com/aspnet/core/api) disponible dans la méthode `Configure` de la classe `Startup` expose la propriété `ServerFeatures` de type [`IFeatureCollection`](https://docs.microsoft.com/aspnet/core/api). Kestrel et WebListener exposent uniquement la fonctionnalité [`IServerAddressesFeature`](https://docs.microsoft.com/aspnet/core/api) mais les autres implémentations de serveurs peuvent exposer des fonctionnalités supplémentaires.
+Le [`IApplicationBuilder`](/aspnet/core/api/microsoft.aspnetcore.builder.iapplicationbuilder) disponible dans la méthode `Configure` de la classe `Startup` expose la propriété `ServerFeatures` de type [`IFeatureCollection`](/aspnet/core/api/microsoft.aspnetcore.http.features.ifeaturecollection). Kestrel et WebListener exposent uniquement la fonctionnalité [`IServerAddressesFeature`](/aspnet/core/api/microsoft.aspnetcore.hosting.server.features.iserveraddressesfeature) mais les autres implémentations de serveurs peuvent exposer des fonctionnalités supplémentaires.
 
 `IServerAddressesFeature` permet de déterminer quel est le port lié à l’implémentation de serveur au moment de l’exécution.
 

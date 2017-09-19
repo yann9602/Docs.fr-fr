@@ -5,17 +5,17 @@ description: "À l’aide d’identité avec une application ASP.NET Core"
 keywords: "Autorisation ASP.NET Core, identité, sécurité"
 ms.author: riande
 manager: wpickett
-ms.date: 7/7/2017
+ms.date: 07/07/2017
 ms.topic: article
 ms.assetid: cf119f21-1a2b-49a2-b052-547ccb66ee83
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/identity
-ms.openlocfilehash: 5a76cac1d64718b9dece3a3201db06c8192fb6f3
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: 0c17daa96bc69dc0b8393811a4dfe0e5dc4a1884
+ms.sourcegitcommit: 67f54fabbfa4e3942f5bfe1f8a7fdfe4a7a75358
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 09/19/2017
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>Introduction à l’identité sur ASP.NET Core
 
@@ -160,5 +160,5 @@ Pour plus d’informations et des conseils sur la migration des identités exist
 
 * [Migration de l’authentification et de l’identité](xref:migration/identity)
 * [Confirmation de compte et récupération de mot de passe](xref:security/authentication/accconfirm)
-* [Authentification à 2 facteurs avec SMS](xref:security/authentication/2fa)
+* [Authentification à deux facteurs avec SMS](xref:security/authentication/2fa)
 * [Activation de l’authentification via Facebook, Google et d’autres fournisseurs externes](xref:security/authentication/social/index)

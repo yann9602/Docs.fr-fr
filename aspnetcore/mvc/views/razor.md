@@ -5,16 +5,16 @@ description: "Détails de la syntaxe Razor"
 keywords: ASP.NET Core, Razor
 ms.author: riande
 manager: wpickett
-ms.date: 07/4/2017
+ms.date: 07/04/2017
 ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/razor
-ms.openlocfilehash: 7648bc2ac7b9efd1653725cda749d6cd271bae77
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: fff2f98592473a9baf6a2d4e360fec3026b7210d
+ms.sourcegitcommit: 67f54fabbfa4e3942f5bfe1f8a7fdfe4a7a75358
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/19/2017
 ---
 # <a name="razor-syntax-for-aspnet-core"></a>Syntaxe Razor pour ASP.NET Core
 
@@ -36,7 +36,7 @@ Rendu inchangée `<p>Hello World</p>` par le serveur.
 
 ## <a name="razor-syntax"></a>Syntaxe Razor
 
-Razor prend en charge de c# et utilise le `@` symbole pour effectuer la transition du code HTML en c#. Razor évalue les expressions c# et les affiche dans la sortie HTML. Razor peut effectuer la transition du code HTML dans c# ou dans le balisage spécifique Razor. Lorsqu’un `@` symbole est suivi d’un [Razor de mot clé réservé](#razor-reserved-keywords) transition vers le balisage spécifique Razor, sinon il passe à c# ordinaire.
+Razor prend en charge de c# et utilise le `@` symbole pour effectuer la transition du code HTML en c#. Razor évalue les expressions c# et les affiche dans la sortie HTML. Razor peut passer du HTML au C# ou à des balises spécifiques à Razor. Lorsqu’un `@` symbole est suivi d’un [Razor de mot clé réservé](#razor-reserved-keywords) transition vers le balisage spécifique Razor, sinon il passe à c# ordinaire.
 
 <a name=escape-at-label></a>
 
@@ -494,7 +494,7 @@ Génère ce balisage HTML :
 
 Lorsqu’il est passé «[Rick@contoso.com](mailto:Rick@contoso.com)» dans le modèle :
 
-   Consultez [disposition](layout.md) pour plus d’informations.
+   Pour plus d’informations, consultez [Disposition](layout.md).
 
 ### `@inject`
 

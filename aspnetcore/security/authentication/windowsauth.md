@@ -5,17 +5,17 @@ description: "Comment configurer l’authentification Windows dans ASP.NET Core"
 keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
-ms.date: 7/5/2017
+ms.date: 07/05/2017
 ms.topic: article
 ms.assetid: cf119f21-1a2b-49a2-b052-548ccb66ee83
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/windowsauth
-ms.openlocfilehash: aa401f956d74680efd3964203af3e8866b129887
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: f724584b43eb2be105cc8a207d5c7b6fec558881
+ms.sourcegitcommit: 67f54fabbfa4e3942f5bfe1f8a7fdfe4a7a75358
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 09/19/2017
 ---
 # <a name="configure-windows-authentication-in-aspnet-core"></a>Configurer l’authentification Windows dans ASP.NET Core
 
@@ -40,7 +40,7 @@ Dans Visual Studio :
 * Sélectionnez l’Application Web à partir de la liste des modèles.
 * Sélectionnez le bouton Modifier l’authentification, sélectionnez **l’authentification Windows**. 
 
-Exécuter l’application. Le nom d’utilisateur s’affiche dans le coin supérieur droit de l’application.
+Exécutez l’application. Le nom d’utilisateur s’affiche dans le coin supérieur droit de l’application.
 
 ![Capture d’écran de navigateur de l’authentification Windows](windowsauth/_static/browser-screenshot.png)
 

@@ -5,17 +5,17 @@ description: "Découvrez comment utiliser des parties de l’application, qui so
 keywords: "ASP.NET Core, partie de l’application, de la part de l’application"
 ms.author: riande
 manager: wpickett
-ms.date: 1/4/2017
+ms.date: 01/04/2017
 ms.topic: article
 ms.assetid: b355a48e-a15c-4d58-b69c-899963613a98
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/extensibility/app-parts
-ms.openlocfilehash: a5205ebab6c827b4e6af63287e56fe2b8f72c933
-ms.sourcegitcommit: 418e6aa4ab79474ecc4d0a6af573a3759b113fe4
+ms.openlocfilehash: 77d3a58d58493bf1b0b760ab9037d2778ba23441
+ms.sourcegitcommit: 67f54fabbfa4e3942f5bfe1f8a7fdfe4a7a75358
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2017
+ms.lasthandoff: 09/19/2017
 ---
 # <a name="application-parts-in-aspnet-core"></a>Composants d’application ASP.NET Core
 
@@ -68,7 +68,7 @@ Fournisseurs de fonctionnalités d’application examiner des parties de l’app
 
 * [Contrôleurs](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.controllers.controllerfeatureprovider)
 * [Référence de métadonnées](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.razor.compilation.metadatareferencefeatureprovider)
-* [Programmes d’assistance de balise](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.razor.taghelpers.taghelperfeatureprovider)
+* [Tag Helpers](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.razor.taghelpers.taghelperfeatureprovider)
 * [Affichage des composants](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.viewcomponents.viewcomponentfeatureprovider)
 
 Héritent des fournisseurs de fonctionnalités `IApplicationFeatureProvider<T>`, où `T` est le type de la fonctionnalité. Vous pouvez implémenter votre propre fonction pour un des types de fonctions de MVC, les fournisseurs répertoriés ci-dessus. L’ordre des fournisseurs de fonctionnalités dans le `ApplicationPartManager.FeatureProviders` collection peut être importante, étant donné que les fournisseurs ultérieure peuvent réagir aux actions effectuées par les fournisseurs précédents.

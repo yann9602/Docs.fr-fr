@@ -5,16 +5,16 @@ description: "Explique comment utiliser la réponse mise en cache pour réduire 
 keywords: "ASP.NET Core, la réponse mise en cache, les en-têtes HTTP"
 ms.author: riande
 manager: wpickett
-ms.date: 7/10/2017
+ms.date: 07/10/2017
 ms.topic: article
 ms.assetid: cb42035a-60b0-472e-a614-cb79f443f654
 ms.prod: asp.net-core
 uid: performance/caching/response
-ms.openlocfilehash: 8b20ac70f257213ae3830749e729156ee5ab6447
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: 97bc56a3cfe7383f207a4f621ab3fe8b8dc258ef
+ms.sourcegitcommit: 67f54fabbfa4e3942f5bfe1f8a7fdfe4a7a75358
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 09/19/2017
 ---
 # <a name="response-caching"></a>Réponse mise en cache
 

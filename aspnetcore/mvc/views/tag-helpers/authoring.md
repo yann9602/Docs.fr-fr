@@ -5,18 +5,18 @@ description: "Découvrez comment créer des programmes d’assistance de balise 
 keywords: "ASP.NET Core, les programmes d’assistance de balise"
 ms.author: riande
 manager: wpickett
-ms.date: 6/14/2017
+ms.date: 06/14/2017
 ms.topic: article
 ms.assetid: 4f16d978-5695-4abf-a785-fdaabf3bbcb9
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/tag-helpers/authoring
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 97013d06273c0993b74cdacfa16cb0d655c73667
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: 1a5222da1380c2fe768b287bfa1a49b300c02f2b
+ms.sourcegitcommit: 67f54fabbfa4e3942f5bfe1f8a7fdfe4a7a75358
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 09/19/2017
 ---
 # <a name="authoring-tag-helpers-in-aspnet-core-a-walkthrough-with-samples"></a>Programmes d’assistance de balise dans ASP.NET Core, une procédure pas à pas avec les exemples de création
 
@@ -72,7 +72,7 @@ Autrement dit, une balise d’ancrage qui rend cette un lien par courrier élect
     public class Email : TagHelper
     ```
 
-2.  Pour rendre le `EmailTagHelper` classe disponible pour toutes les vues de notre Razor, ajoutez le `addTagHelper` directive pour le *Views/_ViewImports.cshtml* fichier : [!code-html [principal](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/_ViewImportsCopyEmail.cshtml?highlight=2,3)]
+2.  Pour rendre le `EmailTagHelper` classe disponible pour toutes les vues de notre Razor, ajoutez le `addTagHelper` directive pour le *Views/_ViewImports.cshtml* fichier :[!code-html[Main](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/_ViewImportsCopyEmail.cshtml?highlight=2,3)]
     
     Le code ci-dessus utilise la syntaxe des caractères génériques pour spécifier que tous les programmes d’assistance de balise dans notre assembly seront disponibles. La première chaîne après `@addTagHelper` Spécifie l’application d’assistance de balise à charger (utilisez « * » pour tous les programmes d’assistance de balise), et la deuxième chaîne de « AuthoringTagHelpers » Spécifie l’assembly de l’application d’assistance de balise. En outre, notez que la deuxième ligne met dans les programmes d’assistance de balise de noyaux de ASP.NET MVC à l’aide de la syntaxe des caractères génériques (ces programmes d’assistance sont décrites dans [Introduction aux programmes d’assistance de balise](intro.md).) Il s’agit du `@addTagHelper` directive qui rend l’application d’assistance de balise disponibles à la vue Razor. Ou bien, vous pouvez fournir le nom qualifié complet (FQN) d’une application d’assistance de balise comme indiqué ci-dessous :
     
@@ -108,7 +108,7 @@ Mise à jour la `EmailTagHelper` classe par le code suivant :
 
 Cette approche fonctionne pour l’attribut « href » tant qu’il n’existe pas actuellement dans la collection d’attributs. Vous pouvez également utiliser le `output.Attributes.Add` méthode pour ajouter un attribut d’assistance de balise à la fin de la collection d’attributs de balise.
 
-1.  Mettre à jour le balisage dans le *Views/Home/Contact.cshtml* fichier avec ces modifications : [!code-html [principal](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/Home/ContactCopy.cshtml?highlight=15,16)]
+1.  Mettre à jour le balisage dans le *Views/Home/Contact.cshtml* fichier avec ces modifications :[!code-html[Main](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/Home/ContactCopy.cshtml?highlight=15,16)]
 
 2.  Exécutez l’application et vérifiez qu’il génère les liens corrects.
     
@@ -155,7 +155,7 @@ Dans cette section, nous allons écrire une application d’assistance de messag
 
     [!code-html[Main](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/Home/AboutBoldOnly.cshtml?highlight=7)]
 
-3.  Exécuter l’application. Vous pouvez utiliser votre navigateur préféré pour inspecter la source et de vérifier le balisage.
+3.  Exécutez l’application. Vous pouvez utiliser votre navigateur préféré pour inspecter la source et de vérifier le balisage.
 
     Le `[HtmlTargetElement]` attribut ci-dessus cible uniquement le balisage HTML qui fournit un nom d’attribut de « bold ». Le `<bold>` élément n’a pas été modifié par l’application d’assistance de balise.
 
@@ -183,7 +183,7 @@ Vous pouvez également utiliser le `[HtmlTargetElement]` pour modifier le nom de
 
 1.  Ajouter un *modèles* dossier.
 
-2.  Ajoutez le code suivant `WebsiteContext` classe le *modèles* dossier :
+2.  Ajoutez la classe `WebsiteContext` suivante au dossier *Models* :
 
     [!code-csharp[Main](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Models/WebsiteContext.cs)]
 
@@ -301,7 +301,7 @@ Dans cette section, vous écrivez une paire de liaison automatique les programme
 
     [!code-csharp[Main](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/z1AutoLinker.cs?highlight=15-34&range=7-34)]
 
-5.  Exécuter l’application. Notez que le texte www est affiché sous forme de lien, mais le texte HTTP n’est pas. Si vous placez un point d’arrêt dans les deux classes, vous pouvez voir que la classe d’assistance de balise HTTP s’exécute en premier. Le problème est que la sortie d’assistance de balise est mis en cache, et lorsque l’application d’assistance de balise WWW est exécutée, il remplace la sortie mise en cache à partir de l’application d’assistance de balise HTTP. Plus loin dans ce didacticiel, nous verrons comment contrôler l’ordre dans lequel exécutent des programmes d’assistance de balise dans. Nous allons corriger le code avec les éléments suivants :
+5.  Exécutez l’application. Notez que le texte www est affiché sous forme de lien, mais le texte HTTP n’est pas. Si vous placez un point d’arrêt dans les deux classes, vous pouvez voir que la classe d’assistance de balise HTTP s’exécute en premier. Le problème est que la sortie d’assistance de balise est mis en cache, et lorsque l’application d’assistance de balise WWW est exécutée, il remplace la sortie mise en cache à partir de l’application d’assistance de balise HTTP. Plus loin dans ce didacticiel, nous verrons comment contrôler l’ordre dans lequel exécutent des programmes d’assistance de balise dans. Nous allons corriger le code avec les éléments suivants :
 
     [!code-csharp[Main](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/z1AutoLinkerCopy.cs?highlight=5,6,10,21,22,26&range=8-37)]
 
