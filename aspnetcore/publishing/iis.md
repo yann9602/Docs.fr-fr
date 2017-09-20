@@ -11,11 +11,11 @@ ms.assetid: a4449ad3-5bad-410c-afa7-dc32d832b552
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: publishing/iis
-ms.openlocfilehash: 351f3519643bc88fc3dd1c4fbac1c144c6837523
-ms.sourcegitcommit: 0a70706a3814d2684f3ff96095d1e8291d559cc7
+ms.openlocfilehash: 48e67add785fc1d7e79c659565afb1ec68c1defb
+ms.sourcegitcommit: f531d90646b9d261c5fbbffcecd6ded9185ae292
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2017
+ms.lasthandoff: 09/15/2017
 ---
 # <a name="set-up-a-hosting-environment-for-aspnet-core-on-windows-with-iis-and-deploy-to-it"></a>Configurer un environnement d’hébergement pour ASP.NET Core sur Windows avec IIS et déployer sur celui-ci
 
@@ -57,7 +57,7 @@ Validez l’étape de **Confirmation** pour installer les services et le rôle d
 
 ## <a name="install-the-net-core-windows-server-hosting-bundle"></a>Installer le bundle d’hébergement .NET Core Windows Server
 
-1. Installez le [bundle d’hébergement .NET Core Windows Server](https://aka.ms/dotnetcore.2.0.0-windowshosting) sur le système hôte. Le bundle installe le Runtime .NET Core, la bibliothèque .NET Core et le [Module ASP.NET Core](xref:fundamentals/servers/aspnet-core-module). Le module crée le proxy inverse entre IIS et le serveur Kestrel. Remarque : Si le système ne dispose pas d’une connexion Internet, obtenez et installez *[Redistributable Microsoft Visual C++ 2015](https://www.microsoft.com/download/details.aspx?id=53840)*  avant d’installer le bundle d’hébergement .NET Core Windows Server.
+1. Installez le [bundle d’hébergement .NET Core Windows Server](https://aka.ms/dotnetcore.2.0.0-windowshosting) sur le système hôte. Le bundle installe le Runtime .NET Core, la bibliothèque .NET Core et le [Module ASP.NET Core](xref:fundamentals/servers/aspnet-core-module). Le module crée le proxy inverse entre IIS et le serveur Kestrel. Remarque : Si le système ne dispose pas d’une connexion Internet, obtenez et installez *[Redistributable Microsoft Visual C++ 2015](https://www.microsoft.com/download/details.aspx?id=53840) * avant d’installer le bundle d’hébergement .NET Core Windows Server.
 
 2. Redémarrez le système ou exécutez **net stop was /y** suivi de **net start w3svc** à partir d’une invite de commandes pour prendre en compte une modification de la variable système PATH.
 
@@ -66,22 +66,38 @@ Validez l’étape de **Confirmation** pour installer les services et le rôle d
 
 ## <a name="install-web-deploy-when-publishing-with-visual-studio"></a>Installer Web Deploy lors de la publication avec Visual Studio
 
-Si vous prévoyez de déployer vos applications avec Web Deploy dans Visual Studio, installez la dernière version de Web Deploy sur le système hôte. Pour installer Web Deploy, vous pouvez utiliser [Web Platform Installer (WebPI)](https://www.microsoft.com/web/downloads/platform.aspx) ou obtenir un programme d’installation directement à partir du [Centre de téléchargement Microsoft](https://www.microsoft.com/search/result.aspx?q=webdeploy&form=dlc). La méthode recommandée est d’utiliser WebPI. WebPI offre une installation autonome et une configuration pour les fournisseurs d’hébergement.
+Si vous prévoyez de déployer vos applications avec Web Deploy dans Visual Studio, installez la dernière version de Web Deploy sur le système hôte. Pour installer Web Deploy, vous pouvez utiliser [Web Platform Installer (WebPI)](https://www.microsoft.com/web/downloads/platform.aspx) ou obtenir un programme d’installation directement à partir du [Centre de téléchargement Microsoft](https://www.microsoft.com/download/details.aspx?id=43717). La méthode recommandée est d’utiliser WebPI. WebPI offre une installation autonome et une configuration pour les fournisseurs d’hébergement.
 
 ## <a name="application-configuration"></a>Configuration d’application
 
 ### <a name="enabling-the-iisintegration-components"></a>Activation des composants IISIntegration
 
-Incluez une dépendance envers le package *Microsoft.AspNetCore.Server.IISIntegration* dans les dépendances d’application. Incorporez l’intergiciel (middleware) d’intégration IIS dans l’application en ajoutant la méthode d’extension *.UseIISIntegration()* à *WebHostBuilder()*. Notez que le code qui appelle *.UseIISIntegration()* n’affecte pas la portabilité du code.
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+
+Un fichier *Program.cs* standard appelle [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder) pour commencer à configurer un hôte. `CreateDefaultBuilder` configure [Kestrel](xref:fundamentals/servers/kestrel) comme serveur web et active l’intégration d’IIS en configurant le chemin et le port de base pour le [module ASP.NET Core](xref:fundamentals/servers/aspnet-core-module) :
+
+```csharp
+public static IWebHost BuildWebHost(string[] args) =>
+    WebHost.CreateDefaultBuilder(args)
+        ...
+```
+
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+
+Incluez une dépendance envers le package [Microsoft.AspNetCore.Server.IISIntegration](https://www.nuget.org/packages/Microsoft.AspNetCore.Server.IISIntegration/) dans les dépendances d’application. Incorporez l’intergiciel (middleware) d’intégration IIS dans l’application en ajoutant la méthode d’extension *UseIISIntegration* à *WebHostBuilder* :
 
 ```csharp
 var host = new WebHostBuilder()
     .UseKestrel()
-    .UseContentRoot(Directory.GetCurrentDirectory())
     .UseIISIntegration()
-    .UseStartup<Startup>()
-    .Build();
+    ...
 ```
+
+`UseKestrel` et `UseIISIntegration` sont tous deux obligatoires. Le code qui appelle *UseIISIntegration* n’affecte pas la portabilité du code. Si l’application n’est pas exécutée derrière IIS (par exemple si l’application est exécutée directement sur Kestrel), `UseIISIntegration` n’effectue pas d’opérations.
+
+---
+
+Pour plus d’informations sur l’hébergement, consultez [Hébergement dans ASP.NET Core](xref:fundamentals/hosting).
 
 ### <a name="setting-iisoptions-for-the-iisintegration-service"></a>Définition d’IISOptions pour le service IISIntegration
 
@@ -154,7 +170,7 @@ Pour découvrir comment créer un profil de publication pour une utilisation ave
 ![Boîte de dialogue Publier](iis/_static/pub-dialog.png)
 
 ### <a name="web-deploy-outside-of-visual-studio"></a>Web Deploy en dehors de Visual Studio
-Vous pouvez également utiliser Web Deploy en dehors de Visual Studio à partir de la ligne de commande. Pour plus d’informations, consultez [Web Deployment Tool (Outil de déploiement Web)](https://technet.microsoft.com/library/dd568996(WS.10).aspx).
+Vous pouvez également utiliser Web Deploy en dehors de Visual Studio à partir de la ligne de commande. Pour plus d’informations, consultez [Web Deployment Tool (Outil de déploiement Web)](https://docs.microsoft.com/iis/publish/using-web-deploy/use-the-web-deployment-tool).
 
 ### <a name="alternatives-to-web-deploy"></a>Alternatives à Web Deploy
 Si vous ne souhaitez pas utiliser Web Deploy ou si vous n’utilisez pas Visual Studio, plusieurs méthodes sont à votre disposition pour déplacer l’application vers le système hôte, telles que Xcopy, Robocopy ou PowerShell. Les utilisateurs de Visual Studio peuvent utiliser les [Exemples de publication](https://github.com/aspnet/vsweb-publish/blob/master/samples/samples.md).
@@ -185,12 +201,12 @@ Pour configurer la Protection des données sous IIS, vous devez adopter l’une 
 
 * Exécutez un [script powershell](https://github.com/aspnet/DataProtection/blob/dev/Provision-AutoGenKeys.ps1) pour créer des entrées de Registre appropriées (par exemple, `.\Provision-AutoGenKeys.ps1 DefaultAppPool`). Cela permet de stocker les clés dans le Registre, protégées à l’aide de DPAPI avec une clé à l’échelle de l’ordinateur.
 * Configurez le pool d’applications IIS pour charger le profil utilisateur. Ce paramètre se trouve dans la section **Modèle de processus** sous les **Paramètres avancés** du pool d’applications. Affectez la valeur `True` à **Charger le profil utilisateur**. Cela permet de stocker les clés sous le répertoire du profil utilisateur, protégées à l’aide de DPAPI avec une clé propre au compte d’utilisateur utilisé pour le pool d’applications.
-* Ajustez votre code d’application pour [utiliser le système de fichiers en tant que magasin de porte-clés](https://docs.microsoft.com/aspnet/core/security/data-protection/configuration/overview). Utilisez un certificat X509 pour protéger le porte-clés et vérifiez qu’il s’agit d’un certificat approuvé. Par exemple, s’il s’agit d’un certificat auto-signé, vous devez le placer dans le magasin racine approuvé.
+* Ajustez votre code d’application pour [utiliser le système de fichiers en tant que magasin de porte-clés](xref:security/data-protection/configuration/overview). Utilisez un certificat X509 pour protéger le porte-clés et vérifiez qu’il s’agit d’un certificat approuvé. Par exemple, s’il s’agit d’un certificat auto-signé, vous devez le placer dans le magasin racine approuvé.
 
 Quand vous utilisez IIS dans une batterie de serveurs web :
 
 * Utilisez un partage de fichiers accessible par tous les ordinateurs.
-* Déployez un certificat X509 sur chaque ordinateur.  Configurez la [protection des données dans le code](https://docs.asp.net/en/latest/security/data-protection/configuration/overview.html).
+* Déployez un certificat X509 sur chaque ordinateur.  Configurez la [protection des données dans le code](https://docs.microsoft.com/aspnet/core/security/data-protection/configuration/overview).
 
 ### <a name="1-create-a-data-protection-registry-hive"></a>1. Créer une ruche de Registre de Protection des données
 
@@ -244,7 +260,7 @@ Pour plus d’informations sur la configuration du Module ASP.NET Core avec le f
 
 ## <a name="configuration-of-iis-with-webconfig"></a>Configuration d’IIS avec web.config
 
-La configuration d’IIS est toujours influencée par la section `<system.webServer>` de *web.config* pour les fonctionnalités d’IIS qui s’appliquent à une configuration de proxy inverse. Par exemple, vous avez peut-être configuré IIS au niveau du système pour qu’il utilise la compression dynamique, mais vous pouvez désactiver ce paramètre pour une application avec l’élément `<urlCompression>` dans le fichier *web.config* de l’application. Pour plus d’informations, consultez la [référence de configuration pour `<system.webServer>`](https://www.iis.net/configreference/system.webserver), [Référence de configuration du Module ASP.NET Core](xref:hosting/aspnet-core-module) et [Utilisation des modules IIS avec ASP.NET Core](xref:hosting/iis-modules). Si vous devez définir des variables d’environnement pour des applications qui s’exécutent dans des pools d’applications isolés (prise en charge sur IIS 10.0+), consultez la section *Commande AppCmd.exe* de la rubrique [Variables d’environnement \<environmentVariables>](/iis/configuration/system.applicationHost/applicationPools/add/environmentVariables/#appcmdexe) dans la documentation de référence IIS.
+La configuration d’IIS est toujours influencée par la section `<system.webServer>` de *web.config* pour les fonctionnalités d’IIS qui s’appliquent à une configuration de proxy inverse. Par exemple, vous avez peut-être configuré IIS au niveau du système pour qu’il utilise la compression dynamique, mais vous pouvez désactiver ce paramètre pour une application avec l’élément `<urlCompression>` dans le fichier *web.config* de l’application. Pour plus d’informations, consultez la [référence de configuration pour `<system.webServer>`](https://docs.microsoft.com/iis/configuration/system.webServer/), [Référence de configuration du Module ASP.NET Core](xref:hosting/aspnet-core-module) et [Utilisation des modules IIS avec ASP.NET Core](xref:hosting/iis-modules). Si vous devez définir des variables d’environnement pour des applications qui s’exécutent dans des pools d’applications isolés (prise en charge sur IIS 10.0+), consultez la section *Commande AppCmd.exe* de la rubrique [Variables d’environnement \<environmentVariables>](/iis/configuration/system.applicationHost/applicationPools/add/environmentVariables/#appcmdexe) dans la documentation de référence IIS.
 
 ## <a name="configuration-sections-of-webconfig"></a>Sections de configuration de web.config
 
@@ -509,6 +525,6 @@ Résolution des problèmes
 
 * [Présentation d’ASP.NET Core](../index.md)
 
-* [Site officiel de Microsoft IIS](http://www.iis.net/)
+* [Site officiel de Microsoft IIS](https://www.iis.net/)
 
-* [Bibliothèque Microsoft TechNet : Windows Server](https://technet.microsoft.com/library/bb625087.aspx)
+* [Bibliothèque Microsoft TechNet : Windows Server](https://docs.microsoft.com/windows-server/windows-server-versions)

@@ -11,11 +11,11 @@ ms.assetid: 8dc28498-00ee-4d66-b903-b593059e9f39
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/first-mvc-app/adding-model
-ms.openlocfilehash: 8d0bebc22e1cfdc6d9b213d0c3159a7dab988020
-ms.sourcegitcommit: 0bd3f6ec577c648dd777877e97572ec2da1b36c4
+ms.openlocfilehash: 7469546494ec54bfe36bc5bd2f5f9702889ddf4a
+ms.sourcegitcommit: 2e61e287e220eddd5f3f4cd9147aa6417cfd9236
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2017
+ms.lasthandoff: 09/12/2017
 ---
 [!INCLUDE[adding-model](../../includes/mvc-intro/adding-model1.md)]
 
@@ -70,7 +70,7 @@ Visual Studio crée :
 * Un contrôleur de films (*Controllers/MoviesController.cs*)
 * Des fichiers de vues Razor pour les pages Create, Delete, Details, Edit et Index (*Views/Movies/&ast;.cshtml*)
 
-La création automatique du contexte de base de données et de méthodes d’action et de vues [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) (créer, lire, mettre à jour et supprimer) porte le nom de *génération de modèles automatique*. Vous aurez bientôt une application web entièrement opérationnelle qui vous permettra de gérer une base de données de films.
+La création automatique du contexte de base de données et de méthodes d’action et de vues [CRUD](https://wikipedia.org/wiki/Create,_read,_update_and_delete) (créer, lire, mettre à jour et supprimer) porte le nom de *génération de modèles automatique*. Vous aurez bientôt une application web entièrement opérationnelle qui vous permettra de gérer une base de données de films.
 
 Si vous exécutez l’application et que vous cliquez sur le lien **Mvc Movie**, vous recevez une erreur semblable à la suivante :
 
@@ -91,14 +91,14 @@ Dans cette section, vous allez utiliser la console du Gestionnaire de package po
 
 * Ajouter le package d’outils Entity Framework Core. Ce package est nécessaire pour ajouter des migrations et mettre à jour la base de données
 * Ajouter une migration initiale
-* Mettre à jour la base de données avec la migration initiale
+* Mettez à jour la base de données avec la migration initiale.
 
 Dans le menu **Outils**, sélectionnez **Gestionnaire de package NuGet > Console du gestionnaire de package**.
 
 <!-- following image shared with uid: tutorials/razor-pages/model -->
-  ![Menu de la console du gestionnaire de package](adding-model/_static/pmc.png)
+  ![Menu Console du Gestionnaire de package](adding-model/_static/pmc.png)
 
-Dans la console du Gestionnaire de package, entrez les commandes suivantes :
+Dans la console du Gestionnaire de package, entrez les commandes suivantes :
 
 ``` PMC
 Install-Package Microsoft.EntityFrameworkCore.Tools
@@ -106,7 +106,7 @@ Add-Migration Initial
 Update-Database
 ```
 
-Remarque : Consultez [l’approche CLI](#cli) si vous rencontrez des problèmes avec la console du Gestionnaire de package.
+**Remarque :** Si vous recevez une erreur avec la commande `Install-Package`, ouvrez le Gestionnaire de Package NuGet et recherchez le package `Microsoft.EntityFrameworkCore.Tools`. Ceci vous permet d’installer le package ou de vérifier s’il est déjà installé. Vous pouvez aussi appliquer [l’approche CLI](#cli) si vous rencontrez des problèmes avec la console du Gestionnaire de package.
 
 La commande `Add-Migration` crée le code nécessaire à la création du schéma de base de données initial. Le schéma est basé sur le modèle spécifié dans le fichier `DbContext` (dans *Data/MvcMovieContext.cs*). L’argument `Initial` est utilisé pour nommer les migrations. Vous pouvez utiliser n’importe quel nom, mais par convention, choisissez un nom qui décrit la migration. Pour plus d’informations, consultez [Présentation des migrations](xref:data/ef-mvc/migrations#introduction-to-migrations).
 

@@ -11,11 +11,11 @@ ms.assetid: 50922cf1-ca58-4006-9236-99b7ff2dd0cf
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/nano-server
-ms.openlocfilehash: 39e9dea5b3cbd43f41f8a9bceb5d5f8eb6adb16d
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: dd1f2c8de58ea8d3a57e64ecc519184400cb52c8
+ms.sourcegitcommit: ad01283f299d346cf757c4f4744c48634dc27e73
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 09/18/2017
 ---
 # <a name="aspnet-core-with-iis-on-nano-server"></a>ASP.NET Core avec IIS sur Nano Server
 
@@ -165,12 +165,11 @@ New-IISConfigCollectionElement $modules -ConfigAttribute @{"name"="AspNetCoreMod
 
 ## <a name="installing-net-core-framework"></a>Installation de .NET Core Framework
 
-Si vous avez publié une application dépendante du framework (portable), .NET Core doit être installé sur l’ordinateur cible. Exécutez le script PowerShell suivant dans une session PowerShell distante pour installer le .NET Framework sur votre Nano Server.
+Si votre application est publiée comme [déploiement dépendant du framework](/dotnet/core/deploying/#framework-dependent-deployments-fdd), .NET Core doit être installé sur le serveur. Utilisez le [script PowerShell dotnet-install.ps1](https://dot.net/v1/dotnet-install.ps1) dans une session PowerShell distante pour installer .NET Core sur votre Nano Server. Passez la version CLI avec le commutateur `-Version` :
 
-> [!NOTE]
-> Pour comprendre les différences entre les déploiements dépendants du framework et les déploiements autonomes, consultez [Options de déploiement](https://docs.microsoft.com/dotnet/articles/core/deploying/).
-
-[!code-powershell[Main](nano-server/Download-Dotnet.ps1)]
+```console
+dotnet-install.ps1 -Version 2.0.0
+```
 
 ## <a name="publishing-the-application"></a>Publication de l’application
 

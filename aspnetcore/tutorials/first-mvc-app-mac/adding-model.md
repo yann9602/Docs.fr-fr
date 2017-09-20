@@ -1,21 +1,23 @@
 ---
-title: "Ajout d’un modèle à une application ASP.NET Core MVC"
+title: "Ajouter un modèle à une application ASP.NET MVC Core"
 author: rick-anderson
 description: "Ajoutez un modèle à une application ASP.NET Core simple."
 keywords: "ASP.NET Core, MVC, générer des modèles automatiquement, génération de modèles automatique"
 ms.author: riande
 manager: wpickett
-ms.date: 03/30/2017
+ms.devlang: csharp
+ms.date: 09/15/2017
 ms.topic: get-started-article
 ms.assetid: 8dc28498-eeee-1638-b903-b593059e9f39
 ms.technology: aspnet
-ms.prod: asp.net-core
+ms.prod: .net-core
+helpviewer_keywords: aspnet, csharp, mvc
 uid: tutorials/first-mvc-app-mac/adding-model
-ms.openlocfilehash: 4a158802a19011cbb45da1b3ca43d67706efe4cd
-ms.sourcegitcommit: d9e2c99c837078fcac0e315025f8fbfbd45ea6e8
+ms.openlocfilehash: 36819284073eb1cb20b19c41512944e34c54c6d3
+ms.sourcegitcommit: 3fece4e2869581df72090ff5e82af1a09d927699
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2017
+ms.lasthandoff: 09/15/2017
 ---
 [!INCLUDE[adding-model](../../includes/mvc-intro/adding-model1.md)]
 
@@ -46,9 +48,9 @@ Générez le projet pour vérifier qu’il ne comporte aucune erreur. Vous avez 
 
 - Enregistrez le fichier.
 
-- Créez un fichier *Models/MvcMovieContext.cs*, puis ajoutez la classe `MvcMovieContext` suivante : [!code-csharp[Main](../../tutorials/first-mvc-app-xplat/start-mvc/sample/MvcMovie/Models/MvcMovieContext.cs)]
+- Créez un fichier *Models/MvcMovieContext.cs*, puis ajoutez la classe `MvcMovieContext` suivante : [!code-csharp[Main](../../tutorials/first-mvc-app-xplat/start-mvc/sample/MvcMovie/Models/MvcMovieContext.cs)]
    
-- Ouvrez le fichier *Startup.cs*, puis ajoutez deux instructions using : [!code-csharp[Main](../../tutorials/first-mvc-app-xplat/start-mvc/sample/MvcMovie/Startup.cs?name=snippet1&highlight=1,2)]
+- Ouvrez le fichier *Startup.cs*, puis ajoutez deux instructions using : [!code-csharp[Main](../../tutorials/first-mvc-app-xplat/start-mvc/sample/MvcMovie/Startup.cs?name=snippet1&highlight=1,2)]
 
 - Ajoutez le contexte de base de données au fichier *Startup.cs* :
 
@@ -82,7 +84,7 @@ Le moteur de génération de modèles automatique crée les éléments suivants�
 * contrôleur de films (*Controllers/MoviesController.cs*) ;
 * fichiers de vues Razor pour les pages Create, Delete, Details, Edit et Index (*Views/Movies/\*.cshtml*).
 
-La création automatique de méthodes d’action et de vues [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) (créer, lire, mettre à jour et supprimer) s’appelle la *génération de modèles automatique*. Vous aurez bientôt une application web entièrement opérationnelle qui vous permettra de gérer une base de données de films.
+La création automatique de méthodes d’action et de vues [CRUD](https://wikipedia.org/wiki/Create,_read,_update_and_delete) (créer, lire, mettre à jour et supprimer) s’appelle la *génération de modèles automatique*. Vous aurez bientôt une application web entièrement opérationnelle qui vous permettra de gérer une base de données de films.
 
 ### <a name="add-the-files-to-visual-studio"></a>Ajouter les fichiers à Visual Studio
 

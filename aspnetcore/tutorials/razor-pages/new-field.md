@@ -10,17 +10,17 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: tutorials/razor-pages/new-field
-ms.openlocfilehash: bda00f290043251ad308192c5b1a873ae7cd0d85
-ms.sourcegitcommit: e832a9b9f41a8b26a8c88edfd8fc35b8bfd97d5d
+ms.openlocfilehash: 1b5f4297d4812fbbd60fb8b94446da205cd6bb55
+ms.sourcegitcommit: f303a457644ed034a49aa89edecb4e79d9028cb1
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/18/2017
+ms.lasthandoff: 09/12/2017
 ---
 # <a name="adding-a-new-field-to-a-razor-page"></a>Ajout d’un nouveau champ à une page Razor
 
 Par [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Dans cette section, vous allez utiliser la fonctionnalité Migrations Code First [d’Entity Framework](http://docs.efproject.net/en/latest/platforms/aspnetcore/new-db.html) pour ajouter un nouveau champ au modèle et migrer ce changement dans la base de données.
+Dans cette section, vous allez utiliser la fonctionnalité Migrations Code First [d’Entity Framework](https://docs.microsoft.com/ef/core/get-started/aspnetcore/new-db) pour ajouter un nouveau champ au modèle et migrer ce changement dans la base de données.
 
 Quand vous utilisez EF Code First pour créer automatiquement une base de données, Code First ajoute une table à la base de données pour déterminer si le schéma de la base de données est synchronisé avec les classes de modèle à partir desquelles il a été généré. S’ils ne sont pas synchronisés, EF lève une exception. Cela facilite la recherche de problèmes d’incohérence de code/de bases de données.
 
@@ -40,7 +40,7 @@ Ajoutez le champ `Rating` aux pages Delete et Details.
 
 Mettez à jour *Create.cshtml* avec un champ `Rating`. Vous pouvez copier/coller l’élément `<div>` précédent et laisser IntelliSense vous aider à mettre à jour les champs. IntelliSense fonctionne avec des [Tag Helpers](xref:mvc/views/tag-helpers/intro).
 
-![Le développeur a tapé la lettre R comme valeur d’attribut asp-for dans le deuxième élément étiquette de la vue. Un menu contextuel Intellisense s’est affiché, montrant les champs disponibles, notamment Rating, qui est automatiquement mis en surbrillance dans la liste. Quand le développeur clique sur le champ ou appuie sur Entrée, la valeur est définie sur Rating.](new-field/_static/cr.png)
+![Le développeur a tapé la lettre R comme valeur d’attribut asp-for dans le deuxième élément étiquette de la vue. Un menu contextuel IntelliSense s’est affiché, montrant les champs disponibles, notamment Rating, qui est automatiquement mis en surbrillance dans la liste. Quand le développeur clique sur le champ ou appuie sur Entrée, la valeur est définie sur Rating.](new-field/_static/cr.png)
 
 Le code suivant montre *Create.cshtml* avec un champ `Rating` :
 
@@ -105,4 +105,4 @@ Exécutez l’application et vérifiez que vous pouvez créer/modifier/afficher 
 
 >[!div class="step-by-step"]
 [Précédent : Ajout de la recherche](xref:tutorials/razor-pages/search)
-[Suivant : Ajout d’un nouveau champ](xref:tutorials/razor-pages/new-field)
+[Suivant : Ajout de la validation](xref:tutorials/razor-pages/validation)
