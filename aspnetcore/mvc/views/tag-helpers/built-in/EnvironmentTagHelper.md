@@ -2,7 +2,7 @@
 title: "Assistance de balise d’environnement dans ASP.NET Core"
 author: pkellner
 description: "Assistance de balise d’environnement ASP.Net Core définies, y compris toutes les propriétés"
-keywords: "ASP.NET Core, d’assistance de balise"
+keywords: ASP.NET Core,tag helper
 ms.author: riande
 manager: wpickett
 ms.date: 07/14/2017
@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: mvc/views/tag-helpers/builtin-th/EnvironmentTagHelper
-ms.openlocfilehash: 5870d9ebd02becf29f892c91310022d3b9a6b7af
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: e16f942b4a42ef495c7a7daff6724ff071bb35a1
+ms.sourcegitcommit: 74a8ad9c1ba5c155d7c4303e67632a0922c38e86
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/20/2017
 ---
 # <a name="environment-tag-helper-in-aspnet-core"></a>Assistance de balise d’environnement dans ASP.NET Core
 

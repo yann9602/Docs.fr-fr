@@ -11,11 +11,11 @@ ms.assetid: 92a2986a-d005-4ff6-9559-6657fd466bb7
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/advanced
-ms.openlocfilehash: 210f8e8b91c2487e5c4b73fdeb6ff0d5aa35c0c5
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: 70434d1c814af2a96493027c6a2ad87845cd5cae
+ms.sourcegitcommit: 74a8ad9c1ba5c155d7c4303e67632a0922c38e86
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 09/20/2017
 ---
 # <a name="advanced-topics---ef-core-with-aspnet-core-mvc-tutorial-10-of-10"></a>Rubriques avancées - Core EF avec le didacticiel d’ASP.NET MVC de base (10 10)
 
@@ -61,7 +61,7 @@ Ajouter un à l’aide de déclaration :
 
 [!code-csharp[Main](intro/samples/cu/Controllers/HomeController.cs?name=snippet_Usings2)]
 
-Exécutez la page à propos de. Il affiche les mêmes données qu’auparavant.
+Exécutez l’application et accédez à la page à propos de. Il affiche les mêmes données qu’auparavant.
 
 ![Sur la page](advanced/_static/about.png)
 
@@ -109,7 +109,7 @@ Il est parfois utile de pouvoir voir les requêtes SQL réelles qui sont envoyé
 
 Ouvrez *StudentsController.cs* et dans le `Details` méthode définie un point d’arrêt sur la `if (student == null)` instruction.
 
-Exécutez l’application en mode débogage et accédez à la page des détails pour un étudiant.
+Exécuter l’application en mode débogage et accédez à la page des détails pour un étudiant.
 
 Accédez à la **sortie** de sortie de fenêtre affichant le débogage et que la requête :
 

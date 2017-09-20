@@ -11,11 +11,11 @@ ms.assetid: 6e1cd570-40f1-4b24-8b6e-7d2d27758f18
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/crud
-ms.openlocfilehash: 87aa7e63b1a08e457c5fdcbc052bfa039b8d2175
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: 3393bb90d170cfc572d2307ec18f1a8e25bdce59
+ms.sourcegitcommit: 74a8ad9c1ba5c155d7c4303e67632a0922c38e86
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 09/20/2017
 ---
 # <a name="create-read-update-and-delete---ef-core-with-aspnet-core-mvc-tutorial-2-of-10"></a>Créer, lire, mettre à jour et supprimer - Core EF avec le didacticiel d’ASP.NET MVC de base (2 sur 10)
 
@@ -108,7 +108,7 @@ Si la mise en retrait du code est incorrect, une fois que vous collez le code, a
 
 Ce code effectue une itération sur les entités dans le `Enrollments` propriété de navigation. Pour chaque inscription, il affiche le titre du cours et la qualité. Le titre du cours est récupéré à partir de l’entité de cours qui est stockée dans le `Course` propriété de navigation de l’entité d’inscriptions.
 
-Exécutez l’application, sélectionnez le **étudiants** onglet, puis cliquez sur le **détails** lien pour un étudiant. Vous voyez la liste des cours et les notes pour l’étudiant sélectionné :
+Exécuter l’application, sélectionnez le **étudiants** onglet, puis cliquez sur le **détails** lien pour un étudiant. Vous voyez la liste des cours et les notes pour l’étudiant sélectionné :
 
 ![Page de détails de l’étudiant](crud/_static/student-details.png)
 
@@ -156,7 +156,7 @@ Une autre façon d’empêcher overposting qui est utilisé par de nombreux dév
 
 Le code dans *Views/Students/Create.cshtml* utilise `label`, `input`, et `span` (pour les messages de validation) programmes d’assistance pour chaque champ de balise.
 
-Exécutez la page en sélectionnant le **étudiants** onglet et en cliquant sur **créer un nouveau**.
+Exécuter l’application, sélectionnez le **étudiants** onglet, puis cliquez sur **créer un nouveau**.
 
 Entrez les noms et une date. Essayez d’entrer une date non valide si votre navigateur vous permet de le faire. (Certains navigateurs qui vous oblige à utiliser un sélecteur de dates.) Puis cliquez sur **créer** pour afficher le message d’erreur.
 
@@ -222,7 +222,7 @@ Si vous souhaitez éviter l’approche de lecture en premier, mais vous souhaite
 
 ### <a name="test-the-edit-page"></a>Test de la page de modification
 
-Exécutez l’application et sélectionnez le **étudiants** onglet, puis cliquez sur une **modifier** lien hypertexte.
+Exécuter l’application, sélectionnez le **étudiants** onglet, puis cliquez sur une **modifier** lien hypertexte.
 
 ![Page Modifier les étudiants](crud/_static/student-edit.png)
 
@@ -264,7 +264,7 @@ Dans *Views/Student/Delete.cshtml*, ajouter un message d’erreur entre l’en-t
 
 [!code-html[](intro/samples/cu/Views/Students/Delete.cshtml?range=7-9&highlight=2)]
 
-Exécutez la page en sélectionnant le **étudiants** onglet et en cliquant sur un **supprimer** lien hypertexte :
+Exécuter l’application, sélectionnez le **étudiants** onglet, puis cliquez sur un **supprimer** lien hypertexte :
 
 ![Page Confirmer la suppression](crud/_static/student-delete.png)
 

@@ -11,11 +11,11 @@ ms.assetid: 71fec30f-8ea7-4ca8-96e3-d2e26c5be44e
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/read-related-data
-ms.openlocfilehash: a3badbfe365a99593b38fc3846a9984824438f16
-ms.sourcegitcommit: 5355c96a1768e5a1d5698a98c190e7addcc4ded5
+ms.openlocfilehash: e818411f2cc568afdfd0612a6367dc3e257d0dd7
+ms.sourcegitcommit: 74a8ad9c1ba5c155d7c4303e67632a0922c38e86
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2017
+ms.lasthandoff: 09/20/2017
 ---
 # <a name="reading-related-data---ef-core-with-aspnet-core-mvc-tutorial-6-of-10"></a>Lecture liés de données - Core EF avec le didacticiel ASP.NET Core MVC (partie 6 sur 10)
 
@@ -85,7 +85,7 @@ Vous avez effectué les modifications suivantes au code de modèle généré aut
   @Html.DisplayFor(modelItem => item.Department.Name)
   ```
 
-Exécutez la page (sélectionnez l’onglet de cours sur la page d’accueil Contoso University) pour afficher la liste avec les noms de service.
+Exécutez l’application et sélectionnez le **cours** onglet pour afficher la liste avec les noms de service.
 
 ![Page d’Index de cours](read-related-data/_static/courses-index.png)
 
@@ -203,7 +203,7 @@ Vous avez effectué les modifications suivantes au code existant :
   <a asp-action="Index" asp-route-id="@item.ID">Select</a> |
   ```
 
-Exécutez l’application et sélectionnez l’onglet de formateurs. La page affiche la propriété d’emplacement des entités OfficeAssignment connexes et une cellule de table vide lorsqu’il n’existe aucune entité OfficeAssignment associée.
+Exécutez l’application et sélectionnez le **instructeurs** onglet. La page affiche la propriété d’emplacement des entités OfficeAssignment connexes et une cellule de table vide lorsqu’il n’existe aucune entité OfficeAssignment associée.
 
 ![Page d’Index instructeurs qu'aucun élément sélectionné](read-related-data/_static/instructors-index-no-selection.png)
 
@@ -213,7 +213,7 @@ Dans le *Views/Instructors/Index.cshtml* fichier, après la fermeture de table �
 
 Ce code lit le `Courses` propriété du modèle de la vue pour afficher une liste de cours. Il fournit également un **sélectionnez** lien hypertexte qui envoie l’ID du cours sélectionné pour le `Index` méthode d’action.
 
-Exécutez la page et sélectionner un formateur. Vous voyez à présent une grille qui affiche les cours affectés à l’enseignant sélectionné, et pour chaque cours, vous voyez le nom du service affecté.
+Actualisez la page et sélectionner un formateur. Vous voyez à présent une grille qui affiche les cours affectés à l’enseignant sélectionné, et pour chaque cours, vous voyez le nom du service affecté.
 
 ![Formateur de page d’Index instructeurs sélectionné](read-related-data/_static/instructors-index-instructor-selected.png)
 
@@ -223,7 +223,7 @@ Après le bloc de code que vous venez d’ajouter, ajoutez le code suivant. Cela
 
 Ce code lit la propriété d’inscriptions du modèle de vue pour afficher une liste d’étudiants inscrits dans le cours.
 
-Exécutez la page et sélectionner un formateur. Sélectionnez ensuite un cours pour afficher la liste des étudiants inscrits et leurs catégories.
+Actualisez la page à nouveau et sélectionnez un formateur. Sélectionnez ensuite un cours pour afficher la liste des étudiants inscrits et leurs catégories.
 
 ![Formateur de page d’Index instructeurs et cours sélectionné](read-related-data/_static/instructors-index.png)
 
@@ -237,7 +237,7 @@ Supposons que vous attendiez les utilisateurs que vous souhaitez rarement voir l
 
 Le nouveau code supprime les *ThenInclude* méthode appelle pour l’inscription à partir du code qui extrait les entités de formateur. Si le formateur et cours sont sélectionnées, le code en surbrillance récupère les entités de l’inscription pour le cours sélectionné et étudiant des entités pour chaque inscription.
 
-Exécuter maintenant de la page d’Index du formateur et vous ne verrez aucune différence de ce qui est affiché dans la page, même si vous avez modifié la façon dont les données sont récupérées.
+Exécutez que l’application, accédez à la page d’Index de formateurs maintenant et vous ne verrez aucune différence de ce qui est affiché dans la page, même si vous avez modifié la façon dont les données sont récupérées.
 
 ## <a name="summary"></a>Résumé
 

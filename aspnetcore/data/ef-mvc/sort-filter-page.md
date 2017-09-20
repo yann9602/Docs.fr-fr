@@ -10,11 +10,11 @@ ms.assetid: e6c1ff3c-5673-43bf-9c2d-077f6ada1f29
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/sort-filter-page
-ms.openlocfilehash: 9de39ce59633036c0dd850a7552bd3f4806c5431
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: 149af0ce88d55527a42ba3b88d40047a61d510c9
+ms.sourcegitcommit: 74a8ad9c1ba5c155d7c4303e67632a0922c38e86
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 09/20/2017
 ---
 # <a name="sorting-filtering-paging-and-grouping---ef-core-with-aspnet-core-mvc-tutorial-3-of-10"></a>Le tri, le filtrage, la pagination et le regroupement - Core EF avec le didacticiel ASP.NET Core MVC (partie 3 sur 10)
 
@@ -67,7 +67,7 @@ Remplacez le code dans *Views/Students/Index.cshtml*, avec le code suivant pour 
 
 Ce code utilise les informations contenues dans `ViewData` les valeurs de chaîne de propriétés pour configurer des liens hypertexte avec la requête appropriée.
 
-Exécutez la page et cliquez sur le **nom** et **Date d’inscription** des en-têtes de colonne pour vérifier que le tri fonctionne.
+Exécuter l’application, sélectionnez le **étudiants** onglet, puis cliquez sur le **nom** et **Date d’inscription** des en-têtes de colonne pour vérifier que le tri fonctionne.
 
 ![Page d’index étudiants dans l’ordre de nom](sort-filter-page/_static/name-order.png)
 
@@ -94,9 +94,9 @@ Dans *Views/Student/Index.cshtml*, ajoutez le code en surbrillance immédiatemen
 
 [!code-html[](intro/samples/cu/Views/Students/Index3.cshtml?range=9-23&highlight=5-13)]
 
-Ce code utilise le `<form>` [d’assistance de balise](https://docs.microsoft.com/aspnet/core/mvc/views/tag-helpers/intro) pour ajouter la zone de texte de recherche et le bouton. Par défaut, le `<form>` application d’assistance de balise envoie des données de formulaire avec une publication, ce qui signifie que les paramètres sont passés dans le corps du message HTTP et non dans l’URL sous forme de chaînes de requête. Lorsque vous spécifiez HTTP GET, les données du formulaire sont passées dans l’URL sous forme de chaînes de requête, ce qui permet aux utilisateurs de l’URL de signet. W3C instructions il est conseillé que vous devez utiliser obtenir lors de l’action n’entraîne pas une mise à jour.
+Ce code utilise le `<form>` [d’assistance de balise](xref:mvc/views/tag-helpers/intro) pour ajouter la zone de texte de recherche et le bouton. Par défaut, le `<form>` application d’assistance de balise envoie des données de formulaire avec une publication, ce qui signifie que les paramètres sont passés dans le corps du message HTTP et non dans l’URL sous forme de chaînes de requête. Lorsque vous spécifiez HTTP GET, les données du formulaire sont passées dans l’URL sous forme de chaînes de requête, ce qui permet aux utilisateurs de l’URL de signet. W3C instructions il est conseillé que vous devez utiliser obtenir lors de l’action n’entraîne pas une mise à jour.
 
-Exécutez la page, entrez une chaîne de recherche et cliquez sur Rechercher pour vérifier que le filtrage fonctionne.
+Exécuter l’application, sélectionnez le **étudiants** onglet, entrez une chaîne de recherche, puis cliquez sur Rechercher pour vérifier que le filtrage fonctionne.
 
 ![Page d’index de stagiaires de filtrage](sort-filter-page/_static/filtering.png)
 
@@ -193,7 +193,7 @@ Les boutons de pagination sont affichés par les programmes d’assistance de ba
 </a>
 ```
 
-Exécutez la page.
+Exécutez l’application et accédez à la page d’étudiants.
 
 ![Page avec des liens de pagination d’index les étudiants](sort-filter-page/_static/paging.png)
 
@@ -241,7 +241,7 @@ Remplacez le code dans le *Views/Home/About.cshtml* fichier avec le code suivant
 
 [!code-html[](intro/samples/cu/Views/Home/About.cshtml)]
 
-Exécutez l’application et cliquez sur le **sur** lien. Le nombre d’étudiants pour chaque date d’inscription s’affiche dans une table.
+Exécutez l’application et accédez à la page à propos de. Le nombre d’étudiants pour chaque date d’inscription s’affiche dans une table.
 
 ![Sur la page](sort-filter-page/_static/about.png)
 

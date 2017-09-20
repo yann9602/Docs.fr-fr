@@ -2,7 +2,7 @@
 title: "L’ancrage d’assistance de balise | Documents Microsoft"
 author: pkellner
 description: "Montre comment travailler avec l’application d’assistance de balise d’ancrage"
-keywords: "ASP.NET Core, d’assistance de balise"
+keywords: ASP.NET Core,tag helper
 ms.author: riande
 manager: wpickett
 ms.date: 02/14/2017
@@ -11,11 +11,11 @@ ms.assetid: c045d485-d1dc-4cea-a675-46be83b7a011
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: mvc/views/tag-helpers/builtin-th/AnchorTagHelper
-ms.openlocfilehash: f08e6a5288076d56b55843f1872bcfa8104f3923
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: fdb91836699b4dd334499cffa6c4c3961c5c020f
+ms.sourcegitcommit: 74a8ad9c1ba5c155d7c4303e67632a0922c38e86
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/20/2017
 ---
 # <a name="anchor-tag-helper"></a>Application d’assistance de balise d’ancrage
 
@@ -211,7 +211,7 @@ Balises de hachage sont utiles lors de la création des applications côté clie
 
         * *HomeController.cs*
 
-      * *Affichage*
+      * *Vues*
 
         * *Accueil*
 

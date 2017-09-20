@@ -11,11 +11,11 @@ ms.assetid: 15e79e15-bda5-441d-80c7-8032a2628605
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/concurrency
-ms.openlocfilehash: f44a4f842180b4001eb1428316c24fd9cacc39db
-ms.sourcegitcommit: 5355c96a1768e5a1d5698a98c190e7addcc4ded5
+ms.openlocfilehash: fc6b218034183a9153c1ef22c99d920a942d2d09
+ms.sourcegitcommit: 74a8ad9c1ba5c155d7c4303e67632a0922c38e86
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2017
+ms.lasthandoff: 09/20/2017
 ---
 # <a name="handling-concurrency-conflicts---ef-core-with-aspnet-core-mvc-tutorial-8-of-10"></a>La gestion des conflits d’accès concurrentiel - Core EF avec le didacticiel d’ASP.NET MVC de base (8 sur 10)
 
@@ -184,9 +184,7 @@ Dans *Views/Departments/Edit.cshtml*, apportez les modifications suivantes :
 
 ## <a name="test-concurrency-conflicts-in-the-edit-page"></a>Tester les conflits d’accès concurrentiel dans la page de modification
 
-Exécuter le site, puis cliquez sur Services pour accéder à la page d’Index de services.
-
-Avec le bouton droit le **modifier** lien hypertexte pour le service en anglais, puis sélectionnez **ouvrir dans un nouvel onglet**, puis cliquez sur le **modifier** lien hypertexte pour le service en anglais. Les onglets de deux navigateur affichent désormais les mêmes informations.
+Exécutez l’application et accédez à la page d’Index de services. Avec le bouton droit le **modifier** lien hypertexte pour le service en anglais, puis sélectionnez **ouvrir dans un nouvel onglet**, puis cliquez sur le **modifier** lien hypertexte pour le service en anglais. Les onglets de deux navigateur affichent désormais les mêmes informations.
 
 Modifier un champ dans le premier onglet de navigateur, cliquez sur **enregistrer**.
 
@@ -255,7 +253,7 @@ Il apporte les modifications suivantes :
 
 * Ajoute un champ masqué pour le `RowVersion` propriété.
 
-Exécutez la page d’Index de services. Bouton droit sur le **supprimer** lien hypertexte pour le service en anglais, puis sélectionnez **ouvrir dans un nouvel onglet**, puis, dans le premier onglet, cliquez sur le **modifier** lien hypertexte pour le service en anglais.
+Exécutez l’application et accédez à la page d’Index de services. Avec le bouton droit le **supprimer** lien hypertexte pour le service en anglais, puis sélectionnez **ouvrir dans un nouvel onglet**, puis, dans le premier onglet, cliquez sur le **modifier** lien hypertexte pour le service en anglais.
 
 Dans la première fenêtre, modifiez l’une des valeurs, puis cliquez sur **enregistrer**:
 

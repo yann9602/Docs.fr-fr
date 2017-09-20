@@ -11,11 +11,11 @@ ms.assetid: 67bd162b-bfb7-4750-9e7f-705228b5288c
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/update-related-data
-ms.openlocfilehash: 655fefc0f9d884300bea670795c39a7a9aa10bb8
-ms.sourcegitcommit: 5355c96a1768e5a1d5698a98c190e7addcc4ded5
+ms.openlocfilehash: 981a099630008eaf11599b17c4d4d5d6e86b8b90
+ms.sourcegitcommit: 74a8ad9c1ba5c155d7c4303e67632a0922c38e86
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2017
+ms.lasthandoff: 09/20/2017
 ---
 # <a name="updating-related-data---ef-core-with-aspnet-core-mvc-tutorial-7-of-10"></a>Mise à jour des données connexes - Core EF avec le didacticiel d’ASP.NET MVC de base (7 sur 10)
 
@@ -71,7 +71,7 @@ Pour optimiser les performances des détails du cours et supprimer des pages, aj
 
 ### <a name="modify-the-course-views"></a>Modifier les vues de cours
 
-Dans *Views/Courses/Create.cshtml*, ajouter une option « Sélectionner département » pour le **service** déroulante liste, de modifier la légende de **DepartmentID** à  **Service**et ajouter un message de validation.
+Dans *Views/Courses/Create.cshtml*, ajouter une option « Sélectionner département » pour le **service** déroulante liste, de modifier la légende de **DepartmentID** à ** Service**et ajouter un message de validation.
 
 [!code-html[Main](intro/samples/cu/Views/Courses/Create.cshtml?highlight=2-6&range=29-34)]
 
@@ -91,13 +91,13 @@ Dans *Views/Courses/Details.cshtml*, apporter la même modification que vous ven
 
 ### <a name="test-the-course-pages"></a>Tester les pages de cours
 
-Exécutez le **créer** page (afficher la page d’Index de cours et cliquez sur **créer un nouveau**), puis entrez les données de formation :
+Exécuter l’application, sélectionnez le **cours** , cliquez sur **créer un nouveau**et entrez les données d’un nouveau cours :
 
 ![Page de création de cours](update-related-data/_static/course-create.png)
 
 Cliquez sur **Créer**. La page d’Index de cours s’affiche avec le cours de nouveau ajouté à la liste. Le nom du service dans la liste de page d’Index provient de la propriété de navigation, indiquant que la relation a été établie correctement.
 
-Exécutez le **modifier** page (cliquez sur **modifier** sur un cours dans la page d’Index de cours).
+Cliquez sur **modifier** sur un cours dans la page d’Index de cours.
 
 ![Page de modification du cours](update-related-data/_static/course-edit.png)
 
@@ -159,7 +159,7 @@ Dans *Views/Instructors/Edit.cshtml*, ajouter un nouveau champ pour la modificat
 
 [!code-html[Main](intro/samples/cu/Views/Instructors/Edit.cshtml?range=30-34)]
 
-Exécution de la page (sélectionnez le **instructeurs** onglet, puis cliquez sur **modifier** sur un formateur). Modifier la **bureaux** et cliquez sur **enregistrer**.
+Exécuter l’application, sélectionnez le **instructeurs** onglet, puis cliquez sur **modifier** sur un formateur. Modifier la **bureaux** et cliquez sur **enregistrer**.
 
 ![Page de modification du formateur](update-related-data/_static/instructor-edit-office.png)
 
@@ -215,7 +215,7 @@ Si la case à cocher pour un cours n’a pas été activée, mais le cours se tr
 
 ### <a name="update-the-instructor-views"></a>Mettre à jour les vues de formateur
 
-Dans *Views/Instructors/Edit.cshtml*, ajouter un **cours** champ avec un tableau de cases à cocher en ajoutant le code suivant immédiatement après le code le `div` éléments pour le **Office**  champ et avant la `div` , élément pour les **enregistrer** bouton.
+Dans *Views/Instructors/Edit.cshtml*, ajouter un **cours** champ avec un tableau de cases à cocher en ajoutant le code suivant immédiatement après le code le `div` éléments pour le **Office ** champ et avant la `div` , élément pour les **enregistrer** bouton.
 
 <a id="notepad"></a>
 > [!NOTE] 
@@ -227,7 +227,7 @@ Ce code crée une table HTML qui possède trois colonnes. Dans chaque colonne es
 
 Lorsque les cases à cocher sont restitués initialement, ceux qui sont pour les cours affectés pour le formateur archivées attributs, qui sélectionne les (affiche les archivés).
 
-Exécuter la page d’Index du formateur, puis cliquez sur **modifier** sur un formateur pour voir les **modifier** page.
+Exécuter l’application, sélectionnez le **instructeurs** onglet, puis cliquez sur **modifier** sur un formateur pour voir les **modifier** page.
 
 ![Page de modification du formateur en cours](update-related-data/_static/instructor-edit-courses.png)
 
@@ -287,7 +287,7 @@ Dans *Views/Instructor/Create.cshtml*, ajoutez une zone de texte emplacement off
 
 [!code-html[Main](intro/samples/cu/Views/Instructors/Create.cshtml?range=29-61)]
 
-Test en exécutant le **créer** page et en ajoutant un formateur. 
+Testez en exécutant l’application et la création d’un formateur. 
 
 ## <a name="handling-transactions"></a>La gestion des Transactions
 
