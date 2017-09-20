@@ -1,20 +1,20 @@
 ---
 title: "Metapackage Microsoft.AspNetCore.All pour ASP.NET Core 2.x et versions ultérieures"
 author: Rick-Anderson
-description: Microsoft.AspNetCore.All metapackage inclut tous les packages.
-keywords: "ASP.NET Core, NuGet, créez un package, Microsoft.AspNetCore.All, metapackage"
+description: "Le metapackage Microsoft.AspNetCore.All inclut tous les packages ASP.NET Core et Entity Framework Core, ainsi que leurs dépendances."
+keywords: ASP.NET Core,NuGet,package,Microsoft.AspNetCore.All,metapackage
 ms.author: riande
 manager: wpickett
-ms.date: 07/16/2017
+ms.date: 09/20/2017
 ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/metapackage
-ms.openlocfilehash: 255438a4ce36ce4978f8c8ee298388a25ac00d17
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 23a07867874eb534c75c4e7b3be00c4a376f8a8b
+ms.sourcegitcommit: 4e45fd4e3f1374cd51cc931cee93c9d72631d9fc
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/20/2017
 ---
 #<a name="microsoftaspnetcoreall-metapackage-for-aspnet-core-2x"></a>Metapackage Microsoft.AspNetCore.All pour ASP.NET Core 2.x
 
@@ -30,7 +30,7 @@ Toutes les fonctionnalités ASP.NET Core 2.x et Entity Framework Core 2.x sont i
 
 Le numéro de version de la `Microsoft.AspNetCore.All` metapackage représente la version de ASP.NET Core et Entity Framework Core (aligné avec la version de .NET Core).
 
-Les applications qui utilisent le `Microsoft.AspNetCore.All` metapackage tirer parti automatiquement de la banque de Runtime .NET Core. Le magasin de Runtime contient tous les composants runtime nécessaires à l’exécution des applications 2.x ASP.NET Core. Lorsque vous utilisez la `Microsoft.AspNetCore.All` metapackage, **aucun** des ressources depuis les packages ASP.NET Core NuGet référencés sont déployés avec l’application &mdash; le magasin du Runtime .NET Core contient ces ressources. <!-- todo add link to Runtime store -->Les éléments multimédias dans le magasin d’exécution sont précompilés pour améliorer les temps de démarrage d’application.
+Les applications qui utilisent la `Microsoft.AspNetCore.All` metapackage tirer parti automatiquement de la [magasin du Runtime .NET Core](https://docs.microsoft.com/dotnet/core/deploying/runtime-store). Le magasin de Runtime contient tous les composants runtime nécessaires à l’exécution des applications 2.x ASP.NET Core. Lorsque vous utilisez la `Microsoft.AspNetCore.All` metapackage, **aucun** des ressources depuis les packages ASP.NET Core NuGet référencés sont déployés avec l’application &mdash; le magasin du Runtime .NET Core contient ces ressources. Les éléments multimédias dans le magasin d’exécution sont précompilés pour améliorer les temps de démarrage d’application.
 
 Vous pouvez utiliser le processus de suppression du package à supprimer les packages que vous n’utilisez pas. Packages découpés sont exclus de la sortie de l’application publiée.
 
