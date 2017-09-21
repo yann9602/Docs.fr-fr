@@ -11,11 +11,11 @@ ms.assetid: 0dd63913-a041-48b6-96a4-3aeaedbdf5d0
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/complex-data-model
-ms.openlocfilehash: a9e255040c300bc5ce55a356e17e6912dbaeaf88
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: dde50f766dc9842089cbb0561b8bd6e2d8e7c34f
+ms.sourcegitcommit: 74a8ad9c1ba5c155d7c4303e67632a0922c38e86
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 09/20/2017
 ---
 # <a name="creating-a-complex-data-model---ef-core-with-aspnet-core-mvc-tutorial-5-of-10"></a>Création d’un modèle de données complexes - Core EF avec le didacticiel d’ASP.NET MVC de base (5 sur 10)
 
@@ -41,27 +41,27 @@ Dans *Models/Student.cs*, ajouter un `using` instruction pour le `System.Compone
 
 [!code-csharp[Main](intro/samples/cu/Models/Student.cs?name=snippet_DataType&highlight=3,12-13)]
 
-Le `DataType` attribut est utilisé pour spécifier un type de données qui est plus spécifique que le type intrinsèque de la base de données. Dans ce cas, nous voulons uniquement le suivi de la date, pas la date et l’heure. Le `DataType` énumération fournit de nombreux types de données, telles que Date, Time, numéro de téléphone, devise, EmailAddress et bien plus encore. Le `DataType` attribut peut également permettre à l’application fournir automatiquement les fonctionnalités spécifiques au type. Par exemple, un `mailto:` lien peut être créé pour `DataType.EmailAddress`, et un sélecteur de date peut être fourni pour `DataType.Date` dans les navigateurs qui prennent en charge de HTML5. Le `DataType` émet un attribut HTML 5 `data-` attributs (données prononcé tiret) qui peuvent de comprendre les navigateurs HTML 5. Le `DataType` attributs ne fournissent pas de validation.
+L’attribut `DataType` sert à spécifier un type de données qui est plus spécifique que le type intrinsèque de la base de données. Dans ce cas, nous voulons uniquement le suivi de la date, pas la date et l’heure. Le `DataType` énumération fournit de nombreux types de données, telles que Date, Time, numéro de téléphone, devise, EmailAddress et bien plus encore. L’attribut `DataType` peut également permettre à l’application de fournir automatiquement des fonctionnalités propres au type. Par exemple, vous pouvez créer un lien `mailto:` pour `DataType.EmailAddress`, et vous pouvez fournir un sélecteur de date pour `DataType.Date` dans les navigateurs qui prennent en charge HTML5. Le `DataType` émet un attribut HTML 5 `data-` attributs (données prononcé tiret) qui peuvent de comprendre les navigateurs HTML 5. Le `DataType` attributs ne fournissent pas de validation.
 
-`DataType.Date`ne spécifie pas le format de la date qui s’affiche. Par défaut, le champ de données s’affiche selon les formats par défaut en fonction CultureInfo du serveur.
+`DataType.Date` ne spécifie pas le format de la date qui s’affiche. Par défaut, le champ de données s’affiche selon les formats par défaut en fonction CultureInfo du serveur.
 
-Le `DisplayFormat` attribut est utilisé pour spécifier explicitement le format de date :
+L’attribut `DisplayFormat` est utilisé pour spécifier explicitement le format de date :
 
 ```csharp
 [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
 ```
 
-Le `ApplyFormatInEditMode` paramètre spécifie que la mise en forme doit également être appliquée lorsque la valeur est affichée dans une zone de texte pour la modification. (Vous pouvez que pour certains champs--par exemple, pour les valeurs de devise, vous pouvez le symbole de devise dans la zone de texte pour le modifier.)
+Le paramètre `ApplyFormatInEditMode` indique que la mise en forme doit également être appliquée quand la valeur est affichée dans une zone de texte à des fins de modification. (Vous pouvez que pour certains champs--par exemple, pour les valeurs de devise, vous pouvez le symbole de devise dans la zone de texte pour le modifier.)
 
 Vous pouvez utiliser la `DisplayFormat` attribut par lui-même, mais il est généralement judicieux d’utiliser le `DataType` également d’attribut. Le `DataType` attribut donne la sémantique des données par opposition à comment effectuer le rendu sur un écran et qu’il offre les avantages suivants que vous n’obtenez pas avec `DisplayFormat`:
 
 * Le navigateur peut activer des fonctionnalités HTML5 (par exemple pour afficher un contrôle de calendrier, le symbole monétaire approprié de paramètres régionaux, les liens de courrier électronique, certains côté client d’entrée validation, etc..).
 
-* Par défaut, le navigateur renvoie les données en utilisant le format approprié en fonction de vos paramètres régionaux.
+* Par défaut, le navigateur affiche les données à l’aide du format correspondant à vos paramètres régionaux.
 
 Pour plus d’informations, consultez la [ \<d’entrée > documentation de l’application d’assistance de balise](../../mvc/views/working-with-forms.md#the-input-tag-helper).
 
-Réexécutez la page d’Index des étudiants et notez que fois ne sont plus affichés pour les dates d’inscription. Le même aura la valeur true pour n’importe quelle vue qui utilise le modèle de Student.
+Exécuter l’application, accédez à la page d’Index des étudiants et notez que fois ne sont plus affichés pour les dates d’inscription. Le même aura la valeur true pour n’importe quelle vue qui utilise le modèle de Student.
 
 ![Affichage des dates sans heures dans la page d’index les étudiants](complex-data-model/_static/dates-no-times.png)
 
@@ -97,7 +97,7 @@ Le `migrations add` commande vous avertit qu’une perte de données peut-être 
 
 L’horodateur le préfixe au nom de fichier migrations est utilisée par Entity Framework pour classer les migrations. Vous pouvez créer plusieurs migrations avant d’exécuter la commande de base de données de mise à jour, puis toutes les migrations sont appliquées dans l’ordre dans lequel ils ont été créés.
 
-Exécuter la page de création et entrez le nom de plus de 50 caractères. Lorsque vous cliquez sur Créer, la validation côté client affiche un message d’erreur.
+Exécuter l’application, sélectionnez le **étudiants** , cliquez sur **créer un nouveau**et entrez le nom de plus de 50 caractères. Lorsque vous cliquez sur **créer**, validation côté client affiche un message d’erreur.
 
 ![Page affichant les erreurs de longueur de chaîne d’index les étudiants](complex-data-model/_static/string-length-errors.png)
 
@@ -483,7 +483,7 @@ dotnet ef database update
 
 Exécuter l’application pour provoquer le `DbInitializer.Initialize` méthode à exécuter et de remplir la nouvelle base de données.
 
-Ouvrez la base de données dans SSOX comme vous l’avez fait précédemment, puis développez le **Tables** nœud pour voir que toutes les tables ont été créés. (Si vous avez toujours SSOX ouvrir à partir de l’état antérieur, cliquez sur le bouton Actualiser).
+Ouvrez la base de données dans SSOX comme vous l’avez fait précédemment, puis développez le **Tables** nœud pour voir que toutes les tables ont été créés. (Si vous avez toujours SSOX ouvrir à partir de l’état antérieur, cliquez sur le **Actualiser** bouton.)
 
 ![Tables de SSOX](complex-data-model/_static/ssox-tables.png)
 
