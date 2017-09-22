@@ -11,11 +11,11 @@ ms.assetid: db9a86ab-46c2-40e0-baed-86e38c16af1f
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/middleware
-ms.openlocfilehash: 80e27c94b3c60a181c45f8e006126a7e7dd3d425
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: cb39d74b9293b3ab341beba08d2f0af90261ca5f
+ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 09/22/2017
 ---
 # <a name="aspnet-core-middleware-fundamentals"></a>Notions de base ASP.NET Core intergiciel (middleware)
 
@@ -173,7 +173,7 @@ ASP.NET Core est fourni avec les composants d’intergiciel (middleware) suivant
 | [Routage](xref:fundamentals/routing) | Définit et contraint les itinéraires de la demande. |
 | [Session](xref:fundamentals/app-state) | Prend en charge la gestion des sessions utilisateur. |
 | [Fichiers statiques](xref:fundamentals/static-files) | Fournit la prise en charge pour traiter les fichiers statiques et l’exploration des répertoires. |
-| [Intergiciel (middleware) de réécriture d’URL](xref:fundamentals/url-rewriting) | Prend en charge la réécriture d’URL et la redirection des demandes. |
+| [Intergiciel de réécriture d’URL](xref:fundamentals/url-rewriting) | Prend en charge la réécriture d’URL et la redirection des demandes. |
 
 <a name=middleware-writing-middleware></a>
 

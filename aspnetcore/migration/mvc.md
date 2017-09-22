@@ -2,7 +2,7 @@
 title: "Migration à partir de ASP.NET MVC à cœur d’ASP.NET MVC"
 author: ardalis
 description: 
-keywords: ASP.NET Core, MVC, migration
+keywords: ASP.NET Core,MVC,migration
 ms.author: riande
 manager: wpickett
 ms.date: 03/07/2017
@@ -11,11 +11,11 @@ ms.assetid: 3155cc9e-d0c9-424b-886c-35c0ec6f9f4e
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: migration/mvc
-ms.openlocfilehash: 2bd689626e867e0ea82fbebdf92447a6029aa35b
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: 385ab7dfea5b92687a427bdfe9558462227113b1
+ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 09/22/2017
 ---
 # <a name="migrating-from-aspnet-mvc-to-aspnet-core-mvc"></a>Migration à partir de ASP.NET MVC à cœur d’ASP.NET MVC
 
@@ -72,7 +72,7 @@ Dans cette section, vous allez ajouter un contrôleur minimale et la vue comme d
 
 * Ajouter un **classe de contrôleur MVC** portant le nom *HomeController.cs* à la *contrôleurs* dossier.
 
-![Ajouter un nouvel élément de boîte de dialogue](mvc/_static/add_mvc_ctl.png)
+![Boîte de dialogue Ajouter un nouvel élément](mvc/_static/add_mvc_ctl.png)
 
 * Ajouter un *vues* dossier.
 
@@ -80,7 +80,7 @@ Dans cette section, vous allez ajouter un contrôleur minimale et la vue comme d
 
 * Ajouter un *Index.cshtml* page de vue MVC à le *Views/Home* dossier.
 
-![Ajouter un nouvel élément de boîte de dialogue](mvc/_static/view.png)
+![Boîte de dialogue Ajouter un nouvel élément](mvc/_static/view.png)
 
 La structure de projet est indiquée ci-dessous :
 
@@ -92,7 +92,7 @@ Remplacez le contenu de la *Views/Home/Index.cshtml* fichier avec les éléments
 <h1>Hello world!</h1>
 ```
 
-Exécuter l’application.
+Exécutez l’application.
 
 ![Application Web ouverte dans Microsoft Edge](mvc/_static/hello-world.png)
 

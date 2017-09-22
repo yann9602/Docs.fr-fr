@@ -12,11 +12,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/using-browserlink
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: b2ff38288cee3e9ca42a07c219521bb79a00a359
-ms.sourcegitcommit: 4e84d8bf5f404bb77f3d41665cf7e7374fc39142
+ms.openlocfilehash: 211dd5d03e6b8414e0b2ed3234d8970c92f72452
+ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2017
+ms.lasthandoff: 09/22/2017
 ---
 # <a name="introduction-to-browser-link-in-aspnet-core"></a>Introduction au lien du navigateur dans ASP.NET Core 
 
@@ -61,7 +61,7 @@ Ce code est généralement à l’intérieur d’un `if` bloc qui permet le lien
 
 [!code-csharp[Main](./using-browserlink/sample/BrowserLinkSample/src/BrowserLinkSample/Startup.cs?highlight=1,4&range=40-44)]
 
-Pour plus d’informations, consultez [fonctionne avec plusieurs environnements](../fundamentals/environments.md).
+Pour plus d’informations, consultez [Utilisation de plusieurs environnements](../fundamentals/environments.md).
 
 ## <a name="how-to-use-browser-link"></a>Comment utiliser le lien du navigateur
 
@@ -85,7 +85,7 @@ Pour choisir un navigateur web unique pour lancer au démarrage du projet, utili
 
 ![Menu déroulant de F5](using-browserlink/_static/debug-target-dropdown-menu.png)
 
-Pour ouvrir plusieurs navigateurs à la fois, choisissez **naviguer avec...**  à partir de la même liste déroulante.  Maintenez enfoncée la touche CTRL ENFONCÉE pour sélectionner les navigateurs de votre choix, puis cliquez sur **Parcourir**:
+Pour ouvrir plusieurs navigateurs à la fois, choisissez **naviguer avec... ** à partir de la même liste déroulante.  Maintenez enfoncée la touche CTRL ENFONCÉE pour sélectionner les navigateurs de votre choix, puis cliquez sur **Parcourir**:
 
 ![Ouvrir à la fois des nombreux navigateurs](using-browserlink/_static/open-many-browsers-at-once.png)
 

@@ -2,7 +2,7 @@
 title: "Implémentation du serveur web HTTP.sys dans ASP.NET Core"
 author: rick-anderson
 description: "Introduit HTTP.sys, un serveur web pour ASP.NET Core sur Windows. Basé sur le pilote de mode noyau Http.Sys, HTTP.sys est une alternative à Kestrel qui peut être utilisé pour une connexion directe à Internet sans IIS."
-keywords: "ASP.NET Core, HttpSys, HTTP.sys, HttpListener, préfixes d’url, SSL"
+keywords: "Préfixes ASP.NET Core,HttpSys,HTTP.sys,HttpListener,url, SSL"
 ms.author: riande
 manager: wpickett
 ms.date: 08/07/2017
@@ -11,11 +11,11 @@ ms.assetid: 0a7286e4-6428-424e-b5c4-5c98815cf61c
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/servers/httpsys
-ms.openlocfilehash: 5ffe6b5d55d88cbcfa62dfacf1e6e896f1304e39
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: 38ceb20c8901baadc7efbacb81a3598afce3f006
+ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 09/22/2017
 ---
 # <a name="httpsys-web-server-implementation-in-aspnet-core"></a>Implémentation du serveur web HTTP.sys dans ASP.NET Core
 

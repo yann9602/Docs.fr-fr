@@ -11,11 +11,11 @@ ms.assetid: 492b3a7e-04c5-461b-b96a-38ecee5c64bc
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: hosting/iis-modules
-ms.openlocfilehash: 353cd4c18cb2708f2dece5ba2b5271f452379d52
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: 97c5fb6db6fe2a1dbae5529c11479413fd4814fb
+ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 09/22/2017
 ---
 # <a name="using-iis-modules-with-aspnet-core"></a>À l’aide des Modules IIS avec ASP.NET Core
 
@@ -38,10 +38,10 @@ Module | .NET core actif | Option ASP.NET Core
 **Exploration des répertoires**<br>`DirectoryListingModule` | Non | [Intergiciel (middleware) exploration de répertoire](xref:fundamentals/static-files#enabling-directory-browsing)
 **Compression dynamique**<br>`DynamicCompressionModule` | Oui | [Intergiciel (middleware) de compression des réponses](xref:performance/response-compression)
 **Suivi**<br>`FailedRequestsTracingModule` | Oui | [Enregistrement d’ASP.NET Core](xref:fundamentals/logging#the-tracesource-provider)
-**La mise en cache du fichier**<br>`FileCacheModule` | Non | [Intergiciel (middleware) de mise en cache des réponses](xref:performance/caching/middleware)
-**Mise en cache HTTP**<br>`HttpCacheModule` | Non | [Intergiciel (middleware) de mise en cache des réponses](xref:performance/caching/middleware)
+**La mise en cache du fichier**<br>`FileCacheModule` | Non | [Intergiciel de mise en cache des réponses](xref:performance/caching/middleware)
+**Mise en cache HTTP**<br>`HttpCacheModule` | Non | [Intergiciel de mise en cache des réponses](xref:performance/caching/middleware)
 **Journalisation HTTP**<br>`HttpLoggingModule` | Oui | [Enregistrement d’ASP.NET Core](xref:fundamentals/logging)<br>Implémentations : [elmah.io](https://github.com/elmahio/Elmah.Io.Extensions.Logging), [Loggr](https://github.com/imobile3/Loggr.Extensions.Logging), [NLog](https://github.com/NLog/NLog.Extensions.Logging), [Serilog](https://github.com/serilog/serilog-extensions-logging)
-**Redirection HTTP**<br>`HttpRedirectionModule` | Oui | [Intergiciel (middleware) de réécriture d’URL](xref:fundamentals/url-rewriting)
+**Redirection HTTP**<br>`HttpRedirectionModule` | Oui | [Intergiciel de réécriture d’URL](xref:fundamentals/url-rewriting)
 **Authentification par mappage de certificat Client IIS**<br>`IISCertificateMappingAuthenticationModule` | Oui | 
 **Restrictions IP et de domaine**<br>`IpRestrictionModule` | Oui | 
 **Filtres ISAPI**<br>`IsapiFilterModule` | Oui | [Intergiciel (middleware)](xref:fundamentals/middleware)
@@ -49,7 +49,7 @@ Module | .NET core actif | Option ASP.NET Core
 **Prise en charge du protocole**<br>`ProtocolSupportModule` | Oui | 
 **Filtrage des demandes**<br>`RequestFilteringModule` | Oui | [Intergiciel (middleware) réécriture d’URL`IRule`](xref:fundamentals/url-rewriting#irule-based-rule)
 **Observateur de demandes**<br>`RequestMonitorModule` | Oui | 
-**Réécriture d’URL**<br>`RewriteModule` | Yes† | [Intergiciel (middleware) de réécriture d’URL](xref:fundamentals/url-rewriting)
+**Réécriture d’URL**<br>`RewriteModule` | Yes† | [Intergiciel de réécriture d’URL](xref:fundamentals/url-rewriting)
 **Fichiers Include côté serveur**<br>`ServerSideIncludeModule` | Non | 
 **Compression statique**<br>`StaticCompressionModule` | Non | [Intergiciel (middleware) de compression des réponses](xref:performance/response-compression)
 **Contenu statique**<br>`StaticFileModule` | Non | [Intergiciel (middleware) de fichiers statiques](xref:fundamentals/static-files)
@@ -67,13 +67,13 @@ AnonymousIdentification | Non |
 DefaultAuthentication | Non | 
 FileAuthorization | Non | 
 FormsAuthentication | Non | [Intergiciel (middleware) de cookie d’authentification](xref:security/authentication/cookie)
-OutputCache | Non | [Intergiciel (middleware) de mise en cache des réponses](xref:performance/caching/middleware)
+OutputCache | Non | [Intergiciel de mise en cache des réponses](xref:performance/caching/middleware)
 Profil | Non | 
 RoleManager | Non | 
 ScriptModule-4.0 | Non | 
 Session | Non | [Intergiciel (middleware) de session](xref:fundamentals/app-state)
 UrlAuthorization | Non | 
-UrlMappingsModule | Non | [Intergiciel (middleware) de réécriture d’URL](xref:fundamentals/url-rewriting)
+UrlMappingsModule | Non | [Intergiciel de réécriture d’URL](xref:fundamentals/url-rewriting)
 UrlRoutingModule-4.0 | Non | [Identité de ASP.NET Core](xref:security/authentication/identity)
 WindowsAuthentication | Non | 
 
