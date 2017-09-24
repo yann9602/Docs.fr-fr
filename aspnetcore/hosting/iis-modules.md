@@ -11,15 +11,15 @@ ms.assetid: 492b3a7e-04c5-461b-b96a-38ecee5c64bc
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: hosting/iis-modules
-ms.openlocfilehash: 97c5fb6db6fe2a1dbae5529c11479413fd4814fb
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: afad266874d3ac059d9f3a6d26a5330a0006320b
+ms.sourcegitcommit: 8005eb4051e568d88ee58d48424f39916052e6e2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 09/24/2017
 ---
 # <a name="using-iis-modules-with-aspnet-core"></a>À l’aide des Modules IIS avec ASP.NET Core
 
-Par [Luke Latham](https://github.com/GuardRex)
+Par [Luke Latham](https://github.com/guardrex)
 
 Les applications ASP.NET Core sont hébergées par IIS dans une configuration de proxy inverse. Certains des modules IIS natifs et tous les modules IIS gérés ne sont pas disponibles pour traiter les demandes pour les applications ASP.NET Core. Dans de nombreux cas, ASP.NET Core offre une alternative aux fonctionnalités des modules natifs et managés d’IIS.
 
