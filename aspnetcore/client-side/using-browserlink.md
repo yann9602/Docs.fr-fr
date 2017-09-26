@@ -59,8 +59,6 @@ app.UseBrowserLink();
 
 <span data-ttu-id="7995d-122">Ce code est généralement à l’intérieur d’un `if` bloc qui permet le lien du navigateur uniquement dans l’environnement de développement, comme illustré ici :</span><span class="sxs-lookup"><span data-stu-id="7995d-122">Usually that code is inside an `if` block that enables Browser Link only in the Development environment, as shown here:</span></span>
 
-[!code-csharp[Main](./using-browserlink/sample/BrowserLinkSample/src/BrowserLinkSample/Startup.cs?highlight=1,4&range=40-44)]
-
 <span data-ttu-id="7995d-123">Pour plus d’informations, consultez [Utilisation de plusieurs environnements](../fundamentals/environments.md).</span><span class="sxs-lookup"><span data-stu-id="7995d-123">For more information, see [Working with Multiple Environments](../fundamentals/environments.md).</span></span>
 
 ## <a name="how-to-use-browser-link"></a><span data-ttu-id="7995d-124">Comment utiliser le lien du navigateur</span><span class="sxs-lookup"><span data-stu-id="7995d-124">How to use Browser Link</span></span>
