@@ -11,15 +11,15 @@ ms.assetid: a4449ad3-5bad-410c-afa7-dc32d832b552
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: publishing/iis
-ms.openlocfilehash: 48e67add785fc1d7e79c659565afb1ec68c1defb
-ms.sourcegitcommit: f531d90646b9d261c5fbbffcecd6ded9185ae292
+ms.openlocfilehash: f506fc880e50aa2fdc772fd29b905dfad02cda2b
+ms.sourcegitcommit: 8005eb4051e568d88ee58d48424f39916052e6e2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 09/24/2017
 ---
 # <a name="set-up-a-hosting-environment-for-aspnet-core-on-windows-with-iis-and-deploy-to-it"></a>Configurer un environnement d’hébergement pour ASP.NET Core sur Windows avec IIS et déployer sur celui-ci
 
-Par [Luke Latham](https://github.com/GuardRex) et [Rick Anderson](https://twitter.com/RickAndMSFT)
+Par [Luke Latham](https://github.com/guardrex) et [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 ## <a name="supported-operating-systems"></a>Systèmes d'exploitation pris en charge
 
@@ -99,21 +99,22 @@ var host = new WebHostBuilder()
 
 Pour plus d’informations sur l’hébergement, consultez [Hébergement dans ASP.NET Core](xref:fundamentals/hosting).
 
-### <a name="setting-iisoptions-for-the-iisintegration-service"></a>Définition d’IISOptions pour le service IISIntegration
+### <a name="iis-options"></a>Options IIS
 
-Pour configurer les options de service *IISIntegration*, incluez une configuration de service pour *IISOptions* dans *ConfigureServices*.
+Pour configurer les options de service *IISIntegration*, ajoutez une configuration de service pour *IISOptions* dans *ConfigureServices* :
 
 ```csharp
-services.Configure<IISOptions>(options => {
-  ...
+services.Configure<IISOptions>(options => 
+{
+    ...
 });
 ```
 
-| Option | Paramètre|
-| --- | --- | 
-| AutomaticAuthentication | Si la valeur est true, l’intergiciel d’authentification modifie l’utilisateur de la demande qui arrive et répond aux demandes génériques. Si la valeur est false, l’intergiciel d’authentification fournit l’identité et répond aux demandes uniquement quand cela est indiqué explicitement par le schéma d’authentification. |
-| ForwardClientCertificate | Si la valeur est true et que l’en-tête de requête `MS-ASPNETCORE-CLIENTCERT` est présent, `ITLSConnectionFeature` est renseigné. |
-| ForwardWindowsAuthentication | Si la valeur est true, l’intergiciel d’authentification tente d’effectuer l’authentification à l’aide de l’authentification Windows de gestionnaire de plateforme. Si la valeur est false, l’intergiciel d’authentification n’est pas ajouté. |
+| Option                         | Par défaut | Paramètre |
+| ------------------------------ | ------- | ------- |
+| `AutomaticAuthentication`      | `true`  | Si `true`, l’intergiciel (middleware) d’authentification définit `HttpContext.User` et répond aux questions génériques. Si `false`, l’intergiciel (middleware) d’authentification fournit uniquement une identité (`HttpContext.User`) et répond aux questions explicitement posées par `AuthenticationScheme`. L’authentification Windows doit être activée dans IIS pour que `AutomaticAuthentication` fonctionne. |
+| `AuthenticationDisplayName`    | `null`  | Définit le nom d’affichage montré aux utilisateurs sur les pages de connexion. |
+| `ForwardClientCertificate`     | `true`  | Si la valeur est `true` et que l’en-tête de requête `MS-ASPNETCORE-CLIENTCERT` est présent, `HttpContext.Connection.ClientCertificate` est renseigné. |
 
 ### <a name="webconfig"></a>web.config
 
@@ -449,7 +450,7 @@ Résolution des problèmes :
 
 * Vérifiez que l’application s’exécute localement sur Kestrel. Un échec de processus peut être dû à un problème au niveau de l’application. Pour plus d’informations, consultez [Conseils de dépannage](#troubleshooting-tips).
 
-* Examinez l’attribut *arguments* de l’élément `<aspNetCore>` dans *web.config* pour confirmer (a) qu’il s’agit de *.\my_applciation.dll* pour un déploiement dépendant framework, ou (b) qu’il est absent ou qu’il s’agit d’une chaîne vide (*arguments=""*) ou d’une liste d’arguments de votre application (*arguments="arg1, arg2, ..."*) pour un déploiement autonome.
+* Examinez l’attribut *arguments* de l’élément `<aspNetCore>` dans *web.config* pour confirmer (a) qu’il s’agit de *.\my_application.dll* pour un déploiement dépendant du framework, ou (b) qu’il est absent ou qu’il s’agit d’une chaîne vide (*arguments=""*) ou d’une liste d’arguments de votre application (*arguments="arg1, arg2, ..."*) pour un déploiement autonome.
 
 ### <a name="missing-net-framework-version"></a>Version du .NET Framework manquante
 

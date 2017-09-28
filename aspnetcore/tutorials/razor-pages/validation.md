@@ -5,16 +5,16 @@ description: "Guide pratique pour ajouter la validation à une page Razor"
 keywords: ASP.NET Core,validation,DataAnnotations,Razor,Pages Razor
 ms.author: riande
 manager: wpickett
-ms.date: 8/7/2017
+ms.date: 08/07/2017
 ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: tutorials/razor-pages/validation
-ms.openlocfilehash: ed1ad71b6b1395bce1dd287e86e499e23446f190
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: f8d86b48363675adaf27e2bed39f835f117e624a
+ms.sourcegitcommit: 67f54fabbfa4e3942f5bfe1f8a7fdfe4a7a75358
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 09/19/2017
 ---
 # <a name="adding-validation-to-a-razor-page"></a>Ajout de la validation à une page Razor
 

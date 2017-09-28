@@ -11,11 +11,11 @@ helpviewer_heywords: ASP.NET Core, WebAPI, Web API, REST, mac, macOS, HTTP, Serv
 ms.technology: aspnet
 keywords: ASP.NET Core, APIweb, API web, REST, mac, macOS, HTTP, Service, Service HTTP
 manager: wpickett
-ms.openlocfilehash: 992059f7abd7650f82c1307acf3ba3219a6fcbb5
-ms.sourcegitcommit: 0a3f215b4f665afc6f2678642968eea698102346
+ms.openlocfilehash: 6835cdefcc001452a3ffc8f4fd6a2f55f7274692
+ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/18/2017
+ms.lasthandoff: 09/22/2017
 ---
 # <a name="create-a-web-api-with-aspnet-core-mvc-and-visual-studio-for-mac"></a>Créer une API web avec ASP.NET Core MVC et Visual Studio pour Mac
 
@@ -133,7 +133,7 @@ Nous allons ajouter les méthodes `Create`, `Update` et `Delete` au contrôleur.
 
 [!code-csharp[Main](first-web-api/sample/TodoApi/Controllers/TodoController.cs?name=snippet_Create)]
 
-Il s’agit d’une méthode HTTP POST, indiquée par l’attribut [`[HttpPost]`](https://docs.microsoft.com/aspnet/core/api). L’attribut [`[FromBody]`](https://docs.microsoft.com/aspnet/core/api) indique à MVC qu’il faut obtenir la valeur de l’élément d’action à partir du corps de la requête HTTP.
+Il s’agit d’une méthode HTTP POST, indiquée par l’attribut [`[HttpPost]`](/aspnet/core/api/microsoft.aspnetcore.mvc.httppostattribute). L’attribut [`[FromBody]`](/aspnet/core/api/microsoft.aspnetcore.mvc.frombodyattribute) indique à MVC qu’il faut obtenir la valeur de l’élément d’action à partir du corps de la requête HTTP.
 
 La méthode `CreatedAtRoute` retourne une réponse 201, qui constitue la réponse standard pour une méthode HTTP POST qui crée une ressource sur le serveur. `CreatedAtRoute` ajoute également un en-tête Location à la réponse. L’en-tête Location spécifie l’URI de l’élément d’action qui vient d’être créé. Consultez [10.2.2 201 Created](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html).
 

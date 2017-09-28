@@ -6,7 +6,7 @@ Chaque méthode `public` d’un contrôleur peut être appelée en tant que poin
 
 Un point de terminaison HTTP est une URL qui peut être ciblée dans l’application web, comme `http://localhost:1234/HelloWorld`, et qui combine le protocole utilisé : `HTTP`, l’emplacement réseau du serveur web (avec le port TCP) : `localhost:1234` et l’URI cible `HelloWorld`.
 
-Le premier commentaire indique qu’il s’agit d’une méthode [HTTP GET](http://www.w3schools.com/tags/ref_httpmethods.asp) qui est appelée en ajoutant « /HelloWorld/ » à l’URL de base. Le second commentaire spécifie qu’il s’agit d’une méthode [HTTP GET](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html) qui est appelée en ajoutant « /HelloWorld/Welcome/ » à l’URL. Plus loin dans ce didacticiel, vous utilisez le moteur de génération de modèles automatique pour générer des méthodes `HTTP POST`.
+Le premier commentaire indique qu’il s’agit d’une méthode [HTTP GET](https://www.w3schools.com/tags/ref_httpmethods.asp) qui est appelée en ajoutant « /HelloWorld/ » à l’URL de base. Le second commentaire spécifie qu’il s’agit d’une méthode [HTTP GET](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html) qui est appelée en ajoutant « /HelloWorld/Welcome/ » à l’URL. Plus loin dans ce didacticiel, vous utilisez le moteur de génération de modèles automatique pour générer des méthodes `HTTP POST`.
 
 Exécutez l’application en mode de non-débogage et ajoutez « HelloWorld » au chemin dans la barre d’adresse. La méthode `Index` retourne une chaîne.
 
@@ -46,7 +46,7 @@ Exécutez votre application et accédez à :
 
 ![Fenêtre de navigateur montrant une réponse de l’application « Hello Rick, NumTimes is: 4 »](../../tutorials/first-mvc-app/adding-controller/_static/rick4.png)
 
-Dans l’image ci-dessus, le segment d’URL (`Parameters`) n’est pas utilisé, les paramètres `name` et `numTimes` sont passés en tant que [chaînes de requête](http://en.wikipedia.org/wiki/Query_string). Le `?` (point d’interrogation) dans l’URL ci-dessus est un séparateur, qui est suivi des chaînes de requête. Le caractère `&` sépare les chaînes de requête.
+Dans l’image ci-dessus, le segment d’URL (`Parameters`) n’est pas utilisé, les paramètres `name` et `numTimes` sont passés en tant que [chaînes de requête](https://wikipedia.org/wiki/Query_string). Le `?` (point d’interrogation) dans l’URL ci-dessus est un séparateur, qui est suivi des chaînes de requête. Le caractère `&` sépare les chaînes de requête.
 
 Remplacez la méthode `Welcome` par le code suivant :
 

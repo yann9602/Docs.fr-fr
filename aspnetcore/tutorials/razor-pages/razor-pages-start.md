@@ -5,16 +5,16 @@ description: "Bien démarrer avec des pages Razor dans ASP.NET Core"
 keywords: ASP.NET Core,pages Razor,Razor,MVC
 ms.author: riande
 manager: wpickett
-ms.date: 8/27/2017
+ms.date: 08/27/2017
 ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: tutorials/razor-pages/razor-pages-start
-ms.openlocfilehash: c22ee2554992d15df2f6b92ee5da6805ab80b73a
-ms.sourcegitcommit: d9ec19e5452af83648074db5d96c0a0f4f9e7f9a
+ms.openlocfilehash: 8c6e281e761e69908fc742d1f19c14a00de4bd46
+ms.sourcegitcommit: 67f54fabbfa4e3942f5bfe1f8a7fdfe4a7a75358
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/29/2017
+ms.lasthandoff: 09/19/2017
 ---
 # <a name="getting-started-with-razor-pages-in-aspnet-core"></a>Bien démarrer avec des pages Razor dans ASP.NET Core
 
@@ -22,7 +22,7 @@ De [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 Ce didacticiel décrit les principes fondamentaux liés à la génération d’une application web de pages Razor dans ASP.NET Core. Nous vous recommandons d’effectuer l’étape [Présentation des pages Razor](xref:mvc/razor-pages/index) avant de commencer ce didacticiel. L’utilisation de pages Razor est la méthode recommandée pour générer l’IU d’applications web dans ASP.NET Core.
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Conditions préalables
 
 [!INCLUDE[install 2.0](../../includes/install2.0.md)]
 

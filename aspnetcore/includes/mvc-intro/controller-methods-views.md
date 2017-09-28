@@ -1,5 +1,5 @@
 
-Nous aborderons [DataAnnotations](http://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx) dans le prochain didacticiel. L’attribut [Display](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayattribute.aspx) spécifie les éléments à afficher pour le nom d’un champ (dans le cas présent, « Release Date » au lieu de « ReleaseDate »). L’attribut [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) spécifie le type des données (Date). Les informations d’heures stockées dans le champ ne s’affichent donc pas.
+Nous aborderons [DataAnnotations](https://docs.microsoft.com/aspnet/mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6) dans le prochain didacticiel. L’attribut [Display](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.modelbinding.metadata.displaymetadata) spécifie les éléments à afficher pour le nom d’un champ (dans le cas présent, « Release Date » au lieu de « ReleaseDate »). L’attribut [DataType](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.dataannotations.internal.datatypeattributeadapter) spécifie le type des données (Date). Les informations d’heures stockées dans le champ ne s’affichent donc pas.
 
 Accédez au contrôleur `Movies` et maintenez le pointeur de la souris sur un lien **Edit** pour afficher l’URL cible.
 
@@ -35,7 +35,7 @@ Le code suivant montre la méthode `HTTP POST Edit`, qui traite les valeurs de f
 
 [!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MC1.cs?name=snippet_edit2)]
 
-L’attribut `[Bind]` est l’un des moyens qui permettent d’assurer une protection contre la [sur-publication](https://docs.microsoft.com/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application#overpost). Vous devez inclure dans l’attribut `[Bind]` uniquement les propriétés que vous souhaitez modifier. Pour plus d’informations, consultez [Protect your controller from over-posting (Protéger votre contrôleur contre la sur-publication)](http://www.asp.net/mvc/overview/getting-started/getting-started-with-ef-using-mvc/implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application#overpost). Les [ViewModels](http://rachelappel.com/use-viewmodels-to-manage-data-amp-organize-code-in-asp-net-mvc-applications/) fournissent une alternative pour empêcher la sur-publication.
+L’attribut `[Bind]` est l’un des moyens qui permettent d’assurer une protection contre la [sur-publication](https://docs.microsoft.com/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application#overpost). Vous devez inclure dans l’attribut `[Bind]` uniquement les propriétés que vous souhaitez modifier. Pour plus d’informations, consultez [Protect your controller from over-posting (Protéger votre contrôleur contre la sur-publication)](https://docs.microsoft.com/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application). Les [ViewModels](http://rachelappel.com/use-viewmodels-to-manage-data-amp-organize-code-in-asp-net-mvc-applications/) fournissent une alternative pour empêcher la sur-publication.
 
 Notez que la deuxième méthode d’action `Edit` est précédée de l’attribut `[HttpPost]`.
 
@@ -89,7 +89,7 @@ Toutes les méthodes `HttpGet` du contrôleur Movies suivent un modèle similair
 * [Introduction aux Tag Helpers](xref:mvc/views/tag-helpers/intro)
 * [Création de Tag Helpers](xref:mvc/views/tag-helpers/authoring)
 * [Protection contre la falsification de requête](xref:security/anti-request-forgery)
-* Protéger votre contrôleur contre la [sur-publication](http://www.asp.net/mvc/overview/getting-started/getting-started-with-ef-using-mvc/implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application#overpost)
+* Protéger votre contrôleur contre la [sur-publication](https://docs.microsoft.com/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application)
 * [ViewModels](http://rachelappel.com/use-viewmodels-to-manage-data-amp-organize-code-in-asp-net-mvc-applications/)
 * [Tag Helper Form](xref:mvc/views/working-with-forms)
 * [Tag Helper Input](xref:mvc/views/working-with-forms)

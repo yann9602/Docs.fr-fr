@@ -12,10 +12,10 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: publishing/development-time-iis-support
 ms.openlocfilehash: a35a6fd9896c4c110d1b6680b6aaf718d29a18ab
-ms.sourcegitcommit: f531d90646b9d261c5fbbffcecd6ded9185ae292
+ms.sourcegitcommit: 74a8ad9c1ba5c155d7c4303e67632a0922c38e86
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 09/20/2017
 ---
 # <a name="development-time-iis-support-in-visual-studio-for-aspnet-core"></a>Prise en charge d’IIS pendant le développement dans Visual Studio pour ASP.NET Core
 
@@ -23,7 +23,7 @@ Par : [Sourabh Shirhatti](https://twitter.com/sshirhatti)
 
 Cet article décrit la prise en charge de [Visual Studio](https://www.visualstudio.com/vs/) pour le débogage des applications ASP.NET Core s’exécutant derrière IIS sur Windows Server. Cette rubrique présente l’activation de cette fonctionnalité et la configuration de votre projet.
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Conditions préalables
 
 * Visual Studio (2017/version 15.3 ou ultérieure)
 * Charge de travail de développement ASP.NET et web *OU* la charge de travail de développement multiplateforme .NET Core

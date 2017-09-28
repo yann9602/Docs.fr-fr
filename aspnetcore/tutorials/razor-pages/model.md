@@ -5,16 +5,16 @@ description: "Ajout d’un modèle à une application de pages Razor dans ASP.NE
 keywords: ASP.NET Core,pages Razor,Razor,MVC
 ms.author: riande
 manager: wpickett
-ms.date: 7/27/2017
+ms.date: 07/27/2017
 ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: tutorials/razor-pages/modelz
-ms.openlocfilehash: 1a08ecf1ee12fa0860cb6a18c1a63eaff2ddfbed
-ms.sourcegitcommit: d9ec19e5452af83648074db5d96c0a0f4f9e7f9a
+ms.openlocfilehash: 8e370decfd81e62022478b0ab695ff876e5e0a10
+ms.sourcegitcommit: 74a8ad9c1ba5c155d7c4303e67632a0922c38e86
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/29/2017
+ms.lasthandoff: 09/20/2017
 ---
 # <a name="adding-a-model-to-a-razor-pages-app"></a>Ajout d’un modèle à une application de pages Razor
 
@@ -55,7 +55,7 @@ Dans cette section, effectuez les tâches suivantes à l’aide de la console du
 
 Dans le menu **Outils**, sélectionnez **Gestionnaire de package NuGet > Console du gestionnaire de package**.
 
-  ![Menu de la console du gestionnaire de package](../first-mvc-app/adding-model/_static/pmc.png)
+  ![Menu Console du Gestionnaire de package](../first-mvc-app/adding-model/_static/pmc.png)
 
 Dans la console du gestionnaire de package, entrez les commandes suivantes :
 

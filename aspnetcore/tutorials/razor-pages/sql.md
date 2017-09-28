@@ -5,16 +5,16 @@ description: "Explique l’utilisation de SQL Server LocalDB et d’ASP.NET Core
 keywords: ASP.NET Core, Pages Razor, Razor, MVC, SQL, LocalDB
 ms.author: riande
 manager: wpickett
-ms.date: 8/7/2017
+ms.date: 08/07/2017
 ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: tutorials/razor-pages/sql
-ms.openlocfilehash: 173bdcca80a599ec2d87ff4158614727b35f984a
-ms.sourcegitcommit: d02d90b6272372178723ff932e8a9b9566afedb8
+ms.openlocfilehash: 852bd2dff96c951f55a9b142d8e15b6ec5856921
+ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/15/2017
+ms.lasthandoff: 09/22/2017
 ---
 # <a name="working-with-sql-server-localdb-and-aspnet-core"></a>Utilisation de SQL Server LocalDB et d’ASP.NET Core
 
@@ -32,14 +32,14 @@ Quand vous déployez l’application sur un serveur de test ou de production, vo
 
 ## <a name="sql-server-express-localdb"></a>SQL Server Express LocalDB
 
-LocalDB est une version allégée du moteur de base de données SQL Server Express qui est ciblé pour le développement de programmes. LocalDB démarre à la demande et s’exécute en mode utilisateur, ce qui n’implique aucune configuration complexe. Par défaut, la base de données LocalDB crée des fichiers « \*.mdf» dans le répertoire *C:/Users/\<utilisateur\>*.
+LocalDB est une version allégée du moteur de base de données SQL Server Express qui est ciblée pour le développement de programmes. LocalDB démarre à la demande et s’exécute en mode utilisateur, ce qui n’implique aucune configuration complexe. Par défaut, la base de données LocalDB crée des fichiers « \*.mdf » dans le répertoire *C:/Users/\<utilisateur\>*.
 
 <a name="ssox"></a>
 * Dans le menu **Affichage**, ouvrez **l’Explorateur d’objets SQL Server** (SSOX).
 
-  ![Menu Affichage](sql/_static/ssox.png)
+  ![Menu View](sql/_static/ssox.png)
 
-* Cliquez avec le bouton droit sur la table `Movie` **> Concepteur de vue**
+* Cliquez avec le bouton droit sur la table `Movie` **> Concepteur de vue**.
 
   ![Menu contextuel ouvert sur la table Movie](sql/_static/design.png)
 
@@ -51,7 +51,7 @@ Notez l’icône de clé en regard de `ID`. Par défaut, EF fait d’une propri�
 
   ![Table Movie ouverte, affichant des données de table](sql/_static/vd22.png)
 
-## <a name="seed-the-database"></a>Amorçage de la base de données
+## <a name="seed-the-database"></a>Amorcer la base de données
 
 Créez une classe nommée `SeedData` dans l’espace de noms *Modèles*. Remplacez le code généré par ce qui suit :
 
@@ -75,9 +75,9 @@ Ajoutez l’initialiseur de valeur initiale à la fin de la méthode `Main` dans
 Tester l’application
 
 * Supprimez tous les enregistrements de la base de données. Pour ce faire, utilisez les liens de suppression disponibles dans le navigateur ou à partir de [SSOX](xref:tutorials/razor-pages/new-field#ssox)
-* Forcez l’application à s’initialiser (appelez les méthodes de la classe `Startup`) pour que la méthode seed s’exécute. Pour forcer l’initialisation, IIS Express doit être arrêté et redémarré. Pour ce faire, utilisez l’une des approches suivantes :
+* Forcez l’application à s’initialiser (appelez les méthodes de la classe `Startup`) pour que la méthode seed s’exécute. Pour forcer l’initialisation, IIS Express doit être arrêté et redémarré. Pour cela, adoptez l’une des approches suivantes :
 
-  * Cliquez avec le bouton droit sur l’icône de barre d’état système IIS Express dans la zone de notification, puis appuyez sur **Quitter** ou sur **Arrêter le site**
+  * Cliquez avec le bouton droit sur l’icône de barre d’état système IIS Express dans la zone de notification, puis appuyez sur **Quitter** ou sur **Arrêter le site**.
 
     ![Icône de la barre d’état système IIS Express](../first-mvc-app/working-with-sql/_static/iisExIcon.png)
 

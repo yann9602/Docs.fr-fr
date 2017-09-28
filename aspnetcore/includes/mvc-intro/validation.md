@@ -6,7 +6,7 @@ Dans cette section, vous allez ajouter la logique de validation au modèle `Movi
 
 ## <a name="keeping-things-dry"></a>Ne vous répétez pas
 
-L’un des principes de conception de MVC est « Ne vous répétez pas » (désigné par l’acronyme [DRY](http://en.wikipedia.org/wiki/Don%27t_repeat_yourself), Don’t Repeat Yourself). ASP.NET MVC vous encourage à spécifier les fonctionnalités ou les comportements une seule fois, puis à utiliser la réflexion partout dans une application. Cela réduit la quantité de code à écrire, et rend le code que vous écrivez moins susceptible aux erreurs et plus facile à tester et à gérer.
+L’un des principes de conception de MVC est « Ne vous répétez pas » (désigné par l’acronyme [DRY](https://wikipedia.org/wiki/Don%27t_repeat_yourself), Don’t Repeat Yourself). ASP.NET MVC vous encourage à spécifier les fonctionnalités ou les comportements une seule fois, puis à utiliser la réflexion partout dans une application. Cela réduit la quantité de code à écrire, et rend le code que vous écrivez moins susceptible aux erreurs et plus facile à tester et à gérer.
 
 La prise en charge de la validation fournie par MVC et Entity Framework Core Code First est un bon exemple du principe DRY en action. Vous pouvez spécifier de façon déclarative des règles de validation à un seul emplacement (dans la classe de modèle), et les règles sont appliquées partout dans l’application.
 
@@ -31,13 +31,13 @@ Appuyez sur le lien **Create New** pour ajouter un nouveau film. Remplissez le f
 ![Formulaire d’affichage de film avec plusieurs erreurs de validation côté client jQuery](../../tutorials/first-mvc-app/validation/_static/val.png)
 
 > [!NOTE]
-> Vous ne pourrez peut-être pas entrer des décimales ou des virgules dans le champ `Price`. Pour prendre en charge la [validation jQuery](http://jqueryvalidation.org/) pour les paramètres régionaux autres que l’anglais qui utilisent une virgule (« , ») comme décimale et des formats de date autres que l’anglais des États-Unis, vous devez effectuer des étapes pour localiser votre application. Pour plus d’informations, consultez [Ressources supplémentaires](#additional-resources). Pour le moment, entrez simplement des nombres entiers tels que 10.
+> Vous ne pourrez peut-être pas entrer des décimales ou des virgules dans le champ `Price`. Pour prendre en charge la [validation jQuery](https://jqueryvalidation.org/) pour les paramètres régionaux autres que l’anglais qui utilisent une virgule (« , ») comme décimale et des formats de date autres que l’anglais des États-Unis, vous devez effectuer des étapes pour localiser votre application. Pour plus d’informations, consultez [Ressources supplémentaires](#additional-resources). Pour le moment, entrez simplement des nombres entiers tels que 10.
 
 Notez que le formulaire a affiché automatiquement un message d’erreur de validation approprié dans chaque champ contenant une valeur non valide. Les erreurs sont appliquées à la fois côté client (à l’aide de JavaScript et jQuery) et côté serveur (au cas où un utilisateur aurait désactivé JavaScript).
 
 L’un des principaux avantages est que vous n’avez pas eu à changer une seule ligne de code dans la classe `MoviesController` ou dans la vue *Create.cshtml* pour activer cette interface utilisateur de validation. Le contrôleur et les vues créées précédemment dans ce didacticiel ont détecté les règles de validation que vous avez spécifiées à l’aide des attributs de validation sur les propriétés de la classe de modèle `Movie`. Testez la validation à l’aide de la méthode d’action `Edit`. La même validation est appliquée.
 
-Les données de formulaire ne sont pas envoyées au serveur tant qu’il y a des erreurs de validation côté client. Vous pouvez vérifier cela en plaçant un point d’arrêt dans la méthode `HTTP Post`, en utilisant l’[outil Fiddler](http://www.telerik.com/fiddler) ou à l’aide des [Outils de développement F12](https://dev.windows.com/microsoft-edge/platform/documentation/f12-devtools-guide/).
+Les données de formulaire ne sont pas envoyées au serveur tant qu’il y a des erreurs de validation côté client. Vous pouvez vérifier cela en plaçant un point d’arrêt dans la méthode `HTTP Post`, en utilisant l’[outil Fiddler](http://www.telerik.com/fiddler) ou à l’aide des [Outils de développement F12](https://developer.microsoft.com/microsoft-edge/platform/documentation/f12-devtools-guide/).
 
 ## <a name="how-validation-works"></a>Fonctionnement de la validation
 
@@ -65,7 +65,7 @@ Voici la partie du modèle de vue *Create.cshtml* pour lequel vous avez génér�
 
 [!code-HTML[Main](../../tutorials/first-mvc-app/start-mvc//sample/MvcMovie/Views/Movies/CreateRatingBrevity.cshtml)]
 
-Le [Tag Helper Input](xref:mvc/views/working-with-forms) utilise les attributs [DataAnnotations](http://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx) et produit les attributs HTML nécessaires à la validation jQuery côté client. Le [Tag Helper Validation](xref:mvc/views/working-with-forms#the-validation-tag-helpers) affiche les erreurs de validation. Pour plus d’informations, consultez [Validation](xref:mvc/models/validation).
+Le [Tag Helper Input](xref:mvc/views/working-with-forms) utilise les attributs [DataAnnotations](https://docs.microsoft.com/aspnet/mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6) et produit les attributs HTML nécessaires à la validation jQuery côté client. Le [Tag Helper Validation](xref:mvc/views/working-with-forms#the-validation-tag-helpers) affiche les erreurs de validation. Pour plus d’informations, consultez [Validation](xref:mvc/models/validation).
 
 Le grand avantage de cette approche est que ni le contrôleur ni le modèle de vue `Create` ne savent rien des règles de validation appliquées ou des messages d’erreur affichés. Les règles de validation et les chaînes d’erreur sont spécifiées uniquement dans la classe `Movie`. Ces mêmes règles de validation sont automatiquement appliquées à la vue `Edit` et à tous les autres modèles de vues que vous pouvez créer et qui modifient votre modèle.
 
@@ -107,7 +107,7 @@ Vous pouvez utiliser l’attribut `DisplayFormat` par lui-même, mais il est gé
 
 Vous devez désactiver la validation de date jQuery pour utiliser l’attribut `Range` avec `DateTime`. Il n’est généralement pas recommandé de compiler des dates dures dans vos modèles. Par conséquent, l’utilisation de l’attribut `Range` et de `DateTime` est déconseillée.
 
-Le code suivant illustre la combinaison d’attributs sur une seule ligne :
+Le code suivant illustre la combinaison d’attributs sur une seule ligne :
 
 [!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc//sample/MvcMovie/Models/MovieDateRatingDAmult.cs?name=snippet1)]
 

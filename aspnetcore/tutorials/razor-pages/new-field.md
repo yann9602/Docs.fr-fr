@@ -5,16 +5,16 @@ description: "Montre comment ajouter un nouveau champ à une page Razor avec Ent
 keywords: ASP.NET Core, Entity Framework Core, migrations
 ms.author: riande
 manager: wpickett
-ms.date: 8/7/2017
+ms.date: 08/07/2017
 ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: tutorials/razor-pages/new-field
-ms.openlocfilehash: 1b5f4297d4812fbbd60fb8b94446da205cd6bb55
-ms.sourcegitcommit: f303a457644ed034a49aa89edecb4e79d9028cb1
+ms.openlocfilehash: b45642e39eb46631bb8034f4747222fb1bc0a83b
+ms.sourcegitcommit: 8005eb4051e568d88ee58d48424f39916052e6e2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 09/24/2017
 ---
 # <a name="adding-a-new-field-to-a-razor-page"></a>Ajout d’un nouveau champ à une page Razor
 
@@ -44,7 +44,7 @@ Mettez à jour *Create.cshtml* avec un champ `Rating`. Vous pouvez copier/coller
 
 Le code suivant montre *Create.cshtml* avec un champ `Rating` :
 
-[!code-cshtml[Main](razor-pages-start/sample/RazorPagesMovie/Pages/Movies/Create.cshtml?highlight=31-35)]
+[!code-cshtml[Main](razor-pages-start/sample/RazorPagesMovie/Pages/Movies/Create.cshtml?highlight=36-40)]
 
 Ajoutez le champ `Rating` à la Page Edit.
 
@@ -66,7 +66,7 @@ Pour ce didacticiel, nous allons utiliser les migrations Code First.
 
 Mettez à jour la classe `SeedData` pour qu’elle fournisse une valeur pour la nouvelle colonne. Vous pouvez voir un exemple de modification ci-dessous, mais elle doit être appliquée à chaque bloc `new Movie`.
 
-[!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Models/SeedDataRating.cs?name=snippet1&highlight=6)]
+[!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Models/SeedDataRating.cs?name=snippet1&highlight=8)]
 
 Consultez le [fichier SeedData.cs complet](https://github.com/aspnet/Docs/blob/master/aspnetcore/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Models/SeedDataRating.cs).
 

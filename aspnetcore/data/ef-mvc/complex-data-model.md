@@ -11,11 +11,11 @@ ms.assetid: 0dd63913-a041-48b6-96a4-3aeaedbdf5d0
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/complex-data-model
-ms.openlocfilehash: dde50f766dc9842089cbb0561b8bd6e2d8e7c34f
-ms.sourcegitcommit: 74a8ad9c1ba5c155d7c4303e67632a0922c38e86
+ms.openlocfilehash: cacb23441e5f5ab06c6be27f3068276f21ff4ed9
+ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/20/2017
+ms.lasthandoff: 09/22/2017
 ---
 # <a name="creating-a-complex-data-model---ef-core-with-aspnet-core-mvc-tutorial-5-of-10"></a>Création d’un modèle de données complexes - Core EF avec le didacticiel d’ASP.NET MVC de base (5 sur 10)
 
