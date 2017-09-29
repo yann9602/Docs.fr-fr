@@ -11,11 +11,11 @@ ms.assetid: 3b6a32f2-5af9-4ede-9b7f-17ab300526d0
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mobile/native-mobile-backend
-ms.openlocfilehash: 7b2b35b1519badbc8b8fbddab97a0c6336926185
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: be1cd9f4fe41f1a79669975cb6a89439cdd9e5c7
+ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 09/28/2017
 ---
 # <a name="creating-backend-services-for-native-mobile-applications"></a>Création de Services principaux pour les Applications mobiles natives
 
@@ -46,8 +46,6 @@ Un élément sur l’écran de liste principale ouvre une boîte de dialogue Mod
 ![Élément de boîte de dialogue Modifier](native-mobile-backend/_static/todo-android-edit-item.png)
 
 Cet exemple est configuré par défaut pour utiliser les services principaux hébergés sur developer.xamarin.com, qui autorisent des opérations en lecture seule. Pour tester vous-même par rapport à l’application ASP.NET Core créée dans la section suivante, en cours d’exécution sur votre ordinateur, vous devez mettre à jour de l’application `RestUrl` constante. Accédez à la `ToDoREST` de projet et ouvrez le *Constants.cs* fichier. Remplacez le `RestUrl` avec une URL qui inclut IP votre ordinateur adresse (pas localhost ou 127.0.0.1, étant donné que cette adresse est utilisée à partir de l’émulateur d’appareil, pas à partir de votre ordinateur). Inclut également le numéro de port (5000). Afin de vérifier que vos services fonctionnent avec un périphérique, assurez-vous de que vous n’avez pas un pare-feu actif bloque l’accès à ce port.
-
-<!-- literal_block {"ids": [], "names": [], "highlight_args": {}, "backrefs": [], "dupnames": [], "linenos": false, "classes": [], "xml:space": "preserve", "language": "csharp"} -->
 
 ```csharp
 // URL of REST service (Xamarin ReadOnly Service)

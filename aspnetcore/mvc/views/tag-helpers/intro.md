@@ -11,11 +11,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/tag-helpers/intro
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 10471210075dc8a5366b7d5170d6594c2e66ce94
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: 06644b8359fb5ccc2e61a17a4c6e20e354d5ceef
+ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 09/28/2017
 ---
 # <a name="introduction-to-tag-helpers-in-aspnet-core"></a>Introduction aux applications d’assistance de balise dans ASP.NET Core 
 
@@ -67,9 +67,7 @@ Pour exposer tous les programmes d’assistance de balise dans ce projet (ce qui
 
 Si votre projet contient un `EmailTagHelper` avec l’espace de noms par défaut (`AuthoringTagHelpers.TagHelpers.EmailTagHelper`), vous pouvez fournir le nom qualifié complet (FQN) de l’application d’assistance de balise :
 
-<!-- literal_block {"ids": [], "linenos": false, "xml:space": "preserve", "language": "html", "highlight_args": {"hl_lines": [3]}} -->
-
-```html
+```cshtml
 @using AuthoringTagHelpers
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @addTagHelper AuthoringTagHelpers.TagHelpers.EmailTagHelper, AuthoringTagHelpers

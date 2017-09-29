@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/enforcing-ssl
-ms.openlocfilehash: e8e7d4a69fd681534fb313ff113805bfd6a6d44e
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: 6f2755a606000717ca8a57f045b1ef613c7f14f6
+ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 09/28/2017
 ---
 # <a name="enforcing-ssl-in-an-aspnet-core-app"></a>Application de SSL dans une application ASP.NET Core
 
@@ -40,7 +40,3 @@ Le code en surbrillance ci-dessus nécessite l’utilisation de toutes les deman
 Consultez [intergiciel (middleware) réécriture d’URL](xref:fundamentals/url-rewriting) pour plus d’informations.
 
 Nécessitant HTTPS globalement (`options.Filters.Add(new RequireHttpsAttribute());`) est une meilleure pratique de sécurité. Appliquer le `[RequireHttps]` attribut à tous les contrôleur n’est pas considéré comme autant nécessitant HTTPS globalement. Vous ne pouvez pas garantir la sécurité ajoutées à votre application de nouveaux contrôleurs penser à appliquer le `[RequireHttps]` attribut.
-
-## <a name="set-up-iis-express-for-sslhttps"></a>Configurer IIS Express pour SSL/HTTPS
-
-Consultez [configuration de HTTPS pour le développement dans ASP.NET Core](xref:security/https#iisxpress).

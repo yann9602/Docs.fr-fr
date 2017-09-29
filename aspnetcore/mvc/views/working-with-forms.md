@@ -12,11 +12,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/working-with-forms
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 2fe774a1ae02ab5ea168c19045fcc8664c0273a6
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: ff6fee6eee539fc77b6c6180a816daa760202848
+ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 09/28/2017
 ---
 # <a name="introduction-to-using-tag-helpers-in-forms-in-aspnet-core"></a>Introduction à l’utilisation de programmes d’assistance de balise dans les formulaires dans ASP.NET Core
 
@@ -51,7 +51,7 @@ L’assistance de balise de formulaire ci-dessus génère le code HTML suivant 
      <!-- Input and Submit elements -->
      <input name="__RequestVerificationToken" type="hidden" value="<removed for brevity>" />
     </form>
-   ```
+```
 
 Le runtime MVC génère le `action` valeur d’attribut à partir des attributs d’assistance de balise de formulaire `asp-controller` et `asp-action`. L’application d’assistance de balise de formulaire génère également un masqué [jeton de demande de vérification](https://docs.microsoft.com/aspnet/mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages) pour empêcher la falsification de requête (lorsqu’il est utilisé avec le `[ValidateAntiForgeryToken]` attribut dans la méthode d’action HTTP Post). Un formulaire HTML pur empêcher la falsification de requête est difficile, l’application d’assistance de balise de formulaire fournit ce service pour vous.
 
@@ -63,13 +63,11 @@ Le `asp-route` attribut d’assistance de balise peut également générer le ba
 
 Un grand nombre des vues dans le *Views/Account* dossier (généré lorsque vous créez une application web avec *comptes d’utilisateur individuels*) contiennent le [asp-itinéraire-returnurl](https://docs.microsoft.com/aspnet/core/mvc/views/working-with-forms) attribut :
 
-<!-- literal_block {"ids": [], "linenos": false, "xml:space": "preserve", "language": "none", "highlight_args": {"hl_lines": [2]}} -->
-
-```none
+```cshtml
 <form asp-controller="Account" asp-action="Login"
      asp-route-returnurl="@ViewData["ReturnUrl"]"
      method="post" class="form-horizontal" role="form">
-   ```
+```
 
 >[!NOTE]
 >Avec les modèles intégrés, `returnUrl` n’est rempli automatiquement lorsque vous essayez d’accéder à une ressource autorisée, mais ne sont pas authentifiés ou autorisés. Lorsque vous essayez d’un accès non autorisé, l’intergiciel (middleware) de sécurité vous redirige vers la page de connexion avec le `returnUrl` défini.
@@ -82,7 +80,7 @@ Syntaxe :
 
 ```HTML
 <input asp-for="<Expression Name>" />
-   ```
+```
 
 L’application d’assistance de balise d’entrée :
 
@@ -157,7 +155,7 @@ Le code ci-dessus génère le code HTML suivant :
        <button type="submit">Register</button>
      <input name="__RequestVerificationToken" type="hidden" value="<removed for brevity>" />
    </form>
-   ```
+```
 
 Les annotations de données appliquées à la `Email` et `Password` propriétés génèrent des métadonnées sur le modèle. Consomme les métadonnées du modèle de l’application d’assistance de balise d’entrée et produit [HTML5](https://developer.mozilla.org/docs/Web/Guide/HTML/HTML5) `data-val-*` attributs (consultez [Validation du modèle](../models/validation.md)). Ces attributs décrivent les validateurs à joindre aux champs d’entrée. Cela fournit discrète HTML5 et [jQuery](https://jquery.com/) validation. Les attributs non obstructifs sont au format `data-val-rule="Error Message"`, où la règle est le nom de la règle de validation (tel que `data-val-required`, `data-val-email`, `data-val-maxlength`, etc..) Si un message d’erreur est fourni dans l’attribut, il est affiché en tant que la valeur de la `data-val-rule` attribut. Il existe également des attributs de la forme `data-val-ruleName-argumentName="argumentValue"` qui fournissent des détails supplémentaires sur la règle, par exemple, `data-val-maxlength-max="1024"` .
 
@@ -209,7 +207,7 @@ Le code HTML suivant est généré pour `Address.AddressLine1`:
 
 ```HTML
 <input type="text" id="Address_AddressLine1" name="Address.AddressLine1" value="" />
-   ```
+```
 
 ### <a name="expression-names-and-collections"></a>Noms d’expressions et des Collections
 
@@ -225,7 +223,7 @@ public IActionResult Edit(int id, int colorIndex)
        ViewData["Index"] = colorIndex;
        return View(GetPerson(id));
    }
-   ```
+```
 
 Razor suivante montre comment vous accéder à un spécifique `Color` élément :
 
@@ -274,8 +272,6 @@ Aperçu :
 
 Le code HTML suivant est généré :
 
-<!-- literal_block {"ids": [], "linenos": false, "xml:space": "preserve", "language": "HTML", "highlight_args": {"hl_lines": [2, 3, 4, 5, 6, 7, 8]}} -->
-
 ```HTML
 <form method="post" action="/Demo/RegisterTextArea">
   <textarea data-val="true"
@@ -314,7 +310,7 @@ Le code HTML suivant est généré pour le `<label>` élément :
 
 ```HTML
 <label for="Email">Email Address</label>
-   ```
+```
 
 L’application d’assistance de balise étiquette généré le `for` valeur d’attribut de « Email », qui est l’ID associé à le `<input>` élément. Les programmes d’assistance de balise générer cohérent `id` et `for` éléments de sorte qu’ils peuvent être correctement associés. Le libellé dans cet exemple provient de la `Display` attribut. Si le modèle ne contenait pas un `Display` attribut, la légende est le nom de propriété de l’expression.
 
@@ -334,7 +330,7 @@ Le `Validation Message Tag Helper` est utilisé avec le `asp-validation-for` att
 
 ```HTML
 <span asp-validation-for="Email"></span>
-   ```
+```
 
 L’application d’assistance de balise de Message de Validation génère le code HTML suivant :
 
@@ -382,8 +378,6 @@ Dans l’exemple suivant, le modèle de données est décoré avec `DataAnnotati
 
 Le code HTML généré (lorsque le modèle est valid) :
 
-<!-- literal_block {"ids": [], "linenos": false, "xml:space": "preserve", "language": "HTML", "highlight_args": {"hl_lines": [2, 3, 8, 9, 12, 13]}} -->
-
 ```HTML
 <form action="/DemoReg/Register" method="post">
   <div class="validation-summary-valid" data-valmsg-summary="true">
@@ -427,13 +421,11 @@ La requête HTTP POST `Index` méthode affiche la sélection :
 
 Le `Index` vue :
 
-[!code-HTML[Main](working-with-forms/sample/final/Views/Home/Index.cshtml?highlight=4)]
+[!code-cshtml[Main](working-with-forms/sample/final/Views/Home/Index.cshtml?highlight=4)]
 
 Qui génère le code HTML suivant (avec « AC » sélectionnée) :
 
-<!-- literal_block {"ids": [], "linenos": false, "xml:space": "preserve", "language": "HTML", "highlight_args": {"hl_lines": [2, 3, 4, 5, 6]}} -->
-
-```HTML
+```html
 <form method="post" action="/">
      <select id="Country" name="Country">
        <option value="MX">Mexico</option>
@@ -443,7 +435,7 @@ Qui génère le code HTML suivant (avec « AC » sélectionnée) :
        <br /><button type="submit">Register</button>
      <input name="__RequestVerificationToken" type="hidden" value="<removed for brevity>" />
    </form>
-   ```
+```
 
 > [!NOTE]
 > Nous ne recommandons pas à l’aide de `ViewBag` ou `ViewData` avec l’assistance de balise sélectionnez. Un modèle d’affichage est plus fiable en fournissant des métadonnées de MVC et généralement moins problématique.
@@ -472,8 +464,6 @@ Vous pouvez la décorer avec votre liste d’énumérateurs le `Display` attribu
 
 Le code HTML suivant est généré :
 
-<!-- literal_block {"ids": [], "linenos": false, "xml:space": "preserve", "language": "HTML", "highlight_args": {"hl_lines": [4, 5]}} -->
-
 ```HTML
   <form method="post" action="/Home/IndexEnum">
          <select data-val="true" data-val-required="The EnumCountry field is required."
@@ -488,7 +478,7 @@ Le code HTML suivant est généré :
          <br /><button type="submit">Register</button>
          <input name="__RequestVerificationToken" type="hidden" value="<removed for brevity>" />
     </form>
-   ```
+```
 
 ### <a name="option-group"></a>Groupe d’options
 
@@ -503,8 +493,6 @@ Les deux groupes sont indiquées ci-dessous :
 ![exemple de groupe d’option](working-with-forms/_static/grp.png)
 
 Le code HTML généré :
-
-<!-- literal_block {"ids": [], "linenos": false, "xml:space": "preserve", "language": "HTML", "highlight_args": {"hl_lines": [3, 4, 5, 6, 7, 8, 9, 10, 11, 12]}} -->
 
 ```HTML
  <form method="post" action="/Home/IndexGroup">
@@ -536,8 +524,6 @@ Avec l’affichage suivant :
 [!code-HTML[Main](../../mvc/views/working-with-forms/sample/final/Views/Home/IndexMultiSelect.cshtml?highlight=4)]
 
 Génère le code HTML suivant :
-
-<!-- literal_block {"ids": [], "linenos": false, "xml:space": "preserve", "language": "HTML", "highlight_args": {"hl_lines": [3]}} -->
 
 ```HTML
 <form method="post" action="/Home/IndexMultiSelect">
@@ -572,8 +558,6 @@ Ajout de code HTML [ \<option >](https://www.w3.org/wiki/HTML/Elements/option) �
 [!code-HTML[Main](working-with-forms/sample/final/Views/Home/IndexOption.cshtml)]
 
 Le bon `<option>` élément est sélectionné (contiennent le `selected="selected"` attribut) selon l’actuel `Country` valeur.
-
-<!-- literal_block {"ids": [], "linenos": false, "xml:space": "preserve", "language": "HTML", "highlight_args": {"hl_lines": [5]}} -->
 
 ```HTML
  <form method="post" action="/Home/IndexEmpty">

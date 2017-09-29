@@ -11,11 +11,11 @@ ms.assetid: e422a1b2-dc4a-4bcc-b8d9-7ee62009b6a3
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authorization/policies
-ms.openlocfilehash: dd7187f67887bb39a5ff425dcbae0927c7565cb8
-ms.sourcegitcommit: 41e3e007512c175a42910bc69678f3f0403cab04
+ms.openlocfilehash: 5021b5d20f6d9b9a4d8889f25b5e41f2c9306f64
+ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/01/2017
+ms.lasthandoff: 09/28/2017
 ---
 # <a name="custom-policy-based-authorization"></a>D’autorisation personnalisée basée sur des stratégies
 
@@ -24,8 +24,6 @@ ms.lasthandoff: 09/01/2017
 Dans les coulisses du [l’autorisation de rôle](roles.md#security-authorization-role-based) et [d’autorisation des revendications](claims.md#security-authorization-claims-based) rendre l’utilisation d’une spécification, un gestionnaire pour la demande et une stratégie préconfigurée. Ces blocs de construction vous permet d’exprimer les évaluations d’autorisation dans le code, ce qui permet une plus riche, réutilisables et une structure d’autorisation faciles à tester.
 
 Une stratégie d’autorisation est composée d’une ou plusieurs conditions et inscrit au démarrage de l’application dans le cadre de la configuration du service d’autorisation dans `ConfigureServices` dans les *Startup.cs* fichier.
-
-<!-- literal_block {"ids": [], "names": [], "highlight_args": {}, "backrefs": [], "dupnames": [], "linenos": false, "classes": [], "xml:space": "preserve", "language": "c#"} -->
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -44,8 +42,6 @@ Vous trouverez ici qu'une stratégie de « Over21 » est créée avec une seul
 
 Les stratégies sont appliquées à l’aide de la `Authorize` attribut en spécifiant le nom de la stratégie, par exemple ;
 
-<!-- literal_block {"ids": [], "names": [], "highlight_args": {}, "backrefs": [], "dupnames": [], "linenos": false, "classes": [], "xml:space": "preserve", "language": "c#"} -->
-
 ```csharp
 [Authorize(Policy="Over21")]
 public class AlcoholPurchaseRequirementsController : Controller
@@ -63,8 +59,6 @@ public class AlcoholPurchaseRequirementsController : Controller
 ## <a name="requirements"></a>Spécifications
 
 Une demande d’autorisation est une collection de paramètres de données une stratégie peut utiliser pour évaluer le principal utilisateur actuel. Dans notre stratégie d’âge minimal l’exigence est un paramètre unique, l’âge minimal. Une exigence doit implémenter `IAuthorizationRequirement`. Il s’agit d’une interface de marqueur vide. Une spécification de l’ancienneté minimale paramétrable peut être implémentée comme suit :
-
-<!-- literal_block {"ids": [], "names": [], "highlight_args": {}, "backrefs": [], "dupnames": [], "linenos": false, "classes": [], "xml:space": "preserve", "language": "c#"} -->
 
 ```csharp
 public class MinimumAgeRequirement : IAuthorizationRequirement
@@ -89,8 +83,6 @@ Un gestionnaire d’autorisation est responsable de l’évaluation de toutes le
 <a name=security-authorization-handler-example></a>
 
 Le Gestionnaire de durée de vie minimale peut ressembler à ceci :
-
-<!-- literal_block {"ids": [], "names": [], "highlight_args": {}, "backrefs": [], "dupnames": [], "linenos": false, "classes": [], "xml:space": "preserve", "language": "c#"} -->
 
 ```csharp
 public class MinimumAgeHandler : AuthorizationHandler<MinimumAgeRequirement>
@@ -128,8 +120,6 @@ Dans le code ci-dessus nous allons tout d’abord pour voir si l’utilisateur p
 
 Gestionnaires doivent être enregistrés dans la collection de services lors de la configuration, par exemple ;
 
-<!-- literal_block {"ids": [], "names": [], "highlight_args": {}, "backrefs": [], "dupnames": [], "linenos": false, "classes": [], "xml:space": "preserve", "language": "c#"} -->
-
 ```csharp
 
 public void ConfigureServices(IServiceCollection services)
@@ -165,8 +155,6 @@ Indépendamment de ce que vous appelez à l’intérieur de votre gestionnaire d
 ## <a name="why-would-i-want-multiple-handlers-for-a-requirement"></a>Pourquoi voudrais-je plusieurs gestionnaires pour une spécification ?
 
 Dans le cas où vous souhaitez d’évaluation sur une **ou** vous implémentez plusieurs gestionnaires pour une seule exigence de base. Par exemple, Microsoft a portes ouvre uniquement avec les cartes de clé. Si vous laissez votre carte de clé chez le réceptionniste imprime un autocollant temporaire et ouvre la porte pour vous. Dans ce scénario, vous aurait une seule exigence, *EnterBuilding*, mais plusieurs gestionnaires, chacun d'entre eux examinant une seule exigence.
-
-<!-- literal_block {"ids": [], "names": [], "highlight_args": {}, "backrefs": [], "dupnames": [], "linenos": false, "classes": [], "xml:space": "preserve", "language": "c#"} -->
 
 ```csharp
 public class EnterBuildingRequirement : IAuthorizationRequirement
@@ -209,8 +197,6 @@ Il peut arriver où il est simple pour exprimer dans le code de répondre à une
 
 Par exemple précédent `BadgeEntryHandler` peut être réécrit comme suit :
 
-<!-- literal_block {"ids": [], "names": [], "highlight_args": {}, "backrefs": [], "dupnames": [], "linenos": false, "classes": [], "xml:space": "preserve", "language": "c#"} -->
-
 ```csharp
 services.AddAuthorization(options =>
     {
@@ -232,8 +218,6 @@ Le `Handle` méthode, vous devez implémenter dans un gestionnaire d’autorisat
 Par exemple MVC passe une instance de `Microsoft.AspNetCore.Mvc.Filters.AuthorizationFilterContext` dans la propriété de ressource qui est utilisée pour accéder à HttpContext, RouteData et tout autre MVC fournit.
 
 L’utilisation de la `Resource` propriété est spécifiques de l’infrastructure. À l’aide des informations contenues dans le `Resource` propriété limite vos stratégies d’autorisation pour les infrastructures particulières. Vous devez effectuer un cast du `Resource` à l’aide de la propriété du `as` (mot clé), puis vérifiez que le cast a réussissent pour vérifier votre code ne se bloquer avec `InvalidCastExceptions` sur les autres infrastructures ;
-
-<!-- literal_block {"ids": [], "names": [], "highlight_args": {}, "backrefs": [], "dupnames": [], "linenos": false, "classes": [], "xml:space": "preserve", "language": "c#"} -->
 
 ```csharp
 if (context.Resource is Microsoft.AspNetCore.Mvc.Filters.AuthorizationFilterContext mvcContext)

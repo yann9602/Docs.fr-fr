@@ -11,11 +11,11 @@ ms.assetid: 66DB4B94-C78C-4005-BA03-3D982B87C268
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/microsoft-logins
-ms.openlocfilehash: 1602a7fa801f77c259e3e3a37d60e02606cf5bac
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: cb4ea63664f29e39c2dd26cbf814a484a295ec6c
+ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 09/28/2017
 ---
 # <a name="configuring-microsoft-account-authentication"></a>Configuration de l’authentification Microsoft Account
 
@@ -31,7 +31,7 @@ Ce didacticiel vous montre comment permettre aux utilisateurs de se connecter av
 
 ![Boîte de dialogue se connecter](index/_static/MicrosoftDevLogin.png)
 
-Si vous n’avez pas déjà un compte Microsoft, appuyez sur ** [créez-en un !](https://signup.live.com/signup?wa=wsignin1.0&rpsnv=13&ct=1478151035&rver=6.7.6643.0&wp=SAPI_LONG&wreply=https%3a%2f%2fapps.dev.microsoft.com%2fLoginPostBack&id=293053&aadredir=1&contextid=D70D4F21246BAB50&bk=1478151036&uiflavor=web&uaid=f0c3de863a914c358b8dc01b1ff49e85&mkt=EN-US&lc=1033&lic=1)** Une fois connecté, vous êtes redirigé vers **mes applications** page :
+Si vous n’avez pas déjà un compte Microsoft, appuyez sur  **[créez-en un !](https://signup.live.com/signup?wa=wsignin1.0&rpsnv=13&ct=1478151035&rver=6.7.6643.0&wp=SAPI_LONG&wreply=https%3a%2f%2fapps.dev.microsoft.com%2fLoginPostBack&id=293053&aadredir=1&contextid=D70D4F21246BAB50&bk=1478151036&uiflavor=web&uaid=f0c3de863a914c358b8dc01b1ff49e85&mkt=EN-US&lc=1033&lic=1)** Une fois connecté, vous êtes redirigé vers **mes applications** page :
 
 ![Portail des développeurs Microsoft ouvert dans Microsoft Edge](index/_static/MicrosoftDev.png)
 
@@ -83,6 +83,10 @@ Le modèle de projet utilisé dans ce didacticiel garantit que [Microsoft.AspNet
 Ajoutez le service de Account Microsoft dans le `ConfigureServices` méthode dans *Startup.cs* fichier :
 
 ```csharp
+services.AddIdentity<ApplicationUser, IdentityRole>()
+        .AddEntityFrameworkStores<ApplicationDbContext>()
+        .AddDefaultTokenProviders();
+
 services.AddAuthentication().AddMicrosoftAccount(microsoftOptions =>
 {
     microsoftOptions.ClientId = Configuration["Authentication:Microsoft:ApplicationId"];
@@ -90,7 +94,7 @@ services.AddAuthentication().AddMicrosoftAccount(microsoftOptions =>
 });
 ```
 
-Le `AddAuthentication` méthode doit uniquement être appelée qu’une seule fois lors de l’ajout de plusieurs fournisseurs d’authentification. Les appels suivants à ce dernier ont la possibilité de remplacement de tous configurés précédemment [AuthenticationOptions](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.authenticationoptions) propriétés.
+[!INCLUDE[default settings configuration](includes/default-settings.md)]
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 

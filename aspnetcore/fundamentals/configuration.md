@@ -11,15 +11,15 @@ ms.assetid: b3a5984d-e172-42eb-8a48-547e4acb6806
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/configuration
-ms.openlocfilehash: 7d591259587766a932a14bb030c76274101d16ac
-ms.sourcegitcommit: f8f6b5934bd071a349f5bc1e389365c52b1c00fa
+ms.openlocfilehash: 379030df4ca91a38fce251aeaab9c5dfaf11e915
+ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2017
+ms.lasthandoff: 09/28/2017
 ---
 # <a name="configuration-in-aspnet-core"></a>Configuration dans ASP.NET Core
 
-[Rick Anderson](https://twitter.com/RickAndMSFT), [marque Michaelis](http://intellitect.com/author/mark-michaelis/), [Steve Smith](https://ardalis.com/), et [Michel Roth](https://github.com/danroth27)
+[Rick Anderson](https://twitter.com/RickAndMSFT), [marque Michaelis](http://intellitect.com/author/mark-michaelis/), [Steve Smith](https://ardalis.com/), [Michel Roth](https://github.com/danroth27), et [Luke Latham](https://github.com/guardrex)
 
 L’API de Configuration permet de configurer une application basée sur une liste de paires nom-valeur. Configuration est en lecture lors de l’exécution de plusieurs sources. Les paires nom-valeur peuvent être regroupées en une hiérarchie à plusieurs niveaux. Il existe des fournisseurs de configuration pour :
 
@@ -295,55 +295,187 @@ key3=value_from_json_3
 
 ## <a name="commandline-configuration-provider"></a>Fournisseur de configuration de ligne de commande
 
-L’exemple suivant active le fournisseur de configuration de ligne de commande dernière :
+Le [fournisseur de configuration de ligne de commande](/aspnet/core/api/microsoft.extensions.configuration.commandline.commandlineconfigurationprovider) reçoit des paires clé-valeur d’argument de ligne de commande pour la configuration lors de l’exécution.
 
-[!code-csharp[Main](configuration/sample/CommandLine/Program.cs)]
+[Afficher ou télécharger l’exemple de configuration de ligne de commande](https://github.com/aspnet/docs/tree/master/aspnetcore/fundamentals/configuration/sample/CommandLine)
+
+### <a name="setting-up-the-provider"></a>Installation du fournisseur
+
+# <a name="basic-configurationtabbasicconfiguration"></a>[Configuration de base](#tab/basicconfiguration)
+
+Pour activer la configuration de ligne de commande, appelez le `AddCommandLine` sur une instance de méthode d’extension [ConfigurationBuilder](/api/microsoft.extensions.configuration.configurationbuilder):
+
+[!code-csharp[Main](configuration/sample_snapshot/CommandLine/Program.cs?highlight=18,21)]
+
+Le code en cours d’exécution, la sortie suivante s’affiche :
+
+```console
+MachineName: MairaPC
+Left: 1980
+```
+
+Passage d’argument paires clé-valeur sur la ligne de commande modifie les valeurs de `Profile:MachineName` et `App:MainWindow:Left`:
+
+```console
+dotnet run Profile:MachineName=BartPC App:MainWindow:Left=1979
+```
+
+La fenêtre de console s’affiche :
+
+```console
+MachineName: BartPC
+Left: 1979
+```
+
+Pour substituer la configuration fournie par d’autres fournisseurs de configuration avec la configuration de ligne de commande, appelez `AddCommandLine` dernier sur `ConfigurationBuilder`:
+
+[!code-csharp[Main](configuration/sample_snapshot/CommandLine/Program2.cs?range=11-16&highlight=1,5)]
+
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+
+Les applications de 2.x de ASP.NET Core classiques utilisent la méthode statique pratique `CreateDefaultBuilder` pour générer l’hôte :
+
+[!code-csharp[Main](configuration/sample_snapshot/Program.cs?highlight=12)]
+
+`CreateDefaultBuilder`charge une configuration facultative à partir de *appsettings.json*, *appsettings. {} Environnement} .json*, [secrets utilisateur](xref:security/app-secrets) (dans le `Development` environnement), les variables d’environnement et les arguments de ligne de commande. Le fournisseur de configuration de ligne de commande est appelé en dernier. Appel du fournisseur dernière permet les arguments de ligne de commande passés à l’exécution pour remplacer la configuration définie par les autres fournisseurs de configuration a été appelé précédemment.
+
+Notez que pour *appsettings* fichiers `reloadOnChange` est activé. Arguments de ligne de commande sont remplacées si une valeur de configuration correspondante dans un *appsettings* fichier a été modifié après le démarrage de l’application.
+
+> [!NOTE]
+> En guise d’alternative à l’utilisation de la `CreateDefaultBuilder` méthode, la création d’un hôte à l’aide de [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder) et de la création manuelle de la configuration avec [ConfigurationBuilder](/api/microsoft.extensions.configuration.configurationbuilder) est pris en charge dans ASP.NET Core 2.x. Consultez l’onglet 1.x ASP.NET Core pour plus d’informations.
+
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+
+Créer un [ConfigurationBuilder](/api/microsoft.extensions.configuration.configurationbuilder) et appelez le `AddCommandLine` méthode à utiliser le fournisseur de configuration de ligne de commande. Appel du fournisseur dernière permet les arguments de ligne de commande passés à l’exécution pour remplacer la configuration définie par les autres fournisseurs de configuration a été appelé précédemment. Appliquer la configuration de [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder) avec la `UseConfiguration` méthode :
+
+[!code-csharp[Main](configuration/sample_snapshot/CommandLine/Program2.cs?highlight=11,15,19)]
+
+---
+
+### <a name="arguments"></a>Arguments
+
+Arguments passés sur la ligne de commande doivent être conforme à un des deux formats indiqués dans le tableau suivant.
+
+| Format de l’argument                                                     | Exemple        |
+| ------------------------------------------------------------------- | :------------: |
+| Un seul argument : une paire clé-valeur séparées par un signe égal (`=`) | `key1=value`   |
+| Séquence de deux arguments : une paire clé-valeur séparées par un espace    | `/key1 value1` |
+
+**Argument unique**
+
+La valeur doit suivre un signe égal (`=`). La valeur peut être null (par exemple, `mykey=`).
+
+La clé peut avoir un préfixe.
+
+| Préfixe de la clé               | Exemple         |
+| ------------------------ | :-------------: |
+| Aucun préfixe                | `key1=value1`   |
+| Seul le tiret (`-`) &#8224; | `-key2=value2`  |
+| Deux tirets (`--`)        | `--key3=value3` |
+| Barre oblique (`/`)      | `/key4=value4`  |
+
+&#8224; Une clé avec un préfixe unique dash (`-`) doit être fourni dans [basculer les mappages](#switch-mappings), comme décrit ci-dessous.
+
+Exemple de commande :
+
+```console
+dotnet run key1=value1 -key2=value2 --key3=value3 /key4=value4
+```
+
+Remarque : Si `-key1` n’est pas présent dans le [basculer les mappages](#switch-mappings) donnée au fournisseur de configuration, un `FormatException` est levée.
+
+**Séquence de deux arguments**
+
+La valeur ne peut pas être null et doit respecter la clé séparée par un espace.
+
+La clé doit contenir un préfixe.
+
+| Préfixe de la clé               | Exemple         |
+| ------------------------ | :-------------: |
+| Seul le tiret (`-`) &#8224; | `-key1 value1`  |
+| Deux tirets (`--`)        | `--key2 value2` |
+| Barre oblique (`/`)      | `/key3 value3`  |
+
+&#8224; Une clé avec un préfixe unique dash (`-`) doit être fourni dans [basculer les mappages](#switch-mappings), comme décrit ci-dessous.
+
+Exemple de commande :
+
+```console
+dotnet run -key1 value1 --key2 value2 /key3 value3
+```
+
+Remarque : Si `-key1` n’est pas présent dans le [basculer les mappages](#switch-mappings) donnée au fournisseur de configuration, un `FormatException` est levée.
+
+### <a name="duplicate-keys"></a>Clés en double
+
+Si des clés en double sont fournis, la dernière paire clé-valeur est utilisée.
+
+### <a name="switch-mappings"></a>Mappages de commutateur
+
+Lors de la création manuelle de la configuration avec `ConfigurationBuilder`, vous pouvez éventuellement fournir un dictionnaire de mappages de commutateur pour les `AddCommandLine` (méthode). Mappages de commutateur permettent de fournir la logique de remplacement de nom de la clé.
+
+Lorsque le dictionnaire de mappages de commutateur est utilisé, le dictionnaire est activé pour une clé qui correspond à la clé fournie par un argument de ligne de commande. Si la clé de ligne de commande est trouvée dans le dictionnaire, la valeur de dictionnaire (le remplacement de la clé) est passée précédent pour définir la configuration. Un mappage de commutateur est nécessaire pour n’importe quelle touche de ligne de commande préfixée avec un tiret unique (`-`).
+
+Commutateur règles clés du dictionnaire de mappages :
+
+* Les commutateurs doivent commencer par un tiret (`-`) ou double-tiret (`--`).
+* Le dictionnaire de mappages de commutateur ne doit pas contenir de clés en double.
+
+Dans l’exemple suivant, la `GetSwitchMappings` méthode permet de vos arguments de ligne de commande à utiliser un tiret unique (`-`) clé préfixe et éviter les préfixes d’espaces de début sous-clés.
+
+[!code-csharp[Main](configuration/sample/CommandLine/Program.cs?highlight=10-19,32)]
+
+Sans fournir d’arguments de ligne de commande, le dictionnaire fourni à `AddInMemoryCollection` définit les valeurs de configuration. Exécutez l’application avec la commande suivante :
+
+```console
+dotnet run
+```
+
+La fenêtre de console s’affiche :
+
+```console
+MachineName: RickPC
+Left: 1980
+```
 
 Passer des paramètres de configuration, utilisez les éléments suivants :
 
 ```console
-dotnet run /Profile:MachineName=Bob /App:MainWindow:Left=1234
+dotnet run /Profile:MachineName=DahliaPC /App:MainWindow:Left=1984
 ```
 
-Qui s’affiche :
+La fenêtre de console s’affiche :
 
 ```console
-Hello Bob
-Left 1234
+MachineName: DahliaPC
+Left: 1984
 ```
 
-Le `GetSwitchMappings` méthode vous permet d’utiliser `-` plutôt que `/` et il supprime les préfixes de sous-clés au début. Exemple :
+Une fois le dictionnaire de mappages de commutateur est créé, il contient les données affichées dans le tableau suivant.
+
+| Touche            | Valeur                 |
+| -------------- | --------------------- |
+| `-MachineName` | `Profile:MachineName` |
+| `-Left`        | `App:MainWindow:Left` |
+
+Pour illustrer le basculement de clé à l’aide du dictionnaire, exécutez la commande suivante :
 
 ```console
-dotnet run -MachineName=Bob -Left=7734
+dotnet run -MachineName=ChadPC -Left=1988
 ```
 
-Affiche :
+Les clés de ligne de commande sont inversées. La fenêtre de console affiche les valeurs de configuration pour `Profile:MachineName` et `App:MainWindow:Left`:
 
 ```console
-Hello Bob
-Left 7734
+MachineName: ChadPC
+Left: 1988
 ```
-
-Arguments de ligne de commande doivent inclure une valeur (il peut être null). Exemple :
-
-```console
-dotnet run /Profile:MachineName=
-```
-
-Est OK, mais
-
-```console
-dotnet run /Profile:MachineName
-```
-
-génère une exception. Une exception est levée si vous spécifiez un préfixe de commutateur de ligne de commande - ou--pour lequel il n’existe aucun mappage de commutateur correspondant.
 
 ## <a name="the-webconfig-file"></a>Le fichier web.config
 
 A *web.config* fichier est requis lorsque vous hébergez l’application dans IIS ou IIS Express. *Web.config* Active le AspNetCoreModule dans IIS pour lancer votre application. Paramètres de *web.config* activer le AspNetCoreModule dans IIS pour lancer votre application et de configurer d’autres modules et les paramètres IIS. Si vous utilisez Visual Studio, supprimez *web.config*, Visual Studio crée un nouveau.
 
-### <a name="additional-notes"></a>Remarques supplémentaires
+## <a name="additional-notes"></a>Remarques supplémentaires
 
 * Injection de dépendance (DI) n’est pas définie jusqu'à après `ConfigureServices` est appelé.
 * Le système de configuration n’est pas DI prenant en charge.
@@ -351,9 +483,10 @@ A *web.config* fichier est requis lorsque vous hébergez l’application dans II
   * `IConfigurationRoot`Utilisé pour le nœud racine. Peut déclencher un rechargement.
   * `IConfigurationSection`Représente une section de valeurs de configuration. Le `GetSection` et `GetChildren` méthodes retournent un `IConfigurationSection`.
 
-### <a name="additional-resources"></a>Ressources supplémentaires
+## <a name="additional-resources"></a>Ressources supplémentaires
 
 * [Utilisation de plusieurs environnements](environments.md)
 * [Stockage sécurisé des secrets de l’application durant le développement](../security/app-secrets.md)
+* [Hébergement dans ASP.NET Core](xref:fundamentals/hosting)
 * [Injection de dépendances](dependency-injection.md)
 * [Fournisseur de configuration Azure Key Vault](xref:security/key-vault-configuration)

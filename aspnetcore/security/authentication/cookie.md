@@ -11,11 +11,11 @@ ms.assetid: 2bdcbf95-8d9d-4537-a4a0-a5ee439dcb62
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/cookie
-ms.openlocfilehash: b728c3d62b59f28f1d020b6f3732918a1fcdf4eb
-ms.sourcegitcommit: 74a8ad9c1ba5c155d7c4303e67632a0922c38e86
+ms.openlocfilehash: af3ffe418521d5d97f5d14ca9c904c21b4d4ff89
+ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/20/2017
+ms.lasthandoff: 09/28/2017
 ---
 # <a name="using-cookie-authentication-without-aspnet-core-identity"></a>À l’aide de l’authentification de Cookie sans ASP.NET Core identité
 
@@ -45,7 +45,7 @@ Procédez comme suit :
 
     ```csharp
     services.AddAuthentication("MyCookieAuthenticationScheme")
-            .AddCookie(options => {
+            .AddCookie("MyCookieAuthenticationScheme", options => {
                 options.AccessDeniedPath = "/Account/Forbidden/";
                 options.LoginPath = "/Account/Unauthorized/";
             });
@@ -178,7 +178,7 @@ Cela serait puis être rattaché au cours de l’inscription du service de cooki
 
 ```csharp
 services.AddAuthentication("MyCookieAuthenticationScheme")
-        .AddCookie(options =>
+        .AddCookie("MyCookieAuthenticationScheme", options =>
         {
             options.Events = new CookieAuthenticationEvents
             {

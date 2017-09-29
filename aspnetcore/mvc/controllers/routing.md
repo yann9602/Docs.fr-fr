@@ -11,11 +11,11 @@ ms.assetid: 26250a4d-bf62-4d45-8549-26801cf956e9
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/routing
-ms.openlocfilehash: da67124ffc874c4f83fff077c6429e9f3e571587
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 5a0b5399f7441035cb1231a009681ca22b07ab4e
+ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 09/28/2017
 ---
 # <a name="routing-to-controller-actions"></a>Routage vers les Actions de contrôleur
 
@@ -103,8 +103,6 @@ app.UseMvc(routes =>
 
 `UseMvc`et `UseMvcWithDefaultRoute` ajouter une instance de `RouterMiddleware` au pipeline intergiciel (middleware). MVC n’interagit pas directement avec un intergiciel (middleware) et utilise le routage pour gérer les demandes. MVC est connecté aux itinéraires via une instance de `MvcRouteHandler`. Le code à l’intérieur de `UseMvc` est semblable au suivant :
 
-<!-- literal_block {"ids": [], "names": [], "backrefs": [], "dupnames": [], "xml:space": "preserve", "classes": []} -->
-
 ```csharp
 var routes = new RouteBuilder(app);
 
@@ -125,8 +123,6 @@ app.UseRouter(routes.Build());
 ## <a name="conventional-routing"></a>Le routage classique
 
 Le `default` itinéraire :
-
-<!-- literal_block {"ids": [], "names": [], "backrefs": [], "dupnames": [], "xml:space": "preserve", "classes": []} -->
 
 ```csharp
 routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
@@ -152,15 +148,13 @@ L’utilisation de cette `default` itinéraire, le chemin d’accès URL `/Produ
 
 Vous pouvez ajouter plusieurs itinéraires à l’intérieur de `UseMvc` en ajoutant plusieurs appels de `MapRoute`. Cela vous permet de définir plusieurs conventions ou ajouter des itinéraires classiques qui sont dédiés à une action spécifique, tel que :
 
-<!-- literal_block {"ids": [], "names": [], "backrefs": [], "dupnames": [], "xml:space": "preserve", "classes": []} -->
-
 ```csharp
 app.UseMvc(routes =>
 {
    routes.MapRoute("blog", "blog/{*article}",
             defaults: new { controller = "Blog", action = "Article" });
    routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
-}
+});
 ```
 
 Le `blog` itinéraire ici est un *dédié itinéraire conventionnelle*, ce qui signifie qu’il utilise le système de routage classique, mais est dédié à une action spécifique. Étant donné que `controller` et `action` n’apparaissent pas dans le modèle d’itinéraire en tant que paramètres, ils peuvent avoir uniquement les valeurs par défaut et par conséquent, cet itinéraire correspondra toujours à l’action `BlogController.Article`.
@@ -177,8 +171,6 @@ Dans le cadre du traitement de requête, MVC vérifie que les valeurs d’itiné
 ### <a name="disambiguating-actions"></a>Actions désambiguïser
 
 Lorsque deux actions correspondent par routage, MVC doit lever l’ambiguïté pour choisir le candidat « meilleur », sans quoi une exception. Exemple :
-
-<!-- literal_block {"ids": [], "names": [], "backrefs": [], "dupnames": [], "xml:space": "preserve", "classes": []} -->
 
 ```csharp
 public class ProductsController : Controller
@@ -284,8 +276,6 @@ public class MyDemoController : Controller
 
 Routage d’attributs peut s’utiliser de la `Http[Verb]` des attributs tels que `HttpPostAttribute`. Tous ces attributs peuvent accepter un modèle d’itinéraire. Cet exemple montre deux actions qui correspondent au modèle d’itinéraire même :
 
-<!-- literal_block {"ids": [], "names": [], "highlight_args": {}, "backrefs": [], "dupnames": [], "linenos": false, "classes": [], "xml:space": "preserve", "language": "c#"} -->
-
 ```csharp
 [HttpGet("/products")]
 public IActionResult ListProducts()
@@ -339,8 +329,6 @@ Les noms d’itinéraires peuvent être utilisés pour générer une URL basée 
 ### <a name="combining-routes"></a>Itinéraires de combinaison
 
 Pour rendre attribut routage moins répétitives, attributs d’itinéraire sur le contrôleur sont combinées avec des attributs d’itinéraire sur les actions individuelles. Les modèles d’itinéraire définis sur le contrôleur sont ajoutés à des modèles d’itinéraire sur les actions. En plaçant un attribut d’itinéraire sur le contrôleur, **tous les** actions dans le contrôleur utilisent le routage d’attributs.
-
-<!-- literal_block {"ids": [], "names": [], "highlight_args": {}, "backrefs": [], "dupnames": [], "linenos": false, "classes": [], "xml:space": "preserve", "language": "c#"} -->
 
 ```csharp
 [Route("products")]
@@ -432,8 +420,6 @@ Pour faire correspondre le délimiteur de littéral remplacement des jetons `[` 
 
 Attribut de routage prend en charge la définition de plusieurs itinéraires pour atteindre la même action. L’utilisation la plus courante de ce consiste à reproduire le comportement de la *l’itinéraire par défaut classiques* comme indiqué dans l’exemple suivant :
 
-<!-- literal_block {"ids": [], "names": [], "highlight_args": {}, "backrefs": [], "dupnames": [], "linenos": false, "classes": [], "xml:space": "preserve", "language": "c#"} -->
-
 ```csharp
 [Route("[controller]")]
 public class ProductsController : Controller
@@ -445,8 +431,6 @@ public class ProductsController : Controller
 ```
 
 Placement de plusieurs attributs d’itinéraire sur le contrôleur signifie que chacun d’eux permet de combiner avec chacun des attributs d’itinéraire sur les méthodes d’action.
-
-<!-- literal_block {"ids": [], "names": [], "highlight_args": {}, "backrefs": [], "dupnames": [], "linenos": false, "classes": [], "xml:space": "preserve", "language": "c#"} -->
 
 ```csharp
 [Route("Store")]
@@ -460,8 +444,6 @@ public class ProductsController : Controller
 ```
 
 Lorsque plusieurs attributs d’itinéraire (qui implémentent `IActionConstraint`) sont placés sur une action, puis chaque contrainte action associe le modèle d’itinéraire à partir de l’attribut qui l’a défini.
-
-<!-- literal_block {"ids": [], "names": [], "highlight_args": {}, "backrefs": [], "dupnames": [], "linenos": false, "classes": [], "xml:space": "preserve", "language": "c#"} -->
 
 ```csharp
 [Route("api/[controller]")]
@@ -630,8 +612,6 @@ Les méthodes de fabrique de résultats action suivent un modèle similaire aux 
 
 Le routage classique peut utiliser un type spécial de définition d’itinéraire appelée un *dédié itinéraire conventionnelle*. Dans l’exemple ci-dessous, l’itinéraire nommé `blog` est un itinéraire conventionnel dédié.
 
-<!-- literal_block {"ids": [], "names": [], "highlight_args": {}, "backrefs": [], "dupnames": [], "linenos": false, "classes": [], "xml:space": "preserve", "language": "c#"} -->
-
 ```csharp
 app.UseMvc(routes =>
 {
@@ -687,8 +667,6 @@ Tout d’abord deux contrôleurs sont membres de domaines et uniquement en corre
 Lors de l’exécution d’une action à l’intérieur d’une zone, valeur de l’itinéraire pour `area` peuvent être utilisés comme un *valeur ambiante* pour le routage à utiliser pour la génération d’URL. Cela signifie que par défaut zones agissent *rémanentes* pour la génération d’URL comme illustré dans l’exemple suivant.
 
 [!code-csharp[Main](routing/sample/AreasRouting/Startup.cs?name=snippet3)]
-
-<!-- literal_block {"ids": [], "names": [], "highlight_args": {"linenostart": 1}, "backrefs": [], "dupnames": [], "linenos": false, "classes": [], "xml:space": "preserve", "language": "c#", "source": "/Users/shirhatti/src/Docs/aspnet/mvc/controllers/routing/sample/AreasRouting/Areas/Duck/Controllers/UsersController.cs"} -->
 
 [!code-csharp[Main](routing/sample/AreasRouting/Areas/Duck/Controllers/UsersController.cs)]
 

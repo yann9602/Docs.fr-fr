@@ -11,11 +11,11 @@ ms.assetid: bc8b4ba3-e9ba-48fd-b1eb-cd48ff6bc7a1
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/dependency-injection
-ms.openlocfilehash: b83bd4a24ccf7e90e9df06d6a8e229a2d5c6699a
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: f6b454da838308adddaaddb84073722f647af379
+ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 09/28/2017
 ---
 # <a name="dependency-injection-into-controllers"></a>Injection de dépendance dans les contrôleurs
 
@@ -49,8 +49,6 @@ Tout cela en place, nous pouvons utiliser le service dans notre contrôleur. Dan
 
 Si nous exécutons l’application maintenant, nous êtes plus susceptible de rencontrer une erreur :
 
-<!-- literal_block {"ids": [], "xml:space": "preserve"} -->
-
 ```
 An unhandled exception occurred while processing the request.
 
@@ -73,8 +71,6 @@ Une fois que le service a été configuré, l’application en cours d’exécut
 > Consultez [logique du contrôleur de test](testing.md) pour savoir comment demander explicitement les dépendances [http://deviq.com/explicit-dependencies-principle/](http://deviq.com/explicit-dependencies-principle/) dans les contrôleurs rend le code plus facile à tester.
 
 Injection de dépendance intégrée d’ASP.NET Core qu’un seul constructeur pour les classes de demande de services prend en charge. Si vous avez plus d’un constructeur, vous pouvez recevoir une exception indiquant :
-
-<!-- literal_block {"ids": [], "xml:space": "preserve"} -->
 
 ```
 An unhandled exception occurred while processing the request.

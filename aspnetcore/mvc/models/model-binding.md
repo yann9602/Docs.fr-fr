@@ -11,11 +11,11 @@ ms.assetid: b355a48e-a15c-4d58-b69c-899763613a97
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/models/model-binding
-ms.openlocfilehash: 597d4058a410e0b5991b1d5a74c9fc7bfe8171b8
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: 92085829d2a37a2aa6080aeb34a5e14be95e02d8
+ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 09/28/2017
 ---
 # <a name="model-binding"></a>Liaison de modèle
 
@@ -32,8 +32,6 @@ Lorsque MVC reçoit une requête HTTP, il achemine vers une méthode d’action 
 `http://contoso.com/movies/edit/2`
 
 Étant donné que le modèle d’itinéraire ressemble à ceci, `{controller=Home}/{action=Index}/{id?}`, `movies/edit/2` achemine vers le `Movies` contrôleur et son `Edit` méthode d’action. Elle accepte également un paramètre facultatif, appelé `id`. Le code de la méthode d’action doit ressembler à ceci :
-
-<!-- literal_block {"ids": [], "linenos": true, "xml:space": "preserve", "language": "csharp"} -->
 
 ```csharp
 public IActionResult Edit(int? id)
@@ -71,7 +69,7 @@ En outre, il existe de certains types de données spéciaux que MVC doit prendre
 
 * `IFormFile`, `IEnumerable<IFormFile>`: Un ou plusieurs fichiers téléchargés qui font partie de la requête HTTP.
 
-* `CancelationToken`: Utilisé pour annuler l’activité dans les contrôleurs asynchrones.
+* `CancellationToken`: Utilisé pour annuler l’activité dans les contrôleurs asynchrones.
 
 Ces types peuvent être liés aux paramètres d’action ou à des propriétés sur un type de classe.
 
@@ -107,15 +105,13 @@ Dans divers formats, notamment JSON, XML et bien d’autres peuvent provenir de 
 
 ASP.NET sélectionne les formateurs d’entrée selon la [Content-Type](https://www.w3.org/Protocols/rfc1341/4_Content-Type.html) en-tête et le type du paramètre, sauf s’il existe un attribut appliqué en spécifiant dans le cas contraire. Si vous souhaitez utiliser des données XML ou un autre format vous devez le configurer dans le *Startup.cs* fichier, mais vous devrez peut-être d’abord avez obtenir une référence à `Microsoft.AspNetCore.Mvc.Formatters.Xml` à l’aide de NuGet. Votre code de démarrage doit ressembler à ceci :
 
-<!-- literal_block {"ids": [], "linenos": true, "xml:space": "preserve", "language": "csharp"} -->
-
 ```csharp
 public void ConfigureServices(IServiceCollection services)
-   {
-       services.AddMvc()
-          .AddXmlSerializerFormatters();
+{
+    services.AddMvc()
+        .AddXmlSerializerFormatters();
    }
-   ```
+```
 
 Le code dans le *Startup.cs* fichier contient un `ConfigureServices` méthode avec un `services` argument, vous pouvez utiliser pour générer des services pour votre application ASP.NET. Dans l’exemple, nous ajoutons un formateur XML en tant que service MVC fournit pour cette application. Le `options` argument passé dans le `AddMvc` méthode permet d’ajouter et gérer des filtres, les formateurs et les autres options de système de MVC lors du démarrage de l’application. Puis appliquez le `Consumes` d’attributs pour les classes de contrôleur ou de méthodes d’action pour travailler avec le format souhaité.
 

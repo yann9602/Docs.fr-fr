@@ -11,11 +11,11 @@ ms.assetid: 0db145cb-41a5-448a-b889-72e2d789ad7f
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: migration/identity
-ms.openlocfilehash: b5a9bab4399714c481d4f38eeeaeba19d8bdd5b2
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: ed96266f06eb473fa3c3e1cc81b2b58fcd89f29e
+ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 09/28/2017
 ---
 # <a name="migrating-authentication-and-identity"></a>Identité et authentification de migration
 
@@ -52,8 +52,6 @@ public void ConfigureServices(IServiceCollection services)
 À ce stade, il existe des deux types référencés dans le code ci-dessus, nous n’avons pas encore été migrés à partir du projet ASP.NET MVC : `ApplicationDbContext` et `ApplicationUser`. Créer un nouveau *modèles* dossier dans le noyau ASP.NET le projet, puis ajoutez les deux classes lui correspondant à ces types. Vous trouverez le ASP.NET MVC versions de ces classes dans `/Models/IdentityModels.cs`, mais nous allons utiliser un fichier par la classe dans le projet migré car il s’agit plus claire.
 
 ApplicationUser.cs :
-
-<!-- literal_block {"ids": [], "names": [], "highlight_args": {}, "backrefs": [], "dupnames": [], "linenos": false, "classes": [], "xml:space": "preserve", "language": "c#"} -->
 
 ```csharp
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -93,8 +91,6 @@ Personnalisation des utilisateurs ou le ApplicationDbContext n’inclut pas le p
 
 Ces fichiers en place, le fichier Startup.cs est possible pour compiler à la mise à jour à l’aide de ses instructions :
 
-<!-- literal_block {"ids": [], "names": [], "highlight_args": {}, "backrefs": [], "dupnames": [], "linenos": false, "classes": [], "xml:space": "preserve", "language": "c#"} -->
-
 ```csharp
 using Microsoft.Framework.ConfigurationModel;
 using Microsoft.AspNetCore.Hosting;
@@ -110,9 +106,7 @@ Avec les services d’identité configurés pour l’accès aux applications et 
 
 Mise à jour _Layout.cshtml ; ne pas commenter la @Html.Partial ligne :
 
-<!-- literal_block {"ids": [], "names": [], "highlight_args": {}, "backrefs": [], "dupnames": [], "linenos": false, "classes": [], "xml:space": "preserve", "language": "none"} -->
-
-```none
+```cshtml
       <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
     </ul>
     @*@Html.Partial("_LoginPartial")*@
@@ -124,9 +118,7 @@ Maintenant, ajoutez une nouvelle Page de vue MVC appelé _LoginPartial dans le d
 
 Mettre à jour de _LoginPartial.cshtml avec le code suivant (Remplacez tout son contenu) :
 
-<!-- literal_block {"ids": [], "names": [], "highlight_args": {}, "backrefs": [], "dupnames": [], "linenos": false, "classes": [], "xml:space": "preserve", "language": "c#"} -->
-
-```csharp
+```cshtml
 @inject SignInManager<User> SignInManager
 @inject UserManager<User> UserManager
 

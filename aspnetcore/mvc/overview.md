@@ -1,7 +1,7 @@
 ---
 title: "Vue d’ensemble des principaux d’ASP.NET MVC"
 author: ardalis
-description: 
+description: "Découvrez comment ASP.NET Core MVC est une infrastructure riche pour la création d’applications web et les API à l’aide du modèle-Vue-contrôleur concevoir le modèle."
 keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
@@ -11,11 +11,11 @@ ms.assetid: 89af38d1-52e0-4db7-b791-dbce909b0714
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/overview
-ms.openlocfilehash: 67394b066c18a149a97b957d6478ba8301ea8147
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: 2492b6aa4602dbbf3b9cd3dca00d40690c640cab
+ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 09/28/2017
 ---
 # <a name="overview-of-aspnet-core-mvc"></a>Vue d’ensemble des principaux d’ASP.NET MVC
 
@@ -92,8 +92,6 @@ routes.MapRoute(name: "Default", template: "{controller=Home}/{action=Index}/{id
 
 *Attribut de routage* vous permet de spécifier des informations de routage en décorant vos contrôleurs et vos actions avec les attributs qui définissent des itinéraires de votre application. Cela signifie que vos définitions de route sont placées en regard de l’action avec lequel ils sont associés et le contrôleur.
 
-<!-- literal_block {"ids": [], "linenos": false, "xml:space": "preserve", "language": "csharp", "highlight_args": {"hl_lines": [1, 4]}} -->
-
 ```csharp
 [Route("api/[controller]")]
 public class ProductsController : Controller
@@ -118,8 +116,6 @@ public async Task<IActionResult> Login(LoginViewModel model, string returnUrl = 
 
 ASP.NET MVC de base prend en charge [validation](models/validation.md) en décorant votre objet de modèle avec les attributs de validation de données d’annotation. Les attributs de validation sont vérifiées sur le côté client avant que les valeurs sont publiées sur le serveur, ainsi que sur le serveur avant l’action du contrôleur est appelée.
 
-<!-- literal_block {"ids": [], "linenos": false, "xml:space": "preserve", "language": "csharp", "highlight_args": {"hl_lines": [4, 5, 8, 9]}} -->
-
 ```csharp
 using System.ComponentModel.DataAnnotations;
 public class LoginViewModel
@@ -138,8 +134,6 @@ public class LoginViewModel
 ```
 
 Une action de contrôleur :
-
-<!-- literal_block {"ids": [], "linenos": false, "xml:space": "preserve", "language": "csharp", "highlight_args": {"hl_lines": [3]}} -->
 
 ```csharp
 public async Task<IActionResult> Login(LoginViewModel model, string returnUrl = null)
@@ -161,17 +155,15 @@ ASP.NET Core a une prise en charge intégrée pour [injection de dépendance (DI
 
 Votre application peut également utiliser [injection de dépendances des fichiers dans la vue](views/dependency-injection.md), à l’aide du `@inject` la directive :
 
-<!-- literal_block {"ids": [], "linenos": false, "xml:space": "preserve", "language": "html", "highlight_args": {"hl_lines": [1]}} -->
-
-```html
+```cshtml
 @inject SomeService ServiceName
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>@ServiceName.GetTitle</title>
+    <title>@ServiceName.GetTitle</title>
 </head>
 <body>
-  <h1>@ServiceName.GetTitle</h1>
+    <h1>@ServiceName.GetTitle</h1>
 </body>
 </html>
 ```
@@ -185,7 +177,6 @@ Votre application peut également utiliser [injection de dépendances des fichie
 [Authorize]
    public class AccountController : Controller
    {
-
 ```
 
 ### <a name="areas"></a>Zones
@@ -224,7 +215,7 @@ Vues Razor dans MVC peuvent être fortement typées en fonction de votre modèle
 
 Par exemple, la vue suivante définit un modèle de type `IEnumerable<Product>`:
 
-```html
+```cshtml
 @model IEnumerable<Product>
 <ul>
     @foreach (Product p in Model)
@@ -240,9 +231,7 @@ Par exemple, la vue suivante définit un modèle de type `IEnumerable<Product>`:
 
 Il existe de nombreuses applications auxiliaires balise intégrés pour les tâches courantes - telles que la création de formulaires, des liens, des ressources de chargement et plus - et encore plus disponibles dans les référentiels GitHub publics et comme NuGet packages. Programmes d’assistance de balise sont créés en c#, et ils conviennent à des éléments HTML en fonction de la balise parente, nom d’attribut ou nom de l’élément. Par exemple, la fonction intégrée LinkTagHelper peut être utilisé pour créer un lien vers le `Login` action de la `AccountsController`:
 
-<!-- literal_block {"ids": [], "linenos": false, "xml:space": "preserve", "language": "html", "highlight_args": {"hl_lines": [3]}} -->
-
-```html
+```cshtml
 <p>
     Thank you for confirming your email.
     Please <a asp-controller="Account" asp-action="Login">Click here to Log in</a>.
@@ -251,9 +240,7 @@ Il existe de nombreuses applications auxiliaires balise intégrés pour les tâc
 
 Le `EnvironmentTagHelper` peut être utilisé pour inclure des scripts différents dans vos affichages (par exemple, raw ou réduite) en fonction de l’environnement d’exécution, telles que le développement, intermédiaire ou de Production :
 
-<!-- literal_block {"ids": [], "linenos": false, "xml:space": "preserve", "language": "html", "highlight_args": {"hl_lines": [1, 3, 4, 9]}} -->
-
-```html
+```cshtml
 <environment names="Development">
     <script src="~/lib/jquery/dist/jquery.js"></script>
 </environment>

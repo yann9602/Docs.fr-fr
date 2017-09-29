@@ -10,11 +10,11 @@ ms.topic: article
 ms.assetid: f9267eab-2762-42ac-1638-4a25d2c9d67c
 ms.prod: asp.net-core
 uid: performance/caching/middleware
-ms.openlocfilehash: 07626ae7f40dc6f704d69d71cb7f95d318e6f503
-ms.sourcegitcommit: 8005eb4051e568d88ee58d48424f39916052e6e2
+ms.openlocfilehash: f07b0cb44542b7da140d519e883c67901d6327e2
+ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2017
+ms.lasthandoff: 09/28/2017
 ---
 # <a name="response-caching-middleware-in-aspnet-core"></a>Réponse mise en cache d’intergiciel (middleware) dans ASP.NET Core
 
@@ -105,6 +105,17 @@ Réponse mise en cache à l’intergiciel (middleware) est configuré via les en
 | Date | Lorsque le traitement à partir du cache, le `Date` en-tête est défini par l’intergiciel (middleware) s’il n’a pas été fourni sur la réponse d’origine. |
 | Content-Length | Lorsque le traitement à partir du cache, le `Content-Length` en-tête est défini par l’intergiciel (middleware) s’il n’a pas été fourni sur la réponse d’origine. |
 | Durée de vie | Le `Age` en-tête envoyé dans la réponse d’origine est ignoré. L’intergiciel (middleware) calcule une nouvelle valeur avec une réponse mise en cache. |
+
+## <a name="caching-respects-request-cache-control-directives"></a>La mise en cache respecte les directives de contrôle du Cache de demande
+
+L’intergiciel (middleware) respecte les règles de la [spécification de la mise en cache à HTTP 1.1](https://tools.ietf.org/html/rfc7234#section-5.2). Les règles nécessitent un cache d’honorer valide `Cache-Control` en-tête envoyé par le client. Dans la spécification d’un client peut envoyer des demandes avec un `no-cache` valeur d’en-tête et de forcer un serveur pour générer une nouvelle réponse pour chaque demande. Actuellement, il n’existe aucun contrôle du développeur sur ce comportement de mise en cache lors de l’utilisation de l’intergiciel (middleware), car l’intergiciel (middleware) est conforme à la spécification officielle de mise en cache.
+
+[Améliorations futures de l’intergiciel (middleware)](https://github.com/aspnet/ResponseCaching/issues/96) autorise la configuration de l’intergiciel (middleware) pour mettre en cache des scénarios où la demande `Cache-Control` en-tête doit être ignoré lorsque vous décidez de traiter une réponse mise en cache. Si vous recherchez davantage de contrôle sur le comportement de mise en cache, Explorer d’autres fonctionnalités de mise en cache de ASP.NET Core. Consultez les rubriques suivantes :
+
+* [Introduction à la mise en cache dans ASP.NET Core](xref:performance/caching/memory)
+* [Utilisation avec un cache distribué](xref:performance/caching/distributed)
+* [Mettre en cache d’assistance de balise dans le cœur d’ASP.NET MVC](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
+* [Application d’assistance de balise de Cache distribué](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)
 
 ## <a name="troubleshooting"></a>Résolution des problèmes
 Si le comportement de mise en cache n’est pas comme prévu, vérifiez que les réponses sont mis en cache et capable de servies à partir du cache en examinant les en-têtes entrants de la demande et la réponse sortante. L’activation de [journalisation](xref:fundamentals/logging) peut aider lors du débogage. Les journaux d’intergiciel (middleware) quand une réponse est récupérée à partir du cache et comportement de mise en cache.

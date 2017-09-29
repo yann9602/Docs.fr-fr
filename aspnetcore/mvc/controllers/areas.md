@@ -11,11 +11,11 @@ ms.assetid: 5e16d5e8-5696-4cb2-8ec7-d36be305c922
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/areas
-ms.openlocfilehash: 0f388ba090ada11a0ac7937606cbcd5a89d6263e
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: 3096d6404ff9c7e34eefcfb1990e7bf1ccab27ba
+ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 09/28/2017
 ---
 # <a name="areas"></a>Zones
 
@@ -105,8 +105,6 @@ Une chose à noter est que la structure de la *vues* dossier est le seul qui est
 
 Une fois que vous avez défini l’arborescence des dossiers, vous devez indiquer MVC que chaque contrôleur est associé à une zone. Pour ce faire, la décoration de nom du contrôleur avec le `[Area]` attribut.
 
-<!-- literal_block {"ids": [], "linenos": false, "xml:space": "preserve", "language": "csharp", "highlight_args": {"hl_lines": [4]}} -->
-
 ```csharp
 ...
    namespace MyStore.Areas.Products.Controllers
@@ -130,8 +128,6 @@ Une fois que vous avez défini l’arborescence des dossiers, vous devez indique
    ```
 
 Définir une définition d’itinéraire qui fonctionne avec vos zones nouvellement créés. Le [le routage pour les Actions de contrôleur](routing.md) article détaille comment créer des définitions de route, y compris à l’aide d’itinéraires classiques et les itinéraires d’attribut. Dans cet exemple, nous allons utiliser un itinéraire classique. Pour ce faire, ouvrez le *Startup.cs* de fichier et le modifier en ajoutant la `areaRoute` nommé définition d’itinéraire ci-dessous.
-
-<!-- literal_block {"ids": [], "linenos": false, "xml:space": "preserve", "language": "csharp", "highlight_args": {"hl_lines": [4, 5, 6]}} -->
 
 ```csharp
 ...

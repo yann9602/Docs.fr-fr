@@ -11,11 +11,11 @@ ms.assetid: db9a86ab-46c2-40e0-baed-86e38c16af1f
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/middleware
-ms.openlocfilehash: cb39d74b9293b3ab341beba08d2f0af90261ca5f
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: 881cabdbb7814b36d97a977b30389506b99d16b9
+ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 09/28/2017
 ---
 # <a name="aspnet-core-middleware-fundamentals"></a>Notions de base ASP.NET Core intergiciel (middleware)
 
@@ -44,7 +44,7 @@ Le pipeline de demande ASP.NET Core se compose d’une séquence de délégués 
 
 ![Modèle de traitement de requête montrant une demande qui arrivent, via trois middlewares et la réponse en laissant l’application de traitement. Chaque intergiciel (middleware) s’exécute sa logique et transmet la demande de l’intergiciel (middleware) suivant à l’instruction next(). Une fois que l’intergiciel (middleware) tiers traite la demande, il est main par le biais des précédentes deux middlewares pour le traitement supplémentaire après les instructions de next() à son tour, avant de quitter l’application en réponse au client.](middleware/_static/request-delegate-pipeline.png)
 
-Chaque délégué peut effectuer des opérations avant et après le délégué suivant. Un délégué peut également décider de ne pas transmettre une demande pour le délégué suivant, qui est appelé le pipeline de demande de court-circuit. Court-circuit est souvent souhaitable car elle permet de travail inutile être évitée. Par exemple, l’intergiciel (middleware) de fichiers statiques peut retourner une demande pour un fichier statique et le reste du pipeline de court-circuit. Gestion des exceptions délégués doivent être appelés tôt dans le pipeline, afin qu’ils peuvent intercepter les exceptions qui se produisent dans les phases ultérieures du pipeline.
+Chaque délégué peut effectuer des opérations avant et après le délégué suivant. Un délégué peut également décider de ne pas transmettre une demande pour le délégué suivant, qui est appelé le pipeline de demande de court-circuit. Court-circuit est souvent souhaitable car elle évite le travail inutile. Par exemple, l’intergiciel (middleware) de fichiers statiques peut retourner une demande pour un fichier statique et le reste du pipeline de court-circuit. Gestion des exceptions délégués doivent être appelés tôt dans le pipeline, afin qu’ils peuvent intercepter les exceptions qui se produisent dans les phases ultérieures du pipeline.
 
 L’application de ASP.NET Core la plus simple possible définit un délégué de requête unique qui gère toutes les demandes. Ce cas n’inclut pas un pipeline de demande réelle. Au lieu de cela, une fonction anonyme unique est appelée en réponse à chaque requête HTTP.
 

@@ -2,20 +2,20 @@
 title: "Tests d’intégration dans ASP.NET Core"
 author: ardalis
 description: "Comment utiliser ASP.NET Core tests d’intégration pour vous assurer que les composants d’une application fonctionnent correctement."
-keywords: "ASP.NET Core, tests d’intégration"
+keywords: "ASP.NET Core, Razor, tests d’intégration"
 ms.author: riande
 manager: wpickett
-ms.date: 02/14/2017
+ms.date: 09/25/2017
 ms.topic: article
 ms.assetid: 40d534f2-89b3-4b09-9c2c-3494bf9991c9
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: testing/integration-testing
-ms.openlocfilehash: 02018299c9bd1d194c2c70c14f518786e803d572
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: fab1fb0e64debd8488713b3518cb3bc90182616b
+ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 09/28/2017
 ---
 # <a name="integration-testing-in-aspnet-core"></a>Tests d’intégration dans ASP.NET Core
 
@@ -64,6 +64,23 @@ Notez que vous n’essayez pas réellement tester l’exactitude de l’outil d�
 ![Explorateur de tests](integration-testing/_static/test-explorer.png)
 
 Plus d’informations sur les tests unitaires dans le [test unitaire](https://docs.microsoft.com/dotnet/articles/core/testing/unit-testing-with-dotnet-test) l’article.
+
+
+### <a name="integration-testing-mvcrazor"></a>Intégration de test Mvc/Razor
+
+Les projets de test qui contiennent des vues Razor requièrent `<PreserveCompilationContext>` être définie sur true dans le *.csproj* fichier :
+
+
+```xml
+    <PreserveCompilationContext>true</PreserveCompilationContext>
+```
+
+Projets de cet élément génère une erreur semblable au suivant :
+```
+Microsoft.AspNetCore.Mvc.Razor.Compilation.CompilationFailedException: 'One or more compilation failures occurred:
+ooebhccx.1bd(4,62): error CS0012: The type 'Attribute' is defined in an assembly that is not referenced. You must add a reference to assembly 'netstandard, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51'.
+```
+
 
 ## <a name="refactoring-to-use-middleware"></a>Pour utiliser l’intergiciel (middleware) de refactorisation
 
@@ -134,6 +151,6 @@ Après cette refactorisation, vous êtes certain que l’application web fonctio
 
 ## <a name="resources"></a>Ressources
 
-* [Test unitaire](https://docs.microsoft.com/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
+* [Tests unitaires](https://docs.microsoft.com/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
 * [Intergiciel (middleware)](xref:fundamentals/middleware)
 * [Test des contrôleurs](xref:mvc/controllers/testing)

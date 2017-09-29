@@ -12,11 +12,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/owin
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 9edacb494c38d7812f9e3826ab9277cd1dffd675
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: cd32d6929f16a619ad2cc8c7752a0373cbdff034
+ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 09/28/2017
 ---
 # <a name="introduction-to-open-web-interface-for-net-owin"></a>Introduction à ouvrir l’Interface Web pour .NET (OWIN)
 
@@ -55,15 +55,11 @@ public Task OwinHello(IDictionary<string, object> environment)
 
     return responseStream.WriteAsync(responseBytes, 0, responseBytes.Length);
 }
-
-
 ```
 
 La signature de l’exemple retourne un `Task` et accepte un `IDictionary<string, object>` comme exigé par le OWIN.
 
 Le code suivant montre comment ajouter la `OwinHello` intergiciel (middleware) (ci-dessus) pour le pipeline ASP.NET avec la `UseOwin` méthode d’extension.
-
-<!-- literal_block {"ids": [], "names": [], "highlight_args": {"linenostart": 1}, "backrefs": [], "dupnames": [], "linenos": false, "classes": [], "xml:space": "preserve", "language": "c#", "source": "/Users/shirhatti/src/Docs/aspnet/fundamentals/owin/sample/src/OwinSample/Startup.cs"} -->
 
 ```csharp
 public void Configure(IApplicationBuilder app)
@@ -73,8 +69,6 @@ public void Configure(IApplicationBuilder app)
         pipeline(next => OwinHello);
     });
 }
-
-
 ```
 
 Vous pouvez configurer d’autres actions pour avoir lieu dans le pipeline OWIN.
@@ -84,8 +78,6 @@ Vous pouvez configurer d’autres actions pour avoir lieu dans le pipeline OWIN.
 
 > [!NOTE]
 > Appels multiples à `UseOwin` est déconseillée pour des raisons de performances. Composants OWIN fonctionnera mieux si regroupés.
-
-<!-- literal_block {"ids": [], "names": [], "highlight_args": {}, "backrefs": [], "dupnames": [], "linenos": false, "classes": [], "xml:space": "preserve", "language": "c#"} -->
 
 ```csharp
 app.UseOwin(pipeline =>
@@ -112,8 +104,6 @@ Les serveurs OWIN peuvent héberger des applications ASP.NET. Un tel serveur est
 `Start`est chargé de configurer et démarrer le serveur, qui dans ce cas est effectué via une série d’appels d’API fluent que définir des adresses analysés à partir de la IServerAddressesFeature. Notez que la configuration fluent de la `_builder` variable Spécifie que les demandes sont traitées par le `appFunc` définis précédemment dans la méthode. Cela `Func` est appelée sur chaque demande de traiter les demandes entrantes.
 
 Nous allons également ajouter un `IWebHostBuilder` extension pour faciliter la tâche Ajouter et configurer le serveur Nowin.
-
-<!-- literal_block {"ids": [], "names": [], "highlight_args": {"hl_lines": [11], "linenostart": 1}, "backrefs": [], "dupnames": [], "linenos": false, "classes": [], "xml:space": "preserve", "language": "c#", "source": "/Users/shirhatti/src/Docs/aspnet/fundamentals/owin/sample/src/NowinSample/NowinWebHostBuilderExtensions.cs"} -->
 
 ```csharp
 using System;
@@ -147,8 +137,6 @@ namespace Microsoft.AspNetCore.Hosting
 ```
 
 Tout cela en place, tout ce qui est requis pour exécuter une application ASP.NET à l’aide de ce serveur personnalisé pour appeler l’extension de *Program.cs*:
-
-<!-- literal_block {"ids": [], "names": [], "highlight_args": {"hl_lines": [15], "linenostart": 1}, "backrefs": [], "dupnames": [], "linenos": false, "classes": [], "xml:space": "preserve", "language": "c#", "source": "/Users/shirhatti/src/Docs/aspnet/fundamentals/owin/sample/src/NowinSample/Program.cs"} -->
 
 ```csharp
 
@@ -184,8 +172,6 @@ En savoir plus sur ASP.NET [serveurs](servers/index.md).
 ## <a name="run-aspnet-core-on-an-owin-based-server-and-use-its-websockets-support"></a>Exécutez ASP.NET Core sur un serveur OWIN et utiliser sa prise en charge de WebSocket
 
 Un autre exemple de fonctionnalités de serveurs basée sur les OWIN peut être exploité par ASP.NET Core est aux fonctionnalités telles que les WebSockets. Le serveur web .NET OWIN utilisé dans l’exemple précédent a prise en charge de WebSocket intégrées, qui peuvent être exploitées par une application ASP.NET Core. L’exemple ci-dessous montre une application web simple qui prend en charge de WebSocket et renvoie tous les éléments envoyés au serveur via le protocole WebSocket.
-
-<!-- literal_block {"ids": [], "names": [], "highlight_args": {"hl_lines": [7, 9, 10], "linenostart": 1}, "backrefs": [], "dupnames": [], "linenos": true, "classes": [], "xml:space": "preserve", "language": "c#", "source": "/Users/shirhatti/src/Docs/aspnet/fundamentals/owin/sample/src/NowinWebSockets/Startup.cs"} -->
 
 ```csharp
 public class Startup
@@ -240,8 +226,6 @@ Cela [exemple](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamental
 ## <a name="owin-environment"></a>Environnement OWIN
 
 Vous pouvez construire un environnement OWIN à l’aide du `HttpContext`.
-
-<!-- literal_block {"ids": [], "names": [], "highlight_args": {}, "backrefs": [], "dupnames": [], "linenos": false, "classes": [], "xml:space": "preserve", "language": "c#"} -->
 
 ```csharp
 
