@@ -11,11 +11,11 @@ ms.assetid: bbbcf9e4-3c4c-4f50-b91e-175fe9cae4e2
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/routing
-ms.openlocfilehash: 8bce642576b6b2f9326425d30ef95168da8f47e5
-ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
+ms.openlocfilehash: 9d24c2956c24a7995b3eeffc19e8c0a827349493
+ms.sourcegitcommit: ed401027aac45c5938c917c7f518a33ceffe9f95
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2017
+ms.lasthandoff: 10/02/2017
 ---
 # <a name="routing-in-aspnet-core"></a>Le routage ASP.NET Core
 
@@ -46,17 +46,17 @@ Le routage est connecté à la [intergiciel (middleware)](middleware.md) de pipe
 
 URL correspondant est le processus par le routage distribue un entrant demander à un *gestionnaire*. Ce processus est généralement basé sur des données dans le chemin d’accès URL, mais peut être étendu pour prendre en compte toutes les données de la demande. La possibilité de distribuer des demandes pour séparer les gestionnaires est la clé à l’échelle de la taille et la complexité d’une application.
 
-Les demandes entrantes entrent le `RouterMiddleware`, qui appelle la `RouteAsync` méthode sur chaque itinéraire dans la séquence. Le `IRouter` instance choisit s’il faut *gérer* la demande en définissant le `RouteContext` `Handler` à une valeur non null `RequestDelegate`. Si un itinéraire définit un gestionnaire pour la demande, itinéraire, le traitement s’arrête et le gestionnaire sera appelé pour traiter la demande. Si tous les itinéraires sont essayés et qu’aucun gestionnaire ne trouvé pour la demande, l’intergiciel (middleware) appelle *suivant* et de l’intergiciel (middleware) suivant dans le pipeline de requête est appelée.
+Les demandes entrantes entrent le `RouterMiddleware`, qui appelle la `RouteAsync` méthode sur chaque itinéraire dans la séquence. Le `IRouter` instance choisit s’il faut *gérer* la demande en définissant le `RouteContext.Handler` à une valeur non null `RequestDelegate`. Si un itinéraire définit un gestionnaire pour la demande, itinéraire, le traitement s’arrête et le gestionnaire sera appelé pour traiter la demande. Si tous les itinéraires sont essayés et qu’aucun gestionnaire ne trouvé pour la demande, l’intergiciel (middleware) appelle *suivant* et de l’intergiciel (middleware) suivant dans le pipeline de requête est appelée.
 
-L’entrée principale de `RouteAsync` est la `RouteContext` `HttpContext` associé à la demande en cours. Le `RouteContext.Handler` et `RouteContext` `RouteData` sont sorties qui seront définis une fois que l’itinéraire correspond à.
+L’entrée principale de `RouteAsync` est le `RouteContext.HttpContext` associé à la demande en cours. Le `RouteContext.Handler` et `RouteContext.RouteData` sont sorties qui seront définis une fois que l’itinéraire correspond à.
 
 Une correspondance pendant `RouteAsync` sera également définir les propriétés de la `RouteContext.RouteData` avec les valeurs appropriées selon le traitement de la demande effectué jusqu'à présent. Si l’itinéraire correspond à une demande, le `RouteContext.RouteData` contiennent des informations d’état importantes sur la *résultat*.
 
-`RouteData``Values` est un dictionnaire de *valeurs d’itinéraire* produits à partir de l’itinéraire. Ces valeurs sont généralement déterminées par l’URL de création de jetons et peuvent être utilisés pour accepter l’entrée d’utilisateur, ou prendre des décisions davantage de distribution à l’intérieur de l’application.
+`RouteData.Values`est un dictionnaire de *valeurs d’itinéraire* produits à partir de l’itinéraire. Ces valeurs sont généralement déterminées par l’URL de création de jetons et peuvent être utilisés pour accepter l’entrée d’utilisateur, ou prendre des décisions davantage de distribution à l’intérieur de l’application.
 
-`RouteData``DataTokens` est un jeu de propriétés des données supplémentaires associées à l’itinéraire correspondant. `DataTokens`sont fournis pour prendre en charge d’association état mis en correspondance des données avec chaque itinéraire afin de l’application de prendre des décisions ultérieurement en fonction de l’itinéraire. Ces valeurs sont définis par le développeur et **pas** affectent le comportement de routage en aucune façon. En outre, les valeurs dissimulés dans des jetons de données peuvent être de n’importe quel type, contrairement aux valeurs d’itinéraire, qui doit être facilement convertibles vers et à partir de chaînes.
+`RouteData.DataTokens`est un jeu de propriétés des données supplémentaires associées à l’itinéraire correspondant. `DataTokens`sont fournis pour prendre en charge d’association état mis en correspondance des données avec chaque itinéraire afin de l’application de prendre des décisions ultérieurement en fonction de l’itinéraire. Ces valeurs sont définis par le développeur et **pas** affectent le comportement de routage en aucune façon. En outre, les valeurs dissimulés dans des jetons de données peuvent être de n’importe quel type, contrairement aux valeurs d’itinéraire, qui doit être facilement convertibles vers et à partir de chaînes.
 
-`RouteData``Routers` est une liste des itinéraires que participé correctement correspondant à la demande. Itinéraires peuvent être imbriquées dans une autre et le `Routers` propriété reflète le chemin d’accès dans l’arborescence logique d’itinéraires qui a entraîné une correspondance. En règle générale le premier élément de `Routers` est la collection d’itinéraires et doit être utilisé pour la génération d’URL. Le dernier élément `Routers` est le Gestionnaire d’itinéraire correspondant.
+`RouteData.Routers`est une liste des itinéraires que participé correctement correspondant à la demande. Itinéraires peuvent être imbriquées dans une autre et le `Routers` propriété reflète le chemin d’accès dans l’arborescence logique d’itinéraires qui a entraîné une correspondance. En règle générale le premier élément de `Routers` est la collection d’itinéraires et doit être utilisé pour la génération d’URL. Le dernier élément `Routers` est le Gestionnaire d’itinéraire correspondant.
 
 ### <a name="url-generation"></a>Génération d’URL
 
@@ -66,11 +66,11 @@ Génération d’URL suit un processus itératif similaire, mais démarre avec l
 
 Le réplica principal est une entrée `GetVirtualPath` sont :
 
-* `VirtualPathContext` `HttpContext`
+* `VirtualPathContext.HttpContext`
 
-* `VirtualPathContext` `Values`
+* `VirtualPathContext.Values`
 
-* `VirtualPathContext` `AmbientValues`
+* `VirtualPathContext.AmbientValues`
 
 Itinéraires utilisent principalement les valeurs d’itinéraire fournies par le `Values` et `AmbientValues` pour décider où il est possible de générer une URL et les valeurs à inclure. Le `AmbientValues` sont le jeu de valeurs d’itinéraire qui ont été générés à partir de la mise en correspondance la demande en cours avec le système de routage. En revanche, `Values` sont les valeurs d’itinéraire qui spécifient comment générer l’URL de votre choix pour l’opération actuelle. Le `HttpContext` est fournie au cas où un itinéraire a besoin d’obtenir des services ou des données supplémentaires associées au contexte actuel.
 
@@ -78,11 +78,11 @@ Conseil : Considérer `Values` comme étant un ensemble de remplacements pour l
 
 La sortie de `GetVirtualPath` est un `VirtualPathData`. `VirtualPathData`est une représentation parallèle de `RouteData`; il contient le `VirtualPath` pour l’URL de sortie, ainsi que des propriétés supplémentaires qui doivent être définies par l’itinéraire.
 
-Le `VirtualPathData` `VirtualPath` propriété contient le *chemin d’accès virtuel* produits par l’itinéraire. Selon vos besoins, vous devrez peut-être traiter davantage le chemin d’accès. Par exemple, si vous souhaitez afficher l’URL générée au format HTML, vous devez ajouter le chemin d’accès de base de l’application.
+Le `VirtualPathData.VirtualPath` propriété contient le *chemin d’accès virtuel* produits par l’itinéraire. Selon vos besoins, vous devrez peut-être traiter davantage le chemin d’accès. Par exemple, si vous souhaitez afficher l’URL générée au format HTML, vous devez ajouter le chemin d’accès de base de l’application.
 
-Le `VirtualPathData` `Router` est une référence à l’itinéraire qui a généré avec succès l’URL.
+Le `VirtualPathData.Router` est une référence à l’itinéraire qui a généré avec succès l’URL.
 
-Le `VirtualPathData` `DataTokens` propriétés est un dictionnaire de données supplémentaires relatives à l’itinéraire qui a généré l’URL. Il s’agit du parallèle de `RouteData.DataTokens`.
+Le `VirtualPathData.DataTokens` propriétés est un dictionnaire de données supplémentaires relatives à l’itinéraire qui a généré l’URL. Il s’agit du parallèle de `RouteData.DataTokens`.
 
 ### <a name="creating-routes"></a>Création des itinéraires
 

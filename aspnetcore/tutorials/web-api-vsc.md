@@ -11,11 +11,11 @@ keywords: ASP.NET Core, APIweb, API web, REST, Mac, Linux, HTTP, Service, Servic
 manager: wpickett
 ms.assetid: 830b4bf5-dd14-423e-9f59-764a6f13a8f6
 uid: tutorials/web-api-vsc
-ms.openlocfilehash: e09943b2f810d04456a65589976aa07065a9f010
-ms.sourcegitcommit: e6bcd56a4b11e20ff55df004971f9ed384937342
+ms.openlocfilehash: caf40ee1c2d45d2fbf33b07d707fa4f1be98d31c
+ms.sourcegitcommit: 8b5733f1cd5d2c2b6d432bf82fcd4be2d2d6b2a3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 09/28/2017
 ---
 # <a name="create-a-web-api-with-aspnet-core-mvc-and-visual-studio-code-on-linux-macos-and-windows"></a>Créer une API web avec ASP.NET Core MVC et Visual Studio Code sur Linux, macOS et Windows
 
@@ -36,7 +36,7 @@ Il existe trois versions de ce didacticiel :
 ## <a name="set-up-your-development-environment"></a>Configurer votre environnement de développement
 
 Téléchargez et installez :
-- [.NET Core](https://www.microsoft.com/net/core)
+- [SDK .NET Core 2.0.0](https://www.microsoft.com/net/core) ou version ultérieure
 - [Visual Studio Code](https://code.visualstudio.com)
 - [Extension C#](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp) Visual Studio Code
 

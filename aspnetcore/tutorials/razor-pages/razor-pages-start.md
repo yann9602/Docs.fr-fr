@@ -10,8 +10,8 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: tutorials/razor-pages/razor-pages-start
-ms.openlocfilehash: 1d8d7805aafbf28fef044d09369a1dc76108b141
-ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
+ms.openlocfilehash: 9d647657f21dd7e952808e5fe020f7a9e8767cd8
+ms.sourcegitcommit: 3ba32b2b6425ed94604cb0f681db0d5bb5f8ad58
 ms.translationtype: HT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 09/28/2017
@@ -48,4 +48,4 @@ Appuyez sur **F5** pour exécuter l’application en mode débogage ou sur **Ctr
 [!INCLUDE[razor-pages-start](../../includes/RP/razor-pages-start.md)]
 
 >[!div class="step-by-step"]
-[Suivant : Ajout d’un modèle](xref:tutorials/razor-pages/modelz)
+[Suivant : Ajout d’un modèle](xref:tutorials/razor-pages/model)
