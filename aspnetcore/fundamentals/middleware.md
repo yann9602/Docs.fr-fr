@@ -1,7 +1,7 @@
 ---
 title: Intergiciel (middleware) ASP.NET Core
 author: rick-anderson
-description: "Explique l’intergiciel (middleware) et le pipeline de requête."
+description: "En savoir plus sur ASP.NET Core intergiciel (middleware) et le pipeline de requête."
 keywords: "ASP.NET Core, intergiciel (middleware), pipeline, délégué"
 ms.author: riande
 manager: wpickett
@@ -11,11 +11,11 @@ ms.assetid: db9a86ab-46c2-40e0-baed-86e38c16af1f
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/middleware
-ms.openlocfilehash: 881cabdbb7814b36d97a977b30389506b99d16b9
-ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
+ms.openlocfilehash: 3cd15c7e8ed4956e1d451f3bd5935fc175999d1f
+ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 10/01/2017
 ---
 # <a name="aspnet-core-middleware-fundamentals"></a>Notions de base ASP.NET Core intergiciel (middleware)
 
@@ -23,7 +23,7 @@ ms.lasthandoff: 09/28/2017
 
 Par [Rick Anderson](https://twitter.com/RickAndMSFT) et [Steve Smith](https://ardalis.com/)
 
-[Afficher ou télécharger l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/middleware/sample)
+[Afficher ou télécharger l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/middleware/sample) ([comment télécharger](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="what-is-middleware"></a>Nouveautés d’intergiciel (middleware)
 

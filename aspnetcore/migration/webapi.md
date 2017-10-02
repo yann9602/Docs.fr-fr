@@ -11,11 +11,11 @@ ms.assetid: 4f0564b4-ed4e-4e1e-9755-c1144d21a0ef
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: migration/webapi
-ms.openlocfilehash: 2dd2d40aef3803ad2f75504920a1174fee5c2444
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: 4acb7ccf7f944df5d08ac7faa342f0c72cf9d1a7
+ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 10/01/2017
 ---
 # <a name="migrating-from-aspnet-web-api"></a>Migration à partir de l’API Web ASP.NET
 
@@ -23,7 +23,7 @@ Par [Steve Smith](https://ardalis.com/) et [Scott Addie](https://scottaddie.com)
 
 API Web est des services HTTP qui atteignent un large éventail de clients, y compris les navigateurs et périphériques mobiles. Base d’ASP.NET MVC prend en charge les API Web offre un moyen unique et homogène de la création d’applications web de génération. Dans cet article, nous allons montrer les étapes requises pour migrer une implémentation de l’API Web à partir de l’API Web ASP.NET vers ASP.NET MVC de base.
 
-[Afficher ou télécharger l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/migration/webapi/sample)
+[Afficher ou télécharger l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/migration/webapi/sample) ([comment télécharger](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="review-aspnet-web-api-project"></a>Projet d’API Web ASP.NET révision
 

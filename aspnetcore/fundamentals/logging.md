@@ -1,7 +1,7 @@
 ---
 title: Journalisation dans ASP.NET Core
 author: ardalis
-description: "Présente les fonctionnalités de journalisation dans ASP.NET Core. Inclut une section pour chaque fournisseur de journalisation intégrés et des liens vers des fournisseurs tiers populaires."
+description: "En savoir plus sur les fonctionnalités de journalisation dans ASP.NET Core. Découvrez les fournisseurs de journalisation intégrés et en savoir plus sur les fournisseurs tiers populaires."
 keywords: ASP.NET Core, la journalisation, providers,Microsoft.Extensions.Logging,ILogger,ILoggerFactory,LogLevel,WithFilter,TraceSource,EventLog,EventSource,scopes de journalisation
 ms.author: tdykstra
 manager: wpickett
@@ -12,11 +12,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/logging
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: ca81f01fe1c5026514eafedf852b4bc8f3b6fd21
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: 9557e9f6915507450de3ffe500582839a28c3f0c
+ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 10/01/2017
 ---
 # <a name="introduction-to-logging-in-aspnet-core"></a>Introduction à la journalisation dans ASP.NET Core
 
@@ -26,11 +26,11 @@ ASP.NET Core prend en charge une API de journalisation qui fonctionne avec une g
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
-[Afficher ou télécharger l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/logging/sample2)
+[Afficher ou télécharger l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/logging/sample2) ([comment télécharger](xref:tutorials/index#how-to-download-a-sample))
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
-[Afficher ou télécharger l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/logging/sample)
+[Afficher ou télécharger l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/logging/sample) ([comment télécharger](xref:tutorials/index#how-to-download-a-sample))
 
 ---
 

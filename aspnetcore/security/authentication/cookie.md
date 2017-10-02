@@ -11,11 +11,11 @@ ms.assetid: 2bdcbf95-8d9d-4537-a4a0-a5ee439dcb62
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/cookie
-ms.openlocfilehash: af3ffe418521d5d97f5d14ca9c904c21b4d4ff89
-ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
+ms.openlocfilehash: e5c53a7044edb56e065b2dc1536343fdaf9fb007
+ms.sourcegitcommit: 7d8f4e3443a2989a64343f8fec83e6a4c4ed2f97
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 09/29/2017
 ---
 # <a name="using-cookie-authentication-without-aspnet-core-identity"></a>À l’aide de l’authentification de Cookie sans ASP.NET Core identité
 
@@ -242,7 +242,7 @@ ASP.NET Core 2.x unifie les API utilisées pour configurer les cookies. Le 1.x A
 
 * `ClaimsIssuer`est de l’émetteur à utiliser pour le [émetteur](https://docs.microsoft.com/dotnet/api/system.security.claims.claim.issuer) propriété sur toutes les revendications créés par l’authentification de cookie.
 
-* `CookieBuilder.Domain`est le nom de domaine à laquelle le cookie est pris en charge. Par défaut, il est le nom d’hôte que la demande a été envoyée à. Le navigateur ne sert que le cookie à un nom d’hôte correspondant. Vous pouvez souhaiter ajuster ici pour que les cookies disponibles pour tous les hôtes de votre domaine. Par exemple, si le domaine du cookie à `.contoso.com` met à disposition `contoso.com`, `www.contoso.com`, `staging.www.contoso.com`, etc..
+* `CookieBuilder.Domain`est le nom de domaine à laquelle le cookie est pris en charge. Par défaut, il est le nom d’hôte que la demande a été envoyée à. Le navigateur ne sert que le cookie à un nom d’hôte correspondant. Vous pouvez souhaiter ajuster ici pour que les cookies disponibles pour tous les hôtes de votre domaine. Par exemple, si le domaine du cookie à `.contoso.com` met à disposition `contoso.com`, `www.contoso.com`, `staging.www.contoso.com`, etc.
 
 * `CookieBuilder.HttpOnly`est un indicateur qui indique si le cookie doit être accessible uniquement aux serveurs. Par défaut est `true`. Modification de cette valeur peut s’ouvrir à votre application au vol de cookies de votre application doit avoir un un bogue de scripts entre sites.
 
@@ -259,8 +259,8 @@ ASP.NET Core 2.x unifie les API utilisées pour configurer les cookies. Le 1.x A
 Un exemple d’utilisation `CookieAuthenticationOptions` dans les `ConfigureServices` méthode *Startup.cs* suit :
 
 ```csharp
-services.AddAuthentication()
-        .AddCookie(options =>
+services.AddAuthentication("MyCookieAuthenticationScheme")
+        .AddCookie("MyCookieAuthenticationScheme", options =>
         {
             options.Cookie.Name = "AuthCookie";
             options.Cookie.Domain = "contoso.com";
@@ -275,7 +275,7 @@ services.AddAuthentication()
 
 * `ClaimsIssuer`est de l’émetteur à utiliser pour le [émetteur](https://docs.microsoft.com/dotnet/api/system.security.claims.claim.issuer) propriété sur toutes les revendications créés par l’intergiciel (middleware).
 
-* `CookieDomain`est le nom de domaine à laquelle le cookie est pris en charge. Par défaut, il est le nom d’hôte que la demande a été envoyée à. Le navigateur ne sert que le cookie à un nom d’hôte correspondant. Vous pouvez souhaiter ajuster ici pour que les cookies disponibles pour tous les hôtes de votre domaine. Par exemple, si le domaine du cookie à `.contoso.com` met à disposition `contoso.com`, `www.contoso.com`, `staging.www.contoso.com`, etc..
+* `CookieDomain`est le nom de domaine à laquelle le cookie est pris en charge. Par défaut, il est le nom d’hôte que la demande a été envoyée à. Le navigateur ne sert que le cookie à un nom d’hôte correspondant. Vous pouvez souhaiter ajuster ici pour que les cookies disponibles pour tous les hôtes de votre domaine. Par exemple, si le domaine du cookie à `.contoso.com` met à disposition `contoso.com`, `www.contoso.com`, `staging.www.contoso.com`, etc.
 
 * `CookieHttpOnly`est un indicateur qui indique si le cookie doit être accessible uniquement aux serveurs. Par défaut est `true`. Modification de cette valeur peut s’ouvrir à votre application au vol de cookies de votre application doit avoir un un bogue de scripts entre sites.
 

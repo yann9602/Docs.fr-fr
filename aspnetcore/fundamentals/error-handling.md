@@ -1,7 +1,7 @@
 ---
 title: Gestion des erreurs dans ASP.NET Core
 author: ardalis
-description: "Explique comment gérer les erreurs dans les applications ASP.NET Core"
+description: "Découvrez comment gérer les erreurs dans les applications ASP.NET Core."
 keywords: ASP.NET Core, gestion des erreurs, la gestion des exceptions
 ms.author: tdykstra
 manager: wpickett
@@ -12,11 +12,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/error-handling
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 93f0724dbe98316e2b5a0af0ac1760c3aac2f1d0
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: de2ba0ff9ad17c198c06b510ecfb49f808721bdf
+ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 10/01/2017
 ---
 # <a name="introduction-to-error-handling-in-aspnet-core"></a>Introduction à la gestion des erreurs dans ASP.NET Core
 
@@ -24,7 +24,7 @@ Par [Steve Smith](https://ardalis.com/) et [Tom Dykstra](https://github.com/tdyk
 
 Cet article traite des appoaches commune pour la gestion des erreurs dans les applications ASP.NET Core.
 
-[Afficher ou télécharger l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/error-handling/sample)
+[Afficher ou télécharger l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/error-handling/sample) ([comment télécharger](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="the-developer-exception-page"></a>La page d’exception de développeur
 

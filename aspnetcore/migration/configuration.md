@@ -11,11 +11,11 @@ ms.assetid: 8468d859-ff32-4a92-9e62-08c4a9e36594
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: migration/configuration
-ms.openlocfilehash: 62660f7e58467a69f540966df188747b6fde57fe
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: 4cf2227db22fbfd7f0c6239dad0d0a470c35d28c
+ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 10/01/2017
 ---
 # <a name="migrating-configuration"></a>Migration de la Configuration
 
@@ -23,7 +23,7 @@ Par [Steve Smith](https://ardalis.com/) et [Scott Addie](https://scottaddie.com)
 
 Dans l’article précédent, nous avons commencé [vers un projet ASP.NET MVC ASP.NET MVC de base](mvc.md). Dans cet article, nous migrer la configuration.
 
-[Afficher ou télécharger l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/migration/configuration/samples)
+[Afficher ou télécharger l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/migration/configuration/samples) ([comment télécharger](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="setup-configuration"></a>Configuration de l’installation
 

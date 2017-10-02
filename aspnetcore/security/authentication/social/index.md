@@ -11,11 +11,11 @@ ms.assetid: eda7ee17-f38c-462e-8d1d-63f459901cf3
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/social/index
-ms.openlocfilehash: b561dcee5435dfc34cfa0b9b15babf75ca8f3508
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: 56036000535156b4b5814dde2a0145dcdfff28c3
+ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 09/28/2017
 ---
 # <a name="enabling-authentication-using-facebook-google-and-other-external-providers"></a>Activation de l’authentification à l’aide de Facebook, Google et d’autres fournisseurs externes
 
@@ -53,9 +53,7 @@ OAuth 2.0 nécessite l’utilisation de SSL pour l’authentification avec le pr
 
 Remarque : Les projets créés à partir des modèles de projet **Application web** ou **API web** pour ASP.NET Core 2.x sont configurés automatiquement pour activer SSL, et pour se lancer avec des URL HTTPS si l’option **Comptes d’utilisateur individuels** a été sélectionnée dans la boîte de dialogue **Modifier l’authentification** dans l’Assistant Projet, comme indiqué ci-dessus.
 
-* Découvrez comment activer SSL manuellement en suivant les étapes de la rubrique [Configuration de HTTPS pour le développement dans ASP.NET Core](xref:security/https).
-
-* Ensuite, exigez SSL sur votre site en suivant les étapes de la rubrique [Exiger SSL dans une application ASP.NET Core](xref:security/enforcing-ssl).
+* Exigez SSL sur votre site en suivant les étapes de la rubrique [Exiger SSL dans une application ASP.NET Core](xref:security/enforcing-ssl).
 
 ## <a name="use-secretmanager-to-store-tokens-assigned-by-login-providers"></a>Utilisez SecretManager pour stocker les jetons affectés par les fournisseurs de connexion
 

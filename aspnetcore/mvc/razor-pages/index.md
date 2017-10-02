@@ -10,11 +10,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/razor-pages/index
-ms.openlocfilehash: 72ab979c6c718544955ae5734903ec936fc5afbc
-ms.sourcegitcommit: 195b2b331434f74334c5c5b7dfeba62d744a1e38
+ms.openlocfilehash: 3112faa38bb9702f6856097e315c413f0974010d
+ms.sourcegitcommit: 3ba32b2b6425ed94604cb0f681db0d5bb5f8ad58
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/15/2017
+ms.lasthandoff: 09/28/2017
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>Présentation des pages Razor dans ASP.NET Core
 
@@ -157,11 +157,9 @@ Le fichier code-behind *Index.cshtml.cs* :
 
 Le fichier *Index.cshtml* contient le balisage suivant pour créer un lien d’édition pour chaque contact :
 
-```cshtml
-<a asp-page="./Edit" asp-route-id="@contact.Id">edit</a>
-```
+[!code-cshtml[main](index/sample/RazorPagesContacts/Pages/Index.cshtml?range=21)]
 
-Le [tag helper d’ancre](xref:mvc/views/tag-helpers/builtin-th/AnchorTagHelper) a utilisé l’attribut [asp-route-{value}](xref:mvc/views/tag-helpers/builtin-th/AnchorTagHelper#route) pour générer un lien vers la page Edit. Le lien contient des données d’itinéraire avec l’ID de contact. Par exemple, `http://localhost:5000/Edit/1`.
+Le [tag helper d’ancre](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper) a utilisé l’attribut [asp-route-{value}](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper#route) pour générer un lien vers la page Edit. Le lien contient des données d’itinéraire avec l’ID de contact. Par exemple, `http://localhost:5000/Edit/1`.
 
 Le fichier *Pages/Edit.cshtml* :
 
@@ -172,6 +170,34 @@ La première ligne contient la directive `@page "{id:int}"`. La contrainte de ro
 Le fichier *Pages/Edit.cshtml.cs* :
 
 [!code-cs[main](index/sample/RazorPagesContacts/Pages/Edit.cshtml.cs)]
+
+Le fichier *Index.cshtml* contient également le balisage pour créer un bouton Supprimer pour chaque contact client :
+
+[!code-cshtml[main](index/sample/RazorPagesContacts/Pages/Index.cshtml?range=22-23)]
+
+Lorsque le bouton Supprimer est rendu en HTML, son `formaction` comprend des paramètres pour :
+
+* L’ID du contact client spécifié par l’attribut `asp-route-id`.
+* Le `handler` spécifié par l’attribut `asp-page-handler`.
+
+Voici un exemple de bouton Supprimer rendu avec un ID de contact client de `1`:
+
+```html
+<button type="submit" formaction="/?id=1&amp;handler=delete">delete</button>
+```
+
+Quand le bouton est sélectionné, une demande `POST` de forumaire est envoyée au serveur. Par convention, le nom de la méthode de gestionnaire est sélectionné en fonction de la valeur du paramètre `handler` conformément au schéma `OnPost[handler]Async`.
+
+Étant donné que le `handler` est `delete` dans cet exemple, la méthode de gestionnaire `OnPostDeleteAsync` est utilisée pour traiter la demande `POST`. Si `asp-page-handler` est défini avec une autre valeur, telle que `remove`, une méthode de gestionnaire de page avec le nom `OnPostRemoveAsync` est sélectionnée.
+
+[!code-cs[main](index/sample/RazorPagesContacts/Pages/Index.cshtml.cs?range=26-37)]
+
+La méthode `OnPostDeleteAsync` :
+
+* Accepte l’`id` de la chaîne de requête.
+* Interroge la base de données pour le contact client avec `FindAsync`.
+* Si le contact client est trouvé, il est supprimé de la liste des contacts client. La base de données est mise à jour.
+* Appelle `RedirectToPage` pour rediriger vers la page Index racine (`/Index`).
 
 <a name="xsrf"></a>
 

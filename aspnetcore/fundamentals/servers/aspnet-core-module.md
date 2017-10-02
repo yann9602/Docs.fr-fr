@@ -12,11 +12,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/servers/aspnet-core-module
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 479fc3a389168bb08e278aa3d9da3bf7df1b49f4
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: 8ced1e667acb7d11954aea27de7701db89091fd9
+ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 10/01/2017
 ---
 # <a name="introduction-to-aspnet-core-module"></a>Introduction au Module ASP.NET Core
 
@@ -28,7 +28,7 @@ Versions de Windows prises en charge :
 
 * Windows 7 et Windows Server 2008 R2 et versions ultérieures
 
-[Afficher ou télécharger l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/servers/aspnet-core-module/sample)
+[Afficher ou télécharger l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/servers/aspnet-core-module/sample) ([comment télécharger](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="what-aspnet-core-module-does"></a>Ce que fait le Module de base ASP.NET
 

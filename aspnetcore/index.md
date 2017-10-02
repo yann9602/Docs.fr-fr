@@ -5,16 +5,16 @@ description:
 keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
-ms.date: 08/03/2017
+ms.date: 09/03/2017
 ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: index
-ms.openlocfilehash: d8516643393cdf9175adc78ab98420dc1dc5d1d9
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: 748c8c0b9dd0e6eab0d7347bbf89ed80c10bdb54
+ms.sourcegitcommit: e4a1df2a5a85f299322548809e547a79b380bb92
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 09/29/2017
 ---
 # <a name="introduction-to-aspnet-core"></a>Présentation d’ASP.NET Core
 
@@ -22,7 +22,7 @@ Par [Daniel Roth](https://github.com/danroth27), [Rick Anderson](https://twitter
 
 ASP.NET Core est un framework multiplateforme à hautes performances et [open source](https://github.com/aspnet/home) pour créer des applications cloud modernes et connectées à Internet. Avec ASP.NET Core, vous pouvez :
 
-* Créer des applications et des services web, des applications IoT et des back-ends mobiles.
+* Créer des applications et des services web, des applications [IoT](https://www.microsoft.com/en-us/internet-of-things/) et des back-ends mobiles.
 * Utilisez vos outils de développement préférés sur Windows, macOS et Linux.
 * Déployer sur le cloud ou localement
 * Exécuter sur [.NET Core ou .NET Framework](https://docs.microsoft.com/dotnet/articles/standard/choosing-core-framework-server).

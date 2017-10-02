@@ -11,11 +11,11 @@ ms.assetid: 4604e563-e91a-4ecd-b7ed-00b3f1eee2b5
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/preventing-open-redirects
-ms.openlocfilehash: d5419aa149b3201ecbc93f4f17ae5928f1d39b1d
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: 4083845a77eb19d9ba9beb389a92ceb5c14edbde
+ms.sourcegitcommit: f5cf472d49c2475e4d57654efd5fc0a4ccecba4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 09/30/2017
 ---
 # <a name="preventing-open-redirect-attacks-in-an-aspnet-core-app"></a>Prévention des attaques de redirection ouvert dans une application ASP.NET Core
 
@@ -52,7 +52,7 @@ Lorsque vous développez des applications web, traiter toutes les données fourn
 
 Utilisez le ``LocalRedirect`` méthode d’assistance à partir de la base de `Controller` classe :
 
-```
+```csharp
 public IActionResult SomeAction(string redirectUrl)
 {
     return LocalRedirect(redirectUrl);
@@ -67,7 +67,7 @@ Utilisez le [IsLocalUrl](https://docs.microsoft.com/aspnet/core/api/microsoft.as
 
 L’exemple suivant montre comment vérifier si une URL est locale avant de rediriger.
 
-```
+```csharp
 private IActionResult RedirectToLocal(string returnUrl)
 {
     if (Url.IsLocalUrl(returnUrl))

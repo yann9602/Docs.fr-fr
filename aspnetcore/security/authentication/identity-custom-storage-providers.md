@@ -11,11 +11,11 @@ ms.assetid: b2ace545-ecf6-4664-b31e-b65bd4a6b025
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/identity-custom-storage-providers
-ms.openlocfilehash: 214343c9b964baca3c436966d39caede1a58aba2
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: c1d974e72eab388ba7b196c4b48f21a06b59dc20
+ms.sourcegitcommit: f5cf472d49c2475e4d57654efd5fc0a4ccecba4c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 09/30/2017
 ---
 # <a name="custom-storage-providers-for-aspnet-core-identity"></a>Fournisseurs de stockage personnalisés pour ASP.NET Core Identity
 
@@ -39,7 +39,7 @@ Identité de ASP.NET Core est incluse dans les modèles de projet dans Visual St
 
 Lorsque vous utilisez l’interface de ligne de base de .NET, ajoutez `-au Individual`:
 
-```
+```console
 dotnet new mvc -au Individual
 dotnet new webapi -au Individual
 ```

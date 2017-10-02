@@ -12,11 +12,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/spa-services
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 0dbe5e3567bb4feea7e56cff3dcf75be5df88310
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: a93dae3edec73f1b5254aa60662834ca83de62fd
+ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 10/01/2017
 ---
 # <a name="using-javascriptservices-for-creating-single-page-applications-with-aspnet-core"></a>À l’aide de JavaScriptServices pour la création d’Applications à Page unique avec ASP.NET Core
 
@@ -24,7 +24,7 @@ Par [Scott Addie](https://github.com/scottaddie) et [Fiyaz Hasan](http://fiyazha
 
 Une Application à Page unique (SPA) est un type d’application web en raison de son expérience utilisateur riche inhérente. Intégration des infrastructures SPA côté client ou les bibliothèques, telles que [angulaire](https://angular.io/) ou [réagir](https://facebook.github.io/react/), avec les infrastructures de côté serveur telles que ASP.NET Core peut être difficile. [JavaScriptServices](https://github.com/aspnet/JavaScriptServices) a été développé afin de réduire la friction dans le processus d’intégration. Il permet à une opération transparente entre les piles de technologie de serveur et de client.
 
-[Afficher ou télécharger l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/client-side/spa-services/sample)
+[Afficher ou télécharger l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/client-side/spa-services/sample) ([comment télécharger](xref:tutorials/index#how-to-download-a-sample))
 
 <a name="what-is-js-services"></a>
 
@@ -87,7 +87,7 @@ ASP.NET Core [programmes d’assistance de balise](xref:mvc/views/tag-helpers/in
 
 ### <a name="prerequisites"></a>Conditions préalables
 
-Installez les éléments suivants :
+Installez les éléments suivants :
 * [ASPNET-pré-rendu](https://www.npmjs.com/package/aspnet-prerendering) package npm :
 
     ```console
@@ -144,7 +144,7 @@ Le `postList` tableau défini à l’intérieur de la `globals` objet est attach
 
 ### <a name="prerequisites"></a>Conditions préalables
 
-Installez les éléments suivants :
+Installez les éléments suivants :
 * [ASPNET-webpack](https://www.npmjs.com/package/aspnet-webpack) package npm :
 
     ```console
@@ -171,7 +171,7 @@ Pensez à Webpack [remplacement d’un Module à chaud](https://webpack.github.i
 
 ### <a name="prerequisites"></a>Conditions préalables
 
-Installez les éléments suivants :
+Installez les éléments suivants :
 * [intergiciel Webpack à chaud](https://www.npmjs.com/package/webpack-hot-middleware) package npm :
 
     ```console
@@ -208,7 +208,7 @@ Considérez le scénario dans lequel un itinéraire sans extension de `/some/pag
 
 ### <a name="prerequisites"></a>Conditions préalables
 
-Installez les éléments suivants :
+Installez les éléments suivants :
 * Le package npm de routage côté client. À l’aide d’angulaire par exemple :
 
     ```console
@@ -264,7 +264,7 @@ Il existe deux modes de configuration principal d’exécution :
     * Exclut les mappages de sources.
     * Optimise le code côté client via une minimisation & de regroupement.
 
-ASP.NET Core utilise une variable d’environnement nommée `ASPNETCORE_ENVIRONMENT` pour stocker le mode de configuration. Consultez ** [définition de l’environnement](xref:fundamentals/environments#setting-the-environment) ** pour plus d’informations.
+ASP.NET Core utilise une variable d’environnement nommée `ASPNETCORE_ENVIRONMENT` pour stocker le mode de configuration. Consultez  **[définition de l’environnement](xref:fundamentals/environments#setting-the-environment)**  pour plus d’informations.
 
 ### <a name="running-with-net-core-cli"></a>En cours d’exécution avec le .NET Core CLI
 

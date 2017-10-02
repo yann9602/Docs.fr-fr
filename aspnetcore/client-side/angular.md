@@ -12,11 +12,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/angular
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: d271560476ee4efdffbd457e37eb769a7ae6ca25
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: 4aecf9e9bd11cc7e2b36b40955178d9e9368c185
+ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 10/01/2017
 ---
 # <a name="using-angularjs-for-single-page-applications-spas-with-aspnet-core"></a>À l’aide d’AngularJS pour des Applications à Page unique (ZPS) avec ASP.NET Core
 
@@ -25,7 +25,7 @@ Par [Venkata Koppaka](https://blog.falafel.com/falafel-software-recognized-sitef
 
 Dans cet article, vous allez apprendre à créer une application de style SPA ASP.NET à l’aide d’AngularJS.
 
-[Afficher ou télécharger l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/client-side/angular/sample)
+[Afficher ou télécharger l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/client-side/angular/sample) ([comment télécharger](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="what-is-angularjs"></a>Nouveautés AngularJS
 
@@ -63,7 +63,7 @@ Une fois que vous avez une référence à la *angular.js* fichier de script, vou
 
 ## <a name="key-components"></a>Composants clés
 
-AngularJS inclut un nombre de composants principaux, tels que *directives*, *modèles*, *répéteurs*, *modules*, * contrôleurs*, *composants*, *routeur de composant* et bien plus encore. Nous allons examiner comment ces composants fonctionnent ensemble pour ajouter un comportement à vos pages web.
+AngularJS inclut un nombre de composants principaux, tels que *directives*, *modèles*, *répéteurs*, *modules*,  *contrôleurs*, *composants*, *routeur de composant* et bien plus encore. Nous allons examiner comment ces composants fonctionnent ensemble pour ajouter un comportement à vos pages web.
 
 ### <a name="directives"></a>Directives
 
@@ -198,7 +198,7 @@ Notez à la ligne 9 que nous demandons angulaire pour afficher la propriété «
 
 ### <a name="modules"></a>Modules
 
-A [module](https://docs.angularjs.org/guide/module) dans AngularJS est une collection de contrôleurs, les services, les directives, etc.. Le `angular.module()` appel de fonction est utilisé pour créer, enregistrer et de récupérer les modules dans AngularJS. Tous les modules, y compris ceux fournis par l’équipe de AngularJS et les bibliothèques de tierce partie, doivent être inscrites à l’aide de la `angular.module()` (fonction).
+A [module](https://docs.angularjs.org/guide/module) dans AngularJS est une collection de contrôleurs, les services, les directives, etc. Le `angular.module()` appel de fonction est utilisé pour créer, enregistrer et de récupérer les modules dans AngularJS. Tous les modules, y compris ceux fournis par l’équipe de AngularJS et les bibliothèques de tierce partie, doivent être inscrites à l’aide de la `angular.module()` (fonction).
 
 Voici un extrait de code qui montre comment créer un nouveau module dans AngularJS. Le premier paramètre est le nom du module. Le deuxième paramètre définit des dépendances sur d’autres modules. Plus loin dans cet article, nous montrant comment transmettre ces dépendances pour un `angular.module()` appel de méthode.
 

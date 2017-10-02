@@ -1,7 +1,7 @@
 ---
 title: Utilisation des fichiers statiques dans ASP.NET Core
 author: rick-anderson
-description: Utilisation des fichiers statiques sur ASP.NET Core
+description: "Découvrez comment travailler avec des fichiers statiques dans ASP.NET Core."
 keywords: ASP.NET Core, fichiers statiques, les ressources statiques, HTML, CSS, JavaScript
 ms.author: riande
 manager: wpickett
@@ -12,11 +12,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/static-files
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 69a4542c9b2a0d7091d05d42029e68384b760dd7
-ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
+ms.openlocfilehash: e099c4767958f153134e0fb6b3de8132ab1ead82
+ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 10/01/2017
 ---
 # <a name="working-with-static-files-in-aspnet-core"></a>Utilisation des fichiers statiques dans ASP.NET Core
 
@@ -26,7 +26,7 @@ De [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 Les fichiers statiques, tels que HTML, CSS, image et JavaScript, sont actifs qu’une application ASP.NET Core peut gérer directement aux clients.
 
-[Afficher ou télécharger l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/static-files/sample)
+[Afficher ou télécharger l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/static-files/sample) ([comment télécharger](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="serving-static-files"></a>Fichiers statiques
 
@@ -199,7 +199,7 @@ Avec le code ci-dessus, une demande pour un fichier avec un type de contenu inco
 ### <a name="considerations"></a>Éléments à prendre en considération
 
 >[!WARNING]
-> `UseDirectoryBrowser`et `UseStaticFiles` peut entraîner une fuite secrets. Il est recommandé que vous **pas** activer l’exploration de répertoire production. Soyez prudent sur les répertoires dans lesquels vous activez avec `UseStaticFiles` ou `UseDirectoryBrowser` comme l’ensemble du répertoire et tous les sous-répertoires seront accessibles. Nous recommandons de conserver le contenu public dans son propre répertoire tel que  *\<contenu racine > / wwwroot*, en s’éloignant de vues de l’application, les fichiers de configuration, etc..
+> `UseDirectoryBrowser`et `UseStaticFiles` peut entraîner une fuite secrets. Il est recommandé que vous **pas** activer l’exploration de répertoire production. Soyez prudent sur les répertoires dans lesquels vous activez avec `UseStaticFiles` ou `UseDirectoryBrowser` comme l’ensemble du répertoire et tous les sous-répertoires seront accessibles. Nous recommandons de conserver le contenu public dans son propre répertoire tel que  *\<contenu racine > / wwwroot*, en s’éloignant de vues de l’application, les fichiers de configuration, etc.
 
 * Les URL pour le contenu exposé avec `UseDirectoryBrowser` et `UseStaticFiles` sont soumis aux restrictions de caractères de leur système de fichiers sous-jacent et respect de la casse. Par exemple, Windows respecte la casse, mais Mac et Linux ne sont pas.
 

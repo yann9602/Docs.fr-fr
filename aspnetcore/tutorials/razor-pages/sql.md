@@ -10,11 +10,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: tutorials/razor-pages/sql
-ms.openlocfilehash: 852bd2dff96c951f55a9b142d8e15b6ec5856921
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: 42fa98886f3e87e79ea1ea4a2223a79319676006
+ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 09/28/2017
 ---
 # <a name="working-with-sql-server-localdb-and-aspnet-core"></a>Utilisation de SQL Server LocalDB et d’ASP.NET Core
 
@@ -26,7 +26,7 @@ L’objet `MovieContext` gère la tâche de connexion à la base de données et 
 
 Le système de [configuration](xref:fundamentals/configuration) d’ASP.NET Core lit `ConnectionString`. Pour un développement local, il obtient la chaîne de connexion à partir du fichier *appsettings.json* :
 
-[!code-javascript[Main](razor-pages-start/sample/RazorPagesMovie/appsettings.json?highlight=2&range=8-10)]
+[!code-json[Main](razor-pages-start/sample/RazorPagesMovie/appsettings.json?highlight=2&range=8-10)]
 
 Quand vous déployez l’application sur un serveur de test ou de production, vous pouvez utiliser une variable d’environnement ou une autre approche pour définir un serveur SQL Server réel comme chaîne de connexion. Pour plus d’informations, consultez [Configuration](xref:fundamentals/configuration).
 
@@ -39,15 +39,15 @@ LocalDB est une version allégée du moteur de base de données SQL Server Expre
 
   ![Menu View](sql/_static/ssox.png)
 
-* Cliquez avec le bouton droit sur la table `Movie` **> Concepteur de vue**.
+* Cliquez avec le bouton droit sur la table `Movie` et sélectionnez **Concepteur de vues** :
 
   ![Menu contextuel ouvert sur la table Movie](sql/_static/design.png)
 
   ![Table Movie ouverte dans le Concepteur](sql/_static/dv.png)
 
-Notez l’icône de clé en regard de `ID`. Par défaut, EF fait d’une propriété nommée `ID` la clé primaire.
+Notez l’icône de clé en regard de `ID`. Par défaut, EF crée une propriété nommée `ID` pour la clé primaire.
 
-* Cliquez avec le bouton droit sur la table `Movie` **> Afficher les données**
+* Cliquez avec le bouton droit sur la table `Movie` et sélectionnez **Afficher les données** :
 
   ![Table Movie ouverte, affichant des données de table](sql/_static/vd22.png)
 
@@ -60,7 +60,7 @@ Créez une classe nommée `SeedData` dans l’espace de noms *Modèles*. Remplac
 Si la base de données contient des films, l’initialiseur de valeur initiale retourne une valeur et aucun film n’est ajouté.
 
 ```csharp
-if (context.Movie.Any())
+if (context.Movies.Any())
 {
     return;   // DB has been seeded.
 }
@@ -77,7 +77,7 @@ Tester l’application
 * Supprimez tous les enregistrements de la base de données. Pour ce faire, utilisez les liens de suppression disponibles dans le navigateur ou à partir de [SSOX](xref:tutorials/razor-pages/new-field#ssox)
 * Forcez l’application à s’initialiser (appelez les méthodes de la classe `Startup`) pour que la méthode seed s’exécute. Pour forcer l’initialisation, IIS Express doit être arrêté et redémarré. Pour cela, adoptez l’une des approches suivantes :
 
-  * Cliquez avec le bouton droit sur l’icône de barre d’état système IIS Express dans la zone de notification, puis appuyez sur **Quitter** ou sur **Arrêter le site**.
+  * Cliquez avec le bouton droit sur l’icône de barre d’état système IIS Express dans la zone de notification, puis appuyez sur **Quitter** ou sur **Arrêter le site** :
 
     ![Icône de la barre d’état système IIS Express](../first-mvc-app/working-with-sql/_static/iisExIcon.png)
 
@@ -86,12 +86,12 @@ Tester l’application
    * Si vous exécutiez Visual Studio en mode de non-débogage, appuyez sur F5 pour l’exécuter en mode de débogage.
    * Si vous exécutiez Visual Studio en mode de débogage, arrêtez le débogueur et appuyez sur F5.
    
-L’application affiche les données de valeurs de départ.
+L’application affiche les données de départ :
 
 ![Application Movie ouverte dans Chrome, affichant les données relatives aux films](sql/_static/m55.png)
 
 Le didacticiel suivant nettoie la présentation des données.
 
 >[!div class="step-by-step"]
-[Précédent : Pages Razor obtenues par génération de modèles automatique](xref:tutorials/razor-pages/page)   
-[Suivant : Mise à jour des pages](xref:tutorials/razor-pages/da1)
+[Précédent : Pages Razor obtenues par génération de modèles automatiques](xref:tutorials/razor-pages/page)
+[Suivant : Mises à jour des pages](xref:tutorials/razor-pages/da1)

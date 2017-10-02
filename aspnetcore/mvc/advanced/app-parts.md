@@ -11,15 +11,15 @@ ms.assetid: b355a48e-a15c-4d58-b69c-899963613a98
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/extensibility/app-parts
-ms.openlocfilehash: 77d3a58d58493bf1b0b760ab9037d2778ba23441
-ms.sourcegitcommit: 67f54fabbfa4e3942f5bfe1f8a7fdfe4a7a75358
+ms.openlocfilehash: a260675e7461105d4f6a0c61fd13971663c268f2
+ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2017
+ms.lasthandoff: 10/01/2017
 ---
 # <a name="application-parts-in-aspnet-core"></a>Composants d’application ASP.NET Core
 
-[Afficher ou télécharger l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/advanced/app-parts/sample)
+[Afficher ou télécharger l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/advanced/app-parts/sample) ([comment télécharger](xref:tutorials/index#how-to-download-a-sample))
 
 Un *partie Application* est une abstraction sur les ressources d’une application, à partir de laquelle les fonctionnalités de MVC tels que les contrôleurs, les composants de la vue, ou programmes d’assistance de balise peuvent être découvertes. Un exemple d’une partie de l’application est un AssemblyPart, qui encapsule une référence d’assembly et expose les types et les références de compilation. *Fournisseurs de fonctionnalités* fonctionnent avec les composants d’application pour remplir les fonctionnalités d’une application ASP.NET MVC de base. Cas d’usage principal pour les parties de l’application est à vous permettent de configurer votre application pour découvrir (ou éviter le chargement) fonctionnalités MVC à partir d’un assembly.
 

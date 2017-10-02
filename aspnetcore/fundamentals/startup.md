@@ -1,7 +1,7 @@
 ---
 title: "Démarrage de l’application dans ASP.NET Core"
 author: ardalis
-description: "Explique la classe de démarrage dans ASP.NET Core."
+description: "Découvrez comment la classe de démarrage dans ASP.NET Core configure les services et le pipeline de demande de l’application."
 keywords: "ASP.NET Core, démarrage, méthode Configure, ConfigureServices (méthode)"
 ms.author: tdykstra
 manager: wpickett
@@ -10,17 +10,17 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/startup
-ms.openlocfilehash: 94db2ff530b5de7fe357cfb591d09b984cb248f9
-ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
+ms.openlocfilehash: bba0eafe3917fa850b3a07df8df6448409f4062d
+ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 10/01/2017
 ---
 # <a name="application-startup-in-aspnet-core"></a>Démarrage de l’application dans ASP.NET Core
 
 Par [Steve Smith](https://ardalis.com/) et [Tom Dykstra](https://github.com/tdykstra/)
 
-La `Startup` classe configure les services et le pipeline de demande de l’application. 
+La `Startup` classe configure les services et le pipeline de demande de l’application.
 
 ## <a name="the-startup-class"></a>Classe de démarrage.
 

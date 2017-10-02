@@ -1,233 +1,341 @@
 ---
-title: "Vue d’ensemble de vues"
+title: "Vues de base d’ASP.NET MVC"
 author: ardalis
-description: 
-keywords: ASP.NET Core,
+description: "Découvrez comment gérer les vues de présentation des données de l’application et l’interaction utilisateur dans ASP.NET MVC de base."
+keywords: ASP.NET Core, afficher, MVC, razor, viewmodel, viewdata, viewbag
 ms.author: riande
 manager: wpickett
-ms.date: 10/14/2016
+ms.date: 09/26/2017
 ms.topic: article
 ms.assetid: 668c320d-c050-45e3-8161-2f460dc93b2f
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/overview
-ms.openlocfilehash: 3b33c13f2385d3b07ba9b6f0bc0fd560abc3735c
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: f40feb0466854080cc749a83c546ce857d850902
+ms.sourcegitcommit: e4a1df2a5a85f299322548809e547a79b380bb92
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 09/29/2017
 ---
-# <a name="rendering-html-with-views-in-aspnet-core-mvc"></a>Rendu HTML avec des vues dans ASP.NET MVC de base
+# <a name="views-in-aspnet-core-mvc"></a>Vues de base d’ASP.NET MVC
 
-Par [Steve Smith](https://ardalis.com/)
+Par [Steve Smith](https://ardalis.com/) et [Luke Latham](https://github.com/guardrex)
 
-Les contrôleurs ASP.NET MVC de base peuvent retourner des résultats mis en forme à l’aide de *vues*.
+Dans le **M**odèle -**V**UE -**C**ontroller (MVC), modèle, le *vue* gère l’interaction utilisateur et de présentation des données de l’application. Une vue est un modèle HTML incorporé [balisage de Razor](xref:mvc/views/razor). Balisage de Razor est un code qui interagit avec le balisage HTML pour générer une page Web qui est envoyée au client.
 
-## <a name="what-are-views"></a>Que sont les vues ?
+Dans ASP.NET MVC de base, les vues sont *.cshtml* fichiers qui utilisent le [langage de programmation c#](/dotnet/csharp/) dans le balisage de Razor. En règle générale, afficher les fichiers sont regroupés dans des dossiers nommés pour chacune de l’application [contrôleurs](xref:mvc/controllers/actions). Les dossiers sont stockées dans un dans un *vues* dossier à la racine de l’application :
 
-Dans le modèle Model-View-Controller (MVC), le *vue* encapsule les détails de présentation de l’interaction utilisateur avec l’application. Les vues sont des modèles HTML contenant du code incorporé qui génèrent du contenu à envoyer au client. Vues utilisent [la syntaxe Razor](razor.md), ce qui permet d’interagir avec du code HTML avec un minimum de code ou de cérémonie de code.
+![Dossier de vues dans l’Explorateur de solutions de Visual Studio est ouvert avec le dossier de base ouvert pour afficher les fichiers About.cshtml, Contact.cshtml et Index.cshtml](overview/_static/views_solution_explorer.png)
 
-Les vues ASP.NET MVC de base sont *.cshtml* fichiers stockés par défaut dans un *vues* dossier au sein de l’application. En règle générale, chaque contrôleur aura son propre dossier, dans lequel sont des vues pour les actions de contrôleur spécifique.
+Le *accueil* contrôleur est représenté par un *accueil* dossier à l’intérieur de la *vues* dossier. Le *accueil* dossier contient les vues pour la *sur*, *Contact*, et *Index* des pages Web (page d’accueil). Quand un utilisateur demande une de ces trois des pages Web, les actions de contrôleur dans le *accueil* contrôleur déterminer lequel des trois vues est utilisé pour générer et retourner une page Web à l’utilisateur.
 
-![Dossier d’affichages dans l’Explorateur de solutions](overview/_static/views_solution_explorer.png)
+Utilisez [dispositions](xref:mvc/views/layout) pour fournir des sections de la page Web cohérente et de réduire la redondance du code. Dispositions contiennent souvent l’en-tête, des éléments de menu et de navigation et le pied de page. L’en-tête et le pied de page contiennent généralement de balisage standard pour de nombreux éléments de métadonnées et des liens vers des ressources de script et de style. Dispositions de vous aident à éviter ce balisage réutilisable dans vos vues.
 
-En plus des vues spécifiques à certaines actions, [vues partielles](partial.md), [mises en page et autres fichiers de vue spéciale](layout.md) peut être utilisé pour aider à réduire la répétition et permettre la réutilisation dans les affichages de l’application.
+[Les vues partielles](xref:mvc/views/partial) réduire la duplication de code grâce à la gestion de parties réutilisables de vues. Par exemple, une vue partielle est utile pour biographie de l’auteur sur un site Web de blog qui apparaît dans plusieurs vues. Biographie de l’auteur est d’ordinaire afficher le contenu et ne nécessite pas le code à exécuter afin de produire le contenu de la page Web. Créer du contenu biographie est disponible à l’affichage par la liaison de modèle uniquement, par conséquent, à l’aide d’une vue partielle pour ce type de contenu est idéale.
+
+[Affichage des composants](xref:mvc/views/view-components) sont des vues similaires sur la valeur partielle dans la mesure où ils vous permettent de réduire le code répétitif, mais ils sont appropriés pour l’affichage du contenu qui nécessite que du code à exécuter sur le serveur pour restituer la page Web. Affichage des composants sont utiles lorsque le contenu rendu requiert une interaction de base de données, comme pour un site Web du panier d’achat. Affichage des composants ne sont pas limitées à la liaison de modèle afin de produire la sortie de la page Web.
 
 ## <a name="benefits-of-using-views"></a>Avantages de l’utilisation de vues
 
-Les vues fournissent [séparation des préoccupations](http://deviq.com/separation-of-concerns/) au sein d’une application MVC, encapsulant la balise de niveau interface utilisateur séparément à partir de la logique métier. ASP.NET MVC vues utilisent [la syntaxe Razor](razor.md) pour basculer HTML balisage et le serveur logique simple. Des aspects communs, répétitives d’interface utilisateur de l’application peuvent être facilement réutilisées entre les vues à l’aide de [mise en page et les directives partagés](layout.md) ou [vues partielles](partial.md).
+Les vues permettent d’établir une [ **S**eparation **o**f **C**oncerns (SoC) conception](http://deviq.com/separation-of-concerns/) au sein d’une application MVC en séparant le balisage d’interface utilisateur à partir de autres parties de l’application. Suivant SoC conception rend votre application modulaire, ce qui offre plusieurs avantages :
+
+* L’application est plus facile à gérer, car il est mieux organisée. Les vues sont généralement regroupés en fonction de l’application. Cela rend plus facile à trouver les vues associées lorsque vous travaillez sur une fonctionnalité.
+* Les parties de l’application ne sont pas fortement couplés. Vous pouvez générer et mettre à jour des vues de l’application séparément dans les composants accès logique et les données d’entreprise. Vous pouvez modifier les vues de l’application sans nécessairement devoir mettre à jour des autres parties de l’application.
+* Il est plus facile de tester des parties de l’interface utilisateur de l’application, car les vues sont des unités distinctes.
+* En raison d’une meilleure organisation, il est moins probable que vous allez accidentellement sections de répétitions de l’interface utilisateur.
 
 ## <a name="creating-a-view"></a>Création d’une vue
 
-Les vues qui sont spécifiques à un contrôleur sont créées dans le *vues / [nom du contrôleur]* dossier. Les vues qui sont partagées entre les contrôleurs sont placées dans le */vues/Shared* dossier. Nommer le fichier de vue de la même que son action de contrôleur associé et ajouter la *.cshtml* extension de fichier. Par exemple, pour créer un affichage pour le *sur* action sur le *accueil* contrôleur, vous devez créer le *About.cshtml* de fichiers dans le  * /vues/Home*dossier.
+Les vues qui sont spécifiques à un contrôleur sont créées dans le *vues / [nom du contrôleur]* dossier. Les vues qui sont partagées entre les contrôleurs sont placées dans le *Views/Shared* dossier. Pour créer une vue, ajoutez un nouveau fichier et lui donner le même nom que son action de contrôleur associé avec le *.cshtml* extension de fichier. Pour créer une vue pour la *sur* action dans le *accueil* contrôleur, créez un *About.cshtml* de fichiers dans le *Views/Home* dossier :
 
-Un exemple de fichier de vue (*About.cshtml*) :
+[!code-cshtml[Main](../../common/samples/WebApplication1/Views/Home/About.cshtml)]
 
-[!code-html[Main](../../common/samples/WebApplication1/Views/Home/About.cshtml)]
+*Razor* balisage commence par la `@` symbole. Les instructions c# exécution en plaçant c# du code dans [blocs de code Razor](xref:mvc/views/razor#razor-code-blocks) définir à off par des accolades (`{ ... }`). Par exemple, consultez l’affectation de « About » pour `ViewData["Title"]` ci-dessus. Vous pouvez afficher des valeurs dans le code HTML en référençant simplement la valeur avec le `@` symbole. Consultez le contenu de la `<h2>` et `<h3>` éléments ci-dessus.
 
-*Razor* code est indiqué par le `@` symbole. Instructions c# sont exécutées au sein de Razor blocs de code définir à off par des accolades (`{` `}`), par exemple l’affectation de « About » pour le `ViewData["Title"]` élément indiqué ci-dessus. Razor peut être utilisé pour afficher les valeurs dans le code HTML en référençant simplement la valeur avec le `@` symbol, comme indiqué dans le `<h2>` et `<h3>` éléments ci-dessus.
+Le contenu de la vue ci-dessus n'est qu’une partie de la page Web entière qui est restituée à l’utilisateur. Le reste de la mise en page et d’autres aspects courantes de la vue sont spécifiés dans d’autres fichiers de vue. Pour plus d’informations, consultez la [rubrique de présentation](xref:mvc/views/layout).
 
-Cette vue se concentre sur la partie seulement de la sortie pour laquelle il est chargé. Le reste de la mise en page et d’autres aspects courantes de la vue, spécifiées ailleurs. En savoir plus sur [mise en page et la logique d’affichage partagé](layout.md).
+## <a name="how-controllers-specify-views"></a>La façon dont les contrôleurs spécifient les vues
 
-## <a name="how-do-controllers-specify-views"></a>Comment les contrôleurs de la spécification des affichages ?
-
-Les vues sont généralement retournées à partir des actions comme un `ViewResult`. Votre méthode d’action peut créer et renvoyer un `ViewResult` directement, mais plus souvent si votre contrôleur hérite `Controller`, vous allez simplement utiliser le `View` méthode d’assistance, que cet exemple montre :
+Les vues sont généralement retournées à partir d’actions en tant qu’un [ViewResult](/aspnet/core/api/microsoft.aspnetcore.mvc.viewresult), qui est un type de [ActionResult](/aspnet/core/api/microsoft.aspnetcore.mvc.actionresult). Votre méthode d’action peut créer et renvoyer un `ViewResult` directement, mais qui n’est pas généralement effectué. Étant donné que la plupart des contrôleurs héritent de [contrôleur](/aspnet/core/api/microsoft.aspnetcore.mvc.controller), vous utilisez simplement le `View` méthode d’assistance pour retourner le `ViewResult`:
 
 *HomeController.cs*
 
 [!code-csharp[Main](../../common/samples/WebApplication1/Controllers/HomeController.cs?highlight=5&range=16-21)]
 
-Le `View` méthode d’assistance a plusieurs surcharges pour faciliter le retour des vues pour les développeurs d’applications. Vous pouvez éventuellement spécifier une vue pour retourner, ainsi que d’un objet de modèle à passer à la vue.
+Lorsque cette action est retournée, la *About.cshtml* indiqué dans la dernière section de vue est restituée en tant que la page Web suivante :
 
-Lorsque cette action est retournée, la *About.cshtml* indiqué ci-dessus est restituée :
+![Sur la page rendue dans le navigateur Edge](overview/_static/about-page.png)
 
-![Sur la page](overview/_static/about-page.png)
+Le `View` méthode d’assistance a plusieurs surcharges. Vous pouvez éventuellement spécifier :
+
+* Un affichage explicite pour renvoyer :
+
+  ```csharp
+  return View("Orders");
+  ```
+* A [modèle](xref:mvc/models/model-binding) à passer à la la vue :
+
+  ```csharp
+  return View(Orders);
+  ```
+* Une vue et un modèle :
+
+  ```csharp
+  return View("Orders", Orders);
+  ```
 
 ### <a name="view-discovery"></a>Détection de la vue
 
-Lorsqu’une action retourne une vue, un processus appelé *détection de la vue* a lieu. Ce processus détermine l’afficher le fichier sera utilisé. Sauf si un fichier de vue spécifiques est spécifié, le runtime recherche une vue spécifique du contrôleur, puis recherche d’abord nom correspondant de la vue dans le *Shared* dossier.
+Lorsqu’une action retourne une vue, un processus appelé *détection de la vue* a lieu. Ce processus détermine l’afficher le fichier est utilisé en fonction du nom de la vue. 
 
-Lorsqu’une action retourne le `View` (méthode), par exemple `return View();`, le nom de l’action est utilisé en tant que le nom de la vue. Par exemple, si cela était appelé à partir d’une méthode d’action nommée « Index », il serait équivalent à passer un nom d’affichage de « Index ». Un nom de la vue peut être explicitement transmis à la méthode (`return View("SomeView");`). Dans ces deux cas, afficher les recherches de découverte pour un fichier de vue correspondant dans :
+Lorsqu’une action retourne le `View` (méthode) (`return View();`) et une vue n’est pas spécifiée, le nom de l’action est utilisé en tant que le nom de la vue. Par exemple, le *sur* `ActionResult` nom de la méthode du contrôleur est utilisé pour rechercher un fichier de vue nommé *About.cshtml*. Tout d’abord, le runtime recherche le *vues / [nom du contrôleur]* dossier pour l’affichage. S’il ne trouve pas une vue correspondante, il recherche le *Shared* dossier pour l’affichage.
 
-   1. Vues /\<ControllerName > /\<ViewName > .cshtml
+Peu importe si vous retournez implicitement le `ViewResult` avec `return View();` ou explicitement passer le nom d’affichage pour le `View` méthode avec `return View("<ViewName>");`. Dans les deux cas, afficher les recherches de découverte pour un fichier de vue correspondant dans cet ordre :
 
-   2. Les vues ouShared/\<ViewName > .cshtml
+   1. *Vues /\[ControllerName]\[ViewName] .cshtml*
+   1. *Les vues ouShared/\[ViewName] .cshtml*
 
->[!TIP]
-> Nous vous recommandons d’appliquer la convention de simplement retourner `View()` à partir d’actions lorsque cela est possible, qu’elle provoque plus flexible et plus facile à refactoriser le code.
+Un chemin d’accès du fichier de vue peut être fourni au lieu d’un nom de la vue. Si vous utilisez un chemin d’accès absolu, commençant à la racine de l’application (éventuellement en commençant par « / » ou « ~ / »), le *.cshtml* extension doit être spécifiée :
 
-Un chemin d’accès du fichier de vue peut être fourni au lieu d’un nom de la vue. Si vous utilisez un chemin d’accès absolu, en commençant à la racine de l’application (éventuellement en commençant par « / » ou « ~ / »), le *.cshtml* extension doit être spécifiée en tant que partie du chemin du fichier (par exemple, `return View("Views/Home/About.cshtml");`). Vous pouvez également utiliser un chemin d’accès relatif à partir du répertoire spécifique du contrôleur dans le *vues* active pour spécifier les vues dans des répertoires différents (par exemple, `return View("../Manage/Index");` à l’intérieur de la `HomeController`). De même, vous pouvez parcourir le répertoire spécifique du contrôleur actuel (par exemple, `return View("./About");`). Notez que les chemins d’accès relatifs ne pas utiliser le *.cshtml* extension. Comme mentionné précédemment, suivez la meilleure pratique d’organiser la structure de fichiers pour les vues afin de refléter les relations entre les contrôleurs, les actions et les vues à la facilité de maintenance et de clarté.
+```csharp
+return View("Views/Home/About.cshtml");
+```
 
-> [!NOTE]
-> [Les vues partielles](partial.md) et [affichage des composants](view-components.md) utilisent des mécanismes de découverte similaires (mais non identiques).
+Vous pouvez également utiliser un chemin d’accès relatif pour spécifier les vues dans des répertoires différents sans le *.cshtml* extension. À l’intérieur de la `HomeController`, vous pouvez retourner le *Index* afficher de votre *gérer* vues avec un chemin d’accès relatif :
 
-> [!NOTE]
-> Vous pouvez personnaliser la convention par défaut concernant où vues se trouvent dans l’application à l’aide d’un `IViewLocationExpander`.
+```csharp
+return View("../Manage/Index");
+```
 
->[!TIP]
-> Les noms de vue peuvent être respecte la casse selon le système de fichiers sous-jacent. Pour la compatibilité entre les systèmes d’exploitation, toujours respecter la casse entre le contrôleur et les noms d’actions associé à afficher les dossiers et les noms de fichiers.
+De même, vous pouvez indiquer le répertoire spécifique du contrôleur actif avec le «. / » préfixe :
+
+```csharp
+return View("./About");
+```
+
+[Les vues partielles](xref:mvc/views/partial) et [affichage des composants](xref:mvc/views/view-components) utilisent des mécanismes de découverte similaires (mais non identiques).
+
+Vous pouvez personnaliser la convention par défaut pour comment les vues sont situés dans l’application à l’aide d’un [IViewLocationExpander](/aspnet/core/api/microsoft.aspnetcore.mvc.razor.iviewlocationexpander).
+
+Découverte de la vue s’appuie sur la recherche d’afficher les fichiers par nom de fichier. Si le système de fichiers sous-jacent respecte la casse, les noms des vues sont probablement respecte la casse. Pour la compatibilité entre les systèmes d’exploitation, respecter la casse entre le contrôleur et les noms d’actions et associé à afficher les dossiers et les noms de fichiers. Si vous rencontrez une erreur Impossible de trouver un fichier de vue lorsque vous travaillez avec un système de fichiers respectant la casse, vérifiez que la casse identique dans le fichier de la vue demandée et le nom de fichier réel de l’affichage.
+
+Suivre la meilleure pratique d’organiser la structure de fichiers pour les vues afin de refléter les relations entre les contrôleurs, les actions et les vues à la facilité de maintenance et de clarté.
 
 ## <a name="passing-data-to-views"></a>Passage de données à des vues
 
-Vous pouvez passer des données pour les vues à l’aide de plusieurs mécanismes. L’approche la plus fiable consiste à spécifier un *modèle* type dans la vue (communément appelé une *viewmodel*, pour différencier des types de modèle de domaine métier), puis passez une instance de ce type à la vue à partir de l’action. Nous vous recommandons de qu'utiliser un modèle ou un modèle d’affichage pour passer des données à une vue. Ainsi, la vue tirer parti de la vérification de type fort. Vous pouvez spécifier un modèle pour une vue à l’aide de la `@model` directive :
+Vous pouvez passer des données pour les vues à l’aide de plusieurs approches. L’approche la plus fiable consiste à spécifier un [modèle](xref:mvc/models/model-binding) type dans la vue. Ce modèle est communément appelé une *viewmodel*. Vous passez une instance du type viewmodel à la vue à partir de l’action.
 
-<!-- literal_block {"ids": [], "linenos": false, "xml:space": "preserve", "language": "html", "highlight_args": {"hl_lines": [1]}} -->
+À l’aide d’un viewmodel pour passer des données à une vue permet de tirer parti de la vue de *fort* la vérification du type. *Un typage fort* (ou *fortement typé*) signifie que chaque variable et constante a un type défini explicitement (par exemple, `string`, `int`, ou `DateTime`). La validité des types utilisés dans une vue est vérifiée au moment de la compilation.
 
-```html
+Des outils, tels que [Visual Studio](https://www.visualstudio.com/vs/) ou [Visual Studio Code](https://code.visualstudio.com/), peut également répertorier les membres (propriétés d’un modèle) pendant que vous les ajoutez à une vue, ce qui vous permet d’écrire du code plus rapidement avec moins d’erreurs. Cette fonctionnalité est appelée [IntelliSense](/visualstudio/ide/using-intellisense) dans les outils de Microsoft.
+
+Spécifier un modèle à l’aide de la `@model` la directive. Utiliser le modèle avec `@Model`:
+
+```cshtml
 @model WebApplication1.ViewModels.Address
-   <h2>Contact</h2>
-   <address>
-       @Model.Street<br />
-       @Model.City, @Model.State @Model.PostalCode<br />
-       <abbr title="Phone">P:</abbr>
-       425.555.0100
-   </address>
-   ```
 
-Une fois qu’un modèle a été spécifié pour une vue, l’instance envoyée à la vue est accessible dans une manière fortement typée à l’aide `@Model` comme indiqué ci-dessus. Pour fournir une instance du type de modèle à la vue, le contrôleur transmet en tant que paramètre :
+<h2>Contact</h2>
+<address>
+    @Model.Street<br>
+    @Model.City, @Model.State @Model.PostalCode<br>
+    <abbr title="Phone">P:</abbr> 425.555.0100
+</address>
+```
 
-<!-- literal_block {"ids": [], "linenos": false, "xml:space": "preserve", "language": "csharp", "highlight_args": {"hl_lines": [13]}} -->
+Pour fournir le modèle à la vue, le contrôleur transmet en tant que paramètre :
 
 ```csharp
 public IActionResult Contact()
-   {
-       ViewData["Message"] = "Your contact page.";
+{
+    ViewData["Message"] = "Your contact page.";
 
-       var viewModel = new Address()
-       {
-           Name = "Microsoft",
-           Street = "One Microsoft Way",
-           City = "Redmond",
-           State = "WA",
-           PostalCode = "98052-6399"
-       };
-       return View(viewModel);
-   }
-   ```
+    var viewModel = new Address()
+    {
+        Name = "Microsoft",
+        Street = "One Microsoft Way",
+        City = "Redmond",
+        State = "WA",
+        PostalCode = "98052-6399"
+    };
 
-Il n’existe aucune restriction sur les types qui peuvent être fournis à une vue en tant que modèle. Nous vous recommandons de passage brut POCO Old CLR Object () afficher les modèles avec peu ou pas un comportement, afin que la logique métier peut être encapsulée ailleurs dans l’application. Un exemple de cette approche est la *adresse* viewmodel utilisé dans l’exemple ci-dessus :
+    return View(viewModel);
+}
+```
 
-<!-- literal_block {"ids": [], "linenos": false, "xml:space": "preserve", "language": "csharp", "highlight_args": {"hl_lines": [13]}} -->
+Il n’existe aucune restriction sur les types de modèles que vous pouvez fournir à une vue. Nous vous recommandons d’utiliser **P**brut **O**%ld **C**LR **O**ViewModel objet (POCO) avec peu ou pas comportement (méthodes) défini. En règle générale, les classes viewmodel sont soit stockés dans le *modèles* dossier ou distinct *ViewModel* dossier à la racine de l’application. Le *adresse* viewmodel utilisé dans l’exemple ci-dessus est un viewmodel POCO stocké dans un fichier nommé *Address.cs*:
 
 ```csharp
 namespace WebApplication1.ViewModels
-   {
-       public class Address
-       {
-           public string Name { get; set; }
-           public string Street { get; set; }
-           public string City { get; set; }
-           public string State { get; set; }
-           public string PostalCode { get; set; }
-       }
-   }
-   ```
+{
+    public class Address
+    {
+        public string Name { get; set; }
+        public string Street { get; set; }
+        public string City { get; set; }
+        public string State { get; set; }
+        public string PostalCode { get; set; }
+    }
+}
+```
 
 > [!NOTE]
-> Rien ne vous empêche d’utiliser les mêmes classes que vos types de modèle d’entreprise et de vos types de modèle d’affichage. Toutefois, les conservant à part permet à vos vues faire varier indépendamment à partir de votre modèle de domaine ou la persistance et peut offrir certains avantages de sécurité ainsi (pour les modèles que les utilisateurs envoient à l’application à l’aide de [liaison de modèle](../models/model-binding.md)).
+> Rien ne vous empêche d’utiliser les mêmes classes pour vos types viewmodel et vos types de modèle d’entreprise. Toutefois, à l’aide des modèles distincts permet à vos vues varier indépendamment à partir de la logique métier et les données des accès des parties de votre application. Séparation des modèles et ViewModel offre également des avantages de sécurité lorsque les modèles utilisent [liaison de modèle](xref:mvc/models/model-binding) et [validation](xref:mvc/models/validation) pour les données envoyées à l’application par l’utilisateur.
 
-### <a name="loosely-typed-data"></a>Données faiblement typées
+### <a name="weakly-typed-data-viewdata-and-viewbag"></a>Données faiblement typée (ViewData et ViewBag)
 
-Outre les vues fortement typées, toutes les vues ont accès à une collection faiblement typée de données. Cette même collection peut être référencée par le biais du `ViewData` ou `ViewBag` propriétés sur les contrôleurs et vues. Le `ViewBag` propriété est un wrapper autour de `ViewData` qui fournit une vue dynamique sur cette collection. Il n’est pas une collection distincte.
+Outre les vues fortement typées, vues ont accès à un *faiblement typée* (également appelé *faiblement typé*) collecte des données. Contrairement aux types forts, *types faibles* (ou *de perdre des types*) signifie que vous ne déclariez pas explicitement le type de données que vous utilisez. Vous pouvez utiliser la collection de données faiblement typé pour le passage de petites quantités de données vers et depuis les contrôleurs et les vues.
 
-`ViewData`est un objet de dictionnaire accessible via `string` clés. Vous pouvez stocker et récupérer des objets qu’il contient, et vous devez les convertir en un type spécifique lorsque vous extrayez les. Vous pouvez utiliser `ViewData` pour passer des données à partir d’un contrôleur à des vues, ainsi que dans les vues (et les vues partielles et mises en page). Données de chaîne peuvent stockées et utilisées directement, sans recourir à un cast.
+| Passer des données entre un...                        | Exemple                                                                        |
+| ------------------------------------------------- | ------------------------------------------------------------------------------ |
+| Contrôleur et une vue                             | Remplissage d’une liste déroulante avec des données.                                          |
+| Affichage et un [mode](xref:mvc/views/layout)   | Définition de la  **\<titre >** contenu de l’élément dans la vue mise en page à partir d’un fichier de vue.  |
+| [Vue partielle](xref:mvc/views/partial) et une vue | Un widget qui affiche des données en fonction de la page Web demandée par l’utilisateur.      |
 
-Définir des valeurs pour `ViewData` dans une action :
+Cette collection peut être référencée par le biais du `ViewData` ou `ViewBag` propriétés sur les contrôleurs et vues. Le `ViewData` propriété est un dictionnaire d’objets de faiblement typée. Le `ViewBag` propriété est un wrapper autour de `ViewData` qui fournit des propriétés dynamiques pour sous-jacent `ViewData` collection.
+
+`ViewData`et `ViewBag` sont résolues dynamiquement lors de l’exécution. Dans la mesure où ils n’offrent pas de vérification de type lors de la compilation, les deux sont généralement plus sujettes aux erreurs que l’utilisation d’un modèle de vues. Pour cette raison, certains développeurs préfèrent minimale ou jamais utiliser `ViewData` et `ViewBag`.
+
+**ViewData**
+
+`ViewData`est un [ViewDataDictionary](/aspnet/core/api/microsoft.aspnetcore.mvc.viewfeatures.viewdatadictionary) objet accédé via `string` clés. Données de chaîne peuvent être stockées et utilisées directement, sans la nécessité d’un cast, mais vous devez effectuer un cast des autres `ViewData` valeurs à des types spécifiques de l’objet lorsque vous extrayez les. Vous pouvez utiliser `ViewData` pour passer des données à partir des contrôleurs vers des affichages et dans les affichages, y compris [vues partielles](xref:mvc/views/partial) et [dispositions](xref:mvc/views/layout).
+
+Voici un exemple qui définit les valeurs pour un message d’accueil et une adresse à l’aide `ViewData` dans une action :
 
 ```csharp
 public IActionResult SomeAction()
-   {
-       ViewData["Greeting"] = "Hello";
-       ViewData["Address"]  = new Address()
-       {
-           Name = "Steve",
-           Street = "123 Main St",
-           City = "Hudson",
-           State = "OH",
-           PostalCode = "44236"
-       };
+{
+    ViewData["Greeting"] = "Hello";
+    ViewData["Address"]  = new Address()
+    {
+        Name = "Steve",
+        Street = "123 Main St",
+        City = "Hudson",
+        State = "OH",
+        PostalCode = "44236"
+    };
 
-       return View();
-   }
-   ```
+    return View();
+}
+```
 
 Utiliser les données dans une vue :
 
-<!-- literal_block {"ids": [], "linenos": false, "xml:space": "preserve", "language": "html", "highlight_args": {"hl_lines": [3, 6]}} -->
-
-```html
+```cshtml
 @{
-       // Requires cast
-       var address = ViewData["Address"] as Address;
-   }
+    // Since Address isn't a string, it requires a cast.
+    var address = ViewData["Address"] as Address;
+}
 
-   @ViewData["Greeting"] World!
+@ViewData["Greeting"] World!
 
-   <address>
-       @address.Name<br />
-       @address.Street<br />
-       @address.City, @address.State @address.PostalCode
-   </address>
-   ```
+<address>
+    @address.Name<br>
+    @address.Street<br>
+    @address.City, @address.State @address.PostalCode
+</address>
+```
 
-Le `ViewBag` objets fournit un accès dynamique pour les objets stockés dans `ViewData`. Cela peut être plus pratique d’utiliser, car il ne nécessite un transtypage. Le même exemple que ci-dessus, à l’aide de `ViewBag` au lieu de fortement typé `address` instance dans la vue :
+**Élément ViewBag**
 
-<!-- literal_block {"ids": [], "linenos": false, "xml:space": "preserve", "language": "html", "highlight_args": {"hl_lines": [1, 4, 5, 6]}} -->
+`ViewBag`est un [DynamicViewData](/aspnet/core/api/microsoft.aspnetcore.mvc.viewfeatures.internal.dynamicviewdata) objet qui fournit un accès dynamique pour les objets stockés dans `ViewData`. `ViewBag`peut être plus pratique d’utiliser, car il ne nécessite un transtypage. L’exemple suivant montre comment utiliser `ViewBag` avec le même résultat qu’à l’aide de `ViewData` ci-dessus :
 
-```html
+```csharp
+public IActionResult SomeAction()
+{
+    ViewBag.Greeting = "Hello";
+    ViewBag.Address  = new Address()
+    {
+        Name = "Steve",
+        Street = "123 Main St",
+        City = "Hudson",
+        State = "OH",
+        PostalCode = "44236"
+    };
+
+    return View();
+}
+```
+
+```cshtml
 @ViewBag.Greeting World!
 
-   <address>
-       @ViewBag.Address.Name<br />
-       @ViewBag.Address.Street<br />
-       @ViewBag.Address.City, @ViewBag.Address.State @ViewBag.Address.PostalCode
-   </address>
-   ```
+<address>
+    @ViewBag.Address.Name<br>
+    @ViewBag.Address.Street<br>
+    @ViewBag.Address.City, @ViewBag.Address.State @ViewBag.Address.PostalCode
+</address>
+```
 
-> [!NOTE]
-> Étant donné que les deux font référence au même sous-jacent `ViewData` collection, vous pouvez mélanger et correspondent entre `ViewData` et `ViewBag` lors de la lecture et l’écriture de valeurs, si le fait de.
+**À l’aide de ViewData et ViewBag simultanément**
+
+Étant donné que `ViewData` et `ViewBag` font référence au même sous-jacent `ViewData` collection, vous pouvez utiliser les deux `ViewData` et `ViewBag` et combiner entre eux lors de la lecture et l’écriture de valeurs.
+
+Définir le titre à l’aide `ViewBag` et la description à l’aide `ViewData` en haut d’un *About.cshtml* vue :
+
+```cshtml
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "About Contoso";
+    ViewData["Description"] = "Let us tell you about Contoso's philosophy and mission.";
+}
+```
+
+Lire les propriétés, mais l’inverse de l’utilisation de `ViewData` et `ViewBag`. Dans le *_Layout.cshtml* de fichiers, d’obtenir le titre à l’aide de `ViewData` et obtenez la description en utilisant `ViewBag`:
+
+```cshtml
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>@ViewData["Title"]</title>
+    <meta name="description" content="@ViewBag.Description">
+    ...
+```
+
+Souvenez-vous que les chaînes ne nécessitent un cast pour `ViewData`. Vous pouvez utiliser `@ViewData["Title"]` sans cast.
+
+L’utilisation des deux `ViewData` et `ViewBag` sur les travaux de même temps, en tant que fait mélangeant et en lire et écrire les propriétés. Le balisage suivant est rendu :
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>About Contoso</title>
+    <meta name="description" content="Let us tell you about Contoso's philosophy and mission.">
+    ...
+```
+
+**Résumé des différences entre ViewData et ViewBag**
+
+* `ViewData`
+  * Dérive de [ViewDataDictionary](/aspnet/core/api/microsoft.aspnetcore.mvc.viewfeatures.viewdatadictionary), de sorte qu’elle possède des propriétés du dictionnaire qui peuvent être utiles, telles que `ContainsKey`, `Add`, `Remove`, et `Clear`.
+  * Clés du dictionnaire sont des chaînes, un espace blanc est autorisé. Exemple : `ViewData["Some Key With Whitespace"]`
+  * Tout type autre qu’un `string` doit être effectué dans la vue à utiliser `ViewData`.
+* `ViewBag`
+  * Dérive de [DynamicViewData](/aspnet/core/api/microsoft.aspnetcore.mvc.viewfeatures.internal.dynamicviewdata), donc il permet la création de propriétés dynamiques à l’aide de la notation par points (`@ViewBag.SomeKey = <value or object>`), et aucune conversion n’est requise. La syntaxe de `ViewBag` rend plus rapide de les ajouter à des contrôleurs et vues.
+  * La plus simple vérifier les valeurs null. Exemple : `@ViewBag.Person?.Name`
+
+**Quand utiliser ViewData ou ViewBag**
+
+Les deux `ViewData` et `ViewBag` sont également des approches valides pour le passage de petites quantités de données entre les contrôleurs et les vues. Le choix d’un à l’utilisation (ou les deux) dépend de vos préférences personnelles ou les préférences de votre organisation. En règle générale, les développeurs sont cohérents dans leur utilisation d’un ou l’autre. Ils utilisent `ViewData` everywhere ou utilisez `ViewBag` partout, mais vous êtes invités à combiner et de les mettre en correspondance. Étant donné que les deux sont résolues dynamiquement lors de l’exécution et donc enclin à provoquer des erreurs d’exécution, les utiliser avec précaution. Certains développeurs de les éviter complètement.
 
 ### <a name="dynamic-views"></a>Vues dynamiques
 
-Les vues qui ne déclarent pas un type de modèle, mais ont une instance de modèle leur passée peuvent référencer cette instance dynamiquement. Par exemple, si une instance de `Address` est passé à une vue qui ne déclare pas une `@model`, la vue sera toujours en mesure de faire référence aux propriétés de l’instance dynamiquement, comme indiqué :
+Les vues qui ne déclarent pas un modèle de type à l’aide de `@model` mais qui ont passé à une instance de modèle (par exemple, `return View(Address);`) peuvent référencer dynamiquement les propriétés de l’instance :
 
-<!-- literal_block {"ids": [], "linenos": false, "xml:space": "preserve", "language": "html", "highlight_args": {"hl_lines": [13, 16, 17, 18]}} -->
-
-```html
+```cshtml
 <address>
-       @Model.Street<br />
-       @Model.City, @Model.State @Model.PostalCode<br />
-       <abbr title="Phone">P:</abbr>
-       425.555.0100
-   </address>
-   ```
+    @Model.Street<br>
+    @Model.City, @Model.State @Model.PostalCode<br>
+    <abbr title="Phone">P:</abbr> 425.555.0100
+</address>
+```
 
-Cette fonctionnalité peut offrir une certaine souplesse, mais n’offre aucune protection de compilation IntelliSense. Si la propriété n’existe pas, la page échouera lors de l’exécution.
+Cette fonctionnalité offre une souplesse, mais ne propose pas de protection de la compilation ou d’IntelliSense. Si la propriété n’existe pas, la génération de la page Web échoue lors de l’exécution.
 
 ## <a name="more-view-features"></a>D’autres fonctionnalités d’affichage
 
-[Programmes d’assistance de balise](tag-helpers/intro.md) permet d’ajouter un comportement côté serveur à des balises HTML existantes, ce qui évite la nécessité d’utiliser du code personnalisé ou des programmes d’assistance dans les affichages. Programmes d’assistance de balise sont appliqués aux éléments HTML, qui sont ignorés par les éditeurs qui ne sont pas familiarisés avec eux, ce qui permet de balisage de la vue d’être modifié et rendus dans une variété d’outils en tant qu’attributs. Programmes d’assistance de balise ont de nombreuses utilisations et en particulier peuvent [utilisation des formulaires](working-with-forms.md) beaucoup plus facile.
+[Programmes d’assistance de balise](xref:mvc/views/tag-helpers/intro) rendent facile d’ajouter le comportement côté serveur pour les balises HTML existants. À l’aide de programmes d’assistance de balise évite d’avoir à écrire du code personnalisé ou des programmes d’assistance dans les vues. Programmes d’assistance de balise sont appliquées en tant qu’attributs aux éléments HTML et sont ignorés par les éditeurs qui ne peut pas les traiter. Cela vous permet de modifier et de restituer le balisage de vue dans une variété d’outils.
 
-Génération d’un balisage HTML personnalisé peut être obtenue avec nombreux programmes d’assistance de HTML intégrés, et une logique plus complexe de l’interface utilisateur (avec éventuellement ses propres exigences de données) peut être encapsulée dans [affichage des composants](view-components.md). Affichage des composants fournissent la même séparation des préoccupations qui offrent des contrôleurs et vues et peuvent éliminer la nécessité pour les actions et les vues afin de traiter les données utilisées par les éléments d’interface utilisateur communes.
+Génération d’un balisage HTML personnalisé peut être obtenue avec nombreux programmes d’assistance de HTML intégrés. Logique de l’interface utilisateur plus complexe peut être gérée par [affichage des composants](xref:mvc/views/view-components). Affichage des composants fournissent le même SoC qui contrôleurs et offrent des vues. Il peuvent éliminer la nécessité pour les actions et les vues qui traitent les données utilisées par les éléments d’interface courants.
 
-Comme de nombreux aspects d’ASP.NET Core, vues prennent en charge [injection de dépendance](../../fundamentals/dependency-injection.md), autorisant les services soient [injectées dans les vues](dependency-injection.md).
+Comme de nombreux aspects d’ASP.NET Core, vues prennent en charge [injection de dépendance](xref:fundamentals/dependency-injection), autorisant les services soient [injectées dans les vues](xref:mvc/views/dependency-injection).

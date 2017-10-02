@@ -5,23 +5,23 @@ description: "Explique ce qu’est la publication web dans Visual Studio."
 keywords: "ASP.NET Core, publication web, publication, msbuild, déploiement web, dotnet publish, Visual Studio 2017"
 ms.author: riande
 manager: wpickett
-ms.date: 03/14/2017
+ms.date: 09/26/2017
 ms.topic: article
 ms.assetid: 0377a02d-8fda-47a5-929a-24a16e1d2c93
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: publishing/web-publishing-vs
-ms.openlocfilehash: 665c98b5ac16bb9739af4ac204fca59a55dbb812
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: 8a2584363cbf418281cc0e2d796debe57fab846f
+ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 09/28/2017
 ---
 # <a name="create-publish-profiles-for-visual-studio-and-msbuild-to-deploy-aspnet-core-apps"></a>Créer des profils de publication pour Visual Studio et MSBuild afin de déployer des applications ASP.NET Core
 
 De [Sayed Ibrahim Hashimi](https://github.com/sayedihashimi) et [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Cet article est axé sur l’utilisation de Visual Studio 2017 pour créer des profils de publication. Les profils de publication créées avec Visual Studio peuvent être exécutés à partir de MSBuild et Visual Studio 2017.
+Cet article est axé sur l’utilisation de Visual Studio 2017 pour créer des profils de publication. Les profils de publication créées avec Visual Studio peuvent être exécutés à partir de MSBuild et Visual Studio 2017. L’article fournit des détails sur le processus de publication. Consultez [Publier une application web ASP.NET Core sur Azure App Service à l’aide de Visual Studio](xref:tutorials/publish-to-azure-webapp-using-vs) pour obtenir des instructions de publication sur Azure.
 
 Le fichier *.csproj* suivant a été créé avec la commande `dotnet new mvc` :
 
@@ -96,7 +96,7 @@ Quand MSBuild ou Visual Studio charge un projet, les actions principales suivant
 
 Quand le projet est chargé, les éléments du projet (fichiers) sont calculés. L’attribut `item type` détermine comment le fichier est traité. Par défaut, les fichiers *.cs* sont inclus dans la liste d’éléments `Compile`. Les fichiers dans la liste d’éléments `Compile` sont compilés.
 
-La liste d’éléments `Content` contient des fichiers qui seront publiés en plus des sorties de génération. Par défaut, les fichiers qui correspondent au modèle wwwroot/** sont inclus dans l’élément `Content`. [wwwroot/** est un modèle d’utilisation des caractères génériques](https://gruntjs.com/configuring-tasks#globbing-patterns) qui spécifie tous les fichiers dans le dossier *wwwroot* **et** les sous-dossiers. Si vous devez ajouter explicitement un fichier à la liste de publication, vous pouvez l’ajouter directement au fichier *.csproj* comme indiqué dans [Inclusion de fichiers](#including-files).
+La liste d’éléments `Content` contient des fichiers qui seront publiés en plus des sorties de génération. Par défaut, les fichiers qui correspondent au modèle wwwroot/** sont inclus dans l’élément `Content`. [wwwroot/** est un modèle d’utilisation des caractères génériques](https://gruntjs.com/configuring-tasks#globbing-patterns) qui spécifie tous les fichiers dans le dossier *wwwroot* **et** les sous-dossiers. Pour ajouter explicitement un fichier à la liste de publication, ajoutez-le directement au fichier *.csproj* comme indiqué dans [Inclusion de fichiers](#including-files).
 
 Quand vous sélectionnez le bouton **Publier** dans Visual Studio ou quand vous publiez à partir de la ligne de commande :
 
@@ -106,7 +106,7 @@ Quand vous sélectionnez le bouton **Publier** dans Visual Studio ou quand vous 
 - Les éléments de publication sont calculés (il s’agit des fichiers nécessaires à la publication).
 - Le projet est publié. (Les fichiers calculés sont copiés sur la destination de publication.)
 
-## <a name="simple-command-line-publishing"></a>Publication simple sur une ligne de commande
+## <a name="basic-command-line-publishing"></a>Publication de base à partir d’une ligne de commande
 
 La procédure décrite dans cette section fonctionne sur toutes les plateformes .NET Core prises en charge et ne nécessite pas Visual Studio. Dans les exemples ci-dessous, la commande `dotnet publish` est exécutée à partir du répertoire du projet (qui contient le fichier *.csproj*). Si vous n’êtes pas dans le dossier du projet, vous pouvez transmettre explicitement le chemin du fichier projet. Exemple :
 
@@ -116,23 +116,35 @@ dotnet publish  c:/webs/web1
 
 Exécutez les commandes suivantes pour créer et publier une application web :
 
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+
+```console
+dotnet new mvc
+dotnet publish
+```
+
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+
 ```console
 dotnet new mvc
 dotnet restore
 dotnet publish
 ```
 
+--------------
+
 `dotnet publish` produit une sortie semblable à la suivante :
 
 ```console
 C:\Webs\Web1>dotnet publish
-Microsoft (R) Build Engine version 15.1.548.43366
+Microsoft (R) Build Engine version 15.3.409.57025 for .NET Core
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-  Web1 -> C:\Webs\Web1\bin\Debug\netcoreapp1.1\Web1.dll
+  Web1 -> C:\Webs\Web1\bin\Debug\netcoreapp2.0\Web1.dll
+  Web1 -> C:\Webs\Web1\bin\Debug\netcoreapp2.0\publish\
 ```
 
-Le dossier de publication par défaut est `bin\$(Configuration)\netcoreapp<version>\publish`. La valeur par défaut de `$(Configuration)` est Debug. Dans l’exemple ci-dessus, le `<TargetFramework>` est `netcoreapp1.1`. Le chemin réel dans l’exemple ci-dessus est *bin\Debug\netcoreapp1.1\publish*.
+Le dossier de publication par défaut est `bin\$(Configuration)\netcoreapp<version>\publish`. La valeur par défaut de `$(Configuration)` est Debug. Dans l’exemple ci-dessus, le `<TargetFramework>` est `netcoreapp2.0`.
 
 `dotnet publish -h` affiche des informations d’aide relatives à la publication.
 
@@ -222,7 +234,7 @@ Comme mentionné précédemment, vous pouvez publier à l’aide de la commande 
 
 Pour publier avec MSDeploy, le plus simple est d’abord de créer un profil de publication dans Visual Studio 2017, puis d’utiliser le profil à partir de la ligne de commande.
 
-Dans l’exemple suivant, j’ai créé une application web ASP.NET Core (à l’aide de `dotnet new mvc`) et ajouté un profil de publication Azure avec Visual Studio.
+Dans l’exemple suivant, une application web ASP.NET Core est créée (à l’aide de `dotnet new mvc`) et un profil de publication Azure est ajouté avec Visual Studio.
 
 Vous exécutez `msbuild` à partir d’une **invite de commandes développeur pour VS 2017**. L’invite de commandes développeur aura le bon *msbuild.exe* dans son chemin et définira certaines variables MSBuild.
 

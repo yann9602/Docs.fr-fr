@@ -1,7 +1,7 @@
 ---
 title: "Intergiciel (middleware) dans ASP.NET Core de réécriture d’URL"
 author: guardrex
-description: "Introduction à l’URL de réécriture et en redirigeant des instructions sur l’utilisation d’intergiciel (middleware) réécriture d’URL dans les applications ASP.NET Core."
+description: "En savoir plus sur les URL de réécriture et de redirection d’intergiciel (middleware) réécriture d’URL dans les applications ASP.NET Core."
 keywords: "ASP.NET Core, réécriture d’URL, réécriture d’URL, URL de redirection, la redirection d’URL, intergiciel (middleware), apache_mod"
 ms.author: riande
 manager: wpickett
@@ -11,17 +11,17 @@ ms.assetid: e6130638-c410-4161-9921-b658ce988bd1
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/url-rewriting
-ms.openlocfilehash: 44c78a6304eacc70cdee9bb0d9407376017abcac
-ms.sourcegitcommit: 8005eb4051e568d88ee58d48424f39916052e6e2
+ms.openlocfilehash: 0a4024edf13651e2ed7e0f87e554e8ba8d895619
+ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2017
+ms.lasthandoff: 10/01/2017
 ---
 # <a name="url-rewriting-middleware-in-aspnet-core"></a>Intergiciel (middleware) dans ASP.NET Core de réécriture d’URL
 
 Par [Luke Latham](https://github.com/guardrex) et [Mikael Mengistu](https://github.com/mikaelm12)
 
-[Afficher ou télécharger l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/url-rewriting/samples/)
+[Afficher ou télécharger l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/url-rewriting/samples/) ([comment télécharger](xref:tutorials/index#how-to-download-a-sample))
 
 Réécriture d’URL est le fait de la modification de requête URL basées sur une ou plusieurs règles prédéfinies. Réécriture d’URL de crée une abstraction entre les emplacements de ressources et leurs adresses afin que les emplacements et les adresses ne sont pas étroitement liés. Il existe plusieurs scénarios où il est utile de réécriture d’URL :
 * Déplacez ou remplacez temporairement ou définitivement des ressources du serveur tout en conservant les localisateurs stables pour ces ressources

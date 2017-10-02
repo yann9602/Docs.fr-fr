@@ -12,11 +12,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/dependency-injection
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: e5dfebeddb3a9394fd1faf798e029a9312201089
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: f5c903a72d004afac55fbcc04ad157442e7a18ee
+ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 10/01/2017
 ---
 # <a name="introduction-to-dependency-injection-in-aspnet-core"></a>Introduction à l’Injection de dépendances dans ASP.NET Core
 
@@ -26,7 +26,7 @@ Par [Steve Smith](https://ardalis.com/) et [Scott Addie](https://scottaddie.com)
 
 ASP.NET Core est conçu de toutes pièces pour prendre en charge et de tirer parti de l’injection de dépendances. Les applications ASP.NET Core peuvent tirer parti des services d’infrastructure intégrée par comportant injectées dans les méthodes de la classe de démarrage, et les services d’application peuvent être configurés pour l’injection d’également. Le conteneur de services par défaut fourni par ASP.NET Core fournit une fonctionnalité minimale définie et n’est pas destinée à remplacer les autres conteneurs.
 
-[Afficher ou télécharger l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/dependency-injection/sample)
+[Afficher ou télécharger l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/dependency-injection/sample) ([comment télécharger](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="what-is-dependency-injection"></a>Nouveautés d’Injection de dépendance ?
 

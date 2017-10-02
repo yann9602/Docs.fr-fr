@@ -10,11 +10,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: tutorials/razor-pages/razor-pages-start
-ms.openlocfilehash: 8c6e281e761e69908fc742d1f19c14a00de4bd46
-ms.sourcegitcommit: 67f54fabbfa4e3942f5bfe1f8a7fdfe4a7a75358
+ms.openlocfilehash: 1d8d7805aafbf28fef044d09369a1dc76108b141
+ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2017
+ms.lasthandoff: 09/28/2017
 ---
 # <a name="getting-started-with-razor-pages-in-aspnet-core"></a>Bien démarrer avec des pages Razor dans ASP.NET Core
 
@@ -28,11 +28,11 @@ Ce didacticiel décrit les principes fondamentaux liés à la génération d’u
 
 ## <a name="create-a-razor-web-app"></a>Créer une application web Razor
 
-* Dans Visual Studio, dans le menu **Fichier**, sélectionnez **Nouveau > Projet**.
+* Dans Visual Studio, dans le menu **Fichier**, sélectionnez **Nouveau** > **Projet**.
 * Créez une application web ASP.NET Core. Nommez le projet **RazorPagesMovie**. Il est important de nommer le projet *RazorPagesMovie* pour que les espaces de noms correspondent quand vous copiez/collez du code.
- ![Nouvelle application web ASP.NET Core](../../mvc/razor-pages/index/_static/np.png)
+  ![Nouvelle application web ASP.NET Core](../../mvc/razor-pages/index/_static/np.png)
 * Sélectionnez **ASP.NET Core 2.0** dans la liste déroulante, puis sélectionnez **Application web**.
- ![Application web (pages Razor)](../../mvc/razor-pages/index/_static/np2.png)
+  ![Application web (pages Razor)](../../mvc/razor-pages/index/_static/np2.png)
 
 Le modèle Visual Studio crée un projet de démarrage :
 
@@ -48,4 +48,4 @@ Appuyez sur **F5** pour exécuter l’application en mode débogage ou sur **Ctr
 [!INCLUDE[razor-pages-start](../../includes/RP/razor-pages-start.md)]
 
 >[!div class="step-by-step"]
-[Suivant : Ajout d’un modèle](xref:tutorials/razor-pages/modelz)  
+[Suivant : Ajout d’un modèle](xref:tutorials/razor-pages/modelz)

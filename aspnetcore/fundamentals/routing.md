@@ -1,7 +1,7 @@
 ---
 title: Le routage ASP.NET Core
 author: ardalis
-description: 
+description: "Découvrez comment les fonctionnalités de routage ASP.NET Core sont responsable de mappage d’une demande entrante à un gestionnaire d’itinéraire."
 keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
@@ -11,11 +11,11 @@ ms.assetid: bbbcf9e4-3c4c-4f50-b91e-175fe9cae4e2
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/routing
-ms.openlocfilehash: 469c30cf66d28e82519d5eff7f2fc82d490827b7
-ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
+ms.openlocfilehash: 8bce642576b6b2f9326425d30ef95168da8f47e5
+ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 10/01/2017
 ---
 # <a name="routing-in-aspnet-core"></a>Le routage ASP.NET Core
 
@@ -26,7 +26,7 @@ Fonctionnalité de routage est chargée pour le mappage d’une demande entrante
 >[!IMPORTANT]
 > Ce document couvre le routage du bas niveau ASP.NET Core. Pour le routage ASP.NET MVC de base, consultez [routage vers les Actions de contrôleur](../mvc/controllers/routing.md)
 
-[Afficher ou télécharger l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/routing/sample)
+[Afficher ou télécharger l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/routing/sample) ([comment télécharger](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="routing-basics"></a>Principes de base de routage
 
