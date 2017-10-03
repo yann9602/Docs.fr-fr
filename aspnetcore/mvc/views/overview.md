@@ -11,11 +11,11 @@ ms.assetid: 668c320d-c050-45e3-8161-2f460dc93b2f
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/overview
-ms.openlocfilehash: f40feb0466854080cc749a83c546ce857d850902
-ms.sourcegitcommit: e4a1df2a5a85f299322548809e547a79b380bb92
+ms.openlocfilehash: d3fbdecaed87b3432f0532748a0833c833c65129
+ms.sourcegitcommit: a60a99104fe7a29e271667cead6a06b6d8258d03
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 10/03/2017
 ---
 # <a name="views-in-aspnet-core-mvc"></a>Vues de base d’ASP.NET MVC
 
@@ -40,13 +40,13 @@ Utilisez [dispositions](xref:mvc/views/layout) pour fournir des sections de la p
 Les vues permettent d’établir une [ **S**eparation **o**f **C**oncerns (SoC) conception](http://deviq.com/separation-of-concerns/) au sein d’une application MVC en séparant le balisage d’interface utilisateur à partir de autres parties de l’application. Suivant SoC conception rend votre application modulaire, ce qui offre plusieurs avantages :
 
 * L’application est plus facile à gérer, car il est mieux organisée. Les vues sont généralement regroupés en fonction de l’application. Cela rend plus facile à trouver les vues associées lorsque vous travaillez sur une fonctionnalité.
-* Les parties de l’application ne sont pas fortement couplés. Vous pouvez générer et mettre à jour des vues de l’application séparément dans les composants accès logique et les données d’entreprise. Vous pouvez modifier les vues de l’application sans nécessairement devoir mettre à jour des autres parties de l’application.
+* Les parties de l’application sont faiblement couplés. Vous pouvez générer et mettre à jour des vues de l’application séparément dans les composants accès logique et les données d’entreprise. Vous pouvez modifier les vues de l’application sans nécessairement devoir mettre à jour des autres parties de l’application.
 * Il est plus facile de tester des parties de l’interface utilisateur de l’application, car les vues sont des unités distinctes.
 * En raison d’une meilleure organisation, il est moins probable que vous allez accidentellement sections de répétitions de l’interface utilisateur.
 
 ## <a name="creating-a-view"></a>Création d’une vue
 
-Les vues qui sont spécifiques à un contrôleur sont créées dans le *vues / [nom du contrôleur]* dossier. Les vues qui sont partagées entre les contrôleurs sont placées dans le *Views/Shared* dossier. Pour créer une vue, ajoutez un nouveau fichier et lui donner le même nom que son action de contrôleur associé avec le *.cshtml* extension de fichier. Pour créer une vue pour la *sur* action dans le *accueil* contrôleur, créez un *About.cshtml* de fichiers dans le *Views/Home* dossier :
+Les vues qui sont spécifiques à un contrôleur sont créées dans le *vues / [nom du contrôleur]* dossier. Les vues qui sont partagées entre les contrôleurs sont placées dans le *Views/Shared* dossier. Pour créer une vue, ajoutez un nouveau fichier et lui donner le même nom que son action de contrôleur associé avec le *.cshtml* extension de fichier. Pour créer une vue qui correspond à la *sur* action dans le *accueil* contrôleur, créez un *About.cshtml* de fichiers dans le *Views/Home*dossier :
 
 [!code-cshtml[Main](../../common/samples/WebApplication1/Views/Home/About.cshtml)]
 
@@ -88,7 +88,7 @@ Le `View` méthode d’assistance a plusieurs surcharges. Vous pouvez éventuell
 
 Lorsqu’une action retourne une vue, un processus appelé *détection de la vue* a lieu. Ce processus détermine l’afficher le fichier est utilisé en fonction du nom de la vue. 
 
-Lorsqu’une action retourne le `View` (méthode) (`return View();`) et une vue n’est pas spécifiée, le nom de l’action est utilisé en tant que le nom de la vue. Par exemple, le *sur* `ActionResult` nom de la méthode du contrôleur est utilisé pour rechercher un fichier de vue nommé *About.cshtml*. Tout d’abord, le runtime recherche le *vues / [nom du contrôleur]* dossier pour l’affichage. S’il ne trouve pas une vue correspondante, il recherche le *Shared* dossier pour l’affichage.
+Le comportement par défaut de la `View` (méthode) (`return View();`) doit retourner une vue avec le même nom que la méthode d’action à partir de laquelle elle est appelée. Par exemple, le *sur* `ActionResult` nom de la méthode du contrôleur est utilisé pour rechercher un fichier de vue nommé *About.cshtml*. Tout d’abord, le runtime recherche le *vues / [nom du contrôleur]* dossier pour l’affichage. S’il ne trouve pas une vue correspondante, il recherche le *Shared* dossier pour l’affichage.
 
 Peu importe si vous retournez implicitement le `ViewResult` avec `return View();` ou explicitement passer le nom d’affichage pour le `View` méthode avec `return View("<ViewName>");`. Dans les deux cas, afficher les recherches de découverte pour un fichier de vue correspondant dans cet ordre :
 
@@ -127,7 +127,7 @@ Vous pouvez passer des données pour les vues à l’aide de plusieurs approches
 
 À l’aide d’un viewmodel pour passer des données à une vue permet de tirer parti de la vue de *fort* la vérification du type. *Un typage fort* (ou *fortement typé*) signifie que chaque variable et constante a un type défini explicitement (par exemple, `string`, `int`, ou `DateTime`). La validité des types utilisés dans une vue est vérifiée au moment de la compilation.
 
-Des outils, tels que [Visual Studio](https://www.visualstudio.com/vs/) ou [Visual Studio Code](https://code.visualstudio.com/), peut également répertorier les membres (propriétés d’un modèle) pendant que vous les ajoutez à une vue, ce qui vous permet d’écrire du code plus rapidement avec moins d’erreurs. Cette fonctionnalité est appelée [IntelliSense](/visualstudio/ide/using-intellisense) dans les outils de Microsoft.
+[Visual Studio](https://www.visualstudio.com/vs/) et [Visual Studio Code](https://code.visualstudio.com/) répertorient les membres de classe fortement typée à l’aide d’une fonctionnalité appelée [IntelliSense](/visualstudio/ide/using-intellisense). Lorsque vous souhaitez afficher les propriétés d’un viewmodel, tapez le nom de variable pour le viewmodel suivi d’un point (`.`). Cela vous permet d’écrire du code plus rapidement avec moins d’erreurs.
 
 Spécifier un modèle à l’aide de la `@model` la directive. Utiliser le modèle avec `@Model`:
 
@@ -316,7 +316,7 @@ L’utilisation des deux `ViewData` et `ViewBag` sur les travaux de même temps,
 
 **Quand utiliser ViewData ou ViewBag**
 
-Les deux `ViewData` et `ViewBag` sont également des approches valides pour le passage de petites quantités de données entre les contrôleurs et les vues. Le choix d’un à l’utilisation (ou les deux) dépend de vos préférences personnelles ou les préférences de votre organisation. En règle générale, les développeurs sont cohérents dans leur utilisation d’un ou l’autre. Ils utilisent `ViewData` everywhere ou utilisez `ViewBag` partout, mais vous êtes invités à combiner et de les mettre en correspondance. Étant donné que les deux sont résolues dynamiquement lors de l’exécution et donc enclin à provoquer des erreurs d’exécution, les utiliser avec précaution. Certains développeurs de les éviter complètement.
+Les deux `ViewData` et `ViewBag` sont également des approches valides pour le passage de petites quantités de données entre les contrôleurs et les vues. Le choix d’un à l’utilisation (ou les deux) dépend de vos préférences personnelles ou les préférences de votre organisation. Bien que vous pouvez combiner des `ViewData` et `ViewBag` des objets, le code est plus facile à lire et mettre à jour lorsque vous choisissez une seule et utilisez de manière cohérente. Étant donné que les deux sont résolues dynamiquement lors de l’exécution et donc enclin à provoquer des erreurs d’exécution, les utiliser avec précaution. Certains développeurs de les éviter complètement.
 
 ### <a name="dynamic-views"></a>Vues dynamiques
 
