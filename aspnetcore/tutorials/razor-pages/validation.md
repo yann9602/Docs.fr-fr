@@ -10,11 +10,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: tutorials/razor-pages/validation
-ms.openlocfilehash: 9a822457d1581a70d59c553eb28133815f395d7d
-ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
+ms.openlocfilehash: 302e3077e8cf1cc3b145fcb4ba2ff677023d1524
+ms.sourcegitcommit: c9658c0db446f7cb2e443f62b00cf773bed545fa
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 09/30/2017
 ---
 # <a name="adding-validation-to-a-razor-page"></a>Ajout de la validation à une page Razor
 
@@ -36,7 +36,12 @@ Mettez à jour la classe `Movie` pour tirer parti des attributs de validation `R
 
 [!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc//sample/MvcMovie/Models/MovieDateRatingDA.cs?name=snippet1)]
 
-Les attributs de validation spécifient un comportement qui est appliqué sur les propriétés du modèle. Les attributs `Required` et `MinimumLength` indiquent qu’une propriété doit avoir une valeur, mais rien n’empêche un utilisateur d’entrer un espace blanc pour satisfaire la contrainte de validation. L’attribut `RegularExpression` sert à limiter les caractères pouvant être entrés. Dans le code précédent, `Genre` et `Rating` doivent utiliser uniquement des lettres (les espaces blancs, les chiffres et les caractères spéciaux ne sont pas autorisés). L’attribut `Range` contraint une valeur à une plage spécifiée. L’attribut `StringLength` définit la longueur maximale d’une chaîne, et éventuellement la longueur minimale. Les [types valeur](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/value-types) (tels que `decimal`, `int`, `float`, `DateTime`) sont obligatoires par nature et n’ont pas besoin de l’attribut `[Required]`.
+Les attributs de validation spécifient un comportement qui est appliqué sur les propriétés du modèle :
+
+* Les attributs `Required` et `MinimumLength` indiquent qu’une propriété doit avoir une valeur. Toutefois, rien n’empêche un utilisateur d’entrer un espace blanc pour satisfaire la contrainte de validation pour un type Nullable. Les [types valeur](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/value-types) non Nullable (tels que `decimal`, `int`, `float` et `DateTime`) sont obligatoires par nature et n’ont pas besoin de l’attribut `Required`.
+* L’attribut `RegularExpression` limite les caractères que l’utilisateur peut entrer. Dans le code précédent, `Genre` et `Rating` doivent utiliser uniquement des lettres (les espaces blancs, les chiffres et les caractères spéciaux ne sont pas autorisés).
+* L’attribut `Range` contraint une valeur à une plage spécifiée.
+* L’attribut `StringLength` définit la longueur maximale d’une chaîne, et éventuellement la longueur minimale. 
 
 L’application automatique des règles de validation par ASP.NET Core permet d’accroître la fiabilité d’une application. La validation automatique sur des modèles permet de protéger l’application, car vous n’avez pas à penser à les appliquer lors de l’ajout de nouveau code.
 
@@ -127,6 +132,10 @@ Il n’est généralement pas recommandé de compiler des dates en dur dans vos 
 Le code suivant illustre la combinaison d’attributs sur une seule ligne :
 
 [!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Models/MovieDateRatingDAmult.cs?name=snippet1)]
+
+### <a name="publish-to-azure"></a>Publier sur Azure
+
+Consultez [Publier une application web ASP.NET Core sur Azure App Service à l’aide de Visual Studio](xref:tutorials/publish-to-azure-webapp-using-vs) pour obtenir des instructions sur la publication de cette application sur Azure.
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 

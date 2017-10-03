@@ -11,11 +11,11 @@ ms.assetid: 0377a02d-8fda-47a5-929a-24a16e1d2c93
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: publishing/web-publishing-vs
-ms.openlocfilehash: 8a2584363cbf418281cc0e2d796debe57fab846f
-ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
+ms.openlocfilehash: f010f9d90165ce4d6718fe1440e600985f21a01d
+ms.sourcegitcommit: f33fb9d648a611bb7b2b96291dd2176b230a9a43
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 09/29/2017
 ---
 # <a name="create-publish-profiles-for-visual-studio-and-msbuild-to-deploy-aspnet-core-apps"></a>Créer des profils de publication pour Visual Studio et MSBuild afin de déployer des applications ASP.NET Core
 
@@ -202,7 +202,36 @@ Les informations sensibles (telles que le mot de passe de publication) sont chif
 
 Pour obtenir une vue d’ensemble expliquant comment publier une application web sur ASP.NET Core, consultez [Publication et déploiement](index.md). [Publication et déploiement](index.md) est un projet open source accessible à l’adresse https://github.com/aspnet/websdk.
 
-Actuellement, `dotnet publish` n’offre pas la possibilité d’utiliser des profils de publication. Pour utiliser des profils de publication, utilisez `dotnet build`. `dotnet build` appelle MSBuild sur le projet. Vous pouvez également appeler `msbuild` directement.
+ `dotnet publish` peut utiliser les profils de publication de dossier, Msdeploy et [KUDU](https://github.com/projectkudu/kudu/wiki) :
+ 
+Dossier (fonctionne sur plusieurs plateformes) `dotnet publish WebApplication.csproj /p:PublishProfile=<FolderProfileName>`
+
+Msdeploy (actuellement ne fonctionne que sous windows car msdeploy n’est pas multiplateforme) : `dotnet publish WebApplication.csproj /p:PublishProfile=<MsDeployProfileName> /p:Password=<DeploymentPassword>`
+
+Package Msdeploy (actuellement ne fonctionne que sous windows car msdeploy n’est pas multiplateforme) : `dotnet publish WebApplication.csproj /p:PublishProfile=<MsDeployPackageProfileName>`
+
+Dans les exemples précédents, **ne** transmettez pas `deployonbuild` à `dotnet publish`.
+
+Pour plus d’informations, consultez [Microsoft.NET.Sdk.Publish](https://github.com/aspnet/websdk#microsoftnetsdkpublish)
+
+`dotnet publish` prend en charge les API KUDU pour publier sur Azure à partir de n’importe quelle plateforme. La publication Visual Studio prend en charge les API KUDU mais avec la prise en charge par websdk pour la publication cross plat sur Azure.
+
+Ajoutez un profil de publication au dossier *Properties/PublishProfiles* avec le contenu suivant :
+
+```xml
+<Project>
+<PropertyGroup>
+                <PublishProtocol>Kudu</PublishProtocol>
+                <PublishSiteName>nodewebapp</PublishSiteName>
+                <UserName>username</UserName>
+                <Password>password</Password>
+</PropertyGroup>
+</Project>
+```
+
+L’exécution de la commande suivante compresse le contenu de la publication et le publie sur Azure à l’aide des API KUDU.
+
+`dotnet publish /p:PublishProfile=Azure /p:Configuration=Release`
 
 Définissez les propriétés MSBuild suivantes lors de l’utilisation d’un profil de publication :
 
