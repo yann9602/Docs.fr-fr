@@ -11,11 +11,11 @@ ms.assetid: 71fec30f-8ea7-4ca8-96e3-d2e26c5be44e
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/read-related-data
-ms.openlocfilehash: 37613d974fdf1766b187cdd05efc926ecc6a351b
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: 778ef976fdbef70684ca26b0c7c548ffcc83ee00
+ms.sourcegitcommit: e45f8912ce32b4071bf7e83b8f8315cd8bba3520
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 10/04/2017
 ---
 # <a name="reading-related-data---ef-core-with-aspnet-core-mvc-tutorial-6-of-10"></a>Lecture liés de données - Core EF avec le didacticiel ASP.NET Core MVC (partie 6 sur 10)
 
@@ -184,7 +184,7 @@ Vous avez effectué les modifications suivantes au code existant :
   }
   ```
 
-* Ajouter un **cours** colonne qui affiche les cours dispensés par chaque formateur. Consultez [explicite Transition ligne avec `@:` ](xref:mvc/views/razor#explicit-line-transition-with-label) pour plus d’informations sur cette syntaxe razor.
+* Ajouter un **cours** colonne qui affiche les cours dispensés par chaque formateur. Consultez [explicite Transition ligne avec `@:` ](xref:mvc/views/razor#explicit-line-transition-with-) pour plus d’informations sur cette syntaxe razor.
 
 * Code ajouté qui ajoute dynamiquement `class="success"` à la `tr` élément de l’enseignant sélectionné. Cela définit la couleur d’arrière-plan de la ligne sélectionnée à l’aide d’une classe d’amorçage.
 
