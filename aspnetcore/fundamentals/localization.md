@@ -11,17 +11,17 @@ ms.assetid: 7f275a09-f118-41c9-88d1-8de52d6a5aa1
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/localization
-ms.openlocfilehash: 85a192bf0b2eb245ecdaaa8ffa1c8dd2f43b45b0
-ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
+ms.openlocfilehash: 9ff2fb92c81719c7278d70b5df5387f1244195bf
+ms.sourcegitcommit: e7f01a649f240b6b57118c53314ab82f7f36f2eb
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 10/06/2017
 ---
 # <a name="globalization-and-localization-in-aspnet-core"></a>Globalisation et localisation dans ASP.NET Core
 
 Par [Rick Anderson](https://twitter.com/RickAndMSFT), [Damien coupure](https://twitter.com/damien_bod), [Christian Calixto](https://twitter.com/bartmax), [Nadeem Afana](https://twitter.com/NadeemAfana), et [Hisham Bin Ateya](https://twitter.com/hishambinateya)
 
-Création d’un site Web multilingue avec ASP.NET Core permettra à votre site atteindre un plus large public. ASP.NET Core offre des services et intergiciel (middleware) de la localisation dans différentes langues et cultures.
+Création d’un site Web multilingue avec ASP.NET Core permettra à votre site atteindre un plus large public. ASP.NET Core offre des services et des intergiciels (middleware) de traduction dans différentes langues et cultures.
 
 Internationalisation implique [globalisation](https://docs.microsoft.com/dotnet/api/system.globalization) et [localisation](https://docs.microsoft.com/dotnet/standard/globalization-localization/localization). La globalisation est le processus de conception d’applications qui prennent en charge des cultures différentes. Globalisation ajoute la prise en charge d’entrée, d’affichage et de sortie d’un ensemble défini de scripts de langue qui se rapportent à des zones géographiques spécifiques.
 
@@ -43,7 +43,7 @@ Introduit dans ASP.NET Core, `IStringLocalizer` et `IStringLocalizer<T>` ont ét
 
 Dans le code ci-dessus, le `IStringLocalizer<T>` provient de l’implémentation [Injection de dépendance](dependency-injection.md). Si la valeur localisée de « Sur titre » n’est pas trouvée, la clé de l’indexeur est retournée, autrement dit, la chaîne « Sur titre ». Vous pouvez laisser des chaînes littérales de langage la valeur par défaut dans l’application et les encapsuler dans le localisateur, afin de pouvoir vous concentrer sur le développement d’applications. Vous développez votre application avec la langue par défaut et le préparez pour l’étape de localisation sans d’abord créer un fichier de ressources par défaut. Vous pouvez également utiliser l’approche traditionnelle et fournir une clé pour récupérer la chaîne de langue par défaut. Pour de nombreux développeurs le nouveau flux de travail de ne pas avoir une langue par défaut *.resx* encapsulant simplement les littéraux de chaîne et fichier peuvent réduire la charge de la localisation d’une application. Autres développeurs préfèreront le flux de travail classiques, comme il peut être plus facile de travailler avec des littéraux de chaîne plus longs et le rendre plus facile à mettre à jour les chaînes localisées.
 
-Utilisez le `IHtmlLocalizer<T>` implémentation pour les ressources contenant du HTML. `IHtmlLocalizer`HTML encode les arguments qui sont mis en forme dans la chaîne de ressource, mais pas la chaîne de ressource. Dans l’exemple de mise en surbrillance ci-dessous, seule la valeur de `name` paramètre est encodé au format HTML.
+Utilisez le `IHtmlLocalizer<T>` implémentation pour les ressources contenant du HTML. `IHtmlLocalizer`Encode les arguments qui sont mis en forme dans la chaîne de ressource HTML, mais ne pas HTML encode la chaîne de ressource elle-même. Dans l’exemple de mise en surbrillance ci-dessous, seule la valeur de `name` paramètre est encodé au format HTML.
 
 [!code-csharp[Main](../fundamentals/localization/sample/Localization/Controllers/BookController.cs?highlight=3,5,20&start=1&end=24)]
 
@@ -317,6 +317,7 @@ Termes du contrat :
 * Culture : Il est un langage et, éventuellement, une région.
 * Culture neutre : une culture qui a une langue donnée, mais pas dans une région. (par exemple « en », « es »)
 * Culture spécifique : une culture qui dispose d’un langage spécifié et la région. (par exemple « en-US », « en-GB », « es-CL »)
+* Parent culture : culture neutre qui contient une culture spécifique. (par exemple, « fr » est la culture parente de « en-US » et « en-GB »)
 * Paramètres régionaux : Un paramètre régional est identique à une culture.
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
