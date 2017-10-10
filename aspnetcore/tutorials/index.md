@@ -10,11 +10,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/index
-ms.openlocfilehash: b3ea7688eefa69171fd1179de42497c98cf9302e
-ms.sourcegitcommit: 4d9c6d47bded895f3d9a35e9550e31ae213c083c
+ms.openlocfilehash: 4962361aa0fc8a61cfc771ed3123a3bafdbe6100
+ms.sourcegitcommit: fe25b8163e9e4115915b3293936e9da646fff84f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2017
+ms.lasthandoff: 10/09/2017
 ---
 # <a name="aspnet-core-tutorials"></a>Didacticiels ASP.NET Core
 
@@ -41,7 +41,7 @@ Les [pages Razor](xref:mvc/razor-pages/index) constituent l’approche recommand
 * [Créer une API web avec ASP.NET Core et Visual Studio pour Mac](xref:tutorials/first-web-api-mac)
 * [Créer une API web avec ASP.NET Core et Visual Studio pour Windows](first-web-api.md)
 * [Créer une API web avec ASP.NET Core et Visual Studio Code](web-api-vsc.md)
-* [Pages d’aide d’API web ASP.NET à l’aide de Swagger](web-api-help-pages-using-swagger.md)
+* [Pages d’aide sur l’API web ASP.NET Core avec Swagger](web-api-help-pages-using-swagger.md)
 * [Création de services web backend pour les applications mobiles natives](../mobile/native-mobile-backend.md)
 
 ## <a name="working-with-data"></a>Utilisation de données

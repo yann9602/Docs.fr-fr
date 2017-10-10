@@ -68,7 +68,7 @@
 ## [Création de services backend pour les applications mobiles](mobile/native-mobile-backend.md)
 ## [Création d’API web](mvc/web-api/index.md)
 ## [Créer une API web](xref:tutorials/first-web-api-mac)
-### [Génération de pages d’aide d’API web ASP.NET à l’aide de Swagger](tutorials/web-api-help-pages-using-swagger.md)
+### [Pages d’aide sur l’API web ASP.NET Core avec Swagger](tutorials/web-api-help-pages-using-swagger.md)
 ### [Création de services principaux pour les applications mobiles natives](mobile/native-mobile-backend.md)
 
 # [Notions de base](fundamentals/index.md)
@@ -279,7 +279,7 @@
 ## [ASP.NET Core 1.x vers 2.0](xref:migration/1x-to-2x/index)
 ### [Authentification et identité](xref:migration/1x-to-2x/identity-2x)
 
-# [Informations de référence sur les API](/aspnet/core/api/)
+# [Informations de référence sur les API](https://docs.microsoft.com/dotnet/api/?view=aspnetcore-2.0)
 
 # [Notes de publication 2.0](aspnetcore-2.0.md)
 ## [Notes de publication 1.1](aspnetcore-1.1.md)
