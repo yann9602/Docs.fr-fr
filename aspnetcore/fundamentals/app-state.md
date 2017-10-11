@@ -5,18 +5,18 @@ description: "Approches de conservation d’application et l’état utilisateur
 keywords: "ASP.NET Core, état de l’Application, l’état de session, querystring, valider"
 ms.author: riande
 manager: wpickett
-ms.date: 06/08/2017
+ms.date: 10/08/2017
 ms.topic: article
 ms.assetid: 18cda488-0769-4cb9-82f6-4c6685f2045d
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/app-state
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: c639d3b0d896b927bb2b70658032fc1bd8e87191
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: f9c1d10101d23e105c4a8af41d851f69b1b6a175
+ms.sourcegitcommit: 9c27fa0f0c57ad611aa43f63afb9b9c9571d4a94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="introduction-to-session-and-application-state-in-aspnet-core"></a>Introduction à l’état de session et d’application dans ASP.NET Core
 
@@ -26,7 +26,7 @@ HTTP est un protocole sans état. Un serveur web traite chaque demande HTTP comm
 
 ## <a name="session-state"></a>État de session
 
-État de session est une fonctionnalité dans ASP.NET Core que vous pouvez utiliser pour enregistrer et stocker des données utilisateur pendant que l’utilisateur accède à votre application web. Consistant en une table de hachage ou de dictionnaire sur le serveur, l’état de session conserve les données entre les demandes à partir d’un navigateur. Les données de session sont sauvegardées par un cache.
+L’état de session est une fonctionnalité ASP.NET Core que vous pouvez utiliser pour enregistrer et stocker des données utilisateur pendant que l’utilisateur navigue dans votre application web. Consistant en une table de hachage ou de dictionnaire sur le serveur, l’état de session conserve les données entre les demandes à partir d’un navigateur. Les données de session sont sauvegardées par un cache.
 
 ASP.NET Core maintient l’état de session en donnant le client un cookie qui contient l’ID de session, qui est envoyée au serveur avec chaque demande. Le serveur utilise l’ID de session pour extraire les données de session. Étant donné que le cookie de session est spécifique au navigateur, vous ne peuvent pas partager des sessions dans les navigateurs. Les cookies de session sont supprimées uniquement lorsque la session se termine. Si un cookie est reçu pour une session a expiré, une nouvelle session qui utilise le même cookie de session est créée. 
 
@@ -37,38 +37,60 @@ Le serveur conserve une session pendant une période limitée après la dernièr
 
 Le fournisseur de session en mémoire stocke les données de session sur le serveur local. Si vous envisagez d’exécuter votre application web sur une batterie de serveurs, vous devez utiliser des sessions rémanentes pour lier chaque session à un serveur spécifique. La plateforme Windows Azure Web Sites par défaut, les sessions rémanentes (Application Request Routing ou ARR). Toutefois, les sessions rémanentes peuvent affecter l’évolutivité et compliquer la mise à jour des applications web. Une meilleure option consiste à utiliser le Redis ou distribuées SQL Server met en cache, qui ne nécessitent pas sessions rémanentes. Pour plus d’informations, consultez [fonctionne avec un Cache distribué de](xref:performance/caching/distributed). Pour plus d’informations sur la configuration des fournisseurs de services, consultez [configuration de Session](#configuring-session) plus loin dans cet article.
 
-Le reste de cette section décrit les options pour le stockage des données utilisateur.
 
 <a name="temp"></a>
-### <a name="tempdata"></a>TempData
+## <a name="tempdata"></a>TempData
 
-ASP.NET MVC de base expose le [TempData](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.controller#Microsoft_AspNetCore_Mvc_Controller_TempData) propriété sur un [contrôleur](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.controller). Cette propriété stocke les données jusqu’à ce qu’elles soient lues. Vous pouvez utiliser les méthodes `Keep` et `Peek` pour examiner les données sans suppression. `TempData`est particulièrement utile pour la redirection, lorsqu’il manque des données plus longtemps qu’une demande unique. `TempData`s’appuie sur l’état de session. 
+ASP.NET MVC de base expose le [TempData](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.controller.tempdata?view=aspnetcore-2.0#Microsoft_AspNetCore_Mvc_Controller_TempData) propriété sur un [contrôleur](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.controller?view=aspnetcore-2.0). Cette propriété stocke les données jusqu’à ce qu’elles soient lues. Vous pouvez utiliser les méthodes `Keep` et `Peek` pour examiner les données sans suppression. `TempData`est particulièrement utile pour la redirection, lorsqu’il manque des données plus longtemps qu’une demande unique. `TempData`est implémenté par les fournisseurs de TempData, par exemple, à l’aide de cookies ou l’état de session.
 
-## <a name="cookie-based-tempdata-provider"></a>Fournisseur de TempData basé sur cookie 
+### <a name="tempdata-providers"></a>Fournisseurs de TempData
 
-Dans ASP.NET Core 1.1 et ultérieures, vous pouvez utiliser le fournisseur TempData basé sur cookie pour stocker les TempData d’un utilisateur dans un cookie. Pour activer le fournisseur TempData basé sur cookie, inscrire le `CookieTempDataProvider` service `ConfigureServices`:
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+
+Dans ASP.NET Core 2.0 et versions ultérieures, le fournisseur TempData basé sur cookie est utilisé par défaut pour stocker TempData dans des cookies.
+
+Les données de cookie sont codées avec le [Base64UrlTextEncoder](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.webutilities.base64urltextencoder?view=aspnetcore-2.0). Étant donné que le cookie est chiffré et mémorisé en bloc, le cookie unique trouvée dans ASP.NET Core 1.x ne s’applique pas de limite de taille. Les données de cookie ne sont pas compressées, car la compression des données d’encryped peut entraîner des problèmes de sécurité telles que la [CRIME](https://wikipedia.org/wiki/CRIME_(security_exploit)) et [violation](https://wikipedia.org/wiki/BREACH_(security_exploit)) attaques. Pour plus d’informations sur le fournisseur TempData basé sur cookie, consultez [CookieTempDataProvider](https://github.com/aspnet/Mvc/blob/dev/src/Microsoft.AspNetCore.Mvc.ViewFeatures/ViewFeatures/CookieTempDataProvider.cs).
+
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+
+Dans ASP.NET Core 1.0 et 1.1, le fournisseur TempData état de session est la valeur par défaut.
+
+--------------
+
+### <a name="choosing-a-tempdata-provider"></a>Choix d’un fournisseur TempData
+
+Choix d’un fournisseur TempData implique de plusieurs considérations, telles que :
+
+1. L’application a déjà utilise-t-il l’état de session à d’autres fins ? Dans ce cas, à l’aide du fournisseur de TempData de l’état de session a sans coût supplémentaire à l’application (à l’exception de la taille des données).
+2. L’application utilise-t-il TempData uniquement avec parcimonie pour relativement petites quantités de données (jusqu'à 500 octets) ? Si, par conséquent, le fournisseur de TempData cookie ajoutera un petit coût à chaque demande qui achemine TempData. Si ce n’est pas le cas, le fournisseur TempData état de session peut être utile éviter l’aller-retour une grande quantité de données dans chaque demande jusqu'à ce que le TempData est consommé.
+3. L’application s’exécute dans une batterie de serveurs web (plusieurs serveurs) ? Dans ce cas, aucune configuration supplémentaire n’est nécessaire pour utiliser le fournisseur de TempData de cookie.
+
+> [!NOTE]
+> La plupart des clients web (par exemple, les navigateurs web) renforce les limites de la taille maximale de chaque cookie, le nombre total de cookies ou les deux. Par conséquent, lorsque vous utilisez le fournisseur de TempData cookie, vérifiez que l’application ne dépasse ces limites. Prendre en compte la taille totale des données, gestion des comptes pour les charges de chiffrement et de segmentation.
+
+Pour configurer le fournisseur TempData pour une application, enregistrer une implémentation du fournisseur TempData `ConfigureServices`:
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
 {
-    services.AddMvc();
-    // Add CookieTempDataProvider after AddMvc and include ViewFeatures.
-    // using Microsoft.AspNetCore.Mvc.ViewFeatures;
-    services.AddSingleton<ITempDataProvider, CookieTempDataProvider>();
+    services
+        .AddMvc()
+        .AddSessionStateTempDataProvider();
+
+    // The Session State TempData Provider requires adding the session state service
+    services.AddSession();
 }
 ```
 
-Les données de cookie sont codées avec le [Base64UrlTextEncoder](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.authentication.base64urltextencoder). Étant donné que le cookie est chiffré et mémorisé en bloc, la limite de taille de cookie unique ne s’applique pas. Les données de cookie ne sont pas compressées, étant donné que la compression des données d’encryped peut entraîner des problèmes de sécurité telles que la [CRIME](https://wikipedia.org/wiki/CRIME_(security_exploit)) et [violation](https://wikipedia.org/wiki/BREACH_(security_exploit)) attaques. Pour plus d’informations sur le fournisseur TempData basé sur cookie, consultez [CookieTempDataProvider](https://github.com/aspnet/Mvc/blob/dev/src/Microsoft.AspNetCore.Mvc.ViewFeatures/ViewFeatures/CookieTempDataProvider.cs).
-
-### <a name="query-strings"></a>Chaînes de requête
+## <a name="query-strings"></a>Chaînes de requête
 
 Vous pouvez passer une quantité limitée de données à partir d’une demande à un autre en l’ajoutant à la chaîne de requête de la nouvelle demande. Cela est utile pour capturer l’état de manière persistante qui autorise les liens avec état incorporée à partager par courrier électronique ou de réseaux sociaux. Toutefois, pour cette raison, vous ne devez jamais utiliser des chaînes de requête pour les données sensibles. En plus facilement partagé, y compris les données dans les chaînes de requête peut créer des opportunités pour [Cross-Site demande Forgery (CSRF)](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)) attaques, ce qui peuvent amener les utilisateurs à visiter les sites malveillants lors de l’authentification. Des personnes malveillantes peuvent ensuite dérober des données utilisateur à partir de votre application ou des actions malveillantes part de l’utilisateur. N’importe quel état de session ou application préservé doit protéger contre les attaques CSRF. Pour plus d’informations sur les attaques CSRF, consultez [attaques empêchant Cross-Site Request Forgery (XSRF/CSRF) dans ASP.NET Core](../security/anti-request-forgery.md).
 
-### <a name="post-data-and-hidden-fields"></a>Données de publication et les champs masqués
+## <a name="post-data-and-hidden-fields"></a>Données de publication et les champs masqués
 
 Données peuvent être enregistrées dans les champs masqués et validées sur la demande suivante. Cela est courant dans les formulaires à plusieurs pages. Toutefois, étant donné que le client peut potentiellement falsifier des données, le serveur doit toujours revalider. 
 
-### <a name="cookies"></a>Cookies
+## <a name="cookies"></a>Cookies
 
 Les cookies permettent de stocker des données spécifiques à l’utilisateur dans les applications web. Étant donné que les cookies sont envoyés avec chaque demande, leur taille doit être conservée au minimum. Dans l’idéal, doit être stocké dans un cookie uniquement un identificateur avec les données réelles stockées sur le serveur. La plupart des navigateurs limiter les cookies à 4 096 octets. En outre, qu’un nombre limité de cookies est disponible pour chaque domaine.  
 
@@ -76,17 +98,18 @@ Les cookies permettent de stocker des données spécifiques à l’utilisateur d
 
 Les cookies sont souvent utilisés pour la personnalisation, où le contenu est personnalisé pour un utilisateur connu. Étant donné que l’utilisateur est identifié uniquement et pas authentifié dans la plupart des cas, vous pouvez généralement sécuriser un cookie en stockant le nom d’utilisateur, nom de compte ou un ID d’utilisateur unique (par exemple, un GUID) dans le cookie. Vous pouvez ensuite utiliser le cookie pour accéder à l’infrastructure de personnalisation utilisateur d’un site.
 
-### <a name="httpcontextitems"></a>HttpContext.Items
+## <a name="httpcontextitems"></a>HttpContext.Items
 
 Le `Items` collection est un bon emplacement pour stocker des données qui sont nécessaire lors uniquement un traitement de la demande particulier. Contenu de la collection est supprimés après chaque demande. Le `Items` collection est mieux utilisée comme un moyen pour les composants ou d’intergiciel (middleware) pour communiquer lorsqu’ils fonctionnent à différents moments dans le temps au cours d’une demande et n’ont aucun moyen direct pour passer des paramètres. Pour plus d’informations, consultez [utilisation de HttpContext.Items](#working-with-httpcontextitems), plus loin dans cet article.
 
-### <a name="cache"></a>d'instance/de clé
+## <a name="cache"></a>d'instance/de clé
 
 La mise en cache est un moyen efficace de stocker et récupérer des données. Vous pouvez contrôler la durée de vie des éléments du cache en fonction de l’heure et d’autres considérations. En savoir plus sur [mise en cache](../performance/caching/index.md).
 
 <a name=session></a>
+## <a name="working-with-session-state"></a>Utilisation de l’état de Session
 
-## <a name="configuring-session"></a>Configuration de Session
+### <a name="configuring-session"></a>Configuration de Session
 
 Le `Microsoft.AspNetCore.Session` package fournit un intergiciel (middleware) pour gérer l’état de session. Pour activer l’intergiciel de session, `Startup`doit contenir :
 
@@ -138,7 +161,7 @@ Le serveur utilise le `IdleTimeout` propriété pour déterminer la durée penda
 
 Étant donné que `Session` est *sans verrouillage*, si deux demandes tentent de modifier le contenu de la session, il remplace le premier. `Session`est implémenté comme un *session cohérente*, ce qui signifie que tout le contenu est stocké ensemble. Deux requêtes qui sont modifier différentes parties de la session (clés différents) peuvent toujours avoir un impact sur eux.
 
-## <a name="setting-and-getting-session-values"></a>Définition et l’obtention des valeurs de Session
+### <a name="setting-and-getting-session-values"></a>Définition et l’obtention des valeurs de Session
 
 Session est accessible via la `Session` propriété sur `HttpContext`. Cette propriété est un [ISession](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.http.isession) implémentation.
 

@@ -12,11 +12,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/using-browserlink
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 67ddc58e38962bd876050739a2a1447be4f589bb
-ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
+ms.openlocfilehash: 95062961877b8da843ce47fb1719ee85224fa8c8
+ms.sourcegitcommit: 9c27fa0f0c57ad611aa43f63afb9b9c9571d4a94
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="browser-link-in-aspnet-core"></a>Lien du navigateur dans ASP.NET Core 
 
@@ -81,7 +81,7 @@ Lorsque vous avez un projet ASP.NET Core ouvert, Visual Studio affiche le contr�
 * Actualiser l’application web dans plusieurs navigateurs à la fois.
 * Ouvrez le **le tableau de bord navigateur lien**.
 * Activer ou désactiver **lien du navigateur**. Remarque : Le lien du navigateur est désactivée par défaut dans Visual Studio 2017 (15,3).
-* Activer ou désactiver la synchronisation automatique CSS.
+* Activer ou désactiver [la synchronisation automatique CSS](#enable-or-disable-css-auto-sync).
 
 > [!NOTE]
 > Certains plug-ins de Visual Studio, notamment *Web Extension Pack 2015* et *Web Extension Pack 2017*, proposent des fonctionnalités étendues pour le lien du navigateur, mais certaines des fonctionnalités supplémentaires ne fonctionnent pas avec ASP. Projets NET Core.
