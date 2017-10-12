@@ -84,7 +84,7 @@ Exemple :
 
 | Type d’attribut    | Exemple de valeur     |
 |----------------   |----------------   |
-| TimeSpan    | "@TimeSpan.FromSeconds(120)"    |
+| TimeSpan    | " @TimeSpan.FromSeconds (120)"    |
 
 
 Définit la durée à partir de la première demande pour mettre en cache le contenu. 
@@ -103,7 +103,7 @@ Exemple :
 
 | Type d’attribut    | Exemple de valeur     |
 |----------------   |----------------   |
-| TimeSpan    | "@TimeSpan.FromSeconds(60)"     |
+| TimeSpan    | " @TimeSpan.FromSeconds (60)"     |
 
 
 Définit l’heure à laquelle une entrée de cache doit être supprimée si elle n’a pas été accédé.
@@ -229,7 +229,7 @@ Exemple :
 
 | Type d’attribut    | Exemples de valeurs                |
 |----------------   |----------------               |
-| Chaîne             | "@Model"                 |
+| Chaîne             | " @Model "                 |
 
 
 Permet la personnalisation de données obtient mis en cache. Lorsque l’objet référencé par les modifications apportées à la valeur de la chaîne de l’attribut, le contenu de l’application d’assistance de balise de Cache est mis à jour. Fréquence à laquelle une concaténation de chaînes de valeurs de modèle sont affectées à cet attribut.  En effet, cela signifie qu'une mise à jour à une des valeurs concaténées invalide le cache.
