@@ -11,11 +11,11 @@ ms.assetid: b5bba985-be12-4464-9a01-df3599b2a6f1
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/environments
-ms.openlocfilehash: 2a92c50085e70b4a505913c86348ba5fe54f6d13
-ms.sourcegitcommit: 67811da1278c75cb10994602c13bd5adec3f0907
+ms.openlocfilehash: becdfa647acb6483b39f5421ab881c4817f31c40
+ms.sourcegitcommit: e3b1726cc04e80dc28464c35259edbd3bc39a438
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/04/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="working-with-multiple-environments"></a>Utilisation de plusieurs environnements
 
@@ -50,7 +50,7 @@ Voici un `launchSettings.json` fichier qui inclut les profils pour `Development`
 Modifications apportées aux profils de projet ne peuvent pas prennent effet qu’après le redémarrage du serveur web utilisé (en particulier, Kestrel doit être redémarré avant qu’il détecte les modifications apportées à son environnement).
 
 >[!WARNING]
-> Variables d’environnement stockée dans *launchSettings.json* ne sont pas sécurisés de quelque manière et fera partie du référentiel de code source pour votre projet, si vous utilisez un. **Ne stockez jamais les informations d’identification ou d’autres données secrètes dans ce fichier.** Si vous avez besoin d’un emplacement pour stocker ces données, utilisez la *Secret Manager* outil décrit dans [stockage sécurisé des secrets d’application pendant le développement](../security/app-secrets.md#security-app-secrets).
+> Variables d’environnement stockée dans *launchSettings.json* ne sont pas sécurisés de quelque manière et fera partie du référentiel de code source pour votre projet, si vous utilisez un. **Ne stockez jamais les informations d’identification ou d’autres données secrètes dans ce fichier.** Si vous avez besoin d’un emplacement pour stocker ces données, utilisez la *Secret Manager* outil décrit dans [stockage sécurisé des secrets d’application pendant le développement](xref:security/app-secrets).
 
 ### <a name="staging"></a>Mise en lots
 

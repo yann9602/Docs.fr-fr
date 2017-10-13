@@ -11,11 +11,11 @@ ms.assetid: 7f275a09-f118-41c9-88d1-8de52d6a5aa1
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/localization
-ms.openlocfilehash: 9ff2fb92c81719c7278d70b5df5387f1244195bf
-ms.sourcegitcommit: e7f01a649f240b6b57118c53314ab82f7f36f2eb
+ms.openlocfilehash: b64af625dd280b40e3c743af9415e3a67155fe6e
+ms.sourcegitcommit: e9bd53f53c0ba148343cd2057c714a7c72ee81e9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/06/2017
+ms.lasthandoff: 10/13/2017
 ---
 # <a name="globalization-and-localization-in-aspnet-core"></a>Globalisation et localisation dans ASP.NET Core
 
@@ -47,7 +47,7 @@ Utilisez le `IHtmlLocalizer<T>` implémentation pour les ressources contenant du
 
 [!code-csharp[Main](../fundamentals/localization/sample/Localization/Controllers/BookController.cs?highlight=3,5,20&start=1&end=24)]
 
-Remarque : Vous souhaitez généralement localiser uniquement le texte et HTML pas.
+**Remarque :** vous souhaitez généralement localiser uniquement le texte et HTML pas.
 
 Niveau le plus bas, vous pouvez obtenir `IStringLocalizerFactory` hors [Injection de dépendance](dependency-injection.md):
 
@@ -59,7 +59,7 @@ Vous pouvez partitionner vos chaînes localisées par contrôleur, zone, ou avoi
 
 [!code-csharp[Main](localization/sample/Localization/Resources/SharedResource.cs)]
 
-Certains développeurs utilisent la `Startup` classe pour contenir des chaînes globales ou partagés.  Dans l’exemple ci-dessous, le `InfoController` et `SharedResource` localisateurs sont utilisés :
+Certains développeurs utilisent la `Startup` classe pour contenir des chaînes globales ou partagés. Dans l’exemple ci-dessous, le `InfoController` et `SharedResource` localisateurs sont utilisés :
 
 [!code-csharp[Main](localization/sample/Localization/Controllers/InfoController.cs?range=9-26)]
 
@@ -67,7 +67,7 @@ Certains développeurs utilisent la `Startup` classe pour contenir des chaînes 
 
 Le `IViewLocalizer` service fournit des chaînes localisées pour une [vue](https://docs.microsoft.com/aspnet/core). La `ViewLocalizer` classe implémente cette interface et l’emplacement de la ressource du chemin du fichier de vue. Le code suivant montre comment utiliser l’implémentation par défaut de `IViewLocalizer`:
 
-[!code-HTML[Main](localization/sample/Localization/Views/Home/About.cshtml)]
+[!code-cshtml[Main](localization/sample/Localization/Views/Home/About.cshtml)]
 
 L’implémentation par défaut de `IViewLocalizer` recherche le fichier de ressources basé sur le nom de fichier de la vue. Il n’existe aucune option pour utiliser un fichier de ressource partagée globale. `ViewLocalizer`implémente le localisateur à l’aide de `IHtmlLocalizer`, de sorte que Razor ne HTML encoder la chaîne localisée. Vous pouvez paramétrer des chaînes de ressources et `IViewLocalizer` HTML codera les paramètres, mais pas la chaîne de ressource. Prenez en compte le balisage Razor suivant :
 
@@ -83,13 +83,11 @@ Un fichier de ressources Français peut contenir les éléments suivants :
 
 L’affichage contient le balisage HTML à partir du fichier de ressources.
 
-Remarques :
-- Localisation de la vue nécessite le package NuGet de « Localization.AspNetCore.TagHelpers ».
-- En règle générale, vous souhaitez localiser uniquement le texte et HTML pas.
+**Remarque :** vous souhaitez généralement localiser uniquement le texte et HTML pas.
 
 Pour utiliser un fichier de ressources partagées dans une vue, injecter `IHtmlLocalizer<T>`:
 
-[!code-HTML[Main](../fundamentals/localization/sample/Localization/Views/Test/About.cshtml?highlight=5,12)]
+[!code-cshtml[Main](../fundamentals/localization/sample/Localization/Views/Test/About.cshtml?highlight=5,12)]
 
 ## <a name="dataannotations-localization"></a>Localisation de DataAnnotations
 
@@ -287,11 +285,11 @@ Utilisez `RequestLocalizationOptions` pour ajouter ou supprimer des fournisseurs
 
 Cet exemple **Localization.StarterWeb** de projet sur [GitHub](https://github.com/aspnet/entropy) contient l’interface utilisateur pour définir le `Culture`. Le *Views/Shared/_SelectLanguagePartial.cshtml* fichier vous permet de sélectionner la culture dans la liste des cultures prises en charge :
 
-[!code-HTML[Main](localization/sample/Localization/Views/Shared/_SelectLanguagePartial.cshtml)]
+[!code-cshtml[Main](localization/sample/Localization/Views/Shared/_SelectLanguagePartial.cshtml)]
 
 Le *Views/Shared/_SelectLanguagePartial.cshtml* fichier est ajouté à la `footer` section du fichier de disposition afin qu’il sera disponible pour toutes les vues :
 
-[!code-HTML[Main](localization/sample/Localization/Views/Shared/_Layout.cshtml?range=43-56&highlight=10)]
+[!code-cshtml[Main](localization/sample/Localization/Views/Shared/_Layout.cshtml?range=43-56&highlight=10)]
 
 Le `SetLanguage` méthode définit le cookie de la culture.
 

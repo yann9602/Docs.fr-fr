@@ -11,17 +11,17 @@ ms.assetid: 9d18c287-e0e6-4541-b09c-7fed45c902d9
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/consumer-apis/purpose-strings-multitenancy
-ms.openlocfilehash: dd87d8bcaf0056b322908e9a3ef75678f603e1e6
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: b25af7c1f4dd3c63734290e6ac82e2e30a030c61
+ms.sourcegitcommit: e3b1726cc04e80dc28464c35259edbd3bc39a438
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="purpose-hierarchy-and-multi-tenancy-in-aspnet-core"></a>Hiérarchie d’objet et une architecture mutualisée dans ASP.NET Core
 
 Étant un IDataProtector également implicitement un IDataProtectionProvider, à des fins peuvent être chaînés ensemble. Dans ce fournisseur de détection. CreateProtector ([« purpose1 », « purpose2 »]) équivaut au fournisseur. CreateProtector("purpose1"). CreateProtector("purpose2").
 
-Ainsi, pour certaines relations hiérarchiques intéressantes via le système de protection des données. Dans l’exemple précédent de [Contoso.Messaging.SecureMessage](purpose-strings.md#data-protection-contoso-purpose), le composant SecureMessage peut appeler le fournisseur. CreateProtector("Contoso.Messaging.SecureMessage") une fois qu’initial et le résultat dans un champ privé _myProvider de cache. Les protecteurs de futurs peuvent ensuite être créées via des appels à _myProvider.CreateProtector (« utilisateur : nom d’utilisateur »), et ces protecteurs sont utilisées pour la sécurisation des messages individuels.
+Ainsi, pour certaines relations hiérarchiques intéressantes via le système de protection des données. Dans l’exemple précédent de [Contoso.Messaging.SecureMessage](purpose-strings.md#data-protection-contoso-purpose), le composant SecureMessage peut appeler le fournisseur. CreateProtector("Contoso.Messaging.SecureMessage") une fois qu’initial et cache le résultat dans un privé `_myProvide` champ. Les protecteurs de futurs peuvent ensuite être créées via des appels à `_myProvider.CreateProtector("User: username")`, et ces protecteurs sont utilisées pour la sécurisation des messages individuels.
 
 Cela peut également être inversé. Envisagez une seule application logique qui héberge plusieurs clients (un CMS semble raisonnable) et chaque client peuvent être configuré avec son propre système de gestion de l’authentification et l’état. L’application couvrant possède un seul fournisseur de master, et il appelle le fournisseur. CreateProtector (« Tenant 1 ») et le fournisseur. CreateProtector (« Tenant 2 ») pour donner à chaque client de sa propre tranche isolé du système de protection des données. Les locataires peuvent ensuite dériver leurs propres protecteurs individuels en fonction de leurs propres besoins, mais quel que soit le manuels ils tentent ne peut pas créer protecteurs qui entrent en conflit avec n’importe quel autre client dans le système. Graphiquement, cela est représenté comme indiqué ci-dessous.
 
