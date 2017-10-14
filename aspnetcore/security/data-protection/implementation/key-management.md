@@ -11,15 +11,15 @@ ms.assetid: fb9b807a-d143-4861-9ddb-005d8796afa3
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/implementation/key-management
-ms.openlocfilehash: 507c00edc5bade2427151ecadfed581817e4d088
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 687207cb6a1cea89166fd2b6172cdc0a013de4b3
+ms.sourcegitcommit: 8f4d4fad1ca27adf9e396f5c205c9875a3963664
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 10/13/2017
 ---
 # <a name="key-management"></a>Gestion de clés
 
-<a name=data-protection-implementation-key-management></a>
+<a name="data-protection-implementation-key-management"></a>
 
 Le système de protection de données gère automatiquement la durée de vie des clés principales utilisées pour protéger et déprotéger les charges utiles. Chaque clé peut exister dans un des quatre étapes.
 
@@ -46,7 +46,7 @@ La raison pour laquelle le système de protection de données génère une nouve
 
 Il existe une exception. Si le développeur a [désactivé la génération automatique de clés](../configuration/overview.md#data-protection-configuring-disable-automatic-key-generation), le système de protection des données doit choisir un élément en tant que la clé par défaut. Dans ce scénario de secours, le système choisira la clé non révoqué avec la dernière date d’activation, de préférence vers les clés qui ont eu le temps de se propager à d’autres ordinateurs du cluster. Le système de secours peut se retrouver en choisissant une clé par défaut a expiré en conséquence. Le système de secours ne sera jamais choisir une clé révoquée en tant que la clé par défaut, et si l’anneau de clé est vide ou chaque clé a été révoqué le système produira une erreur lors de l’initialisation.
 
-<a name=data-protection-implementation-key-management-expiration></a>
+<a name="data-protection-implementation-key-management-expiration"></a>
 
 ## <a name="key-expiration-and-rolling"></a>Expiration de clés et de restauration
 

@@ -11,15 +11,15 @@ ms.assetid: 512c6ba7-88ec-47e4-a656-6b30350b34e6
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/extensibility/misc-apis
-ms.openlocfilehash: 541dd721a00495632f0d633577b55933c9be03fa
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 72274a0da94a14bcd5af11d245ba626214fa2607
+ms.sourcegitcommit: 8f4d4fad1ca27adf9e396f5c205c9875a3963664
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 10/13/2017
 ---
 # <a name="miscellaneous-apis"></a>API diverses
 
-<a name=data-protection-extensibility-mics-apis></a>
+<a name="data-protection-extensibility-mics-apis"></a>
 
 >[!WARNING]
 > Les types qui implémentent des interfaces suivantes doivent être thread-safe pour les appelants plusieurs.

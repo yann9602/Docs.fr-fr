@@ -11,17 +11,17 @@ ms.assetid: e6130638-c410-4161-9921-b658ce988bd1
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/url-rewriting
-ms.openlocfilehash: 0a4024edf13651e2ed7e0f87e554e8ba8d895619
-ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
+ms.openlocfilehash: dde0b5673c9885db2fecbb24b384752e5ddf70eb
+ms.sourcegitcommit: 8f4d4fad1ca27adf9e396f5c205c9875a3963664
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2017
+ms.lasthandoff: 10/13/2017
 ---
 # <a name="url-rewriting-middleware-in-aspnet-core"></a>Intergiciel (middleware) dans ASP.NET Core de réécriture d’URL
 
 Par [Luke Latham](https://github.com/guardrex) et [Mikael Mengistu](https://github.com/mikaelm12)
 
-[Afficher ou télécharger l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/url-rewriting/samples/) ([comment télécharger](xref:tutorials/index#how-to-download-a-sample))
+[Affichez ou téléchargez l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/url-rewriting/samples/) ([procédure de téléchargement](xref:tutorials/index#how-to-download-a-sample))
 
 Réécriture d’URL est le fait de la modification de requête URL basées sur une ou plusieurs règles prédéfinies. Réécriture d’URL de crée une abstraction entre les emplacements de ressources et leurs adresses afin que les emplacements et les adresses ne sont pas étroitement liés. Il existe plusieurs scénarios où il est utile de réécriture d’URL :
 * Déplacez ou remplacez temporairement ou définitivement des ressources du serveur tout en conservant les localisateurs stables pour ces ressources
@@ -98,7 +98,7 @@ La partie de l’expression entre parenthèses est appelée un *groupe de captur
 
 Dans la chaîne de remplacement, les groupes capturés sont injectées dans la chaîne avec le signe dollar (`$`) suivi du numéro de séquence de la capture. La première valeur de groupe de capture est obtenue avec `$1`, le second avec `$2`, ils continuent de séquence pour les groupes de capture dans votre expression régulière. Il est uniquement un groupe capturé dans l’expression régulière règle de redirection dans l’exemple d’application, qu’un seul groupe injecté dans la chaîne de remplacement, qui est `$1`. Lorsque la règle est appliquée, l’URL devient `/redirected/1234/5678`.
 
-<a name=url-redirect-to-secure-endpoint></a>
+<a name="url-redirect-to-secure-endpoint"></a>
 ### <a name="url-redirect-to-a-secure-endpoint"></a>Redirection d’URL à un point de terminaison sécurisé
 Utilisez `AddRedirectToHttps` pour rediriger les demandes HTTP vers le même hôte et le chemin d’accès à l’aide de HTTPS (`https://`). Si le code d’état n’est pas fourni, la valeur de l’intergiciel (middleware) par défaut 302 (trouvé). Si le port n’est pas fourni, l’intergiciel (middleware) par défaut est `null`, ce qui signifie que le protocole modifie à `https://` et le client accède à la ressource sur le port 443. L’exemple montre comment définir le code d’état à partir de 301 (déplacé définitivement) et modifiez le port à 5001.
 ```csharp

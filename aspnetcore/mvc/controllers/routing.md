@@ -11,11 +11,11 @@ ms.assetid: 26250a4d-bf62-4d45-8549-26801cf956e9
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/routing
-ms.openlocfilehash: 5a0b5399f7441035cb1231a009681ca22b07ab4e
-ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
+ms.openlocfilehash: cc3277400aee956f47c53e5a4f3d4e84d3a3d1a3
+ms.sourcegitcommit: 8f4d4fad1ca27adf9e396f5c205c9875a3963664
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 10/13/2017
 ---
 # <a name="routing-to-controller-actions"></a>Routage vers les Actions de contrôleur
 
@@ -118,7 +118,7 @@ app.UseRouter(routes.Build());
 
 `UseMvc`ne définit pas directement les itinéraires, il ajoute un espace réservé à la collection d’itinéraires pour le `attribute` itinéraire. La surcharge `UseMvc(Action<IRouteBuilder>)` vous permet d’ajouter vos propres itinéraires et prend également en charge le routage d’attributs.  `UseMvc`et toutes ses variations ajoute un espace réservé pour l’itinéraire d’attribut - attribut routage est toujours disponible, quelle que soit la façon dont vous configurez `UseMvc`. `UseMvcWithDefaultRoute`définit un itinéraire par défaut et prend en charge le routage d’attributs. Le [attribut routage](#attribute-routing-ref-label) comprend plus de détails sur le routage d’attributs.
 
-<a name=routing-conventional-ref-label></a>
+<a name="routing-conventional-ref-label"></a>
 
 ## <a name="conventional-routing"></a>Le routage classique
 
@@ -190,7 +190,7 @@ Vous devrez écrire personnalisée `IActionConstraint` implémentations dans des
 
 Si plusieurs itinéraires correspondent et MVC ne peut pas trouver un itinéraire « meilleur », elle lève une `AmbiguousActionException`.
 
-<a name=routing-route-name-ref-label></a>
+<a name="routing-route-name-ref-label"></a>
 
 ### <a name="route-names"></a>Noms d’itinéraires
 
@@ -210,7 +210,7 @@ Les noms d’itinéraires nommez l’itinéraire logique afin que l’itinérair
 
 Les noms d’itinéraires n’ont aucun impact sur l’URL correspondant ou le traitement des requêtes ; ils sont utilisés uniquement pour la génération d’URL. [Routage](xref:fundamentals/routing) contient plus d’informations sur la génération d’URL, y compris la génération d’URL dans les programmes d’assistance MVC spécifiques.
 
-<a name=attribute-routing-ref-label></a>
+<a name="attribute-routing-ref-label"></a>
 
 ## <a name="attribute-routing"></a>Routage d’attributs
 
@@ -324,7 +324,7 @@ Les noms d’itinéraires peuvent être utilisés pour générer une URL basée 
 > [!NOTE]
 > Ceci contraste avec conventionnels *l’itinéraire par défaut*, qui définit le `id` paramètre comme facultatif (`{id?}`). Cette possibilité de spécifier précisément les API présente des avantages, par exemple pour autoriser `/products` et `/products/5` doit être distribué à des actions différentes.
 
-<a name=routing-combining-ref-label></a>
+<a name="routing-combining-ref-label"></a>
 
 ### <a name="combining-routes"></a>Itinéraires de combinaison
 
@@ -369,7 +369,7 @@ public class HomeController : Controller
 }
 ```
 
-<a name=routing-ordering-ref-label></a>
+<a name="routing-ordering-ref-label"></a>
 
 ### <a name="ordering-attribute-routes"></a>Classement des itinéraires d’attribut
 
@@ -382,7 +382,7 @@ Itinéraires d’attribut peuvent configurer une commande, à l’aide de la `Or
 > [!TIP]
 > Éviter de dépendre `Order`. Si votre espace URL requiert des valeurs d’ordre explicites pour acheminer correctement, il est probablement à confusion pour les clients. En général le routage d’attributs sélectionnera l’itinéraire correct avec l’URL correspondant. Si l’ordre par défaut utilisé pour la génération d’URL ne fonctionne pas, à l’aide de nom d’itinéraire comme une substitution est généralement plus simple que l’application le `Order` propriété.
 
-<a name=routing-token-replacement-templates-ref-label></a>
+<a name="routing-token-replacement-templates-ref-label"></a>
 
 ## <a name="token-replacement-in-route-templates-controller-action-area"></a>Dans les modèles d’itinéraire du remplacement de jeton ([controller], [action], [domaine])
 
@@ -414,7 +414,7 @@ Remplacement des jetons s’applique également aux noms d’itinéraires défin
 
 Pour faire correspondre le délimiteur de littéral remplacement des jetons `[` ou `]`, échapper en répétant le caractère (`[[` ou `]]`).
 
-<a name=routing-multiple-routes-ref-label></a>
+<a name="routing-multiple-routes-ref-label"></a>
 
 ### <a name="multiple-routes"></a>Plusieurs itinéraires
 
@@ -458,7 +458,7 @@ public class ProductsController : Controller
 > [!TIP]
 > À l’aide de plusieurs itinéraires sur les actions permettre sembler puissant, il est préférable de conserver l’espace d’URL de votre application simple et bien définie. Utilisez plusieurs itinéraires sur les actions lorsque cela est nécessaire, par exemple, pour prendre en charge les clients existants.
 
-<a name=routing-attr-options></a>
+<a name="routing-attr-options"></a>
 
 ### <a name="specifying-attribute-route-optional-parameters-default-values-and-constraints"></a>Spécification des paramètres d’itinéraire d’attribut facultatif, les valeurs par défaut et les contraintes
 
@@ -474,7 +474,7 @@ public IActionResult ShowProduct(int id)
 
 Consultez [référence de modèle d’itinéraire](../../fundamentals/routing.md#route-template-reference) pour une description détaillée de la syntaxe de modèle d’itinéraire.
 
-<a name=routing-cust-rt-attr-irt-ref-label></a>
+<a name="routing-cust-rt-attr-irt-ref-label"></a>
 
 ### <a name="custom-route-attributes-using-iroutetemplateprovider"></a>Attributs d’itinéraire personnalisées à l’aide`IRouteTemplateProvider`
 
@@ -495,7 +495,7 @@ public class MyApiControllerAttribute : Attribute, IRouteTemplateProvider
 
 L’attribut de l’exemple ci-dessus définit automatiquement le `Template` à `"api/[controller]"` lorsque `[MyApiController]` est appliqué.
 
-<a name=routing-app-model-ref-label></a>
+<a name="routing-app-model-ref-label"></a>
 
 ### <a name="using-application-model-to-customize-attribute-routes"></a>À l’aide du modèle d’Application pour personnaliser les itinéraires d’attribut
 
@@ -503,7 +503,7 @@ Le *modèle d’application* est un modèle d’objet créé au démarrage avec 
 
 [!code-csharp[Main](routing/sample/main/NamespaceRoutingConvention.cs)]
 
-<a name=routing-mixed-ref-label></a>
+<a name="routing-mixed-ref-label"></a>
 
 ## <a name="mixed-routing-attribute-routing-vs-conventional-routing"></a>Mixte de routage : routage classique de routage et d’attribut
 
@@ -514,7 +514,7 @@ Actions sont soit traditionnellement routées ou attribut routés. En plaçant u
 > [!NOTE]
 > Toute la différence entre les deux types de systèmes de routage consiste à appliquée après une URL correspond à un modèle d’itinéraire. Dans le routage classique, les valeurs d’itinéraire à partir de la correspondance sont utilisés pour choisir l’action et le contrôleur à partir d’une table de recherche de toutes les actions de routage classiques. Dans le routage de l’attribut, chaque modèle est déjà associé avec une action, et aucune recherche supplémentaire n’est nécessaire.
 
-<a name=routing-url-gen-ref-label></a>
+<a name="routing-url-gen-ref-label"></a>
 
 ## <a name="url-generation"></a>Génération d’URL
 
@@ -567,7 +567,7 @@ Les surcharges plus de `Url.Action` prennent également un autre *valeurs d’it
 > [!TIP]
 > Pour créer une URL absolue, utilisez une surcharge qui accepte un `protocol`:`Url.Action("Buy", "Products", new { id = 17 }, protocol: Request.Scheme)`
 
-<a name=routing-gen-urls-route-ref-label></a>
+<a name="routing-gen-urls-route-ref-label"></a>
 
 ### <a name="generating-urls-by-route"></a>Génération des URL par itinéraire
 
@@ -575,7 +575,7 @@ Le code ci-dessus démontré la génération d’une URL en passant le nom d’a
 
 [!code-csharp[Main](routing/sample/main/Controllers/UrlGenerationControllerRouting.cs?name=snippet_1)]
 
-<a name=routing-gen-urls-html-ref-label></a>
+<a name="routing-gen-urls-html-ref-label"></a>
 
 ### <a name="generating-urls-in-html"></a>Génération des URL au format HTML
 
@@ -585,7 +585,7 @@ TagHelpers générer des URL via le `form` TagHelper et `<a>` TagHelper. Ces deu
 
 Dans les vues, les `IUrlHelper` est disponible via le `Url` propriété pour n’importe quel ad hoc de génération d’URL non couverte par la commande ci-dessus.
 
-<a name=routing-gen-urls-action-ref-label></a>
+<a name="routing-gen-urls-action-ref-label"></a>
 
 ### <a name="generating-urls-in-action-results"></a>Génération des URL dans les résultats d’Action
 
@@ -606,7 +606,7 @@ public Task<IActionResult> Edit(int id, Customer customer)
 
 Les méthodes de fabrique de résultats action suivent un modèle similaire aux méthodes `IUrlHelper`.
 
-<a name=routing-dedicated-ref-label></a>
+<a name="routing-dedicated-ref-label"></a>
 
 ### <a name="special-case-for-dedicated-conventional-routes"></a>Cas spécial pour les itinéraires conventionnelles dédiés
 
@@ -625,7 +625,7 @@ app.UseMvc(routes =>
 
 Itinéraires conventionnelles dédiés s’appuient sur un comportement spécial de valeurs par défaut qui n’ont pas de paramètre d’itinéraire correspondant qui empêche l’itinéraire « trop gourmande » avec la génération d’URL. Dans ce cas les valeurs par défaut sont `{ controller = Blog, action = Article }`et ni `controller` ni `action` apparaît sous la forme d’un paramètre d’itinéraire. Lorsque le routage effectue une génération d’URL, les valeurs fournies doivent correspondre aux valeurs de la valeur par défaut. Génération d’URL à l’aide `blog` échoue, car les valeurs `{ controller = Home, action = Index }` ne correspondent pas `{ controller = Blog, action = Article }`. Routage puis revient pour essayer `default`, ce qui aboutit.
 
-<a name=routing-areas-ref-label></a>
+<a name="routing-areas-ref-label"></a>
 
 ## <a name="areas"></a>Zones
 
@@ -670,7 +670,7 @@ Lors de l’exécution d’une action à l’intérieur d’une zone, valeur de 
 
 [!code-csharp[Main](routing/sample/AreasRouting/Areas/Duck/Controllers/UsersController.cs)]
 
-<a name=iactionconstraint-ref-label></a>
+<a name="iactionconstraint-ref-label"></a>
 
 ## <a name="understanding-iactionconstraint"></a>Présentation des IActionConstraint
 
@@ -695,7 +695,7 @@ Lorsque le `HttpGetAttribute` s’exécute, il indiquera que *Edit()* correspond
 
 Point de vue conceptuel, `IActionConstraint` est une forme de *surcharge*, mais au lieu de la surcharge de méthodes portant le même nom, il est la surcharge entre les actions qui correspondent à la même URL. Routage d’attributs utilise également `IActionConstraint` et peut générer des actions à partir de différents contrôleurs à la fois être considéré comme candidats.
 
-<a name=iactionconstraint-impl-ref-label></a>
+<a name="iactionconstraint-impl-ref-label"></a>
 
 ### <a name="implementing-iactionconstraint"></a>Implémentation de IActionConstraint
 

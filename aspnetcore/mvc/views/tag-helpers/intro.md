@@ -11,11 +11,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/tag-helpers/intro
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 06644b8359fb5ccc2e61a17a4c6e20e354d5ceef
-ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
+ms.openlocfilehash: 78004aa370cac8b297fd7ede534260c83965ae79
+ms.sourcegitcommit: 8f4d4fad1ca27adf9e396f5c205c9875a3963664
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 10/13/2017
 ---
 # <a name="introduction-to-tag-helpers-in-aspnet-core"></a>Introduction aux applications d’assistance de balise dans ASP.NET Core 
 
@@ -51,7 +51,7 @@ Le `asp-for` attribut rendue disponible par le `For` propriété dans le `LabelT
 
 Étendue des programmes d’assistance de balise est contrôlée par une combinaison de `@addTagHelper`, `@removeTagHelper`et le « ! » annulations caractère.
 
-<a name=add-helper-label></a>
+<a name="add-helper-label"></a>
 
 ### <a name="addtaghelper-makes-tag-helpers-available"></a>`@addTagHelper`disposition des programmes d’assistance de balise
 
@@ -82,7 +82,7 @@ Pour ajouter un programme d’assistance de balise à une vue à l’aide d’un
 
 Comme mentionné précédemment, l’ajout le `@addTagHelper` directive pour le *Views/_ViewImports.cshtml* fichier à disposition du programme d’assistance de balise pour afficher tous les fichiers dans le *vues* répertoires et sous-répertoires. Vous pouvez utiliser la `@addTagHelper` directive dans les fichiers de vue spécifique si vous souhaitez participer à l’exposition de l’application d’assistance de balise pour uniquement ces vues.
 
-<a name=remove-razor-directives-label></a>
+<a name="remove-razor-directives-label"></a>
 
 ### <a name="removetaghelper-removes-tag-helpers"></a>`@removeTagHelper`Supprime les programmes d’assistance de balise
 
@@ -104,7 +104,7 @@ Vous pouvez désactiver un programme d’assistance de balise au niveau de l’�
 
 Vous devez appliquer le caractère d’annulations d’assistance de balise à l’ouverture et la balise de fermeture. (L’éditeur Visual Studio ajoute automatiquement le caractère d’exclusion à la balise de fermeture lorsque vous ajoutez une balise d’ouverture). Après avoir ajouté le caractère de l’annulation d’abonnement, l’élément et les attributs de l’application d’assistance de balise ne s’affichent plus dans une police unique.
 
-<a name=prefix-razor-directives-label></a>
+<a name="prefix-razor-directives-label"></a>
 
 ### <a name="using-taghelperprefix-to-make-tag-helper-usage-explicit"></a>À l’aide de `@tagHelperPrefix` de rendre l’utilisation du programme d’assistance de balise explicite
 
@@ -127,7 +127,7 @@ Envisagez d’écrire un code HTML `<label>` élément. Dès que vous entrez `<l
 
 ![image](intro/_static/label.png)
 
-Non seulement vous obtenez HTML (aide), mais l’icône (le « @ » symbole avec « <> » dans cette section).
+Non seulement vous obtenez HTML (aide), mais l’icône (le «@" symbol with "<> » dans cette section).
 
 ![image](intro/_static/tagSym.png)
 

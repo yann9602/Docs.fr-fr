@@ -11,22 +11,22 @@ ms.assetid: f2bbbf4e-0945-43ce-be59-8bf19e448798
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/implementation/key-encryption-at-rest
-ms.openlocfilehash: 16a9385630d88c4c9f33954f83fce2bbce5be719
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: 5d0eb4036a3d491336cbe9357779c150b5cbb236
+ms.sourcegitcommit: 8f4d4fad1ca27adf9e396f5c205c9875a3963664
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 10/13/2017
 ---
 # <a name="key-encryption-at-rest"></a>Chiffrement à clé au repos
 
-<a name=data-protection-implementation-key-encryption-at-rest></a>
+<a name="data-protection-implementation-key-encryption-at-rest"></a>
 
 Par défaut, le système de protection des données [utilise une heuristique](../configuration/default-settings.md#data-protection-default-settings) pour déterminer le mode de chiffrement matériel de clé doivent être chiffrées au repos. Le développeur peut substituer l’heuristique et spécifier manuellement la façon dont les clés doivent être chiffrées au repos.
 
 > [!NOTE]
 > Si vous spécifiez un chiffrement à clé explicit au mécanisme de rest, le système de protection de données sera annuler l’inscription le mécanisme de stockage de clés par défaut que l’heuristique fourni. Vous devez [spécifier un mécanisme de stockage de clés explicites](key-storage-providers.md#data-protection-implementation-key-storage-providers), sinon le système de protection des données ne démarre pas.
 
-<a name=data-protection-implementation-key-encryption-at-rest-providers></a>
+<a name="data-protection-implementation-key-encryption-at-rest-providers"></a>
 
 Le système de protection des données est fourni avec trois mécanismes de chiffrement à clé dans la zone.
 
@@ -64,7 +64,7 @@ sc.AddDataProtection()
 
 Seuls les certificats avec des clés privées de CAPI sont pris en charge en raison des limitations de .NET Framework. Consultez [basée sur certificat de chiffrement avec Windows DPAPI-NG](#data-protection-implementation-key-encryption-at-rest-dpapi-ng) ci-dessous pour connaître les solutions possibles à ces limitations.
 
-<a name=data-protection-implementation-key-encryption-at-rest-dpapi-ng></a>
+<a name="data-protection-implementation-key-encryption-at-rest-dpapi-ng"></a>
 
 ## <a name="windows-dpapi-ng"></a>Windows DPAPI-NG
 

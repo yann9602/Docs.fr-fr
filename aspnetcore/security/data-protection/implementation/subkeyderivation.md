@@ -11,22 +11,22 @@ ms.assetid: 34bb58a3-5a9a-41e5-b090-08f75b4bbefa
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/implementation/subkeyderivation
-ms.openlocfilehash: 24ce71b417599bea22b7fae8b384db599f9e907c
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: e070742b5d9966c4772fd2f0a6d637d98a46137c
+ms.sourcegitcommit: 8f4d4fad1ca27adf9e396f5c205c9875a3963664
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 10/13/2017
 ---
 # <a name="subkey-derivation-and-authenticated-encryption"></a>Dérivation de sous-clés et de chiffrement authentifié
 
-<a name=data-protection-implementation-subkey-derivation></a>
+<a name="data-protection-implementation-subkey-derivation"></a>
 
 La plupart des clés dans l’anneau de clé contiendra une certaine forme d’entropie et contient des informations algorithmiques indiquant « le chiffrement en mode CBC + validation de HMAC » ou « chiffrement de GCM + validation ». Dans ce cas, nous nous référons à l’entropie incorporé en tant que le support de gestion (ou KM) pour cette clé, et que nous effectuons une fonction de dérivation de clé pour dériver les clés qui seront utilisés pour les opérations de chiffrement réelles.
 
 > [!NOTE]
 > Les clés sont abstraites, et une implémentation personnalisée ne peut-être pas se comporter comme indiqué ci-dessous. Si la clé fournit sa propre implémentation de IAuthenticatedEncryptor au lieu d’utiliser une des usines intégrées, le mécanisme décrit dans cette section n’est plus s’applique.
 
-<a name=data-protection-implementation-subkey-derivation-aad></a>
+<a name="data-protection-implementation-subkey-derivation-aad"></a>
 
 ## <a name="additional-authenticated-data-and-subkey-derivation"></a>Données authentifiées supplémentaires et la dérivation de la sous-clé
 
@@ -42,7 +42,7 @@ L’interface IAuthenticatedEncryptor sert d’interface de base pour toutes les
 
 (K_E, K_H) = SP800_108_CTR_HMACSHA512 (K_M, AAD, contextHeader || keyModifier)
 
-Ici, nous appelons NIST SP800-108 KDF en Mode de compteur (consultez [NIST SP800-108](http://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-108.pdf), s. 5.1) avec les paramètres suivants :
+Ici, nous appelons NIST SP800-108 KDF en Mode de compteur (consultez [NIST SP800-108](http://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-108.pdf), s 5.1) avec les paramètres suivants :
 
 * Clé de dérivation de clé (KDK) = K_M
 

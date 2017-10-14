@@ -11,19 +11,19 @@ ms.assetid: 0e4881a3-a94d-4e35-9c1c-f025d65dcff0
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/configuration/overview
-ms.openlocfilehash: 9361dcec89a0f35067181523cc56637d629614ff
-ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
+ms.openlocfilehash: d35e0e806999ffd2e0f8f82e0adfc940ea2b503d
+ms.sourcegitcommit: 8f4d4fad1ca27adf9e396f5c205c9875a3963664
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 10/13/2017
 ---
 # <a name="configuring-data-protection"></a>Configuration de la protection des données
 
-<a name=data-protection-configuring></a>
+<a name="data-protection-configuring"></a>
 
 Lorsque le système de protection des données est initialisé il applique certains [paramètres par défaut](default-settings.md#data-protection-default-settings) en fonction de l’environnement d’exploitation. Ces paramètres sont généralement bénéfique pour les applications qui s’exécutent sur un seul ordinateur. Il existe certains cas où un développeur peut souhaiter modifier ces (par exemple, car leur application est répartie sur plusieurs ordinateurs ou pour des raisons de conformité), et pour ces scénarios, le système de protection des données offre une API riche de configuration.
 
-<a name=data-protection-configuration-callback></a>
+<a name="data-protection-configuration-callback"></a>
 
 Il existe une méthode d’extension AddDataProtection qui retourne un IDataProtectionBuilder qui lui-même expose des méthodes d’extension que vous pouvez chaîner pour configurer la protection des données différentes options. Par exemple, pour stocker les clés sur un partage UNC au lieu de % LocalAppData% (la valeur par défaut), configurez le système comme suit :
 
@@ -38,7 +38,7 @@ public void ConfigureServices(IServiceCollection services)
 >[!WARNING]
 > Si vous modifiez l’emplacement de la persistance des clés, le système n’est plus automatiquement chiffrera clés au repos, car il ne sait pas si DPAPI est un mécanisme de chiffrement appropriés.
 
-<a name=configuring-x509-certificate></a>
+<a name="configuring-x509-certificate"></a>
 
 Vous pouvez configurer le système pour protéger les clés au repos en appelant une de le ProtectKeysWith\* API de configuration. Prenons l’exemple ci-dessous, qui stocke les clés sur un partage UNC et chiffre ces clés au repos avec un certificat X.509 spécifique.
 
@@ -65,7 +65,7 @@ public void ConfigureServices(IServiceCollection services)
 
 Par défaut du système de protection des données isole les applications à partir d’une autre, même si elles partagent le même référentiel clé physique. Cela empêche les applications à partir de la présentation des charges protégé de l’autre. Pour partager les charges utiles de protégé entre deux applications différentes, configurer le système en passant le même nom d’application pour les deux applications, comme dans l’exemple ci-dessous :
 
-<a name=data-protection-code-sample-application-name></a>
+<a name="data-protection-code-sample-application-name"></a>
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -75,7 +75,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-<a name=data-protection-configuring-disable-automatic-key-generation></a>
+<a name="data-protection-configuring-disable-automatic-key-generation"></a>
 
 Enfin, vous pouvez avoir un scénario où vous ne souhaitez pas une application pour restaurer automatiquement les clés qu’ils approchent d’expiration. Un exemple peut être définies dans une relation principale / secondaire, où seulement le principal de l’application est responsable de problèmes de gestion de clés, et de toutes les applications secondaire simplement une vue en lecture seule de l’anneau de clé des applications. Les applications secondaire peuvent être configurées pour traiter l’anneau de clé comme étant en lecture seule en configurant le système comme indiqué ci-dessous :
 
@@ -87,7 +87,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-<a name=data-protection-configuration-per-app-isolation></a>
+<a name="data-protection-configuration-per-app-isolation"></a>
 
 ## <a name="per-application-isolation"></a>Isolation d’application
 
@@ -105,7 +105,7 @@ Ce mécanisme d’isolation suppose que les applications ne sont pas malveillant
 
 Si le système de protection des données n’est pas fourni par un hôte ASP.NET Core (par exemple, si le développeur instancie lui-même via le type concret DataProtectionProvider), le niveau d’isolement d’application est désactivé par défaut et toutes les applications sauvegardé par le codage même matériel peut partager les charges utiles tant qu’ils fournissent les besoins appropriés. Pour assurer l’isolation d’application dans cet environnement, appelez la méthode SetApplicationName sur l’objet de configuration, consultez le [exemple de code](#data-protection-code-sample-application-name) ci-dessus.
 
-<a name=data-protection-changing-algorithms></a>
+<a name="data-protection-changing-algorithms"></a>
 
 ## <a name="changing-algorithms"></a>Modification des algorithmes
 
@@ -144,7 +144,7 @@ Le développeur peut spécifier manuellement une implémentation si vous le souh
 >[!TIP]
 > Modification des algorithmes n’affecte pas les clés existantes dans l’anneau de clé. Il affecte uniquement les clés qui vient d’être générées.
 
-<a name=data-protection-changing-algorithms-custom-managed></a>
+<a name="data-protection-changing-algorithms-custom-managed"></a>
 
 ### <a name="specifying-custom-managed-algorithms"></a>Spécification des algorithmes personnalisés gérés
 
@@ -193,7 +193,7 @@ En règle générale le \*les propriétés de Type doivent pointer vers concrèt
 > [!NOTE]
 > Le SymmetricAlgorithm doit avoir une longueur de clé de ≥ 128 bits et une taille de bloc de ≥ 64 bits, et il doit prendre en charge le chiffrement en mode CBC avec le remplissage PKCS #7. L’élément KeyedHashAlgorithm impossible doit avoir une taille de condensat de > = 128 bits, et il doit prendre en charge les clés de longueur égale à la longueur de résumé de l’algorithme de hachage. L’élément KeyedHashAlgorithm impossible ne soit pas strictement obligatoire pour être HMAC.
 
-<a name=data-protection-changing-algorithms-cng></a>
+<a name="data-protection-changing-algorithms-cng"></a>
 
 ### <a name="specifying-custom-windows-cng-algorithms"></a>En spécifiant les algorithmes CNG de Windows personnalisés
 

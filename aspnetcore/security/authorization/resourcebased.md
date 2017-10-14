@@ -11,15 +11,15 @@ ms.assetid: 0902ba17-5304-4a12-a2d4-e0904569e988
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authorization/resourcebased
-ms.openlocfilehash: 7f7df52bf51a81558818836450997281a21b5839
-ms.sourcegitcommit: f303a457644ed034a49aa89edecb4e79d9028cb1
+ms.openlocfilehash: d3575619c53e77dadc293ea2bb7dc72501a8a1e3
+ms.sourcegitcommit: 8f4d4fad1ca27adf9e396f5c205c9875a3963664
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 10/13/2017
 ---
 # <a name="resource-based-authorization"></a>Autorisation basée sur les ressources
 
-<a name=security-authorization-resource-based></a>
+<a name="security-authorization-resource-based"></a>
 
 Fréquence à laquelle l’autorisation dépend de la ressource sollicitée. Par exemple, un document peut avoir une propriété de l’auteur. Seul l’auteur du document serait autorisé à mettre à jour, afin de la ressource doit être chargée à partir du référentiel de document avant d’effectuer une évaluation d’autorisation. Cela n’est pas possible avec un attribut Authorize, comme l’évaluation de l’attribut a lieu avant la liaison de données et avant l’exécution de votre propre code pour charger une ressource à l’intérieur d’une action. Au lieu de l’autorisation déclarative, la méthode de l’attribut, nous devons utiliser d’autorisation impérative, où un développeur appelle une fonction d’Autoriser au sein de leur propre code.
 
@@ -50,7 +50,7 @@ Task<bool> AuthorizeAsync(ClaimsPrincipal user,
                           string policyName);
 ```
 
-<a name=security-authorization-resource-based-imperative></a>
+<a name="security-authorization-resource-based-imperative"></a>
 
 Pour appeler le service, charger votre ressource au sein de votre action puis appelez le `AuthorizeAsync` surcharge que vous avez besoin. Exemple :
 

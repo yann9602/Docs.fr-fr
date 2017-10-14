@@ -11,11 +11,11 @@ ms.assetid: bbbcf9e4-3c4c-4f50-b91e-175fe9cae4e2
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/routing
-ms.openlocfilehash: 9d24c2956c24a7995b3eeffc19e8c0a827349493
-ms.sourcegitcommit: ed401027aac45c5938c917c7f518a33ceffe9f95
+ms.openlocfilehash: 5dd8bee7228587d7e13f128bc8f16102fb70a412
+ms.sourcegitcommit: 8f4d4fad1ca27adf9e396f5c205c9875a3963664
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/02/2017
+ms.lasthandoff: 10/13/2017
 ---
 # <a name="routing-in-aspnet-core"></a>Le routage ASP.NET Core
 
@@ -26,7 +26,7 @@ Fonctionnalité de routage est chargée pour le mappage d’une demande entrante
 >[!IMPORTANT]
 > Ce document couvre le routage du bas niveau ASP.NET Core. Pour le routage ASP.NET MVC de base, consultez [routage vers les Actions de contrôleur](../mvc/controllers/routing.md)
 
-[Afficher ou télécharger l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/routing/sample) ([comment télécharger](xref:tutorials/index#how-to-download-a-sample))
+[Affichez ou téléchargez l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/routing/sample) ([procédure de téléchargement](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="routing-basics"></a>Principes de base de routage
 
@@ -40,7 +40,7 @@ En règle générale, une application possède une seule collection d’itinéra
 
 Le routage est connecté à la [intergiciel (middleware)](middleware.md) de pipeline par la `RouterMiddleware` classe. [ASP.NET MVC](../mvc/overview.md) ajoute le routage vers le pipeline de l’intergiciel (middleware) dans le cadre de sa configuration. Pour en savoir plus sur l’utilisation de routage comme un composant autonome, consultez [middleware routage à l’aide de](#using-routing-middleware).
 
-<a name=url-matching-ref></a>
+<a name="url-matching-ref"></a>
 
 ### <a name="url-matching"></a>URL correspondant
 
@@ -159,7 +159,7 @@ Ce modèle correspond à un chemin d’accès de l’URL comme `/Products/5` et 
 
 ![Jetons Windows variables locales](routing/_static/tokens.png)
 
-<a name=id1></a>
+<a name="id1"></a>
 
 ### <a name="url-generation"></a>Génération d’URL
 
