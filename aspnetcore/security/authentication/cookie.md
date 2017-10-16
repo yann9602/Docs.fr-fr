@@ -11,11 +11,11 @@ ms.assetid: 2bdcbf95-8d9d-4537-a4a0-a5ee439dcb62
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/cookie
-ms.openlocfilehash: e5c53a7044edb56e065b2dc1536343fdaf9fb007
-ms.sourcegitcommit: 7d8f4e3443a2989a64343f8fec83e6a4c4ed2f97
+ms.openlocfilehash: ea9c93e34a3242b5b3716404228edb8902baf625
+ms.sourcegitcommit: e3b1726cc04e80dc28464c35259edbd3bc39a438
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="using-cookie-authentication-without-aspnet-core-identity"></a>À l’aide de l’authentification de Cookie sans ASP.NET Core identité
 
@@ -76,7 +76,7 @@ Les extraits de code ci-dessus configurer tout ou partie des options suivantes 
 
 * `AccessDeniedPath`-Il s’agit du chemin d’accès relatif vers laquelle les demandes de rediriger lorsqu’un utilisateur tente d’accéder à une ressource, mais ne remplit pas les [stratégies d’autorisation](xref:security/authorization/policies#security-authorization-policies-based) pour cette ressource.
 
-* `AuthenticationScheme`-Il s’agit d’une valeur selon laquelle un schéma d’authentification de cookie particulier est connu. Cela est utile quand il existe plusieurs instances de l’authentification de cookie et vous souhaitez [limiter l’autorisation à une instance](xref:security/authorization/limitingidentitybyscheme#security-authorization-limiting-by-scheme).
+* `AuthenticationScheme`-Il s’agit d’une valeur selon laquelle un schéma d’authentification de cookie particulier est connu. Cela est utile lorsqu’il y a plusieurs instances de l’authentification par cookie et l’application doit [limiter l’autorisation à une instance](xref:security/authorization/limitingidentitybyscheme).
 
 * `AutomaticAuthenticate`-Cet indicateur s’applique uniquement aux ASP.NET Core 1.x. Il indique que l’authentification de cookie doit s’exécuter sur chaque demande et tente de valider et de reconstruire toute entité sérialisée de que sa création.
 

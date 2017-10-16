@@ -11,15 +11,15 @@ ms.assetid: c96ed361-c382-4980-8933-800e740cfc38
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/consumer-apis/purpose-strings
-ms.openlocfilehash: cc33bcfab4945e6d6f9ca7e61edeff4d1837661a
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 799c3dc2768e264307783efafee626a346a9362c
+ms.sourcegitcommit: 8f4d4fad1ca27adf9e396f5c205c9875a3963664
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 10/13/2017
 ---
 # <a name="purpose-strings"></a>Chaînes d’objectif
 
-<a name=data-protection-consumer-apis-purposes></a>
+<a name="data-protection-consumer-apis-purposes"></a>
 
 Les composants qui consomment IDataProtectionProvider doivent passer un unique *à des fins* paramètre à la méthode CreateProtector. Les besoins *paramètre* est inhérent à la sécurité du système de protection de données, car il fournit une isolation entre les consommateurs de services de chiffrement, même si les clés de chiffrement racine sont les mêmes.
 
@@ -38,12 +38,12 @@ La chaîne de l’objet ne peut être divulgué. Il doit simplement être unique
 
 Étant donné que le paramètre à des fins CreateProtector est un tableau de chaînes, ci-dessus pourrait ont été plutôt spécifiés en tant que [« Contoso.Security.BearerToken », « v1 »]. Cela permet l’établissement d’une hiérarchie des objectifs et ouvrez la possibilité d’une architecture mutualisées des scénarios avec le système de protection des données.
 
-<a name=data-protection-contoso-purpose></a>
+<a name="data-protection-contoso-purpose"></a>
 
 >[!WARNING]
 > Composants ne doivent pas permettre d’entrée d’utilisateur non fiable être la seule source d’entrée pour la chaîne à des fins.
 >
->Par exemple, considérez un composant Contoso.Messaging.SecureMessage qui est responsable du stockage des messages sécurisés. Si le composant de messagerie sécurisé devait appeler CreateProtector ([username]), un utilisateur malveillant peut créer un compte avec un nom d’utilisateur « Contoso.Security.BearerToken » dans la tentative d’obtention du composant à appeler CreateProtector([ "Contoso.Security.BearerToken" ]), par conséquent par inadvertance à l’origine du système de messagerie sécurisé pour les charges utiles de monnaies qui peut être perçu comme les jetons d’authentification.
+>Par exemple, considérez un composant Contoso.Messaging.SecureMessage qui est responsable du stockage des messages sécurisés. Si le composant de messagerie sécurisé devait appeler CreateProtector ([username]), un utilisateur malveillant peut créer un compte avec un nom d’utilisateur « Contoso.Security.BearerToken » dans la tentative d’obtention du composant à appeler CreateProtector([« Contoso.Security.BearerToken »]), par conséquent par inadvertance à l’origine du système de messagerie sécurisé pour les charges utiles de monnaies qui peut être perçu comme les jetons d’authentification.
 >
 >Une chaîne à des fins de meilleures pour le composant de messagerie serait CreateProtector ([« Contoso.Messaging.SecureMessage », « utilisateur : nom d’utilisateur »]), qui fournit d’isolation appropriée.
 
