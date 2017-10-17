@@ -1,36 +1,42 @@
 ---
 title: Didacticiels ASP.NET Core
-author: tdykstra
+author: rick-anderson
 description: "Liste des guides pas à pas pour apprendre à développer des applications ASP.NET Core."
 keywords: ASP.NET Core,
-ms.author: tdykstra
+ms.author: riande
 manager: wpickett
-ms.date: 07/14/2017
+ms.date: 10/14/2017
 ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/index
-ms.openlocfilehash: 4962361aa0fc8a61cfc771ed3123a3bafdbe6100
-ms.sourcegitcommit: fe25b8163e9e4115915b3293936e9da646fff84f
+ms.openlocfilehash: ba5d9d8a27b1df282783a15bb8dd945e14c61db0
+ms.sourcegitcommit: a873f862c8e68b2cf2998aaed3dddd93eeba9e0f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2017
+ms.lasthandoff: 10/17/2017
 ---
 # <a name="aspnet-core-tutorials"></a>Didacticiels ASP.NET Core
 
-Les guides pas à pas suivants pour développer des applications ASP.NET Core sont disponibles :
+Les guides pas à pas suivants permettant de développer des applications ASP.NET Core sont disponibles :
 
 ## <a name="building-web-applications"></a>Création d’applications web
 
 Les [pages Razor](xref:mvc/razor-pages/index) constituent l’approche recommandée pour créer une interface utilisateur web avec ASP.NET Core 2.0.
 
 * [Présentation des pages Razor dans ASP.NET Core](xref:mvc/razor-pages/index)
-* [Créer une application web de pages Razor avec ASP.NET Core sur Windows](xref:tutorials/razor-pages/index)
-* [Créer une application web de pages Razor avec ASP.NET Core sur Mac](xref:tutorials/razor-pages-mac/index)  
-* [Créer une application web de pages Razor avec ASP.NET Core avec VS Code](xref:tutorials/razor-pages-vsc/index) 
-* [Créer une application web ASP.NET Core MVC avec Visual Studio sur Windows](first-mvc-app/index.md)
-* [Créer une application web ASP.NET Core MVC avec Visual Studio sur Mac](first-mvc-app-mac/index.md)
-* [Créer une application web ASP.NET Core MVC avec Visual Studio Code sur Mac ou Linux](first-mvc-app-xplat/index.md)
+* Créer une application web de pages Razor avec ASP.NET Core
+
+   * [Pages Razor sur Windows](xref:tutorials/razor-pages/index)
+   * [Pages Razor sur Mac](xref:tutorials/razor-pages-mac/index)
+   * [Pages Razor avec VS Code](xref:tutorials/razor-pages-vsc/index)  
+
+* Créer une application web ASP.NET Core MVC
+
+   * [Application web avec Visual Studio pour Windows](first-mvc-app/index.md)
+   * [Application web avec Visual Studio pour Mac](first-mvc-app-mac/index.md)
+   * [Application web avec Visual Studio Code sur Mac ou Linux](first-mvc-app-xplat/index.md)
+
 * [Bien démarrer avec ASP.NET Core et Entity Framework Core à l’aide de Visual Studio](../data/ef-mvc/index.md)
 * [Génération de projets avec Yeoman](../client-side/yeoman.md)
 * [Création de Tag Helpers](../mvc/views/tag-helpers/authoring.md)
@@ -38,9 +44,12 @@ Les [pages Razor](xref:mvc/razor-pages/index) constituent l’approche recommand
 * [Développement d’applications ASP.NET Core à l’aide de dotnet watch](dotnet-watch.md)
 
 ## <a name="building-web-apis"></a>Génération d’API web
-* [Créer une API web avec ASP.NET Core et Visual Studio pour Mac](xref:tutorials/first-web-api-mac)
-* [Créer une API web avec ASP.NET Core et Visual Studio pour Windows](first-web-api.md)
-* [Créer une API web avec ASP.NET Core et Visual Studio Code](web-api-vsc.md)
+* Créer une API web avec ASP.NET Core
+
+  * [API web avec Visual Studio pour Windows](first-web-api.md)
+  * [API web avec Visual Studio pour Mac](xref:tutorials/first-web-api-mac)
+  * [API web avec Visual Studio Code](web-api-vsc.md)
+  
 * [Pages d’aide sur l’API web ASP.NET Core avec Swagger](web-api-help-pages-using-swagger.md)
 * [Création de services web backend pour les applications mobiles natives](../mobile/native-mobile-backend.md)
 
@@ -65,13 +74,13 @@ Les [pages Razor](xref:mvc/razor-pages/index) constituent l’approche recommand
 
 ## <a name="publishing-and-deployment"></a>Publication et déploiement
 * [Déployer une application web ASP.NET Core sur Azure à l’aide de Visual Studio](publish-to-azure-webapp-using-vs.md)
-* [Publication vers une application web Azure avec déploiement continu](../publishing/azure-continuous-deployment.md)
+* [Publication sur une application web Azure avec déploiement continu](../publishing/azure-continuous-deployment.md)
 * [Déployer un conteneur ASP.NET sur un hôte Docker distant](https://docs.microsoft.com/azure/vs-azure-tools-docker-hosting-web-apps-in-docker)
 * [ASP.NET Core sur Nano Server](nano-server.md)
 * [ASP.NET Core et Azure Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-add-a-web-frontend)
 
 <a name="download"></a> 
 ## <a name="how-to-download-a-sample"></a>Comment télécharger un exemple
-1. [Téléchargez le fichier zip du référentiel ASP.NET](https://codeload.github.com/aspnet/Docs/zip/master).
+1. [Téléchargez le fichier zip du dépôt ASP.NET](https://codeload.github.com/aspnet/Docs/zip/master).
 1. Décompressez le fichier *Docs-master.zip*.
 1. Utilisez l’URL contenue dans l’exemple de lien pour vous aider à naviguer dans l’exemple de répertoire. 

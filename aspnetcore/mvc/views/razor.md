@@ -1,30 +1,30 @@
 ---
 title: "Référence de la syntaxe Razor pour ASP.NET Core"
-author: guardrex
+author: rick-anderson
 description: "En savoir plus sur la syntaxe Razor balisage pour l’incorporation de code serveur dans les pages Web."
 keywords: Directives de Razor ASP.NET Core, Razor,
 ms.author: riande
 manager: wpickett
-ms.date: 09/29/2017
+ms.date: 10/18/2017
 ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/razor
-ms.openlocfilehash: 532e278597a0029b5bae93068af5b7b147c35688
-ms.sourcegitcommit: e45f8912ce32b4071bf7e83b8f8315cd8bba3520
+ms.openlocfilehash: 743c42b26c62d0e24b5d5b487b3154bc249fcff4
+ms.sourcegitcommit: a873f862c8e68b2cf2998aaed3dddd93eeba9e0f
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/04/2017
+ms.lasthandoff: 10/17/2017
 ---
 # <a name="razor-syntax-for-aspnet-core"></a>Syntaxe Razor pour ASP.NET Core
 
-Par [Rick Anderson](https://twitter.com/RickAndMSFT), [Luke Latham](https://github.com/guardrex), et [Taylor Mullen](https://twitter.com/ntaylormullen)
+Par [Rick Anderson](https://twitter.com/RickAndMSFT), [Luke Latham](https://github.com/guardrex), [Taylor Mullen](https://twitter.com/ntaylormullen), et [Dan Vicarel](https://github.com/Rabadash8820)
 
 Razor est une syntaxe de balisage pour l’incorporation de code serveur dans les pages Web. La syntaxe Razor est constitué de Razor balisage, c# et HTML. Les fichiers contenant Razor généralement ont un *.cshtml* extension de fichier.
 
 ## <a name="rendering-html"></a>Rendu HTML
 
-La langue de Razor par défaut est HTML. HTML rendu à partir du balisage de Razor n’est pas différente de rendu HTML à partir d’un fichier HTML. Si vous placez un balisage HTML dans une *.cshtml* fichier Razor, il est restitué par le serveur sans modification.
+La langue de Razor par défaut est HTML. HTML rendu à partir du balisage de Razor n’est pas différente de rendu HTML à partir d’un fichier HTML.  Balisage HTML dans *.cshtml* fichiers Razor est restitué par le serveur sans modification.
 
 ## <a name="razor-syntax"></a>Syntaxe Razor
 
@@ -59,11 +59,24 @@ Les expressions implicites Razor commencer par `@` suivi par le code c# :
 <p>@DateTime.IsLeapYear(2016)</p>
 ```
 
-À l’exception de C# `await` (mot clé), les expressions implicites ne doivent pas contenir des espaces. Vous pouvez se mélangent espaces si l’instruction c# a une fin claire :
+À l’exception de C# `await` (mot clé), les expressions implicites ne doivent pas contenir des espaces. Si l’instruction c# a une fin claire, des espaces peuvent être mélangés :
 
 ```cshtml
 <p>@await DoSomething("hello", "world")</p>
 ```
+
+Les expressions implicites **ne peut pas** contiennent les génériques c#, comme les caractères entre crochets (`<>`) sont interprétés comme une balise HTML. Le code suivant est **pas** valide :
+
+```cshtml
+<p>@GenericMethod<int>()</p>
+```
+
+Le code précédent génère une erreur du compilateur semblable à un des éléments suivants :
+
+ * L’élément « int » n’a pas été fermé.  Tous les éléments doivent être à fermeture automatique ou concordent une balise de fin.
+ *  Impossible de convertir le groupe de méthodes 'GenericMethod' au type 'object' non-délégué. Souhaitiez-vous appeler la méthode ? » 
+ 
+Appels de méthode générique doivent être encapsulées dans un [expression Razor explicite](#explicit-razor-expressions) ou un [bloc de code Razor](#razor-code-blocks). Cette restriction ne s’applique pas *.vbhtml* Razor fichiers, car la syntaxe Visual Basic place les paramètres de type générique au lieu de crochets entre parenthèses.
 
 ## <a name="explicit-razor-expressions"></a>Expressions explicites Razor
 
@@ -85,7 +98,7 @@ Le code restitue le code HTML suivant :
 <p>Last week: 7/7/2016 4:39:52 PM - TimeSpan.FromDays(7)</p>
 ```
 
-Vous pouvez utiliser une expression explicite pour concaténer du texte avec un résultat de l’expression :
+Les expressions explicites peuvent être utilisées pour concaténer du texte avec un résultat de l’expression :
 
 ```cshtml
 @{
@@ -96,6 +109,26 @@ Vous pouvez utiliser une expression explicite pour concaténer du texte avec un 
 ```
 
 Sans l’expression explicite, `<p>Age@joe.Age</p>` est traité comme une adresse de messagerie, et `<p>Age@joe.Age</p>` est rendu. Lors de l’écriture en tant qu’expression explicite `<p>Age33</p>` est rendu.
+
+
+Les expressions explicites peuvent être utilisées pour afficher la sortie à partir des méthodes génériques dans *.cshtml* fichiers. Dans une expression implicite, les caractères entre crochets (`<>`) sont interprétés comme une balise HTML. Le balisage suivant est **pas** Razor valide :
+
+```cshtml
+<p>@GenericMethod<int>()</p>
+```
+
+Le code précédent génère une erreur du compilateur semblable à un des éléments suivants :
+
+ * L’élément « int » n’a pas été fermé.  Tous les éléments doivent être à fermeture automatique ou concordent une balise de fin.
+ *  Impossible de convertir le groupe de méthodes 'GenericMethod' au type 'object' non-délégué. Souhaitiez-vous appeler la méthode ? » 
+ 
+ Le balisage suivant illustre l’écriture de façon correcte ce code.  Le code est écrit en tant qu’expression explicite :
+
+```cshtml
+<p>@(GenericMethod<int>())</p>
+```
+
+Remarque : cette restriction ne s’applique pas *.vbhtml* fichiers Razor.  Avec *.vbhtml* fichiers Razor, syntaxe Visual Basic place les paramètres de type générique au lieu de crochets entre parenthèses.
 
 ## <a name="expression-encoding"></a>Encodage de l’expression
 
@@ -159,7 +192,7 @@ Le code restitue le code HTML suivant :
 
 ### <a name="implicit-transitions"></a>Transitions implicites
 
-La langue par défaut dans un bloc de code est c#, mais vous pouvez effectuer la transition en HTML :
+La langue par défaut dans un bloc de code est c#, mais la Page Razor peut effectuer la transition en HTML :
 
 ```cshtml
 @{
@@ -180,9 +213,12 @@ Pour définir une sous-section d’un bloc de code qui doit être rendu HTML, en
 }
 ```
 
-Utilisez cette approche lorsque vous souhaitez effectuer le rendu HTML n’est pas entourée d’une balise HTML. Sans une balise HTML ou Razor, vous recevez une erreur d’exécution Razor.
+Utilisez cette approche pour le rendu HTML n’est pas entourée d’une balise HTML. Sans une balise HTML ou Razor, une erreur d’exécution Razor se produit.
 
-Le  **\<texte >** étiquette est également utile de contrôler les espaces blancs lors du rendu du contenu. Uniquement le contenu entre le  **\<texte >** balises est rendu et aucun espace blanc avant ou après le  **\<texte >** balises apparaît dans la sortie HTML.
+Le  **\<texte >** balise est utile pour contrôler l’espace blanc lors du rendu du contenu :
+
+* Seul le contenu entre le  **\<texte >** balise est affichée. 
+* Aucun espace blanc avant ou après le  **\<texte >** étiquette s’affiche dans la sortie HTML.
 
 ### <a name="explicit-line-transition-with-"></a>Transition de ligne explicite avec @:
 
@@ -196,11 +232,13 @@ Pour rendre le reste d’une ligne entière à l’intérieur d’un bloc de cod
 }
 ```
 
-Sans le `@:` dans le code, vous recevez une erreur d’exécution Razor.
+Sans le `@:` dans le code, une erreur d’exécution Razor est générée.
+
+Avertissement : Extra `@` caractères dans un fichier Razor risque de provoquer des erreurs du compilateur au niveau des instructions plus loin dans le bloc. Ces erreurs du compilateur peuvent être difficiles à comprendre, car l’erreur se produit avant l’erreur signalée.  Cette erreur est courant après la combinaison de plusieurs expressions implicite/explicite dans un bloc de code unique.
 
 ## <a name="control-structures"></a>Structures de contrôle
 
-Structures de contrôle sont une extension des blocs de code. Tous les aspects des blocs de code (transition au balisage, inline c#) également s’appliquent aux structures suivantes.
+Structures de contrôle sont une extension des blocs de code. Tous les aspects des blocs de code (transition au balisage, inline c#) également s’appliquent aux structures suivantes :
 
 ### <a name="conditionals-if-else-if-else-and-switch"></a>Instructions conditionnelles @if, sinon si, l’autre, et@switch
 
@@ -230,7 +268,7 @@ else
 }
 ```
 
-Vous pouvez utiliser une instruction switch comme suit :
+Le balisage suivant montre comment utiliser une instruction switch :
 
 ```cshtml
 @switch (value)
@@ -249,7 +287,7 @@ Vous pouvez utiliser une instruction switch comme suit :
 
 ### <a name="looping-for-foreach-while-and-do-while"></a>Bouclage @for, @foreach, @while, et @do tandis que
 
-Vous pouvez effectuer le rendu basé sur un modèle HTML avec les instructions de contrôle de boucle. Pour afficher une liste de personnes :
+Basé sur un modèle HTML peut être rendu avec des instructions de contrôle de boucle.  Pour afficher une liste de personnes :
 
 ```cshtml
 @{
@@ -262,7 +300,7 @@ Vous pouvez effectuer le rendu basé sur un modèle HTML avec les instructions d
 }
 ```
 
-Vous pouvez utiliser les instructions suivantes en boucle :
+Les instructions de boucles suivantes sont prises en charge :
 
 `@for`
 
@@ -315,7 +353,8 @@ Vous pouvez utiliser les instructions suivantes en boucle :
 
 ### <a name="compound-using"></a>COMPOSÉS@using
 
-En c#, un `using` instruction est utilisée pour vérifier un objet est supprimé. Dans Razor, le même mécanisme est utilisé pour créer des programmes d’assistance HTML qui contiennent du contenu supplémentaire. Par exemple, vous pouvez utiliser des programmes d’assistance HTML pour restituer une balise form avec la `@using` instruction :
+En c#, un `using` instruction est utilisée pour vérifier un objet est supprimé. Dans Razor, le même mécanisme est utilisé pour créer des programmes d’assistance HTML qui contiennent du contenu supplémentaire. Dans le code suivant, les programmes d’assistance HTML restituer une balise form avec la `@using` instruction :
+
 
 ```cshtml
 @using (Html.BeginForm())
@@ -328,7 +367,7 @@ En c#, un `using` instruction est utilisée pour vérifier un objet est supprim�
 }
 ```
 
-Vous pouvez également effectuer des actions d’étendue avec [programmes d’assistance de balise](xref:mvc/views/tag-helpers/intro).
+Actions au niveau de l’étendue peuvent être effectuées avec [programmes d’assistance de balise](xref:mvc/views/tag-helpers/intro).
 
 ### <a name="try-catch-finally"></a>@try, catch, finally
 
@@ -417,7 +456,7 @@ Le `@model` directive spécifie le type du modèle passé à une vue :
 @model TypeNameOfModel
 ```
 
-Si vous créez une application ASP.NET MVC de base avec des comptes d’utilisateur individuels, le *Views/Account/Login.cshtml* affichage contient la déclaration de modèle suivante :
+Dans une application ASP.NET MVC de base créée avec les comptes d’utilisateur individuels, le *Views/Account/Login.cshtml* affichage contient la déclaration de modèle suivante :
 
 ```cshtml
 @model LoginViewModel
@@ -435,17 +474,17 @@ Razor expose un `Model` propriété pour accéder au modèle passées à la vue�
 <div>The Login Email: @Model.Email</div>
 ```
 
-Le `@model` directive spécifie le type de cette propriété. La directive spécifie le `T` dans `RazorPage<T>` que généré classe que votre vue dérive. Si vous ne spécifiez pas le `@model` directive, le `Model` propriété est de type `dynamic`. La valeur du modèle est passée à la vue à partir du contrôleur. Consultez [fortement typée de modèles et les @model mot clé](xref:tutorials/first-mvc-app/adding-model#strongly-typed-models-keyword-label) pour plus d’informations.
+Le `@model` directive spécifie le type de cette propriété. La directive spécifie le `T` dans `RazorPage<T>` que généré classe que la vue dérive. Si le `@model` directive n’est pas spécifié, le `Model` propriété est de type `dynamic`. La valeur du modèle est passée à la vue à partir du contrôleur. Pour plus d’informations, consultez [fortement typée de modèles et les @model (mot clé).
 
 ### <a name="inherits"></a>@inherits
 
-Le `@inherits` directive vous donne le contrôle total de la classe qui hérite de la vue :
+Le `@inherits` directive fournit un contrôle complet de la classe qui hérite de la vue :
 
 ```cshtml
 @inherits TypeNameOfClassToInheritFrom
 ```
 
-Ceci est un type de page Razor personnalisé :
+Le code suivant est un type de page Razor personnalisé :
 
 [!code-csharp[Main](razor/sample/Classes/CustomRazorPage.cs)]
 
@@ -459,11 +498,11 @@ Le code restitue le code HTML suivant :
 <div>Custom text: Gardyloo! - A Scottish warning yelled from a window before dumping a slop bucket on the street below.</div>
 ```
 
-Vous ne pouvez pas utiliser `@model` et `@inherits` dans la même vue. Vous pouvez avoir `@inherits` dans un *_ViewImports.cshtml* fichier importe de la vue :
+ `@model`et `@inherits` peut être utilisé dans la même vue.  `@inherits`peut être dans un *_ViewImports.cshtml* fichier importe de la vue :
 
 [!code-cshtml[Main](razor/sample/Views/_ViewImportsModel.cshtml)]
 
-Voici un exemple d’une vue fortement typée :
+Le code suivant est un exemple d’une vue fortement typée :
 
 [!code-cshtml[Main](razor/sample/Views/Home/Login1.cshtml)]
 
@@ -476,11 +515,12 @@ Si «rick@contoso.com» est passé dans le modèle, la vue génère le code HTML
 
 ### <a name="inject"></a>@inject
 
-Le `@inject` directive vous permet d’injecter un service à partir de votre [conteneur de service](xref:fundamentals/dependency-injection) dans votre affichage. Consultez [injection de dépendances dans les vues](xref:mvc/views/dependency-injection) pour plus d’informations.
+
+Le `@inject` directive permet à la Page Razor injecter un service à partir de la [conteneur de service](xref:fundamentals/dependency-injection) dans une vue. Pour plus d’informations, consultez [injection de dépendances dans les vues](xref:mvc/views/dependency-injection).
 
 ### <a name="functions"></a>@functions
 
-Le `@functions` directive permet de vous permet d’ajouter du contenu au niveau de la fonction à une vue :
+Le `@functions` directive permet à une Page Razor ajouter le contenu au niveau des fonctions à une vue :
 
 ```cshtml
 @functions { // C# Code }
@@ -502,7 +542,7 @@ Le code suivant est la classe générée Razor c# :
 
 ### <a name="section"></a>@section
 
-Le `@section` directive est utilisée conjointement avec la [disposition](xref:mvc/views/layout) pour activer des vues à restituer le contenu dans les différentes parties de la page HTML. Consultez [Sections](xref:mvc/views/layout#layout-sections-label) pour plus d’informations.
+Le `@section` directive est utilisée conjointement avec la [disposition](xref:mvc/views/layout) pour activer des vues à restituer le contenu dans les différentes parties de la page HTML. Pour plus d’informations, consultez [Sections](xref:mvc/views/layout#layout-sections-label).
 
 ## <a name="tag-helpers"></a>Programmes d’assistance de balise
 
@@ -553,7 +593,7 @@ Mots clés du langage c# Razor doivent être échappé en double avec `@(@C# Raz
 
 ## <a name="viewing-the-razor-c-class-generated-for-a-view"></a>Affichage de la classe c# Razor générée pour une vue
 
-Ajoutez la classe suivante à votre projet ASP.NET MVC de base :
+Ajoutez la classe suivante au projet ASP.NET MVC de base :
 
 [!code-csharp[Main](razor/sample/Utilities/CustomTemplateEngine.cs)]
 
@@ -574,4 +614,9 @@ Le moteur d’affichage Razor effectue des recherches respectant la casse pour l
   * Sur les systèmes de fichiers respectant la casse (par exemple, Linux, OS x et avec `EmbeddedFileProvider`), les recherches respectent la casse. Par exemple, `return View("Test")` spécifiquement les correspondances */Views/Home/Test.cshtml*.
 * Précompilés vues : avec le cœur d’ASP.Net 2.0 et versions ultérieur, de vues précompilés recherche respecte la casse sur tous les systèmes d’exploitation. Le comportement est identique au comportement du fournisseur du fichier physique sous Windows. Si deux vues précompilés diffèrent uniquement par la casse, le résultat de recherche est non déterministe.
 
-Les développeurs sont encouragés à correspondre à la casse des noms de fichiers et de répertoires à la casse des noms de zone, le contrôleur et action. Cela garantit que vos déploiements trouverez leur point de vue, quelle que soit le système de fichiers sous-jacent.
+Les développeurs sont encouragés à correspondre à la casse des noms de fichiers et de répertoires à la casse de :
+
+    * Noms de zone, le contrôleur et action. 
+    * Pages Razor.
+    
+Casse garantit que les déploiements de rechercher leur point de vue, quelle que soit le système de fichiers sous-jacent.
