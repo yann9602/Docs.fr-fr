@@ -12,25 +12,25 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/logging
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 9557e9f6915507450de3ffe500582839a28c3f0c
-ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
+ms.openlocfilehash: b2e991ea37b1b726e472d78d839143546ebd559f
+ms.sourcegitcommit: 29da58de11e20c9c60448e36e7075c6b13622624
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2017
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="introduction-to-logging-in-aspnet-core"></a>Introduction à la journalisation dans ASP.NET Core
 
 Par [Steve Smith](https://ardalis.com/) et [Tom Dykstra](https://github.com/tdykstra)
 
-ASP.NET Core prend en charge une API de journalisation qui fonctionne avec une gamme de fournisseurs de journalisation. Les fournisseurs intégrés vous permettent d’envoyer les journaux à une ou plusieurs destinations, et vous pouvez incorporer dans une infrastructure de journalisation de l’application tierce. Cet article explique comment utiliser les API de journalisation intégrés et les fournisseurs dans votre code.
+ASP.NET Core prend en charge une API de journalisation qui fonctionne avec divers fournisseurs de journalisation. Les fournisseurs intégrés vous permettent d’envoyer les journaux à une ou plusieurs destinations, et vous pouvez incorporer dans une infrastructure de journalisation de l’application tierce. Cet article explique comment utiliser les API de journalisation intégrés et les fournisseurs dans votre code.
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
-[Afficher ou télécharger l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/logging/sample2) ([comment télécharger](xref:tutorials/index#how-to-download-a-sample))
+[Affichez ou téléchargez l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/logging/sample2) ([procédure de téléchargement](xref:tutorials/index#how-to-download-a-sample))
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
-[Afficher ou télécharger l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/logging/sample) ([comment télécharger](xref:tutorials/index#how-to-download-a-sample))
+[Affichez ou téléchargez l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/logging/sample) ([procédure de téléchargement](xref:tutorials/index#how-to-download-a-sample))
 
 ---
 
@@ -585,9 +585,6 @@ L’exemple suivant configure un `TraceSource` fournisseur qui enregistre des `W
 Le [Microsoft.Extensions.Logging.AzureAppServices](https://www.nuget.org/packages/Microsoft.Extensions.Logging.AzureAppServices) package de fournisseur écrit des journaux dans des fichiers texte dans le système de fichiers d’une application de Service d’applications Azure et en [stockage d’objets blob](https://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-blobs/#what-is-blob-storage) dans un compte de stockage Azure. Le fournisseur est disponible uniquement pour les applications qui ciblent ASP.NET Core 1.1.0 ou ultérieure. 
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
-> [!NOTE]
-> ASP.NET Core 2.0 est en version préliminaire.  Les applications créées avec la dernière version de l’aperçu peut ne pas fonctionner lors du déploiement vers Azure App Service. Quand ASP.NET Core 2.0 est publiée, Azure App Service s’exécutera 2.0 applications et le Service d’application Azure fournisseur fonctionne comme indiqué ici.
 
 Vous n’êtes pas obligé d’installer le package du fournisseur ou appelez le `AddAzureWebAppDiagnostics` méthode d’extension.  Le fournisseur est automatiquement disponible pour votre application lorsque vous déployez l’application sur Azure App Service.
 
