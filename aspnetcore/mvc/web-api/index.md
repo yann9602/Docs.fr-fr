@@ -10,16 +10,16 @@ ms.topic: article
 ms.assetid: a8fb7eb7-e0e5-4394-84f3-1f1dbe0ba2ef
 ms.technology: aspnet
 ms.prod: asp.net-core
-ms.openlocfilehash: 7a485b749762bad5ca559d85df86a9a87dd7bb58
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 42dabfcef4aeae2505c1998d75ec700429cb2f21
+ms.sourcegitcommit: fe25b8163e9e4115915b3293936e9da646fff84f
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 10/09/2017
 ---
 # <a name="building-web-apis"></a>Création d’API web
 
 * [Création de votre première API web avec le modèle MVC ASP.NET Core à l’aide de Visual Studio](../../tutorials/first-web-api.md)
-* [Pages d’aide des API web ASP.NET à l’aide de Swagger](../../tutorials/web-api-help-pages-using-swagger.md)
+* [Pages d’aide sur l’API web ASP.NET Core avec Swagger](../../tutorials/web-api-help-pages-using-swagger.md)
 * [Création de services principaux pour les applications mobiles natives](../../mobile/native-mobile-backend.md)
 * [Mise en forme des données des réponses](../models/formatting.md)
 * [Formateurs personnalisés](../advanced/custom-formatters.md)

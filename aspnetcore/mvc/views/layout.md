@@ -11,11 +11,11 @@ ms.assetid: 29f12d1f-9734-48bd-bf1a-cee53a8ab700
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/layout
-ms.openlocfilehash: 25aa5fc730d9076fdcf9d29cb5d9dfa75a246a1a
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: 064621d8756b007c5b8859111bf3a03a0d7dda81
+ms.sourcegitcommit: 8f4d4fad1ca27adf9e396f5c205c9875a3963664
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 10/13/2017
 ---
 # <a name="layout"></a>Disposition
 
@@ -51,7 +51,7 @@ La mise en page spécifiée peut utiliser un chemin d’accès complet (exemple�
 
 Par défaut, chaque disposition doit appeler `RenderBody`. Chaque fois que l’appel à `RenderBody` est placé, le contenu de la vue est restitué.
 
-<a name=layout-sections-label></a>
+<a name="layout-sections-label"></a>
 
 ### <a name="sections"></a>Sections
 
@@ -77,7 +77,7 @@ Pour indiquer au moteur de vue d’ignorer le corps ou des sections, appelez le 
 
 Le corps et chaque section dans une page Razor doivent être rendus soit ignorés.
 
-<a name=viewimports></a>
+<a name="viewimports"></a>
 
 ## <a name="importing-shared-directives"></a>L’importation des Directives partagés
 
@@ -121,7 +121,7 @@ Si plusieurs `_ViewImports.cshtml` fichiers sont exécutées pour une vue, combi
 
 * `@inject`: pour chaque propriété, celui le plus proche à la vue remplace les autres noms portant le même nom de propriété
 
-<a name=viewstart></a>
+<a name="viewstart"></a>
 
 ## <a name="running-code-before-each-view"></a>Exécution du Code avant chaque vue.
 

@@ -11,11 +11,11 @@ ms.assetid: b67c3d4a-f2bf-4132-a48b-4b0d599d7981
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/intro
-ms.openlocfilehash: a4e9ab26fa49720aa2334101ee12916fc797d944
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: 379802f644b977563b0b50354feb1fb9a4c8fabb
+ms.sourcegitcommit: e3b1726cc04e80dc28464c35259edbd3bc39a438
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="getting-started-with-aspnet-core-mvc-and-entity-framework-core-using-visual-studio-1-of-10"></a>Mise en route avec ASP.NET MVC de base et d’Entity Framework Core, à l’aide de Visual Studio (1 / 10)
 
@@ -94,11 +94,11 @@ Ouvrez *Views/Shared/_Layout.cshtml* et apportez les modifications suivantes :
 
 Les modifications sont mises en surbrillance.
 
-[!code-html[](intro/samples/cu/Views/Shared/_Layout.cshtml?highlight=6,30,36-39,48)]
+[!code-cshtml[](intro/samples/cu/Views/Shared/_Layout.cshtml?highlight=6,30,36-39,48)]
 
 Dans *Views/Home/Index.cshtml*, remplacez le contenu du fichier par le code suivant pour remplacer le texte sur ASP.NET et MVC avec le texte de cette application :
 
-[!code-html[](intro/samples/cu/Views/Home/Index.cshtml)]
+[!code-cshtml[](intro/samples/cu/Views/Home/Index.cshtml)]
 
 Appuyez sur CTRL + F5 pour exécuter le projet ou choisissez **Déboguer > Démarrer sans débogage** à partir du menu. Vous consultez la page d’accueil avec onglets pour les pages que vous créez dans ces didacticiels.
 
@@ -288,7 +288,7 @@ Vous allez en savoir plus sur les éléments de programmation asynchrones dans c
 
 Le *Views/Students/Index.cshtml* affiche cette liste dans une table :
 
-[!code-html[](intro/samples/cu/Views/Students/Index1.cshtml)]
+[!code-cshtml[](intro/samples/cu/Views/Students/Index1.cshtml)]
 
 Appuyez sur CTRL + F5 pour exécuter le projet ou choisissez **Déboguer > Démarrer sans débogage** à partir du menu.
 
@@ -330,7 +330,7 @@ La quantité de code que vous deviez écrire dans l’ordre pour Entity Framewor
 
 * Propriétés de l’entité qui sont nommées ID ou classnameID sont reconnues comme propriétés de clé primaire.
 
-* Une propriété est interprétée comme une propriété de clé étrangère s’il est nommé * <navigation property name> <primary key property name> * (par exemple, `StudentID` pour le `Student` propriété de navigation depuis la `Student` la clé primaire de l’entité est `ID`). Propriétés de clé étrangère peuvent aussi être nommées simplement * <primary key property name> * (par exemple, `EnrollmentID` depuis le `Enrollment` la clé primaire de l’entité est `EnrollmentID`).
+* Une propriété est interprétée comme une propriété de clé étrangère s’il est nommé  *<navigation property name> <primary key property name>*  (par exemple, `StudentID` pour le `Student` propriété de navigation depuis la `Student` la clé primaire de l’entité est `ID`). Propriétés de clé étrangère peuvent aussi être nommées simplement  *<primary key property name>*  (par exemple, `EnrollmentID` depuis le `Enrollment` la clé primaire de l’entité est `EnrollmentID`).
 
 Un comportement conventionnel peut être remplacé. Par exemple, vous pouvez spécifier explicitement les noms de table, comme vous l’avez vu précédemment dans ce didacticiel. Et vous pouvez définir des noms de colonne et définissez une propriété en tant que clé primaire ou clé étrangère, comme vous le verrez dans un [didacticiel ultérieur](complex-data-model.md) dans cette série.
 

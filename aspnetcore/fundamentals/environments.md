@@ -11,11 +11,11 @@ ms.assetid: b5bba985-be12-4464-9a01-df3599b2a6f1
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/environments
-ms.openlocfilehash: 054b3e9f1e2bcfe1e4a75eca4d9dc6326ee6e44f
-ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
+ms.openlocfilehash: becdfa647acb6483b39f5421ab881c4817f31c40
+ms.sourcegitcommit: e3b1726cc04e80dc28464c35259edbd3bc39a438
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2017
+ms.lasthandoff: 10/12/2017
 ---
 # <a name="working-with-multiple-environments"></a>Utilisation de plusieurs environnements
 
@@ -23,11 +23,11 @@ Par [Steve Smith](https://ardalis.com/)
 
 ASP.NET Core prend en charge pour contrôler le comportement de l’application dans différents environnements, tels que le développement, intermédiaire et de production. Variables d’environnement sont utilisées pour indiquer l’environnement d’exécution, ce qui permet de l’application doit être configuré pour cet environnement.
 
-[Afficher ou télécharger l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/environments/sample) ([comment télécharger](xref:tutorials/index#how-to-download-a-sample))
+[Affichez ou téléchargez l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/environments/sample) ([procédure de téléchargement](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="development-staging-production"></a>Développement, intermédiaires, Production
 
-ASP.NET Core fait référence à un particulier [variable d’environnement](https://github.com/aspnet/Home/wiki), `ASPNETCORE_ENVIRONMENT` pour décrire l’environnement de l’application est en cours d’exécution dans. Cette variable peut être définie à n’importe quelle valeur vous le souhaitez, mais trois valeurs sont utilisées par convention : `Development`, `Staging`, et `Production`. Vous trouverez ces valeurs utilisées dans les exemples et les modèles fournis avec ASP.NET Core.
+ASP.NET Core fait référence à une variable d’environnement particulière, `ASPNETCORE_ENVIRONMENT` pour décrire l’environnement de l’application est en cours d’exécution dans. Cette variable peut être définie à n’importe quelle valeur vous le souhaitez, mais trois valeurs sont utilisées par convention : `Development`, `Staging`, et `Production`. Vous trouverez ces valeurs utilisées dans les exemples et les modèles fournis avec ASP.NET Core.
 
 Le paramètre actuel de l’environnement peut être détecté par programme à partir de dans votre application. En outre, vous pouvez utiliser l’environnement [d’assistance de balise](../mvc/views/tag-helpers/index.md) à inclure certaines sections de votre [affichage](../mvc/views/index.md) en fonction de l’environnement d’application actuel.
 
@@ -50,7 +50,7 @@ Voici un `launchSettings.json` fichier qui inclut les profils pour `Development`
 Modifications apportées aux profils de projet ne peuvent pas prennent effet qu’après le redémarrage du serveur web utilisé (en particulier, Kestrel doit être redémarré avant qu’il détecte les modifications apportées à son environnement).
 
 >[!WARNING]
-> Variables d’environnement stockée dans *launchSettings.json* ne sont pas sécurisés de quelque manière et fera partie du référentiel de code source pour votre projet, si vous utilisez un. **Ne stockez jamais les informations d’identification ou d’autres données secrètes dans ce fichier.** Si vous avez besoin d’un emplacement pour stocker ces données, utilisez la *Secret Manager* outil décrit dans [stockage sécurisé des secrets d’application pendant le développement](../security/app-secrets.md#security-app-secrets).
+> Variables d’environnement stockée dans *launchSettings.json* ne sont pas sécurisés de quelque manière et fera partie du référentiel de code source pour votre projet, si vous utilisez un. **Ne stockez jamais les informations d’identification ou d’autres données secrètes dans ce fichier.** Si vous avez besoin d’un emplacement pour stocker ces données, utilisez la *Secret Manager* outil décrit dans [stockage sécurisé des secrets d’application pendant le développement](xref:security/app-secrets).
 
 ### <a name="staging"></a>Mise en lots
 

@@ -71,7 +71,7 @@ Pour optimiser les performances des détails du cours et supprimer des pages, aj
 
 ### <a name="modify-the-course-views"></a>Modifier les vues de cours
 
-Dans *Views/Courses/Create.cshtml*, ajouter une option « Sélectionner département » pour le **service** déroulante liste, de modifier la légende de **DepartmentID** à ** Service**et ajouter un message de validation.
+Dans *Views/Courses/Create.cshtml*, ajouter une option « Sélectionner département » pour le **service** déroulante liste, de modifier la légende de **DepartmentID** à  **Service**et ajouter un message de validation.
 
 [!code-html[Main](intro/samples/cu/Views/Courses/Create.cshtml?highlight=2-6&range=29-34)]
 
@@ -129,7 +129,7 @@ Le code effectue les opérations suivantes :
 
 -  Obtient l’entité Instructor actuelle à partir de la base de données à l’aide pour le chargement hâtif le `OfficeAssignment` propriété de navigation. Il est identique à ce que vous l’avez fait dans le HttpGet `Edit` (méthode).
 
--  Met à jour l’entité Instructor récupérée avec des valeurs dans le classeur de modèles. Le `TryUpdateModel` surcharge vous permet à la liste blanche les propriétés que vous souhaitez inclure. Cela empêche la validation excessive, comme expliqué dans la [deuxième didacticiel](crud.md).
+-  Met à jour l’entité Instructor récupérée avec des valeurs dans le classeur de modèles. Le `TryUpdateModel` surcharge vous permet à la liste verte les propriétés que vous souhaitez inclure. Cela empêche la validation excessive, comme expliqué dans la [deuxième didacticiel](crud.md).
 
     <!-- Snippets do not play well with <ul> [!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?range=241-244)] -->
 
@@ -215,7 +215,7 @@ Si la case à cocher pour un cours n’a pas été activée, mais le cours se tr
 
 ### <a name="update-the-instructor-views"></a>Mettre à jour les vues de formateur
 
-Dans *Views/Instructors/Edit.cshtml*, ajouter un **cours** champ avec un tableau de cases à cocher en ajoutant le code suivant immédiatement après le code le `div` éléments pour le **Office ** champ et avant la `div` , élément pour les **enregistrer** bouton.
+Dans *Views/Instructors/Edit.cshtml*, ajouter un **cours** champ avec un tableau de cases à cocher en ajoutant le code suivant immédiatement après le code le `div` éléments pour le **Office**  champ et avant la `div` , élément pour les **enregistrer** bouton.
 
 <a id="notepad"></a>
 > [!NOTE] 

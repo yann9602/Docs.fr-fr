@@ -10,17 +10,17 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: tutorials/razor-pages/page
-ms.openlocfilehash: 3fd155c5e9a119717243a4bafff776fcbd06fab5
-ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
+ms.openlocfilehash: 7ae83b9bdadf5ebf8846b0c09c585da406708d12
+ms.sourcegitcommit: 94b7e0f95b92c98b182a93d2b3dc0287e5f97976
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 10/04/2017
 ---
 # <a name="scaffolded-razor-pages-in-aspnet-core"></a>Pages Razor obtenues par génération de modèles automatique dans ASP.NET Core
 
 De [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Ce didacticiel décrit les pages Razor créées par génération de modèles automatique au cours du [didacticiel précédent](xref:tutorials/razor-pages/page). 
+Ce didacticiel décrit les pages Razor créées par génération de modèles automatique au cours de la rubrique de didacticiel précédente [Ajout d’un modèle](xref:tutorials/razor-pages/model#scaffold-the-movie-model). 
 
 [Affichez ou téléchargez](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie) l’exemple.
 
@@ -43,13 +43,13 @@ La directive Razor `@page` transforme le fichier en action MVC &mdash;, ce qui l
 Examinez l’expression lambda utilisée dans le HTML Helper suivant :
 
 ```cshtml
-@Html.DisplayNameFor(model => model.Movies[0].Title))
+@Html.DisplayNameFor(model => model.Movie[0].Title))
 ```
 
-Le HTML Helper `DisplayNameFor` inspecte la propriété `Title` référencée dans l’expression lambda pour déterminer le nom d’affichage. L’expression lambda est inspectée plutôt qu’évaluée. Cela signifie qu’il n’existe pas de violation d’accès quand `model`, `model.Movies` ou `model.Movies[0]` ont une valeur `null` ou vide. Quand l’expression lambda est évaluée (par exemple avec `@Html.DisplayFor(modelItem => item.Title)`), les valeurs de propriété du modèle sont évaluées.
+Le HTML Helper `DisplayNameFor` inspecte la propriété `Title` référencée dans l’expression lambda pour déterminer le nom d’affichage. L’expression lambda est inspectée plutôt qu’évaluée. Cela signifie qu’il n’existe pas de violation d’accès quand `model`, `model.Movie` ou `model.Movie[0]` ont une valeur `null` ou vide. Quand l’expression lambda est évaluée (par exemple avec `@Html.DisplayFor(modelItem => item.Title)`), les valeurs de propriété du modèle sont évaluées.
 
 <a name="md"></a>
-### <a name="the-model-directive"></a>Directive @model
+### <a name="the-model-directive"></a>Directive @model 
 
 [!code-cshtml[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Index.cshtml?range=1-2&highlight=2)]
 
@@ -144,5 +144,5 @@ Le [Tag Helper d’entrée](xref:mvc/views/working-with-forms) (`<input asp-for=
 Le prochain didacticiel décrit SQL Server LocalDB et la création des valeurs initiales de la base de données.
 
 >[!div class="step-by-step"]
-[Précédent : Ajout d’un modèle](xref:tutorials/razor-pages/modelz)
+[Précédent : Ajout d’un modèle](xref:tutorials/razor-pages/model)
 [Suivant : SQL Server LocalDB](xref:tutorials/razor-pages/sql)

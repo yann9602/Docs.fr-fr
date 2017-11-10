@@ -11,11 +11,11 @@ ms.assetid: 9c826a76-fbd2-46b5-978d-6ca6df53531a
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: migration/http-modules
-ms.openlocfilehash: e14664133abf010b80374036e4855fdff71d1d5f
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: eb5049d4d63c224ca74fc39072ae2c0d98ba330d
+ms.sourcegitcommit: 8f4d4fad1ca27adf9e396f5c205c9875a3963664
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 10/13/2017
 ---
 # <a name="migrating-http-handlers-and-modules-to-aspnet-core-middleware"></a>Migration des gestionnaires HTTP et des modules pour ASP.NET Core intergiciel (middleware) 
 
@@ -51,7 +51,7 @@ Avant de procéder à un intergiciel (middleware) ASP.NET Core, tout d’abord r
 
 **L’ordre dans lequel les modules de traitent les demandes entrantes est déterminé par :**
 
-   1. Le [cycle de vie d’application](https://msdn.microsoft.com/library/ms227673.aspx), qui est représenté par une série déclenchés par ASP.NET : [BeginRequest](https://docs.microsoft.com/dotnet/api/system.web.httpapplication.beginrequest), [AuthenticateRequest](https://docs.microsoft.com/dotnet/api/system.web.httpapplication.authenticaterequest), etc.. Chaque module peut créer un gestionnaire pour un ou plusieurs événements.
+   1. Le [cycle de vie d’application](https://msdn.microsoft.com/library/ms227673.aspx), qui est représenté par une série déclenchés par ASP.NET : [BeginRequest](https://docs.microsoft.com/dotnet/api/system.web.httpapplication.beginrequest), [AuthenticateRequest](https://docs.microsoft.com/dotnet/api/system.web.httpapplication.authenticaterequest), etc. Chaque module peut créer un gestionnaire pour un ou plusieurs événements.
 
    2. Pour le même événement, l’ordre dans lequel ils sont configurés dans *Web.config*.
 
@@ -67,7 +67,7 @@ En plus des modules, vous pouvez ajouter des gestionnaires pour les événements
 
    * Intergiciel (middleware) sont configurés à l’aide de code plutôt que dans *Web.config*
 
-   * [Créer une branche de pipeline](../fundamentals/middleware.md#middleware-run-map-use) vous permet d’envoyer les demandes à un intergiciel (middleware) de spécifique, en fonction de non seulement l’URL, mais également sur les en-têtes de demande, les chaînes de requête, etc..
+   * [Créer une branche de pipeline](../fundamentals/middleware.md#middleware-run-map-use) vous permet d’envoyer les demandes à un intergiciel (middleware) de spécifique, en fonction de non seulement l’URL, mais également sur les en-têtes de demande, les chaînes de requête, etc.
 
 **Intergiciel (middleware) sont très semblables aux modules :**
 
@@ -97,7 +97,7 @@ Un module HTTP existant doit ressembler à ceci :
 
 Comme indiqué dans le [intergiciel (middleware)](../fundamentals/middleware.md) page, un intergiciel (middleware) ASP.NET Core est une classe qui expose un `Invoke` prise de méthode un `HttpContext` et en retournant un `Task`. Votre nouveau middleware doit ressembler à ceci :
 
-<a name=http-modules-usemiddleware></a>
+<a name="http-modules-usemiddleware"></a>
 
 [!code-csharp[Main](../migration/http-modules/sample/Asp.Net.Core/Middleware/MyMiddleware.cs?highlight=9,13,20,24,28,30,32)]
 
@@ -105,7 +105,7 @@ Le modèle d’intergiciel (middleware) ci-dessus a été effectuée à partir d
 
 Le *MyMiddlewareExtensions* classe d’assistance rend plus facile à configurer votre intergiciel (middleware) dans votre `Startup` classe. Le `UseMyMiddleware` méthode ajoute votre classe d’intergiciel (middleware) au pipeline de demande. Les services requis par l’intergiciel (middleware) injectés dans le constructeur de d’intergiciel (middleware).
 
-<a name=http-modules-shortcircuiting-middleware></a>
+<a name="http-modules-shortcircuiting-middleware"></a>
 
 Votre module peut mettre fin à une demande, par exemple, si l’utilisateur n’est pas autorisé :
 
@@ -159,7 +159,7 @@ Une solution consiste à créer une branche le pipeline pour les demandes avec u
 
 `MapWhen`utilise ces paramètres :
 
-1. Une expression lambda qui prend le `HttpContext` et retourne `true` si la demande doit être transmis vers le bas de la branche. Cela signifie que vous pouvez créer une branche de demandes non seulement en fonction de leur extension, mais également sur les en-têtes de demande, les paramètres de chaîne de requête, etc..
+1. Une expression lambda qui prend le `HttpContext` et retourne `true` si la demande doit être transmis vers le bas de la branche. Cela signifie que vous pouvez créer une branche de demandes non seulement en fonction de leur extension, mais également sur les en-têtes de demande, les paramètres de chaîne de requête, etc.
 
 2. Une expression lambda qui prend un `IApplicationBuilder` et ajoute tous les intergiciels (middleware) de la branche. Cela signifie que vous pouvez ajouter des intergiciels (middleware) supplémentaire à la branche devant votre intergiciel (middleware) gestionnaire.
 

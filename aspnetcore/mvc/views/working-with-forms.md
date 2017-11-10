@@ -12,11 +12,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/working-with-forms
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: ff6fee6eee539fc77b6c6180a816daa760202848
-ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
+ms.openlocfilehash: da36985206521798d3bfe71f6372dc5cc4fca09a
+ms.sourcegitcommit: 8f4d4fad1ca27adf9e396f5c205c9875a3963664
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 10/13/2017
 ---
 # <a name="introduction-to-using-tag-helpers-in-forms-in-aspnet-core"></a>Introduction à l’utilisation de programmes d’assistance de balise dans les formulaires dans ASP.NET Core
 
@@ -26,7 +26,7 @@ Ce document illustre l’utilisation de formulaires et les éléments HTML coura
 
 Dans de nombreux cas, les programmes d’assistance HTML fournissent une approche alternative à une application d’assistance de balise spécifique, mais il est important de reconnaître que les programmes d’assistance de balise ne remplacent pas les programmes d’assistance HTML et n’est pas un programme d’assistance de balise pour chaque programme d’assistance HTML. Lorsqu’un autre programme d’assistance HTML existe, il est indiqué.
 
-<a name=my-asp-route-param-ref-label></a>
+<a name="my-asp-route-param-ref-label"></a>
 
 ## <a name="the-form-tag-helper"></a>L’application d’assistance de balise de formulaire
 

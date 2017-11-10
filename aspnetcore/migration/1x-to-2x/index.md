@@ -5,16 +5,16 @@ description: "Cet article présente les prérequis et la plupart des étapes cou
 keywords: ASP.NET Core, migration
 ms.author: scaddie
 manager: wpickett
-ms.date: 08/01/2017
+ms.date: 10/03/2017
 ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: migration/1x-to-2x/index
-ms.openlocfilehash: 541774d46bbf570ee860c72fdff5cece364935df
-ms.sourcegitcommit: 55759ae80e7039036a7c6da8e3806f7c88ade325
+ms.openlocfilehash: 9574f1f8e0970e1b64c2910bf46794621583f18d
+ms.sourcegitcommit: 3cf879f6beaaca2d401ad980cd26cfec70c05c24
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 10/06/2017
 ---
 # <a name="migrating-from-aspnet-core-1x-to-aspnet-core-20"></a>Migration d’ASP.NET Core 1.x vers ASP.NET Core 2.0
 
@@ -104,6 +104,27 @@ L’adoption de ce nouveau modèle 2.0 est vivement recommandée, et même oblig
 Unable to create an object of type '<Context>'. Add an implementation of 'IDesignTimeDbContextFactory<Context>' to the project, or see https://go.microsoft.com/fwlink/?linkid=851728 for additional patterns supported at design time.
 ```
 
+<a name="add-modify-configuration"></a>
+
+## <a name="add-configuration-providers"></a>Ajouter des fournisseurs de configuration
+Dans les projets 1.x, l’ajout de fournisseurs de configuration à une application a été effectué via le constructeur `Startup`. Étapes nécessaires à la création d’une instance de `ConfigurationBuilder`, chargement des fournisseurs applicables (variables d’environnement, paramètres de l’application, etc.) et initialisation d’un membre de `IConfigurationRoot`.
+
+[!code-csharp[Main](../1x-to-2x/samples/AspNetCoreDotNetCore1App/AspNetCoreDotNetCore1App/Startup.cs?name=snippet_1xStartup)]
+
+L’exemple précédent charge le `Configuration` membre avec les paramètres de configuration à partir de *appsettings.json* ainsi que celles que *appsettings.\< EnvironmentName\>.json* de fichier correspondant le `IHostingEnvironment.EnvironmentName` propriété. L’emplacement de ces fichiers est sur le même chemin que *Startup.cs*.
+
+Dans les projets 2.0, le code de configuration réutilisable inhérent aux projets 1.x s’exécute en arrière-plan. Par exemple, les variables d’environnement et les paramètres de l’application sont chargés au démarrage. Le code équivalent *Startup.cs* est réduit à l’initialisation de `IConfiguration` avec l’instance injectée :
+
+[!code-csharp[Main](../1x-to-2x/samples/AspNetCoreDotNetFx2.0App/AspNetCoreDotNetFx2.0App/Startup.cs?name=snippet_2xStartup)]
+
+Pour supprimer les fournisseurs par défaut ajoutés par `WebHostBuilder.CreateDefaultBuilder`, appelez la méthode `Clear` sur la propriété `IConfigurationBuilder.Sources` dans `ConfigureAppConfiguration`. Pour rajouter fournisseurs, utilisez la méthode `ConfigureAppConfiguration` dans *Program.cs* :
+
+[!code-csharp[Main](../1x-to-2x/samples/AspNetCoreDotNetFx2.0App/AspNetCoreDotNetFx2.0App/Program.cs?name=snippet_ProgramMainConfigProviders&highlight=9-14)]
+
+La configuration utilisée par la méthode `CreateDefaultBuilder` dans l’extrait de code précédent peut être consultée [ici](https://github.com/aspnet/MetaPackages/blob/rel/2.0.0/src/Microsoft.AspNetCore/WebHost.cs#L152).
+
+Pour plus d’informations, consultez [Configuration dans ASP.NET Core](xref:fundamentals/configuration).
+
 <a name="db-init-code"></a>
 
 ## <a name="move-database-initialization-code"></a>Déplacer le code d’initialisation de base de données
@@ -142,11 +163,11 @@ La configuration sans effort de l’instrumentation des performances d’applica
 
 Par défaut, les projets ASP.NET Core 1.1 créés dans Visual Studio 2017 ajoutaient Application Insights. Si vous n’utilisez pas le SDK Application Insights directement, en dehors de *Program.cs* et *Startup.cs*, effectuez les étapes suivantes :
 
-1. Supprimez le nœud `<PackageReference />` suivant du fichier *.csproj* :
+1. Si vous ciblez .NET Core, supprimez le nœud `<PackageReference />` suivant dans le fichier *.csproj* :
     
     [!code-xml[Main](../1x-to-2x/samples/AspNetCoreDotNetCore1App/AspNetCoreDotNetCore1App/AspNetCoreDotNetCore1App.csproj?range=10)]
 
-2. Supprimez l’appel de méthode d’extension `UseApplicationInsights` de *Program.cs* :
+2. Si vous ciblez .NET Core, supprimez l’appel de méthode d’extension `UseApplicationInsights` de *Program.cs* :
 
     [!code-csharp[Main](../1x-to-2x/samples/AspNetCoreDotNetCore1App/AspNetCoreDotNetCore1App/Program.cs?name=snippet_ProgramCsMain&highlight=8)]
 
