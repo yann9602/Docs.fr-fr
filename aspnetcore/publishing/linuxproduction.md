@@ -11,11 +11,11 @@ ms.assetid: 1c33e576-33de-481a-8ad3-896b94fde0e3
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: publishing/linuxproduction
-ms.openlocfilehash: 1f2b5fc6d769c63110f832a31cd0d0aa8c3298e9
-ms.sourcegitcommit: bd05f7ea8f87ad076ef6e8b704698ebcba5ca80c
+ms.openlocfilehash: 01768263fe82dc75a7da0e113b1850c8d788bfd3
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/25/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="set-up-a-hosting-environment-for-aspnet-core-on-linux-with-nginx-and-deploy-to-it"></a>Configurer un environnement d’hébergement pour ASP.NET Core sur Linux avec Nginx et déployer dessus
 
@@ -32,7 +32,7 @@ Ce guide montre comment effectuer les opérations suivantes :
 * S’assurer que l’application web s’exécute au démarrage en tant que démon
 * Configurer un outil de gestion des processus pour aider à redémarrer l’application web
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Conditions préalables
 
 1. Accès à un serveur Ubuntu 16.04 avec un compte d’utilisateur standard disposant de privilèges sudo
 2. Application ASP.NET Core existante
@@ -158,7 +158,8 @@ Restart=always
 RestartSec=10  # Restart service after 10 seconds if dotnet service crashes
 SyslogIdentifier=dotnet-example
 User=www-data
-Environment=ASPNETCORE_ENVIRONMENT=Production 
+Environment=ASPNETCORE_ENVIRONMENT=Production
+Environment=DOTNET_PRINT_TELEMETRY_MESSAGE=false
 
 [Install]
 WantedBy=multi-user.target
@@ -288,7 +289,7 @@ Modifiez le fichier de configuration */etc/nginx/nginx.conf*. Dans l’exemple, 
 [!code-nginx[Main](../publishing/linuxproduction/nginx.conf?highlight=2)]
 
 #### <a name="secure-nginx-from-clickjacking"></a>Sécuriser Nginx contre le détournement de clic
-Le détournement de clic, ou clickjacking, est une technique malveillante visant à recueillir les clics d’un utilisateur infecté. Elle pousse la victime (visiteur) à accéder par des clics de souris à un site infecté. Utilisez X-FRAME-OPTIONS pour sécuriser votre site.
+Le détournement de clic, ou clickjacking, est une technique malveillante visant à recueillir les clics d’un utilisateur infecté. Elle pousse la victime (le visiteur) à cliquer sur un site infecté. Utilisez X-FRAME-OPTIONS pour sécuriser votre site.
 
 Modifiez le fichier *nginx.conf* :
 

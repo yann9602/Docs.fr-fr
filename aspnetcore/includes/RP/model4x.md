@@ -1,7 +1,7 @@
 <a name="scaffold"></a>
 ### <a name="scaffold-the-movie-model"></a>Générer automatiquement le modèle Movie
 
-* Ouvrez une fenêtre de commande dans le répertoire du projet (celui qui contient les fichiers *Program.cs*, *Startup.cs* et *.csproj*).
+* Ouvrez une fenêtre Commande dans le répertoire de projet (répertoire qui contient les fichiers *Program.cs*, *Startup.cs* et *.csproj*).
 * Exécutez la commande suivante :
 
   ```console

@@ -18,7 +18,7 @@ Vous pouvez télécharger de nombreux outils tiers pour gérer et afficher une b
 
 ## <a name="seed-the-database"></a>Amorcer la base de données
 
-Créez une classe nommée `SeedData` dans l’espace de noms *Models*. Remplacez le code généré par ce qui suit :
+Créez une classe nommée `SeedData` dans l’espace de noms *Modèles*. Remplacez le code généré par ce qui suit :
 
 [!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/SeedData.cs?name=snippet_1)]
 
