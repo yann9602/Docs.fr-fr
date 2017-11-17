@@ -20,7 +20,7 @@ ms.lasthandoff: 10/13/2017
 
 Par [Rick Anderson](https://twitter.com/RickAndMSFT), [Pranav Rastogi](https://github.com/rustd), et [Valeriy Novytskyy](https://github.com/01binary)
 
-Sont définit ici les instructions pour d’autres fournisseurs OAuth courants. Les packages NuGet tiers tels que ceux gérés par [aspnet-cotisation](https://www.nuget.org/packages?q=owners%3Aaspnet-contrib+title%3AOAuth) peut être utilisés pour compléter les fournisseurs d’authentification implémentés par l’équipe ASP.NET Core.
+Sont définies ici les instructions pour d’autres fournisseurs OAuth courants. Les packages NuGet tiers tels que ceux gérés par [aspnet-cotisation](https://www.nuget.org/packages?q=owners%3Aaspnet-contrib+title%3AOAuth) peuvent être utilisés pour compléter les fournisseurs d’authentification implémentés par l’équipe ASP.NET Core.
 
 * Configurer **LinkedIn** connectez-vous : [https://www.linkedin.com/developer/apps](https://www.linkedin.com/developer/apps). Consultez [étapes officiels](https://developer.linkedin.com/docs/oauth2).
 
