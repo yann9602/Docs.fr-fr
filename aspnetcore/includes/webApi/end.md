@@ -1,14 +1,22 @@
 ## <a name="implement-the-other-crud-operations"></a>Implémenter les autres opérations CRUD
 
-Nous allons ajouter les méthodes `Create`, `Update` et `Delete` au contrôleur. Comme il s’agit de variations sur un même thème, je vais simplement montrer le code et mettre en évidence les principales différences. Générez le projet après avoir ajouté ou modifié du code.
+Dans les sections suivantes, les méthodes `Create`, `Update` et `Delete` sont ajoutées au contrôleur.
 
 ### <a name="create"></a>Créer
 
+Ajoutez la méthode `Create` suivante.
+
 [!code-csharp[Main](../../tutorials/first-web-api/sample/TodoApi/Controllers/TodoController.cs?name=snippet_Create)]
 
-Il s’agit d’une méthode HTTP POST, indiquée par l’attribut [`[HttpPost]`](/aspnet/core/api/microsoft.aspnetcore.mvc.httppostattribute). L’attribut [`[FromBody]`](/aspnet/core/api/microsoft.aspnetcore.mvc.frombodyattribute) indique à MVC qu’il faut obtenir la valeur de l’élément d’action à partir du corps de la requête HTTP.
+Le code précédent est une méthode HTTP POST, indiquée par l’attribut [`[HttpPost]`](/aspnet/core/api/microsoft.aspnetcore.mvc.httppostattribute). L’attribut [`[FromBody]`](/aspnet/core/api/microsoft.aspnetcore.mvc.frombodyattribute) indique à MVC qu’il faut obtenir la valeur de l’élément d’action à partir du corps de la requête HTTP.
 
-La méthode `CreatedAtRoute` retourne une réponse 201, qui constitue la réponse standard pour une méthode HTTP POST qui crée une ressource sur le serveur. `CreatedAtRoute` ajoute également un en-tête Location à la réponse. L’en-tête Location spécifie l’URI de l’élément d’action qui vient d’être créé. Consultez [10.2.2 201 Created](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html).
+La méthode `CreatedAtRoute` :
+
+* Retourne une réponse 201. HTTP 201 est la réponse standard d’une méthode HTTP POST qui crée une ressource sur le serveur.
+* Ajoute un en-tête Location à la réponse. L’en-tête Location spécifie l’URI de l’élément d’action qui vient d’être créé. Consultez [10.2.2 201 Created](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html).
+* Utilise l’itinéraire nommé « GetTodo » pour créer l’URL. L’itinéraire nommé « GetTodo » est défini dans `GetById` :
+
+[!code-csharp[Main](../../tutorials/first-web-api/sample/TodoApi/Controllers/TodoController.cs?name=snippet_GetByID&highlight=1-2)]
 
 ### <a name="use-postman-to-send-a-create-request"></a>Utiliser Postman pour envoyer une requête Create
 
@@ -18,7 +26,7 @@ La méthode `CreatedAtRoute` retourne une réponse 201, qui constitue la répons
 * Sélectionnez la case d’option **Body**.
 * Sélectionnez la case d’option **raw**.
 * Sélectionnez le type JSON.
-* Dans l’éditeur de clé-valeur, entrez un élément d’action comme 
+* Dans l’éditeur de clé-valeur, entrez un élément d’action comme
 
 ```json
 {
@@ -28,19 +36,15 @@ La méthode `CreatedAtRoute` retourne une réponse 201, qui constitue la répons
 ```
 
 * Sélectionnez **Send**.
-
 * Sélectionnez l’onglet Headers dans le volet inférieur et copiez l’en-tête **Location** :
 
 ![Onglet Headers de la console Postman](../../tutorials/first-web-api/_static/pmget.png)
 
-Vous pouvez utiliser l’URI d’en-tête Location pour accéder à la ressource que vous venez de créer. Rappelez la méthode `GetById` qui a créé la route nommée `"GetTodo"` :
-
-```csharp
-[HttpGet("{id}", Name = "GetTodo")]
-public IActionResult GetById(long id)
-```
+L’URI d’en-tête d’emplacement permet d’accéder au nouvel élément.
 
 ### <a name="update"></a>Mise à jour
+
+Ajoutez la méthode `Update` suivante :
 
 [!code-csharp[Main](../../tutorials/first-web-api/sample/TodoApi/Controllers/TodoController.cs?name=snippet_Update)]
 
@@ -50,8 +54,12 @@ public IActionResult GetById(long id)
 
 ### <a name="delete"></a>Supprimer
 
+Ajoutez la méthode `Delete` suivante :
+
 [!code-csharp[Main](../../tutorials/first-web-api/sample/TodoApi/Controllers/TodoController.cs?name=snippet_Delete)]
 
-La réponse est [204 (Pas de contenu)](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html).
+La réponse `Delete` est [204 (Pas de contenu)](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html).
+
+Testez `Delete` : 
 
 ![Console Postman montrant la réponse 204 (Pas de contenu)](../../tutorials/first-web-api/_static/pmd.png)

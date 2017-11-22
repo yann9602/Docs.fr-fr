@@ -1,4 +1,4 @@
-Le code mis en surbrillance ci-dessus montre le contexte de la base de données des films qui est ajouté au conteneur [d’injection de dépendance](xref:fundamentals/dependency-injection). La ligne qui suit `services.AddDbContext<MvcMovieContext>(options =>` n’est pas affichée (consultez votre code). Elle spécifie la base de données à utiliser et la chaîne de connexion. `=>` est un [opérateur lambda](https://docs.microsoft.com/dotnet/articles/csharp/language-reference/operators/lambda-operator).
+Le code mis en surbrillance ci-dessus montre l’ajout du contexte de base de données des films au conteneur [d’injection de dépendances](xref:fundamentals/dependency-injection) (dans le fichier *Startup.cs*). `services.AddDbContext<MvcMovieContext>(options =>` spécifie la base de données à utiliser et la chaîne de connexion. `=>` est un [opérateur lambda](https://docs.microsoft.com/dotnet/articles/csharp/language-reference/operators/lambda-operator).
 
 Ouvrez le fichier *Controllers/MoviesController.cs* et examinez le constructeur :
 
@@ -8,7 +8,7 @@ Ouvrez le fichier *Controllers/MoviesController.cs* et examinez le constructeur 
 
 Le constructeur utilise une [injection de dépendance](xref:fundamentals/dependency-injection) pour injecter le contexte de base de données (`MvcMovieContext `) dans le contrôleur. Le contexte de base de données est utilisé dans chacune des méthodes la [CRUD](https://wikipedia.org/wiki/Create,_read,_update_and_delete) du contrôleur.
 
-<a name=strongly-typed-models-keyword-label></a>
+<a name="strongly-typed-models-keyword-label"></a>
 
 ## <a name="strongly-typed-models-and-the-model-keyword"></a>Modèles fortement typés et mot clé @model
 

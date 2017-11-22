@@ -31,7 +31,7 @@ Appuyez sur le lien **Create New** pour ajouter un nouveau film. Remplissez le f
 ![Formulaire d’affichage de film avec plusieurs erreurs de validation côté client jQuery](../../tutorials/first-mvc-app/validation/_static/val.png)
 
 > [!NOTE]
-> Vous ne pourrez peut-être pas entrer des décimales ou des virgules dans le champ `Price`. Pour prendre en charge la [validation jQuery](https://jqueryvalidation.org/) pour les paramètres régionaux autres que l’anglais qui utilisent une virgule (« , ») comme décimale et des formats de date autres que l’anglais des États-Unis, vous devez effectuer des étapes pour localiser votre application. Pour plus d’informations, consultez [Ressources supplémentaires](#additional-resources). Pour le moment, entrez simplement des nombres entiers tels que 10.
+> Vous ne pourrez peut-être pas entrer de virgules décimales dans le champ `Price`. Pour prendre en charge la [validation jQuery](https://jqueryvalidation.org/) pour les paramètres régionaux autres que l’anglais qui utilisent une virgule (« , ») comme décimale et des formats de date autres que l’anglais des États-Unis, vous devez effectuer des étapes pour localiser votre application. Consultez la page [GitHub problème 4076](https://github.com/aspnet/Docs/issues/4076#issuecomment-326590420) pour savoir comment ajouter une virgule décimale. 
 
 Notez que le formulaire a affiché automatiquement un message d’erreur de validation approprié dans chaque champ contenant une valeur non valide. Les erreurs sont appliquées à la fois côté client (à l’aide de JavaScript et jQuery) et côté serveur (au cas où un utilisateur aurait désactivé JavaScript).
 
@@ -107,7 +107,7 @@ Vous pouvez utiliser l’attribut `DisplayFormat` par lui-même, mais il est gé
 
 Vous devez désactiver la validation de date jQuery pour utiliser l’attribut `Range` avec `DateTime`. Il n’est généralement pas recommandé de compiler des dates dures dans vos modèles. Par conséquent, l’utilisation de l’attribut `Range` et de `DateTime` est déconseillée.
 
-Le code suivant illustre la combinaison d’attributs sur une seule ligne :
+Le code suivant illustre la combinaison d’attributs sur une seule ligne :
 
 [!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc//sample/MvcMovie/Models/MovieDateRatingDAmult.cs?name=snippet1)]
 

@@ -10,4 +10,4 @@ Actuellement, la méthode `Index` retourne une chaîne avec un message qui est c
 
 [!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/HelloWorldController.cs?name=snippet_4)]
 
-Le code précédent retourne un objet `View`. Il utilise un modèle de vue pour générer une réponse HTML au navigateur. Les méthodes du contrôleur (également appelées méthodes d’action), comme la méthode `Index` ci-dessus, retournent généralement un [IActionResult](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.iactionresult) (ou une classe dérivée de `ActionResult`), et non pas des types primitifs comme des chaînes.
+Le code précédent retourne un objet `View`. Il utilise un modèle de vue pour générer une réponse HTML au navigateur. Les méthodes du contrôleur (également appelées méthodes d’action), comme la méthode `Index` ci-dessus, retournent généralement un [IActionResult](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.iactionresult) (ou une classe dérivée de `ActionResult`), et non une chaîne ou un type similaire.

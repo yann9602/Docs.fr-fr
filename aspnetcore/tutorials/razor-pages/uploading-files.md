@@ -10,11 +10,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: tutorials/razor-pages/uploading-files
-ms.openlocfilehash: 5a3dc302186c7fd0a5730bc2c7599676fb543ba7
-ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
+ms.openlocfilehash: 3b54bf0b40c396c8c141966219f65231fb362ca4
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="uploading-files-to-a-razor-page-in-aspnet-core"></a>Chargement de fichiers sur une page Razor dans ASP.NET Core
 
@@ -25,6 +25,14 @@ Dans cette section, vous allez découvrir comment charger des fichiers sur une p
 [L’exemple d’application Razor Pages Movie](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie) de ce didacticiel utilise une liaison de données simple pour charger des fichiers, ce qui fonctionne bien pour charger des fichiers de petite taille. Pour plus d’informations sur le streaming de fichiers volumineux, consultez [Chargement de fichiers volumineux par streaming](xref:mvc/models/file-uploads#uploading-large-files-with-streaming).
 
 Dans les étapes ci-dessous, vous ajoutez une fonctionnalité de chargement de fichiers de planification vidéo dans l’exemple d’application. Une planification vidéo est représentée par une classe `Schedule` . La classe inclut deux versions de la planification. Une version est fournie aux clients, `PublicSchedule`. L’autre version est utilisée pour les employés de la société, `PrivateSchedule`. Chaque version est chargée dans un fichier distinct. Le didacticiel décrit comment effectuer deux chargements de fichier à partir d’une page en envoyant une seule commande POST au serveur.
+
+## <a name="add-a-fileupload-class"></a>Ajouter une classe FileUpload
+
+Le code ci-dessous crée une page Razor qui gère deux chargements de fichiers. Ajoutez une classe `FileUpload` liée à la page pour obtenir les données de planification. Cliquez avec le bouton droit sur le dossier *Models*. Sélectionnez **Ajouter** > **Classe**. Nommez la classe **FileUpload** et ajoutez les propriétés suivantes :
+
+[!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Models/FileUpload.cs)]
+
+La classe compte une propriété pour le titre de la planification et une propriété pour chacune des deux versions de la planification. Les trois propriétés sont obligatoires, et le titre doit comprendre entre 3 et 60 caractères.
 
 ## <a name="add-a-helper-method-to-upload-files"></a>Ajouter une méthode d’assistance pour charger des fichiers
 
@@ -42,11 +50,9 @@ La classe utilise les attributs `Display` et `DisplayFormat` qui donnent une mis
 
 ## <a name="update-the-moviecontext"></a>Mettre à jour MovieContext
 
-Spécifiez un `DbSet` dans `MovieContext` (*Models/MovieContext.cs*) pour les planifications et ajoutez une ligne à la méthode `OnModelCreating` qui définit un nom de table de base de données au singulier (`Schedule`) pour la propriété `DbSet` :
+Spécifiez `DbSet` dans `MovieContext` (*Models/MovieContext.cs*) pour les planifications :
 
-[!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Models/MovieContext.cs?highlight=13,18)]
-
-Remarque : Si vous ne substituez pas `OnModelCreating` pour utiliser des noms de table au singulier, Entity Framework suppose que vous utilisez des noms de table de base de données au pluriel (par exemple, `Movies` et `Schedules`). Les développeurs ne sont pas tous d’accord sur la nécessité d’utiliser des noms de table au pluriel. Configurez `MovieContext` et la base de données de la même façon. Utilisez des noms de table de base de données au singulier ou au pluriel dans les deux emplacements.
+[!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Models/MovieContext.cs?highlight=13)]
 
 ## <a name="add-the-schedule-table-to-the-database"></a>Ajouter la table Schedule à la base de données
 
@@ -60,14 +66,6 @@ Dans la console du Gestionnaire de package, exécutez les commandes suivantes. C
 Add-Migration AddScheduleTable
 Update-Database
 ```
-
-## <a name="add-a-fileupload-class"></a>Ajouter une classe FileUpload
-
-Ensuite, ajoutez une classe `FileUpload`, qui est liée à la page pour obtenir les données de planification. Cliquez avec le bouton droit sur le dossier *Models*. Sélectionnez **Ajouter** > **Classe**. Nommez la classe **FileUpload** et ajoutez les propriétés suivantes :
-
-[!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Models/FileUpload.cs)]
-
-La classe compte une propriété pour le titre de la planification et une propriété pour chacune des deux versions de la planification. Les trois propriétés sont obligatoires, et le titre doit comprendre entre 3 et 60 caractères.
 
 ## <a name="add-a-file-upload-razor-page"></a>Ajouter une page Razor de chargement de fichiers
 
@@ -97,7 +95,7 @@ Quand la page est chargée avec `OnGetAsync`, `Schedules` est rempli à partir d
 
 [!code-csharp[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Schedules/Index.cshtml.cs?name=snippet3)]
 
-Quand le formulaire est publié sur le serveur, `ModelState` est vérifié. S’il n’est pas valide, `Schedules` est regénéré et la page s’affiche avec un ou plusieurs messages de validation indiquant pourquoi la validation de la page a échoué. S’il est valide, les propriétés `FileUpload` sont utilisées dans *OnPostAsync* pour effectuer le chargement de fichier pour les deux versions de la planification et créer un objet `Schedule` afin de stocker les données. La planification est ensuite enregistrée dans la base de données :
+Quand le formulaire est publié sur le serveur, `ModelState` est vérifié. S’il n’est pas valide, `Schedule` est regénéré et la page s’affiche avec un ou plusieurs messages de validation indiquant pourquoi la validation de la page a échoué. S’il est valide, les propriétés `FileUpload` sont utilisées dans *OnPostAsync* pour effectuer le chargement de fichier pour les deux versions de la planification et créer un objet `Schedule` afin de stocker les données. La planification est ensuite enregistrée dans la base de données :
 
 [!code-csharp[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Schedules/Index.cshtml.cs?name=snippet4)]
 

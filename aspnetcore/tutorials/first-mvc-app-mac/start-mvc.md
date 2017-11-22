@@ -10,17 +10,19 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/first-mvc-app-mac/start-mvc
-ms.openlocfilehash: 028d6d3246908a9cd44a6834449d2fdbc9cae0b8
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: 387d7a91ae7d58cbc293c04039017df1dd208c82
+ms.sourcegitcommit: f017f940a164dbaf84307410c78eb14e0f3ac811
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 11/15/2017
 ---
 # <a name="getting-started-with-aspnet-core-mvc-and-visual-studio-for-mac"></a>Bien démarrer avec ASP.NET Core MVC et Visual Studio pour Mac
 
 Par [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Ce didacticiel présente les principes de base de la génération d’une application web ASP.NET Core MVC à l’aide de [Visual Studio pour Mac](https://www.visualstudio.com/vs/visual-studio-mac/). [!INCLUDE[consider RP](../../includes/razor.md)]
+Ce didacticiel présente les principes de base de la génération d’une application web ASP.NET Core MVC à l’aide de [Visual Studio pour Mac](https://www.visualstudio.com/vs/visual-studio-mac/). 
+
+[!INCLUDE[consider RP](../../includes/razor.md)]
 
 Il existe trois versions de ce didacticiel :
 
@@ -53,7 +55,7 @@ Nommez le projet **MvcMovie**, puis sélectionnez **Créer**.
 
 ### <a name="launch-the-app"></a>Lancer l’application
 
-Dans Visual Studio, sélectionnez **Exécuter > Exécuter sans débogage** pour lancer l’application. Visual Studio démarre [IIS Express](https://docs.microsoft.com/iis/extensions/introduction-to-iis-express/iis-express-overview), lance un navigateur et accède à `http://localhost:port`, où *port* est un numéro de port choisi au hasard.
+Dans Visual Studio, sélectionnez **Exécuter > Exécuter sans débogage** pour lancer l’application. Visual Studio démarre [Kestrel](xref:fundamentals/servers/index#Kestrel), lance un navigateur et accède à `http://localhost:port`, où *port* est un numéro de port choisi au hasard.
 
 ![Navigateur avec le nouveau projet](start-mvc/b1.png)
 

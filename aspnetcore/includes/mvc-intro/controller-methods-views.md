@@ -5,7 +5,7 @@ Accédez au contrôleur `Movies` et maintenez le pointeur de la souris sur un li
 
 ![Fenêtre de navigateur avec la souris sur le lien Edit et une URL de lien http://localhost:1234/Movies/Edit/5 affichée](../../tutorials/first-mvc-app/controller-methods-views/_static/edit7.png)
 
-Les liens **Edit**, **Details** et **Delete** sont générés par le Tag Helper Anchor MVC Core dans le fichier *Views/Movies/Index.cshtml*.
+Les liens **Edit**, **Details** et **Delete** sont générés par le Tag Helper Anchor Core MVC dans le fichier *Views/Movies/Index.cshtml*.
 
 [!code-HTML[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/Movies/IndexOriginal.cshtml?highlight=1-3&range=46-50)]
 
