@@ -12,10 +12,10 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/first-mvc-app-xplat/index
 ms.openlocfilehash: 8a6fa695a1b1ad660f7f5b1aeb520d5372a273a8
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="create-an-aspnet-core-mvc-app-with-visual-studio-code"></a>Créer une application ASP.NET Core MVC avec Visual Studio Code
 
