@@ -12,14 +12,14 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/azure-storage/index
 ms.openlocfilehash: e7f92621dd188057d05680da7cc0ce6ac212e872
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="azure-storage-in-aspnet-core"></a>Stockage Azure dans ASP.NET Core 
 
 * [Ajout de Stockage Azure à l’aide des services connectés de Visual Studio](https://azure.microsoft.com/documentation/articles/vs-azure-tools-connected-services-storage/)
-* [](https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-blobs/)
+* [Bien démarrer avec le Stockage Blob et les Services connectés Visual Studio](https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-blobs/)
 * [Bien démarrer avec Stockage File d’attente et les services connectés de Visual Studio](https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-queues/)
 * [Mise en route avec le Stockage Table et les services connectés de Visual Studio](https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-tables/)
