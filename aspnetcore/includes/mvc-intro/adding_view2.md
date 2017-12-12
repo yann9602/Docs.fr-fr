@@ -27,7 +27,11 @@ Remarque : La version ASP.NET Core 2.0 est légèrement différente. Elle ne con
 >[!WARNING]
 > Comme nous n’avons pas encore implémenté le contrôleur `Movies`, vous obtenez alors une erreur 404 (Introuvable) si vous cliquez sur ce lien.
 
-Enregistrez vos modifications, puis appuyez sur le lien **À propos de**. Notez comment le titre sur l’onglet du navigateur affiche maintenant **À propos de - Movie App** au lieu de **À propos de - Mvc Movie**. Appuyez sur le lien **Contact** et notez qu’il affiche également **Movie App**. Nous avons pu effectuer ce changement une fois dans le modèle de disposition et avoir le nouveau texte de lien et le nouveau titre reflétés sur toutes les pages du site.
+Enregistrez vos modifications, puis appuyez sur le lien **À propos de**. Notez comment le titre sur l’onglet du navigateur affiche maintenant **À propos de - Movie App** au lieu de **À propos de - Mvc Movie**: 
+
+![Onglet à propos](../../tutorials/first-mvc-app/adding-view/_static/hell3.png)
+
+Appuyez sur le lien **Contact** et notez qu’il affiche également **Movie App**. Nous avons pu effectuer ce changement une fois dans le modèle de disposition et avoir le nouveau texte de lien et le nouveau titre reflétés sur toutes les pages du site.
 
 Examinez le fichier *Views/_ViewStart.cshtml* :
 
