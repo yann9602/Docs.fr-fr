@@ -1,5 +1,5 @@
 ---
-title: "Vue d’ensemble des principaux d’ASP.NET MVC"
+title: "Vue d’ensemble du modèle MVC d’ASP.NET Core"
 author: ardalis
 description: "Découvrez comment ASP.NET Core MVC est une infrastructure riche pour la création d’applications web et les API à l’aide du modèle-Vue-contrôleur concevoir le modèle."
 keywords: ASP.NET Core,
@@ -12,12 +12,12 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/overview
 ms.openlocfilehash: 2492b6aa4602dbbf3b9cd3dca00d40690c640cab
-ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 11/10/2017
 ---
-# <a name="overview-of-aspnet-core-mvc"></a>Vue d’ensemble des principaux d’ASP.NET MVC
+# <a name="overview-of-aspnet-core-mvc"></a>Vue d’ensemble du modèle MVC d’ASP.NET Core
 
 Par [Steve Smith](https://ardalis.com/)
 
@@ -181,9 +181,9 @@ Votre application peut également utiliser [injection de dépendances des fichie
 
 ### <a name="areas"></a>Zones
 
-[Zones](controllers/areas.md) fournissent un moyen de partitionner une application Web ASP.NET Core MVC volumineuse en regroupements fonctionnels plus petits. Une zone est en réalité une structure MVC à l’intérieur d’une application. Dans un projet MVC, les composants logiques tels que le modèle, le contrôleur et vue sont conservées dans des dossiers différents et MVC utilise les conventions d’affectation de noms pour créer la relation entre ces composants. Pour une application volumineuse, il peut être avantageux de partition de l’application en différents domaines de niveau élevés de fonctionnalités. Par exemple, une application de commerce électronique avec plusieurs entités, telles que l’extraction, de facturation et de recherche, etc.. Chacune de ces unités ont leurs propres vues des composants logiques, les contrôleurs et les modèles.
+[Zones](controllers/areas.md) fournissent un moyen de partitionner une application Web ASP.NET Core MVC volumineuse en regroupements fonctionnels plus petits. Une zone est en réalité une structure MVC à l’intérieur d’une application. Dans un projet MVC, les composants logiques tels que le modèle, le contrôleur et vue sont conservées dans des dossiers différents et MVC utilise les conventions d’affectation de noms pour créer la relation entre ces composants. Pour une application volumineuse, il peut être avantageux de partition de l’application en différents domaines de niveau élevés de fonctionnalités. Par exemple, une application de commerce électronique avec plusieurs entités, telles que l’extraction, de facturation et de recherche, etc. Chacune de ces unités ont leurs propres vues des composants logiques, les contrôleurs et les modèles.
 
-### <a name="web-apis"></a>API Web
+### <a name="web-apis"></a>API web
 
 En plus de constituer une plate-forme idéale pour la création de sites web, ASP.NET MVC de base est très bien en charge API Web de génération. Vous pouvez créer des services qui peuvent atteindre un large éventail de clients, y compris les navigateurs et périphériques mobiles.
 

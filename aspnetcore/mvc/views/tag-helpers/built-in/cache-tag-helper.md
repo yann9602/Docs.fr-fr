@@ -12,10 +12,10 @@ ms.technology: aspnet
 ms.prod: aspnet-core
 uid: mvc/views/tag-helpers/builtin-th/cache-tag-helper
 ms.openlocfilehash: da5b7b3bf1aa01ee22edf9bd003d8f79a00a5d0b
-ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="cache-tag-helper-in-aspnet-core-mvc"></a>Mettre en cache d’assistance de balise dans le cœur d’ASP.NET MVC
 
@@ -84,7 +84,7 @@ Exemple :
 
 | Type d’attribut    | Exemple de valeur     |
 |----------------   |----------------   |
-| TimeSpan    | " @TimeSpan.FromSeconds (120)"    |
+| TimeSpan    | "@TimeSpan.FromSeconds(120)"    |
 
 
 Définit la durée à partir de la première demande pour mettre en cache le contenu. 
@@ -103,7 +103,7 @@ Exemple :
 
 | Type d’attribut    | Exemple de valeur     |
 |----------------   |----------------   |
-| TimeSpan    | " @TimeSpan.FromSeconds (60)"     |
+| TimeSpan    | "@TimeSpan.FromSeconds(60)"     |
 
 
 Définit l’heure à laquelle une entrée de cache doit être supprimée si elle n’a pas été accédé.
@@ -229,7 +229,7 @@ Exemple :
 
 | Type d’attribut    | Exemples de valeurs                |
 |----------------   |----------------               |
-| Chaîne             | " @Model "                 |
+| Chaîne             | "@Model"                 |
 
 
 Permet la personnalisation de données obtient mis en cache. Lorsque l’objet référencé par les modifications apportées à la valeur de la chaîne de l’attribut, le contenu de l’application d’assistance de balise de Cache est mis à jour. Fréquence à laquelle une concaténation de chaînes de valeurs de modèle sont affectées à cet attribut.  En effet, cela signifie qu'une mise à jour à une des valeurs concaténées invalide le cache.

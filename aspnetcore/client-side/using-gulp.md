@@ -7,16 +7,15 @@ ms.author: riande
 manager: wpickett
 ms.date: 02/28/2017
 ms.topic: article
-ms.assetid: 4095d273-bf3f-46cf-bdcc-18cf6815cbad
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/using-gulp
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: d2a2971a46d9d45a8fda5ac56073af608a0ede2b
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: 68f6838889cfb830f2c5a1976b3140ae5d94ac25
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="introduction-to-using-gulp-in-aspnet-core"></a>Introduction à l’utilisation de Gulp dans ASP.NET Core 
 
@@ -31,7 +30,7 @@ Dans une application web moderne classique, le processus de génération peut :
 
 A *exécuteur de tâches* est un outil qui automatise les tâches de développement de routine et bien plus encore. Visual Studio fournit la prise en charge intégrée pour deux exécuteurs de tâches de base de JavaScript populaires : [Gulp](https://gulpjs.com/) et [Grunt](using-grunt.md).
 
-## <a name="gulp"></a>Gulp
+## <a name="gulp"></a>gulp
 
 Gulp est un toolkit basées JavaScript de build en continu pour le code côté client. Il est couramment utilisé pour diffuser des fichiers côté client via une série de processus de déclenchement d’un événement spécifique dans un environnement de génération. Par exemple, Gulp permettre être utilisé pour automatiser [groupement et la minimisation](bundling-and-minification.md) ou le nettoyage d’un environnement de développement avant une nouvelle build.
 

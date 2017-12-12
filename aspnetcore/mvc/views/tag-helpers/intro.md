@@ -11,11 +11,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/tag-helpers/intro
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 06644b8359fb5ccc2e61a17a4c6e20e354d5ceef
-ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
+ms.openlocfilehash: 78d9fdbd32eae29d7714507498d5d68b86c6d12e
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="introduction-to-tag-helpers-in-aspnet-core"></a>Introduction aux applications d’assistance de balise dans ASP.NET Core 
 
@@ -35,13 +35,13 @@ Programmes d’assistance de balise permettent au code côté serveur participer
 
 La plupart des programmes d’assistance de balise intégrée cible des éléments HTML existants et fournit des attributs de côté serveur pour l’élément. Par exemple, le `<input>` élément utilisé dans la plupart des affichages dans le *Views/Account* dossier contient le `asp-for` attribut, qui extrait le nom de la propriété de modèle spécifié dans le code HTML restitué. Le balisage de Razor suivant :
 
-```html
+```cshtml
 <label asp-for="Email"></label>
 ```
 
 Génère le code HTML suivant :
 
-```html
+```cshtml
 <label for="Email">Email</label>
 ```
 
@@ -51,19 +51,19 @@ Le `asp-for` attribut rendue disponible par le `For` propriété dans le `LabelT
 
 Étendue des programmes d’assistance de balise est contrôlée par une combinaison de `@addTagHelper`, `@removeTagHelper`et le « ! » annulations caractère.
 
-<a name=add-helper-label></a>
+<a name="add-helper-label"></a>
 
 ### <a name="addtaghelper-makes-tag-helpers-available"></a>`@addTagHelper`disposition des programmes d’assistance de balise
 
 Si vous créez une application web ASP.NET Core nommée *AuthoringTagHelpers* (avec aucune authentification), ce qui suit *Views/_ViewImports.cshtml* fichier sera ajouté à votre projet :
 
-[!code-html[Main](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/_ViewImportsCopy.cshtml?highlight=2&range=2-3)]
+[!code-cshtml[Main](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/_ViewImportsCopy.cshtml?highlight=2&range=2-3)]
 
 Le `@addTagHelper` directive rend les programmes d’assistance de balise disponibles à la vue. Dans ce cas, le fichier de vue est *Views/_ViewImports.cshtml*, qui par défaut est hérité par tous les fichiers de vue dans le *vues* dossier et les sous-répertoires ; disposition des programmes d’assistance de balise. Le code ci-dessus utilise la syntaxe des caractères génériques («\*») pour spécifier que tous les programmes d’assistance de balise dans l’assembly spécifié (*Microsoft.AspNetCore.Mvc.TagHelpers*) sera disponible pour tous les fichiers de vue du *vues* répertoire ou sous-répertoire. Le premier paramètre après `@addTagHelper` spécifie les programmes d’assistance de balise à charger (nous utilisons «\*» pour tous les programmes d’assistance de balise), et le deuxième paramètre « Microsoft.AspNetCore.Mvc.TagHelpers » Spécifie l’assembly qui contient les programmes d’assistance de balise. *Microsoft.AspNetCore.Mvc.TagHelpers* est l’assembly pour les programmes d’assistance de la balise de base intégrés ASP.NET.
 
 Pour exposer tous les programmes d’assistance de balise dans ce projet (ce qui crée un assembly nommé *AuthoringTagHelpers*), vous utilisez ce qui suit :
 
-[!code-html[Main](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/_ViewImportsCopy.cshtml?highlight=3)]
+[!code-cshtml[Main](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/_ViewImportsCopy.cshtml?highlight=3)]
 
 Si votre projet contient un `EmailTagHelper` avec l’espace de noms par défaut (`AuthoringTagHelpers.TagHelpers.EmailTagHelper`), vous pouvez fournir le nom qualifié complet (FQN) de l’application d’assistance de balise :
 
@@ -75,14 +75,14 @@ Si votre projet contient un `EmailTagHelper` avec l’espace de noms par défaut
 
 Pour ajouter un programme d’assistance de balise à une vue à l’aide d’un FQN, vous ajoutez d’abord le FQN (`AuthoringTagHelpers.TagHelpers.EmailTagHelper`) et le nom d’assembly (*AuthoringTagHelpers*). La plupart des développeurs préfèrent utiliser le «\*« syntaxe des caractères génériques. La syntaxe de caractère générique vous permet d’insérer le caractère générique «\*» en guise de suffixe dans une FQN. Par exemple, une des directives suivantes s’affiche le `EmailTagHelper`:
 
-```csharp
+```cshtml
 @addTagHelper AuthoringTagHelpers.TagHelpers.E*, AuthoringTagHelpers
 @addTagHelper AuthoringTagHelpers.TagHelpers.Email*, AuthoringTagHelpers
 ```
 
 Comme mentionné précédemment, l’ajout le `@addTagHelper` directive pour le *Views/_ViewImports.cshtml* fichier à disposition du programme d’assistance de balise pour afficher tous les fichiers dans le *vues* répertoires et sous-répertoires. Vous pouvez utiliser la `@addTagHelper` directive dans les fichiers de vue spécifique si vous souhaitez participer à l’exposition de l’application d’assistance de balise pour uniquement ces vues.
 
-<a name=remove-razor-directives-label></a>
+<a name="remove-razor-directives-label"></a>
 
 ### <a name="removetaghelper-removes-tag-helpers"></a>`@removeTagHelper`Supprime les programmes d’assistance de balise
 
@@ -98,19 +98,19 @@ Vous pouvez ajouter un *_ViewImports.cshtml* à n’importe quel dossier de la v
 
 Vous pouvez désactiver un programme d’assistance de balise au niveau de l’élément avec le caractère d’annulations d’assistance de balise (« ! »). Par exemple, `Email` validation est désactivée dans le `<span>` avec le caractère d’annulations d’assistance de balise :
 
-```csharp
+```cshtml
 <!span asp-validation-for="Email" class="text-danger"></!span>
 ```
 
 Vous devez appliquer le caractère d’annulations d’assistance de balise à l’ouverture et la balise de fermeture. (L’éditeur Visual Studio ajoute automatiquement le caractère d’exclusion à la balise de fermeture lorsque vous ajoutez une balise d’ouverture). Après avoir ajouté le caractère de l’annulation d’abonnement, l’élément et les attributs de l’application d’assistance de balise ne s’affichent plus dans une police unique.
 
-<a name=prefix-razor-directives-label></a>
+<a name="prefix-razor-directives-label"></a>
 
 ### <a name="using-taghelperprefix-to-make-tag-helper-usage-explicit"></a>À l’aide de `@tagHelperPrefix` de rendre l’utilisation du programme d’assistance de balise explicite
 
 Le `@tagHelperPrefix` directive vous permet de spécifier une chaîne de préfixe de balise pour activer la prise en charge de l’application d’assistance de balise et de rendre l’utilisation du programme d’assistance de balise explicite. Par exemple, vous pouvez ajouter le balisage suivant à la *Views/_ViewImports.cshtml* fichier :
 
-```html
+```cshtml
 @tagHelperPrefix th:
 ```
 Dans l’image du code ci-dessous, le préfixe d’assistance de balise est défini sur `th:`, ainsi que les éléments à l’aide du préfixe `th:` prend en charge des programmes d’assistance de balise (compatible d’assistance de balise les éléments ont une police unique). Le `<label>` et `<input>` éléments ont le préfixe d’assistance de balise et sont compatibles d’assistance de balise, lors de la `<span>` n’est pas le cas de l’élément.
@@ -127,7 +127,7 @@ Envisagez d’écrire un code HTML `<label>` élément. Dès que vous entrez `<l
 
 ![image](intro/_static/label.png)
 
-Non seulement vous obtenez HTML (aide), mais l’icône (le « @ » symbole avec « <> » dans cette section).
+Non seulement vous obtenez HTML (aide), mais l’icône (le «@" symbol with "<> » dans cette section).
 
 ![image](intro/_static/tagSym.png)
 
@@ -163,13 +163,13 @@ IntelliSense répertorie les propriétés et méthodes disponibles pour le modè
 
 Programmes d’assistance de balise attachement à des éléments HTML dans les vues Razor, tandis que [programmes d’assistance HTML](http://stephenwalther.com/archive/2009/03/03/chapter-6-understanding-html-helpers) sont appelés comme Méthodes entrecoupées avec du code HTML dans les vues Razor. Prenez en compte le balisage suivant Razor, qui crée un nom HTML avec la classe CSS « caption » :
 
-```html
+```cshtml
 @Html.Label("FirstName", "First Name:", new {@class="caption"})
 ```
 
 Au (`@`) symbole indique Razor correspond au début du code. Les deux paramètres (« FirstName » et « prénom : ») sont des chaînes, par conséquent, [IntelliSense](https://docs.microsoft.com/visualstudio/ide/using-intellisense) ne peut aider. Le dernier argument :
 
-```html
+```cshtml
 new {@class="caption"}
 ```
 
@@ -189,7 +189,7 @@ IntelliSense vous permet d’écrire la ligne entière. Le `LabelTagHelper` éga
 
 génère :
 
-```html
+```cshtml
 <label class="caption" for="FirstName">First Name</label>
 ```
 
@@ -199,7 +199,7 @@ La casse mixte qui utilise la phrase de contenu n’est pas utilisée si vous aj
 
 génère :
 
-```html
+```cshtml
 <label class="caption" for="FirstName">Name First</label>
 ```
 
@@ -209,7 +209,7 @@ L’image du code suivant montre la partie de l’écran de la *Views/Account/Re
 
 L’éditeur Visual Studio affiche un code c# avec un fond gris. Par exemple, le `AntiForgeryToken` programme d’assistance HTML :
 
-```html
+```cshtml
 @Html.AntiForgeryToken()
 ```
 

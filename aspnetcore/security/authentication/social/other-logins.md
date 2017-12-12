@@ -1,5 +1,5 @@
 ---
-title: "Brève enquête sur d'autres fournisseurs d’authentification."
+title: "Brève enquête d’autres fournisseurs d’authentification."
 author: rick-anderson
 ms.author: riande
 manager: wpickett
@@ -9,10 +9,10 @@ ms.assetid: BC36CA84-3DE8-496E-9AA2-2F1B74AE8309
 ms.prod: asp.net-core
 uid: security/authentication/otherlogins
 ms.openlocfilehash: bbc069e974fd826e6e9fb29429a0875f02c01fd3
-ms.sourcegitcommit: 8f4d4fad1ca27adf9e396f5c205c9875a3963664
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="short-survey-of-other-authentication-providers"></a>Brève enquête d’autres fournisseurs d’authentification
 
@@ -20,7 +20,7 @@ ms.lasthandoff: 10/13/2017
 
 Par [Rick Anderson](https://twitter.com/RickAndMSFT), [Pranav Rastogi](https://github.com/rustd), et [Valeriy Novytskyy](https://github.com/01binary)
 
-Sont définies ici les instructions pour d’autres fournisseurs OAuth courants. Les packages NuGet tiers tels que ceux gérés par [aspnet-cotisation](https://www.nuget.org/packages?q=owners%3Aaspnet-contrib+title%3AOAuth) peuvent être utilisés pour compléter les fournisseurs d’authentification implémentés par l’équipe ASP.NET Core.
+Sont définir ici des instructions pour que d’autres fournisseurs OAuth courantes. Les packages NuGet tiers tels que ceux gérés par [aspnet-cotisation](https://www.nuget.org/packages?q=owners%3Aaspnet-contrib+title%3AOAuth) peut être utilisé pour compléter les fournisseurs d’authentification implémentées par l’équipe ASP.NET Core.
 
 * Configurer **LinkedIn** connectez-vous : [https://www.linkedin.com/developer/apps](https://www.linkedin.com/developer/apps). Consultez [étapes officiels](https://developer.linkedin.com/docs/oauth2).
 

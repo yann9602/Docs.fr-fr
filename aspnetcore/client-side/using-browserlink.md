@@ -1,7 +1,7 @@
 ---
 title: Lien du navigateur dans ASP.NET Core
 author: ncarandini
-description: "Découvrez comment le lien du navigateur est une fonctionnalité de Visual Studio qui lie l’environnement de développement avec un ou plusieurs navigateurs web."
+description: "Explique comment le lien du navigateur est une fonctionnalité de Visual Studio qui lie l’environnement de développement avec un ou plusieurs navigateurs web."
 keywords: ASP.NET Core, lien du navigateur, la synchronisation CSS
 ms.author: riande
 manager: wpickett
@@ -12,11 +12,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/using-browserlink
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 67ddc58e38962bd876050739a2a1447be4f589bb
-ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
+ms.openlocfilehash: b69d085e8bee4cdac2dff08b46a95a8869e263b7
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="browser-link-in-aspnet-core"></a>Lien du navigateur dans ASP.NET Core 
 
@@ -81,7 +81,7 @@ Lorsque vous avez un projet ASP.NET Core ouvert, Visual Studio affiche le contr�
 * Actualiser l’application web dans plusieurs navigateurs à la fois.
 * Ouvrez le **le tableau de bord navigateur lien**.
 * Activer ou désactiver **lien du navigateur**. Remarque : Le lien du navigateur est désactivée par défaut dans Visual Studio 2017 (15,3).
-* Activer ou désactiver la synchronisation automatique CSS.
+* Activer ou désactiver [la synchronisation automatique CSS](#enable-or-disable-css-auto-sync).
 
 > [!NOTE]
 > Certains plug-ins de Visual Studio, notamment *Web Extension Pack 2015* et *Web Extension Pack 2017*, proposent des fonctionnalités étendues pour le lien du navigateur, mais certaines des fonctionnalités supplémentaires ne fonctionnent pas avec ASP. Projets NET Core.

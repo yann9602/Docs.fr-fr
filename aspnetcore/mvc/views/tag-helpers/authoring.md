@@ -12,17 +12,17 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/tag-helpers/authoring
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 6861021b3a48a175f1f134f4622e6d43af5f720b
-ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
+ms.openlocfilehash: 6858b6b8ec89a5e5ffa9e5f8dddb905f38e16603
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="authoring-tag-helpers-in-aspnet-core-a-walkthrough-with-samples"></a>Programmes d’assistance de balise dans ASP.NET Core, une procédure pas à pas avec les exemples de création
 
 De [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-[Afficher ou télécharger l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/tag-helpers/authoring/sample) ([comment télécharger](xref:tutorials/index#how-to-download-a-sample))
+[Affichez ou téléchargez l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/tag-helpers/authoring/sample) ([procédure de téléchargement](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="getting-started-with-tag-helpers"></a>Prise en main de programmes d’assistance de balise
 
@@ -253,8 +253,8 @@ L’application d’assistance de balise condition restitue la sortie lorsqu’i
     
     <div>
         <h3>Information about our website (outdated):</h3>
-        <website-information info=Model />
-        <div condition="Model.Approved">
+        <website-information info=@Model />
+        <div condition="@Model.Approved">
             <p>
                 This website has <strong surround="em"> @Model.Approved </strong> been approved yet.
                 Visit www.contoso.com for more information.

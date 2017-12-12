@@ -12,10 +12,10 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/advanced
 ms.openlocfilehash: d63502a32e38eb192b40f21f5cd57d20048154e3
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="advanced-topics---ef-core-with-aspnet-core-mvc-tutorial-10-of-10"></a>Rubriques avancées - Core EF avec le didacticiel d’ASP.NET MVC de base (10 10)
 
@@ -83,7 +83,7 @@ Lorsque le **mise à jour** bouton, la méthode HttpPost est appelée et multipl
 
 Dans **l’Explorateur de solutions**, avec le bouton droit le *vues/cours* dossier, puis cliquez sur **Ajouter > nouvel élément**.
 
-Dans le **ajouter un nouvel élément** boîte de dialogue, cliquez sur **ASP.NET** sous **installé** dans le volet gauche, cliquez sur **Page de vue MVC**et le nom de la nouvelle vue * UpdateCourseCredits.cshtml*.
+Dans le **ajouter un nouvel élément** boîte de dialogue, cliquez sur **ASP.NET** sous **installé** dans le volet gauche, cliquez sur **Page de vue MVC**et le nom de la nouvelle vue  *UpdateCourseCredits.cshtml*.
 
 Dans *Views/Courses/UpdateCourseCredits.cshtml*, remplacez le code de modèle par le code suivant :
 
@@ -228,7 +228,7 @@ Il est possible d’obtenir d’autres erreurs lorsque des modifications de sch�
 
 L’approche la plus simple consiste à renommer la base de données *appsettings.json*. La prochaine fois que vous exécutez `database update`, une base de données sera créée.
 
-Pour supprimer une base de données SSOX, avec le bouton droit de la base de données, cliquez sur **supprimer**, puis, dans le **supprimer la base de données** boîte de dialogue Sélectionnez **fermer les connexions existantes** sur ** OK**.
+Pour supprimer une base de données SSOX, avec le bouton droit de la base de données, cliquez sur **supprimer**, puis, dans le **supprimer la base de données** boîte de dialogue Sélectionnez **fermer les connexions existantes** sur  **OK**.
 
 Pour supprimer une base de données à l’aide de l’interface CLI, exécutez le `database drop` commande CLI :
 

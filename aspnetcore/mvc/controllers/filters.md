@@ -11,11 +11,11 @@ ms.assetid: 531bda08-aa5b-4471-8f08-96add22c8683
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/filters
-ms.openlocfilehash: 215d165d0029bbf38ef37cdde57b80a15bff9ef9
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: 0a2a374ac77b9fd7c626aa6749cffbd3fb0f08d5
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="filters"></a>Filtres
 
@@ -82,7 +82,7 @@ Vous pouvez implémenter `IFilterFactory` sur vos propres implémentations d’a
 
 Le framework inclut les filtres intégrés basée sur les attributs que vous pouvez créer une sous-classe et personnaliser. Par exemple, le filtre de résultat suivant ajoute un en-tête à la réponse.
 
-<a name=add-header-attribute></a>
+<a name="add-header-attribute"></a>
 
 [!code-csharp[Main](./filters/sample/src/FiltersSample/Filters/AddHeaderAttribute.cs?highlight=5,16)]
 
@@ -167,7 +167,7 @@ Le `Order` propriété éclipsent mille paires d’étendue lors de la détermin
 
 Vous pouvez court-circuit le pipeline de filtre à tout moment en définissant le `Result` propriété sur le `context` paramètre fourni à la méthode de filtre. Par exemple, le filtre de ressource suivant empêche le reste du pipeline de l’exécution.
 
-<a name=short-circuiting-resource-filter></a>
+<a name="short-circuiting-resource-filter"></a>
 
 [!code-csharp[Main](./filters/sample/src/FiltersSample/Filters/ShortCircuitingResourceFilterAttribute.cs?highlight=12,13,14,15)]
 
@@ -188,7 +188,7 @@ Si vos filtres ont des dépendances dont vous avez besoin pour accéder à parti
 * `IFilterFactory`implémenté sur votre attribut
 
 > [!NOTE]
-> Une dépendance, que vous souhaiterez peut-être obtenir à partir de DI est un enregistreur d’événements. Toutefois, évitez la création et l’utilisation de filtres uniquement à des fins de journalisation, étant donné que la [des fonctionnalités de journalisation de l’infrastructure intégrée](../../fundamentals/logging.md) offrent parfois ce dont vous avez besoin. Si vous souhaitez ajouter à vos filtres, il doit se concentrer sur les problèmes de domaine d’entreprise ou de comportement spécifique à votre filtre, plutôt que des actions de MVC ou d’autres événements de framework.
+> Une dépendance, que vous souhaiterez peut-être obtenir à partir de DI est un enregistreur d’événements. Toutefois, évitez la création et l’utilisation de filtres uniquement à des fins de journalisation, étant donné que la [des fonctionnalités de journalisation de l’infrastructure intégrée](xref:fundamentals/logging/index) offrent parfois ce dont vous avez besoin. Si vous souhaitez ajouter à vos filtres, il doit se concentrer sur les problèmes de domaine d’entreprise ou de comportement spécifique à votre filtre, plutôt que des actions de MVC ou d’autres événements de framework.
 
 ### <a name="servicefilterattribute"></a>ServiceFilterAttribute
 

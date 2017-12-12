@@ -12,10 +12,10 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: hosting/aspnet-core-module
 ms.openlocfilehash: ac52b791e02ce52da35fe8d599465076d251b4da
-ms.sourcegitcommit: 8005eb4051e568d88ee58d48424f39916052e6e2
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="aspnet-core-module-configuration-reference"></a>Référence de configuration du Module de base ASP.NET
 
@@ -106,7 +106,7 @@ Si le Module de base ASP.NET ne parvient pas à lancer le processus principal ou
 
 Le Module de base ASP.NET redirige `stdout` et `stderr` journaux sur le disque si vous définissez la `stdoutLogEnabled` et `stdoutLogFile` les attributs de la `aspNetCore` élément. Tous les dossiers dans le `stdoutLogFile` chemin doit exister dans l’ordre pour le module créer le fichier journal. Une horodatage et extension de fichier est automatiquement ajoutée lorsque le fichier journal est créé. Les journaux n’a pas lieu, à moins que le recyclage de processus/redémarrage se produit. Il incombe à l’hébergeur pour limiter l’espace disque que les connexions à consommer. À l’aide de la `stdout` journal est recommandé uniquement pour résoudre les problèmes de démarrage d’application et non à des fins de journalisation généraux de l’application.
 
-Nom du fichier journal est composé en ajoutant l’ID de processus (PID), horodateur (*yyyyMdhms*) et l’extension de fichier (*.log*) pour le dernier segment de la `stdoutLogFile` chemin d’accès (généralement *stdout *) délimités par des traits de soulignement. Par exemple si le `stdoutLogFile` chemin d’accès se termine par *stdout*, un journal pour une application avec un PID de 10652 créé sur 8/10/2017 à 12:05:02 a le nom de fichier *stdout_10652_20178101252.log*.
+Nom du fichier journal est composé en ajoutant l’ID de processus (PID), horodateur (*yyyyMdhms*) et l’extension de fichier (*.log*) pour le dernier segment de la `stdoutLogFile` chemin d’accès (généralement *stdout* ) délimités par des traits de soulignement. Par exemple si le `stdoutLogFile` chemin d’accès se termine par *stdout*, un journal pour une application avec un PID de 10652 créé sur 8/10/2017 à 12:05:02 a le nom de fichier *stdout_10652_20178101252.log*.
 
 Voici un exemple `aspNetCore` élément configure `stdout` journalisation. Le `stdoutLogFile` chemin d’accès indiqué dans l’exemple est appropriée pour le Service d’applications Azure. Un chemin d’accès local ou un chemin d’accès du partage réseau est acceptable pour la connexion locale. Vérifiez que l’identité de pool d’applications l’utilisateur a l’autorisation d’écrire dans le chemin d’accès fourni.
 
@@ -120,7 +120,7 @@ Voici un exemple `aspNetCore` élément configure `stdout` journalisation. Le `s
 
 ## <a name="aspnet-core-module-with-an-iis-shared-configuration"></a>Configuration de Module ASP.NET Core avec un IIS partagée
 
-Le programme d’installation du Module de base ASP.NET s’exécute avec les privilèges de le **système** compte. Étant donné que le compte système local n’ont pas modifier l’autorisation pour le chemin d’accès de partage qui est utilisée par la Configuration partagée IIS, le programme d’installation sera atteint une erreur d’accès refusé lorsque vous tentez de configurer les paramètres de module dans * applicationHost.config* sur le partage.
+Le programme d’installation du Module de base ASP.NET s’exécute avec les privilèges de le **système** compte. Étant donné que le compte système local n’ont pas modifier l’autorisation pour le chemin d’accès de partage qui est utilisée par la Configuration partagée IIS, le programme d’installation sera atteint une erreur d’accès refusé lorsque vous tentez de configurer les paramètres de module dans  *applicationHost.config* sur le partage.
 
 La non prise en charge de la solution de contournement consiste à désactiver la Configuration partagée IIS, exécutez le programme d’installation, exporter la mise à jour *applicationHost.config* au partage de fichiers et de réactiver la Configuration partagée IIS.
 

@@ -11,11 +11,11 @@ ms.assetid: b2ace545-ecf6-4664-b31e-b65bd4a6b025
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/identity-custom-storage-providers
-ms.openlocfilehash: c1d974e72eab388ba7b196c4b48f21a06b59dc20
-ms.sourcegitcommit: f5cf472d49c2475e4d57654efd5fc0a4ccecba4c
+ms.openlocfilehash: 687ca96be5121502e816bdc856e17dcd5923fe05
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/30/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="custom-storage-providers-for-aspnet-core-identity"></a>Fournisseurs de stockage personnalisés pour ASP.NET Core Identity
 
@@ -68,7 +68,7 @@ Utilisateurs enregistrés de votre site web. Le [IdentityUser](https://docs.micr
 
 ### <a name="user-claims"></a>Revendications d’utilisateur
 
-Un ensemble d’instructions (ou [revendications](https://docs.microsoft.com//dotnet/api/system.security.claims.claim) relatives à l’utilisateur qui représentent l’identité de l’utilisateur. Permet la plus grande expression d’identité de l’utilisateur que peut être obtenue via des rôles.
+Un ensemble d’instructions (ou [revendications](https://docs.microsoft.com//dotnet/api/system.security.claims.claim)) sur l’utilisateur qui représentent l’identité de l’utilisateur. Permet la plus grande expression d’identité de l’utilisateur que peut être obtenue via des rôles.
 
 ### <a name="user-logins"></a>Connexions utilisateur
 

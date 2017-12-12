@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/identity-configuration
-ms.openlocfilehash: adf577ae1e1c752c3b1a332ec94a7a7627a7a4b4
-ms.sourcegitcommit: 76d42f09f3e0dd2f2105493eca6b29994aa47706
+ms.openlocfilehash: 2861ca474e7e82da81943966394a92040ce96ab8
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="configure-identity"></a>Configurer l’identité
 
@@ -22,7 +22,7 @@ ASP.NET Core Identity a certains comportements par défaut que vous pouvez rempl
 
 ## <a name="passwords-policy"></a>Stratégie de mots de passe
 
-Par défaut, identité requiert que les mots de passe contient un caractère majuscule, minuscule, un chiffre et un caractère alphanumérique. Il existe également quelques autres restrictions. Si vous souhaitez simplifier les restrictions de mot de passe, vous pouvez le faire la `Startup` classe de votre application.
+Par défaut, identité requiert que les mots de passe contient un caractère majuscule, minuscule, un chiffre et un caractère non alphanumérique. Il existe également quelques autres restrictions. Si vous souhaitez simplifier les restrictions de mot de passe, vous pouvez le faire la `Startup` classe de votre application.
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 

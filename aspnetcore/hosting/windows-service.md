@@ -11,11 +11,11 @@ ms.assetid: d9a65066-d7cb-47df-b046-64629c4d2c6f
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: hosting/windows-service
-ms.openlocfilehash: ca3b98f0b0405fcd5751cb7d9bc7a40257739084
-ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
+ms.openlocfilehash: a6d1acf5ab8f40b0b4d487a6f34cd83d13907852
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="host-an-aspnet-core-app-in-a-windows-service"></a>Héberger une application ASP.NET Core dans un Service Windows
 
@@ -27,7 +27,7 @@ La méthode recommandée pour héberger une application ASP.NET Core sur Windows
 
 ## <a name="prerequisites"></a>Conditions préalables
 
-* L’application doit s’exécuter sur le runtime .NET framework.  Dans le *.csproj* de fichiers, spécifiez les valeurs appropriées pour [TargetFramework](https://docs.microsoft.com/nuget/schema/target-frameworks) et [RuntimeIdentifier](https://docs.microsoft.com/dotnet/articles/core/rid-catalog). Voici un exemple :
+* L’application doit s’exécuter sur le runtime .NET Framework.  Dans le *.csproj* de fichiers, spécifiez les valeurs appropriées pour [TargetFramework](https://docs.microsoft.com/nuget/schema/target-frameworks) et [RuntimeIdentifier](https://docs.microsoft.com/dotnet/articles/core/rid-catalog). Voici un exemple :
 
   [!code-xml[](windows-service/sample/AspNetCoreService.csproj?range=3-6)]
 
@@ -115,7 +115,7 @@ Le [exemple d’application](https://github.com/aspnet/Docs/tree/master/aspnetco
 
   * Dans un navigateur, accédez à http://localhost : 5000 pour vérifier qu’il s’exécute.
 
-Si l’application ne démarre pas comme prévu lors de l’exécution dans un service, un moyen rapide pour rendre les messages d’erreur accessible est pour ajouter un module fournisseur d’informations telles que la [fournisseur du journal des événements Windows](xref:fundamentals/logging#eventlog).
+Si l’application ne démarre pas comme prévu lors de l’exécution dans un service, un moyen rapide pour rendre les messages d’erreur accessible est pour ajouter un module fournisseur d’informations telles que la [fournisseur du journal des événements Windows](xref:fundamentals/logging/index#eventlog).
 
 ## <a name="acknowledgments"></a>Accusés de réception
 

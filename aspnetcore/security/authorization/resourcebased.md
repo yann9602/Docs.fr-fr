@@ -1,45 +1,52 @@
 ---
-title: "Autorisation basée sur les ressources"
-author: rick-anderson
-description: 
-keywords: ASP.NET Core,
-ms.author: riande
+title: "Autorisation basée sur les ressources dans ASP.NET Core"
+author: scottaddie
+description: "Découvrez comment implémenter l’autorisation basée sur les ressources dans une application ASP.NET Core lorsqu’un attribut Authorize ne suffit."
 manager: wpickett
-ms.date: 10/14/2016
-ms.topic: article
-ms.assetid: 0902ba17-5304-4a12-a2d4-e0904569e988
-ms.technology: aspnet
+ms.author: scaddie
+ms.custom: mvc
+ms.date: 11/07/2017
+ms.devlang: csharp
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/authorization/resourcebased
-ms.openlocfilehash: 7f7df52bf51a81558818836450997281a21b5839
-ms.sourcegitcommit: f303a457644ed034a49aa89edecb4e79d9028cb1
+ms.openlocfilehash: 708f306da740870b106cbeeb96879480f8745439
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="resource-based-authorization"></a>Autorisation basée sur les ressources
 
-<a name=security-authorization-resource-based></a>
+Par [Scott Addie](https://twitter.com/Scott_Addie)
 
-Fréquence à laquelle l’autorisation dépend de la ressource sollicitée. Par exemple, un document peut avoir une propriété de l’auteur. Seul l’auteur du document serait autorisé à mettre à jour, afin de la ressource doit être chargée à partir du référentiel de document avant d’effectuer une évaluation d’autorisation. Cela n’est pas possible avec un attribut Authorize, comme l’évaluation de l’attribut a lieu avant la liaison de données et avant l’exécution de votre propre code pour charger une ressource à l’intérieur d’une action. Au lieu de l’autorisation déclarative, la méthode de l’attribut, nous devons utiliser d’autorisation impérative, où un développeur appelle une fonction d’Autoriser au sein de leur propre code.
+Stratégie d’autorisation dépend de la ressource sollicitée. Envisagez d’un document qui possède une propriété de l’auteur. Seul l’auteur est autorisé à mettre à jour le document. Par conséquent, le document doit être récupéré à partir du magasin de données avant de l’évaluation de l’autorisation peut se produire.
 
-## <a name="authorizing-within-your-code"></a>Autorisation dans votre code
+Évaluation de l’attribut se produit avant la liaison de données et avant l’exécution de l’action qui charge le document ou le Gestionnaire de page. Pour ces raisons, l’autorisation déclarative avec un `[Authorize]` attribut ne suffit pas. Au lieu de cela, vous pouvez appeler une méthode d’autorisation personnalisée&mdash;un style appelé impératif d’autorisation.
 
-L’autorisation est implémentée en tant que service, `IAuthorizationService`, enregistré dans la collection de service et disponibles via [injection de dépendance](../../fundamentals/dependency-injection.md#fundamentals-dependency-injection) pour les contrôleurs pour accéder à.
+Utilisez le [exemples d’applications](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/resourcebased/samples) ([comment télécharger](xref:tutorials/index#how-to-download-a-sample)) pour Explorer les fonctionnalités décrites dans cette rubrique.
+
+## <a name="use-imperative-authorization"></a>Utiliser l’autorisation impérative
+
+L’autorisation est implémentée comme un [IAuthorizationService](/dotnet/api/microsoft.aspnetcore.authorization.iauthorizationservice) de service et est enregistré dans la collection de service dans la `Startup` classe. Le service est rendu disponible via [injection de dépendance](xref:fundamentals/dependency-injection#fundamentals-dependency-injection) aux gestionnaires de page ou aux actions.
+
+[!code-csharp[](resourcebased/samples/ResourceBasedAuthApp2/Controllers/DocumentController.cs?name=snippet_IAuthServiceDI&highlight=6)]
+
+`IAuthorizationService`a deux `AuthorizeAsync` surcharges de méthode : une acceptation de la ressource et le nom de la stratégie et l’autre accepte la ressource et une liste d’exigences à évaluer.
+
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 ```csharp
-public class DocumentController : Controller
-{
-    IAuthorizationService _authorizationService;
-
-    public DocumentController(IAuthorizationService authorizationService)
-    {
-        _authorizationService = authorizationService;
-    }
-}
+Task<AuthorizationResult> AuthorizeAsync(ClaimsPrincipal user,
+                          object resource,
+                          IEnumerable<IAuthorizationRequirement> requirements);
+Task<AuthorizationResult> AuthorizeAsync(ClaimsPrincipal user,
+                          object resource,
+                          string policyName);
 ```
 
-`IAuthorizationService`a deux méthodes, une où vous passez la ressource et le nom de la stratégie et l’autre où vous passez une liste des conditions requises pour évaluer et la ressource.
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 ```csharp
 Task<bool> AuthorizeAsync(ClaimsPrincipal user,
@@ -50,104 +57,78 @@ Task<bool> AuthorizeAsync(ClaimsPrincipal user,
                           string policyName);
 ```
 
-<a name=security-authorization-resource-based-imperative></a>
+---
 
-Pour appeler le service, charger votre ressource au sein de votre action puis appelez le `AuthorizeAsync` surcharge que vous avez besoin. Exemple :
+<a name="security-authorization-resource-based-imperative"></a>
 
-```csharp
-public async Task<IActionResult> Edit(Guid documentId)
-{
-    Document document = documentRepository.Find(documentId);
+Dans l’exemple suivant, la ressource à sécuriser chargée personnalisé `Document` objet. Un `AuthorizeAsync` surcharge est appelée pour déterminer si l’utilisateur actuel est autorisé à modifier le document fourni. Une stratégie d’autorisation « EditPolicy » personnalisée est factorisée dans l’arbre de décision. Consultez [autorisation basée sur des stratégies de personnalisée](xref:security/authorization/policies) pour plus d’informations sur la création de stratégies d’autorisation.
 
-    if (document == null)
-    {
-        return new HttpNotFoundResult();
-    }
+> [!NOTE]
+> Le code suivant exemples supposent que l’authentification a été exécuté et le jeu le `User` propriété.
 
-    if (await _authorizationService.AuthorizeAsync(User, document, "EditPolicy"))
-    {
-        return View(document);
-    }
-    else
-    {
-        return new ChallengeResult();
-    }
-}
-```
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
-## <a name="writing-a-resource-based-handler"></a>Écriture d’un gestionnaire de ressources
+[!code-csharp[](resourcebased/samples/ResourceBasedAuthApp2/Pages/Document/Edit.cshtml.cs?name=snippet_DocumentEditHandler)]
 
-Écriture d’un gestionnaire pour l’autorisation de ressource en fonction pas qui est très différent de [écriture d’un gestionnaire d’exigences brut](policies.md#security-authorization-policies-based-authorization-handler). Vous créez une spécification et ensuite implémentez un gestionnaire pour la demande, en spécifiant la configuration requise comme avant, ainsi que le type de ressource. Par exemple, un gestionnaire qui peut accepter une ressource Document se présenterait comme suit :
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
-```csharp
-public class DocumentAuthorizationHandler : AuthorizationHandler<MyRequirement, Document>
-{
-    protected override Task HandleRequirementAsync(AuthorizationHandlerContext context,
-                                                MyRequirement requirement,
-                                                Document resource)
-    {
-        // Validate the requirement against the resource and identity.
+[!code-csharp[](resourcebased/samples/ResourceBasedAuthApp1/Controllers/DocumentController.cs?name=snippet_DocumentEditAction)]
 
-        return Task.CompletedTask;
-    }
-}
-```
+---
 
-N’oubliez pas vous devez également inscrire votre gestionnaire dans le `ConfigureServices` méthode :
+## <a name="write-a-resource-based-handler"></a>Écrire un gestionnaire de ressources
 
-```csharp
-services.AddSingleton<IAuthorizationHandler, DocumentAuthorizationHandler>();
-```
+Écriture d’un gestionnaire pour l’autorisation basée sur la ressource n’est pas très différente de [écriture d’un gestionnaire d’exigences brut](xref:security/authorization/policies#security-authorization-policies-based-authorization-handler). Créer une classe de demande personnalisée et implémenter une classe de gestionnaire de condition. La classe de gestionnaire spécifie l’exigence et le type de ressource. Par exemple, un gestionnaire utilisant un `SameAuthorRequirement` exigence et un `Document` ressource se présente comme suit :
+
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+
+[!code-csharp[](resourcebased/samples/ResourceBasedAuthApp2/Services/DocumentAuthorizationHandler.cs?name=snippet_HandlerAndRequirement)]
+
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+
+[!code-csharp[](resourcebased/samples/ResourceBasedAuthApp1/Services/DocumentAuthorizationHandler.cs?name=snippet_HandlerAndRequirement)]
+
+---
+
+Enregistrer la configuration requise, le gestionnaire dans le `Startup.ConfigureServices` méthode :
+
+[!code-csharp[](resourcebased/samples/ResourceBasedAuthApp2/Startup.cs?name=snippet_ConfigureServicesSample&highlight=3-7,9)]
 
 ### <a name="operational-requirements"></a>Spécifications opérationnelles
 
-Si vous prenez des décisions basées sur les opérations de lecture, écriture, mise à jour et suppression, vous pouvez utiliser la `OperationAuthorizationRequirement` classe dans le `Microsoft.AspNetCore.Authorization.Infrastructure` espace de noms. Cette classe d’exigence prégénérées permet d’écrire un seul gestionnaire qui porte un nom d’opération paramétrées, plutôt que de créer des classes individuelles pour chaque opération. Pour l’utiliser, fournir des noms d’opération :
+Si vous apportez des décisions basées sur les résultats de CRUD (**C**réer, **R**IRE, **U**mettre à jour, **D**supprim) opérations, utilisez le [OperationAuthorizationRequirement](/dotnet/api/microsoft.aspnetcore.authorization.infrastructure.operationauthorizationrequirement) classe d’assistance. Cette classe vous permet d’écrire un gestionnaire unique au lieu d’une classe individuelle pour chaque type d’opération. Pour l’utiliser, fournir des noms d’opération :
 
-```csharp
-public static class Operations
-{
-    public static OperationAuthorizationRequirement Create =
-        new OperationAuthorizationRequirement { Name = "Create" };
-    public static OperationAuthorizationRequirement Read =
-        new OperationAuthorizationRequirement   { Name = "Read" };
-    public static OperationAuthorizationRequirement Update =
-        new OperationAuthorizationRequirement { Name = "Update" };
-    public static OperationAuthorizationRequirement Delete =
-        new OperationAuthorizationRequirement { Name = "Delete" };
-}
-```
+[!code-csharp[](resourcebased/samples/ResourceBasedAuthApp2/Services/DocumentAuthorizationCrudHandler.cs?name=snippet_OperationsClass)]
 
-Votre gestionnaire peut ensuite être implémenté, procédez comme suit à l’aide d’un hypothétique `Document` classe en tant que la ressource :
+Le gestionnaire est implémenté comme suit, à l’aide un `OperationAuthorizationRequirement` exigence et un `Document` ressource :
 
-```csharp
-public class DocumentAuthorizationHandler :
-    AuthorizationHandler<OperationAuthorizationRequirement, Document>
-{
-    public override Task HandleRequirementAsync(AuthorizationHandlerContext context,
-                                                OperationAuthorizationRequirement requirement,
-                                                Document resource)
-    {
-        // Validate the operation using the resource, the identity and
-        // the Name property value from the requirement.
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
-        return Task.CompletedTask;
-    }
-}
-```
+[!code-csharp[](resourcebased/samples/ResourceBasedAuthApp2/Services/DocumentAuthorizationCrudHandler.cs?name=snippet_Handler)]
 
-Vous pouvez voir le fonctionnement du gestionnaire sur `OperationAuthorizationRequirement`. Le code dans le gestionnaire doit prendre la propriété de nom de la spécification fournie en compte lors de l’établissement de ses évaluations.
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
-Pour appeler un gestionnaire de ressources opérationnels que vous devez spécifier l’opération lors de l’appel `AuthorizeAsync` dans l’action. Exemple :
+[!code-csharp[](resourcebased/samples/ResourceBasedAuthApp1/Services/DocumentAuthorizationCrudHandler.cs?name=snippet_Handler)]
 
-```csharp
-if (await _authorizationService.AuthorizeAsync(User, document, Operations.Read))
-{
-    return View(document);
-}
-else
-{
-    return new ChallengeResult();
-}
-```
+---
 
-Cet exemple vérifie si l’utilisateur est en mesure d’effectuer l’opération de lecture en cours `document` instance. Si l’autorisation réussit, l’affichage pour le document s’affichera. Si l’autorisation échoue renvoyant `ChallengeResult` informe Échec de l’autorisation de l’intergiciel (middleware) et de l’intergiciel (middleware) peut prendre la réponse adéquate, par exemple renvoie un code d’état 401 ou 403 ou rediriger l’utilisateur vers une page de connexion d’authentification clients de navigateur interactif.
+Le gestionnaire précédent valide l’opération à l’aide de la ressource, l’identité d’utilisateur et l’exigence de `Name` propriété.
+
+Pour appeler un gestionnaire de ressources opérationnelles, spécifiez l’opération lors de l’appel `AuthorizeAsync` dans votre gestionnaire de page ou une action. L’exemple suivant détermine si l’utilisateur authentifié est autorisé à afficher le document fourni.
+
+> [!NOTE]
+> Le code suivant exemples supposent que l’authentification a été exécuté et le jeu le `User` propriété.
+
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+
+[!code-csharp[](resourcebased/samples/ResourceBasedAuthApp2/Pages/Document/View.cshtml.cs?name=snippet_DocumentViewHandler&highlight=10-11)]
+
+Si l’autorisation réussit, la page d’affichage du document est retournée. Si l’autorisation échoue mais que l’utilisateur est authentifié, retour `ForbidResult` informe tout intergiciel d’authentification qui a l’autorisation a échoué. A `ChallengeResult` est retourné lorsque l’authentification doit être effectuée. Pour les clients de navigateur interactive, il peut être approprié rediriger l’utilisateur vers une page de connexion.
+
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+
+[!code-csharp[](resourcebased/samples/ResourceBasedAuthApp1/Controllers/DocumentController.cs?name=snippet_DocumentViewAction&highlight=11-12)]
+
+Si l’autorisation réussit, la vue du document est retournée. Si l’autorisation échoue, retour `ChallengeResult` informe un intergiciel (middleware) d’authentification que l’autorisation a échoué, et l’intergiciel (middleware) peut prendre la réponse appropriée. Un code d’état 401 ou 403 peut renvoyer une réponse appropriée. Pour les clients de navigateur interactif, cela peut signifier redirigeant l’utilisateur vers une page de connexion.
+
+---

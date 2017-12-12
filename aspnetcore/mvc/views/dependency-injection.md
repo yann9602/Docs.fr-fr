@@ -12,10 +12,10 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/dependency-injection
 ms.openlocfilehash: 4586f50bc663b7269914dfff28b61342e3991a48
-ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="dependency-injection-into-views"></a>Injection de dépendance dans les vues
 
@@ -23,7 +23,7 @@ Par [Steve Smith](https://ardalis.com/)
 
 Prend en charge par ASP.NET Core [injection de dépendance](xref:fundamentals/dependency-injection) dans les vues. Cela peut être utile pour les services spécifiques à la vue, telles que la localisation ou les données requises pour le remplissage d’éléments de la vue. Vous devez tenter de mettre à jour [séparation des préoccupations](http://deviq.com/separation-of-concerns/) entre vos contrôleurs et les vues. La plupart de vos affichages de données doit être passée à partir du contrôleur.
 
-[Afficher ou télécharger l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/dependency-injection/sample) ([comment télécharger](xref:tutorials/index#how-to-download-a-sample))
+[Affichez ou téléchargez l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/dependency-injection/sample) ([procédure de téléchargement](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="a-simple-example"></a>Un exemple Simple
 

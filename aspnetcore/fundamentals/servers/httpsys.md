@@ -12,10 +12,10 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/servers/httpsys
 ms.openlocfilehash: d3f9eb4943ed62b674d6bb2ab1b275b0a3c02343
-ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="httpsys-web-server-implementation-in-aspnet-core"></a>Implémentation du serveur web HTTP.sys dans ASP.NET Core
 
@@ -40,7 +40,7 @@ Versions de Windows prises en charge :
 
 - Windows 7 et Windows Server 2008 R2 et versions ultérieures
 
-[Afficher ou télécharger l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/servers/httpsys/sample) ([comment télécharger](xref:tutorials/index#how-to-download-a-sample))
+[Affichez ou téléchargez l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/servers/httpsys/sample) ([procédure de téléchargement](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="when-to-use-httpsys"></a>Quand utiliser HTTP.sys
 
@@ -125,7 +125,7 @@ Par défaut, ASP.NET Core lie à `http://localhost:5000`. Pour configurer les po
 
 Un avantage de `UrlPrefixes` est que vous obtenez un message d’erreur immédiatement si vous essayez d’ajouter un préfixe au format incorrect. Un avantage de `UseUrls` (partagé avec `urls` et ASPNETCORE_URLS) que vous pouvez plus facilement basculer entre Kestrel et HTTP.sys.
 
-Si vous utilisez les deux `UseUrls` (ou `urls` ou ASPNETCORE_URLS) et `UrlPrefixes`, les paramètres de `UrlPrefixes` remplacent celles de `UseUrls`. Pour plus d’informations, consultez [hébergement](xref:fundamentals/hosting).
+Si vous utilisez les deux `UseUrls` (ou `urls` ou ASPNETCORE_URLS) et `UrlPrefixes`, les paramètres de `UrlPrefixes` remplacent celles de `UseUrls`. Pour plus d’informations, consultez [Hébergement](xref:fundamentals/hosting).
 
 HTTP.sys utilise le [formats de chaîne HTTP Server API UrlPrefix](https://msdn.microsoft.com/library/windows/desktop/aa364698.aspx).
 

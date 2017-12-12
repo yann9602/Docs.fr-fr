@@ -1,0 +1,1 @@
+Ce dossier si pour le contenu de SignalR. Supprimer ce fichier lorsque le premier fichier est ajouté à ce répertoire.

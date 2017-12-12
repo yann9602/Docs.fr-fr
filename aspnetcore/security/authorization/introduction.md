@@ -1,8 +1,8 @@
 ---
-title: Introduction
+title: "Introduction à l’autorisation"
 author: rick-anderson
-description: 
-keywords: ASP.NET Core,
+description: "Ce document fournit une explication de l’autorisation de base et explique comment l’autorisation est lié à ASP.NET Core."
+keywords: ASP.NET Core, autorisation
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
@@ -11,15 +11,15 @@ ms.assetid: a6a556ed-ba59-4107-9358-44cf20e5931b
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authorization/introduction
-ms.openlocfilehash: 040525505a982fc1be1901effb9186a8fe1cdbdf
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 192cc494c2378f77207a4b1c17b0b0a73ca642ed
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="introduction"></a>Introduction
 
-<a name=security-authorization-introduction></a>
+<a name="security-authorization-introduction"></a>
 
 Autorisation désigne le processus qui détermine ce qu’un utilisateur est en mesure d’effectuer. Par exemple, un utilisateur administratif est autorisé à créer une bibliothèque de documents, ajoutez les documents, modifier des documents et les supprimer. Un utilisateur non-administrateur, utilisation de la bibliothèque est uniquement autorisé à lire les documents.
 
@@ -27,7 +27,7 @@ L’autorisation est orthogonales et indépendante de l’authentification, qui 
 
 ## <a name="authorization-types"></a>Types d’autorisation
 
-Autorisation de ASP.NET Core fournit un simple déclaratif [rôle](roles.md#security-authorization-role-based) et un [enrichie basée sur la stratégie](policies.md#security-authorization-policies-based) modèle. L’autorisation est exprimée dans la configuration requise et gestionnaires d’évaluent les revendications d’un utilisateur par rapport aux exigences. Vérifications impératives peuvent reposer sur des stratégies simples ou qui évaluent l’identité de l’utilisateur et les propriétés de la ressource à laquelle l’utilisateur tente d’accéder.
+Autorisation de ASP.NET Core fournit un simple déclaratif [rôle](roles.md) et un [enrichie basée sur la stratégie](policies.md) modèle. L’autorisation est exprimée dans la configuration requise et gestionnaires d’évaluent les revendications d’un utilisateur par rapport aux exigences. Vérifications impératives peuvent reposer sur des stratégies simples ou qui évaluent l’identité de l’utilisateur et les propriétés de la ressource à laquelle l’utilisateur tente d’accéder.
 
 ## <a name="namespaces"></a>Espaces de noms
 

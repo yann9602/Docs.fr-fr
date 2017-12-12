@@ -11,11 +11,11 @@ ms.assetid: 5e16d5e8-5696-4cb2-8ec7-d36be305c922
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/areas
-ms.openlocfilehash: 3096d6404ff9c7e34eefcfb1990e7bf1ccab27ba
-ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
+ms.openlocfilehash: cd0302fa1668979df9bbd6cb36f82742d325c5e9
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="areas"></a>Zones
 
@@ -23,7 +23,7 @@ Par [Dhananjay Kumar](https://twitter.com/debug_mode) et [Rick Anderson](https:/
 
 Les zones sont une fonctionnalité d’ASP.NET MVC permet de classer les fonctionnalités connexes dans un groupe comme un espace de noms distinct (pour le routage) et la structure de dossiers (pour les vues). L’utilisation de zones crée une hiérarchie à des fins de routage en ajoutant un autre paramètre d’itinéraire, `area`à `controller` et `action`.
 
-Les zones permettent de partitionner une application Web ASP.NET Core MVC volumineuse en regroupements fonctionnels plus petits. Une zone est en réalité une structure MVC à l’intérieur d’une application. Dans un projet MVC, les composants logiques tels que le modèle, le contrôleur et vue sont conservées dans des dossiers différents et MVC utilise les conventions d’affectation de noms pour créer la relation entre ces composants. Pour une application volumineuse, il peut être avantageux de partition de l’application en différents domaines de niveau élevés de fonctionnalités. Par exemple, une application de commerce électronique avec plusieurs entités, telles que l’extraction, de facturation et de recherche, etc.. Chacune de ces unités ont leurs propres vues des composants logiques, les contrôleurs et les modèles. Dans ce scénario, vous pouvez utiliser des zones physiquement partitionner les composants d’entreprise dans le même projet.
+Les zones permettent de partitionner une application Web ASP.NET Core MVC volumineuse en regroupements fonctionnels plus petits. Une zone est en réalité une structure MVC à l’intérieur d’une application. Dans un projet MVC, les composants logiques tels que le modèle, le contrôleur et vue sont conservées dans des dossiers différents et MVC utilise les conventions d’affectation de noms pour créer la relation entre ces composants. Pour une application volumineuse, il peut être avantageux de partition de l’application en différents domaines de niveau élevés de fonctionnalités. Par exemple, une application de commerce électronique avec plusieurs entités, telles que l’extraction, de facturation et de recherche, etc. Chacune de ces unités ont leurs propres vues des composants logiques, les contrôleurs et les modèles. Dans ce scénario, vous pouvez utiliser des zones physiquement partitionner les composants d’entreprise dans le même projet.
 
 Une zone peut être définie comme la plus petite des unités fonctionnelles dans un projet ASP.NET MVC de base avec son propre ensemble de modèles, des vues et des contrôleurs.
 
@@ -133,8 +133,9 @@ Définir une définition d’itinéraire qui fonctionne avec vos zones nouvellem
 ...
    app.UseMvc(routes =>
    {
-     routes.MapRoute(name: "areaRoute",
-       template: "{area:exists}/{controller=Home}/{action=Index}");
+     routes.MapRoute(
+         name: "areaRoute",
+         template: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
 
      routes.MapRoute(
          name: "default",
