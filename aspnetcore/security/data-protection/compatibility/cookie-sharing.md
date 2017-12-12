@@ -1,7 +1,7 @@
 ---
 title: Partage des cookies entre des applications
 author: rick-anderson
-description: 
+description: "Ce document explique comment la pile de protection de données prend en charge le partage des cookies d’authentification entre ASP.NET 4.x et les applications ASP.NET Core."
 keywords: Core,ASP.NET,cookies,Interop,cookie ASP.NET de partage
 ms.author: riande
 manager: wpickett
@@ -11,11 +11,11 @@ ms.assetid: 9a7aae45-8e21-4c54-950c-3c29df6c1082
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/compatibility/cookie-sharing
-ms.openlocfilehash: dbf52b0a990a3627b8eded22db033c45d51ba6ad
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: e92cc81f9362787b7b4bfb44ba26b82182826a59
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="sharing-cookies-between-applications"></a>Partage des cookies entre des applications
 
@@ -27,28 +27,28 @@ Pour prendre en charge ce scénario, la pile de protection des données permet d
 
 Pour partager des cookies d’authentification entre deux applications ASP.NET Core différents, configurez chaque application qui doit partager les cookies comme suit.
 
-Dans votre configuration méthode utilisent les CookieAuthenticationOptions pour configurer le service de protection des données pour les cookies et le AuthenticationScheme pour correspondre à ASP.NET 4.X.
+Dans votre configuration de méthode, les CookieAuthenticationOptions permet de configurer le service de protection des données pour les cookies et le AuthenticationScheme pour correspondre à ASP.NET 4.x.
 
 Si vous utilisez des identités :
 
 ```csharp
 app.AddIdentity<ApplicationUser, IdentityRole>(options =>
-   {
-       options.Cookies.ApplicationCookie.AuthenticationScheme = "ApplicationCookie";
-       var protectionProvider = DataProtectionProvider.Create(new DirectoryInfo(@"c:\shared-auth-ticket-keys\"));
-       options.Cookies.ApplicationCookie.DataProtectionProvider = protectionProvider;
-       options.Cookies.ApplicationCookie.TicketDataFormat = new TicketDataFormat(protectionProvider.CreateProtector("Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationMiddleware", "Cookies", "v2"));
-   });
-   ```
+{
+    options.Cookies.ApplicationCookie.AuthenticationScheme = "ApplicationCookie";
+    var protectionProvider = DataProtectionProvider.Create(new DirectoryInfo(@"c:\shared-auth-ticket-keys\"));
+    options.Cookies.ApplicationCookie.DataProtectionProvider = protectionProvider;
+    options.Cookies.ApplicationCookie.TicketDataFormat = new TicketDataFormat(protectionProvider.CreateProtector("Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationMiddleware", "Cookies", "v2"));
+});
+```
 
 Si vous utilisez des cookies directement :
 
 ```csharp
 app.UseCookieAuthentication(new CookieAuthenticationOptions
-   {
-       DataProtectionProvider = DataProtectionProvider.Create(new DirectoryInfo(@"c:\shared-auth-ticket-keys\"))
-   });
-   ```
+{
+    DataProtectionProvider = DataProtectionProvider.Create(new DirectoryInfo(@"c:\shared-auth-ticket-keys\"))
+});
+```
    
 Le `DataProtectionProvider` requiert le `Microsoft.AspNetCore.DataProtection.Extensions` package NuGet.
 
@@ -97,20 +97,20 @@ Pour partager des cookies d’authentification entre vos applications de 4.x ASP
 
     ```csharp
     app.UseCookieAuthentication(new CookieAuthenticationOptions
-       {
-           AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
-           CookieName = ".AspNetCore.Cookies",
-           // CookieName = ".AspNetCore.ApplicationCookie", (if you're using identity)
-           // CookiePath = "...", (if necessary)
-           // ...
-           TicketDataFormat = new AspNetTicketDataFormat(
-               new DataProtectorShim(
-                   DataProtectionProvider.Create(new DirectoryInfo(@"c:\shared-auth-ticket-keys\"))
-                   .CreateProtector("Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationMiddleware",
-                   "Cookies", "v2"))),
-           CookieManager = new ChunkingCookieManager()
-       });
-       ```
+    {
+        AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
+        CookieName = ".AspNetCore.Cookies",
+        // CookieName = ".AspNetCore.ApplicationCookie", (if you're using identity)
+        // CookiePath = "...", (if necessary)
+        // ...
+        TicketDataFormat = new AspNetTicketDataFormat(
+            new DataProtectorShim(
+                DataProtectionProvider.Create(new DirectoryInfo(@"c:\shared-auth-ticket-keys\"))
+                .CreateProtector("Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationMiddleware",
+                "Cookies", "v2"))),
+        CookieManager = new ChunkingCookieManager()
+    });
+    ```
     DirectoryInfo doit pointer vers le même emplacement de stockage que vous pointe de votre application ASP.NET Core et devez être configuré avec les mêmes paramètres.
 
 ASP.NET 4.x et les applications ASP.NET Core sont désormais configurées pour partager des cookies d’authentification.

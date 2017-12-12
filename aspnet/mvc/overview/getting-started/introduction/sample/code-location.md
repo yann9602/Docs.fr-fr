@@ -1,0 +1,2 @@
+> [!NOTE]
+> Ce document fait partie de la [mise en route avec ASP.NET MVC 5](xref:mvc/overview/getting-started/introduction/getting-started) didacticiel. Dernière Source pour le didacticiel située sur [GitHub](https://github.com/aspnet/Docs/tree/master/aspnet/mvc/overview/getting-started/introduction/sample/MvcMovie/MvcMovie)

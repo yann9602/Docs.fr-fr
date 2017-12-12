@@ -2,7 +2,7 @@
 title: "À l’aide de Bower dans ASP.NET Core"
 author: rick-anderson
 description: "Gestion des packages Bower côté client."
-keywords: ASP.NET Core, bower
+keywords: ASP.NET Core, Bower
 ms.author: riande
 manager: wpickett
 ms.date: 02/14/2017
@@ -12,11 +12,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/bower
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: f5d9acc59b6f40dc8a336f59925d639fff007c4e
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: 183e748cbf87b1973941eacb3fb1008f4041bb2a
+ms.sourcegitcommit: 532a323f99a37c4d7894c95cee3f7a04b594dcec
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="manage-client-side-packages-with-bower-in-aspnet-core"></a>Gérer les packages côté client avec Bower dans ASP.NET Core
 
@@ -36,7 +36,7 @@ Dans ce didacticiel, nous allons ajouter la prise en charge de [police impressio
 
 * Cliquez sur le projet dans l’Explorateur de solutions et sélectionnez **gérer les Packages Bower** (également dans le menu principal, **projet** > **gérer les Packages Bower**).
 
-* Dans le **Bower : \<nom du projet\> ** fenêtre, cliquez sur l’onglet « Parcourir », puis filtrer la liste de packages en entrant `font-awesome` dans la zone de recherche :
+* Dans le **Bower : \<nom du projet\>**  fenêtre, cliquez sur l’onglet « Parcourir », puis filtrer la liste de packages en entrant `font-awesome` dans la zone de recherche :
 
  ![gérer les packages bower](bower/_static/manage-bower-packages.png)
 
@@ -78,7 +78,7 @@ Exécutez l’application et accédez à la vue à propos de pour vérifier le f
 
 ## <a name="exploring-the-client-side-build-process"></a>Explorer le processus de génération du côté client
 
-La plupart des modèles de projet ASP.NET Core sont déjà configurés pour utiliser Bower. Cette procédure pas à pas suivante commence par un projet ASP.NET Core vide et ajoute chaque élément manuellement, vous pouvez obtenir une idée pour l’utilisation de Bower dans un projet. Vous voyez peuvent devenir de la structure de projet et de l’exécution sous forme de chaque modification de la configuration est effectuée.
+La plupart des modèles de projet ASP.NET Core sont déjà configurés pour utiliser Bower. Cette procédure pas à pas suivante commence par un projet ASP.NET Core vide et ajoute chaque élément manuellement, vous pouvez obtenir une idée pour l’utilisation de Bower dans un projet. Vous pouvez voir ce qui arrive à la structure de projet et l’exécution de chaque configuration est modifié de sortie.
 
 Les étapes générales à utiliser le processus de génération de côté client avec Bower sont :
 

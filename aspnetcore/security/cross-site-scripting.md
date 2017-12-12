@@ -1,8 +1,8 @@
 ---
 title: "Empêche le script entre sites"
 author: rick-anderson
-description: 
-keywords: ASP.NET Core,
+description: "Ce document présente l’écriture de scripts entre sites (XSS) et techniques pour traiter cette vulnérabilité dans une application ASP.NET Core."
+keywords: "Vulnérabilité de ASP.NET Core, XSS,"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
@@ -11,15 +11,15 @@ ms.assetid: 95790927-2bfe-445e-b1fd-429c2c7030ce
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/cross-site-scripting
-ms.openlocfilehash: 1816977837efd82f374a03d9f776db21358e2850
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: fdb26a8338b98135cfc3f6bce9d87285e9a7eb12
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="preventing-cross-site-scripting"></a>Empêche le script entre sites
 
-<a name=security-cross-site-scripting></a>
+De [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 Écriture de scripts entre sites (XSS) est une faille de sécurité qui permet à un attaquant d’installer les scripts côté client (généralement JavaScript) dans les pages web. Lorsque vous chargez des pages concernées, les scripts des personnes malveillantes s’exécutent les autres utilisateurs, l’activation de la personne malveillante de voler des cookies et des jetons, modifier le contenu de la page web via la manipulation du modèle DOM ou rediriger le navigateur vers une autre page. Vulnérabilités XSS se produisent généralement lorsqu’une application accepte l’entrée utilisateur et génère dans une page sans validation, d’encodage ou d’échappement.
 
@@ -183,7 +183,7 @@ Après le codage du encodedValue variable contiendra `%22Quoted%20Value%20with%2
 >[!WARNING]
 > N’utilisez pas d’entrée non fiable dans le cadre d’un chemin d’accès URL. Toujours passer entrée non fiable en tant que valeur de chaîne de requête.
 
-<a name=security-cross-site-scripting-customization></a>
+<a name="security-cross-site-scripting-customization"></a>
 
 ## <a name="customizing-the-encoders"></a>Personnaliser les encodeurs
 

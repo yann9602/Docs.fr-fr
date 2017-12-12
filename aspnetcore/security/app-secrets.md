@@ -10,23 +10,23 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/app-secrets
-ms.openlocfilehash: 280819a6a0afb72311f0d50f7d3b83a942e9fcc3
-ms.sourcegitcommit: e3b1726cc04e80dc28464c35259edbd3bc39a438
+ms.openlocfilehash: 897d9b360ceeb5fbb0863ff1c1fcec039e1a8b8f
+ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="safe-storage-of-app-secrets-during-development-in-aspnet-core"></a>Stockage sécurisé des secrets d’application pendant le développement dans ASP.NET Core
 
 Par [Rick Anderson](https://twitter.com/RickAndMSFT), [Michel Roth](https://github.com/danroth27), et [Scott Addie](https://scottaddie.com) 
 
-Ce document montre comment vous pouvez utiliser l’outil Gestionnaire de la clé secrète dans le développement de conserver les clés secrètes en dehors de votre code. Le point le plus important est de vous ne devez jamais stocker les mots de passe ou d’autres données sensibles dans le code source, et vous ne devez pas utiliser les clés secrètes de production en mode de développement et de test. Vous pouvez utiliser à la place la [configuration](../fundamentals/configuration.md) système à lire ces valeurs à partir de variables d’environnement ou à partir de valeurs stockées à l’aide du Gestionnaire de Secret outil. L’outil Gestionnaire de Secret empêche les données sensibles en cours de vérification dans le contrôle de code source. Le [configuration](../fundamentals/configuration.md) système peut lire les clés secrètes stockées avec l’outil Gestionnaire de la clé secrète décrit dans cet article.
+Ce document montre comment vous pouvez utiliser l’outil Gestionnaire de la clé secrète dans le développement de conserver les clés secrètes en dehors de votre code. Le point le plus important est de vous ne devez jamais stocker les mots de passe ou d’autres données sensibles dans le code source, et vous ne devez pas utiliser les clés secrètes de production en mode de développement et de test. Vous pouvez utiliser à la place la [configuration](xref:fundamentals/configuration/index) système à lire ces valeurs à partir de variables d’environnement ou à partir de valeurs stockées à l’aide du Gestionnaire de Secret outil. L’outil Gestionnaire de Secret empêche les données sensibles en cours de vérification dans le contrôle de code source. Le [configuration](xref:fundamentals/configuration/index) système peut lire les clés secrètes stockées avec l’outil Gestionnaire de la clé secrète décrit dans cet article.
 
 L’outil Gestionnaire de la clé secrète est utilisée uniquement dans le développement. Vous pouvez protéger des secrets de test et de production Azure avec la [Microsoft Azure Key Vault](https://azure.microsoft.com/services/key-vault/) fournisseur de configuration. Consultez [fournisseur de configuration d’Azure Key Vault](https://docs.microsoft.com/aspnet/core/security/key-vault-configuration) pour plus d’informations.
 
 ## <a name="environment-variables"></a>Variables d’environnement
 
-Pour éviter de stocker des secrets de l’application dans le code ou dans les fichiers de configuration local, vous stockez des secrets dans des variables d’environnement. Vous pouvez configurer le [configuration](../fundamentals/configuration.md) framework pour lire les valeurs de variables d’environnement en appelant `AddEnvironmentVariables`. Vous pouvez ensuite utiliser des variables d’environnement pour remplacer des valeurs de configuration pour toutes les sources de configuration spécifié précédemment.
+Pour éviter de stocker des secrets de l’application dans le code ou dans les fichiers de configuration local, vous stockez des secrets dans des variables d’environnement. Vous pouvez configurer le [configuration](xref:fundamentals/configuration/index) framework pour lire les valeurs de variables d’environnement en appelant `AddEnvironmentVariables`. Vous pouvez ensuite utiliser des variables d’environnement pour remplacer des valeurs de configuration pour toutes les sources de configuration spécifié précédemment.
 
 Par exemple, si vous créez une application web ASP.NET Core avec les comptes d’utilisateur individuels, il ajoutera une chaîne de connexion par défaut pour le *appsettings.json* fichier dans le projet avec la clé `DefaultConnection`. La chaîne de connexion par défaut est configuré pour utiliser la base de données locale, qui s’exécute en mode utilisateur et ne nécessite pas un mot de passe. Lorsque vous déployez votre application sur un serveur de test ou de production, vous pouvez remplacer le `DefaultConnection` valeur de la clé avec un paramètre de variable d’environnement qui contient la chaîne de connexion (avec éventuellement des informations d’identification sensibles) pour une base de données de test ou de production serveur.
 
@@ -127,4 +127,4 @@ Vous ne devez pas écrire le code qui dépend de l’emplacement ou le format de
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-* [Configuration](../fundamentals/configuration.md)
+* [Configuration](xref:fundamentals/configuration/index)

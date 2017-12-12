@@ -1,8 +1,8 @@
 ---
 title: "Autorisation basée sur les rôles"
 author: rick-anderson
-description: 
-keywords: ASP.NET Core,
+description: "Ce document montre comment restreindre l’accès de contrôleur et d’action ASP.NET Core en passant des rôles à l’attribut Authorize."
+keywords: "ASP.NET Core, l’autorisation, rôles"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
@@ -11,23 +11,23 @@ ms.assetid: 5e014da1-8bc0-409b-951a-88b92c661fdf
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authorization/roles
-ms.openlocfilehash: 1dc76f316b70d486febe386cc47cd1f843d8d8e3
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: 649b21d99c742843534748b0ba9d7b7b22483a62
+ms.sourcegitcommit: 703593d5fd14076e79be2ba75a5b8da12a60ab15
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 12/05/2017
 ---
 # <a name="role-based-authorization"></a>Autorisation basée sur les rôles
 
-<a name=security-authorization-role-based></a>
+<a name="security-authorization-role-based"></a>
 
-Lors de la création d’une identité, elle peut appartenir à un ou plusieurs rôles, par exemple Tracy mon peut appartenir aux rôles administrateur et utilisateur tandis que Scott peut uniquement appartenir au rôle d’utilisateur. Comment ces rôles sont créés et gérés varient selon le magasin de stockage du processus d’autorisation. Les rôles sont exposés au développeur via les [IsInRole](https://docs.microsoft.com/dotnet/api/system.security.principal.genericprincipal.isinrole) propriété sur le [ClaimsPrincipal](https://docs.microsoft.com/dotnet/api/system.security.claims.claimsprincipal) classe.
+Lorsqu’une identité est créée, elle peut appartenir à un ou plusieurs rôles. Par exemple, Tracy mon peut appartenir aux rôles administrateur et utilisateur tandis que Scott peut uniquement appartenir au rôle d’utilisateur. Comment ces rôles sont créés et gérés varient selon le magasin de stockage du processus d’autorisation. Les rôles sont exposés au développeur via les [IsInRole](https://docs.microsoft.com/dotnet/api/system.security.principal.genericprincipal.isinrole) méthode sur le [ClaimsPrincipal](https://docs.microsoft.com/dotnet/api/system.security.claims.claimsprincipal) classe.
 
 ## <a name="adding-role-checks"></a>Ajout de contrôles de rôle
 
-Vérifications d’autorisation basé sur les rôles sont déclaratives - le développeur les incorpore dans leur code, par rapport à un contrôleur ou une action dans un contrôleur, en spécifiant des rôles auxquels l’utilisateur actuel doit être un membre d’accéder à la ressource demandée.
+Vérifications d’autorisation basé sur les rôles sont déclaratives&mdash;le développeur les incorpore dans leur code, par rapport à un contrôleur ou une action dans un contrôleur, en spécifiant des rôles auxquels l’utilisateur actuel doit être un membre d’accéder à la ressource demandée.
 
-Par exemple le code suivant limite l’accès à toutes les actions sur le `AdministrationController` aux utilisateurs qui sont membres de le `Administrator` groupe.
+Par exemple, le code suivant limite l’accès à toutes les actions sur le `AdministrationController` aux utilisateurs qui sont membres de le `Administrator` groupe.
 
 ```csharp
 [Authorize(Roles = "Administrator")]
@@ -36,7 +36,7 @@ public class AdministrationController : Controller
 }
 ```
 
-Vous pouvez spécifier plusieurs rôles comme une liste séparée par des virgules ;
+Vous pouvez spécifier plusieurs rôles comme une liste séparée par des virgules :
 
 ```csharp
 [Authorize(Roles = "HRManager,Finance")]
@@ -57,7 +57,7 @@ public class ControlPanelController : Controller
 }
 ```
 
-Vous pouvez également limiter l’accès en appliquant des attributs d’autorisation de rôle supplémentaires au niveau action ;
+Vous pouvez également limiter l’accès en appliquant des attributs d’autorisation de rôle supplémentaires au niveau de l’action :
 
 ```csharp
 [Authorize(Roles = "Administrator, PowerUser")]
@@ -93,7 +93,7 @@ public class ControlPanelController : Controller
 }
 ```
 
-<a name=security-authorization-role-policy></a>
+<a name="security-authorization-role-policy"></a>
 
 ## <a name="policy-based-role-checks"></a>Contrôles de rôle basée sur la stratégie
 
@@ -111,7 +111,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-Les stratégies sont appliquées à l’aide de la `Policy` propriété sur le `AuthorizeAttribute` d’attribut ;
+Les stratégies sont appliquées à l’aide de la `Policy` propriété sur le `AuthorizeAttribute` attribut :
 
 ```csharp
 [Authorize(Policy = "RequireAdministratorRole")]
@@ -121,7 +121,7 @@ public IActionResult Shutdown()
 }
 ```
 
-Si vous souhaitez spécifier plusieurs rôles autorisés dans une spécification, vous pouvez les spécifier en tant que paramètres à la `RequireRole` méthode ;
+Si vous souhaitez spécifier plusieurs rôles autorisés dans une spécification, vous pouvez les spécifier en tant que paramètres à la `RequireRole` méthode :
 
 ```csharp
 options.AddPolicy("ElevatedRights", policy =>

@@ -12,7 +12,7 @@ Le tableau suivant répertorie les fichiers et dossiers du projet. Pour ce didac
 | ----------------- | ------------ | 
 | wwwroot | Contient des fichiers statiques. Voir [Utilisation des fichiers statiques](xref:fundamentals/static-files). |
 | Pages | Dossier pour [Pages Razor](xref:mvc/razor-pages/index). | 
-| *appsettings.json* | [Configuration](xref:fundamentals/configuration) |
+| *appsettings.json* | [Configuration](xref:fundamentals/configuration/index) |
 | *bower.json* | Gestion des packages côté client. Voir [Bower](xref:client-side/bower).|
 | *Program.cs* | [Héberge](xref:fundamentals/hosting) l’application ASP.NET Core.|
 | *Startup.cs* | Configure les services et le pipeline de requête. Voir [Démarrage](xref:fundamentals/startup).|

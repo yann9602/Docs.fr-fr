@@ -12,21 +12,21 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/dependency-injection
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: f5c903a72d004afac55fbcc04ad157442e7a18ee
-ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
+ms.openlocfilehash: 8d12960708f9d9bf2bc7c5997f82096d93087d13
+ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="introduction-to-dependency-injection-in-aspnet-core"></a>Introduction à l’Injection de dépendances dans ASP.NET Core
 
-<a name=fundamentals-dependency-injection></a>
+<a name="fundamentals-dependency-injection"></a>
 
 Par [Steve Smith](https://ardalis.com/) et [Scott Addie](https://scottaddie.com)
 
 ASP.NET Core est conçu de toutes pièces pour prendre en charge et de tirer parti de l’injection de dépendances. Les applications ASP.NET Core peuvent tirer parti des services d’infrastructure intégrée par comportant injectées dans les méthodes de la classe de démarrage, et les services d’application peuvent être configurés pour l’injection d’également. Le conteneur de services par défaut fourni par ASP.NET Core fournit une fonctionnalité minimale définie et n’est pas destinée à remplacer les autres conteneurs.
 
-[Afficher ou télécharger l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/dependency-injection/sample) ([comment télécharger](xref:tutorials/index#how-to-download-a-sample))
+[Affichez ou téléchargez l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/dependency-injection/sample) ([procédure de téléchargement](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="what-is-dependency-injection"></a>Nouveautés d’Injection de dépendance ?
 
@@ -143,7 +143,7 @@ Contextes d’Entity Framework doivent être ajoutés pour le conteneur de servi
 >[!WARNING]
 > Risque de vous méfier du principal résout un `Scoped` service depuis un singleton. Il est probable dans ce cas que le service aura état incorrect lors du traitement des demandes suivantes.
 
-Les services qui ont des dépendances doivent les enregistrer dans le conteneur. Si le constructeur d’un service nécessite un type primitif, comme un `string`, cela peut être ajoutée à l’aide de la [des options de modèle et configuration](configuration.md).
+Les services qui ont des dépendances doivent les enregistrer dans le conteneur. Si le constructeur d’un service nécessite un type primitif, tel qu’un `string`, cela peut être ajoutée à l’aide de [configuration](xref:fundamentals/configuration/index) et [modèle d’options](xref:fundamentals/configuration/options).
 
 ## <a name="service-lifetimes-and-registration-options"></a>Durée de vie du service et les Options d’enregistrement
 
@@ -228,11 +228,16 @@ public class Service1 : IDisposable {}
 public class Service2 : IDisposable {}
 public class Service3 : IDisposable {}
 
+public interface ISomeService {}
+public class SomeServiceImplementation : ISomeService, IDisposable {}
+
+
 public void ConfigureServices(IServiceCollection services)
 {
     // container will create the instance(s) of these types and will dispose them
     services.AddScoped<Service1>();
     services.AddSingleton<Service2>();
+    services.AddSingleton<ISomeService>(sp => new SomeServiceImplementation());
 
     // container did not create instance so it will NOT dispose it
     services.AddSingleton<Service3>(new Service3());
@@ -296,7 +301,7 @@ Lorsque vous travaillez avec l’injection de dépendances, gardez à l’esprit
 
 * DI est pour les objets qui ont des dépendances complexes. Contrôleurs, des services, des adaptateurs et des référentiels sont des exemples d’objets qui peuvent être ajoutés à DI.
 
-* Évitez de stocker des données et configuration directement dans DI. Par exemple, panier d’achat d’un utilisateur ne doit pas généralement ajouté au conteneur de services. Configuration doit utiliser le [Options modèle](configuration.md#options-config-objects). De même, évitez d’objets « détenteur de données » qui n’existent que pour autoriser l’accès à un autre objet. Il est préférable de demander l’élément réel nécessaire via DI, si possible.
+* Évitez de stocker des données et configuration directement dans DI. Par exemple, panier d’achat d’un utilisateur ne doit pas généralement ajouté au conteneur de services. Configuration doit utiliser le [modèle d’options](xref:fundamentals/configuration/options). De même, évitez d’objets « détenteur de données » qui n’existent que pour autoriser l’accès à un autre objet. Il est préférable de demander l’élément réel nécessaire via DI, si possible.
 
 * Évitez l’accès aux services statiques.
 

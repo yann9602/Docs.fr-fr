@@ -5,20 +5,20 @@ description: "Montre comment créer une application ASP.NET Core à la réinitia
 keywords: "ASP.NET Core, mot de passe réinitialisé, e-mail de confirmation, sécurité"
 ms.author: riande
 manager: wpickett
-ms.date: 07/19/2017
+ms.date: 12/1/2017
 ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/accconfirm
-ms.openlocfilehash: b05dd2fee50f6cc96058971daa42b069dbb6d21d
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: 955064122d2335016c7eb3dd7451b14106a3b83f
+ms.sourcegitcommit: 6e46abd65973dea796d364a514de9ec2e3e1c1ed
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="account-confirmation-and-password-recovery-in-aspnet-core"></a>Confirmation du compte et récupération de mot de passe dans ASP.NET Core
 
-De [Rick Anderson](https://twitter.com/RickAndMSFT)
+Par [Rick Anderson](https://twitter.com/RickAndMSFT) et [Joe Audette](https://twitter.com/joeaudette) 
 
 Ce didacticiel vous montre comment créer une application ASP.NET Core à la réinitialisation par courrier électronique de confirmation et le mot de passe.
 
@@ -117,7 +117,7 @@ La ligne précédente empêche les utilisateurs enregistrés d’étant connect�
 
 Dans ce didacticiel, SendGrid est utilisé pour envoyer un courrier électronique. Vous avez besoin d’un compte SendGrid et une clé pour envoyer un courrier électronique. Vous pouvez utiliser d’autres fournisseurs de messagerie. ASP.NET Core 2.x inclut `System.Net.Mail`, qui vous permet d’envoyer par courrier électronique à partir de votre application. Nous vous recommandons de qu'utiliser SendGrid ou un autre service de messagerie pour envoyer un courrier électronique.
 
-Le [modèle d’Options](xref:fundamentals/configuration#options-config-objects) est utilisé pour accéder aux paramètres de compte et une clé utilisateur. Pour plus d’informations, consultez [configuration](xref:fundamentals/configuration).
+Le [modèle d’Options](xref:fundamentals/configuration/options) est utilisé pour accéder aux paramètres de compte et une clé utilisateur. Pour plus d’informations, consultez [configuration](xref:fundamentals/configuration/index).
 
 Créez une classe pour extraire la clé de sécuriser la messagerie électronique. Pour cet exemple, le `AuthMessageSenderOptions` classe est créée dans le *Services/AuthMessageSenderOptions.cs* fichier.
 
@@ -195,6 +195,8 @@ await _signInManager.SignInAsync(user, isPersistent: false);
 La méthode complète s’affiche avec la ligne modifiée mis en surbrillance :
 
 [!code-csharp[Main](accconfirm/sample/WebPW/Controllers/AccountController.cs?highlight=19&name=snippet_Register)]
+
+Remarque : Le code précédent échoue si vous implémentez `IEmailSender` et envoyez un courrier électronique en texte brut. Consultez [ce problème](https://github.com/aspnet/Home/issues/2152) pour plus d’informations et une solution de contournement.
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 

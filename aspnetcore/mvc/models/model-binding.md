@@ -11,11 +11,11 @@ ms.assetid: b355a48e-a15c-4d58-b69c-899763613a97
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/models/model-binding
-ms.openlocfilehash: 92085829d2a37a2aa6080aeb34a5e14be95e02d8
-ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
+ms.openlocfilehash: 40aa105dcf06b269025d0c44e5cd7bffef271e9d
+ms.sourcegitcommit: fe880bf4ed1c8116071c0e47c0babf3623b7f44a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="model-binding"></a>Liaison de modèle
 
@@ -61,9 +61,19 @@ Jusqu'à présent, l’exemple utilise des types simples. Dans MVC types simples
 
 Dans l’ordre de liaison doit se produire la classe doit avoir un constructeur public par défaut et les membres d’être lié doivent être publiques propriétés accessibles en écriture. Lors de la liaison de modèle se produit, que la classe sera uniquement être instanciée en utilisant le constructeur public par défaut, les propriétés peuvent être définies.
 
-Lorsqu’un paramètre est lié, liaison de modèle arrête la recherche de valeurs portant ce nom et elle passe à lier le paramètre suivant. Si la liaison échoue, MVC ne lève pas une erreur. Vous pouvez rechercher les erreurs de modèle d’état en vérifiant la `ModelState.IsValid` propriété.
+Lorsqu’un paramètre est lié, liaison de modèle arrête la recherche de valeurs portant ce nom et elle passe à lier le paramètre suivant. Sinon, le comportement de liaison de modèle par défaut définit les paramètres à leurs valeurs par défaut en fonction de leur type :
 
-Remarque : Chaque entrée dans le contrôleur de `ModelState` propriété est un `ModelStateEntry` contenant un `Errors property`. Il est rarement nécessaire interroger cette collection vous-même. Utilisez plutôt `ModelState.IsValid` .
+* `T[]`: À l’exception des tableaux de type `byte[]`, liaison définit les paramètres de type `T[]` à `Array.Empty<T>()`. Les tableaux de type `byte[]` ont la valeur `null`.
+
+* Types de référence : Liaison crée une instance d’une classe avec le constructeur par défaut sans définir ses propriétés. Toutefois, les jeux de liaison de modèle `string` paramètres `null`.
+
+* Types Nullable : Les types Nullable sont définies sur `null`. Dans l’exemple ci-dessus, les jeux de liaison de modèle `id` à `null` car il est de type `int?`.
+
+* : Les Types de valeur les types valeur Non nullable de type `T` ont la valeur `default(T)`. Par exemple, liaison de modèle définit un paramètre `int id` à 0. Pensez à l’aide de la validation des modèles ou des types nullable au lieu de s’appuyer sur les valeurs par défaut.
+
+Si la liaison échoue, MVC ne lève pas une erreur. Chaque action qui accepte une entrée d’utilisateur doit vérifier le `ModelState.IsValid` propriété.
+
+Remarque : Chaque entrée dans le contrôleur de `ModelState` propriété est un `ModelStateEntry` contenant un `Errors` propriété. Il est rarement nécessaire interroger cette collection vous-même. Utilisez plutôt `ModelState.IsValid` .
 
 En outre, il existe de certains types de données spéciaux que MVC doit prendre en compte lors de la liaison de modèle :
 

@@ -1,26 +1,24 @@
 ---
 title: "Réponse mise en cache d’intergiciel (middleware) dans ASP.NET Core"
 author: guardrex
-description: "Configuration et utilisation de l’intergiciel (middleware) de réponse mise en cache dans les applications ASP.NET Core."
-keywords: "ASP.NET Core, réponse mise en cache, la mise en cache, ResponseCache, ResponseCaching, Cache-Control, VaryByQueryKeys, intergiciel (middleware)"
+description: "Découvrez comment configurer et utiliser un intergiciel (middleware) de réponse mise en cache dans les applications ASP.NET Core."
 ms.author: riande
 manager: wpickett
 ms.date: 08/22/2017
 ms.topic: article
-ms.assetid: f9267eab-2762-42ac-1638-4a25d2c9d67c
 ms.prod: asp.net-core
 uid: performance/caching/middleware
-ms.openlocfilehash: bc3350a7ef15c5c38aa072bab15cbddc7d0ee0fa
-ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
+ms.openlocfilehash: f3312d0c333b47169c71891eea79f03be0abcfa3
+ms.sourcegitcommit: 216dfac27542f10a79274a9ce60dc449e888ed20
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="response-caching-middleware-in-aspnet-core"></a>Réponse mise en cache d’intergiciel (middleware) dans ASP.NET Core
 
 Par [Luke Latham](https://github.com/guardrex) et [John Luo](https://github.com/JunTaoLuo)
 
-[Afficher ou télécharger l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/middleware/samples) ([comment télécharger](xref:tutorials/index#how-to-download-a-sample))
+[Affichez ou téléchargez l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/middleware/samples) ([procédure de téléchargement](xref:tutorials/index#how-to-download-a-sample))
 
 Ce document fournit des détails sur la configuration de l’intergiciel (middleware) réponse mise en cache dans les applications ASP.NET Core. L’intergiciel (middleware) détermine quand les réponses sont mis en cache, les réponses de magasins et sert des réponses à partir du cache. Pour obtenir une présentation de la mise en cache HTTP et le `ResponseCache` d’attribut, consultez [réponse mise en cache](response.md).
 
@@ -112,13 +110,13 @@ L’intergiciel (middleware) respecte les règles de la [spécification de la mi
 
 [Améliorations futures de l’intergiciel (middleware)](https://github.com/aspnet/ResponseCaching/issues/96) autorise la configuration de l’intergiciel (middleware) pour mettre en cache des scénarios où la demande `Cache-Control` en-tête doit être ignoré lorsque vous décidez de traiter une réponse mise en cache. Si vous recherchez davantage de contrôle sur le comportement de mise en cache, Explorer d’autres fonctionnalités de mise en cache de ASP.NET Core. Consultez les rubriques suivantes :
 
-* [Introduction à la mise en cache dans ASP.NET Core](xref:performance/caching/memory)
+* [La mise en cache en mémoire](xref:performance/caching/memory)
 * [Utilisation avec un cache distribué](xref:performance/caching/distributed)
 * [Mettre en cache d’assistance de balise dans le cœur d’ASP.NET MVC](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
 * [Application d’assistance de balise de Cache distribué](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)
 
 ## <a name="troubleshooting"></a>Résolution des problèmes
-Si le comportement de mise en cache n’est pas comme prévu, vérifiez que les réponses sont mis en cache et capable de servies à partir du cache en examinant les en-têtes entrants de la demande et la réponse sortante. L’activation de [journalisation](xref:fundamentals/logging) peut aider lors du débogage. Les journaux d’intergiciel (middleware) quand une réponse est récupérée à partir du cache et comportement de mise en cache.
+Si le comportement de mise en cache n’est pas comme prévu, vérifiez que les réponses sont mis en cache et capable de servies à partir du cache en examinant les en-têtes entrants de la demande et la réponse sortante. L’activation de [journalisation](xref:fundamentals/logging/index) peut aider lors du débogage. Les journaux d’intergiciel (middleware) quand une réponse est récupérée à partir du cache et comportement de mise en cache.
 
 Lorsque les tests et le dépannage du comportement de mise en cache, un navigateur peut définir les en-têtes de demande qui affectent la mise en cache comme indésirables. Par exemple, un navigateur peut-être définir le `Cache-Control` en-tête `no-cache` lorsque vous actualisez la page. Les outils suivants peuvent définir explicitement les en-têtes de demande et sont recommandés pour le test de la mise en cache :
 
@@ -148,3 +146,9 @@ Lorsque les tests et le dépannage du comportement de mise en cache, un navigate
 
 * [Démarrage d’une application](xref:fundamentals/startup)
 * [Intergiciel (middleware)](xref:fundamentals/middleware)
+* [La mise en cache en mémoire](xref:performance/caching/memory)
+* [Utilisation avec un cache distribué](xref:performance/caching/distributed)
+* [Détection des modifications avec modification de jetons](xref:fundamentals/primitives/change-tokens)
+* [Mise en cache des réponses](xref:performance/caching/response)
+* [Application d’assistance de balise de cache](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
+* [Application d’assistance de balise de Cache distribué](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)

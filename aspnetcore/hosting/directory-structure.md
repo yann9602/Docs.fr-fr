@@ -11,11 +11,11 @@ ms.assetid: e55eb131-d42e-4bf6-b130-fd626082243c
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: hosting/directory-structure
-ms.openlocfilehash: f406d866bb1c8ac2d4371c8ddf669fc08af0fada
-ms.sourcegitcommit: 8005eb4051e568d88ee58d48424f39916052e6e2
+ms.openlocfilehash: 60797bff85a44dd10caad4aabc109ee12dedfe61
+ms.sourcegitcommit: 7efdc4b6025ad70c15c26bf7451c3c0411123794
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="directory-structure-of-published-aspnet-core-apps"></a>Structure de répertoires d’applications ASP.NET Core publiées
 
@@ -32,12 +32,16 @@ Dans ASP.NET Core, le répertoire de l’application, *publier*, est constitué 
 Le contenu de la *publier* répertoire représente le *chemin d’accès racine du contenu*, également appelé le *chemin de base d’application*, du déploiement. Le nom est donné à la *publier* active dans le déploiement, son emplacement sert de chemin d’accès physique à celle du serveur à l’application hébergée. Le *wwwroot* active, le cas échéant, contient uniquement des éléments statiques. Le *journaux* répertoire peut être inclus dans le déploiement en créant dans le projet et en ajoutant le `<Target>` élément ci-dessous pour votre *.csproj* fichier ou en créer physiquement le répertoire sur le serveur.
 
 ```xml
-<Target Name="CreateLogsFolder" AfterTargets="AfterPublish">
-  <MakeDir Directories="$(PublishDir)logs" Condition="!Exists('$(PublishDir)logs')" />
-  <MakeDir Directories="$(PublishUrl)Logs" Condition="!Exists('$(PublishUrl)Logs')" />
+<Target Name="CreateLogsFolder" AfterTargets="Publish">
+  <MakeDir Directories="$(PublishDir)Logs" 
+           Condition="!Exists('$(PublishDir)Logs')" />
+  <WriteLinesToFile File="$(PublishDir)Logs\.log" 
+                    Lines="Generated file" 
+                    Overwrite="True" 
+                    Condition="!Exists('$(PublishDir)Logs\.log')" />
 </Target>
 ```
 
-La première `<MakeDir>` élément, qui utilise le `PublishDir` propriété, est utilisée par l’interface de ligne de base de .NET pour déterminer l’emplacement cible pour l’opération de publication. La seconde `<MakeDir>` élément, qui utilise le `PublishUrl` propriété, est utilisée par Visual Studio pour déterminer l’emplacement cible. Visual Studio utilise le `PublishUrl` propriété pour la compatibilité avec les projets non .NET Core.
+Le `<MakeDir>` élément crée vide *journaux* dossier dans le projet publié. L’élément utilise le `PublishDir` propriété pour déterminer l’emplacement cible pour la création du dossier. Plusieurs méthodes de déploiement, telles que Web Deploy, ignorent les dossiers vides pendant le déploiement. Le `<WriteLinesToFile>` élément génère un fichier dans le *journaux* dossier, ce qui garantit le déploiement du dossier sur le serveur. Notez que la création du dossier peut-être encore échouer si le processus de travail n’a pas accès en écriture dans le dossier cible.
 
 Le répertoire de déploiement requiert des autorisations de lecture et d’exécution, tandis que la *journaux* directory nécessite des autorisations de lecture/écriture. Autres répertoires où seront écrit les ressources nécessitent des autorisations de lecture/écriture.

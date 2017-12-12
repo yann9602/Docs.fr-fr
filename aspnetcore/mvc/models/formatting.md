@@ -12,11 +12,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/models/formatting
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 91ba2456178fe806b90f27bbd2940773da950423
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: abc125a093ff2cd5a38a537ecdfc795ff03e23f7
+ms.sourcegitcommit: d1d8071d4093bf2444b5ae19d6e45c3d187e338b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 11/19/2017
 ---
 # <a name="introduction-to-formatting-response-data-in-aspnet-core-mvc"></a>Introduction à la mise en forme des données de réponse dans ASP.NET MVC de base
 
@@ -84,7 +84,7 @@ Dans l’exemple, une demande pour un alias valide auteur reçoit une réponse 2
 
 ### <a name="content-negotiation-process"></a>Processus de négociation de contenu
 
-Contenu *négociation* intervient uniquement si une `Accept` en-tête s’affiche dans la demande. Lorsqu’une demande contient un en-tête accept, le framework énumère les types de médias dans l’en-tête accept par ordre de préférence et tente de trouver un formateur capable de générer une réponse dans un des formats spécifiés par l’en-tête accept. Si aucun formateur n’est trouvée qui peut satisfaire la demande du client, le framework va tenter de trouver le premier formateur capable de générer une réponse (à moins que le développeur a configuré l’option sur `MvcOptions` pour retourner 406 non Acceptable à la place). Si la demande spécifie XML, mais le formateur XML n’a pas été configuré, le module de formatage JSON être utilisé. En règle générale, si aucun formateur n’est configuré, qui peut fournir le format demandé, puis le premier formateur que vous pouvez mettre en forme l’objet est utilisé. Si aucun en-tête n’est spécifié, le premier formateur capable de gérer l’objet doit être retournée sera utilisé pour sérialiser la réponse. Dans ce cas, il n’existe pas de n’importe quel lieu de négociation - le serveur consiste à déterminer quel format, il utilisera.
+Contenu *négociation* intervient uniquement si une `Accept` en-tête s’affiche dans la demande. Lorsqu’une demande contient un en-tête accept, le framework énumère les types de médias dans l’en-tête accept par ordre de préférence et tente de trouver un formateur capable de générer une réponse dans un des formats spécifiés par l’en-tête accept. Si aucun formateur n’est trouvée qui peut satisfaire la demande du client, le framework va tenter de trouver le premier formateur capable de générer une réponse (à moins que le développeur a configuré l’option sur `MvcOptions` pour retourner 406 non Acceptable à la place). Si la demande spécifie XML, mais le formateur XML n’a pas été configuré, le module de formatage JSON être utilisé. En règle générale, si aucun formateur n’est configuré, qui peut fournir le format demandé, puis le premier formateur peut mettre en forme l’objet est utilisé. Si aucun en-tête n’est spécifié, le premier formateur capable de gérer l’objet doit être retournée sera utilisé pour sérialiser la réponse. Dans ce cas, il n’existe pas de n’importe quel lieu de négociation - le serveur consiste à déterminer quel format, il utilisera.
 
 > [!NOTE]
 > Si l’en-tête Accept contient `*/*`, l’en-tête sera ignoré, sauf si `RespectBrowserAcceptHeader` a la valeur true sur `MvcOptions`.
@@ -99,7 +99,7 @@ Si vous préférez en-têtes accept de votre navigateur de honorer l’applicati
 services.AddMvc(options =>
 {
     options.RespectBrowserAcceptHeader = true; // false by default
-}
+});
 ```
 
 ## <a name="configuring-formatters"></a>Formateurs de configuration

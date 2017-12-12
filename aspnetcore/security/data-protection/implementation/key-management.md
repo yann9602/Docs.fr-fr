@@ -1,8 +1,8 @@
 ---
 title: "Gestion de clés"
 author: rick-anderson
-description: 
-keywords: ASP.NET Core,
+description: "Ce document décrit les détails d’implémentation de la gestion de clés d’ASP.NET Core données protection API."
+keywords: "ASP.NET Core, protection des données, la gestion de clés"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
@@ -11,17 +11,17 @@ ms.assetid: fb9b807a-d143-4861-9ddb-005d8796afa3
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/implementation/key-management
-ms.openlocfilehash: 507c00edc5bade2427151ecadfed581817e4d088
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: d9e38fd5c8de2b10ad24fe557aa6e3063e40236e
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="key-management"></a>Gestion de clés
 
-<a name=data-protection-implementation-key-management></a>
+<a name="data-protection-implementation-key-management"></a>
 
-Le système de protection de données gère automatiquement la durée de vie des clés principales utilisées pour protéger et déprotéger les charges utiles. Chaque clé peut exister dans un des quatre étapes.
+Le système de protection de données gère automatiquement la durée de vie des clés principales utilisées pour protéger et déprotéger les charges utiles. Chaque clé peut exister dans un des quatre étapes :
 
 * Créé - la clé existe dans l’anneau de clé, mais n’a pas encore été activée. La clé ne doit pas être utilisée pour les nouvelles opérations de protéger jusqu'à ce que suffisamment de temps écoulé que la clé a eu l’occasion de se propager à tous les ordinateurs qui utilisent cette boucle de clé.
 
@@ -44,9 +44,9 @@ L’heuristique générale est que le système de protection de données choisit
 
 La raison pour laquelle le système de protection de données génère une nouvelle clé immédiatement au lieu de revenir à une autre clé est qu’une nouvelle génération de clé doit être traitée comme un délai d’expiration implicite de toutes les clés qui ont été activés avant la nouvelle clé. L’idée générale est que les nouvelles clés ont été configurés avec des algorithmes différents ou de mécanismes de chiffrement au repos que les anciennes clés, et le système doit préférer le retour de la configuration actuelle.
 
-Il existe une exception. Si le développeur a [désactivé la génération automatique de clés](../configuration/overview.md#data-protection-configuring-disable-automatic-key-generation), le système de protection des données doit choisir un élément en tant que la clé par défaut. Dans ce scénario de secours, le système choisira la clé non révoqué avec la dernière date d’activation, de préférence vers les clés qui ont eu le temps de se propager à d’autres ordinateurs du cluster. Le système de secours peut se retrouver en choisissant une clé par défaut a expiré en conséquence. Le système de secours ne sera jamais choisir une clé révoquée en tant que la clé par défaut, et si l’anneau de clé est vide ou chaque clé a été révoqué le système produira une erreur lors de l’initialisation.
+Il existe une exception. Si le développeur a [désactivé la génération automatique de clés](xref:security/data-protection/configuration/overview#disableautomatickeygeneration), le système de protection des données doit choisir un élément en tant que la clé par défaut. Dans ce scénario de secours, le système choisira la clé non révoqué avec la dernière date d’activation, de préférence vers les clés qui ont eu le temps de se propager à d’autres ordinateurs du cluster. Le système de secours peut se retrouver en choisissant une clé par défaut a expiré en conséquence. Le système de secours ne sera jamais choisir une clé révoquée en tant que la clé par défaut, et si l’anneau de clé est vide ou chaque clé a été révoqué le système produira une erreur lors de l’initialisation.
 
-<a name=data-protection-implementation-key-management-expiration></a>
+<a name="data-protection-implementation-key-management-expiration"></a>
 
 ## <a name="key-expiration-and-rolling"></a>Expiration de clés et de restauration
 
@@ -62,24 +62,24 @@ La durée de vie de clé par défaut est 90 jours, mais ce n’est configurable 
 services.AddDataProtection()
        // use 14-day lifetime instead of 90-day lifetime
        .SetDefaultKeyLifetime(TimeSpan.FromDays(14));
-   ```
+```
 
-Un administrateur peut également modifier l’échelle du système par défaut, si un appel explicite à SetDefaultKeyLifetime remplace toute stratégie à l’échelle du système. La durée de vie de clé par défaut ne peut pas être inférieure à 7 jours.
+Un administrateur peut également modifier la valeur par défaut au niveau du système, si un appel explicite à `SetDefaultKeyLifetime` remplace toute stratégie à l’échelle du système. La durée de vie de clé par défaut ne peut pas être inférieure à 7 jours.
 
-## <a name="automatic-keyring-refresh"></a>Actualisation automatique de porte-clé
+## <a name="automatic-key-ring-refresh"></a>Actualisation de l’anneau de clé automatique
 
 Lorsque le système de protection des données s’initialise, il lit l’anneau de clé à partir du référentiel sous-jacent et met en cache en mémoire. Ce cache permet les opérations de protection et de suppression de la protection continuer sans atteindre le magasin de stockage. Le système vérifie automatiquement le magasin de stockage pour les modifications environ toutes les 24 heures ou de l’expiration de la clé par défaut en cours, selon ce qui se produit en premier.
 
 >[!WARNING]
 > Les développeurs doivent rarement (le cas échéant) à utiliser directement les API de gestion des clés. Le système de protection de données effectue la gestion automatique des clés comme décrit ci-dessus.
 
-Le système de protection de données expose une interface IKeyManager qui peut être utilisé pour inspecter et apporter des modifications à l’anneau de clé. Le système DI qui a fourni l’instance de IDataProtectionProvider peut également fournir une instance de IKeyManager pour votre consommation. Ou bien, vous pouvez extraire le IKeyManager droite à partir de IServiceProvider comme dans l’exemple ci-dessous.
+Le système de protection de données expose une interface `IKeyManager` qui peut être utilisé pour inspecter et apporter des modifications à l’anneau de clé. Le système DI qui a fourni l’instance de `IDataProtectionProvider` peut également fournir une instance de `IKeyManager` pour votre consommation. Ou bien, vous pouvez extraire le `IKeyManager` directement à partir de la `IServiceProvider` comme dans l’exemple ci-dessous.
 
-Toute opération qui modifie l’anneau de clé (création d’une nouvelle clé explicitement ou effectuer une révocation) invalide le cache en mémoire. L’appel suivant à protéger ou Unprotect entraîne le système de protection des données à relire l’anneau de clé et à recréer le cache.
+Toute opération qui modifie l’anneau de clé (création d’une nouvelle clé explicitement ou effectuer une révocation) invalide le cache en mémoire. L’appel suivant à `Protect` ou `Unprotect` entraîne le système de protection des données à relire l’anneau de clé et à recréer le cache.
 
-L’exemple ci-dessous illustre l’utilisation de l’interface IKeyManager pour inspecter et de manipuler l’anneau de clé, y compris la révocation existant de clés et de la génération d’une nouvelle clé manuellement.
+L’exemple ci-dessous montre comment utiliser le `IKeyManager` interface pour inspecter et de manipuler l’anneau de clé, y compris la révocation existant de clés et de la génération d’une nouvelle clé manuellement.
 
-[!code-none[Main](key-management/samples/key-management.cs)]
+[!code-csharp[Main](key-management/samples/key-management.cs)]
 
 ## <a name="key-storage"></a>Stockage de clés
 

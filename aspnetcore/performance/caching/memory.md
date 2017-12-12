@@ -1,28 +1,26 @@
 ---
 title: Mise en cache dans ASP.NET Core
 author: rick-anderson
-description: "Montre comment mettre en cache les données en mémoire dans ASP.NET Core."
-keywords: "ASP.NET Core, les performances en mémoire, de cache,"
+description: "Découvrez comment mettre en cache les données en mémoire dans ASP.NET Core."
 ms.author: riande
 manager: wpickett
 ms.date: 12/14/2016
 ms.topic: article
-ms.assetid: 819511cf-d33e-410a-b5a9-bef7fa64d2f3
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: performance/caching/memory
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 5ce865427b6ca44c76888908fdeea9cd45c881c4
-ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
+ms.openlocfilehash: 23312e73b4530b24b8479e2d379f16315b672ca4
+ms.sourcegitcommit: 216dfac27542f10a79274a9ce60dc449e888ed20
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2017
+ms.lasthandoff: 11/29/2017
 ---
-# <a name="introduction-to-in-memory-caching-in-aspnet-core"></a>Introduction à la mise en cache dans ASP.NET Core
+# <a name="in-memory-caching-in-aspnet-core"></a>Mise en cache dans ASP.NET Core
 
 Par [Rick Anderson](https://twitter.com/RickAndMSFT), [John Luo](https://github.com/JunTaoLuo), et [Steve Smith](https://ardalis.com/)
 
-[Afficher ou télécharger l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/memory/sample) ([comment télécharger](xref:tutorials/index#how-to-download-a-sample))
+[Affichez ou téléchargez l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/memory/sample) ([procédure de téléchargement](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="caching-basics"></a>Principes fondamentaux de la mise en cache
 
@@ -89,7 +87,7 @@ L’exemple suivant montre comment le point d’expirer une entrée de cache si 
 
 À l’aide un `CancellationTokenSource` permet à plusieurs entrées de cache à supprimer en tant que groupe. Avec la `using` modèle dans le code ci-dessus, les entrées de cache créées à l’intérieur du `using` bloc hériteront des déclencheurs et les paramètres d’expiration.
 
-### <a name="additional-notes"></a>Remarques supplémentaires
+## <a name="additional-notes"></a>Remarques supplémentaires
 
 - Lorsque vous utilisez un rappel pour remplir un élément de cache à :
 
@@ -98,7 +96,11 @@ L’exemple suivant montre comment le point d’expirer une entrée de cache si 
 
 - Lorsqu’une entrée de cache est utilisée pour créer un autre, l’enfant copie de l’entrée parente des jetons d’expiration et les paramètres d’expiration basés sur le temps. L’enfant n’est pas expiré par la suppression manuelle ou mise à jour de l’entrée parente.
 
-### <a name="other-resources"></a>Autres ressources
+## <a name="additional-resources"></a>Ressources supplémentaires
 
-* [Utilisation d’un cache distribué](distributed.md)
-* [Intergiciel de mise en cache des réponses](middleware.md)
+* [Utilisation avec un cache distribué](xref:performance/caching/distributed)
+* [Détection des modifications avec modification de jetons](xref:fundamentals/primitives/change-tokens)
+* [Mise en cache des réponses](xref:performance/caching/response)
+* [Intergiciel de mise en cache des réponses](xref:performance/caching/middleware)
+* [Application d’assistance de balise de cache](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
+* [Application d’assistance de balise de Cache distribué](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)

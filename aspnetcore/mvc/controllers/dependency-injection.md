@@ -11,11 +11,11 @@ ms.assetid: bc8b4ba3-e9ba-48fd-b1eb-cd48ff6bc7a1
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/dependency-injection
-ms.openlocfilehash: ff0a1a34ee6b025be6312a81f1a0bcdd07026adb
-ms.sourcegitcommit: 8f4d4fad1ca27adf9e396f5c205c9875a3963664
+ms.openlocfilehash: 46b92a1cab6fb2cd06eff44feb6a55788fca5c2a
+ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="dependency-injection-into-controllers"></a>Injection de dépendance dans les contrôleurs
 
@@ -89,7 +89,7 @@ Parfois, vous n’avez pas besoin d’un service pour plusieurs actions dans vot
 
 ## <a name="accessing-settings-from-a-controller"></a>L’accès aux paramètres d’un contrôleur
 
-L’accès aux paramètres de configuration ou d’application à partir d’un contrôleur est un modèle commun. Cet accès doit utiliser le modèle des Options décrit dans [configuration](../../fundamentals/configuration.md). Vous généralement ne devez pas demander les paramètres directement à partir de votre contrôleur à l’aide de l’injection de dépendances. Une meilleure approche consiste à demande un `IOptions<T>` instance, où `T` est la classe de configuration que vous avez besoin.
+L’accès aux paramètres de configuration ou d’application à partir d’un contrôleur est un modèle commun. Cet accès doit utiliser le modèle des Options décrit dans [configuration](xref:fundamentals/configuration/index). Vous généralement ne devez pas demander les paramètres directement à partir de votre contrôleur à l’aide de l’injection de dépendances. Une meilleure approche consiste à demande un `IOptions<T>` instance, où `T` est la classe de configuration que vous avez besoin.
 
 Pour utiliser le modèle d’options, vous devez créer une classe qui représente les options, comme celle-ci :
 
@@ -100,7 +100,7 @@ Vous devez configurer l’application pour utiliser le modèle d’options et aj
 [!code-csharp[Main](./dependency-injection/sample/src/ControllerDI/Startup.cs?highlight=3,4,5,6,9,16,19&range=14-44)]
 
 > [!NOTE]
-> Dans la liste ci-dessus, nous examinons la configuration de l’application de lire les paramètres à partir d’un fichier au format JSON. Vous pouvez également configurer les paramètres entièrement dans le code, comme indiqué dans le code commenté ci-dessus. Consultez [Configuration](../../fundamentals/configuration.md) pour d’autres options de configuration.
+> Dans la liste ci-dessus, nous examinons la configuration de l’application de lire les paramètres à partir d’un fichier au format JSON. Vous pouvez également configurer les paramètres entièrement dans le code, comme indiqué dans le code commenté ci-dessus. Consultez [Configuration](xref:fundamentals/configuration/index) pour d’autres options de configuration.
 
 Une fois que vous avez spécifié un objet fortement typé de configuration (dans ce cas, `SampleWebSettings`) et ajouté à la collection de services, vous pouvez demander qu’il à partir de n’importe quelle méthode de contrôleur ou d’Action en demandant une instance de `IOptions<T>` (dans ce cas, `IOptions<SampleWebSettings>`) . Le code suivant montre comment une demande les paramètres à partir d’un contrôleur :
 

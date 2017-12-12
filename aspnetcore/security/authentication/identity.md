@@ -11,11 +11,11 @@ ms.assetid: cf119f21-1a2b-49a2-b052-547ccb66ee83
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/identity
-ms.openlocfilehash: 820836eaf3a29c9941e84458f09ac470f8150ba7
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: 0679663b3b3b66f9935d0fb24360be2954fcdee1
+ms.sourcegitcommit: 9ecd4e9fb0c40c3693dab079eab1ff94b461c922
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>Introduction à l’identité sur ASP.NET Core
 
@@ -32,11 +32,11 @@ Dans cette rubrique, vous allez apprendre à utiliser ASP.NET Core Identity pour
 1.  Créez un projet d’Application ASP.NET Core Web avec des comptes d’utilisateur individuels.
 
     # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
-    Dans Visual Studio, sélectionnez **fichier** -> **nouveau** -> **projet**. Sélectionnez le **Application Web ASP.NET** à partir de la **nouveau projet** boîte de dialogue. En sélectionnant un ASP.NET Core **Application Web** avec **comptes d’utilisateur individuels** comme méthode d’authentification.
+    Dans Visual Studio, sélectionnez **fichier** -> **nouveau** -> **projet**. Sélectionnez le **Application Web ASP.NET** à partir de la **nouveau projet** boîte de dialogue. En sélectionnant un ASP.NET Core **Web Application(Model-View-Controller)** pour ASP.NET Core 2.x avec **comptes d’utilisateur individuels** comme méthode d’authentification.
 
     Remarque : Vous devez sélectionner **comptes d’utilisateur individuels**.
  
-    ![Boîte de dialogue Nouveau projet](identity/_static/01-mvc.png)
+    ![Boîte de dialogue Nouveau projet](identity/_static/01-mvc_2.png)
     
     # <a name="net-core-clitabnetcore-cli"></a>[CLI .NET Core](#tab/netcore-cli)
     Si vous utilisez l’interface de ligne de base de .NET, créer le projet à l’aide ``dotnet new mvc --auth Individual``. Cela crée un nouveau projet avec le même code de modèle d’identité crée de Visual Studio.
@@ -134,7 +134,7 @@ Dans cette rubrique, vous allez apprendre à utiliser ASP.NET Core Identity pour
  
 7.  Afficher la base de données.
 
-    Si votre application utilise une base de données SQL Server (la valeur par défaut sur Windows et pour les utilisateurs de Visual Studio), vous pouvez afficher la base de données de l’application créée. Vous pouvez utiliser **SQL Server Management Studio**. Vous pouvez également, à partir de Visual Studio, sélectionnez **vue** -> **l’Explorateur d’objets SQL Server**. Se connecter à **(localdb) \MSSQLLocalDB**. La base de données dont le nom correspond * *aspnet - <*nom de votre projet*>-<*chaîne de date*> ** s’affiche.
+    Si votre application utilise une base de données SQL Server (la valeur par défaut sur Windows et pour les utilisateurs de Visual Studio), vous pouvez afficher la base de données de l’application créée. Vous pouvez utiliser **SQL Server Management Studio**. Vous pouvez également, à partir de Visual Studio, sélectionnez **vue** -> **l’Explorateur d’objets SQL Server**. Se connecter à **(localdb) \MSSQLLocalDB**. La base de données dont le nom correspond  **aspnet - <*nom de votre projet*>-<*chaîne de date*> ** s’affiche.
 
     ![Menu contextuel sur la table de base de données AspNetUsers](identity/_static/04-db.png)
     

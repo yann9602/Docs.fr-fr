@@ -1,8 +1,8 @@
 ---
 title: "Chiffrement à clé au repos"
 author: rick-anderson
-description: 
-keywords: ASP.NET Core,
+description: "Ce document décrit les détails d’implémentation ASP.NET Core protection des clés de cryptage des données au repos."
+keywords: "ASP.NET Core, protection des données, le chiffrement à clé"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
@@ -11,22 +11,22 @@ ms.assetid: f2bbbf4e-0945-43ce-be59-8bf19e448798
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/implementation/key-encryption-at-rest
-ms.openlocfilehash: 16a9385630d88c4c9f33954f83fce2bbce5be719
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: b56dc56ed94662dbedeea49022aa73941bc833c5
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="key-encryption-at-rest"></a>Chiffrement à clé au repos
 
-<a name=data-protection-implementation-key-encryption-at-rest></a>
+<a name="data-protection-implementation-key-encryption-at-rest"></a>
 
-Par défaut, le système de protection des données [utilise une heuristique](../configuration/default-settings.md#data-protection-default-settings) pour déterminer le mode de chiffrement matériel de clé doivent être chiffrées au repos. Le développeur peut substituer l’heuristique et spécifier manuellement la façon dont les clés doivent être chiffrées au repos.
+Par défaut, le système de protection des données [utilise une heuristique](xref:security/data-protection/configuration/default-settings) pour déterminer le mode de chiffrement matériel de clé doivent être chiffrées au repos. Le développeur peut substituer l’heuristique et spécifier manuellement la façon dont les clés doivent être chiffrées au repos.
 
 > [!NOTE]
 > Si vous spécifiez un chiffrement à clé explicit au mécanisme de rest, le système de protection de données sera annuler l’inscription le mécanisme de stockage de clés par défaut que l’heuristique fourni. Vous devez [spécifier un mécanisme de stockage de clés explicites](key-storage-providers.md#data-protection-implementation-key-storage-providers), sinon le système de protection des données ne démarre pas.
 
-<a name=data-protection-implementation-key-encryption-at-rest-providers></a>
+<a name="data-protection-implementation-key-encryption-at-rest-providers"></a>
 
 Le système de protection des données est fourni avec trois mécanismes de chiffrement à clé dans la zone.
 
@@ -38,17 +38,17 @@ Windows DPAPI est utilisé, le matériel de clé est chiffré [CryptProtectData]
 
 ```csharp
 sc.AddDataProtection()
-       // only the local user account can decrypt the keys
-       .ProtectKeysWithDpapi();
-   ```
+    // only the local user account can decrypt the keys
+    .ProtectKeysWithDpapi();
+```
 
-Si ProtectKeysWithDpapi est appelée sans paramètres, seul le compte d’utilisateur Windows actuel peut déchiffrer le matériel de clé persistant. Vous pouvez éventuellement spécifier un compte d’utilisateur sur l’ordinateur (pas seulement le compte d’utilisateur en cours) doit être en mesure de déchiffrer la clé, comme indiqué dans l’exemple ci-dessous.
+Si `ProtectKeysWithDpapi` est appelée sans paramètres, seul le compte d’utilisateur Windows actuel peut déchiffrer le matériel de clé persistant. Vous pouvez éventuellement spécifier un compte d’utilisateur sur l’ordinateur (pas seulement le compte d’utilisateur en cours) doit être en mesure de déchiffrer la clé, comme indiqué dans l’exemple ci-dessous.
 
 ```csharp
 sc.AddDataProtection()
-       // all user accounts on the machine can decrypt the keys
-       .ProtectKeysWithDpapi(protectToLocalMachine: true);
-   ```
+    // all user accounts on the machine can decrypt the keys
+    .ProtectKeysWithDpapi(protectToLocalMachine: true);
+```
 
 ## <a name="x509-certificate"></a>Certificat X.509
 
@@ -58,13 +58,13 @@ Si votre application est répartie sur plusieurs ordinateurs, il peut être prat
 
 ```csharp
 sc.AddDataProtection()
-       // searches the cert store for the cert with this thumbprint
-       .ProtectKeysWithCertificate("3BCE558E2AD3E0E34A7743EAB5AEA2A9BD2575A0");
-   ```
+    // searches the cert store for the cert with this thumbprint
+    .ProtectKeysWithCertificate("3BCE558E2AD3E0E34A7743EAB5AEA2A9BD2575A0");
+```
 
 Seuls les certificats avec des clés privées de CAPI sont pris en charge en raison des limitations de .NET Framework. Consultez [basée sur certificat de chiffrement avec Windows DPAPI-NG](#data-protection-implementation-key-encryption-at-rest-dpapi-ng) ci-dessous pour connaître les solutions possibles à ces limitations.
 
-<a name=data-protection-implementation-key-encryption-at-rest-dpapi-ng></a>
+<a name="data-protection-implementation-key-encryption-at-rest-dpapi-ng"></a>
 
 ## <a name="windows-dpapi-ng"></a>Windows DPAPI-NG
 
@@ -80,18 +80,18 @@ Le principal est encodé sous la règle de protection d’un descripteur. Consid
 
 ```csharp
 sc.AddDataProtection()
-     // uses the descriptor rule "SID=S-1-5-21-..."
-     .ProtectKeysWithDpapiNG("SID=S-1-5-21-...",
-       flags: DpapiNGProtectionDescriptorFlags.None);
-   ```
+    // uses the descriptor rule "SID=S-1-5-21-..."
+    .ProtectKeysWithDpapiNG("SID=S-1-5-21-...",
+    flags: DpapiNGProtectionDescriptorFlags.None);
+```
 
-Il existe également une surcharge sans paramètre de ProtectKeysWithDpapiNG. Il s’agit d’une méthode pratique pour la spécification de la règle « SID = mien », où mien est le SID du compte d’utilisateur Windows actuel.
+Il existe également une surcharge sans paramètre de `ProtectKeysWithDpapiNG`. Il s’agit d’une méthode pratique pour la spécification de la règle « SID = mien », où mien est le SID du compte d’utilisateur Windows actuel.
 
 ```csharp
 sc.AddDataProtection()
-     // uses the descriptor rule "SID={current account SID}"
-     .ProtectKeysWithDpapiNG();
-   ```
+    // uses the descriptor rule "SID={current account SID}"
+    .ProtectKeysWithDpapiNG();
+```
 
 Dans ce scénario, le contrôleur de domaine Active Directory est responsable de la distribution de clés de chiffrement utilisées par les opérations de DPAPI-NG. L’utilisateur cible sera en mesure de déchiffrer la charge utile chiffré à partir de n’importe quel ordinateur joint au domaine (à condition que le processus s’exécute sous leur identité).
 
@@ -101,13 +101,13 @@ Si vous êtes en cours d’exécution sur Windows 8.1 / Windows Server 2012 R2 o
 
 ```csharp
 sc.AddDataProtection()
-       // searches the cert store for the cert with this thumbprint
-       .ProtectKeysWithDpapiNG("CERTIFICATE=HashId:3BCE558E2AD3E0E34A7743EAB5AEA2A9BD2575A0",
-           flags: DpapiNGProtectionDescriptorFlags.None);
-   ```
+    // searches the cert store for the cert with this thumbprint
+    .ProtectKeysWithDpapiNG("CERTIFICATE=HashId:3BCE558E2AD3E0E34A7743EAB5AEA2A9BD2575A0",
+        flags: DpapiNGProtectionDescriptorFlags.None);
+```
 
 Toute application qui pointe vers ce référentiel doit s’exécuter sur Windows 8.1 / Windows Server 2012 R2 ou version ultérieure pour pouvoir déchiffrer cette clé.
 
 ## <a name="custom-key-encryption"></a>Chiffrement à clé personnalisé
 
-Si les mécanismes de boîte aux lettres ne sont pas appropriées, le développeur peut spécifier leur propre mécanisme de chiffrement à clé en fournissant un IXmlEncryptor personnalisé.
+Si les mécanismes de boîte aux lettres ne sont pas appropriées, le développeur peut spécifier leur propre mécanisme de chiffrement à clé en fournissant une personnalisée `IXmlEncryptor`.

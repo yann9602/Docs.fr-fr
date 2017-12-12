@@ -11,11 +11,11 @@ ms.assetid: 3155cc9e-d0c9-424b-886c-35c0ec6f9f4e
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: migration/mvc2
-ms.openlocfilehash: e0691b276b63ee12d3163ac48d1392696fb97aa6
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: 8005d23ad00774e488eecc9771f36a244a051126
+ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="migrating-from-aspnet-to-aspnet-core-20"></a>Migration à partir de ASP.NET vers ASP.NET Core 2.0
 
@@ -25,7 +25,7 @@ Cet article sert de guide de référence pour la migration d’applications ASP.
 
 ## <a name="prerequisites"></a>Conditions préalables
 
-* [Kit .NET Core 2.0.0 SDK](https://www.microsoft.com/net/core) ou ultérieur.
+* [SDK .NET Core 2.0.0](https://www.microsoft.com/net/core) ou version ultérieure
 
 ## <a name="target-frameworks"></a>Versions cibles de .NET Framework
 Les projets ASP.NET Core 2.0 permettent aux développeurs de cibler le .NET Core, le .NET Framework ou les deux. Consultez [Choix entre le .NET Core et le .NET Framework pour les applications serveur](https://docs.microsoft.com/dotnet/standard/choosing-core-framework-server) afin de déterminer quel est le framework cible le plus approprié.
@@ -107,7 +107,7 @@ Il existe des extensions à cette approche pour rendre le processus plus robuste
 services.Configure<AppConfiguration>(Configuration.GetSection("AppConfiguration"));
 ````
 
-**Remarque :** Pour obtenir des informations de référence plus approfondies sur la configuration d’ASP.NET Core, consultez [Configuration dans ASP.NET Core](xref:fundamentals/configuration).
+**Remarque :** Pour obtenir des informations de référence plus approfondies sur la configuration d’ASP.NET Core, consultez [Configuration dans ASP.NET Core](xref:fundamentals/configuration/index).
 
 ## <a name="native-dependency-injection"></a>Injection de dépendances native
 Quand vous générez des applications majeures et scalables, il est important d’avoir un couplage faible entre les composants et les services. L’[injection de dépendances](xref:fundamentals/dependency-injection) est une technique répandue qui permet d’y parvenir. Elle représente un composant natif d’ASP.NET Core.

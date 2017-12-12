@@ -1,26 +1,24 @@
 ---
 title: "Réponse mise en cache dans ASP.NET Core"
 author: rick-anderson
-description: "Découvrez comment utiliser la réponse mise en cache pour réduire la bande passante et améliorer les performances."
-keywords: "ASP.NET Core, la réponse mise en cache, les en-têtes HTTP"
+description: "Découvrez comment utiliser la réponse mise en cache à faible bande passante et améliorer les performances des applications ASP.NET Core."
 ms.author: riande
 manager: wpickett
 ms.date: 09/20/2017
 ms.topic: article
-ms.assetid: cb42035a-60b0-472e-a614-cb79f443f654
 ms.prod: asp.net-core
 uid: performance/caching/response
-ms.openlocfilehash: 79d9246632aae0fe9c3629fd7202842836828151
-ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
+ms.openlocfilehash: 104cfb2eab706a2ec6278b4d1c461f70b0af5df1
+ms.sourcegitcommit: 216dfac27542f10a79274a9ce60dc449e888ed20
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="response-caching-in-aspnet-core"></a>Réponse mise en cache dans ASP.NET Core
 
 Par [John Luo](https://github.com/JunTaoLuo), [Rick Anderson](https://twitter.com/RickAndMSFT), [Steve Smith](https://ardalis.com/), et [Luke Latham](https://github.com/guardrex)
 
-[Afficher ou télécharger l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/response/sample) ([comment télécharger](xref:tutorials/index#how-to-download-a-sample))
+[Affichez ou téléchargez l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/response/sample) ([procédure de téléchargement](xref:tutorials/index#how-to-download-a-sample))
 
 Réponse mise en cache réduit le nombre de demandes que de client ou de proxy permet à un serveur web. Réponse mise en cache réduit également la quantité de travail, le serveur web exécute pour générer une réponse. Mise en cache de la réponse est contrôlé par des en-têtes qui spécifient comment vous souhaitez que client, le proxy et intergiciel (middleware) en cache les réponses.
 
@@ -179,4 +177,9 @@ Cache-Control: public,max-age=60
 
 * [Mise en cache dans HTTP à partir de la spécification](https://tools.ietf.org/html/rfc7234#section-3)
 * [Cache-Control](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9)
+* [La mise en cache en mémoire](xref:performance/caching/memory)
+* [Utilisation avec un cache distribué](xref:performance/caching/distributed)
+* [Détection des modifications avec modification de jetons](xref:fundamentals/primitives/change-tokens)
 * [Intergiciel de mise en cache des réponses](xref:performance/caching/middleware)
+* [Application d’assistance de balise de cache](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
+* [Application d’assistance de balise de Cache distribué](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)

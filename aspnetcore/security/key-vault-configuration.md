@@ -10,11 +10,11 @@ ms.topic: article
 ms.assetid: 0292bdae-b3ed-4637-bd67-19b9bb8b65cb
 ms.prod: asp.net-core
 uid: security/key-vault-configuration
-ms.openlocfilehash: c5d8506c1bc8e6364d01596a0c82e1da41eea4ca
-ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
+ms.openlocfilehash: 352d125b9042c603b59ed9bda0e99b6a49c7ab9f
+ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="azure-key-vault-configuration-provider"></a>Fournisseur de configuration du coffre de clés Azure
 
@@ -58,7 +58,7 @@ Le fournisseur est ajouté à la `ConfigurationBuilder` avec le `AddAzureKeyVaul
 1. Créer un coffre de clés et configurer Azure Active Directory (Azure AD) pour l’application en suivant les instructions de [prise en main d’Azure Key Vault](https://azure.microsoft.com/documentation/articles/key-vault-get-started/).
   * Ajouter les clés secrètes au coffre de clés à l’aide la [PowerShell Module d’Azure Resource Manager clé de coffre](/powershell/module/azurerm.keyvault) disponible à partir de la [PowerShell Gallery](https://www.powershellgallery.com/packages/AzureRM.KeyVault), le [API REST de coffre de clés Azure](/rest/api/keyvault/), ou le [Portail azure](https://portal.azure.com/). Les secrets sont créés en tant que *manuel* ou *certificat* secrets. *Certificat* secrets sont des certificats pour les applications et services, mais ne sont pas pris en charge par le fournisseur de configuration. Vous devez utiliser le *manuel* option permettant de créer des clés secrètes de paire nom-valeur pour une utilisation avec le fournisseur de configuration.
     * Les secrets simples sont créées en tant que paires nom-valeur. Les noms de secret de coffre de clés Azure sont limités à des caractères alphanumériques et des tirets.
-    * Utilisent des valeurs hiérarchiques (sections de configuration) `--` (deux tirets) comme séparateur dans l’exemple. Signes deux-points, qui sont normalement utilisés pour délimiter une section à partir d’une sous-clé dans [configuration d’ASP.NET Core](xref:fundamentals/configuration), ne sont pas autorisés dans les noms de secret principal. Par conséquent, les deux tirets sont utilisés et échangés avec un signe deux-points, lorsque les clés secrètes sont chargés dans la configuration de l’application.
+    * Utilisent des valeurs hiérarchiques (sections de configuration) `--` (deux tirets) comme séparateur dans l’exemple. Signes deux-points, qui sont normalement utilisés pour délimiter une section à partir d’une sous-clé dans [configuration d’ASP.NET Core](xref:fundamentals/configuration/index), ne sont pas autorisés dans les noms de secret principal. Par conséquent, les deux tirets sont utilisés et échangés avec un signe deux-points, lorsque les clés secrètes sont chargés dans la configuration de l’application.
     * Créez deux *manuel* secrets avec les paires nom-valeur suivantes. La question secrète du premier est une valeur et le nom simple, et la question secrète du deuxième crée une valeur de secret principal avec une section et le sous-clé dans le nom de clé secrète :
       * `SecretName`: `secret_value_1`
       * `Section--SecretName`: `secret_value_2`
@@ -146,7 +146,7 @@ Configuration.Reload();
 Secrets désactivés et expirées lever un `KeyVaultClientException`. Pour empêcher votre application de lever, remplacez votre application, ou mettre à jour le secret désactivé/expiré.
 
 ## <a name="troubleshooting"></a>Résolution des problèmes
-Lorsque l’application ne parvient pas à charger la configuration de l’utilisation du fournisseur, un message d’erreur est écrit pour le [infrastructure de journalisation d’ASP.NET](xref:fundamentals/logging). Les conditions suivantes empêchent de se charger :
+Lorsque l’application ne parvient pas à charger la configuration de l’utilisation du fournisseur, un message d’erreur est écrit pour le [infrastructure de journalisation d’ASP.NET](xref:fundamentals/logging/index). Les conditions suivantes empêchent de se charger :
 * L’application n’est pas configurée correctement dans Azure Active Directory.
 * Le coffre de clés n’existe pas dans le coffre de clés Azure.
 * L’application n’est pas autorisée à accéder au coffre de clés.
@@ -157,7 +157,7 @@ Lorsque l’application ne parvient pas à charger la configuration de l’utili
 * La clé de configuration (nom) est incorrecte dans l’application pour la valeur que vous essayez de charger.
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
-* <xref:fundamentals/configuration>
+* [Configuration](xref:fundamentals/configuration/index)
 * [Microsoft Azure : Coffre de clés](https://azure.microsoft.com/services/key-vault/)
 * [Microsoft Azure : Documentation de coffre de clés](https://docs.microsoft.com/azure/key-vault/)
 * [Comment générer et transférer protégée par HSM clés pour le coffre de clés Azure](https://docs.microsoft.com/azure/key-vault/key-vault-hsm-protected-keys)

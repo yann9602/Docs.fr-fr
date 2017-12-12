@@ -7,8 +7,15 @@
   ```console
   dotnet aspnet-codegenerator razorpage -m Movie -dc MovieContext -udl -outDir Pages\Movies --referenceScriptLibraries
   ```
-
+  
 Si vous obtenez l’erreur :
+  ```
+No executable found matching command "dotnet-aspnet-codegenerator"
+  ```
+
+Ouvrez une fenêtre Commande dans le répertoire de projet (répertoire qui contient les fichiers *Program.cs*, *Startup.cs* et *.csproj*).
+
+Si vous obtenez cette erreur :
   ```
   The process cannot access the file 
  'RazorPagesMovie/bin/Debug/netcoreapp2.0/RazorPagesMovie.dll' 

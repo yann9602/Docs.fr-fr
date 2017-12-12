@@ -11,11 +11,11 @@ ms.assetid: 9c826a76-fbd2-46b5-978d-6ca6df53531a
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: migration/http-modules
-ms.openlocfilehash: eb5049d4d63c224ca74fc39072ae2c0d98ba330d
-ms.sourcegitcommit: 8f4d4fad1ca27adf9e396f5c205c9875a3963664
+ms.openlocfilehash: f217e5264742826f285444dcbaea4b28b97c4d7e
+ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="migrating-http-handlers-and-modules-to-aspnet-core-middleware"></a>Migration des gestionnaires HTTP et des modules pour ASP.NET Core intergiciel (middleware) 
 
@@ -169,11 +169,11 @@ Intergiciel (middleware) sont ajoutés au pipeline avant la branche sera appelé
 
 Certains modules et les gestionnaires offrent des options de configuration qui sont stockées dans *Web.config*. Toutefois, un nouveau modèle de configuration dans ASP.NET Core est utilisé à la place de *Web.config*.
 
-La nouvelle [système de configuration](../fundamentals/configuration.md) vous offre des options suivantes pour résoudre ce problème :
+La nouvelle [système de configuration](xref:fundamentals/configuration/index) vous offre des options suivantes pour résoudre ce problème :
 
 * Injecter directement les options dans l’intergiciel (middleware), comme indiqué dans le [section suivante](#loading-middleware-options-through-direct-injection).
 
-* Utilisez le [modèle d’options](../fundamentals/configuration.md#options-config-objects):
+* Utilisez le [modèle d’options](xref:fundamentals/configuration/options):
 
 1.  Créez une classe pour contenir les options de l’intergiciel (middleware), par exemple :
 
@@ -384,7 +384,7 @@ Le `SetCookies` méthode de rappel se présente comme suit :
 
 * [Vue d’ensemble des Modules HTTP et les gestionnaires HTTP](https://docs.microsoft.com/iis/configuration/system.webserver/)
 
-* [Configuration](../fundamentals/configuration.md)
+* [Configuration](xref:fundamentals/configuration/index)
 
 * [Démarrage d’une application](../fundamentals/startup.md)
 

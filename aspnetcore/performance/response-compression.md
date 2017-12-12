@@ -11,27 +11,32 @@ ms.assetid: de621887-c5c9-4ac8-9efd-f5cc0457a134
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: performance/response-compression
-ms.openlocfilehash: 7aea4db44764d5d8f47520adb6599e651e0e9000
-ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
+ms.openlocfilehash: fdb396d8857dc9c118cc19da1f7d1d498dfaacd5
+ms.sourcegitcommit: 8ab9d0065fad23400757e4e08033787e42c97d41
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="response-compression-middleware-for-aspnet-core"></a>Intergiciel (middleware) de réponse Compression pour ASP.NET Core
 
 Par [Luke Latham](https://github.com/guardrex)
 
-[Afficher ou télécharger l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/response-compression/samples) ([comment télécharger](xref:tutorials/index#how-to-download-a-sample))
+[Affichez ou téléchargez l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/response-compression/samples) ([procédure de téléchargement](xref:tutorials/index#how-to-download-a-sample))
 
 La bande passante réseau est une ressource limitée. Réduire la taille de la réponse de généralement d’augmente souvent considérablement la réactivité d’une application. Une pour réduire la taille de la charge utile consiste à compresser les réponses de l’application.
 
 ## <a name="when-to-use-response-compression-middleware"></a>Quand utiliser l’intergiciel (middleware) de réponse Compression
-Utiliser les technologies de compression de la réponse basée sur le serveur dans IIS, Apache ou Nginx où les performances de l’intergiciel (middleware) probablement ne sera pas correspondre à celui des modules de serveur. Utilisez l’intergiciel (middleware) de réponse Compression lorsque vous ne pouvez pas utiliser :
-* [Module de la Compression dynamique IIS](https://www.iis.net/overview/reliability/dynamiccachingandcompression)
-* [Module de mod_deflate Apache](http://httpd.apache.org/docs/current/mod/mod_deflate.html)
-* [La décompression et NGINX Compression](https://www.nginx.com/resources/admin-guide/compression-and-decompression/)
-* [Serveur HTTP.sys](xref:fundamentals/servers/httpsys) (anciennement appelé [WebListener](xref:fundamentals/servers/weblistener))
-* [Kestrel](xref:fundamentals/servers/kestrel)
+Utiliser les technologies de compression de la réponse basée sur le serveur dans IIS, Apache ou Nginx. Les performances de l’intergiciel (middleware) probablement ne sera pas correspondre à celui des modules de serveur. [Serveur HTTP.sys](xref:fundamentals/servers/httpsys) et [Kestrel](xref:fundamentals/servers/kestrel) n’offrent actuellement pas prise en charge de la compression intégrée.
+
+Utilisez réponse Compression intergiciel (middleware) lorsque vous êtes :
+
+* Impossible d’utiliser les technologies de compression basée sur le serveur suivant :
+  * [Module de la Compression dynamique IIS](https://www.iis.net/overview/reliability/dynamiccachingandcompression)
+  * [Module de mod_deflate Apache](http://httpd.apache.org/docs/current/mod/mod_deflate.html)
+  * [La décompression et NGINX Compression](https://www.nginx.com/resources/admin-guide/compression-and-decompression/)
+* Hébergement directement sur :
+  * [Serveur HTTP.sys](xref:fundamentals/servers/httpsys) (anciennement appelé [WebListener](xref:fundamentals/servers/weblistener))
+  * [Kestrel](xref:fundamentals/servers/kestrel)
 
 ## <a name="response-compression"></a>Compression de la réponse
 En règle générale, toute réponse ne compressée pas en mode natif peut bénéficier de la compression de la réponse. Pas en mode natif compressées en général, les réponses sont : CSS, JavaScript, HTML, XML et JSON. Vous ne doivent pas compresser les actifs compressés en mode natif, telles que des fichiers PNG. Si vous tentez de davantage de compresser une réponse compressée en mode natif, toute petite réduction supplémentaire dans le temps de taille et de transmission sera probablement être éclipsée par le temps de traitement de la compression. Ne pas compresser les fichiers inférieurs à environ 150-1000 octets (selon le contenu du fichier et l’efficacité de compression). La surcharge de la compression des petits fichiers peut produire un fichier compressé plus volumineux que le fichier non compressé.

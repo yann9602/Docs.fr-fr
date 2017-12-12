@@ -1,8 +1,8 @@
 ---
-title: "Durée de vie et de gestion de clés"
+title: "Gestion de clés de Protection des données et la durée de vie dans ASP.NET Core"
 author: rick-anderson
-description: "Décrit la durée de vie et de gestion de clés."
-keywords: "ASP.NET Core, la gestion, DPAPI, DataProtection clé"
+description: "En savoir plus sur la gestion de clés de Protection des données et la durée de vie dans ASP.NET Core."
+keywords: "ASP.NET Core, clé de protection des données de gestion, DPAPI, durée de vie"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
@@ -11,37 +11,46 @@ ms.assetid: ef7dad2a-7029-4ae5-8f06-1fbebedccaa4
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/configuration/default-settings
-ms.openlocfilehash: c361af7d336fc0f7651e5d2f28d71515e2949c65
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: 4f5409acf4d934ced828153ccfd945834d0f1718
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 11/10/2017
 ---
-# <a name="key-management-and-lifetime"></a>Durée de vie et de gestion de clés
+# <a name="data-protection-key-management-and-lifetime-in-aspnet-core"></a>Gestion de clés de Protection des données et la durée de vie dans ASP.NET Core
 
-<a name=data-protection-default-settings></a>
+De [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 ## <a name="key-management"></a>Gestion de clés
 
-Le système tente de détecter de son environnement d’exploitation et fournissent une bonne sans aucune configuration comportementales valeurs par défaut. L’heuristique utilisée est la suivante.
+L’application tente de détecter son environnement d’exploitation et de gérer la configuration de la clé sur son propre.
 
-1. Si le système est hébergé dans les Sites Web Azure, les clés sont conservés dans le dossier « % HOME%\ASP.NET\DataProtection-Keys ». Ce dossier est sauvegardé par le stockage réseau et est synchronisé sur tous les ordinateurs hébergeant l’application. Les clés ne sont pas protégées au repos. Ce dossier fournit l’anneau de clé à toutes les instances d’une application dans un emplacement de déploiement. Les emplacements de déploiement distinct, telles que les intermédiaires et de Production, pas partagent un anneau de clé. Lorsque vous échangez entre les emplacements de déploiement, par exemple le remplacement intermédiaire en Production ou à l’aide de / B test, n’importe quel système à l’aide de la protection des données ne sera pas en mesure de déchiffrer les données stockées à l’aide de l’anneau de clé à l’intérieur de l’emplacement précédent. Cela entraîne des utilisateurs est enregistrés en dehors d’une application ASP.NET qui utilise le middleware du cookie ASP.NET standard, car elle utilise la protection des données à protéger ses cookies. Si vous le souhaitez, indépendant de l’emplacement de clé anneaux utilisent un fournisseur de l’anneau de clé externe, telles que le stockage Blob Azure, Azure Key Vault, un magasin SQL, ou le cache Redis.
+1. Si l’application est hébergée dans [applications Azure](https://azure.microsoft.com/services/app-service/), les clés sont rendues persistantes dans le *%HOME%\ASP.NET\DataProtection-Keys* dossier. Ce dossier est sauvegardé par le stockage réseau et est synchronisé sur tous les ordinateurs hébergeant l’application.
+   * Les clés ne sont pas protégées au repos.
+   * Le *DataProtection-clés* dossier fournit l’anneau de clé à toutes les instances d’une application dans un emplacement de déploiement.
+   * Les emplacements de déploiement distinct, telles que les intermédiaires et de Production, ne partagent pas un anneau de clé. Lorsque vous échangez entre les emplacements de déploiement, par exemple le remplacement intermédiaire en Production ou à l’aide de / B test, n’importe quelle application à l’aide de la Protection des données ne pourra plus être déchiffrer les données stockées à l’aide de l’anneau de clé à l’intérieur de l’emplacement précédent. Cela conduit aux utilisateurs est enregistrés en dehors d’une application qui utilise l’authentification de cookie ASP.NET Core standard, car elle utilise la Protection des données à protéger ses cookies. Si vous le souhaitez, indépendant de l’emplacement de clé anneaux utilisent un fournisseur de l’anneau de clé externe, telles que le stockage Blob Azure, Azure Key Vault, un magasin SQL, ou le cache Redis.
 
-2. Si le profil utilisateur est disponible, les clés sont conservés dans le dossier « % LOCALAPPDATA%\ASP.NET\DataProtection-Keys ». En outre, si le système d’exploitation est Windows, ils allez chiffrées au repos à l’aide de DPAPI.
+1. Si le profil utilisateur est disponible, les clés sont rendues persistantes dans le *%LOCALAPPDATA%\ASP.NET\DataProtection-Keys* dossier. Si le système d’exploitation est Windows, les clés sont chiffrées au repos à l’aide de DPAPI.
 
-3. Si l’application est hébergée dans IIS, les clés sont conservées dans le Registre HKLM dans une clé de Registre spéciale qui est l’ACL sur uniquement pour le compte de processus de travail. Les clés sont chiffrées au repos à l’aide de DPAPI.
+1. Si l’application est hébergée dans IIS, les clés sont conservées dans le Registre HKLM dans une clé de Registre spéciale qui est l’ACL sur uniquement pour le compte de processus de travail. Les clés sont chiffrées au repos à l’aide de DPAPI.
 
-4. Si aucune de ces conditions correspond à, les clés ne sont pas conservés en dehors du processus en cours. Lorsque le processus s’arrête, tous les généré clés seront perdues.
+1. Si aucune de ces conditions, les clés ne sont pas rendues persistantes en dehors du processus en cours. Lorsque le processus s’arrête, tous les généré les clés sont perdues.
 
-Le développeur est toujours dans un contrôle total et peut remplacer comment et où les clés sont stockées. Les trois premières options ci-dessus doivent bonnes valeurs par défaut pour la plupart des applications similaires à la manière dont ASP.NET <machineKey> les routines de la génération automatique a fonctionné dans le passé. Finale, l’option de restauration sont classés est le seul scénario qui nécessite réellement au développeur de spécifier [configuration](overview.md) initial s’ils veulent persistance des clés, mais ce recours se produit uniquement dans les rares cas.
+Le développeur est toujours dans un contrôle total et peut remplacer comment et où les clés sont stockées. Les trois premières options ci-dessus doivent fournir des valeurs par défaut corrects pour la plupart des applications similaires à la manière dont ASP.NET  **\<machineKey >** les routines de la génération automatique a fonctionné dans le passé. L’option de secours, finale est le seul scénario qui nécessite le développeur à spécifier [configuration](xref:security/data-protection/configuration/overview) initial s’ils veulent persistance des clés, mais ce basculement se produit uniquement dans les rares cas.
 
->[!WARNING]
-> Si le développeur remplace cette heuristique et pointe le système de protection des données dans un dépôt de clé spécifique, le chiffrement automatique de clés au repos sera désactivé. Au repos la protection peut être réactivée via [configuration](overview.md).
+Lorsque vous hébergez dans un conteneur Docker, clés doivent être persistante dans un dossier qui est un volume Docker (un volume partagé ou un volume monté hôte qui persiste au-delà de la durée de vie du conteneur) ou dans un fournisseur externe, tel que [Azure Key Vault](https://azure.microsoft.com/services/key-vault/) ou [Redis](https://redis.io/). Un fournisseur externe est également utile dans les scénarios de batterie de serveurs web si les applications ne peut pas accéder à un volume partagé de réseau (voir [PersistKeysToFileSystem](xref:security/data-protection/configuration/overview#persistkeystofilesystem) pour plus d’informations).
+
+> [!WARNING]
+> Si le développeur remplace les règles décrites ci-dessus et le système de Protection des données dans un dépôt de clé spécifique de points, un chiffrement de clés à l’arrêt automatique est désactivé. Une protection à l’arrêt peut être réactivée via [configuration](xref:security/data-protection/configuration/overview).
 
 ## <a name="key-lifetime"></a>Durée de vie
 
-Par défaut, les clés ont une durée de vie de 90 jours. Lorsqu’une clé expire, le système sera automatiquement générer une nouvelle clé et définir la nouvelle clé comme clé active. Tant que clés supprimées restent sur le système, que vous serez toujours en mesure de déchiffrer les données protégées avec eux. Consultez [gestion de clés](../implementation/key-management.md#data-protection-implementation-key-management-expiration) pour plus d’informations.
+Par défaut, les clés ont une durée de vie de 90 jours. Lorsqu’une clé expire, l’application génère une nouvelle clé et définit la nouvelle clé comme clé active automatiquement. Tant que clés supprimées restent sur le système, votre application peut déchiffrer les données protégées avec eux. Consultez [gestion de clés](xref:security/data-protection/implementation/key-management#key-expiration-and-rolling) pour plus d’informations.
 
 ## <a name="default-algorithms"></a>Algorithmes par défaut
 
-L’algorithme de protection de charge utile par défaut utilisé est AES-256-CBC pour la confidentialité et HMACSHA256 authenticité. Une clé principale de 512 bits, tous les 90 jours, de restauration est utilisée pour dériver les deux sous-clés utilisés pour ces algorithmes sur une base par charge. Consultez [des sous-clés de dérivation](../implementation/subkeyderivation.md#data-protection-implementation-subkey-derivation-aad) pour plus d’informations.
+L’algorithme de protection de charge utile par défaut utilisé est AES-256-CBC pour la confidentialité et HMACSHA256 authenticité. Une clé principale de 512 bits, modifiée tous les 90 jours, est utilisée pour dériver les deux sous-clés utilisés pour ces algorithmes sur une base par charge. Consultez [des sous-clés de dérivation](xref:security/data-protection/implementation/subkeyderivation#additional-authenticated-data-and-subkey-derivation) pour plus d’informations.
+
+## <a name="see-also"></a>Voir aussi
+
+* [Extensibilité de la gestion de clés](xref:security/data-protection/extensibility/key-management)

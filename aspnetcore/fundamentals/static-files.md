@@ -12,11 +12,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/static-files
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 40c9a799c6ac8a2ce712df4b8fbf3c142ef3fd82
-ms.sourcegitcommit: 8f4d4fad1ca27adf9e396f5c205c9875a3963664
+ms.openlocfilehash: c0751576a1391f26f045c3f8c42ea39c0ff6e5d9
+ms.sourcegitcommit: e4fb6b13be56a0fb2f2778623740a047d6489227
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/16/2017
 ---
 # <a name="working-with-static-files-in-aspnet-core"></a>Utilisation des fichiers statiques dans ASP.NET Core
 
@@ -68,6 +68,8 @@ Une demande de `http://<app>/StaticFiles/test.png` servira le *test.png* fichier
 `StaticFileOptions()`peut définir des en-têtes de réponse. Par exemple, le code ci-dessous configure d’utilisation à partir de fichiers statiques le *wwwroot* dossier et définit le `Cache-Control` en-tête pour les rendre public pouvant être pendant 10 minutes (600 secondes) :
 
 [!code-csharp[Main](../fundamentals/static-files/sample/StartupAddHeader.cs?name=snippet1)]
+
+Le [HeaderDictionaryExtensions.Append](/dotnet/api/microsoft.aspnetcore.http.headerdictionaryextensions.append) méthode n’est disponible à partir de la [Microsoft.AspNetCore.Http](https://www.nuget.org/packages/Microsoft.AspNetCore.Http/) package. Ajouter `using Microsoft.AspNetCore.Http;` à votre *csharp* fichier si la méthode n’est pas disponible.
 
 ![En-têtes de réponse indiquant l’en-tête Cache-Control a été ajouté.](static-files/_static/add-header.png)
 

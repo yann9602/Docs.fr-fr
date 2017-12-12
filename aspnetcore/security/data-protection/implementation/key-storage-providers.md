@@ -11,17 +11,17 @@ ms.assetid: 423e0a79-2f34-44c4-aaf3-146a53c39251
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/implementation/key-storage-providers
-ms.openlocfilehash: 1c73608245e668c0810813e29f78f1ac3dacc414
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: d4b286dc47f8d66e6d09c3e0f48e6326139c8e1e
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="key-storage-providers"></a>Fournisseurs de stockage de clés
 
-<a name=data-protection-implementation-key-storage-providers></a>
+<a name="data-protection-implementation-key-storage-providers"></a>
 
-Par défaut, le système de protection des données [utilise une heuristique](../configuration/default-settings.md#data-protection-default-settings) pour déterminer où le matériel de clé de chiffrement doit être persistante. Le développeur peut substituer l’heuristique et spécifier manuellement l’emplacement.
+Par défaut, le système de protection des données [utilise une heuristique](xref:security/data-protection/configuration/default-settings) pour déterminer où le matériel de clé de chiffrement doit être persistante. Le développeur peut substituer l’heuristique et spécifier manuellement l’emplacement.
 
 > [!NOTE]
 > Si vous spécifiez un emplacement de persistance clé explicite, le système de protection des données sera annuler l’inscription au chiffrement à clé par défaut au mécanisme de rest l’heuristique fournie, afin de clés n’est plus seront chiffrées au repos. Il est recommandé que vous avez en outre [spécifient un mécanisme de chiffrement à clé explicite](key-encryption-at-rest.md#data-protection-implementation-key-encryption-at-rest-providers) pour les applications de production.

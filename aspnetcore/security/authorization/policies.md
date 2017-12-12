@@ -1,8 +1,8 @@
 ---
 title: "D’autorisation personnalisée basée sur des stratégies"
 author: rick-anderson
-description: 
-keywords: ASP.NET Core,
+description: "Ce document explique comment créer et utiliser des gestionnaires de stratégie d’autorisation personnalisée dans une application ASP.NET Core."
+keywords: "ASP.NET Core, d’autorisation, de stratégie personnalisée, de stratégie d’autorisation"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
@@ -11,17 +11,17 @@ ms.assetid: e422a1b2-dc4a-4bcc-b8d9-7ee62009b6a3
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authorization/policies
-ms.openlocfilehash: 5021b5d20f6d9b9a4d8889f25b5e41f2c9306f64
-ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
+ms.openlocfilehash: 0281d054204a11acc2cf11cf5fca23a8f70aad8e
+ms.sourcegitcommit: 037d3900f739dbaa2ba14158e3d7dc81478952ad
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="custom-policy-based-authorization"></a>D’autorisation personnalisée basée sur des stratégies
 
-<a name=security-authorization-policies-based></a>
+<a name="security-authorization-policies-based"></a>
 
-Dans les coulisses du [l’autorisation de rôle](roles.md#security-authorization-role-based) et [d’autorisation des revendications](claims.md#security-authorization-claims-based) rendre l’utilisation d’une spécification, un gestionnaire pour la demande et une stratégie préconfigurée. Ces blocs de construction vous permet d’exprimer les évaluations d’autorisation dans le code, ce qui permet une plus riche, réutilisables et une structure d’autorisation faciles à tester.
+Dans les coulisses, la [l’autorisation de rôle](roles.md) et [d’autorisation des revendications](claims.md) rendre l’utilisation d’une spécification, un gestionnaire pour la demande et une stratégie préconfigurée. Ces blocs de construction vous permet d’exprimer les évaluations d’autorisation dans le code, ce qui permet une plus riche, réutilisables et une structure d’autorisation faciles à tester.
 
 Une stratégie d’autorisation est composée d’une ou plusieurs conditions et inscrit au démarrage de l’application dans le cadre de la configuration du service d’autorisation dans `ConfigureServices` dans les *Startup.cs* fichier.
 
@@ -58,7 +58,7 @@ public class AlcoholPurchaseRequirementsController : Controller
 
 ## <a name="requirements"></a>Spécifications
 
-Une demande d’autorisation est une collection de paramètres de données une stratégie peut utiliser pour évaluer le principal utilisateur actuel. Dans notre stratégie d’âge minimal l’exigence est un paramètre unique, l’âge minimal. Une exigence doit implémenter `IAuthorizationRequirement`. Il s’agit d’une interface de marqueur vide. Une spécification de l’ancienneté minimale paramétrable peut être implémentée comme suit :
+Une demande d’autorisation est une collection de paramètres de données une stratégie peut utiliser pour évaluer le principal utilisateur actuel. Dans notre stratégie d’âge minimal, l’exigence est un paramètre unique, l’âge minimal. Une exigence doit implémenter `IAuthorizationRequirement`. Il s’agit d’une interface de marqueur vide. Une spécification de l’ancienneté minimale paramétrable peut être implémentée comme suit :
 
 ```csharp
 public class MinimumAgeRequirement : IAuthorizationRequirement
@@ -74,13 +74,13 @@ public class MinimumAgeRequirement : IAuthorizationRequirement
 
 Une exigence n’a pas besoin d’avoir des données ou des propriétés.
 
-<a name=security-authorization-policies-based-authorization-handler></a>
+<a name="security-authorization-policies-based-authorization-handler"></a>
 
 ## <a name="authorization-handlers"></a>Gestionnaires d’autorisation
 
 Un gestionnaire d’autorisation est responsable de l’évaluation de toutes les propriétés d’une exigence. Le Gestionnaire d’autorisation doit les évaluer par rapport à un `AuthorizationHandlerContext` pour décider si l’autorisation est autorisée. Une condition peut avoir [plusieurs gestionnaires](policies.md#security-authorization-policies-based-multiple-handlers). Gestionnaires doivent hériter `AuthorizationHandler<T>` où T est l’exigence il gère.
 
-<a name=security-authorization-handler-example></a>
+<a name="security-authorization-handler-example"></a>
 
 Le Gestionnaire de durée de vie minimale peut ressembler à ceci :
 
@@ -114,10 +114,11 @@ public class MinimumAgeHandler : AuthorizationHandler<MinimumAgeRequirement>
 }
 ```
 
-Dans le code ci-dessus nous allons tout d’abord pour voir si l’utilisateur principal a une date de naissance qui a été émis par un émetteur que nous savons et l’approbation de la revendication. Si la revendication est manquante, nous ne pouvons pas autoriser afin que nous retourner. Si nous avons une revendication, nous identifier l’ancienneté est de l’utilisateur, et si elles répondent à l’âge minimal passé par l’exigence ensuite l’autorisation a réussi. Une fois que l’autorisation est réussie, nous appelons `context.Succeed()` en passant dans la demande a réussi en tant que paramètre.
+Dans le code ci-dessus, nous allons tout d’abord pour voir si l’utilisateur principal a une date de naissance qui a été émis par un émetteur que nous savons et l’approbation de la revendication. Si la revendication est manquante, nous ne pouvons pas autoriser afin que nous retourner. Si nous avons une revendication, nous identifier l’ancienneté est de l’utilisateur, et si elles répondent à l’âge minimal passé par l’exigence ensuite l’autorisation a réussi. Une fois que l’autorisation est réussie, nous appelons `context.Succeed()` en passant dans la demande a réussi en tant que paramètre.
 
-<a name=security-authorization-policies-based-handler-registration></a>
+<a name="security-authorization-policies-based-handler-registration"></a>
 
+### <a name="handler-registration"></a>Inscription du Gestionnaire
 Gestionnaires doivent être enregistrés dans la collection de services lors de la configuration, par exemple ;
 
 ```csharp
@@ -148,9 +149,9 @@ Vous pouvez voir dans notre [exemple de gestionnaire](policies.md#security-autho
 
 * Pour garantir la défaillance même si d’autres gestionnaires d’une spécification réussissent, appelez `context.Fail`.
 
-Indépendamment de ce que vous appelez à l’intérieur de votre gestionnaire de tous les gestionnaires d’une spécification seront appelées lorsqu’une stratégie requiert la spécification. Ainsi, les conditions requises pour des effets secondaires, tel que la journalisation, ce qui aura toujours lieu même si `context.Fail()` a été appelée dans un autre gestionnaire.
+Indépendamment de ce que vous appelez à l’intérieur de votre gestionnaire, tous les gestionnaires d’une spécification seront appelées lorsqu’une stratégie requiert la spécification. Ainsi, les conditions requises pour des effets secondaires, tel que la journalisation, ce qui aura toujours lieu même si `context.Fail()` a été appelée dans un autre gestionnaire.
 
-<a name=security-authorization-policies-based-multiple-handlers></a>
+<a name="security-authorization-policies-based-multiple-handlers"></a>
 
 ## <a name="why-would-i-want-multiple-handlers-for-a-requirement"></a>Pourquoi voudrais-je plusieurs gestionnaires pour une spécification ?
 
@@ -215,7 +216,7 @@ services.AddAuthorization(options =>
 
 Le `Handle` méthode, vous devez implémenter dans un gestionnaire d’autorisation possède deux paramètres, un `AuthorizationContext` et `Requirement` vous gérez. Infrastructures telles que MVC ou Jabbr sont libres d’ajouter n’importe quel objet pour le `Resource` propriété sur le `AuthorizationContext` à passer des informations supplémentaires.
 
-Par exemple MVC passe une instance de `Microsoft.AspNetCore.Mvc.Filters.AuthorizationFilterContext` dans la propriété de ressource qui est utilisée pour accéder à HttpContext, RouteData et tout autre MVC fournit.
+Par exemple, MVC passe une instance de `Microsoft.AspNetCore.Mvc.Filters.AuthorizationFilterContext` dans la propriété de ressource qui est utilisée pour accéder à HttpContext, RouteData et tout autre MVC fournit.
 
 L’utilisation de la `Resource` propriété est spécifiques de l’infrastructure. À l’aide des informations contenues dans le `Resource` propriété limite vos stratégies d’autorisation pour les infrastructures particulières. Vous devez effectuer un cast du `Resource` à l’aide de la propriété du `as` (mot clé), puis vérifiez que le cast a réussissent pour vérifier votre code ne se bloquer avec `InvalidCastExceptions` sur les autres infrastructures ;
 

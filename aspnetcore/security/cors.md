@@ -1,8 +1,8 @@
 ---
 title: "L’activation de demandes de Cross-Origin (CORS)"
 author: rick-anderson
-description: 
-keywords: ASP.NET Core,
+description: "Ce document présente les CORS comme une norme pour autoriser ou rejeter les demandes cross-origin dans une application ASP.NET Core."
+keywords: ASP.NET Core, CORS, cross-origine
 ms.author: riande
 manager: wpickett
 ms.date: 05/17/2017
@@ -11,11 +11,11 @@ ms.assetid: f9d95e88-4d7e-4d0c-a8e1-47de1128d505
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/cors
-ms.openlocfilehash: e441ce1c50139a5b33865eec8e8d99764258730d
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: 5398b6ad6531710de2b8000cb368e5fa607ae7ff
+ms.sourcegitcommit: 216dfac27542f10a79274a9ce60dc449e888ed20
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="enabling-cross-origin-requests-cors"></a>L’activation de demandes de Cross-Origin (CORS)
 
@@ -219,7 +219,7 @@ L’en-tête Access-contrôle-Max-Age spécifie la durée pendant laquelle la r�
 
 [!code-csharp[Main](cors/sample/CorsExample4/Startup.cs?range=89-94)]
 
-<a name=cors-how-cors-works></a>
+<a name="cors-how-cors-works"></a>
 
 ## <a name="how-cors-works"></a>Fonctionnement des règles CORS
 
@@ -240,7 +240,7 @@ User-Agent: Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; WOW64; Trident/6
 Host: myservice.azurewebsites.net
 ```
 
-Si le serveur autorise la demande, il définit l’en-tête Access-Control-Allow-Origin. La valeur de cet en-tête correspond à l’en-tête d’origine, ou est la valeur de caractère générique « * », ce qui signifie que toute origine est autorisée. :
+Si le serveur autorise la demande, il définit l’en-tête Access-Control-Allow-Origin dans la réponse. La valeur de cet en-tête correspond à l’en-tête d’origine à partir de la demande, ou est la valeur de caractère générique « * », ce qui signifie que toute origine est autorisée :
 
 ```
 HTTP/1.1 200 OK

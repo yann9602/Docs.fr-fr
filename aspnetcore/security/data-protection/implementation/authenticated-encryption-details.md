@@ -1,8 +1,8 @@
 ---
-title: "Détails de chiffrement authentifié."
+title: "Détails de chiffrement authentifié"
 author: rick-anderson
-description: 
-keywords: ASP.NET Core,
+description: "Cette décrit document les détails d’implémentation de la protection des données ASP.NET Core authentifié de chiffrement."
+keywords: "ASP.NET Core, protection des données, authentification de chiffrement"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
@@ -11,15 +11,15 @@ ms.assetid: 826e6d5d-9620-44e6-ad93-3b1d9969b70b
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/implementation/authenticated-encryption-details
-ms.openlocfilehash: 4d0e63d7722071ab8806a217e96ee7ad7bf10286
-ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
+ms.openlocfilehash: dc96412f6578e612a39e86ce00e1dc5a20cf84e9
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 11/10/2017
 ---
-# <a name="authenticated-encryption-details"></a>Détails de chiffrement authentifié.
+# <a name="authenticated-encryption-details"></a>Détails de chiffrement authentifié
 
-<a name=data-protection-implementation-authenticated-encryption-details></a>
+<a name="data-protection-implementation-authenticated-encryption-details"></a>
 
 Les appels à IDataProtector.Protect sont des opérations de chiffrement authentifié. La méthode Protect propose à la fois la confidentialité et l’authenticité, et elle est liée à la chaîne de l’objectif qui a été utilisée pour dériver de cette instance IDataProtector particulier à partir de sa racine IDataProtectionProvider.
 

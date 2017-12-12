@@ -11,11 +11,11 @@ ms.assetid: 67bd162b-bfb7-4750-9e7f-705228b5288c
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/update-related-data
-ms.openlocfilehash: daf6dd8024863e02e40ad002a0a7da388f5a2ec7
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: b59782bccce00f3940da4ec8bcff768aff8fa4ef
+ms.sourcegitcommit: ccf08615ad59bc6f654560de33b93396113a2eb0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 11/11/2017
 ---
 # <a name="updating-related-data---ef-core-with-aspnet-core-mvc-tutorial-7-of-10"></a>Mise à jour des données connexes - Core EF avec le didacticiel d’ASP.NET MVC de base (7 sur 10)
 
@@ -129,7 +129,7 @@ Le code effectue les opérations suivantes :
 
 -  Obtient l’entité Instructor actuelle à partir de la base de données à l’aide pour le chargement hâtif le `OfficeAssignment` propriété de navigation. Il est identique à ce que vous l’avez fait dans le HttpGet `Edit` (méthode).
 
--  Met à jour l’entité Instructor récupérée avec des valeurs dans le classeur de modèles. Le `TryUpdateModel` surcharge vous permet à la liste verte les propriétés que vous souhaitez inclure. Cela empêche la validation excessive, comme expliqué dans la [deuxième didacticiel](crud.md).
+-  Met à jour l’entité Instructor récupérée avec des valeurs dans le classeur de modèles. Le `TryUpdateModel` surcharge vous permet à la liste blanche les propriétés que vous souhaitez inclure. Cela empêche la validation excessive, comme expliqué dans la [deuxième didacticiel](crud.md).
 
     <!-- Snippets do not play well with <ul> [!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?range=241-244)] -->
 
@@ -219,7 +219,7 @@ Dans *Views/Instructors/Edit.cshtml*, ajouter un **cours** champ avec un tableau
 
 <a id="notepad"></a>
 > [!NOTE] 
-> Lorsque vous collez le code dans Visual Studio, les sauts de ligne changera d’une manière qui interrompt le code.  Appuyez une fois sur Ctrl + Z pour annuler la mise en forme automatique.  Cela permet de résoudre les sauts de ligne afin qu’elles apparaîtront comme vous le voyez ici. La mise en retrait ne doit pas nécessairement être parfait, mais la `@</tr><tr>`, `@:<td>`, `@:</td>`, et `@:</tr>` lignes doivent être chacun sur une ligne unique comme illustré, ou vous obtiendrez une erreur d’exécution. Avec le bloc de code nouveau sélectionné, appuyez sur Tab trois fois pour aligner le nouveau code avec le code existant.
+> Lorsque vous collez le code dans Visual Studio, les sauts de ligne changera d’une manière qui interrompt le code.  Appuyez une fois sur Ctrl + Z pour annuler la mise en forme automatique.  Cela permet de résoudre les sauts de ligne afin qu’elles apparaîtront comme vous le voyez ici. La mise en retrait ne doit pas nécessairement être parfait, mais la `@</tr><tr>`, `@:<td>`, `@:</td>`, et `@:</tr>` lignes doivent être chacun sur une ligne unique comme illustré, ou vous obtiendrez une erreur d’exécution. Avec le bloc de code nouveau sélectionné, appuyez sur Tab trois fois pour aligner le nouveau code avec le code existant. Vous pouvez vérifier l’état de ce problème [ici](https://developercommunity.visualstudio.com/content/problem/147795/razor-editor-malforms-pasted-markup-and-creates-in.html).
 
 [!code-html[Main](intro/samples/cu/Views/Instructors/Edit.cshtml?range=35-61)]
 

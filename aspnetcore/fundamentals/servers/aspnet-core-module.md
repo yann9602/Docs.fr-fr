@@ -12,11 +12,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/servers/aspnet-core-module
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 8ced1e667acb7d11954aea27de7701db89091fd9
-ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
+ms.openlocfilehash: 1d1f551dbde5f3dd6e71808154c2e5885d588d7c
+ms.sourcegitcommit: 282f69e8dd63c39bde97a6d72783af2970d92040
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2017
+ms.lasthandoff: 12/05/2017
 ---
 # <a name="introduction-to-aspnet-core-module"></a>Introduction au Module ASP.NET Core
 
@@ -28,7 +28,7 @@ Versions de Windows prises en charge :
 
 * Windows 7 et Windows Server 2008 R2 et versions ultérieures
 
-[Afficher ou télécharger l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/servers/aspnet-core-module/sample) ([comment télécharger](xref:tutorials/index#how-to-download-a-sample))
+[Affichez ou téléchargez l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/servers/aspnet-core-module/sample) ([procédure de téléchargement](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="what-aspnet-core-module-does"></a>Ce que fait le Module de base ASP.NET
 
@@ -58,7 +58,8 @@ Cette section fournit une vue d’ensemble du processus de configuration d’un 
 
 ### <a name="install-ancm"></a>Installer ANCM
 
-Le Module de base ASP.NET doit être installé dans IIS sur vos serveurs et dans IIS Express sur vos ordinateurs de développement. Pour les serveurs, ANCM est inclus dans le [.NET Core Windows serveur qui héberge le groupe](https://aka.ms/dotnetcore.2.0.0-windowshosting). Pour les ordinateurs de développement, Visual Studio installe automatiquement ANCM dans IIS Express et IIS s’il est déjà installé sur l’ordinateur.
+
+Le Module de base ASP.NET doit être installé dans IIS sur vos serveurs et dans IIS Express sur vos ordinateurs de développement. Pour les serveurs, ANCM est inclus dans le [.NET Core Windows serveur qui héberge le groupe](https://aka.ms/dotnetcore-2-windowshosting). Pour les ordinateurs de développement, Visual Studio installe automatiquement ANCM dans IIS Express et IIS s’il est déjà installé sur l’ordinateur.
 
 ### <a name="install-the-iisintegration-nuget-package"></a>Installez le package NuGet de IISIntegration
 
@@ -111,6 +112,12 @@ Configuration pour le Module de base ASP.NET est stockée dans le *Web.config* f
 ### <a name="run-with-iis-express-in-development"></a>Exécuter avec IIS Express dans le développement
 
 IIS Express peut être lancé par Visual Studio en utilisant le profil par défaut défini par les modèles ASP.NET Core.
+
+## <a name="proxy-configuration-uses-http-protocol-and-a-pairing-token"></a>Configuration du serveur proxy utilise le protocole HTTP et un jeton d’appariement
+
+Le proxy créé entre le ANCM et Kestrel utilise le protocole HTTP. À l’aide de HTTP est une optimisation des performances d’où le trafic entre le ANCM et Kestrel a lieu sur une adresse de bouclage hors de l’interface réseau. Il n’existe aucun risque d’écoute clandestine le trafic entre le ANCM et Kestrel à partir d’un emplacement sur le serveur.
+
+Un jeton d’appariement est utilisé pour garantir que les demandes reçues par Kestrel ont été traitées par IIS et n’avez pas provenir d’une autre source. Le jeton d’appariement est créé et défini dans une variable d’environnement (`ASPNETCORE_TOKEN`) par le ANCM. Le jeton d’appariement est également défini dans un en-tête (`MSAspNetCoreToken`) sur toutes les demandes traitées. Intergiciel (middleware) IIS vérifie chaque demande qu’il reçoit pour confirmer que la valeur d’en-tête de jeton appariement correspond à la valeur de variable d’environnement. Si les valeurs de jeton ne correspondent pas, la demande est connectée et rejetée. La variable d’environnement jeton appariement et le trafic entre le ANCM et Kestrel ne sont pas accessibles à partir d’un emplacement sur le serveur. Sans connaître la valeur du jeton appariement, une personne malveillante ne peuvent pas soumettre des demandes de contournent la vérification de l’intergiciel (middleware) IIS.
 
 ## <a name="next-steps"></a>Étapes suivantes
 
