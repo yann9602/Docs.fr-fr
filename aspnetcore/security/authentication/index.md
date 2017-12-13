@@ -1,8 +1,8 @@
 ---
 title: Authentification
 author: rick-anderson
-description: 
-keywords: ASP.NET Core,
+description: "Ce document constitue la table des matières des différentes rubriques relatives à l’authentification ASP.NET Core."
+keywords: ASP.NET Core,authentification
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
@@ -11,11 +11,11 @@ ms.assetid: 981852c9-78f9-4590-aaee-9d50a2838dfe
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/index
-ms.openlocfilehash: 14eaa3b25d0e6c367f26631d15da2ea077265f72
-ms.sourcegitcommit: 9a22c64759a7285ba788a37039bea5fe95f45f21
+ms.openlocfilehash: 9b92a3206e2d6ca921e8580fa367e4bae12725c5
+ms.sourcegitcommit: 037d3900f739dbaa2ba14158e3d7dc81478952ad
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/15/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="authentication"></a>Authentification
 
@@ -37,10 +37,14 @@ ms.lasthandoff: 08/15/2017
 
 * [Azure Active Directory](azure-active-directory/index.md)
 
-  * [Intégration d’Azure AD dans une application web ASP.NET Core](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-openidconnect-aspnetcore)
+  * [Intégration d’Azure AD dans une application web ASP.NET Core](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-openidconnect-aspnetcore/)
 
-  * [Appel d’une API web ASP.NET Core à partir d’une application WPF via Azure AD](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-native-aspnetcore)
+  * [Appel d’une API web ASP.NET Core à partir d’une application WPF via Azure AD](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-native-aspnetcore/)
 
-  * [Appel d’une API web dans une application web ASP.NET Core via Azure AD](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore)
+  * [Appel d’une API web dans une application web ASP.NET Core via Azure AD](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore/)
 
-* [Sécurisation des applications ASP.NET Core avec IdentityServer4](https://identityserver4.readthedocs.io)
+* [Sécurisation des applications ASP.NET Core avec IdentityServer4](http://docs.identityserver.io/en/release/)
+
+* [Sécurisation des applications ASP.NET Core avec l'authentification Azure App Server (Easy Auth)](https://docs.microsoft.com/azure/app-service/app-service-authentication-overview)
+
+* [Articles basés sur les projets créés avec des comptes d’utilisateur individuels](xref:security/authentication/individual)

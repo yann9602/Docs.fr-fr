@@ -1,23 +1,47 @@
 ---
-title: "Sécurité"
-author: rick-anderson
-description: 
-keywords: ASP.NET Core,
-ms.author: riande
+title: "Vue d’ensemble de la sécurité ASP.NET Core | Microsoft Docs"
+author: rachelappel
+description: "Découvrir les concepts de base de l’authentification, de l’autorisation et de la sécurité dans ASP.NET Core"
+ms.author: rachelap
 manager: wpickett
-ms.date: 10/14/2016
+ms.date: 11/01/2017
 ms.topic: article
 ms.assetid: a8fb7eb7-e0e5-4394-84f3-1f1dbe012345
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/index
-ms.openlocfilehash: f173d03f55a1ce52222a75c023f9e8a20d5c60dc
-ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
+ms.openlocfilehash: 4f3a74d67ce3453499ea9785cc80bee183dc1aff
+ms.sourcegitcommit: e4fb6b13be56a0fb2f2778623740a047d6489227
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 11/16/2017
 ---
-# <a name="security"></a>Sécurité
+# <a name="aspnet-core-security-overview"></a>Vue d’ensemble de la sécurité ASP.NET Core
+
+ASP.NET Core permet aux développeurs de configurer et de gérer facilement la sécurité de leurs applications. ASP.NET Core contient des fonctionnalités permettant de gérer l’authentification, l’autorisation, la protection des données, l’implémentation de SSL, les secrets des applications, la protection contre la falsification de requêtes et la gestion CORS. Ces fonctionnalités de sécurité vous permettent de générer des applications ASP.NET Core robustes et néanmoins sécurisées. 
+
+## <a name="aspnet-core-security-features"></a>Fonctionnalités de sécurité ASP.NET Core
+
+ASP.NET Core offre un grand nombre d’outils et de bibliothèques pour sécuriser vos applications, notamment des fournisseurs d’identité intégrés. Cela dit, vous pouvez utiliser des services d’identité tiers tels que Facebook, Twitter ou LinkedIn. Avec ASP.NET Core, vous pouvez facilement gérer les secrets des applications, qui sont un moyen de stocker et d’utiliser des informations confidentielles sans avoir à les exposer dans le code. 
+
+## <a name="authentication-vs-authorization"></a>Authentification et autorisation
+
+L’authentification est un processus selon lequel un utilisateur fournit des informations d’identification qui sont ensuite comparées à celles stockées dans un système d’exploitation, une base de données, une application ou une ressource. Si elles correspondent, les utilisateurs sont authentifiés et peuvent alors effectuer les actions pour lesquelles ils disposent d’autorisations pendant un processus d’autorisation. L’autorisation désigne le processus qui détermine ce qu’un utilisateur est autorisé à faire. 
+
+Vous pouvez aussi vous représenter l’authentification comme un moyen d’entrer dans un espace, tel qu’un serveur, une base de données, une application ou une ressource, tandis que l’autorisation consiste à définir quelles actions l’utilisateur peut effectuer sur quels objets à l’intérieur de cet espace (serveur, base de données ou application).
+
+## <a name="common-vulnerabilities-in-software"></a>Failles de sécurité courantes dans les logiciels
+
+ASP.NET Core et Entity Framework contiennent des fonctionnalités qui vous aident à sécuriser vos applications et à empêcher les violations de sécurité. La liste de liens ci-après vous permet d’accéder à une documentation décrivant en détail des techniques destinées à éviter les failles de sécurité les plus courantes dans les applications web :
+
+* [Attaques par exécution de scripts de site à site](https://docs.microsoft.com/aspnet/core/security/cross-site-scripting)
+* [Attaques par injection de code SQL](https://docs.microsoft.com/ef/core/querying/raw-sql)
+* [Falsification de requête intersites (CSRF, Cross Site Request Forgery)](https://docs.microsoft.com/aspnet/core/security/anti-request-forgery)
+* [Attaques par redirection ouverte](https://docs.microsoft.com/aspnet/core/security/preventing-open-redirects)
+
+Il existe d’autres failles de sécurité que vous devez connaître. Pour plus d’informations, consultez la section de ce document relative à la *Documentation sur la sécurité ASP.NET*. 
+
+## <a name="aspnet-security-documentation"></a>Documentation sur la sécurité ASP.NET
 
 *   [Authentification](authentication/index.md)
     *   [Présentation d’Identity](authentication/identity.md)
@@ -42,7 +66,7 @@ ms.lasthandoff: 09/28/2017
     *   [Injection de dépendances dans les gestionnaires d’exigences](authorization/dependencyinjection.md)
     *   [Autorisation basée sur les ressources](authorization/resourcebased.md)
     *   [Autorisation basée sur les vues](authorization/views.md)
-    *   [Limitation de l’identité selon le schéma](authorization/limitingidentitybyscheme.md)
+    *   [Limitation d’identité par schéma](authorization/limitingidentitybyscheme.md)
 *   [Protection des données](data-protection/index.md)
     *   [Présentation de la protection des données](data-protection/introduction.md)
     *   [Bien démarrer avec les API de protection des données](data-protection/using-data-protection.md)

@@ -10,11 +10,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: tutorials/razor-pages/validation
-ms.openlocfilehash: e580ee537190c85e74e40c288af1503f136c83d8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: bd794ae2217c2a56f36cd46c2f12f1c80f6b4f2b
+ms.sourcegitcommit: fe880bf4ed1c8116071c0e47c0babf3623b7f44a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="adding-validation-to-a-razor-page"></a>Ajout de la validation à une page Razor
 
@@ -119,7 +119,7 @@ L’attribut `DisplayFormat` peut être utilisé seul, mais il est généralemen
 
 * Le navigateur peut activer des fonctionnalités HTML5 (par exemple pour afficher un contrôle de calendrier, le symbole monétaire correspondant aux paramètres régionaux, des liens de messagerie, etc.).
 * Par défaut, le navigateur affiche les données à l’aide du format correspondant à vos paramètres régionaux.
-* L’attribut `DataType` peut permettre à l’infrastructure ASP.NET Core de choisir le modèle de champ approprié pour afficher les données. S’il est utilisé seul, `DisplayFormat` utilise le modèle de chaîne.
+* L’attribut `DataType` peut permettre au framework ASP.NET Core de choisir le modèle de champ approprié pour afficher les données. S’il est utilisé seul, `DisplayFormat` utilise le modèle de chaîne.
 
 Remarque : La validation jQuery ne fonctionne pas avec l’attribut `Range` et `DateTime`. Par exemple, le code suivant affiche toujours une erreur de validation côté client, même quand la date se trouve dans la plage spécifiée :
 
@@ -132,6 +132,8 @@ Il n’est généralement pas recommandé de compiler des dates en dur dans vos 
 Le code suivant illustre la combinaison d’attributs sur une seule ligne :
 
 [!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Models/MovieDateRatingDAmult.cs?name=snippet1)]
+
+La rubrique [Bien démarrer avec les pages Razor et Entity Framework Core](xref:data/ef-rp/intro) présente des opérations Entity Framework Core plus avancées avec les pages Razor.
 
 ### <a name="publish-to-azure"></a>Publier sur Azure
 

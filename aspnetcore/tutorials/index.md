@@ -1,20 +1,20 @@
 ---
 title: Didacticiels ASP.NET Core
-author: tdykstra
+author: rick-anderson
 description: "Liste des guides pas à pas pour apprendre à développer des applications ASP.NET Core."
 keywords: ASP.NET Core,
-ms.author: tdykstra
+ms.author: riande
 manager: wpickett
-ms.date: 07/14/2017
+ms.date: 10/14/2017
 ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/index
-ms.openlocfilehash: b3ea7688eefa69171fd1179de42497c98cf9302e
-ms.sourcegitcommit: 4d9c6d47bded895f3d9a35e9550e31ae213c083c
+ms.openlocfilehash: 44eaac4f3f4ad55cbc9b5ca9fae6e406ceff3d3c
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="aspnet-core-tutorials"></a>Didacticiels ASP.NET Core
 
@@ -22,15 +22,21 @@ Les guides pas à pas suivants pour développer des applications ASP.NET Core so
 
 ## <a name="building-web-applications"></a>Création d’applications web
 
-Les [pages Razor](xref:mvc/razor-pages/index) constituent l’approche recommandée pour créer une interface utilisateur web avec ASP.NET Core 2.0.
+Les [pages Razor](xref:mvc/razor-pages/index) constituent l’approche recommandée pour créer une application d’interface utilisateur web avec ASP.NET Core 2.0.
 
 * [Présentation des pages Razor dans ASP.NET Core](xref:mvc/razor-pages/index)
-* [Créer une application web de pages Razor avec ASP.NET Core sur Windows](xref:tutorials/razor-pages/index)
-* [Créer une application web de pages Razor avec ASP.NET Core sur Mac](xref:tutorials/razor-pages-mac/index)  
-* [Créer une application web de pages Razor avec ASP.NET Core avec VS Code](xref:tutorials/razor-pages-vsc/index) 
-* [Créer une application web ASP.NET Core MVC avec Visual Studio sur Windows](first-mvc-app/index.md)
-* [Créer une application web ASP.NET Core MVC avec Visual Studio sur Mac](first-mvc-app-mac/index.md)
-* [Créer une application web ASP.NET Core MVC avec Visual Studio Code sur Mac ou Linux](first-mvc-app-xplat/index.md)
+* Créer une application web de pages Razor avec ASP.NET Core
+
+   * [Pages Razor sur Windows](xref:tutorials/razor-pages/index)
+   * [Pages Razor sur Mac](xref:tutorials/razor-pages-mac/index)
+   * [Pages Razor avec VS Code](xref:tutorials/razor-pages-vsc/index)  
+
+* Créer une application web ASP.NET Core MVC
+
+   * [Application web avec Visual Studio pour Windows](first-mvc-app/index.md)
+   * [Application web avec Visual Studio pour Mac](first-mvc-app-mac/index.md)
+   * [Application web avec Visual Studio Code sur Mac ou Linux](first-mvc-app-xplat/index.md)
+
 * [Bien démarrer avec ASP.NET Core et Entity Framework Core à l’aide de Visual Studio](../data/ef-mvc/index.md)
 * [Génération de projets avec Yeoman](../client-side/yeoman.md)
 * [Création de Tag Helpers](../mvc/views/tag-helpers/authoring.md)
@@ -38,10 +44,13 @@ Les [pages Razor](xref:mvc/razor-pages/index) constituent l’approche recommand
 * [Développement d’applications ASP.NET Core à l’aide de dotnet watch](dotnet-watch.md)
 
 ## <a name="building-web-apis"></a>Génération d’API web
-* [Créer une API web avec ASP.NET Core et Visual Studio pour Mac](xref:tutorials/first-web-api-mac)
-* [Créer une API web avec ASP.NET Core et Visual Studio pour Windows](first-web-api.md)
-* [Créer une API web avec ASP.NET Core et Visual Studio Code](web-api-vsc.md)
-* [Pages d’aide d’API web ASP.NET à l’aide de Swagger](web-api-help-pages-using-swagger.md)
+* Créer une API web avec ASP.NET Core
+
+  * [API web avec Visual Studio pour Windows](first-web-api.md)
+  * [API web avec Visual Studio pour Mac](xref:tutorials/first-web-api-mac)
+  * [API web avec Visual Studio Code](web-api-vsc.md)
+  
+* [Pages d’aide sur l’API web ASP.NET Core avec Swagger](web-api-help-pages-using-swagger.md)
 * [Création de services web backend pour les applications mobiles natives](../mobile/native-mobile-backend.md)
 
 ## <a name="working-with-data"></a>Utilisation de données
@@ -65,6 +74,7 @@ Les [pages Razor](xref:mvc/razor-pages/index) constituent l’approche recommand
 
 ## <a name="publishing-and-deployment"></a>Publication et déploiement
 * [Déployer une application web ASP.NET Core sur Azure à l’aide de Visual Studio](publish-to-azure-webapp-using-vs.md)
+* [Déployer une application web ASP.NET Core sur Azure avec une ligne de commande](publish-to-azure-webapp-using-cli.md)
 * [Publication vers une application web Azure avec déploiement continu](../publishing/azure-continuous-deployment.md)
 * [Déployer un conteneur ASP.NET sur un hôte Docker distant](https://docs.microsoft.com/azure/vs-azure-tools-docker-hosting-web-apps-in-docker)
 * [ASP.NET Core sur Nano Server](nano-server.md)
