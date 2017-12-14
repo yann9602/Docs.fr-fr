@@ -10,11 +10,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/razor-pages/da1
-ms.openlocfilehash: e0b09860e7dc871e0a554ddeac9e8d2c31702fb0
-ms.sourcegitcommit: 9ecd4e9fb0c40c3693dab079eab1ff94b461c922
+ms.openlocfilehash: c66bb3a9d766e02c7775906cdd547a0e12c15336
+ms.sourcegitcommit: b38796ea3806bf39b89806adfa681b2a33762907
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/28/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="updating-the-generated-pages"></a>Mise à jour des pages générées
 
@@ -95,7 +95,7 @@ Pour tester le bloc `catch` :
 * Dans une autre fenêtre de navigateur, sélectionnez le lien **Delete** du même film, puis supprimez le film.
 * Dans la fenêtre de navigateur précédente, postez les modifications apportées au film.
 
-Le code de production détecte généralement les conflits d’accès concurrentiel quand deux clients, ou plus, mettent simultanément à jour un enregistrement. Pour plus d’informations, consultez [Gestion de conflits d’accès concurrentiel](xref:data/ef-mvc/concurrency).
+Le code de production détecte généralement les conflits d’accès concurrentiel quand deux clients, ou plus, mettent simultanément à jour un enregistrement. Pour plus d’informations, consultez [Gestion de conflits d’accès concurrentiel](xref:data/ef-rp/concurrency).
 
 ### <a name="posting-and-binding-review"></a>Validation de la publication et de la liaison
 

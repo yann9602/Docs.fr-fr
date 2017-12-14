@@ -10,11 +10,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/intro
-ms.openlocfilehash: d3bcf9aaf7fa809825a0ba8631ee52d3860b090d
-ms.sourcegitcommit: 05e798c9bac7b9e9983599afb227ef393905d023
+ms.openlocfilehash: 98fe1b0c2dcf2e133d921b2cc8695bd2056c5ec0
+ms.sourcegitcommit: a33737ea24e1ea9642e461d1bc90d6701f889436
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 12/12/2017
 ---
 # <a name="getting-started-with-razor-pages-and-entity-framework-core-using-visual-studio-1-of-8"></a>Prise en main de Pages Razor et Entity Framework Core, à l’aide de Visual Studio (1 / 8)
 
@@ -71,9 +71,9 @@ Ouvrez *Pages/_Layout.cshtml* et apportez les modifications suivantes :
 
 Les modifications sont mises en surbrillance.
 
-[!code-html[](intro/samples/cu/Pages/_Layout.cshtml?highlight=6,29,35-39,47&range=1-50)]
+[!code-html[](intro/samples/cu/Pages/_Layout.cshtml?highlight=6,29,35-38,47&range=1-50)]
 
-Dans *Views/Home/Index.cshtml*, remplacez le contenu du fichier par le code suivant pour remplacer le texte sur ASP.NET et MVC avec du texte sur cette application :
+Dans *Pages/Index.cshtml*, remplacez le contenu du fichier par le code suivant pour remplacer le texte sur ASP.NET et MVC avec du texte sur cette application :
 
 [!code-html[](intro/samples/cu/Pages/Index.cshtml)]
 
@@ -279,7 +279,7 @@ Développez le **Tables** nœud.
 
 Avec le bouton droit le **Student** de table et cliquez sur **des données d’affichage** pour afficher les colonnes créées et les lignes insérées dans la table.
 
-Le *.mdf* et *.ldf* les fichiers de base de données se trouvent dans le *C:\Users\<votre_nom_utilisateur >* dossier.
+Le *.mdf* et *.ldf* les fichiers de base de données se trouvent dans le *C:\Users\\ <yourusername>*  dossier.
 
 `EnsureCreated`est appelé sur le démarrage de l’application, ce qui permet le flux de travail suivant :
 
