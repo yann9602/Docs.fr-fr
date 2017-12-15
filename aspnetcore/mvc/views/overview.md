@@ -5,21 +5,22 @@ description: "Découvrez comment gérer les vues de présentation des données d
 keywords: ASP.NET Core, afficher, MVC, razor, viewmodel, viewdata, viewbag
 ms.author: riande
 manager: wpickett
-ms.date: 09/26/2017
+ms.date: 12/12/2017
 ms.topic: article
-ms.assetid: 668c320d-c050-45e3-8161-2f460dc93b2f
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/overview
-ms.openlocfilehash: 4530d2f500dd887bf649a753283fb3e4af995322
-ms.sourcegitcommit: c2f6c593d81fbd90e6ddd672fe0a5636d06b615a
+ms.openlocfilehash: 2562d4e5fb85159e6ccb47990f54448ddc188077
+ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="views-in-aspnet-core-mvc"></a>Vues de base d’ASP.NET MVC
 
 Par [Steve Smith](https://ardalis.com/) et [Luke Latham](https://github.com/guardrex)
+
+Ce document explique les vues utilisées dans les applications ASP.NET MVC de base. Pour plus d’informations sur les Pages Razor, consultez [Introduction aux Pages Razor](xref:mvc/razor-pages/index).
 
 Dans le **M**odèle -**V**UE -**C**ontroller (MVC), modèle, le *vue* gère l’interaction utilisateur et de présentation des données de l’application. Une vue est un modèle HTML incorporé [balisage de Razor](xref:mvc/views/razor). Balisage de Razor est un code qui interagit avec le balisage HTML pour générer une page Web qui est envoyée au client.
 

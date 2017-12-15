@@ -10,11 +10,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/index
-ms.openlocfilehash: 44eaac4f3f4ad55cbc9b5ca9fae6e406ceff3d3c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 66f6e4542dd208a986b256acd4bd1d0381aa46c6
+ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="aspnet-core-tutorials"></a>Didacticiels ASP.NET Core
 
@@ -38,7 +38,6 @@ Les [pages Razor](xref:mvc/razor-pages/index) constituent l’approche recommand
    * [Application web avec Visual Studio Code sur Mac ou Linux](first-mvc-app-xplat/index.md)
 
 * [Bien démarrer avec ASP.NET Core et Entity Framework Core à l’aide de Visual Studio](../data/ef-mvc/index.md)
-* [Génération de projets avec Yeoman](../client-side/yeoman.md)
 * [Création de Tag Helpers](../mvc/views/tag-helpers/authoring.md)
 * [Création d’un composant de vue simple](../mvc/views/view-components.md#walkthrough-creating-a-simple-view-component)
 * [Développement d’applications ASP.NET Core à l’aide de dotnet watch](dotnet-watch.md)

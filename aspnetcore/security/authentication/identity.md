@@ -1,21 +1,21 @@
 ---
 title: "Introduction à l’identité sur ASP.NET Core"
 author: rick-anderson
-description: "À l’aide d’identité avec une application ASP.NET Core"
+description: "Utiliser l’identité à une application ASP.NET Core"
 keywords: "Autorisation ASP.NET Core, identité, sécurité"
 ms.author: riande
 manager: wpickett
-ms.date: 07/07/2017
+ms.date: 12/15/2017
 ms.topic: article
 ms.assetid: cf119f21-1a2b-49a2-b052-547ccb66ee83
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/identity
-ms.openlocfilehash: 0679663b3b3b66f9935d0fb24360be2954fcdee1
-ms.sourcegitcommit: 9ecd4e9fb0c40c3693dab079eab1ff94b461c922
+ms.openlocfilehash: 7daf0267a6dc659afbd188ce87e35ca40816a31d
+ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/28/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>Introduction à l’identité sur ASP.NET Core
 
@@ -23,7 +23,7 @@ Par [Pranav Rastogi](https://github.com/rustd), [Rick Anderson](https://twitter.
 
 Identité de ASP.NET Core est un système d’appartenance qui vous permet d’ajouter des fonctionnalités de connexion à votre application. Les utilisateurs peuvent créer une connexion et un compte avec un nom d’utilisateur et mot de passe, ou ils peuvent utiliser un fournisseur de connexion externe tels que Facebook, Google, Microsoft Account, Twitter ou d’autres.
 
-Vous pouvez configurer l’identité du principal ASP.NET pour utiliser une base de données SQL Server pour stocker les noms d’utilisateur, les mots de passe et les données de profil. Vous pouvez également utiliser votre propre magasin persistant, par exemple le stockage de Table Azure. Ce document contient des instructions pour Visual Studio et à l’aide de l’interface CLI.
+Vous pouvez configurer l’identité du principal ASP.NET pour utiliser une base de données SQL Server pour stocker les noms d’utilisateur, les mots de passe et les données de profil. Vous pouvez également utiliser votre propre magasin persistant, par exemple, un stockage de tables Azure. Ce document contient des instructions pour Visual Studio et à l’aide de l’interface CLI.
 
 ## <a name="overview-of-identity"></a>Vue d’ensemble de l’identité
 
@@ -39,9 +39,9 @@ Dans cette rubrique, vous allez apprendre à utiliser ASP.NET Core Identity pour
     ![Boîte de dialogue Nouveau projet](identity/_static/01-mvc_2.png)
     
     # <a name="net-core-clitabnetcore-cli"></a>[CLI .NET Core](#tab/netcore-cli)
-    Si vous utilisez l’interface de ligne de base de .NET, créer le projet à l’aide ``dotnet new mvc --auth Individual``. Cela crée un nouveau projet avec le même code de modèle d’identité crée de Visual Studio.
+    Si vous utilisez l’interface de ligne de base de .NET, créer le projet à l’aide ``dotnet new mvc --auth Individual``. Cette commande crée un nouveau projet avec le même code de modèle d’identité crée de Visual Studio.
  
-    Le projet créé contient le `Microsoft.AspNetCore.Identity.EntityFrameworkCore` package, qui rendront les données d’identité et le schéma à l’aide de SQL Server [Entity Framework Core](https://docs.microsoft.com/ef/).
+    Le projet créé contient le `Microsoft.AspNetCore.Identity.EntityFrameworkCore` package, qui conserve les données d’identité et le schéma à l’aide de SQL Server [Entity Framework Core](https://docs.microsoft.com/ef/).
     
     ---
  

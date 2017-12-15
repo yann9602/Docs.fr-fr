@@ -13,7 +13,7 @@ Pour plus d’informations sur le fonctionne de l’exemple, consultez la [fourn
       * `SecretName`: `secret_value_1`
       * `Section--SecretName`: `secret_value_2`
   * Inscrire l’exemple d’application avec Azure Active Directory.
-  * Autoriser l’application à accéder au coffre de clés. Lorsque vous utilisez la `Set-AzureRmKeyVaultAccessPolicy` fournissent de l’applet de commande PowerShell pour autoriser l’application à accéder au coffre de clés, `List` et `Get` accès aux clés secrètes avec `-PermissionsToKeys list,get`.
+  * Autoriser l’application à accéder au coffre de clés. Lorsque vous utilisez la `Set-AzureRmKeyVaultAccessPolicy` fournissent de l’applet de commande PowerShell pour autoriser l’application à accéder au coffre de clés, `List` et `Get` accès aux clés secrètes avec `-PermissionsToSecrets list,get`.
 2. Mettre à jour de l’application *appsettings.json* fichier avec les valeurs de `Vault`, `ClientId`, et `ClientSecret`.
 3. Exécutez l’exemple d’application, qui obtient ses valeurs de configuration à partir de `IConfigurationRoot` avec le même nom que le nom secret.
   * Valeurs non hiérarchique : la valeur de `SecretName` est obtenu avec `config["SecretName"]`.

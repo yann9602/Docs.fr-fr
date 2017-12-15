@@ -11,17 +11,17 @@ ms.assetid: b67c3d4a-f2bf-4132-a48b-4b0d599d7981
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/intro
-ms.openlocfilehash: 5095def776f79d0bb76d5a8e94a4228ef0abed75
-ms.sourcegitcommit: a80d35647aff66323160b2cb413b65d79d98f7a6
+ms.openlocfilehash: 2b21c7fb35c65d9374723faac5b812289023a0f6
+ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/08/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="getting-started-with-aspnet-core-mvc-and-entity-framework-core-using-visual-studio-1-of-10"></a>Mise en route avec ASP.NET MVC de base et d’Entity Framework Core, à l’aide de Visual Studio (1 / 10)
 
 Par [Tom Dykstra](https://github.com/tdykstra) et [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Une version de Pages Razor de ce didacticiel est disponible [ici](xref:data/ef-rp/intro). La version de Pages Razor est plus facile à suivre et couvre plus de fonctionnalités EF. Nous vous recommandons de suivre les [version Pages Razor de ce didacticiel](xref:data/ef-rp/intro).
+Une version de Pages Razor de ce didacticiel est disponible [ici](xref:data/ef-rp/intro). La version des pages Razor est plus facile à suivre et couvre plus de fonctionnalités Entity Framework. Nous vous recommandons de suivre les [version Pages Razor de ce didacticiel](xref:data/ef-rp/intro).
 
 L’exemple d’application web Contoso University montre comment créer des applications web ASP.NET Core 2.0 MVC à l’aide d’Entity Framework (EF) 2.0 et Visual Studio 2017.
 
@@ -244,15 +244,10 @@ La création automatique de méthodes d’action CRUD et de vues est appelée à
 
 * Avec le bouton droit le **contrôleurs** dossier **l’Explorateur de solutions** et sélectionnez **Ajouter > nouvel élément structuré**.
 
-* Dans la boîte de dialogue **Ajouter des dépendances MVC**, sélectionnez **Dépendances minimales**, puis **Ajouter**.
+Si le **ajouter des dépendances MVC** boîte de dialogue apparaît :
 
-  ![Ajouter des dépendances](intro/_static/add-depend.png)
-
-  Visual Studio ajoute les dépendances nécessaires pour structurer un contrôleur. La seule modification dans le fichier projet est l’ajout de la `Microsoft.VisualStudio.Web.CodeGeneration.Design` package.
-
-  A *ScaffoldingReadMe.txt* fichier est créé que vous pouvez supprimer.
-
-* Une fois encore, avec le bouton droit le **contrôleurs** dossier **l’Explorateur de solutions** et sélectionnez **Ajouter > nouvel élément structuré**.
+* [Mettre à jour de Visual Studio vers la dernière version](https://www.visualstudio.com/downloads/). Les versions de Visual Studio avant 15.5 affichent cette boîte de dialogue.
+* Si vous ne pouvez pas mettre à jour, sélectionnez **ajouter**, puis suivez les étapes de contrôleur d’ajouter à nouveau.
 
 * Dans le **ajouter une vue de structure** boîte de dialogue :
 
