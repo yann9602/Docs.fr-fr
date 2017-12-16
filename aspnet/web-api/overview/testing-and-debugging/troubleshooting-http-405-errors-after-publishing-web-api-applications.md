@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/testing-and-debugging/troubleshooting-http-405-errors-after-publishing-web-api-applications
 msc.type: authoredcontent
-ms.openlocfilehash: 2455bbed891179466de8fb6ade3b0a8e66eadee6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b87ae7420e1295030e90c30e97b1e331413ce263
+ms.sourcegitcommit: f1436107b4c022b26f5235dddef103cec5aa6bff
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 12/15/2017
 ---
 <a name="troubleshooting-http-405-errors-after-publishing-web-api-2-applications"></a>Résolution des problèmes de HTTP 405 erreurs après la publication Web API 2 Applications
 ====================
@@ -44,7 +44,7 @@ En tant qu’une brève présentation, Voici plusieurs méthodes HTTP utilisées
 | **TÉLÉCHARGER** | Cette méthode est utilisée pour récupérer des données à partir d’un URI et probablement la méthode HTTP plus utilisés. |
 | **HEAD** | Cette méthode est très similaire à celles de la méthode GET, à ceci près qu’il ne récupère pas réellement les données à partir de l’URI de demande - il récupère simplement l’état HTTP. |
 | **PUBLIER** | Cette méthode est généralement utilisée pour envoyer de nouvelles données à l’URI ; POST est souvent utilisée pour envoyer des données de formulaire. |
-| **PUT** | Cette méthode est généralement utilisée pour les données brutes à l’URI ; PUT est souvent utilisée pour envoyer des données JSON ou XML pour les applications API Web. |
+| **PUT** | Cette méthode est généralement utilisée pour envoyer des données brutes à l’URI ; PUT est souvent utilisée pour envoyer des données JSON ou XML pour les applications API Web. |
 | **SUPPRIMER** | Cette méthode est utilisée pour supprimer les données à partir d’un URI. |
 | **OPTIONS** | Cette méthode est généralement utilisée pour récupérer la liste des méthodes HTTP prises en charge pour un URI. |
 | **DÉPLACEMENT DE LA COPIE** | Ces deux méthodes sont utilisées avec WebDAV et leur objectif est explicite. |

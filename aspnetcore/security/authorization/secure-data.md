@@ -10,11 +10,11 @@ ms.assetid: abeb2f8e-dfbf-4398-a04c-338a613a65bc
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: security/authorization/secure-data
-ms.openlocfilehash: 8eeb5d71575fd819239da6dd63dd31e323fb0556
-ms.sourcegitcommit: 96af03c9f44f7c206e68ae3ef8596068e6b4e5fd
+ms.openlocfilehash: db95d46dafdd300d4ec13e8cc31a3d995016ab92
+ms.sourcegitcommit: f1436107b4c022b26f5235dddef103cec5aa6bff
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/15/2017
 ---
 # <a name="create-an-aspnet-core-app-with-user-data-protected-by-authorization"></a>Créer une application ASP.NET Core et de données utilisateur protégées par l’autorisation
 
@@ -321,4 +321,4 @@ Test de l’application d’amorçage la base de données. La méthode de la val
 
 * [ASP.NET Core d’autorisation Lab](https://github.com/blowdart/AspNetAuthorizationWorkshop). Ce laboratoire présente en détail sur les fonctionnalités de sécurité présentées dans ce didacticiel.
 * [Autorisation dans ASP.NET Core : Simple, des rôles, basée sur les revendications et personnalisées](index.md)
-* [Autorisation basée sur une stratégie personnalisée](policies.md)
+* [D’autorisation personnalisée basée sur des stratégies](policies.md)
