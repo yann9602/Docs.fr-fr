@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/index
-ms.openlocfilehash: b3bcd15a078ed2125d14c3e94311e385a1db9683
-ms.sourcegitcommit: 6e46abd65973dea796d364a514de9ec2e3e1c1ed
+ms.openlocfilehash: bc19cbf0093e8a7f26af82d19f597cc805e04309
+ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="working-with-data-in-aspnet-core"></a>Utilisation des données dans ASP.NET Core 
 
@@ -29,7 +29,7 @@ ms.lasthandoff: 12/02/2017
    * [Mise à jour de données associées](xref:data/ef-rp/update-related-data)
    * [Gestion des conflits d’accès concurrentiel](xref:data/ef-rp/concurrency)
 
-*   [Bien démarrer avec ASP.NET Core et Entity Framework Core à l’aide de Visual Studio](ef-mvc/index.md)
+*   [Bien démarrer avec ASP.NET Core MVC et Entity Framework Core à l’aide de Visual Studio](ef-mvc/index.md)
     *   [Prise en main](ef-mvc/intro.md)
     *   [Opérations de création, de lecture, de mise à jour et de suppression](xref:data/ef-mvc/crud)
     *   [Tri, filtrage, pagination et regroupement](xref:data/ef-mvc/sort-filter-page)
