@@ -5,18 +5,17 @@ description: "En savoir plus sur la validation de modèle dans ASP.NET MVC de ba
 keywords: Validation ASP.NET Core, MVC,
 ms.author: riande
 manager: wpickett
-ms.date: 10/14/2016
+ms.date: 12/18/2016
 ms.topic: article
 ms.assetid: 3a8676dd-7ed8-4a05-bca2-44e288ab99ee
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/models/validation
-ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: a3f3f7010d7744d59ce2dd88b323418423b3ae08
-ms.sourcegitcommit: 9ecd4e9fb0c40c3693dab079eab1ff94b461c922
+ms.openlocfilehash: 7f641c247cb672934e76fa13bc7b7beb3990dd82
+ms.sourcegitcommit: f5a7f0198628f0d152257d90dba6c3a0747a355a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/28/2017
+ms.lasthandoff: 12/19/2017
 ---
 # <a name="introduction-to-model-validation-in-aspnet-core-mvc"></a>Introduction à la validation de modèle dans ASP.NET MVC de base
 
@@ -84,7 +83,7 @@ MVC continue validation des champs jusqu'à ce qu’atteigne le nombre maximal d
 
 ## <a name="handling-model-state-errors"></a>État de modèle de gestion des erreurs
 
-Validation du modèle se produit avant chaque action du contrôleur qui est appelée, et il incombe de la méthode d’action à inspecter `ModelState.IsValid` et réagir de façon appropriée. Dans de nombreux cas, la réaction appropriée doit retourner un type de réponse d’erreur, dans l’idéal, détaillant la raison de l’échec de validation du modèle.
+Validation du modèle se produit avant chaque action du contrôleur qui est appelée, et il incombe de la méthode d’action à inspecter `ModelState.IsValid` et réagir de façon appropriée. Dans de nombreux cas, la réaction appropriée doit renvoyer une réponse d’erreur, dans l’idéal, détaillant la raison de l’échec de validation du modèle.
 
 Certaines applications choisit de suivre une convention standard pour traiter les erreurs de validation de modèle, auquel cas un filtre peut être un emplacement approprié pour implémenter une telle stratégie. Vous devez tester le comportement de vos actions avec les États de modèles valides et non valides.
 
@@ -98,7 +97,7 @@ Vous devrez peut-être exécuter manuellement la validation. Pour ce faire, appe
 
 ## <a name="custom-validation"></a>Validation personnalisée
 
-Attributs de validation fonctionnent pour la plupart des besoins de la validation. Toutefois, des règles de validation sont spécifiques à votre entreprise, qu’elles ne sont pas simplement à la validation de données génériques tels que la vérification d’un champ est requise ou qu’il est conforme à une plage de valeurs. Pour ces scénarios, les attributs de validation personnalisés sont une excellente solution. Il est facile de créer vos propres attributs de validation personnalisée dans MVC. Uniquement hériter de la `ValidationAttribute`et remplacez le `IsValid` (méthode). Le `IsValid` méthode accepte deux paramètres, le premier est un objet nommé *valeur* et le second est un `ValidationContext` objet nommé *validationContext*. *Valeur* fait référence à la valeur réelle du champ de la validation de votre validateur personnalisé.
+Attributs de validation fonctionnent pour la plupart des besoins de la validation. Toutefois, des règles de validation sont spécifiques à votre entreprise. Vos règles peut-être pas les techniques de validation de données courantes telles que vous être assuré d’un champ est obligatoire ou qu’il est conforme à une plage de valeurs. Pour ces scénarios, les attributs de validation personnalisés sont une excellente solution. Il est facile de créer vos propres attributs de validation personnalisée dans MVC. Uniquement hériter de la `ValidationAttribute`et remplacez le `IsValid` (méthode). Le `IsValid` méthode accepte deux paramètres, le premier est un objet nommé *valeur* et le second est un `ValidationContext` objet nommé *validationContext*. *Valeur* fait référence à la valeur réelle du champ de la validation de votre validateur personnalisé.
 
 Dans l’exemple suivant, une règle d’entreprise stipule que les utilisateurs ne peuvent pas définir le genre *classique* pour une vidéo publiée après le 1960. Le `[ClassicMovie]` attribut vérifie d’abord le genre et s’il s’agit d’un standard, il vérifie ensuite la date de publication pour qu’il s’agit 1960 plus tard. Si elle est libérée après 1960, la validation échoue. L’attribut accepte un paramètre entier qui représente l’année que vous pouvez utiliser pour valider les données. Vous pouvez capturer la valeur du paramètre dans le constructeur de l’attribut, comme illustré ici :
 
@@ -145,11 +144,11 @@ Les programmes d’assistance de balise ci-dessus de rendu HTML ci-dessous. Note
 </form>
 ```
 
-Par conséquent, la validation côté client empêche la soumission jusqu'à ce que le formulaire est valid. Le bouton d’envoi s’exécute JavaScript qui envoie le formulaire ou affiche des messages d’erreur.
+Empêche la validation côté client soumission jusqu'à ce que le formulaire est valid. Le bouton d’envoi s’exécute JavaScript qui envoie le formulaire ou affiche des messages d’erreur.
 
 MVC détermine les valeurs d’attribut de type en fonction du type de données .NET d’une propriété, et éventuellement remplacé à l’aide `[DataType]` attributs. La base de `[DataType]` attribut aucune validation n’est réel côté serveur. Navigateurs choisir leurs propres messages d’erreur et affichent ces erreurs, mais ils le souhaitent, toutefois package jQuery Validation discrète peut remplacer les messages et les afficher de manière cohérente avec d’autres. Cela produit plus évidemment lorsque les utilisateurs appliquent `[DataType]` sous-classes comme `[EmailAddress]`.
 
-### <a name="adding-validation-to-dynamic-forms"></a>Ajouter une Validation aux formulaires dynamiques :
+### <a name="add-validation-to-dynamic-forms"></a>Ajouter une Validation aux formulaires dynamiques
 
 Car jQuery Validation discrète transmet la logique de validation et les paramètres jQuery validation lors du premier charge de la page, les formulaires générés de manière dynamique pas automatiquement présentera de validation. Au lieu de cela, vous devez indiquer jQuery Validation discrète pour analyser la forme dynamique immédiatement après sa création. Par exemple, le code ci-dessous montre comment vous pouvez configurer la validation côté client sur un formulaire ajoutée via AJAX.
 
@@ -172,7 +171,7 @@ $.get({
 
 Le `$.validator.unobtrusive.parse()` méthode accepte un sélecteur de jQuery pour un argument. Cette méthode indique à jQuery Validation discrète pour analyser les `data-` attributs des formes au sein de ce sélecteur. Les valeurs de ces attributs sont ensuite passées pour le plug-in de la validation jQuery afin que le formulaire présente les règles de validation côté client souhaité.
 
-### <a name="adding-validation-to-dynamic-controls"></a>Ajout d’une Validation à des contrôles dynamiques :
+### <a name="add-validation-to-dynamic-controls"></a>Ajouter une Validation à des contrôles dynamiques
 
 Vous pouvez également mettre à jour les règles de validation sur un formulaire lorsque les contrôles individuels, tels que `<input/>`s et `<select/>`s, sont générées de façon dynamique. Vous ne pouvez pas passer des sélecteurs pour ces éléments pour le `parse()` directement la méthode, car le formulaire qui l’entoure a déjà été analysé et ne met pas à jour.  Au lieu de cela, vous supprimez d’abord les données de validation existantes, puis d’analyse de l’intégralité du formulaire, comme indiqué ci-dessous :
 

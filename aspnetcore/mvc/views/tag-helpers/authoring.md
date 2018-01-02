@@ -12,15 +12,15 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/tag-helpers/authoring
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 6858b6b8ec89a5e5ffa9e5f8dddb905f38e16603
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cbe46ee1d3cd9f7a30a87d364074f1302f9af7ab
+ms.sourcegitcommit: 5834afb87e4262b9b88e60e3fe6c735e61a1e08d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 12/20/2017
 ---
 # <a name="authoring-tag-helpers-in-aspnet-core-a-walkthrough-with-samples"></a>Programmes d’assistance de balise dans ASP.NET Core, une procédure pas à pas avec les exemples de création
 
-De [Rick Anderson](https://twitter.com/RickAndMSFT)
+Par [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 [Affichez ou téléchargez l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/tag-helpers/authoring/sample) ([procédure de téléchargement](xref:tutorials/index#how-to-download-a-sample))
 
@@ -76,9 +76,18 @@ Autrement dit, une balise d’ancrage qui rend cette un lien par courrier élect
     
     Le code ci-dessus utilise la syntaxe des caractères génériques pour spécifier que tous les programmes d’assistance de balise dans notre assembly seront disponibles. La première chaîne après `@addTagHelper` Spécifie l’application d’assistance de balise à charger (utilisez « * » pour tous les programmes d’assistance de balise), et la deuxième chaîne de « AuthoringTagHelpers » Spécifie l’assembly de l’application d’assistance de balise. En outre, notez que la deuxième ligne met dans les programmes d’assistance de balise de noyaux de ASP.NET MVC à l’aide de la syntaxe des caractères génériques (ces programmes d’assistance sont décrites dans [Introduction aux programmes d’assistance de balise](intro.md).) Il s’agit du `@addTagHelper` directive qui rend l’application d’assistance de balise disponibles à la vue Razor. Ou bien, vous pouvez fournir le nom qualifié complet (FQN) d’une application d’assistance de balise comme indiqué ci-dessous :
     
-    [!code-html[Main](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/_ViewImports.cshtml?highlight=3&range=1-3)]
+```csharp
+@using AuthoringTagHelpers
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper AuthoringTagHelpers.TagHelpers.EmailTagHelper, AuthoringTagHelpers
+```
     
-    Pour ajouter un programme d’assistance de balise à une vue à l’aide d’un FQN, vous ajoutez d’abord le FQN (`AuthoringTagHelpers.TagHelpers.EmailTagHelper`) et le nom d’assembly (*AuthoringTagHelpers*). La plupart des développeurs préfèrent utiliser la syntaxe des caractères génériques. [Introduction aux applications d’assistance de balise](intro.md) détaille syntaxe Ajout, suppression, hiérarchie et de caractères génériques des balises d’assistance.
+<!--
+the following snippet uses TagHelpers3 and should use TagHelpers (not the 3)
+    [!code-html[Main](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/_ViewImports.cshtml?highlight=3&range=1-3)]
+-->
+    
+Pour ajouter un programme d’assistance de balise à une vue à l’aide d’un FQN, vous ajoutez d’abord le FQN (`AuthoringTagHelpers.TagHelpers.EmailTagHelper`) et le nom d’assembly (*AuthoringTagHelpers*). La plupart des développeurs préfèrent utiliser la syntaxe des caractères génériques. [Introduction aux applications d’assistance de balise](intro.md) détaille syntaxe Ajout, suppression, hiérarchie et de caractères génériques des balises d’assistance.
     
 3.  Mettre à jour le balisage dans le *Views/Home/Contact.cshtml* fichier avec ces modifications :
 

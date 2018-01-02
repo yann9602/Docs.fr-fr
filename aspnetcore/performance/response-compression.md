@@ -11,11 +11,11 @@ ms.assetid: de621887-c5c9-4ac8-9efd-f5cc0457a134
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: performance/response-compression
-ms.openlocfilehash: fdb396d8857dc9c118cc19da1f7d1d498dfaacd5
-ms.sourcegitcommit: 8ab9d0065fad23400757e4e08033787e42c97d41
+ms.openlocfilehash: 68e8c89f6e5485f25d1a551ab3e524f0e9c53d0d
+ms.sourcegitcommit: f5a7f0198628f0d152257d90dba6c3a0747a355a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2017
+ms.lasthandoff: 12/19/2017
 ---
 # <a name="response-compression-middleware-for-aspnet-core"></a>Intergiciel (middleware) de réponse Compression pour ASP.NET Core
 
@@ -183,7 +183,7 @@ Si la compression des réponses basée sur la `Accept-Encoding` en-tête, il exi
 
 [!code-csharp[Main](response-compression/samples/1.x/Startup.cs?name=snippet1)]
 
-## <a name="middlware-issue-when-behind-an-nginx-reverse-proxy"></a>Problème Middlware lorsque derrière un proxy inverse Nginx
+## <a name="middleware-issue-when-behind-an-nginx-reverse-proxy"></a>Problème d’intergiciel (middleware) lorsque derrière un proxy inverse Nginx
 Lorsqu’une demande est transmise par Nginx, le `Accept-Encoding` en-tête est supprimé. Cela empêche l’intergiciel (middleware) de la compression de la réponse. Pour plus d’informations, consultez [NGINX : la Compression et décompression](https://www.nginx.com/resources/admin-guide/compression-and-decompression/). Ce problème est suivi par [Figure exclut la compression de pass-through pour nginx (BasicMiddleware #123)](https://github.com/aspnet/BasicMiddleware/issues/123).
 
 ## <a name="working-with-iis-dynamic-compression"></a>Utilisation de la compression dynamique IIS

@@ -11,11 +11,11 @@ ms.assetid: 7f275a09-f118-41c9-88d1-8de52d6a5aa1
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/localization
-ms.openlocfilehash: 1922037245a33f49c17f1c361003260462d96264
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a3fdbf8a1ab4ca397824a46da445fa34ddd35204
+ms.sourcegitcommit: 4be61844141d3cfb6f263636a36aebd26e90fb28
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="globalization-and-localization-in-aspnet-core"></a>Globalisation et localisation dans ASP.NET Core
 
@@ -77,7 +77,7 @@ L’implémentation par défaut de `IViewLocalizer` recherche le fichier de ress
 
 Un fichier de ressources Français peut contenir les éléments suivants :
 
-| Touche | Valeur |
+| Touche | Value |
 | ----- | ------ |
 | `<i>Hello</i> <b>{0}!</b>` | `<i>Bonjour</i> <b>{0} !</b> ` |
 
@@ -124,7 +124,7 @@ Dans le code précédent, `SharedResource` est la classe correspondant à la res
 
 ASP.NET Core vous permet de spécifier les deux valeurs de culture `SupportedCultures` et `SupportedUICultures`. Le [CultureInfo](https://docs.microsoft.com/dotnet/api/system.globalization.cultureinfo) pour l’objet `SupportedCultures` détermine les résultats de fonctions spécifiques à une culture, telles que date, heure, nombre et la mise en forme de devise. `SupportedCultures`détermine également l’ordre de tri de texte, les conventions de casse et les comparaisons de chaînes. Consultez [CultureInfo.CurrentCulture](https://docs.microsoft.com/dotnet/api/system.stringcomparer.currentculture#System_StringComparer_CurrentCulture) pour plus d’informations sur la façon dont le serveur obtient la Culture. Le `SupportedUICultures` détermine ce qui se traduit par des chaînes (à partir de *.resx* fichiers) sont recherchés par le [ResourceManager](https://docs.microsoft.com/dotnet/api/system.resources.resourcemanager). Le `ResourceManager` recherche simplement les chaînes spécifiques à la culture qui est déterminé par `CurrentUICulture`. Chaque thread dans .NET a `CurrentCulture` et `CurrentUICulture` objets. ASP.NET Core inspecte ces valeurs lors du rendu des fonctions spécifiques à la culture. Par exemple, si la culture du thread actuel a la valeur « en-US » (anglais, États-Unis), `DateTime.Now.ToLongDateString()` affiche « Jeudi 18 février 2016, » mais si `CurrentCulture` est définie à « es-ES » (espagnol, Espagne), le résultat sera « jueves, de 18 febrero de 2016".
 
-## <a name="working-with-resource-files"></a>Utilisation des fichiers de ressources
+## <a name="resource-files"></a>Fichiers de ressources
 
 Un fichier de ressources est un mécanisme utile pour séparer les chaînes localisables à partir du code. Les chaînes traduites pour la langue par défaut sont isolées *.resx* fichiers de ressources. Par exemple, vous souhaiterez peut-être créer le fichier de ressources nommé *Welcome.es.resx* contenant traduit les chaînes. « es » sont le code de langue pour l’espagnol. Pour créer ce fichier de ressources dans Visual Studio :
 
@@ -172,19 +172,21 @@ Fichiers de ressources à l’aide de `@inject IViewLocalizer` dans les vues Raz
 
 Si vous n’utilisez pas le `ResourcesPath` option, le *.resx* fichier pour une vue devrait se trouver dans le même dossier que la vue.
 
-Si vous supprimez l’indicateur de la culture « .fr » et que la culture, la valeur Français (via un cookie ou un autre mécanisme), le fichier de ressources par défaut est en lecture et les chaînes sont localisées. Le Gestionnaire de ressources désigne une ressource par défaut ou de secours, lorsque rien ne répond à votre culture demandée, vous êtes pris en charge le fichier *.resx sans indicateur de culture. Si vous souhaitez simplement retourner la clé quand une ressource manquante pour demandé de culture ne doit pas avoir un fichier de ressources par défaut.
+## <a name="culture-fallback-behavior"></a>Comportement de secours de culture
 
-### <a name="generating-resource-files-with-visual-studio"></a>Génération de fichiers de ressources avec Visual Studio
+Par exemple, si vous supprimez l’indicateur de la culture « .fr » et que la culture définie pour le Français, le fichier de ressources par défaut est en lecture et les chaînes sont localisées. Le Gestionnaire de ressources permet de désigner une par défaut ou les ressources de secours pour lorsque rien répond à la culture demandée. Si vous souhaitez simplement retourner la clé quand une ressource manquante pour demandé de culture ne doit pas avoir un fichier de ressources par défaut.
+
+### <a name="generate-resource-files-with-visual-studio"></a>Générer des fichiers de ressources avec Visual Studio
 
 Si vous créez un fichier de ressources dans Visual Studio sans une culture dans le nom de fichier (par exemple, *Welcome.resx*), Visual Studio crée une classe c# avec une propriété pour chaque chaîne. Qui est généralement pas ce que vous souhaitez avec ASP.NET Core ; en général, vous n’avez pas de valeur par défaut *.resx* fichier de ressources (un *.resx* fichier sans le nom de culture). Nous vous suggérons de vous créez la *.resx* fichier avec un nom de culture (par exemple *Welcome.fr.resx*). Lorsque vous créez un *.resx* fichier avec un nom de culture, Visual Studio ne génère pas le fichier de classe. Nous estimons que de nombreux développeurs correspondra **pas** créer un fichier de ressources de langue par défaut.
 
-### <a name="adding-other-cultures"></a>Ajout d’autres Cultures
+### <a name="add-other-cultures"></a>Ajouter d’autres Cultures
 
 Chaque combinaison de langue et de culture (autres que la langue par défaut) nécessite un fichier de ressources unique. Vous créez des fichiers de ressources pour les paramètres régionaux et cultures différents en créant de nouveaux fichiers de ressources dans lequel les codes de langue ISO font partie du nom de fichier (par exemple, **en-us**, **fr-ca**, et  **en Go**). Ces codes ISO sont placés entre le nom de fichier et le *.resx* fichier d’extension de nom, comme dans *Welcome.es-MX.resx* (espagnol/Mexique). Pour spécifier une langue culturellement neutre, supprimez le code de pays (`MX` dans l’exemple précédent). Le nom de fichier de ressources en espagnol culturellement neutre est *Welcome.es.resx*.
 
 ## <a name="implement-a-strategy-to-select-the-languageculture-for-each-request"></a>Implémenter une stratégie pour sélectionner la langue/culture pour chaque demande  
 
-### <a name="configuring-localization"></a>Configuration de localisation
+### <a name="configure-localization"></a>Configurer la localisation
 
 Localisation est configurée dans le `ConfigureServices` méthode :
 
@@ -236,7 +238,7 @@ Si vous spécifiez uniquement une des informations de culture et la culture d’
 
 Le [en-tête Accept-Language](https://www.w3.org/International/questions/qa-accept-lang-locales) ne peut être définie dans la plupart des navigateurs et a été conçue à l’origine pour spécifier la langue de l’utilisateur. Ce paramètre indique que le navigateur a été configuré pour envoyer ou a hérité à partir du système d’exploitation sous-jacent. L’en-tête HTTP Accept-Language à partir d’une demande de navigateur n’est pas une méthode infaillible pour détecter la langue par défaut de l’utilisateur (voir [définition des préférences de langue dans un navigateur](https://www.w3.org/International/questions/qa-lang-priorities.en.php)). Une application de production doit inclure un moyen pour un utilisateur de personnaliser leur choix de la culture.
 
-### <a name="setting-the-accept-language-http-header-in-ie"></a>Définition de l’en-tête HTTP Accept-Language dans Internet Explorer
+### <a name="set-the-accept-language-http-header-in-ie"></a>Définir l’en-tête HTTP Accept-Language dans Internet Explorer
 
 1. À partir de l’icône d’engrenage, appuyez sur **Options Internet**.
 
@@ -252,7 +254,7 @@ Le [en-tête Accept-Language](https://www.w3.org/International/questions/qa-acce
 
 6. Cliquez sur la langue, puis appuyez sur **monter**.
 
-### <a name="using-a-custom-provider"></a>À l’aide d’un fournisseur personnalisé
+### <a name="use-a-custom-provider"></a>Utilisez un fournisseur personnalisé
 
 Supposons que vous voulez que vos clients de stocker leur langue et culture dans vos bases de données. Vous pouvez écrire un fournisseur pour rechercher ces valeurs pour l’utilisateur. Le code suivant montre comment ajouter un fournisseur personnalisé :
 
@@ -281,7 +283,7 @@ services.Configure<RequestLocalizationOptions>(options =>
 
 Utilisez `RequestLocalizationOptions` pour ajouter ou supprimer des fournisseurs de localisation.
 
-### <a name="setting-the-culture-programmatically"></a>Définition de la culture par programme
+### <a name="set-the-culture-programmatically"></a>Définir la culture par programmation
 
 Cet exemple **Localization.StarterWeb** de projet sur [GitHub](https://github.com/aspnet/entropy) contient l’interface utilisateur pour définir le `Culture`. Le *Views/Shared/_SelectLanguagePartial.cshtml* fichier vous permet de sélectionner la culture dans la liste des cultures prises en charge :
 

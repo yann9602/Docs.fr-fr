@@ -12,11 +12,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/bower
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 0258315e0e24d662086a3171b58112e08b9a40ab
-ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
+ms.openlocfilehash: aa329002f78ea48755d65a662f54425013b9a30e
+ms.sourcegitcommit: f273cc3b7409cde063140aa0bd7a81aa50f00571
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="manage-client-side-packages-with-bower-in-aspnet-core"></a>Gérer les packages côté client avec Bower dans ASP.NET Core
 
@@ -25,7 +25,7 @@ Par [Rick Anderson](https://twitter.com/RickAndMSFT), [Noel riz](https://blog.fa
 > [!IMPORTANT]
 > Bower est conservée, ils vous recommandons à l’aide d’une autre solution. Fil avec Webpack est une solution courante pour laquelle [instructions de migration](https://bower.io/blog/2017/how-to-migrate-away-from-bower/) sont disponibles.
 
-[Bower](https://bower.io/) s’appelle elle-même « Gestionnaire de package pour le web. » Dans l’écosystème .NET, il remplit le vide laissé par l’impossibilité de NuGet pour remettre les fichiers de contenu statique. Pour les projets ASP.NET Core, ces fichiers statiques sont inhérents aux bibliothèques côté client comme [jQuery](http://jquery.com/) et [Bootstrap](http://getbootstrap.com/). Pour les bibliothèques .NET, vous utilisez toujours [NuGet](https://www.nuget.org/) Gestionnaire de package.
+[Bower](https://bower.io/) s’appelle elle-même « Un gestionnaire de package pour le web ». Dans l’écosystème .NET, il remplit le vide laissé par l’impossibilité de NuGet pour remettre les fichiers de contenu statique. Pour les projets ASP.NET Core, ces fichiers statiques sont inhérents aux bibliothèques côté client comme [jQuery](http://jquery.com/) et [Bootstrap](http://getbootstrap.com/). Pour les bibliothèques .NET, vous utilisez toujours [NuGet](https://www.nuget.org/) Gestionnaire de package.
 
 Processus de génération de nouveaux projets créés avec les modèles de projet ASP.NET Core configuration côté client. [jQuery](http://jquery.com/) et [Bootstrap](http://getbootstrap.com/) sont installés, et Bower est pris en charge.
 

@@ -10,11 +10,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/intro
-ms.openlocfilehash: 571d683636244565b184cfec49061ec656377f11
-ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
+ms.openlocfilehash: acbd987438edeea13f29547dc471f9a211e87b04
+ms.sourcegitcommit: 1de159820a572c08955ee77cc8b1caa3d7aa938c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="getting-started-with-razor-pages-and-entity-framework-core-using-visual-studio-1-of-8"></a>Prise en main de Pages Razor et Entity Framework Core, à l’aide de Visual Studio (1 / 8)
 
@@ -26,9 +26,11 @@ L’exemple d’application est un site web pour une université fictif de Conto
 
 [Télécharger ou afficher l’application terminée.](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples) [Les instructions de téléchargement](xref:tutorials/index#how-to-download-a-sample).
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 [!INCLUDE[install 2.0](../../includes/install2.0.md)]
+
+Vous êtes familiarisé avec [Pages Razor](xref:mvc/razor-pages/index). Les programmeurs doivent terminer [prise en main Pages Razor](xref:tutorials/razor-pages/razor-pages-start) avant de démarrer cette série.
 
 ## <a name="troubleshooting"></a>Résolution des problèmes
 
