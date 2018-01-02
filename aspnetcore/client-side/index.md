@@ -2,7 +2,7 @@
 title: "Développement côté client dans ASP.NET Core"
 author: rick-anderson
 description: 
-keywords: ASP.NET Core,
+keywords: ASP.NET Core
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
@@ -11,23 +11,24 @@ ms.assetid: a8fb7eb7-e0e5-4394-84f3-1f1dbe0ba2e4
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/index
-ms.openlocfilehash: 875dfda8794aff69ea3d13c43d21ae805a199ed2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b4770a91a735cf9c7304e03b848f9593bacb1455
+ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="client-side-development-in-aspnet-core"></a>Développement côté client dans ASP.NET Core
 
-- [Utilisation de Gulp](using-gulp.md)
-- [Utilisation de Grunt](using-grunt.md)
-- [Gérer les packages côté client avec Bower](bower.md)
-- [Création de sites attrayants et réactifs avec Bootstrap](bootstrap.md)
-- [Framework MVVM Knockout.js](knockout.md)
-- [Utilisation d’AngularJS pour les applications à page unique](angular.md)
-- [Utilisation de JavaScriptServices pour les applications à page unique](spa-services.md)
-- [Styles d’applications avec Less, Sass et Font Awesome](less-sass-fa.md)
-- [Bundles et minimisation](bundling-and-minification.md)
+- [Utilisation de Gulp](xref:client-side/using-gulp)
+- [Utilisation de Grunt](xref:client-side/using-grunt)
+- [Gérer les packages côté client avec Bower](xref:client-side/bower)
+- [Création de sites attrayants et réactifs avec Bootstrap](xref:client-side/bootstrap)
+- [Styles d’applications avec Less, Sass et Font Awesome](xref:client-side/less-sass-fa)
+- [Bundles et minimisation](xref:client-side/bundling-and-minification)
 - [TypeScript](https://www.typescriptlang.org/docs/handbook/asp-net-core.html)
-- [Création de projets avec Yeoman](yeoman.md)
-- [Utilisation de la liaison de navigateur](using-browserlink.md)
+- [Utilisation de la liaison de navigateur](xref:client-side/using-browserlink)
+- [Utilisation de JavaScriptServices pour les applications à page unique](xref:client-side/spa-services)
+- [Utilisation des modèles de projet pour les applications à page unique (préversion)](xref:spa/index)
+    - [Modèle de projet Angular](xref:spa/angular)
+    - [Modèle de projet React](xref:spa/react)
+    - [React avec modèle de projet Redux](xref:spa/react-with-redux)

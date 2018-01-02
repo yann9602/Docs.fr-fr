@@ -5,18 +5,18 @@ description: "Découvrez plus en détail le framework de journalisation dans ASP
 keywords: "ASP.NET Core,journalisation,fournisseurs de journalisation,Microsoft.Extensions.Logging,ILogger,ILoggerFactory,LogLevel,WithFilter,TraceSource,EventLog,EventSource,étendues"
 ms.author: tdykstra
 manager: wpickett
-ms.date: 11/15/2017
+ms.date: 12/15/2017
 ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/logging/index
-ms.openlocfilehash: f7f5f08799513aa07223995410f2125407c58c94
-ms.sourcegitcommit: 037d3900f739dbaa2ba14158e3d7dc81478952ad
+ms.openlocfilehash: 737de614625ce560df1c3d7cfd9810f9433c153d
+ms.sourcegitcommit: f1436107b4c022b26f5235dddef103cec5aa6bff
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 12/15/2017
 ---
-# <a name="introduction-to-logging-in-aspnet-core"></a>Présentation de la journalisation dans ASP.NET Core
+# <a name="introduction-to-logging-in-aspnet-core"></a>Introduction à la journalisation dans ASP.NET Core
 
 Article rédigé par [Steve Smith](https://ardalis.com/) et [Tom Dykstra](https://github.com/tdykstra)
 
@@ -134,7 +134,7 @@ L’utilisation de `ILogger<T>` est généralement plus simple, comme le montre 
 
 Cela équivaut à appeler `CreateLogger` avec le nom de type complet `T`.
 
-## <a name="log-level"></a>Niveau de journalisation
+## <a name="log-level"></a>Niveau du journal
 
 Vous spécifiez un niveau [LogLevel](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.logging.loglevel) pour chaque enregistrement écrit dans le journal. Le niveau de journalisation indique le degré de gravité ou d’importance. Par exemple, vous pouvez écrire un enregistrement `Information` quand une méthode se termine normalement, un enregistrement `Warning` quand une méthode retourne un code d’erreur 404 et un enregistrement `Error` quand le code intercepte une exception inattendue.
 
@@ -297,7 +297,7 @@ Le second `AddFilter` spécifie le fournisseur Debug par son nom de type. Le pre
 
 Les données de configuration et le code `AddFilter` contenus dans les exemples précédents créent les règles présentées dans le tableau suivant. Les six premières proviennent de l’exemple de configuration et les deux dernières, de l’exemple de code.
 
-| Numéro | Fournisseur      | Catégories commençant par...          | Niveau de journalisation minimum |
+| Nombre | Fournisseur      | Catégories commençant par...          | Niveau de journalisation minimum |
 | :----: | ------------- | --------------------------------------- | ----------------- |
 | 1      | Déboguer         | Toutes les catégories                          | Information       |
 | 2      | Console       | Microsoft.AspNetCore.Mvc.Razor.Internal | Warning           |
@@ -329,7 +329,7 @@ Quand vous créez des enregistrements de journal avec un objet `ILogger` pour la
 Vous pouvez utiliser le nom de type pour spécifier un fournisseur dans une configuration, mais chaque fournisseur définit un *alias* plus court et plus simple d’emploi. Pour les fournisseurs intégrés, utilisez les alias suivants :
 
 - Console
-- Debug
+- Déboguer
 - EventLog
 - AzureAppServices
 - TraceSource
@@ -412,7 +412,7 @@ warn: TodoApi.Controllers.TodoController[4000]
 ASP.NET Core contient les fournisseurs suivants :
 
 * [Console](#console)
-* [Debug](#debug)
+* [Déboguer](#debug)
 * [EventSource](#eventsource)
 * [EventLog](#eventlog)
 * [TraceSource](#tracesource)
@@ -587,7 +587,13 @@ Le package de fournisseur [Microsoft.Extensions.Logging.AzureAppServices](https:
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
-Vous n’avez pas besoin d’installer le package du fournisseur ni d’appeler la méthode d’extension `AddAzureWebAppDiagnostics`. Le fournisseur est automatiquement disponible pour une application qui est déployée sur Azure App Service.
+Si vous ciblez .NET Core, vous n’êtes pas obligé d’installer le package du fournisseur ou d’appeler explicitement `AddAzureWebAppDiagnostics`. Le fournisseur est automatiquement disponible pour une application qui est déployée sur Azure App Service.
+
+Si vous ciblez le .NET Framework, ajoutez le package du fournisseur dans votre projet et appelez `AddAzureWebAppDiagnostics` :
+
+```csharp
+logging.AddAzureWebAppDiagnostics();
+```
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
