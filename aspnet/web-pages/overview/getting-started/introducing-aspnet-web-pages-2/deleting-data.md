@@ -5,24 +5,24 @@ author: tfitzmac
 description: "Ce didacticiel vous montre comment supprimer une entrée de la base de données individuels. Il suppose que vous avez terminé la série grâce à la mise à jour des données de base de données dans ASP.NET Web PA..."
 ms.author: aspnetcontent
 manager: wpickett
-ms.date: 05/28/2015
+ms.date: 01/02/2018
 ms.topic: article
 ms.assetid: 75b5c1cf-84bd-434f-8a86-85c568eb5b09
 ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/deleting-data
 msc.type: authoredcontent
-ms.openlocfilehash: aef31b6170cc3bba2421eb8c2c41e83aadc129c5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5bc92b5d40e7a55dcd730d552c71031d913b277e
+ms.sourcegitcommit: 281f0c614543a6c3db565ea4655b70fe49b61d84
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/03/2018
 ---
 <a name="introducing-aspnet-web-pages---deleting-database-data"></a>Présentation des Pages Web ASP.NET - suppression des données de la base de données
 ====================
 par [Tom FitzMacken](https://github.com/tfitzmac)
 
-> Ce didacticiel vous montre comment supprimer une entrée de la base de données individuels. Il suppose que vous avez terminé la série via [mise à jour de base de données dans les Pages Web ASP.NET](https://go.microsoft.com/fwlink/?LinkId=251583).
+> Ce didacticiel vous montre comment supprimer une entrée de la base de données individuels. Il suppose que vous avez terminé la série via [mise à jour de base de données dans les Pages Web ASP.NET](updating-data.md).
 > 
 > Ce que vous allez apprendre :
 > 
@@ -76,7 +76,7 @@ La nouvelle colonne affiche un lien (`<a>` élément) dont le texte indique « 
 
 Ce lien appelle une page nommée *DeleteMovie* et lui passer l’ID de la séquence que vous avez sélectionné.
 
-Ce didacticiel ne sera pas entrer dans les détails sur la façon dont ce lien est construit, car il est presque identique à la **modifier** lien à partir du didacticiel précédent ([mise à jour de base de données dans ASP.NET Web Pages](https://go.microsoft.com/fwlink/?LinkId=251583)).
+Ce didacticiel ne sera pas entrer dans les détails sur la façon dont ce lien est construit, car il est presque identique à la **modifier** lien à partir du didacticiel précédent ([mise à jour de base de données dans ASP.NET Web Pages](updating-data.md)).
 
 ## <a name="creating-the-delete-page"></a>Création de la Page de suppression
 
@@ -169,7 +169,7 @@ Le didacticiel suivant vous montre comment permettre à toutes les pages sur vot
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-- [Introduction à la programmation Web ASP.NET à l’aide de la syntaxe Razor](https://go.microsoft.com/fwlink/?LinkID=202890)
+- [Introduction à la programmation Web ASP.NET à l’aide de la syntaxe Razor](../introducing-razor-syntax-c.md)
 - [Instruction DELETE de SQL](http://www.w3schools.com/sql/sql_delete.asp) sur le site W3Schools
 
 >[!div class="step-by-step"]

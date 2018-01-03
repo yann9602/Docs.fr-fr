@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: dotnet-mvc
 ms.prod: .net-framework
 uid: mvc/overview/getting-started/introduction/adding-a-view
-ms.openlocfilehash: 52f15784f16d355791360021f045cf4f3c467897
-ms.sourcegitcommit: d1d8071d4093bf2444b5ae19d6e45c3d187e338b
+ms.openlocfilehash: cf0bb7984ad3460f8784193f7bb407c9b0ad50db
+ms.sourcegitcommit: 281f0c614543a6c3db565ea4655b70fe49b61d84
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/19/2017
+ms.lasthandoff: 01/03/2018
 ---
 <a name="adding-a-view"></a>Ajout d’une vue
 ====================
@@ -109,7 +109,7 @@ Notez également comment le contenu dans le *Index.cshtml* afficher le modèle a
 
 ![](adding-a-view/_static/image9.png)
 
-Notre peu de &quot;données&quot; (dans ce cas le &quot;Hello à partir de notre modèle de vue !&quot; message) est codé en dur, cependant. L’application MVC a un &quot;V&quot; (vue) et vous avez un &quot;C&quot; (contrôleur), mais aucun &quot;M&quot; (modèle) encore. Peu de temps, nous allons la créer une base de données et extraire les données de modèle.
+Notre peu de &quot;données&quot; (dans ce cas le &quot;Hello à partir de notre modèle de vue !&quot; message) est codé en dur, cependant. L’application MVC a un &quot;V&quot; (vue) et vous avez un &quot;C&quot; (contrôleur), mais aucun &quot;M&quot; (modèle) encore. Nous allons bientôt, comment créer une base de données et extraire les données de modèle.
 
 ## <a name="passing-data-from-the-controller-to-the-view"></a>Passage de données du contrôleur vers la vue
 
