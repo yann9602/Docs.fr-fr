@@ -20,40 +20,40 @@ ms.lasthandoff: 12/19/2017
 
 Par [Steve Smith](https://ardalis.com), [Tom Dykstra](https://github.com/tdykstra), et [Luke Latham](https://github.com/guardrex)
 
-La `Startup` classe configure les services et le pipeline de demande de l’application.
+La classe `Startup` configure les services et le pipeline de demande de l’application.
 
 ## <a name="the-startup-class"></a>Classe de démarrage.
 
-Utilisation des applications ASP.NET Core un `Startup` (classe), qui est nommé `Startup` par convention. La `Startup` classe :
+Les applications ASP.NET Core utilisent une classe de `démarrage`, qui est nommée `Startup` par convention. La classe `Startup` :
 
-* Peut éventuellement inclure un [ConfigureServices](/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configureservices) méthode permettant de configurer les services de l’application.
-* Doit inclure un [configurer](/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configure) méthode pour créer le pipeline de traitement de demande de l’application.
+* Peut éventuellement inclure une méthode [ConfigureServices](/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configureservices) permettant de configurer les services de l’application.
+* Doit inclure une méthode [configurer](/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configure) pour créer le pipeline de traitement de demande de l’application.
 
-`ConfigureServices`et `Configure` sont appelés par le runtime au démarrage de l’application :
+`ConfigureServices`et `Configure` sont appelées par le runtime au démarrage de l’application :
 
 [!code-csharp[Main](startup/snapshot_sample/Startup1.cs)]
 
-Spécifiez le `Startup` classe avec le [WebHostBuilderExtensions](/dotnet/api/Microsoft.AspNetCore.Hosting.WebHostBuilderExtensions) [UseStartup&lt;TStartup&gt; ](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.usestartup#Microsoft_AspNetCore_Hosting_WebHostBuilderExtensions_UseStartup__1_Microsoft_AspNetCore_Hosting_IWebHostBuilder_) méthode :
+Spécifiez la classe `Startup` classe avec la méthode [WebHostBuilderExtensions](/dotnet/api/Microsoft.AspNetCore.Hosting.WebHostBuilderExtensions) [UseStartup&lt;TStartup&gt; ](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.usestartup#Microsoft_AspNetCore_Hosting_WebHostBuilderExtensions_UseStartup__1_Microsoft_AspNetCore_Hosting_IWebHostBuilder_) :
 
 [!code-csharp[Main](../common/samples/WebApplication1DotNetCore2.0App/Program.cs?name=snippet_Main&highlight=10)]
 
-Le `Startup` constructeur de classe accepte les dépendances définies par l’hôte. Une utilisation courante de [injection de dépendance](xref:fundamentals/dependency-injection) dans les `Startup` classe consiste à injecter [IHostingEnvironment](/dotnet/api/Microsoft.AspNetCore.Hosting.IHostingEnvironment) pour configurer les services à l’environnement :
+Le constructeur de la classe `Startup` accepte les dépendances définies par l’hôte. Une utilisation courante de [injection de dépendance](xref:fundamentals/dependency-injection) dans la classe `Startup` consiste à injecter [IHostingEnvironment](/dotnet/api/Microsoft.AspNetCore.Hosting.IHostingEnvironment) pour configurer les services par environnement :
 
 [!code-csharp[Main](startup/snapshot_sample/Startup2.cs)]
 
-Une alternative à l’injection `IHostingStartup` consiste à utiliser une approche basée sur les conventions. L’application peut définir distinct `Startup` classes pour différents environnements (par exemple, `StartupDevelopment`), et la classe de démarrage approprié est sélectionnée lors de l’exécution. La priorité de la classe dont suffixe de nom correspond à l’environnement actuel. Si l’application est exécutée dans l’environnement de développement et comprend à la fois un `Startup` classe et un `StartupDevelopment` (classe), la `StartupDevelopment` classe est utilisée. Pour plus d’informations, consultez [fonctionne avec plusieurs environnements](xref:fundamentals/environments#startup-conventions).
+Une alternative à l’injection de `IHostingStartup` consiste à utiliser une approche basée sur les conventions. L’application peut définir différentes classes `Startup` pour différents environnements (par exemple, `StartupDevelopment`), et la classe de démarrage appropriée est sélectionnée lors de l’exécution. La classe dont le suffixe du nom correspond à l'environnement actuel est prioritaire. Si l’application est exécutée dans l’environnement de développement et comprend à la fois une classe `Startup` et une classe `StartupDevelopment`, la classe `StartupDevelopment` est utilisée. Pour plus d’informations, consultez [Utilisation de plusieurs environnements](xref:fundamentals/environments#startup-conventions).
 
-Pour en savoir plus sur `WebHostBuilder`, consultez la [hébergement](xref:fundamentals/hosting) rubrique. Pour plus d’informations sur la gestion des erreurs lors du démarrage, consultez [la gestion des exceptions de démarrage](xref:fundamentals/error-handling#startup-exception-handling).
+Pour en savoir plus sur `WebHostBuilder`, consultez la rubrique [hébergement](xref:fundamentals/hosting). Pour plus d’informations sur la gestion des erreurs lors du démarrage, consultez [la gestion des exceptions de démarrage](xref:fundamentals/error-handling#startup-exception-handling).
 
 ## <a name="the-configureservices-method"></a>La méthode ConfigureServices
 
-Le [ConfigureServices](/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configureservices) méthode est :
+La méthode [ConfigureServices](/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configureservices) est :
 
-* Facultatif.
-* Appelée par l’hôte web avant du `Configure` méthode permettant de configurer les services de l’application.
-* Où [les options de configuration](xref:fundamentals/configuration/index) sont définis par convention.
+* Facultative.
+* Appelée par l’hôte web avant la méthode `Configure` pour configurer les services de l’application.
+* Où [les options de configuration](xref:fundamentals/configuration/index) sont définies par convention.
 
-Ajout de services au conteneur de service les rend disponibles au sein de l’application et dans le `Configure` (méthode). Les services ne sont pas résolus via [injection de dépendance](xref:fundamentals/dependency-injection) ou à partir de [IApplicationBuilder.ApplicationServices](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder.applicationservices).
+L'ajout de services au conteneur de service les rend disponibles au sein de l’application et dans la méthode `Configure`. Les services ne sont pas résolus via [injection de dépendance](xref:fundamentals/dependency-injection) ou à partir de [IApplicationBuilder.ApplicationServices](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder.applicationservices).
 
 L’hôte web peut configurer certains services avant `Startup` méthodes sont appelées. Détails sont disponibles dans le [hébergement](xref:fundamentals/hosting) rubrique. 
 
