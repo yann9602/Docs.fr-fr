@@ -11,11 +11,11 @@ ms.assetid: cf119f21-1a2b-49a2-b052-547ccb66ee83
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/identity
-ms.openlocfilehash: 7af53bfad2b77558a06003cbc6534236235054c4
-ms.sourcegitcommit: 677986b3a39817b712e2432cce85ad1685326b75
+ms.openlocfilehash: 4a5d3622a22b70daa22333cafe58f8831bf0918e
+ms.sourcegitcommit: fc98e93464ccf37d9904e89a71cdddbd4bbdb86a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>Introduction à l’identité sur ASP.NET Core
 
@@ -32,28 +32,29 @@ Dans cette rubrique, vous allez apprendre à utiliser ASP.NET Core Identity pour
 1.  Créez un projet d’Application ASP.NET Core Web avec des comptes d’utilisateur individuels.
 
     # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
-    Dans Visual Studio, sélectionnez **fichier** -> **nouveau** -> **projet**. Sélectionnez **Application ASP.NET Core Web** et cliquez sur **OK**. 
+
+    Dans Visual Studio, sélectionnez **fichier** -> **nouveau** -> **projet**. Sélectionnez **Application ASP.NET Core Web** et cliquez sur **OK**.
 
     ![Boîte de dialogue Nouveau projet](identity/_static/01-new-project.png)
 
-    Sélectionnez un ASP.NET Core **l’Application Web (Model-View-Controller)** pour ASP.NET 2.x de base, puis sélectionnez **modifier l’authentification**. 
+    Sélectionnez un ASP.NET Core **l’Application Web (Model-View-Controller)** pour ASP.NET 2.x de base, puis sélectionnez **modifier l’authentification**.
 
     ![Boîte de dialogue Nouveau projet](identity/_static/02-new-project.png)
 
     Une boîte de dialogue offre différentes possibilités d’authentification. Sélectionnez **comptes d’utilisateur individuels** et cliquez sur **OK** pour revenir à la boîte de dialogue précédente.
 
     ![Boîte de dialogue Nouveau projet](identity/_static/03-new-project-auth.png)
-    
+
     En sélectionnant **comptes d’utilisateur individuels** dirige Visual Studio pour créer des modèles, ViewModel, vues, contrôleurs et autres composants requis pour l’authentification en tant que partie du modèle de projet.
- 
-    
+
     # <a name="net-core-clitabnetcore-cli"></a>[CLI .NET Core](#tab/netcore-cli)
+
     Si vous utilisez l’interface de ligne de base de .NET, créer le projet à l’aide ``dotnet new mvc --auth Individual``. Cette commande crée un nouveau projet avec le même code de modèle d’identité crée de Visual Studio.
- 
+
     Le projet créé contient le `Microsoft.AspNetCore.Identity.EntityFrameworkCore` package, qui conserve les données d’identité et le schéma à l’aide de SQL Server [Entity Framework Core](https://docs.microsoft.com/ef/).
-    
+
     ---
- 
+
 2.  Configurer les services d’identité et d’ajouter l’intergiciel (middleware) dans `Startup`.
 
     Les services d’identité sont ajoutés à l’application dans le `ConfigureServices` méthode dans la `Startup` classe :
@@ -162,7 +163,7 @@ Dans cette rubrique, vous allez apprendre à utiliser ASP.NET Core Identity pour
     }
     ```
     
-    # <a name="visual-studiotabvisualstudio"></a>[Visual Studio](#tab/visualstudio)     
+    # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
     Exécutez le projet à l’aide de **Ctrl** + **F5** et accédez à la **sur** page. Seuls les utilisateurs authentifiés peuvent accéder à la **sur** page maintenant, donc ASP.NET vous redirige vers la page de connexion pour la connexion ou une inscription.
 
