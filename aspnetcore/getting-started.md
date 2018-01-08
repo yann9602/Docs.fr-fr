@@ -11,11 +11,11 @@ ms.assetid: 73543e9d-d9d5-47d6-9664-17a9beea6cd3
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: getting-started
-ms.openlocfilehash: e944f0f5a3da6d1686ca8a3036666d8dadc9a0f8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5b8c9f770e749c13bc562f157b4ebfd25a88a4e0
+ms.sourcegitcommit: 019e5a0342fd49a94056d14fc7a1a1d0f81d2a39
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="get-started-with-aspnet-core"></a>Bien démarrer avec ASP.NET Core
 
@@ -26,7 +26,7 @@ ms.lasthandoff: 11/10/2017
 
 2. Créez un projet .NET Core.
 
-   Sur macOS et Linux, ouvrez une fenêtre de terminal. Sur Windows, ouvrez une invite de commandes.
+   Sur macOS et Linux, ouvrez une fenêtre de terminal. Sur Windows, ouvrez une invite de commandes. Entrez la commande suivante :
 
     ```terminal
     dotnet new razor -o aspnetcoreapp
