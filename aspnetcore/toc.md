@@ -153,7 +153,7 @@
 ## [Bundles et minimisation](xref:client-side/bundling-and-minification)
 ## [Utilisation de la liaison de navigateur](xref:client-side/using-browserlink)
 ## [Utilisation de JavaScriptServices pour les applications à page unique](xref:client-side/spa-services)
-## [Utilisation des modèles de projet pour les applications à page unique (préversion)](xref:spa/index)
+## [Utilisation des modèles de projet pour les applications à page unique (RC)](xref:spa/index)
 ### [Modèle de projet Angular](xref:spa/angular)
 ### [Modèle de projet React](xref:spa/react)
 ### [React avec modèle de projet Redux](xref:spa/react-with-redux)
