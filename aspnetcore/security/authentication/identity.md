@@ -2,7 +2,7 @@
 title: "Introduction à Identity sur ASP.NET Core"
 author: rick-anderson
 description: "Utiliser Identity à une application ASP.NET Core"
-keywords: "Autorisation ASP.NET Core, identité, Identity, sécurité"
+keywords: "Autorisation ASP.NET Core, identité, sécurité"
 ms.author: riande
 manager: wpickett
 ms.date: 01/02/2018
