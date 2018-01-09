@@ -1,8 +1,8 @@
----
-title: "Introduction à l’identité sur ASP.NET Core"
+﻿---
+title: "Introduction à Identity sur ASP.NET Core"
 author: rick-anderson
-description: "Utiliser l’identité à une application ASP.NET Core"
-keywords: "Autorisation ASP.NET Core, identité, sécurité"
+description: "Utiliser Identity à une application ASP.NET Core"
+keywords: "Autorisation ASP.NET Core, identité, Identity, sécurité"
 ms.author: riande
 manager: wpickett
 ms.date: 01/02/2018
@@ -17,15 +17,15 @@ ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 01/05/2018
 ---
-# <a name="introduction-to-identity-on-aspnet-core"></a>Introduction à l’identité sur ASP.NET Core
+# <a name="introduction-to-identity-on-aspnet-core"></a>Introduction à Identity sur ASP.NET Core
 
 Par [Pranav Rastogi](https://github.com/rustd), [Rick Anderson](https://twitter.com/RickAndMSFT), [Tom Dykstra](https://github.com/tdykstra), Jon Galloway, [Erik Reitan](https://github.com/Erikre), et [Steve Smith](https://ardalis.com/)
 
-Identité de ASP.NET Core est un système d’appartenance qui vous permet d’ajouter des fonctionnalités de connexion à votre application. Les utilisateurs peuvent créer une connexion et un compte avec un nom d’utilisateur et mot de passe, ou ils peuvent utiliser un fournisseur de connexion externe tels que Facebook, Google, Microsoft Account, Twitter ou d’autres.
+Identity de ASP.NET Core est un système d’appartenance qui vous permet d’ajouter des fonctionnalités de connexion à votre application. Les utilisateurs peuvent créer une connexion et un compte avec un nom d’utilisateur et mot de passe, ou ils peuvent utiliser un fournisseur de connexion externe tels que Facebook, Google, Microsoft Account, Twitter ou d’autres.
 
-Vous pouvez configurer l’identité du principal ASP.NET pour utiliser une base de données SQL Server pour stocker les noms d’utilisateur, les mots de passe et les données de profil. Vous pouvez également utiliser votre propre magasin persistant, par exemple, un stockage de tables Azure. Ce document contient des instructions pour Visual Studio et à l’aide de l’interface CLI.
+Vous pouvez configurer Identity du principal ASP.NET pour utiliser une base de données SQL Server pour stocker les noms d’utilisateur, les mots de passe et les données de profil. Vous pouvez également utiliser votre propre magasin persistant, par exemple, un stockage de tables Azure. Ce document contient des instructions pour Visual Studio et à l’aide de l’interface CLI.
 
-## <a name="overview-of-identity"></a>Vue d’ensemble de l’identité
+## <a name="overview-of-identity"></a>Vue d’ensemble d'Identity
 
 Dans cette rubrique, vous allez apprendre à utiliser ASP.NET Core Identity pour ajouter des fonctionnalités pour vous inscrire, connectez-vous et déconnecter un utilisateur. Pour obtenir des instructions plus détaillées sur la création d’applications à l’aide d’ASP.NET Core Identity, consultez la section étapes suivantes à la fin de cet article.
 
@@ -49,15 +49,14 @@ Dans cette rubrique, vous allez apprendre à utiliser ASP.NET Core Identity pour
 
     # <a name="net-core-clitabnetcore-cli"></a>[CLI .NET Core](#tab/netcore-cli)
 
-    Si vous utilisez l’interface de ligne de base de .NET, créer le projet à l’aide ``dotnet new mvc --auth Individual``. Cette commande crée un nouveau projet avec le même code de modèle d’identité crée de Visual Studio.
 
-    Le projet créé contient le `Microsoft.AspNetCore.Identity.EntityFrameworkCore` package, qui conserve les données d’identité et le schéma à l’aide de SQL Server [Entity Framework Core](https://docs.microsoft.com/ef/).
+    Le projet créé contient le `Microsoft.AspNetCore.Identity.EntityFrameworkCore` package, qui conserve les données d’Identity et le schéma à l’aide de SQL Server [Entity Framework Core](https://docs.microsoft.com/ef/).
 
     ---
 
-2.  Configurer les services d’identité et d’ajouter l’intergiciel (middleware) dans `Startup`.
+2.  Configurer les services d’Identity et d’ajouter l’intergiciel (middleware) dans `Startup`.
 
-    Les services d’identité sont ajoutés à l’application dans le `ConfigureServices` méthode dans la `Startup` classe :
+    Les services d’Identity sont ajoutés à l’application dans le `ConfigureServices` méthode dans la `Startup` classe :
 
     # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
     
@@ -65,7 +64,7 @@ Dans cette rubrique, vous allez apprendre à utiliser ASP.NET Core Identity pour
     
     Ces services sont accessibles à l’application via [injection de dépendance](xref:fundamentals/dependency-injection).
     
-    Identité est activée pour l’application en appelant `UseAuthentication` dans le `Configure` (méthode). `UseAuthentication`Ajoute l’authentification [intergiciel (middleware)](xref:fundamentals/middleware) au pipeline de demande.
+    Identity est activée pour l’application en appelant `UseAuthentication` dans le `Configure` (méthode). `UseAuthentication`Ajoute l’authentification [intergiciel (middleware)](xref:fundamentals/middleware) au pipeline de demande.
     
     [!code-csharp[Main](identity/sample/src/ASPNETv2-IdentityDemo/Startup.cs?name=snippet_configure&highlight=17)]
     
@@ -75,7 +74,7 @@ Dans cette rubrique, vous allez apprendre à utiliser ASP.NET Core Identity pour
     
     Ces services sont accessibles à l’application via [injection de dépendance](xref:fundamentals/dependency-injection).
     
-    Identité est activée pour l’application en appelant `UseIdentity` dans le `Configure` (méthode). `UseIdentity`Ajoute l’authentification par cookie [intergiciel (middleware)](xref:fundamentals/middleware) au pipeline de demande.
+    Identity est activée pour l’application en appelant `UseIdentity` dans le `Configure` (méthode). `UseIdentity`Ajoute l’authentification par cookie [intergiciel (middleware)](xref:fundamentals/middleware) au pipeline de demande.
         
     [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo/Startup.cs?name=snippet_configure&highlight=21)]
     
@@ -126,7 +125,7 @@ Dans cette rubrique, vous allez apprendre à utiliser ASP.NET Core Identity pour
  
 6.  Configuration.
 
-    Identité a certains comportements par défaut que vous pouvez substituer dans une classe de démarrage de votre application. Vous n’avez pas besoin de configurer ``IdentityOptions`` si vous utilisez les comportements par défaut.
+    Identity a certains comportements par défaut que vous pouvez substituer dans une classe de démarrage de votre application. Vous n’avez pas besoin de configurer ``IdentityOptions`` si vous utilisez les comportements par défaut.
 
     # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
     
@@ -138,9 +137,9 @@ Dans cette rubrique, vous allez apprendre à utiliser ASP.NET Core Identity pour
 
     ---
     
-    Pour plus d’informations sur la façon de configurer l’identité, consultez [configurer une identité](xref:security/authentication/identity-configuration).
+    Pour plus d’informations sur la façon de configurer Identity, consultez [configurer Identity](xref:security/authentication/identity-configuration).
     
-    Vous pouvez également configurer le type de données de la clé primaire, consultez [type de données de clés primaires de configurer une identité](xref:security/authentication/identity-primary-key-configuration).
+    Vous pouvez également configurer le type de données de la clé primaire, consultez [type de données de clés primaires de configurer Identity](xref:security/authentication/identity-primary-key-configuration).
  
 7.  Afficher la base de données.
 
@@ -179,25 +178,25 @@ Dans cette rubrique, vous allez apprendre à utiliser ASP.NET Core Identity pour
 
     ---
 
-## <a name="identity-components"></a>Composants de l’identité
+## <a name="identity-components"></a>Composants d'Identity
 
-L’assembly de référence principale du système d’identité est `Microsoft.AspNetCore.Identity`. Ce package contient l’ensemble principal d’interfaces pour ASP.NET Core Identity et est inclus par `Microsoft.AspNetCore.Identity.EntityFrameworkCore`.
+L’assembly de référence principale du système d'Identity est `Microsoft.AspNetCore.Identity`. Ce package contient l’ensemble principal d’interfaces pour ASP.NET Core Identity et est inclus par `Microsoft.AspNetCore.Identity.EntityFrameworkCore`.
 
-Ces dépendances sont nécessaires pour utiliser le système d’identité dans les applications ASP.NET Core :
+Ces dépendances sont nécessaires pour utiliser le système d'Identity dans les applications ASP.NET Core :
 
-* `Microsoft.AspNetCore.Identity.EntityFrameworkCore`-Contient les types requis pour utiliser l’identité avec Entity Framework Core.
+* `Microsoft.AspNetCore.Identity.EntityFrameworkCore`-Contient les types requis pour utiliser Identity avec Entity Framework Core.
 
 * `Microsoft.EntityFrameworkCore.SqlServer`-Entity Framework Core est la technologie d’accès aux données recommandée par Microsoft pour les bases de données relationnelles telles que SQL Server. Pour le test, vous pouvez utiliser `Microsoft.EntityFrameworkCore.InMemory`.
 
 * `Microsoft.AspNetCore.Authentication.Cookies`-Intergiciel (middleware) qui permet à une application utiliser l’authentification basée sur le cookie.
 
-## <a name="migrating-to-aspnet-core-identity"></a>Migration vers ASP.NET Core identité
+## <a name="migrating-to-aspnet-core-identity"></a>Migration vers ASP.NET Core Identity
 
-Pour plus d’informations et des conseils sur la migration des identités existantes de votre magasin voir [migration de l’authentification et identité](xref:migration/identity).
+Pour plus d’informations et des conseils sur la migration d'Identity voir [migration de l’authentification et Identity](xref:migration/identity).
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-* [Migration de l’authentification et de l’identité](xref:migration/identity)
+* [Migration de l’authentification et d'Identity](xref:migration/identity)
 * [Confirmation de compte et récupération de mot de passe](xref:security/authentication/accconfirm)
 * [Authentification à deux facteurs avec SMS](xref:security/authentication/2fa)
 * [Activation de l’authentification via Facebook, Google et d’autres fournisseurs externes](xref:security/authentication/social/index)
