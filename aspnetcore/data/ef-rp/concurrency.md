@@ -10,11 +10,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/concurrency
-ms.openlocfilehash: 8862c6b9a5eb7ac3b6889071e4ce9ff6f02512c9
-ms.sourcegitcommit: 281f0c614543a6c3db565ea4655b70fe49b61d84
+ms.openlocfilehash: 841c638b2cacaab7970f2b173fee488972957b63
+ms.sourcegitcommit: 2d23ea501e0213bbacf65298acf1c8bd17209540
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/03/2018
+ms.lasthandoff: 01/09/2018
 ---
 en-us /
 
@@ -302,7 +302,7 @@ Le navigateur affiche la page d’Index de la valeur modifiée et d’un indicat
 
 Supprimer le service de test à partir du deuxième onglet. Une erreur d’accès concurrentiel est s’affichent avec les valeurs actuelles à partir de la base de données. En cliquant sur **supprimer** supprime l’entité, sauf si `RowVersion` a été updated.department a été supprimé.
 
-Consultez [héritage](xref:data/ef-mvc/inheritance) pour obtenir des instructions sur la façon d’héritage dans le modèle de données.
+Consultez [héritage](xref:data/ef-mvc/inheritance) comment hériter d’un modèle de données.
 
 ### <a name="additional-resources"></a>Ressources supplémentaires
 

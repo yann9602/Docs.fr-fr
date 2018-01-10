@@ -10,11 +10,11 @@ ms.topic: article
 ms.assetid: 91a62bfa-ea3a-41f9-a2e1-e90d2c8fc8ca
 ms.technology: 
 ms.prod: .net-framework
-ms.openlocfilehash: ab5eaaa32a8f678b2aa4e2a0b30b674dbd6d6e9c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 733a0839c77bcfc96214bdf235ce8fe22ee2d3cf
+ms.sourcegitcommit: 2d23ea501e0213bbacf65298acf1c8bd17209540
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="aspnet-webhooks-source-code-and-nuget-packages"></a>Code source de WebHooks d’ASP.NET et les packages NuGet
 
@@ -24,9 +24,7 @@ Cette documentation en ligne qui vous lisez maintenant est également hébergée
 
 ## <a name="nuget-packages"></a>Packages NuGet
 
-Microsoft ASP.NET WebHooks est également disponible comme afficher un aperçu de ce qui signifie que vous devez sélectionner l’indicateur de version préliminaire dans Visual Studio afin des pour voir les packages Nuget.
-
-Le [les packages Nuget](https://nuget.org/packages?q=Microsoft.AspNet.WebHooks) sont devided en trois parties :
+Le [les packages NuGet](https://nuget.org/packages?q=Microsoft.AspNet.WebHooks) sont divisés en trois parties :
 
 * [Common](https://www.nuget.org/packages?q=Microsoft.AspNet.WebHooks.Common): un package commun qui est partagé entre les expéditeurs et destinataires.
 

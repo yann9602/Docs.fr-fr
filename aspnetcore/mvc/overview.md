@@ -5,17 +5,17 @@ description: "Découvrez comment ASP.NET Core MVC est une infrastructure riche p
 keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
-ms.date: 10/14/2016
+ms.date: 01/08/2018
 ms.topic: article
 ms.assetid: 89af38d1-52e0-4db7-b791-dbce909b0714
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/overview
-ms.openlocfilehash: 2492b6aa4602dbbf3b9cd3dca00d40690c640cab
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 33c293e15c0a7f18bbace9dc564fe11d93a7d509
+ms.sourcegitcommit: df2157ae9aeea0075772719c29784425c783e82a
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/10/2018
 ---
 # <a name="overview-of-aspnet-core-mvc"></a>Vue d’ensemble du modèle MVC d’ASP.NET Core
 
@@ -38,7 +38,7 @@ Cette limite de responsabilités vous permet de faire évoluer l’application e
 
 ### <a name="model-responsibilities"></a>Responsabilités du modèle
 
-Le modèle dans une application MVC représente l’état de l’application et de toute logique métier ou d’opérations qui doivent être effectuées par celui-ci. Logique métier doit être encapsulée dans le modèle, ainsi que toute logique d’implémentation de la persistance de l’état de l’application. Vues fortement typées utilisera généralement types ViewModel spécifiquement conçus pour contenir les données à afficher sur cette vue ; le contrôleur crée et remplit ces instances ViewModel à partir du modèle.
+Le modèle dans une application MVC représente l’état de l’application et de toute logique métier ou d’opérations qui doivent être effectuées par celui-ci. Logique métier doit être encapsulée dans le modèle, ainsi que toute logique d’implémentation de la persistance de l’état de l’application. En général, les vues fortement typées utilisent les types de ViewModel conçus pour contenir les données à afficher sur cette vue. Le contrôleur crée et remplit ces instances ViewModel à partir du modèle.
 
 > [!NOTE]
 > Il existe de nombreuses façons d’organiser le modèle dans une application qui utilise le modèle architectural MVC. En savoir plus sur certaines [différents types de types de modèles](http://deviq.com/kinds-of-models/).
@@ -112,7 +112,7 @@ ASP.NET Core MVC [liaison de modèle](models/model-binding.md) convertit les don
 public async Task<IActionResult> Login(LoginViewModel model, string returnUrl = null) { ... }
    ```
 
-### <a name="model-validation"></a>validation du modèle
+### <a name="model-validation"></a>Validation de modèle
 
 ASP.NET MVC de base prend en charge [validation](models/validation.md) en décorant votre objet de modèle avec les attributs de validation de données d’annotation. Les attributs de validation sont vérifiées sur le côté client avant que les valeurs sont publiées sur le serveur, ainsi que sur le serveur avant l’action du contrôleur est appelée.
 
@@ -142,12 +142,12 @@ public async Task<IActionResult> Login(LoginViewModel model, string returnUrl = 
     {
       // work with the model
     }
-    // If we got this far, something failed, redisplay form
+    // At this point, something failed, redisplay form
     return View(model);
 }
 ```
 
-Le framework gère la validation des données de demande à la fois sur le client et sur le serveur. La logique de validation spécifiée sur les types de modèle est ajoutée aux vues rendus sous forme d’annotations discrètes et est appliquée dans le navigateur avec [jQuery Validation](https://jqueryvalidation.org/).
+Le framework gère la validation des données demande à la fois sur le client et sur le serveur. La logique de validation spécifiée sur les types de modèle est ajoutée aux vues rendus sous forme d’annotations discrètes et est appliquée dans le navigateur avec [jQuery Validation](https://jqueryvalidation.org/).
 
 ### <a name="dependency-injection"></a>Injection de dépendance
 
@@ -181,11 +181,11 @@ Votre application peut également utiliser [injection de dépendances des fichie
 
 ### <a name="areas"></a>Zones
 
-[Zones](controllers/areas.md) fournissent un moyen de partitionner une application Web ASP.NET Core MVC volumineuse en regroupements fonctionnels plus petits. Une zone est en réalité une structure MVC à l’intérieur d’une application. Dans un projet MVC, les composants logiques tels que le modèle, le contrôleur et vue sont conservées dans des dossiers différents et MVC utilise les conventions d’affectation de noms pour créer la relation entre ces composants. Pour une application volumineuse, il peut être avantageux de partition de l’application en différents domaines de niveau élevés de fonctionnalités. Par exemple, une application de commerce électronique avec plusieurs entités, telles que l’extraction, de facturation et de recherche, etc. Chacune de ces unités ont leurs propres vues des composants logiques, les contrôleurs et les modèles.
+[Zones](controllers/areas.md) fournissent un moyen de partitionner une application Web ASP.NET Core MVC volumineuse en regroupements fonctionnels plus petits. Une zone est une structure MVC à l’intérieur d’une application. Dans un projet MVC, les composants logiques tels que le modèle, le contrôleur et vue sont conservées dans des dossiers différents et MVC utilise les conventions d’affectation de noms pour créer la relation entre ces composants. Pour une application volumineuse, il peut être avantageux de partition de l’application en différents domaines de niveau élevés de fonctionnalités. Par exemple, une application de commerce électronique avec plusieurs entités, telles que l’extraction, de facturation et de recherche, etc. Chacune de ces unités ont leurs propres vues des composants logiques, les contrôleurs et les modèles.
 
 ### <a name="web-apis"></a>API web
 
-En plus de constituer une plate-forme idéale pour la création de sites web, ASP.NET MVC de base est très bien en charge API Web de génération. Vous pouvez créer des services qui peuvent atteindre un large éventail de clients, y compris les navigateurs et périphériques mobiles.
+En plus de constituer une plate-forme idéale pour la création de sites web, ASP.NET MVC de base est très bien en charge API Web de génération. Vous pouvez créer des services qui toucher un large éventail de clients, notamment les navigateurs et périphériques mobiles.
 
 Le framework prend en charge pour la négociation de contenu HTTP avec prise en charge intégrée pour [mise en forme des données](models/formatting.md) en tant que JSON ou XML. Écrire [formateurs personnalisés](advanced/custom-formatters.md) pour ajouter la prise en charge de vos propres formats.
 
@@ -213,7 +213,7 @@ Le moteur d’affichage Razor que vous pouvez définir à l’aide de [dispositi
 
 Vues Razor dans MVC peuvent être fortement typées en fonction de votre modèle. Contrôleurs peuvent passer un modèle fortement typé à l’activation de vos vues pour que la vérification du type et IntelliSense prend en charge les vues.
 
-Par exemple, la vue suivante définit un modèle de type `IEnumerable<Product>`:
+Par exemple, l’affichage suivant restitue un modèle de type `IEnumerable<Product>`:
 
 ```cshtml
 @model IEnumerable<Product>

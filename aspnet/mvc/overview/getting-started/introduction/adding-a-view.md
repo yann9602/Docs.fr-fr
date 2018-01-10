@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: dotnet-mvc
 ms.prod: .net-framework
 uid: mvc/overview/getting-started/introduction/adding-a-view
-ms.openlocfilehash: cf0bb7984ad3460f8784193f7bb407c9b0ad50db
-ms.sourcegitcommit: 281f0c614543a6c3db565ea4655b70fe49b61d84
+ms.openlocfilehash: d273eb5e99da6c6b7678e03b1a8973041113744c
+ms.sourcegitcommit: 2d23ea501e0213bbacf65298acf1c8bd17209540
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/03/2018
+ms.lasthandoff: 01/09/2018
 ---
 <a name="adding-a-view"></a>Ajout d’une vue
 ====================
@@ -31,7 +31,7 @@ Actuellement, la méthode `Index` retourne une chaîne avec un message qui est c
 
 Le `Index` méthode ci-dessus utilise un modèle d’affichage pour générer une réponse HTML au navigateur. Les méthodes de contrôleur (également appelé [méthodes d’action](http://rachelappel.com/asp.net-mvc-actionresults-explained)), telles que le `Index` ci-dessus, de méthode retournent généralement une [ActionResult](https://msdn.microsoft.com/en-us/library/system.web.mvc.actionresult.aspx) (ou une classe dérivée de [ActionResult](https://msdn.microsoft.com/en-us/library/system.web.mvc.actionresult.aspx)), types non primitifs, comme chaîne.
 
-Bouton droit sur le *Views\HelloWorld* dossier puis cliquez sur **ajouter**, puis cliquez sur **Page de vue MVC 5 avec (disposition Razor)**.
+Bouton droit sur le *Views\HelloWorld* dossier puis cliquez sur **ajouter**, puis cliquez sur **Page de vue MVC 5 avec disposition (Razor)**.
   
 ![](adding-a-view/_static/image1.png)   
   
