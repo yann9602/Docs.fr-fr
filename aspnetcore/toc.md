@@ -70,7 +70,6 @@
 ### [Journalisation avec LoggerMessage](xref:fundamentals/logging/loggermessage)
 ## [Gestion des erreurs](fundamentals/error-handling.md)
 ## [Fournisseurs de fichiers](fundamentals/file-providers.md)
-## [Utilisation de fichiers statiques](fundamentals/static-files.md)
 ## [Hébergement d’applications WPF](fundamentals/hosting.md)
 ## [État de session et d’application](fundamentals/app-state.md)
 ## [Serveurs](fundamentals/servers/index.md)
