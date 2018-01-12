@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-production
 msc.type: authoredcontent
-ms.openlocfilehash: 2a8b165c149ceacba49a193c25e4a66a701ea0d6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2c49e7f6925b1ca172642747c5052ba97d70d036
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/11/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-to-production"></a>Déploiement de Web ASP.NET à l’aide de Visual Studio : déploiement en Production
 ====================
@@ -42,7 +42,7 @@ Si vous n’avez pas déjà un compte Azure, vous pouvez créer un compte d’é
 ## <a name="create-a-staging-environment"></a>Créer un environnement intermédiaire
 
 > [!NOTE]
-> Depuis la rédaction de ce didacticiel, Azure App Service ajouté une nouvelle fonctionnalité pour automatiser de nombreux processus autour d’avoir des environnements intermédiaire et de production. Consultez [configurer d’environnements intermédiaires pour applications web dans Azure App Service](https://azure.microsoft.com/en-us/documentation/articles/web-sites-staged-publishing/).
+> Depuis la rédaction de ce didacticiel, Azure App Service ajouté une nouvelle fonctionnalité pour automatiser une partie des processus de création d’environnements intermédiaire et de production. Consultez [configurer d’environnements intermédiaires pour applications web dans Azure App Service](https://azure.microsoft.com/documentation/articles/web-sites-staged-publishing/).
 
 
 Comme expliqué dans la [déployer le didacticiel de l’environnement de Test](deploying-to-iis.md), le meilleur environnement de test fiable est un site web au fournisseur d’hébergement qui a la même façon que le site web de production. Plusieurs fournisseurs d’hébergement, vous devez peser les avantages de ce par rapport à un coût, mais dans Azure, vous pouvez créer une application web libre supplémentaire que votre application intermédiaire. Vous avez également besoin d’une base de données, et les coûts supplémentaires pour que sur les dépenses de votre base de données de production sera aucun ou minimale. Dans Azure, vous payez pour la quantité de stockage de base de données que vous utilisez plutôt que pour chaque base de données, et la quantité de stockage supplémentaire, que vous allez utiliser intermédiaire sera minime.
@@ -286,7 +286,7 @@ A *.pubxml* fichier contient les paramètres qui se rapportent à un profil de p
 
     Tout est identique à la mise en lots, à l’exception de l’URL et l’absence de la *robots.txt* fichier.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Vous avez désormais déployé et testé votre application web et il est publiquement disponible sur Internet.
 

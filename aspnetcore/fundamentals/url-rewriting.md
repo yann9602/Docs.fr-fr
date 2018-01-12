@@ -11,11 +11,11 @@ ms.assetid: e6130638-c410-4161-9921-b658ce988bd1
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/url-rewriting
-ms.openlocfilehash: 754af24f4dcf054dd89eaa5f237ab680bf2d1172
-ms.sourcegitcommit: df2157ae9aeea0075772719c29784425c783e82a
+ms.openlocfilehash: e07634a6d7ad97bf8735029b5c28d6935b71eb52
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="url-rewriting-middleware-in-aspnet-core"></a>Intergiciel (middleware) dans ASP.NET Core de réécriture d’URL
 
@@ -245,7 +245,7 @@ Demande d’origine :`/iis-rules-rewrite/1234`
 
 ![Fenêtre de navigateur avec des outils de développement le suivi de la demande et réponse](url-rewriting/_static/add_iis_url_rewrite.png)
 
-Si vous avez un Module de réécriture IIS active avec des règles au niveau du serveur configurés qui auraient un impact sur votre application de façons indésirables, vous pouvez désactiver le Module de réécriture IIS pour une application. Pour plus d’informations, consultez [modules IIS de la désactivation de](xref:hosting/iis-modules#disabling-iis-modules).
+Si vous avez un Module de réécriture IIS active avec des règles au niveau du serveur configurés qui auraient un impact sur votre application de façons indésirables, vous pouvez désactiver le Module de réécriture IIS pour une application. Pour plus d’informations, consultez [modules IIS de la désactivation de](xref:host-and-deploy/iis/modules#disabling-iis-modules).
 
 #### <a name="unsupported-features"></a>Fonctionnalités prises en charge
 

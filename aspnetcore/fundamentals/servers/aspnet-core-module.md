@@ -12,11 +12,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/servers/aspnet-core-module
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 1d1f551dbde5f3dd6e71808154c2e5885d588d7c
-ms.sourcegitcommit: 282f69e8dd63c39bde97a6d72783af2970d92040
+ms.openlocfilehash: 5eef9405c0c3d219755d7cffa5d45c3df45ddb5c
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="introduction-to-aspnet-core-module"></a>Introduction au Module ASP.NET Core
 
@@ -54,7 +54,7 @@ ANCM a d’autres fonctions :
 
 ## <a name="how-to-use-ancm-in-aspnet-core-apps"></a>Comment utiliser ANCM dans les applications ASP.NET Core
 
-Cette section fournit une vue d’ensemble du processus de configuration d’un serveur IIS et d’application ASP.NET Core. Pour obtenir des instructions détaillées, consultez [publication sur IIS](../../publishing/iis.md).
+Cette section fournit une vue d’ensemble du processus de configuration d’un serveur IIS et d’application ASP.NET Core. Pour obtenir des instructions détaillées, consultez [hôte sous Windows avec IIS](xref:host-and-deploy/iis/index).
 
 ### <a name="install-ancm"></a>Installer ANCM
 
@@ -107,7 +107,7 @@ Dans ASP.NET Core 1.0, si vous appelez `UseUrls`, appelez-le **avant** vous appe
 
 ### <a name="configure-ancm-options-in-webconfig"></a>Configurer les options de ANCM dans le fichier Web.config
 
-Configuration pour le Module de base ASP.NET est stockée dans le *Web.config* fichier qui se trouve dans le dossier racine de l’application. Point de paramètres de ce fichier à la commande de démarrage et les arguments que vous démarrez votre application ASP.NET Core. Pour l’exemple de code Web.config et des conseils sur les options de configuration, consultez [référence de Configuration du Module ASP.NET Core](../../hosting/aspnet-core-module.md).
+Configuration pour le Module de base ASP.NET est stockée dans le *web.config* fichier qui se trouve dans le dossier racine de l’application. Point de paramètres de ce fichier à la commande de démarrage et les arguments que vous démarrez votre application ASP.NET Core. Pour exemple *web.config* code et obtenir des conseils sur les options de configuration, consultez [référence de Configuration du Module ASP.NET Core](xref:host-and-deploy/aspnet-core-module).
 
 ### <a name="run-with-iis-express-in-development"></a>Exécuter avec IIS Express dans le développement
 
@@ -125,5 +125,5 @@ Pour plus d'informations, reportez-vous aux ressources suivantes :
 
 * [Exemple d’application pour cet article](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/servers/aspnet-core-module/sample)
 * [Code source de Module de base ASP.NET](https://github.com/aspnet/AspNetCoreModule)
-* [Informations de référence sur la configuration du module ASP.NET Core](../../hosting/aspnet-core-module.md)
-* [Publication dans IIS](../../publishing/iis.md)
+* [Informations de référence sur la configuration du module ASP.NET Core](xref:host-and-deploy/aspnet-core-module)
+* [Héberger sur Windows avec IIS](xref:host-and-deploy/iis/index)

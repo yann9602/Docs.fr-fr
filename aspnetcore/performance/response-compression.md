@@ -11,11 +11,11 @@ ms.assetid: de621887-c5c9-4ac8-9efd-f5cc0457a134
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: performance/response-compression
-ms.openlocfilehash: 68e8c89f6e5485f25d1a551ab3e524f0e9c53d0d
-ms.sourcegitcommit: f5a7f0198628f0d152257d90dba6c3a0747a355a
+ms.openlocfilehash: 86244179115fe6a7d0f7298495086a96ee9570d9
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/19/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="response-compression-middleware-for-aspnet-core"></a>Intergiciel (middleware) de réponse Compression pour ASP.NET Core
 
@@ -187,7 +187,7 @@ Si la compression des réponses basée sur la `Accept-Encoding` en-tête, il exi
 Lorsqu’une demande est transmise par Nginx, le `Accept-Encoding` en-tête est supprimé. Cela empêche l’intergiciel (middleware) de la compression de la réponse. Pour plus d’informations, consultez [NGINX : la Compression et décompression](https://www.nginx.com/resources/admin-guide/compression-and-decompression/). Ce problème est suivi par [Figure exclut la compression de pass-through pour nginx (BasicMiddleware #123)](https://github.com/aspnet/BasicMiddleware/issues/123).
 
 ## <a name="working-with-iis-dynamic-compression"></a>Utilisation de la compression dynamique IIS
-Si vous avez un IIS dynamique Compression Module actif configuré au niveau du serveur que vous voulez désactiver pour une application, vous pouvez le faire avec un ajout à votre *web.config* fichier. Pour plus d’informations, consultez [modules IIS de la désactivation de](xref:hosting/iis-modules#disabling-iis-modules).
+Si vous avez un IIS dynamique Compression Module actif configuré au niveau du serveur que vous voulez désactiver pour une application, vous pouvez le faire avec un ajout à votre *web.config* fichier. Pour plus d’informations, consultez [modules IIS de la désactivation de](xref:host-and-deploy/iis/modules#disabling-iis-modules).
 
 ## <a name="troubleshooting"></a>Résolution des problèmes
 Utiliser un outil tel que [Fiddler](http://www.telerik.com/fiddler), [Firebug](http://getfirebug.com/), ou [Postman](https://www.getpostman.com/), qui permettent de définir la `Accept-Encoding` en-tête de demande et d’étudier les en-têtes de réponse, la taille et le corps. L’intergiciel de compression de la réponse compresse les réponses qui remplissent les conditions suivantes :

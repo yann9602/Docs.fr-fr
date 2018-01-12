@@ -11,11 +11,11 @@ ms.assetid: 92a2986a-d005-4ff6-9559-6657fd466bb7
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/advanced
-ms.openlocfilehash: d63502a32e38eb192b40f21f5cd57d20048154e3
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4c20ed37e1e54273929593dddc9fe1180f1492d6
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="advanced-topics---ef-core-with-aspnet-core-mvc-tutorial-10-of-10"></a>Rubriques avancées - Core EF avec le didacticiel d’ASP.NET MVC de base (10 10)
 
@@ -83,7 +83,7 @@ Lorsque le **mise à jour** bouton, la méthode HttpPost est appelée et multipl
 
 Dans **l’Explorateur de solutions**, avec le bouton droit le *vues/cours* dossier, puis cliquez sur **Ajouter > nouvel élément**.
 
-Dans le **ajouter un nouvel élément** boîte de dialogue, cliquez sur **ASP.NET** sous **installé** dans le volet gauche, cliquez sur **Page de vue MVC**et le nom de la nouvelle vue  *UpdateCourseCredits.cshtml*.
+Dans le **ajouter un nouvel élément** boîte de dialogue, cliquez sur **ASP.NET** sous **installé** dans le volet gauche, cliquez sur **Page de vue MVC**et le nom de la nouvelle vue * UpdateCourseCredits.cshtml*.
 
 Dans *Views/Courses/UpdateCourseCredits.cshtml*, remplacez le code de modèle par le code suivant :
 
@@ -192,7 +192,7 @@ Cette étape termine cette série de didacticiels sur l’utilisation de l’Ent
 
 Pour plus d’informations sur EF Core, consultez la [documentation d’Entity Framework Core](https://docs.microsoft.com/ef/core). Un livre est également disponible : [Entity Framework Core en Action](https://www.manning.com/books/entity-framework-core-in-action).
 
-Pour plus d’informations sur la façon de déployer votre application web, une fois que vous l’avez créé, consultez [publication et déploiement](../../publishing/index.md).
+Pour plus d’informations sur la façon de déployer une application web, consultez [hôte et déployer](xref:host-and-deploy/index).
 
 Pour plus d’informations sur les autres rubriques relatives à ASP.NET MVC de base, telles que l’authentification et l’autorisation, consultez le [documentation d’ASP.NET Core](https://docs.microsoft.com/aspnet/core/).
 
@@ -228,7 +228,7 @@ Il est possible d’obtenir d’autres erreurs lorsque des modifications de sch�
 
 L’approche la plus simple consiste à renommer la base de données *appsettings.json*. La prochaine fois que vous exécutez `database update`, une base de données sera créée.
 
-Pour supprimer une base de données SSOX, avec le bouton droit de la base de données, cliquez sur **supprimer**, puis, dans le **supprimer la base de données** boîte de dialogue Sélectionnez **fermer les connexions existantes** sur  **OK**.
+Pour supprimer une base de données SSOX, avec le bouton droit de la base de données, cliquez sur **supprimer**, puis, dans le **supprimer la base de données** boîte de dialogue Sélectionnez **fermer les connexions existantes** sur ** OK**.
 
 Pour supprimer une base de données à l’aide de l’interface CLI, exécutez le `database drop` commande CLI :
 

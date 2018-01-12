@@ -11,11 +11,11 @@ ms.assetid: b5bba985-be12-4464-9a01-df3599b2a6f1
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/environments
-ms.openlocfilehash: 3eb19aa090d0a979ceaf4edc56752472ba47ae84
-ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
+ms.openlocfilehash: 9127c3d7180422c0e3dbd813340dd485bf360c81
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="working-with-multiple-environments"></a>Utilisation de plusieurs environnements
 
@@ -96,7 +96,7 @@ Ces commandes prennent effet uniquement pour la fenêtre active. Lorsque la fen�
 
 **Web.config**
 
-Consultez le *définition des variables d’environnement* section de la [référence de configuration ASP.NET Core Module](xref:hosting/aspnet-core-module#setting-environment-variables) rubrique.
+Consultez le *définition des variables d’environnement* section de la [référence de configuration ASP.NET Core Module](xref:host-and-deploy/aspnet-core-module#setting-environment-variables) rubrique.
 
 **Par Pool d’applications IIS**
 
@@ -152,7 +152,7 @@ Démarrage d’une application ASP.NET Core, la `Startup` classe est utilisée p
 
 Outre l’utilisation totalement distincts `Startup` classe basée sur l’environnement actuel, vous pouvez également effectuer des ajustements à la configuration de l’application dans un `Startup` classe. Le `Configure()` et `ConfigureServices()` méthodes prennent en charge des versions spécifiques à l’environnement similaire à la `Startup` classe proprement dite, sous la forme `Configure{EnvironmentName}()` et `Configure{EnvironmentName}Services()`. Si vous définissez une méthode `ConfigureDevelopment()` elle sera appelée à la place de `Configure()` lorsque l’environnement est configuré pour le développement. De même, `ConfigureDevelopmentServices()` est appelée à la place de `ConfigureServices()` dans le même environnement.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 ASP.NET Core fournit un certain nombre de conventions qui permettent aux développeurs de facilement contrôler le comportement de leurs applications dans différents environnements. Lorsque vous publiez une application à partir de développement dans l’environnement intermédiaire en production, variables d’environnement définies correctement pour l’environnement autoriser pour l’optimisation de l’application pour utiliser le débogage, de test ou de production, comme il convient.
 
