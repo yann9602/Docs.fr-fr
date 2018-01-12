@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-a-new-field
 msc.type: authoredcontent
-ms.openlocfilehash: c10eb343259b58052fd1f2411dbdc2196eafc858
-ms.sourcegitcommit: d1d8071d4093bf2444b5ae19d6e45c3d187e338b
+ms.openlocfilehash: 7427b4f7c6b7a00fe795053aac0f612471a163cd
+ms.sourcegitcommit: 2b263e87217658caa42eedc4f9d2d21ef0ab5d59
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/19/2017
+ms.lasthandoff: 01/12/2018
 ---
 <a name="adding-a-new-field"></a>Ajout d’un nouveau champ
 ====================
@@ -161,7 +161,7 @@ Générez la solution, puis ouvrez le **Package Manager Console** fenêtre et en
 
 Le `add-migration` commande indique à l’infrastructure de migration pour examiner le modèle de film actuel par le schéma de base de données de film actuel et de créer le code nécessaire pour migrer la base de données vers le nouveau modèle. Le nom *évaluation* est arbitraire et est utilisé pour nommer le fichier de migration. Il est utile d’utiliser un nom explicite pour l’étape de migration.
 
-Une fois cette commande, Visual Studio ouvre le fichier de classe qui définit la nouvelle `DbMIgration` classe dérivée, puis, dans le `Up` (méthode), vous pouvez voir le code qui crée la nouvelle colonne.
+Une fois cette commande, Visual Studio ouvre le fichier de classe qui définit la nouvelle `DbMigration` classe dérivée, puis, dans le `Up` (méthode), vous pouvez voir le code qui crée la nouvelle colonne.
 
 [!code-csharp[Main](adding-a-new-field/samples/sample11.cs)]
 

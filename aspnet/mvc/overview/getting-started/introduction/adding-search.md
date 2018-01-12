@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-search
 msc.type: authoredcontent
-ms.openlocfilehash: a7664d16a056424ee51db2208152cb5d35d8e5d9
-ms.sourcegitcommit: d1d8071d4093bf2444b5ae19d6e45c3d187e338b
+ms.openlocfilehash: 10457d154f5fda875f7d1054d48daeeba3a50b7c
+ms.sourcegitcommit: 2b263e87217658caa42eedc4f9d2d21ef0ab5d59
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/19/2017
+ms.lasthandoff: 01/12/2018
 ---
 <a name="search"></a>Rechercher
 ====================
@@ -123,7 +123,7 @@ Le code suivant est une requête LINQ qui récupère tous les genres dans la bas
 
 [!code-csharp[Main](adding-search/samples/sample12.cs)]
 
-Le code utilise le `AddRange` méthode du générique `List` collection pour ajouter tous les genres distincts à la liste. (Sans le `Distinct` modificateur, genres en double sont ajoutés, par exemple, comédie est ajoutée à deux reprises dans notre exemple). Le code puis stocke la liste des genres dans le `ViewBag.movieGenre` objet. Le stockage des données de catégorie (de ce un genre de film) comme un [SelectList](https://msdn.microsoft.com/en-us/library/system.web.mvc.selectlist(v=vs.108).aspx) de l’objet dans un `ViewBag`, accéder aux données de catégorie dans une zone de liste déroulante est une approche courante pour les applications MVC.
+Le code utilise le `AddRange` méthode du générique `List` collection pour ajouter tous les genres distincts à la liste. (Sans le `Distinct` modificateur, genres en double sont ajoutés, par exemple, comédie est ajoutée à deux reprises dans notre exemple). Le code puis stocke la liste des genres dans le `ViewBag.MovieGenre` objet. Le stockage des données de catégorie (de ce un genre de film) comme un [SelectList](https://msdn.microsoft.com/en-us/library/system.web.mvc.selectlist(v=vs.108).aspx) de l’objet dans un `ViewBag`, accéder aux données de catégorie dans une zone de liste déroulante est une approche courante pour les applications MVC.
 
 Le code suivant montre comment vérifier la `movieGenre` paramètre. S’il n’est pas vide, le code plus contraint la requête de films pour limiter les films sélectionnés pour le genre spécifié.
 
@@ -141,7 +141,7 @@ Dans le code suivant :
 
 [!code-cshtml[Main](adding-search/samples/sample15.cshtml)]
 
-Le paramètre « movieGenre » fournit la clé pour le `DropDownList` application d’assistance pour rechercher un `IEnumerable<SelectListItem>` dans le `ViewBag`. Le `ViewBag` a été rempli dans la méthode d’action :
+Le paramètre « MovieGenre » fournit la clé pour le `DropDownList` application d’assistance pour rechercher un `IEnumerable<SelectListItem>` dans le `ViewBag`. Le `ViewBag` a été rempli dans la méthode d’action :
 
 [!code-csharp[Main](adding-search/samples/sample16.cs?highlight=10)]
 
