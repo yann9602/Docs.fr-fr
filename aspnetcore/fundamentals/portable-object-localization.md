@@ -1,7 +1,7 @@
 ---
-title: "Configurer la localisation d’un objet portable"
+title: "Configurer la localisation avec des fichiers portable object"
 author: sebastienros
-description: "Cet article présente les fichiers objets Portable et décrit les étapes permettant de les utiliser dans une application ASP.NET Core avec l’infrastructure de base de Orchard."
+description: "Cet article présente les fichiers Portable Object et décrit les étapes permettant de les utiliser dans une application ASP.NET Core avec le framework Orchard Core."
 keywords: ASP.NET Core, localisation, culture, langue, objet portable
 ms.author: scaddie
 manager: wpickett
@@ -16,26 +16,26 @@ ms.translationtype: MT
 ms.contentlocale: fr-FR
 ms.lasthandoff: 11/10/2017
 ---
-# <a name="configure-portable-object-localization-with-orchard-core"></a>Configurer la localisation d’un objet portable avec Orchard de base
+# <a name="configure-portable-object-localization-with-orchard-core"></a>Configurer la localisation avec des fichiers Portable Object à l'aide d'Orchard Core
 
 Par [Sébastien Ros](https://github.com/sebastienros) et [Scott Addie](https://twitter.com/Scott_Addie)
 
-Cet article décrit les étapes pour l’utilisation des fichiers d’objet Portable (PO) dans une application ASP.NET Core avec la [Orchard Core](https://github.com/OrchardCMS/OrchardCore) framework.
+Cet article décrit les étapes pour l’utilisation des fichiers Portable Object (PO) dans une application ASP.NET Core avec le framework [Orchard Core](https://github.com/OrchardCMS/OrchardCore).
 
-**Remarque :** Orchard Core n’est pas un produit Microsoft. Par conséquent, Microsoft ne fournit aucune prise en charge pour cette fonctionnalité.
+**Remarque :** Orchard Core n’est pas un produit Microsoft. Par conséquent, Microsoft ne fournit aucune prise en charge pour cette fonctionnalité.
 
-[Affichez ou téléchargez l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/localization/sample/POLocalization) ([procédure de téléchargement](xref:tutorials/index#how-to-download-a-sample))
+[Afficher ou télécharger l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/localization/sample/POLocalization) ([comment télécharger](xref:tutorials/index#how-to-download-a-sample))
 
-## <a name="what-is-a-po-file"></a>Qu’est un fichier de bon de commande ?
+## <a name="what-is-a-po-file"></a>Qu’est un fichier PO ?
 
-Les fichiers de bon de commande sont distribués sous forme de fichiers texte contenant les chaînes traduites pour une langue donnée. Certains avantages de l’utilisation de fichiers de bon de commande à la place *.resx* fichiers incluent :
-- Fichiers de bon de commande prennent en charge la pluralisation ; *.resx* fichiers ne prennent pas en charge pluralisation.
-- Fichiers de bon de commande ne sont pas compilés comme *.resx* fichiers. Par conséquent, des étapes de build et outils que ceux spécialisées ne sont pas nécessaires.
-- Fichiers de bon de commande fonctionnent correctement avec les outils d’édition en ligne de collaboration.
+Les fichiers PO sont distribués sous forme de fichiers texte contenant les chaînes traduites pour une langue donnée. Il ya certains avantages à utiliser des fichiers PO à la place de fichiers *.resx* comme ceux-ci :
+- Les fichiers PO prennent en charge la pluralisation; Les fichiers *.resx* ne prennent pas en charge pluralisation.
+- Les fichiers PO ne sont pas compilés comme les fichiers *.resx*. Par conséquent, des étapes de build et des outils spécialisés ne sont pas nécessaires.
+- Les fichiers PO fonctionnent correctement avec les outils d’édition en ligne collaboratifs.
 
 ### <a name="example"></a>Exemple
 
-Voici un exemple de fichier de bon de commande contenant la traduction de deux chaînes en Français, y compris l’un avec sa forme au pluriel :
+Voici un exemple de fichier PO contenant la traduction de deux chaînes en Français, y compris l’un avec sa forme au pluriel :
 
 *fr.po*
 
@@ -51,71 +51,71 @@ msgstr[0] "L'adresse email est \"{0}\"."
 msgstr[1] "Les adresses email sont \"{0}\""
 ```
 
-Cet exemple utilise la syntaxe suivante :
+Cet exemple utilise la syntaxe suivante :
 
-- `#:`: Un commentaire qui indique le contexte de la chaîne à convertir. La même chaîne peut-être être traduite différemment selon l’endroit où il est utilisé.
-- `msgid`: Chaîne non traduite.
+- `#:`: Un commentaire qui indique le contexte de la chaîne à convertir. La même chaîne peut-être être traduite différemment selon l’endroit où elle est utilisée.
+- `msgid`: La chaîne non traduite.
 - `msgstr`: La chaîne traduite.
 
-Dans le cas de prise en charge de la pluralisation, plusieurs entrées peuvent être définies.
+Dans le cas de la prise en charge de la pluralisation, plusieurs entrées peuvent être définies.
 
 - `msgid_plural`: La chaîne au pluriel non traduite.
-- `msgstr[0]`: La chaîne traduite pour le cas de 0.
-- `msgstr[N]`: La chaîne traduite pour le n de cas.
+- `msgstr[0]`: La chaîne traduite pour le cas 0.
+- `msgstr[N]`: La chaîne traduite pour le cas N.
 
-La spécification de fichier de bon de commande se trouve [ici](https://www.gnu.org/savannah-checkouts/gnu/gettext/manual/html_node/PO-Files.html).
+La spécification des fichiers PO se trouve [ici](https://www.gnu.org/savannah-checkouts/gnu/gettext/manual/html_node/PO-Files.html).
 
-## <a name="configuring-po-file-support-in-aspnet-core"></a>Configuration de prise en charge du fichier de bon de commande dans ASP.NET Core
+## <a name="configuring-po-file-support-in-aspnet-core"></a>Configuration de prise en charge des fichiers PO dans ASP.NET Core
 
-Cet exemple est basé sur une application ASP.NET MVC de base générée à partir d’un modèle de projet Visual Studio 2017.
+Cet exemple est basé sur une application ASP.NET Core MVC générée à partir d’un modèle de projet Visual Studio 2017.
 
 ### <a name="referencing-the-package"></a>Référencement du package
 
-Ajoutez une référence à la `OrchardCore.Localization.Core` package NuGet. Il est disponible sur [MyGet](https://www.myget.org/) à la source du package suivant : https://www.myget.org/F/orchardcore-preview/api/v3/index.json
+Ajoutez une référence au package NuGet `OrchardCore.Localization.Core`. Il est disponible sur [MyGet](https://www.myget.org/) via la source de package suivante : https://www.myget.org/F/orchardcore-preview/api/v3/index.json
 
-Le *.csproj* fichier contient maintenant une ligne semblable à celle-ci (numéro de version peut varier) :
+Le fichier *.csproj* contient maintenant une ligne semblable à celle-ci (le numéro de version peut varier) :
 
 [!code-xml[Main](localization/sample/POLocalization/POLocalization.csproj?range=9)]
 
 ### <a name="registering-the-service"></a>Inscription du service
 
-Ajouter les services requis pour le `ConfigureServices` méthode *Startup.cs*:
+Ajouter les services nécessaires à la méthode `ConfigureServices` de *Startup.cs*:
 
 [!code-csharp[Main](localization/sample/POLocalization/Startup.cs?name=snippet_ConfigureServices&highlight=4-21)]
 
-Ajouter l’intergiciel (middleware) requis pour le `Configure` méthode *Startup.cs*:
+Ajouter l’intergiciel (middleware) nécessaire à la méthode `Configure` de *Startup.cs*:
 
 [!code-csharp[Main](localization/sample/POLocalization/Startup.cs?name=snippet_Configure&highlight=15)]
 
-Ajoutez le code suivant à votre affichage Razor de choix. *About.cshtml* est utilisé dans cet exemple.
+Ajoutez le code suivant à la vue Razor de votre choix. *About.cshtml* est utilisé dans cet exemple.
 
 [!code-cshtml[Main](localization/sample/POLocalization/Views/Home/About.cshtml)]
 
-Un `IViewLocalizer` instance est injecté et utilisé pour convertir le texte « Hello world ! ».
+Une instance `IViewLocalizer` est injectée et utilisée pour convertir le texte « Hello world ! ».
 
-### <a name="creating-a-po-file"></a>Création d’un fichier de bon de commande
+### <a name="creating-a-po-file"></a>Création d’un fichier PO
 
-Créez un fichier nommé  *<culture code>.po* dans votre dossier racine. Dans cet exemple, le nom de fichier est *fr.po* , car la langue Français est utilisée :
+Créez un fichier nommé *<culture code>.po* dans votre dossier racine. Dans cet exemple, le nom de fichier est *fr.po* , car la langue Française est utilisée :
 
 [!code-text[Main](localization/sample/POLocalization/fr.po)]
 
-Ce fichier contient la chaîne à traduire et la chaîne traduite en Français. Traductions rétablir leur culture parent, si nécessaire. Dans cet exemple, le *fr.po* fichier est utilisé si la culture demandée est `fr-FR` ou `fr-CA`.
+Ce fichier contient la chaîne à traduire et la chaîne traduite en Français. Les traductions se réfèrent à leur culture parente, si nécessaire. Dans cet exemple, le *fr.po* fichier est utilisé si la culture demandée est `fr-FR` ou `fr-CA`.
 
 ### <a name="testing-the-application"></a>Test de l'application
 
-Exécutez votre application et accédez à l’URL `/Home/About`. Le texte **Hello world !** s’affiche.
+Exécutez votre application et accédez à l’URL `/Home/About`. Le texte **Hello world !** s’affiche.
 
-Accédez à l’URL `/Home/About?culture=fr-FR`. Le texte **Bonjour le monde !** s’affiche.
+Accédez à l’URL `/Home/About?culture=fr-FR`. Le texte **Bonjour le monde !** s’affiche.
 
 ## <a name="pluralization"></a>Pluralisation
 
-Fichiers de bon de commande prend en charge les formulaires de pluralisation, ce qui est utile lorsque la même chaîne doit être traduites différemment selon une cardinalité. Cette tâche est effectuée compliquée par le fait que chaque langage définit des règles personnalisées pour sélectionner la chaîne à utiliser en fonction de la cardinalité.
+Les fichiers PO prennent en charge les formes de pluralisation, ce qui est utile lorsque la même chaîne doit être traduites différemment selon une cardinalité. Cette tâche est rendue compliquée par le fait que chaque langage définit des règles personnalisées pour sélectionner la chaîne à utiliser en fonction de la cardinalité.
 
-Le package Orchard localisation fournit une API pour appeler ces différentes formes au pluriel automatiquement.
+Le package Orchard localisation fournit une API pour appeler ces différentes formes plurielles automatiquement.
 
-### <a name="creating-pluralization-po-files"></a>Création de fichiers de bon de commande de pluralisation
+### <a name="creating-pluralization-po-files"></a>Création de fichiers PO de pluralisation
 
-Ajoutez le contenu suivant à mentionnées précédemment *fr.po* fichier :
+Ajoutez le contenu suivant au fichier *fr.po* mentionné précédemment :
 
 ```text
 msgid "There is one item."
@@ -124,19 +124,19 @@ msgstr[0] "Il y a un élément."
 msgstr[1] "Il y a {0} éléments."
 ```
 
-Consultez [qu’est un fichier de bon de commande ?](#what-is-a-po-file) pour une explication de ce que représente chaque entrée dans cet exemple.
+Consultez [qu’est un fichier PO ?](#what-is-a-po-file) pour une explication de ce que représente chaque entrée dans cet exemple.
 
 ### <a name="adding-a-language-using-different-pluralization-forms"></a>Ajout d’une langue à l’aide de formulaires de pluralisation différents
 
-Les chaînes en anglais et Français ont été utilisés dans l’exemple précédent. Anglais et le Français ont uniquement deux formes de pluralisation et partagent les mêmes règles de formulaire, c'est-à-dire qu’une cardinalité de 1 est mappée à la première forme au pluriel. N’importe quel autre cardinalité est mappée à la deuxième forme au pluriel.
+Les chaînes en anglais et français ont été utilisés dans l’exemple précédent. L'anglais et le français ont uniquement deux formes de pluralisation et partagent les mêmes règles de formes, c'est-à-dire qu’une cardinalité de 1 est mappée à la première forme au pluriel. N’importe quelle autre cardinalité est mappée à la deuxième forme au pluriel.
 
-Pas toutes les langues partagent les mêmes règles. Cela est illustré par la langue tchèque, ce qui a trois formes au pluriel.
+Toutes les langues ne partagent pas les mêmes règles. Cela est le cas pour la langue tchèque qui a trois formes plurielles.
 
-Créer le `cs.po` de fichiers comme suit, puis notez comment la pluralisation a besoin de trois des traductions différentes :
+Créer le `cs.po` de fichiers comme suit, puis notez comment la pluralisation a besoin de trois traductions différentes :
 
 [!code-text[Main](localization/sample/POLocalization/cs.po)]
 
-Pour accepter les localisations tchèques, ajoutez `"cs"` à la liste des cultures prises en charge dans les `ConfigureServices` méthode :
+Pour accepter les localisations tchèques, ajoutez `"cs"` à la liste des cultures prises en charge dans la méthode `ConfigureServices` :
 
 ```csharp
 var supportedCultures = new List<CultureInfo>
@@ -149,7 +149,7 @@ var supportedCultures = new List<CultureInfo>
 };
 ```
 
-Modifier la *Views/Home/About.cshtml* fichier pour restituer des chaînes localisées, au pluriel pour plusieurs cardinalités :
+Modifier le fichier *Views/Home/About.cshtml* pour restituer des chaînes localisées, au pluriel pour plusieurs cardinalités :
 
 ```cshtml
 <p>@Localizer.Plural(1, "There is one item.", "There are {0} items.")</p>
@@ -157,9 +157,9 @@ Modifier la *Views/Home/About.cshtml* fichier pour restituer des chaînes locali
 <p>@Localizer.Plural(5, "There is one item.", "There are {0} items.")</p>
 ```
 
-**Remarque :** dans un scénario réel, une variable est utilisée pour représenter le nombre. Ici, nous répéter le même code avec trois valeurs différentes pour exposer un cas très spécifique.
+**Remarque :** dans un scénario réel, une variable est utilisée pour représenter le nombre. Ici, nous répétons le même code avec trois valeurs différentes pour exposer un cas très spécifique.
 
-En basculant les cultures, vous consultez les rubriques suivantes :
+En basculant les cultures, vous consultez les résultats suivants :
 
 Pour `/Home/About`:
 
@@ -185,17 +185,17 @@ Existují 2 položky.
 Existuje 5 položek.
 ```
 
-Notez que pour la culture en tchèque, les trois traductions sont différentes. Les cultures anglais et Français partagent la même construction pour les deux dernières chaînes traduites.
+Notez que pour la culture tchèque, les trois traductions sont différentes. Les cultures anglaise et française partagent la même construction pour les deux dernières chaînes traduites.
 
 ## <a name="advanced-tasks"></a>Tâches avancées
 
 ### <a name="contextualizing-strings"></a>CONTEXTUALISATION des chaînes
 
-Les applications contiennent souvent les chaînes doivent être converties à plusieurs endroits. La même chaîne peut-être avoir une traduction différents dans certains emplacements au sein d’une application (vues Razor ou des fichiers de classe). Un fichier de bon de commande prend en charge la notion d’un contexte de fichier, qui peut être utilisé pour classer la chaîne qui est représentée. À l’aide d’un contexte de fichier, une chaîne peut être traduite différemment, selon le contexte du fichier (ou l’absence d’un contexte de fichier).
+Les applications contiennent souvent les chaînes à traduire dans différents endroits. La même chaîne peut-être avoir une traduction différents dans certains emplacements au sein d’une application (des vues Razor ou des fichiers de classe). Un fichier PO prend en charge la notion d’un contexte de fichier, qui peut être utilisé pour classer la chaîne qui est représentée. À l’aide d’un contexte de fichier, une chaîne peut être traduite différemment, selon le contexte du fichier (ou l’absence d’un contexte de fichier).
 
-Les services de localisation de bon de commande utilisent le nom de la classe complète ou la vue qui est utilisée lors de la conversion d’une chaîne. Cela est accompli en définissant la valeur sur la `msgctxt` entrée.
+Les services de localisation PO utilisent le nom de la classe complète ou la vue qui est utilisée lors de la conversion d’une chaîne. Cela est accompli en définissant la valeur sur l'entrée `msgctxt`.
 
-Considérez un ajout mineur précédemment *fr.po* exemple. Une vue Razor situé *Views/Home/About.cshtml* peut être défini comme le contexte du fichier en définissant la réservé `msgctxt` valeur de l’écriture :
+Considérez un ajout mineur à l'exemple *fr.po* précédent. Une vue Razor située dans *Views/Home/About.cshtml* peut être définie comme le contexte du fichier en définissant la valeur de l'entrée `msgctxt`:
 
 ```text
 msgctxt "Views.Home.About"
@@ -203,28 +203,28 @@ msgid "Hello world!"
 msgstr "Bonjour le monde!"
 ```
 
-Avec la `msgctxt` définie en tant que tel, la traduction de texte se produit lorsque vous naviguerez vers `/Home/About?culture=fr-FR`. La conversion ne se produit pas lorsque vous naviguerez vers `/Home/Contact?culture=fr-FR`.
+Avec l'entrée `msgctxt` définie ainsi, la traduction de texte se produit lorsque vous naviguez vers `/Home/About?culture=fr-FR`. La conversion ne se produira pas lorsque vous naviguerez vers `/Home/Contact?culture=fr-FR`.
 
-Lorsqu’aucune entrée spécifique n’est mis en correspondance avec un contexte de fichier donné, mécanisme de secours de noyaux Orchard recherche un fichier de bon de commande approprié sans contexte. En supposant qu’il n’existe aucun contexte de fichier spécifique définie pour *Views/Home/Contact.cshtml*, la navigation vers `/Home/Contact?culture=fr-FR` charge un fichier de bon de commande tels que :
+Lorsqu’aucune entrée spécifique ne correspond à un contexte de fichier donné, le mécanisme de secours d'Orchard Core recherche un fichier PO approprié sans contexte. En supposant qu’il n’existe aucun contexte de fichier spécifique définie pour *Views/Home/Contact.cshtml*, la navigation vers `/Home/Contact?culture=fr-FR` charge un fichier PO tel que celui-ci :
 
 [!code-text[Main](localization/sample/POLocalization/fr.po)]
 
-### <a name="changing-the-location-of-po-files"></a>Modification de l’emplacement des fichiers de bon de commande
+### <a name="changing-the-location-of-po-files"></a>Modification de l’emplacement des fichiers PO
 
-L’emplacement par défaut des fichiers de bon de commande peut être modifié dans `ConfigureServices`:
+L’emplacement par défaut des fichiers PO peut être modifiés dans `ConfigureServices`:
 
 ```csharp
 services.AddPortableObjectLocalization(options => options.ResourcesPath = "Localization");
 ```
 
-Dans cet exemple, les fichiers de bon de commande sont chargés à partir de la *localisation* dossier.
+Dans cet exemple, les fichiers PO sont chargés à partir du dossier *localisation*.
 
 ### <a name="implementing-a-custom-logic-for-finding-localization-files"></a>Implémenter une logique personnalisée pour rechercher des fichiers de localisation
 
-Lorsqu’une logique plus complexe est nécessaire pour localiser les fichiers de bon de commande, le `OrchardCore.Localization.PortableObject.ILocalizationFileLocationProvider` interface peut être implémentée et enregistré en tant que service. Cela est utile lorsque les fichiers de bon de commande peuvent être stockés dans des emplacements différents ou lorsque les fichiers doivent se trouver dans une hiérarchie de dossiers.
+Lorsqu’une logique plus complexe est nécessaire pour localiser les fichiers PO, l'interface `OrchardCore.Localization.PortableObject.ILocalizationFileLocationProvider` peut être implémentée et enregistrée en tant que service. Cela est utile lorsque les fichiers PO peuvent être stockés dans des emplacements différents ou lorsque les fichiers doivent se trouver dans une hiérarchie de dossiers.
 
-### <a name="using-a-different-default-pluralized-language"></a>À l’aide d’une autre langue par défaut pluralisé
+### <a name="using-a-different-default-pluralized-language"></a>À l’aide d’une autre langue pluralisée par défaut
 
-Le package inclut un `Plural` méthode d’extension qui est spécifique à deux formes au pluriel. Pour les langues nécessitant plus pluriel, créez une méthode d’extension. Avec une méthode d’extension, vous n’aurez pas à fournir n’importe quel fichier de localisation pour la langue par défaut &mdash; les chaînes d’origine sont déjà disponibles directement dans le code.
+Le package inclut une méthode d’extension `Plural` qui est spécifique à deux formes au pluriel. Pour les langues nécessitant plus de formes plurielles, créez une méthode d’extension. Avec une méthode d’extension, vous n’aurez pas à fournir tous les fichiers de localisation pour la langue par défaut &mdash; les chaînes d’origine sont déjà disponibles directement dans le code.
 
-Vous pouvez utiliser le plus générique `Plural(int count, string[] pluralForms, params object[] arguments)` surcharge qui accepte un tableau de chaînes de traductions.
+Vous pouvez utiliser la surcharge plus générique `Plural(int count, string[] pluralForms, params object[] arguments)` qui accepte un tableau de chaînes de traductions.
