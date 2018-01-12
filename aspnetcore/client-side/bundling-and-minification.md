@@ -5,17 +5,17 @@ description: "Découvrez comment optimiser les ressources statiques dans une app
 manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 12/01/2017
+ms.date: 01/10/2018
 ms.devlang: csharp
 ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/bundling-and-minification
-ms.openlocfilehash: c271b7ef386bacedbd45fbe9f62c9c486db55b36
-ms.sourcegitcommit: 05e798c9bac7b9e9983599afb227ef393905d023
+ms.openlocfilehash: ac8e7fee7600dabb8f4970b5bf87ad7a57ebf17f
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="bundling-and-minification"></a>Groupement et minimisation
 
@@ -75,7 +75,7 @@ Les modèles de projet MVC et les Pages Razor fournissent une *bundleconfig.json
 
 [!code-json[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/bundleconfig.json)]
 
-Options de regroupement :
+Options de configuration sont les suivantes :
 
 * `outputFileName`: Le nom du fichier d’offre groupée de sortie. Peut contenir un chemin d’accès relatif à partir de la *bundleconfig.json* fichier. **Obligatoire**
 * `inputFiles`: Un tableau de fichiers à regrouper. Voici les chemins d’accès relatifs au fichier de configuration. **facultatif**, * une valeur vide entraîne un fichier de sortie vide. [la globalisation](http://www.tldp.org/LDP/abs/html/globbingref.html) modèles sont pris en charge.
@@ -91,6 +91,9 @@ Options de regroupement :
 ## <a name="build-time-execution-of-bundling-and-minification"></a>Exécution du moment de la génération du groupement et minimisation
 
 Le [BuildBundlerMinifier](https://www.nuget.org/packages/BuildBundlerMinifier/) package NuGet permet l’exécution de groupement et minimisation au moment de la génération. Le package injecte [cibles de MSBuild](/visualstudio/msbuild/msbuild-targets) qui exécuté à la génération et l’heure de nettoyage. Le *bundleconfig.json* fichier est analysé par le processus de génération pour générer les fichiers de sortie en fonction de la configuration définie.
+
+> [!NOTE]
+> BuildBundlerMinifier appartient à un projet communautaire sur GitHub pour lesquels Microsoft ne fournit aucune prise en charge. Problèmes doivent être classés [ici](https://github.com/madskristensen/BundlerMinifier/issues).
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio) 
 
@@ -176,6 +179,9 @@ Il est possible d’exécuter les tâches de groupement et la minimisation sur u
 
 [!code-xml[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/BuildBundlerMinifierApp.csproj?range=10)]
 
+> [!NOTE]
+> BundlerMinifier.Core appartient à un projet communautaire sur GitHub pour lesquels Microsoft ne fournit aucune prise en charge. Problèmes doivent être classés [ici](https://github.com/madskristensen/BundlerMinifier/issues).
+
 Ce package étend .NET Core CLI pour inclure la *offre groupée-dotnet* outil. La commande suivante peut être exécutée dans la fenêtre de Console de gestionnaire de Package (PMC) ou dans une invite de commandes :
 
 ```console
@@ -243,6 +249,9 @@ Il existe des cas dans lequel les flux de travail groupement et la minimisation 
 ### <a name="use-the-bundler--minifier-extension"></a>Utiliser l’extension textile et minimisation
 
 Visual Studio [textile & minimisation](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.BundlerMinifier) extension gère la conversion Gulp.
+
+> [!NOTE]
+> L’extension du programme d’installation regroupé & minimisation appartient à un projet communautaire sur GitHub pour lesquels Microsoft ne fournit aucune prise en charge. Problèmes doivent être classés [ici](https://github.com/madskristensen/BundlerMinifier/issues).
 
 Avec le bouton droit le *bundleconfig.json* fichier dans l’Explorateur de solutions et sélectionnez **textile & minimisation** > **convertir à Gulp...** :
 
