@@ -11,11 +11,11 @@ ms.assetid: 50922cf1-ca58-4006-9236-99b7ff2dd0cf
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/nano-server
-ms.openlocfilehash: 337cc69ef522452c17cdd6ea4a5e71cd122035dc
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f30e911703d5c36d076872f91d4b2fafeefb91f5
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="aspnet-core-with-iis-on-nano-server"></a>ASP.NET Core avec IIS sur Nano Server
 
@@ -37,7 +37,7 @@ Il existe trois manières très simples de tester Nano Server. Quand vous vous c
 
 Dans ce didacticiel, nous utiliserons la deuxième option, le disque dur virtuel Nano Server prégénéré de Windows Server 2016.
 
-Avant de poursuivre ce didacticiel, vous aurez besoin de la [sortie publiée](xref:hosting/directory-structure) d’une application ASP.NET Core existante. Vérifiez que votre application est générée pour s’exécuter dans un processus **64 bits**.
+Avant de poursuivre ce didacticiel, vous aurez besoin de la [sortie publiée](xref:host-and-deploy/directory-structure) d’une application ASP.NET Core existante. Vérifiez que votre application est générée pour s’exécuter dans un processus **64 bits**.
 
 ## <a name="setting-up-the-nano-server-instance"></a>Configuration de l’instance de Nano Server
 
@@ -191,7 +191,7 @@ Exemple de fichier *web.config* quand *dotnet.exe* n’est **pas** dans la varia
 </configuration>
 ```
 
-Exécutez les commandes suivantes dans la session distante pour créer un site dans IIS pour l’application publiée sur un port autre que celui du site web par défaut. Vous devez également ouvrir ce port pour accéder au web. Ce script utilise le `DefaultAppPool` par souci de simplicité. Pour plus d’informations sur l’exécution sous un pool d’applications, consultez [Pools d’applications](xref:publishing/iis#application-pools).
+Exécutez les commandes suivantes dans la session distante pour créer un site dans IIS pour l’application publiée sur un port autre que celui du site web par défaut. Vous devez également ouvrir ce port pour accéder au web. Ce script utilise le `DefaultAppPool` par souci de simplicité. Pour plus d’informations sur l’exécution sous un pool d’applications, consultez [Pools d’applications](xref:host-and-deploy/iis/index#application-pools).
 
 ```PowerShell
 Import-module IISAdministration
@@ -205,4 +205,4 @@ New-NetFirewallRule -Name "AspNetCore Port 81 IIS" -DisplayName "Allow HTTP on T
 
 ## <a name="running-the-application"></a>Exécution de l’application
 
-L’application web publiée est accessible dans un navigateur à l’adresse `http://192.168.1.10:8000`. Si vous avez configuré la journalisation comme décrit dans [Création et redirection de journal](xref:hosting/aspnet-core-module#log-creation-and-redirection), vous pouvez afficher vos journaux à *C:\PublishedApps\AspNetCoreSampleForNano\logs*.
+L’application web publiée est accessible dans un navigateur à l’adresse `http://192.168.1.10:8000`. Si vous avez configuré la journalisation comme décrit dans [Création et redirection de journal](xref:host-and-deploy/aspnet-core-module#log-creation-and-redirection), vous pouvez afficher vos journaux à *C:\PublishedApps\AspNetCoreSampleForNano\logs*.
