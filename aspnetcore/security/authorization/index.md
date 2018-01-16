@@ -11,23 +11,25 @@ ms.assetid: 1abd456b-2199-4ba3-9698-3241e0bd4afc
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authorization/index
-ms.openlocfilehash: d74254c8f2cc3ee55f6842f9f952d7ab93fe7a03
-ms.sourcegitcommit: f1436107b4c022b26f5235dddef103cec5aa6bff
+ms.openlocfilehash: 13b4e1db7e3ae73a0cba49d214c5ffdb31601e5c
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/15/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="authorization-in-aspnet-core-simple-role-claims-based-and-custom"></a>Autorisation dans ASP.NET Core : simple, de rôle, basée sur des revendications et personnalisée
 
 * [Introduction](introduction.md)
 
+* [Autorisation des pages Razor](xref:security/authorization/razor-pages-authorization)
+
 * [Autorisation simple](simple.md)
 
-* [Autorisation basée sur les rôles](roles.md)
+* [Autorisation basée sur des rôles](roles.md)
 
 * [Autorisation basée sur des revendications](claims.md)
 
-* [Autorisation basée sur une stratégie personnalisée](policies.md)
+* [Autorisation basée sur une stratégie](policies.md)
 
 * [Injection de dépendances dans les gestionnaires d’exigences](dependencyinjection.md)
 

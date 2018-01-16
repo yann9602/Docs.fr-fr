@@ -10,24 +10,24 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: migration/index
-ms.openlocfilehash: 4c653d83569bcd218710ad276e154c6b8f89963c
-ms.sourcegitcommit: 747a7fddf7a4c7ef5f3e2a0912c411ee647ee203
+ms.openlocfilehash: 955634b9c3d207a7b0026de76e37b527607f4775
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="migration-to-aspnet-core-including-aspnet-4x-aspnet-core-2"></a>Migration vers ASP.NET Core, dont ASP.NET 4.x et ASP.NET Core 2
 
 ### <a name="aspnet-to-aspnet-core-1x"></a>ASP.NET vers ASP.NET Core 1.x
-*   [Migration d’ASP.NET MVC vers ASP.NET Core MVC](xref:migration/mvc)
-*   [Migration de la configuration](xref:migration/configuration)
-*   [Migration de l’authentification et de l’identité](xref:migration/identity)
-*   [Migration à partir de l’API web ASP.NET](xref:migration/webapi)
-*   [Migration des modules HTTP vers les intergiciels (middleware)](xref:migration/http-modules)
+*   [Migrer ASP.NET MVC vers ASP.NET Core MVC](xref:migration/mvc)
+*   [Migrer une configuration](xref:migration/configuration)
+*   [Migrer les fonctionnalités d’authentification et d’identité](xref:migration/identity)
+*   [Migrer à partir de l’API web ASP.NET](xref:migration/webapi)
+*   [Migrer des modules HTTP vers les intergiciels (middleware)](xref:migration/http-modules)
 
 ### <a name="aspnet-to-aspnet-core-20"></a>ASP.NET vers ASP.NET Core 2.0
 * [ASP.NET vers ASP.NET Core 2.0](xref:migration/proper-to-2x/index)
 
 ### <a name="aspnet-core-1x-to-20"></a>ASP.NET Core 1.x vers 2.0
-*   [Migration d’ASP.NET Core 1.x vers 2.0](xref:migration/1x-to-2x/index)
-*   [Migration de l’authentification et de l’identité](xref:migration/1x-to-2x/identity-2x)
+*   [Migrer d’ASP.NET Core 1.x vers la version 2.0](xref:migration/1x-to-2x/index)
+*   [Migrer les fonctionnalités d’authentification et d’identité](xref:migration/1x-to-2x/identity-2x)

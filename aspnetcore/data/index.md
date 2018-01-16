@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/index
-ms.openlocfilehash: bc19cbf0093e8a7f26af82d19f597cc805e04309
-ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
+ms.openlocfilehash: 325f95cf9ecc295f7a1c646e352b9cd496b6268e
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="working-with-data-in-aspnet-core"></a>Utilisation des données dans ASP.NET Core 
 
@@ -22,30 +22,30 @@ ms.lasthandoff: 12/14/2017
 
    * [Bien démarrer avec les pages Razor et Entity Framework](xref:data/ef-rp/intro)
    * [Opérations de création, de lecture, de mise à jour et de suppression](xref:data/ef-rp/crud)
-   * [Tri, filtrage, pagination et regroupement](xref:data/ef-rp/sort-filter-page)
+   * [Tri, filtre, page et groupe](xref:data/ef-rp/sort-filter-page)
    * [Migrations](xref:data/ef-rp/migrations)
-   * [Création d’un modèle de données complexe](xref:data/ef-rp/complex-data-model)
-   * [Lecture de données associées](xref:data/ef-rp/read-related-data)
-   * [Mise à jour de données associées](xref:data/ef-rp/update-related-data)
-   * [Gestion des conflits d’accès concurrentiel](xref:data/ef-rp/concurrency)
+   * [Créer un modèle de données complexe](xref:data/ef-rp/complex-data-model)
+   * [Lire les données associées](xref:data/ef-rp/read-related-data)
+   * [Mettre à jour les données associées](xref:data/ef-rp/update-related-data)
+   * [Gérer les conflits d’accès concurrentiel](xref:data/ef-rp/concurrency)
 
 *   [Bien démarrer avec ASP.NET Core MVC et Entity Framework Core à l’aide de Visual Studio](ef-mvc/index.md)
-    *   [Prise en main](ef-mvc/intro.md)
+    *   [Bien démarrer](ef-mvc/intro.md)
     *   [Opérations de création, de lecture, de mise à jour et de suppression](xref:data/ef-mvc/crud)
-    *   [Tri, filtrage, pagination et regroupement](xref:data/ef-mvc/sort-filter-page)
+    *   [Tri, filtre, page et groupe](xref:data/ef-mvc/sort-filter-page)
     *   [Migrations](xref:data/ef-mvc/migrations)
-    *   [Création d’un modèle de données complexe](ef-mvc/complex-data-model.md)
-    *   [Lecture de données associées](ef-mvc/read-related-data.md)
-    *   [Mise à jour de données associées](ef-mvc/update-related-data.md)
-    *   [Gestion des conflits d’accès concurrentiel](ef-mvc/concurrency.md)
+    *   [Créer un modèle de données complexe](ef-mvc/complex-data-model.md)
+    *   [Lire les données associées](ef-mvc/read-related-data.md)
+    *   [Mettre à jour les données associées](ef-mvc/update-related-data.md)
+    *   [Gérer les conflits d’accès concurrentiel](ef-mvc/concurrency.md)
     *   [Héritage](ef-mvc/inheritance.md)
     *   [Rubriques avancées](ef-mvc/advanced.md)
 * [ASP.NET Core avec EF Core - nouvelle base de données](https://docs.microsoft.com/ef/core/get-started/aspnetcore/new-db) (site de documentation d’Entity Framework Core)
 * [ASP.NET Core avec EF Core - base de données existante](https://docs.microsoft.com/ef/core/get-started/aspnetcore/existing-db) (site de documentation d’Entity Framework Core)
 *   [Bien démarrer avec ASP.NET Core et Entity Framework 6](entity-framework-6.md)
 *   [Stockage Azure](azure-storage/index.md)
-    *   [Ajout de Stockage Azure à l’aide des services connectés de Visual Studio](https://azure.microsoft.com/documentation/articles/vs-azure-tools-connected-services-storage/)
-    *   [Prendre en main Stockage Blob Azure et les services connectés de Visual Studio](https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-blobs/)
+    *   [Ajouter Stockage Azure à l’aide des services connectés de Visual Studio](https://azure.microsoft.com/documentation/articles/vs-azure-tools-connected-services-storage/)
+    *   [Bien démarrer avec Stockage Blob Azure et les services connectés de Visual Studio](https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-blobs/)
     *   [Bien démarrer avec Stockage File d’attente et les services connectés de Visual Studio](https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-queues/)
-    *   [Mise en route avec Stockage Table Azure et les services connectés de Visual Studio](https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-tables/)
+    *   [Bien démarrer avec Stockage Table Azure et les services connectés de Visual Studio](https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-tables/)
 

@@ -1,6 +1,6 @@
 ---
 title: "Publier une application ASP.NET Core sur Azure à l’aide d’outils en ligne de commande | Microsoft Docs"
-description: "Apprenez à créer et à déployer des applications Microsoft Azure App à l’aide d’ASP.NET Core et du client de ligne de commande Git."
+description: "Découvrez comment publier une application ASP.NET Core sur Azure App Service à l’aide du client de ligne de commande Git."
 services: multiple
 keywords: ASP.NET Core, Azure, App Service, Git, ligne de commande
 author: camsoper
@@ -13,11 +13,11 @@ ms.technology: aspnet
 ms.custom: mvc
 ms.devlang: dotnet
 uid: tutorials/publish-to-azure-webapp-using-cli
-ms.openlocfilehash: 0bcff4f79356b960f663dcebb1d79a108417dbd2
-ms.sourcegitcommit: f017f940a164dbaf84307410c78eb14e0f3ac811
+ms.openlocfilehash: 6af5de584cbf8cd59d86a965592b958061014c95
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="deploy-an-aspnet-core-application-to-azure-app-service-from-the-command-line"></a>Déployer une application ASP.NET Core sur Azure App Service en ligne de commande
 
@@ -31,7 +31,7 @@ Dans ce didacticiel, vous apprendrez à :
 > * créer un site web Azure App Service à l’aide de l’interface Azure CLI ;
 > * déployer une application ASP.NET Core sur Azure App Service à l’aide de l’outil en ligne de commande Git.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 Pour suivre ce didacticiel, vous aurez besoin des éléments suivants :
 

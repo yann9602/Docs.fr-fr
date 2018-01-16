@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/logging/index
-ms.openlocfilehash: 737de614625ce560df1c3d7cfd9810f9433c153d
-ms.sourcegitcommit: f1436107b4c022b26f5235dddef103cec5aa6bff
+ms.openlocfilehash: 3eb167c961b8d089d508ef5622db6ae1cdd99088
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/15/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="introduction-to-logging-in-aspnet-core"></a>Introduction à la journalisation dans ASP.NET Core
 
@@ -56,7 +56,7 @@ Pour utiliser un fournisseur, appelez la méthode d’extension `Add<ProviderNam
 
 [!code-csharp[](index/sample2/Program.cs?name=snippet_ExpandDefault&highlight=16,17)]
 
-Le modèle de projet par défaut configure la journalisation de la même façon que dans le code ci-dessus, mais l’appel de `ConfigureLogging` est effectué par la méthode `CreateDefaultBuilder`. Voici le code créé dans *Program.cs* par les modèles de projet :
+Le modèle de projet par défaut active la journalisation avec la méthode [CreateDefaultBuilder](https://docs.microsoft.com/ dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder?view=aspnetcore-2.0#Microsoft_AspNetCore_WebHost_CreateDefaultBuilder_System_String___) :
 
 [!code-csharp[](index/sample2/Program.cs?name=snippet_TemplateCode&highlight=7)]
 
@@ -297,16 +297,16 @@ Le second `AddFilter` spécifie le fournisseur Debug par son nom de type. Le pre
 
 Les données de configuration et le code `AddFilter` contenus dans les exemples précédents créent les règles présentées dans le tableau suivant. Les six premières proviennent de l’exemple de configuration et les deux dernières, de l’exemple de code.
 
-| Nombre | Fournisseur      | Catégories commençant par...          | Niveau de journalisation minimum |
+| nombre | Fournisseur      | Catégories commençant par...          | Niveau de journalisation minimum |
 | :----: | ------------- | --------------------------------------- | ----------------- |
-| 1      | Déboguer         | Toutes les catégories                          | Information       |
+| 1      | Débogage         | Toutes les catégories                          | Information       |
 | 2      | Console       | Microsoft.AspNetCore.Mvc.Razor.Internal | Warning           |
-| 3      | Console       | Microsoft.AspNetCore.Mvc.Razor.Razor    | Déboguer             |
-| 4      | Console       | Microsoft.AspNetCore.Mvc.Razor          | Erreur             |
+| 3      | Console       | Microsoft.AspNetCore.Mvc.Razor.Razor    | Débogage             |
+| 4      | Console       | Microsoft.AspNetCore.Mvc.Razor          | Error             |
 | 5      | Console       | Toutes les catégories                          | Information       |
-| 6      | Tous les fournisseurs | Toutes les catégories                          | Déboguer             |
-| 7      | Tous les fournisseurs | Système                                  | Déboguer             |
-| 8      | Déboguer         | Microsoft                               | Suivi             |
+| 6      | Tous les fournisseurs | Toutes les catégories                          | Débogage             |
+| 7      | Tous les fournisseurs | Système                                  | Débogage             |
+| 8      | Débogage         | Microsoft                               | Suivi             |
 
 Quand vous créez un objet `ILogger` d’écriture d’enregistrements de journal, l’objet `ILoggerFactory` sélectionne une seule règle par fournisseur à appliquer à cet objet. Tous les messages écrits par cet objet `ILogger` sont filtrés selon les règles sélectionnées. La règle la plus spécifique pouvant être appliquée à chaque paire catégorie/fournisseur est sélectionnée parmi les règles disponibles.
 
@@ -329,7 +329,7 @@ Quand vous créez des enregistrements de journal avec un objet `ILogger` pour la
 Vous pouvez utiliser le nom de type pour spécifier un fournisseur dans une configuration, mais chaque fournisseur définit un *alias* plus court et plus simple d’emploi. Pour les fournisseurs intégrés, utilisez les alias suivants :
 
 - Console
-- Déboguer
+- Débogage
 - EventLog
 - AzureAppServices
 - TraceSource

@@ -39,7 +39,7 @@ L’attribut `[HttpGet]` spécifie une méthode GET HTTP. Le chemin d’URL pour
 
 [!code-csharp[Main](../../tutorials/first-web-api/sample/TodoApi/Controllers/TodoController.cs?name=TodoController&highlight=3)]
 
-* Remplacez « [Controller] » par le nom du contrôleur, qui est le nom de la classe du contrôleur sans le suffixe « Controller ». Pour cet exemple, le nom de classe du contrôleur est **Todo**Controller et le nom racine est « todo ». Le [routage](xref:mvc/controllers/routing) d’ASP.NET Core ne respecte pas la casse.
+* Remplacez `[controller]` par le nom du contrôleur, qui est le nom de la classe du contrôleur sans le suffixe « Controller ». Pour cet exemple, le nom de classe du contrôleur est **Todo**Controller et le nom racine est « todo ». Le [routage](xref:mvc/controllers/routing) d’ASP.NET Core ne respecte pas la casse.
 * Si l’attribut `[HttpGet]` a un modèle de route (comme `[HttpGet("/products")]`, ajoutez-le au chemin. Cet exemple n’utilise pas de modèle. Pour plus d’informations, consultez [Routage d’attribut avec des attributs Http[Verbe]](xref:mvc/controllers/routing#attribute-routing-with-httpverb-attributes).
 
 Dans la méthode `GetById` :

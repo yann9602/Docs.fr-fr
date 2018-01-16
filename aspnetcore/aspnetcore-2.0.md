@@ -11,11 +11,11 @@ ms.assetid: 08c9f457-9c24-40f9-a08b-47dc251e4cec
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: aspnetcore-2.0
-ms.openlocfilehash: 98af3788652e87f6222551cb4a8e5427b312660c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f01f047f809e4eaa055a4204611b152c5db87f74
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="whats-new-in-aspnet-core-20"></a>Nouveautés d’ASP.NET Core 2.0
 
@@ -76,7 +76,7 @@ Pour plus d’informations sur les modifications apportées à l’authentificat
 
 * [Account confirmation and password recovery in ASP.NET Core (Confirmation de compte et récupération de mot de passe dans ASP.NET Core)](xref:security/authentication/accconfirm)
 * [Enabling QR Code generation for authenticator apps in ASP.NET Core (Activation de la génération de code QR pour les applications d’authentification dans ASP.NET Core)](xref:security/authentication/identity-enable-qrcodes)
-* [Migrating Authentication and Identity to ASP.NET Core 2.0 (Migration de l’authentification et de l’identité vers ASP.NET Core 2.0)](xref:migration/1x-to-2x/identity-2x)
+* [Migration de l’authentification et de l’identité vers ASP.NET Core 2.0](xref:migration/1x-to-2x/identity-2x)
 
 ## <a name="spa-templates"></a>Modèles SPA
 
@@ -142,7 +142,7 @@ Pour plus d’informations sur l’état des fonctionnalités de C# 7.1, consult
 
 ## <a name="other-documentation-updates-for-20"></a>Autres mises à jour de la documentation pour la version 2.0
 
-* [Créer des profils de publication pour Visual Studio et MSBuild afin de déployer des applications ASP.NET Core](xref:publishing/web-publishing-vs)
+* [Profils de publication Visual Studio pour le déploiement d’applications ASP.NET Core](xref:host-and-deploy/visual-studio-publish-profiles)
 * [Gestion des clés](xref:security/data-protection/implementation/key-management)
 * [Configuration de l’authentification Facebook](xref:security/authentication/facebook-logins)
 * [Configuration de l’authentification Twitter](xref:security/authentication/twitter-logins)

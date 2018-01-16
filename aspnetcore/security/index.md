@@ -10,11 +10,11 @@ ms.assetid: a8fb7eb7-e0e5-4394-84f3-1f1dbe012345
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/index
-ms.openlocfilehash: 3f4df08d6cf5d183735ae4b4ec4f07ed60a9623a
-ms.sourcegitcommit: f1436107b4c022b26f5235dddef103cec5aa6bff
+ms.openlocfilehash: f6a1f32c1edd098b0782fd066d8e32f09952a9b7
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/15/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="aspnet-core-security-overview"></a>Vue d’ensemble de la sécurité ASP.NET Core
 
@@ -45,28 +45,28 @@ Il existe d’autres failles de sécurité que vous devez connaître. Pour plus 
 
 *   [Authentification](authentication/index.md)
     *   [Présentation d’Identity](authentication/identity.md)
-    *   [Activation de l’authentification via Facebook, Google et d’autres fournisseurs externes](authentication/social/index.md)
+    *   [Activer l’authentification à l’aide de Facebook, Google et d’autres fournisseurs externes](authentication/social/index.md)
     * [Configurer l’authentification Windows](authentication/windowsauth.md)
     *   [Confirmation de compte et récupération de mot de passe](authentication/accconfirm.md)
-    *   [Authentification à 2 facteurs avec SMS](authentication/2fa.md) 
-    *   [Utilisation de l’authentification par cookie sans ASP.NET Core Identity](authentication/cookie.md)
+    *   [Authentification à deux facteurs avec SMS](authentication/2fa.md) 
+    *   [Utiliser l’authentification par cookie sans Identity](authentication/cookie.md)
     *   [Azure Active Directory](authentication/azure-active-directory/index.md)
-        *   [Intégration d’Azure AD dans une application web ASP.NET Core](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-openidconnect-aspnetcore/)
-        *   [Appel d’une API web ASP.NET Core à partir d’une application WPF via Azure AD](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-native-aspnetcore/)
-        *   [Appel d’une API web dans une application web ASP.NET Core via Azure AD](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore/)
+        *   [Intégrer Azure AD dans une application web ASP.NET Core](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-openidconnect-aspnetcore/)
+        *   [Appeler une API web ASP.NET Core à partir d’une application WPF via Azure AD](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-native-aspnetcore/)
+        *   [Appeler une API web dans une application web ASP.NET Core via Azure AD](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore/)
         *   [Une application web ASP.NET Core Azure AD B2C](https://azure.microsoft.com/resources/samples/active-directory-b2c-dotnetcore-webapp/)
-    *   [Sécurisation des applications ASP.NET Core avec IdentityServer4](https://identityserver4.readthedocs.io)
+    *   [Sécuriser les applications ASP.NET Core avec IdentityServer4](https://identityserver4.readthedocs.io)
 *   [Autorisation](authorization/index.md)
     *   [Introduction](authorization/introduction.md)
     *   [Créer une application avec des données utilisateur protégées par une autorisation](xref:security/authorization/secure-data)
     *   [Autorisation simple](authorization/simple.md)
-    *   [Autorisation basée sur les rôles](authorization/roles.md)
+    *   [Autorisation basée sur des rôles](authorization/roles.md)
     *   [Autorisation basée sur des revendications](authorization/claims.md)
-    *   [Autorisation basée sur une stratégie personnalisée](authorization/policies.md)
+    *   [Autorisation basée sur une stratégie](authorization/policies.md)
     *   [Injection de dépendances dans les gestionnaires d’exigences](authorization/dependencyinjection.md)
     *   [Autorisation basée sur les ressources](authorization/resourcebased.md)
     *   [Autorisation basée sur les vues](authorization/views.md)
-    *   [Limitation d’identité par schéma](authorization/limitingidentitybyscheme.md)
+    *   [Limiter une identité par schéma](authorization/limitingidentitybyscheme.md)
 *   [Protection des données](data-protection/index.md)
     *   [Présentation de la protection des données](data-protection/introduction.md)
     *   [Bien démarrer avec les API de protection des données](data-protection/using-data-protection.md)
@@ -75,12 +75,12 @@ Il existe d’autres failles de sécurité que vous devez connaître. Pour plus 
         *   [Chaînes d’objectifs](data-protection/consumer-apis/purpose-strings.md)
         *   [Hiérarchie d’objectifs et architecture mutualisée](data-protection/consumer-apis/purpose-strings-multitenancy.md)
         *   [Hachage de mot de passe](data-protection/consumer-apis/password-hashing.md)
-        *   [Limitation de la durée de vie des charges utiles protégées](data-protection/consumer-apis/limited-lifetime-payloads.md)
-        *   [Retrait de la protection des charges utiles dont les clés ont été révoquées](data-protection/consumer-apis/dangerous-unprotect.md)
+        *   [Limiter la durée de vie des charges utiles protégées](data-protection/consumer-apis/limited-lifetime-payloads.md)
+        *   [Retirer la protection des charges utiles dont les clés ont été révoquées](data-protection/consumer-apis/dangerous-unprotect.md)
     *   [Configuration](data-protection/configuration/index.md)
-        *   [Configuration de la protection des données](data-protection/configuration/overview.md)
+        *   [Configurer la protection des données](data-protection/configuration/overview.md)
         *   [Paramètres par défaut](data-protection/configuration/default-settings.md)
-        *   [Stratégie à l’échelle de la machine](data-protection/configuration/machine-wide-policy.md)
+        *   [Stratégie à l’échelle de l’ordinateur](data-protection/configuration/machine-wide-policy.md)
         *   [Scénarios non compatibles avec l’injection de dépendances](data-protection/configuration/non-di-scenarios.md)
     *   [API d’extensibilité](data-protection/extensibility/index.md)
         *   [Extensibilité du chiffrement de base](data-protection/extensibility/core-crypto.md)
@@ -97,13 +97,13 @@ Il existe d’autres failles de sécurité que vous devez connaître. Pour plus 
         *   [Format de stockage des clés](data-protection/implementation/key-storage-format.md)
         *   [Fournisseurs de protection des données éphémères](data-protection/implementation/key-storage-ephemeral.md)
     *   [Compatibilité](data-protection/compatibility/index.md)
-        *   [Partage des cookies entre les applications](data-protection/compatibility/cookie-sharing.md)
-        *   [Remplacement de <machineKey> dans ASP.NET](data-protection/compatibility/replacing-machinekey.md)
+        *   [Partager les cookies entre les applications](data-protection/compatibility/cookie-sharing.md)
+        *   [Remplacer <machineKey> dans ASP.NET](data-protection/compatibility/replacing-machinekey.md)
 *   [Créer une application avec des données utilisateur protégées par une autorisation](xref:security/authorization/secure-data)
 *   [Stockage sécurisé des secrets de l’application durant le développement](app-secrets.md)
 *   [Fournisseur de configuration Azure Key Vault](key-vault-configuration.md)
-*   [Mise en œuvre de SSL](enforcing-ssl.md)
+*   [Appliquer SSL](enforcing-ssl.md)
 *   [Protection contre la falsification de requête](anti-request-forgery.md)
-*   [Blocage des attaques par redirection ouverte](preventing-open-redirects.md)
-*   [Blocage des scripts intersites](cross-site-scripting.md)
-*   [Activation des requêtes d’origines différentes](cors.md)
+*   [Bloquer les attaques par redirection ouverte](preventing-open-redirects.md)
+*   [Bloquer les scripts intersites](cross-site-scripting.md)
+*   [Activer les requêtes d’origines différentes](cors.md)

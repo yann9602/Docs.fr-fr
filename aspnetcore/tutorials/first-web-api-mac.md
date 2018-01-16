@@ -11,15 +11,15 @@ helpviewer_heywords: ASP.NET Core, WebAPI, Web API, REST, mac, macOS, HTTP, Serv
 ms.technology: aspnet
 keywords: ASP.NET Core, APIweb, API web, REST, mac, macOS, HTTP, Service, Service HTTP
 manager: wpickett
-ms.openlocfilehash: 6bbd5e332e395928d8f79888ecf190f7f59a4bbc
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3f84fa55baf6d808185a28db290d9e6d3c46bdac
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="create-a-web-api-with-aspnet-core-mvc-and-visual-studio-for-mac"></a>Créer une API web avec ASP.NET Core MVC et Visual Studio pour Mac
 
-De [Rick Anderson](https://twitter.com/RickAndMSFT) et [Mike Wasson](https://github.com/mikewasson)
+Par [Rick Anderson](https://twitter.com/RickAndMSFT) et [Mike Wasson](https://github.com/mikewasson)
 
 Dans ce didacticiel, vous allez générer une API web pour la gestion d’une liste de tâches. Vous ne générerez pas d’interface utilisateur.
 
@@ -35,7 +35,7 @@ Il existe trois versions de ce didacticiel :
 
 * Pour obtenir un exemple qui utilise une base de données persistante, consultez [Introduction à ASP.NET Core MVC sur Mac ou Linux](xref:tutorials/first-mvc-app-xplat/index).
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 Installez les éléments suivants :
 
@@ -91,7 +91,7 @@ Remplacez le code généré par ce qui suit :
 
 [!code-csharp[Main](first-web-api/sample/TodoApi/Models/TodoItem.cs)]
 
-La base de données génère le `Id` quand un `TodoItem` est créé.
+La base de données génère la valeur `Id` quand un `TodoItem` est créé.
 
 ### <a name="create-the-database-context"></a>Créer le contexte de base de données
 
@@ -197,7 +197,7 @@ La réponse est [204 (Pas de contenu)](http://www.w3.org/Protocols/rfc2616/rfc26
 ## <a name="next-steps"></a>Étapes suivantes
 
 * [Routage vers les actions du contrôleur](xref:mvc/controllers/routing)
-* Pour plus d’informations sur le déploiement de votre API, consultez [Publication et déploiement](../publishing/index.md).
+* Pour plus d’informations sur le déploiement de votre API, consultez [Héberger et déployer](xref:host-and-deploy/index).
 * [Affichez ou téléchargez l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/first-web-api/sample) ([procédure de téléchargement](xref:tutorials/index#how-to-download-a-sample))
 * [Postman](https://www.getpostman.com/)
 * [Fiddler](https://www.telerik.com/download/fiddler)

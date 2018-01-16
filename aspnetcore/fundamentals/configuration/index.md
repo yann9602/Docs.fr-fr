@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/configuration/index
-ms.openlocfilehash: 6281d6ba254670b111964715410fc0694ae4d149
-ms.sourcegitcommit: 216dfac27542f10a79274a9ce60dc449e888ed20
+ms.openlocfilehash: b662e66ab5b4c46d1a8d10eb7c38bf4064b5b927
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="configure-an-aspnet-core-app"></a>Configurer une application ASP.NET Core
 
@@ -355,7 +355,7 @@ Left: 1984
 
 Une fois le dictionnaire de correspondances de commutateur créé, il contient les données affichées dans le tableau suivant.
 
-| Clé            | Valeur                 |
+| Touche            | Value                 |
 | -------------- | --------------------- |
 | `-MachineName` | `Profile:MachineName` |
 | `-Left`        | `App:MainWindow:Left` |
@@ -375,7 +375,7 @@ Left: 1988
 
 ## <a name="the-webconfig-file"></a>Le fichier web.config
 
-Un fichier *web.config* est nécessaire quand vous hébergez l’application dans IIS ou IIS Express. *Web.config* active AspNetCoreModule dans IIS pour lancer votre application. Les paramètres de *web.config* activent AspNetCoreModule dans IIS pour lancer votre application et configurer d’autres modules et paramètres IIS. Si vous utilisez Visual Studio et que vous supprimez *web.config*, Visual Studio en crée un nouveau.
+Un fichier *web.config* est nécessaire pour héberger l’application dans IIS ou IIS Express. Les paramètres de *web.config* permettent au [module ASP.NET Core](xref:fundamentals/servers/aspnet-core-module) de lancer l’application et de configurer d’autres modules et paramètres IIS. Si le fichier *web.config* n’est pas présent et que le fichier projet contient `<Project Sdk="Microsoft.NET.Sdk.Web">`, la publication du projet crée un fichier *web.config* dans la sortie publiée (le dossier *publish*). Pour plus d’informations, consultez [Héberger ASP.NET Core sur Windows avec IIS](xref:host-and-deploy/iis/index#webconfig).
 
 ## <a name="additional-notes"></a>Remarques supplémentaires
 
