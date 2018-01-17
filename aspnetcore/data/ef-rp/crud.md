@@ -10,11 +10,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/crud
-ms.openlocfilehash: 163bc35afed0bf1d9236935d5ce60e6975356594
-ms.sourcegitcommit: f1436107b4c022b26f5235dddef103cec5aa6bff
+ms.openlocfilehash: 246e6307989f2660d84288ceac6793c422875f93
+ms.sourcegitcommit: 87168cdc409e7a7257f92a0f48f9c5ab320b5b28
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/15/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="create-read-update-and-delete---ef-core-with-razor-pages-2-of-8"></a>Créer, lire, mettre à jour et supprimer - Core EF avec les Pages Razor (2 de 8)
 
@@ -202,7 +202,7 @@ Dans une application web, le `DbContext` qui lit une entité et affiche les donn
 
 ## <a name="update-the-delete-page"></a>Mise à jour de la page de suppression
 
-Dans cette section, le code est ajouté pour implémenter une erreur personnalisée message lorsque l’appel à `SaveChanges` échoue. Ajouter une chaîne pour contenir des messages d’erreur possile :
+Dans cette section, le code est ajouté pour implémenter une erreur personnalisée message lorsque l’appel à `SaveChanges` échoue. Ajouter une chaîne pour contenir des messages d’erreur possibles :
 
 [!code-csharp[Main](intro/samples/cu/Pages/Students/Delete.cshtml.cs?name=snippet1&highlight=12)]
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2
 msc.type: authoredcontent
-ms.openlocfilehash: ad44ee525601f308498967159e964aa41a2ce00c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7c563f566b8456b63ffe0a3c4876432c60a19e89
+ms.sourcegitcommit: 87168cdc409e7a7257f92a0f48f9c5ab320b5b28
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/17/2018
 ---
 <a name="attribute-routing-in-aspnet-web-api-2"></a>Routage d’attributs dans l’API Web ASP.NET 2
 ====================
@@ -29,7 +29,7 @@ Au antérieur style de routage, basé sur une convention, le routage est toujour
 Cette rubrique montre comment activer le routage de l’attribut et décrit les différentes options pour le routage de l’attribut. Pour un didacticiel de bout en bout qui utilise le routage d’attributs, consultez [créer une API REST avec le routage d’attribut dans l’API Web 2](create-a-rest-api-with-attribute-routing.md).
 
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 [Visual Studio 2017](https://www.visualstudio.com/vs/) Community, Professional ou Enterprise Edition
 
@@ -130,7 +130,7 @@ Toutes les méthodes de contrôleur qui n’ont pas un attribut d’itinéraire 
 
 API Web sélectionne également des actions en fonction de la méthode HTTP de la demande (GET, POST, etc.). Par défaut, les API Web recherche une correspondance de la casse avec le début du nom de la méthode de contrôleur. Par exemple, une méthode de contrôleur nommée `PutCustomers` correspond à une requête HTTP PUT.
 
-Vous pouvez remplacer cette convention en décorant le mathod avec n’importe quelle les attributs suivants :
+Vous pouvez remplacer cette convention en décorant la méthode avec les attributs suivants :
 
 - **[HttpDelete]**
 - **[HttpGet]**
@@ -180,22 +180,22 @@ Le tableau suivant répertorie les contraintes qui sont pris en charge.
 
 | Contrainte | Description | Exemple |
 | --- | --- | --- |
-| Alpha | Les correspondances en majuscules ou minuscules de l’alphabet Latin (a-z, A-Z) | {x : alpha} |
+| alpha | Les correspondances en majuscules ou minuscules de l’alphabet Latin (a-z, A-Z) | {x:alpha} |
 | bool | Correspond à une valeur booléenne. | {x : bool} |
-| datetime | Correspond à un **DateTime** valeur. | {x : datetime} |
-| decimal | Correspond à une valeur décimale. | {x : decimal} |
-| double | Correspond à une valeur à virgule flottante 64 bits. | {x : double} |
-| float | Correspond à une valeur à virgule flottante 32 bits. | {x : float} |
-| GUID | Correspond à une valeur GUID. | {x : guid} |
+| datetime | Correspond à un **DateTime** valeur. | {x:datetime} |
+| decimal | Correspond à une valeur décimale. | {x:decimal} |
+| double | Correspond à une valeur à virgule flottante 64 bits. | {x:double} |
+| float | Correspond à une valeur à virgule flottante 32 bits. | {x:float} |
+| GUID | Correspond à une valeur GUID. | {x:guid} |
 | int | Correspond à une valeur d’entier 32 bits. | {x : int} |
 | length | Correspond à une chaîne avec la longueur spécifiée ou dans une plage spécifiée de longueurs. | {x : length(6)} {x : length(1,20)} |
 | long | Correspond à une valeur d’entier 64 bits. | {x : long} |
-| max | Correspond à un entier avec une valeur maximale. | {x : max(10)} |
-| MaxLength | Correspond à une chaîne avec une longueur maximale. | {x : maxlength(10)} |
-| min | Correspond à un entier avec une valeur minimale. | {x : min(10)} |
+| max | Correspond à un entier avec une valeur maximale. | {x:max(10)} |
+| MaxLength | Correspond à une chaîne avec une longueur maximale. | {x:maxlength(10)} |
+| min | Correspond à un entier avec une valeur minimale. | {x:min(10)} |
 | minLength | Correspond à une chaîne avec une longueur minimale. | {x : minlength(10)} |
-| range | Correspond à un entier compris dans une plage de valeurs. | {x : range(10,50)} |
-| regex | Correspond à une expression régulière. | {x : regex(^\d{3}-\d{3}-\d{4}$)} |
+| range | Correspond à un entier compris dans une plage de valeurs. | {x:range(10,50)} |
+| regex | Correspond à une expression régulière. | {x:regex(^\d{3}-\d{3}-\d{4}$)} |
 
 Notez que certains des contraintes, telles que &quot;min&quot;, acceptent des arguments entre parenthèses. Vous pouvez appliquer plusieurs contraintes à un paramètre, séparé par un signe deux-points.
 
@@ -269,10 +269,10 @@ Voici un exemple : Supposons que vous définissez le contrôleur suivant :
 
 Ces itinéraires sont ordonnées comme suit.
 
-1. commandes/détails
+1. orders/details
 2. commandes / {id}
-3. commandes / {customerName}
-4. commandes / {\*date}
+3. orders/{customerName}
+4. orders/{\*date}
 5. commandes / en attente
 
 Notez que « détails » sont un segment de littéral et apparaît avant « {id} », mais « en attente » apparaît dernier, car le **RouteOrder** propriété est 1. (Cet exemple suppose qu’il n’est aucun client nommé « détails » ou « en attente ». En général, essayez d’éviter les itinéraires ambiguës. Dans cet exemple, un meilleur modèle d’itinéraire pour `GetByCustomer` est « clients / {customerName} »)
