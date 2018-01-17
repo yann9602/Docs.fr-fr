@@ -5,23 +5,20 @@ description: "Ajoutez un modèle à une application ASP.NET Core simple."
 keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
-ms.date: 03/30/2017
+ms.date: 12/8/2017
 ms.topic: get-started-article
-ms.assetid: 8dc28498-00ee-4d66-b903-b593059e9f39
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/first-mvc-app/adding-model
-ms.openlocfilehash: a29bab9cf0712936fa9c3f2b4bb3b275a46fe6f6
-ms.sourcegitcommit: e641c5794525f983485621860926d8ab4e7360c8
+ms.openlocfilehash: 03c16e523fe2f91cae5c71357835684d813e3a1f
+ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2017
+ms.lasthandoff: 12/14/2017
 ---
 [!INCLUDE[adding-model](../../includes/mvc-intro/adding-model1.md)]
 
 Remarque : Les modèles ASP.NET Core 2.0 contiennent le dossier *Models*.
-
-Dans l’Explorateur de solutions, cliquez avec le bouton droit sur le projet **MvcMovie** > **Ajouter** > **Nouveau dossier**. Nommez le dossier *Models*.
 
 Cliquez avec le bouton droit sur le dossier *Models* > **Ajouter** > **Classe**. Nommez la classe **Movie**, puis ajoutez les propriétés suivantes :
 
@@ -37,15 +34,10 @@ Dans **l’Explorateur de solutions**, cliquez avec le bouton droit sur le dossi
 
 ![affichage de l’étape ci-dessus](adding-model/_static/add_controller.png)
 
-Dans la boîte de dialogue **Ajouter des dépendances MVC**, sélectionnez **Dépendances minimales**, puis **Ajouter**.
+Si la boîte de dialogue **Ajouter des dépendances MVC** apparaît :
 
-![affichage de l’étape ci-dessus](adding-model/_static/add_depend.png)
-
-Visual Studio ajoute les dépendances nécessaires pour générer automatiquement un modèle pour un contrôleur, mais le contrôleur proprement dit n’est pas créé. L’appel suivant de **> Ajouter > Contrôleur** crée le contrôleur. 
-
-Dans **l’Explorateur de solutions**, cliquez avec le bouton droit sur le dossier *Contrôleurs* **> Ajouter > Contrôleur**.
-
-![affichage de l’étape ci-dessus](adding-model/_static/add_controller.png)
+* [Effectuez la mise à jour de Visual Studio vers la dernière version](https://www.visualstudio.com/downloads/). Les versions de Visual Studio antérieures à 15.5 affichent cette boîte de dialogue.
+* Si vous ne pouvez pas effectuer la mise à jour, sélectionnez **ADD**, puis suivez à nouveau les étapes pour ajouter un contrôleur.
 
 Dans la boîte de dialogue **Ajouter un modèle automatique**, appuyez sur **Contrôleur MVC avec vues, utilisant Entity Framework > Ajouter**.
 
@@ -72,7 +64,7 @@ Visual Studio crée :
 
 La création automatique du contexte de base de données et de méthodes d’action et de vues [CRUD](https://wikipedia.org/wiki/Create,_read,_update_and_delete) (créer, lire, mettre à jour et supprimer) porte le nom de *génération de modèles automatique*. Vous aurez bientôt une application web entièrement opérationnelle qui vous permettra de gérer une base de données de films.
 
-Si vous exécutez l’application et que vous cliquez sur le lien **Mvc Movie**, vous recevez une erreur semblable à la suivante :
+Si vous exécutez l’application et que vous cliquez sur le lien **Mvc Movie**, vous recevez une erreur semblable à la suivante :
 
 ```
 An unhandled exception occurred while processing the request.
@@ -98,7 +90,7 @@ Dans le menu **Outils**, sélectionnez **Gestionnaire de package NuGet > Console
 <!-- following image shared with uid: tutorials/razor-pages/model -->
   ![Menu Console du Gestionnaire de package](adding-model/_static/pmc.png)
 
-Dans la console du Gestionnaire de package, entrez les commandes suivantes :
+Dans la console du Gestionnaire de package, entrez les commandes suivantes :
 
 ``` PMC
 Install-Package Microsoft.EntityFrameworkCore.Tools

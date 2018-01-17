@@ -5,22 +5,22 @@ description: "Bien démarrer avec des pages Razor dans ASP.NET Core"
 keywords: ASP.NET Core,pages Razor,Razor,MVC
 ms.author: riande
 manager: wpickett
-ms.date: 08/27/2017
+ms.date: 12/22/2017
 ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: tutorials/razor-pages/razor-pages-start
-ms.openlocfilehash: 5c58b5156f62572687755c9c0878db10c3c14eb1
-ms.sourcegitcommit: c07fb5cb5df0a12f9fe6735fcbc90964608fa687
+ms.openlocfilehash: 12685d6a391c127d78399408291c26caa0192ee2
+ms.sourcegitcommit: 44a62f59d4db39d685c4487a0345a486be18d7c7
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 12/21/2017
 ---
-# <a name="getting-started-with-razor-pages-in-aspnet-core"></a>Bien démarrer avec des pages Razor dans ASP.NET Core
+# <a name="get-started-with-razor-pages-in-aspnet-core"></a>Bien démarrer avec des pages Razor dans ASP.NET Core
 
-De [Rick Anderson](https://twitter.com/RickAndMSFT)
+Par [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Ce didacticiel décrit les principes fondamentaux liés à la génération d’une application web de pages Razor dans ASP.NET Core. Nous vous recommandons d’effectuer l’étape [Présentation des pages Razor](xref:mvc/razor-pages/index) avant de commencer ce didacticiel. L’utilisation de pages Razor est la méthode recommandée pour générer l’IU d’applications web dans ASP.NET Core.
+Ce didacticiel décrit les principes fondamentaux liés à la génération d’une application web de pages Razor dans ASP.NET Core. L’utilisation de pages Razor est la méthode recommandée pour générer l’interface utilisateur d’applications web dans ASP.NET Core.
 
 Il existe trois versions de ce didacticiel :
 
@@ -28,7 +28,9 @@ Il existe trois versions de ce didacticiel :
 * Mac OS : [Bien démarrer avec les pages Razor avec Visual Studio pour Mac](xref:tutorials/razor-pages-mac/razor-pages-start)
 * Mac OS, Linux et Windows : [Bien démarrer avec les pages Razor dans ASP.NET Core avec Visual Studio Code](xref:tutorials/razor-pages-vsc/razor-pages-start)
 
-## <a name="prerequisites"></a>Conditions préalables
+[Affichez ou téléchargez l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie) ([procédure de téléchargement](xref:tutorials/index#how-to-download-a-sample))
+
+## <a name="prerequisites"></a>Prérequis
 
 [!INCLUDE[install 2.0](../../includes/install2.0.md)]
 
@@ -38,7 +40,11 @@ Il existe trois versions de ce didacticiel :
 * Créez une application web ASP.NET Core. Nommez le projet **RazorPagesMovie**. Il est important de nommer le projet *RazorPagesMovie* pour que les espaces de noms correspondent quand vous copiez/collez du code.
   ![Nouvelle application web ASP.NET Core](../../mvc/razor-pages/index/_static/np.png)
 * Sélectionnez **ASP.NET Core 2.0** dans la liste déroulante, puis sélectionnez **Application web**.
-  ![Application web (pages Razor)](../../mvc/razor-pages/index/_static/np2.png)
+
+> [!NOTE]
+> Si vous souhaitez utiliser ASP.NET Core sur le .NET Framework, vous devez d’abord sélectionner **.NET Framework** dans la liste déroulante la plus à gauche dans la boîte de dialogue, puis la version d’ASP.NET Core souhaitée.
+
+  ![Application web (pages Razor)](razor-pages-start/_static/np2.png)
 
 Le modèle Visual Studio crée un projet de démarrage :
 

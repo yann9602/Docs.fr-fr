@@ -18,7 +18,7 @@ Les modèles de [disposition](xref:mvc/views/layout) vous permettent de spécifi
 
 ## <a name="change-the-title-and-menu-link-in-the-layout-file"></a>Changer le lien de titre et de menu dans le fichier de disposition
 
-Changez le contenu de l’élément title. Remplacez le texte d’ancrage présent dans le modèle de disposition par « Movie App » et le contrôleur `Home` par `Movies`, comme illustré ci-dessous :
+Dans l’élément de titre, remplacez `MvcMovie` par `Movie App`. Remplacez le texte d’ancrage présent dans le modèle de disposition `MvcMovie` par `Mvc Movie` et le contrôleur `Home` par `Movies`, comme illustré ci-dessous :
 
 Remarque : La version ASP.NET Core 2.0 est légèrement différente. Elle ne contient pas `@inject ApplicationInsights` et `@Html.Raw(JavaScriptSnippet.FullScript)`.
 
@@ -29,9 +29,9 @@ Remarque : La version ASP.NET Core 2.0 est légèrement différente. Elle ne con
 
 Enregistrez vos modifications, puis appuyez sur le lien **À propos de**. Notez comment le titre sur l’onglet du navigateur affiche maintenant **À propos de - Movie App** au lieu de **À propos de - Mvc Movie**: 
 
-![Onglet à propos](../../tutorials/first-mvc-app/adding-view/_static/hell3.png)
+![Onglet à propos](../../tutorials/first-mvc-app/adding-view/_static/about2.png)
 
-Appuyez sur le lien **Contact** et notez qu’il affiche également **Movie App**. Nous avons pu effectuer ce changement une fois dans le modèle de disposition et avoir le nouveau texte de lien et le nouveau titre reflétés sur toutes les pages du site.
+Appuyez sur le lien **Contact** et notez que le titre et le texte d’ancrage affichent également **Movie App**. Nous avons pu effectuer ce changement une fois dans le modèle de disposition et avoir le nouveau texte de lien et le nouveau titre reflétés sur toutes les pages du site.
 
 Examinez le fichier *Views/_ViewStart.cshtml* :
 
@@ -105,7 +105,7 @@ Enregistrez vos modifications et accédez à l’URL suivante :
 
 Les données sont extraites de l’URL et passées au contrôleur à l’aide du [classeur de modèles MVC](xref:mvc/models/model-binding). Le contrôleur empaquette les données dans un dictionnaire `ViewData` et passe cet objet à la vue. La vue restitue ensuite les données au format HTML dans le navigateur.
 
-![Vue À propose de affichant une étiquette Welcome et l’expression « Hello Rick » affichée quatre fois](../../tutorials/first-mvc-app/adding-view/_static/rick.png)
+![Vue À propose de affichant une étiquette Welcome et l’expression « Hello Rick » affichée quatre fois](../../tutorials/first-mvc-app/adding-view/_static/rick2.png)
 
 Dans l’exemple ci-dessus, nous avons utilisé le dictionnaire `ViewData` pour passer des données du contrôleur à une vue. Plus loin dans ce didacticiel, nous allons faire de même à l’aide d’un modèle de vue. L’approche basée sur le modèle de vue pour passer des données est généralement préférée à l’approche basée sur le dictionnaire `ViewData`. Pour plus d’informations, consultez [Comparaison de ViewModel, ViewData, ViewBag, TempData et Session dans MVC](http://www.mytecbits.com/microsoft/dot-net/viewmodel-viewdata-viewbag-tempdata-mvc).
 

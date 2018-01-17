@@ -11,11 +11,11 @@ ms.assetid: 54bb961d-29d9-4dee-8e2c-a93fc33c16f2
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/web-api-help-pages-using-swagger
-ms.openlocfilehash: 8a87972a7394246ece2af3485d93739975ba5383
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 630378510f4182034735cb4c306dfc5a761543ab
+ms.sourcegitcommit: f5a7f0198628f0d152257d90dba6c3a0747a355a
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 12/19/2017
 ---
 # <a name="aspnet-core-web-api-help-pages-using-swagger"></a>Pages d’aide d’API web ASP.NET Core à l’aide de Swagger
 
@@ -33,7 +33,7 @@ Générer des pages d’aide et de documentation utiles pour votre API web à l�
 
 Ce didacticiel s’appuie sur l’exemple [Création de votre première API web avec ASP.NET Core MVC et Visual Studio](xref:tutorials/first-web-api). Si vous souhaitez suivre ce didacticiel, téléchargez l’exemple à l’adresse [https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/first-web-api/sample](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/first-web-api/sample).
 
-## <a name="getting-started"></a>Commencer
+## <a name="getting-started"></a>Prise en main
 
 Swashbuckle compte trois composants principaux :
 
@@ -221,6 +221,10 @@ Vous pouvez activer les commentaires XML en adoptant l’une des approches suiva
 Ajoutez manuellement l’extrait de code suivant au fichier *.csproj* :
 
 [!code-xml[Main](../tutorials/web-api-help-pages-using-swagger/sample/TodoApi/TodoApi.csproj?range=7-9)]
+
+# <a name="net-core-clitabnetcore-cli"></a>[CLI .NET Core](#tab/netcore-cli)
+
+Consultez Visual Studio Code.
 
 ---
 
