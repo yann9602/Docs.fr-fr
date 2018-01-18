@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/razor
-ms.openlocfilehash: e3c3149254d602db1fcc6d42360690be026189a5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6df769069fce52755a57d8404f88203a652a1ab9
+ms.sourcegitcommit: a3e88639a6bcf8fb4d634036dac93130c464a097
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/18/2018
 ---
 # <a name="razor-syntax-for-aspnet-core"></a>Syntaxe Razor pour ASP.NET Core
 
@@ -76,7 +76,7 @@ Le code précédent génère une erreur du compilateur semblable à un des élé
  * L’élément « int » n’a pas été fermé.  Tous les éléments doivent être à fermeture automatique ou concordent une balise de fin.
  *  Impossible de convertir le groupe de méthodes 'GenericMethod' au type 'object' non-délégué. Souhaitiez-vous appeler la méthode ? » 
  
-Appels de méthode générique doivent être encapsulées dans un [expression Razor explicite](#explicit-razor-expressions) ou un [bloc de code Razor](#razor-code-blocks). Cette restriction ne s’applique pas *.vbhtml* Razor fichiers, car la syntaxe Visual Basic place les paramètres de type générique au lieu de crochets entre parenthèses.
+Appels de méthode générique doivent être encapsulées dans un [expression Razor explicite](#explicit-razor-expressions) ou un [bloc de code Razor](#razor-code-blocks).
 
 ## <a name="explicit-razor-expressions"></a>Expressions explicites Razor
 
@@ -127,8 +127,6 @@ Le code précédent génère une erreur du compilateur semblable à un des élé
 ```cshtml
 <p>@(GenericMethod<int>())</p>
 ```
-
-Remarque : cette restriction ne s’applique pas *.vbhtml* fichiers Razor.  Avec *.vbhtml* fichiers Razor, syntaxe Visual Basic place les paramètres de type générique au lieu de crochets entre parenthèses.
 
 ## <a name="expression-encoding"></a>Encodage de l’expression
 
@@ -560,7 +558,7 @@ Il existe trois directives qui se rapportent à [programmes d’assistance de ba
 
 * page (nécessite un cœur d’ASP.NET 2.0 et versions ultérieur)
 * fonctions
-* hérite
+* inherits
 * modèle
 * section
 * application d’assistance (non prises en charge par ASP.NET Core)
@@ -576,7 +574,7 @@ Mots clés de Razor sont précédés de `@(Razor Keyword)` (par exemple, `@(func
 * foreach
 * if
 * else
-* lock
+* verrou
 * switch
 * try
 * catch
@@ -589,7 +587,7 @@ Mots clés du langage c# Razor doivent être échappé en double avec `@(@C# Raz
 ### <a name="reserved-keywords-not-used-by-razor"></a>Mots clés réservés non utilisées par Razor
 
 * namespace
-* class
+* classe
 
 ## <a name="viewing-the-razor-c-class-generated-for-a-view"></a>Affichage de la classe c# Razor générée pour une vue
 
