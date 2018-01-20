@@ -2,7 +2,6 @@
 title: Didacticiels ASP.NET Core
 author: rick-anderson
 description: "Liste des guides pas à pas pour apprendre à développer des applications ASP.NET Core."
-keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2017
@@ -10,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/index
-ms.openlocfilehash: acedebaa9b89a0e00602b497d11d5612fce99a5f
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: dc81edce2b54683b20520babeed8ddb78073e709
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="aspnet-core-tutorials"></a>Didacticiels ASP.NET Core
 
