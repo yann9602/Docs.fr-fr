@@ -2,18 +2,17 @@
 title: Pages Razor avec EF Core - trier, filtrer, la pagination - 3 de 8
 author: rick-anderson
 description: "Dans ce didacticiel, vous allez ajouter le tri, filtrage et d’échange vers la page à l’aide d’ASP.NET Core et Entity Framework Core."
-keywords: ASP.NET Core, Entity Framework Core, trier, filtrer, la pagination, regroupement
 ms.author: riande
 ms.date: 10/22/2017
 ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/sort-filter-page
-ms.openlocfilehash: 5e17663b88a622101245228e9372db55e4e874be
-ms.sourcegitcommit: 703593d5fd14076e79be2ba75a5b8da12a60ab15
+ms.openlocfilehash: 08f00e183dd8a8daa883d0b9ff15698b3a39f625
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="sorting-filtering-paging-and-grouping---ef-core-with-razor-pages-3-of-8"></a>Le tri, le filtrage, la pagination et le regroupement - Core EF avec les Pages Razor (3 sur 8)
 
@@ -142,7 +141,7 @@ Dans *Views/Student/Index.cshtml*, ajoutez le code en surbrillance suivant pour 
 
 Le code précédent utilise la `<form>` [d’assistance de balise](xref:mvc/views/tag-helpers/intro) pour ajouter la zone de texte de recherche et le bouton. Par défaut, le `<form>` application d’assistance de balise envoie des données de formulaire avec une publication. Avec la publication, les paramètres sont passés dans le corps du message HTTP et non dans l’URL. Lorsque HTTP GET est utilisée, les données du formulaire sont transmises dans l’URL sous forme de chaînes de requête. En passant les données avec des chaînes de requête permet aux utilisateurs de l’URL de signet. Le [recommandations du W3C](https://www.w3.org/2001/tag/doc/whenToUseGet.html) est recommandé que GET doit être utilisée lorsque l’action n’entraîne pas une mise à jour.
 
-Tester l’application :
+Testez l’application :
 
 * Sélectionnez le **étudiants** onglet et entrez une chaîne de recherche.
 * Sélectionnez **recherche**.
@@ -280,7 +279,7 @@ Si vous rencontrez des problèmes que vous ne pouvez pas résoudre, télécharge
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-* [Source de 2.x débogage ASP.NET Core](https://github.com/aspnet/Docs/issues/4155)
+* [Débogage d’une source ASP.NET Core 2.x](https://github.com/aspnet/Docs/issues/4155)
 
 Dans le didacticiel suivant, l’application utilise des migrations pour mettre à jour le modèle de données.
 

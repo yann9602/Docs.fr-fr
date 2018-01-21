@@ -2,20 +2,18 @@
 title: "Core ASP.NET MVC avec EF Core - lire les données associées - 6 sur 10"
 author: tdykstra
 description: "Dans ce didacticiel, vous allez lire et afficher les données associées, autrement dit, les données Entity Framework charge dans les propriétés de navigation."
-keywords: "ASP.NET Core, Entity Framework Core, les données associées, jointures"
 ms.author: tdykstra
 manager: wpickett
 ms.date: 03/15/2017
 ms.topic: get-started-article
-ms.assetid: 71fec30f-8ea7-4ca8-96e3-d2e26c5be44e
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/read-related-data
-ms.openlocfilehash: 778ef976fdbef70684ca26b0c7c548ffcc83ee00
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1321cb00a432669b4a97ad20063b6cf9ea75f24c
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="reading-related-data---ef-core-with-aspnet-core-mvc-tutorial-6-of-10"></a>Lecture liés de données - Core EF avec le didacticiel ASP.NET Core MVC (partie 6 sur 10)
 
@@ -239,7 +237,7 @@ Le nouveau code supprime les *ThenInclude* méthode appelle pour l’inscription
 
 Exécutez que l’application, accédez à la page d’Index de formateurs maintenant et vous ne verrez aucune différence de ce qui est affiché dans la page, même si vous avez modifié la façon dont les données sont récupérées.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Vous avez maintenant utilisé chargement hâtif avec une requête et avec plusieurs requêtes pour lire les données connexes dans les propriétés de navigation. Dans l’étape suivante du didacticiel, vous allez apprendre à mettre à jour les données associées.
 

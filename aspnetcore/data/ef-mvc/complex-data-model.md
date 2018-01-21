@@ -2,20 +2,18 @@
 title: "Cœur de ASP.NET MVC avec EF Core - modèle de données - 5, 10"
 author: tdykstra
 description: "Dans ce didacticiel, vous ajoutez des entités et relations et personnalisez le modèle de données en spécifiant la mise en forme, la validation et les règles de mappage de base de données."
-keywords: "Annotations de données ASP.NET Core, Entity Framework Core,"
 ms.author: tdykstra
 manager: wpickett
 ms.date: 03/15/2017
 ms.topic: get-started-article
-ms.assetid: 0dd63913-a041-48b6-96a4-3aeaedbdf5d0
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/complex-data-model
-ms.openlocfilehash: cacb23441e5f5ab06c6be27f3068276f21ff4ed9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5b5645936504333573950b5bd17f5a037ffd984f
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="creating-a-complex-data-model---ef-core-with-aspnet-core-mvc-tutorial-5-of-10"></a>Création d’un modèle de données complexes - Core EF avec le didacticiel d’ASP.NET MVC de base (5 sur 10)
 
@@ -76,7 +74,7 @@ Supposons que vous souhaitez vous assurer que les utilisateurs n’entrent pas p
 Le `StringLength` attribut ne sera pas empêcher un utilisateur d’entrer un espace blanc pour un nom. Vous pouvez utiliser la `RegularExpression` attribut à appliquer des restrictions à l’entrée. Par exemple, le code suivant requiert le premier caractère en majuscules et les autres caractères alphabétique :
 
 ```csharp
-[RegularExpression(@"^[A-Z]+[a-zA-Z''-'\s]*$")]
+[RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]
 ```
 
 Le `MaxLength` attribut fournit des fonctionnalités similaires à la `StringLength` d’attribut, mais ne fournit pas côté client validation.
@@ -493,7 +491,7 @@ Avec le bouton droit le **CourseAssignment** de table et sélectionnez **des don
 
 ![Données CourseAssignment dans SSOX](complex-data-model/_static/ssox-ci-data.png)
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Vous avez maintenant un modèle de données plus complexe et de la base de données correspondante. Dans ce didacticiel, vous en apprendrez davantage sur la façon d’accéder aux données associées.
 

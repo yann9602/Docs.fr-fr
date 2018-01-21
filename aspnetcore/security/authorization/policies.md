@@ -2,21 +2,19 @@
 title: "Autorisation personnalisée basée sur des stratégies dans ASP.NET Core"
 author: rick-anderson
 description: "Découvrez comment créer et utiliser des gestionnaires de stratégie d’autorisation personnalisée pour mettre en œuvre les spécifications d’autorisation dans une application ASP.NET Core."
-keywords: "ASP.NET Core, d’autorisation, de stratégie personnalisée, de stratégie d’autorisation"
 ms.author: riande
 ms.custom: mvc
 manager: wpickett
 ms.date: 11/21/2017
 ms.topic: article
-ms.assetid: e422a1b2-dc4a-4bcc-b8d9-7ee62009b6a3
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authorization/policies
-ms.openlocfilehash: 280dd72b75e39546061d8455931f597f50c829fe
-ms.sourcegitcommit: f1436107b4c022b26f5235dddef103cec5aa6bff
+ms.openlocfilehash: 1067e97dd6e71021929aa3690b0c3f5bfc6c9724
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/15/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="custom-policy-based-authorization"></a>D’autorisation personnalisée basée sur des stratégies
 
@@ -32,7 +30,7 @@ Les stratégies sont appliquées à l’aide de la `[Authorize]` attribut avec l
 
 [!code-csharp[](policies/samples/PoliciesAuthApp1/Controllers/AlcoholPurchaseController.cs?name=snippet_AlcoholPurchaseControllerClass&highlight=4)]
 
-## <a name="requirements"></a>Spécifications
+## <a name="requirements"></a>Configuration requise
 
 Une demande d’autorisation est une collection de paramètres de données une stratégie peut utiliser pour évaluer le principal utilisateur actuel. Dans notre stratégie « AtLeast21 », la spécification est un paramètre unique&mdash;l’ancienneté minimale. Une exigence implémente `IAuthorizationRequirement`, qui est une interface de marqueur vide. Une spécification de l’ancienneté minimale paramétrable peut être implémentée comme suit :
 

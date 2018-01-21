@@ -2,20 +2,18 @@
 title: "Application d’assistance de balise d’image | Documents Microsoft"
 author: pkellner
 description: "Montre comment travailler avec l’Image, balise d’assistance"
-keywords: ASP.NET Core,tag helper
 ms.author: riande
 manager: wpickett
 ms.date: 02/14/2017
 ms.topic: article
-ms.assetid: c045d485-d1dc-4cea-a675-46be83b7a013
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: mvc/views/tag-helpers/builtin-th/image-tag-helper
-ms.openlocfilehash: 0d55514508b963ce05031f89a20af696f5d4a670
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 438c5afb96dce6d8978d26159a3b460614111988
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="imagetaghelper"></a>ImageTagHelper
 
@@ -30,7 +28,7 @@ Si la source d’image (`src`) n’est pas un fichier statique (par exemple une 
 ## <a name="image-tag-helper-attributes"></a>Attributs d’assistance balises d’image
 
 
-### <a name="asp-append-version"></a>ASP-ajouter-version
+### <a name="asp-append-version"></a>asp-append-version
 
 Lorsque spécifié avec un `src` attribut, l’assistance de balise d’Image est appelé.
 

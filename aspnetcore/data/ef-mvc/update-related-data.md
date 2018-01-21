@@ -2,20 +2,18 @@
 title: "Données - 7 sur 10 inhérentes à cœur d’ASP.NET MVC avec EF Core - mise à jour"
 author: tdykstra
 description: "Dans ce didacticiel vous allez mettre à jour les données associées en mettant à jour les propriétés de navigation et les champs de clé étrangère."
-keywords: "ASP.NET Core, Entity Framework Core, les données associées, jointures"
 ms.author: tdykstra
 manager: wpickett
 ms.date: 03/15/2017
 ms.topic: get-started-article
-ms.assetid: 67bd162b-bfb7-4750-9e7f-705228b5288c
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/update-related-data
-ms.openlocfilehash: b59782bccce00f3940da4ec8bcff768aff8fa4ef
-ms.sourcegitcommit: ccf08615ad59bc6f654560de33b93396113a2eb0
+ms.openlocfilehash: 0e4df407a1ca15aa5baa2b7226be1cf91902a583
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/11/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="updating-related-data---ef-core-with-aspnet-core-mvc-tutorial-7-of-10"></a>Mise à jour des données connexes - Core EF avec le didacticiel d’ASP.NET MVC de base (7 sur 10)
 
@@ -293,7 +291,7 @@ Testez en exécutant l’application et la création d’un formateur.
 
 Comme expliqué dans la [didacticiel CRUD](crud.md), Entity Framework implémente implicitement des transactions. Pour les scénarios où vous avez besoin de plus contrôler--par exemple, si vous souhaitez inclure des opérations effectuées en dehors d’Entity Framework dans une transaction, consultez [Transactions](https://docs.microsoft.com/ef/core/saving/transactions).
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Vous avez maintenant terminé l’introduction à l’utilisation des données associées. Dans l’étape suivante du didacticiel, vous verrez comment gérer les conflits d’accès concurrentiel.
 

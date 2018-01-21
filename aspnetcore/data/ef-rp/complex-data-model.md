@@ -2,7 +2,6 @@
 title: "Pages Razor avec EF Core - modèle de données - 5 de 8"
 author: rick-anderson
 description: "Dans ce didacticiel, vous ajoutez des entités et relations et personnalisez le modèle de données en spécifiant la mise en forme, la validation et les règles de mappage de base de données."
-keywords: "Annotations de données ASP.NET Core, Entity Framework Core,"
 ms.author: riande
 manager: wpickett
 ms.date: 10/25/2017
@@ -10,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/complex-data-model
-ms.openlocfilehash: c2761f79fa4836d29541526782969bb0fd47778b
-ms.sourcegitcommit: 6e46abd65973dea796d364a514de9ec2e3e1c1ed
+ms.openlocfilehash: c375fe6ea98c621012eb55589c8b174c2a95b697
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="creating-a-complex-data-model---ef-core-with-razor-pages-tutorial-5-of-8"></a>Création d’un modèle de données complexes - Core EF avec le didacticiel de Pages Razor (5 de 8)
 
@@ -84,7 +83,7 @@ Mise à jour le `Student` modèle avec le code suivant :
 Le code précédent limite les noms et pas plus de 50 caractères. Le `StringLength` attribut n’empêche pas un utilisateur d’entrer un espace blanc pour un nom. Le [RegularExpression](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.regularexpressionattribute?view=netframework-4.7.1) attribut est utilisé pour appliquer des restrictions à l’entrée. Par exemple, le code suivant requiert le premier caractère en majuscules et les autres caractères alphabétique :
 
 ```csharp
-[RegularExpression(@"^[A-Z]+[a-zA-Z''-'\s]*$")]
+[RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]
 ```
 
 Exécutez l’application :

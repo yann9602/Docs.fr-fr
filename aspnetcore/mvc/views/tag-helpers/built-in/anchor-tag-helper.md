@@ -2,20 +2,18 @@
 title: "L’ancrage d’assistance de balise | Documents Microsoft"
 author: pkellner
 description: "Montre comment travailler avec l’application d’assistance de balise d’ancrage"
-keywords: ASP.NET Core,tag helper
 ms.author: riande
 manager: wpickett
 ms.date: 12/20/2017
 ms.topic: article
-ms.assetid: c045d485-d1dc-4cea-a675-46be83b7a011
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: mvc/views/tag-helpers/builtin-th/anchor-tag-helper
-ms.openlocfilehash: 86756a1d09e6e55ca79aed6e5b718088b82b782c
-ms.sourcegitcommit: 2b263e87217658caa42eedc4f9d2d21ef0ab5d59
+ms.openlocfilehash: 7923876c792544ac4d559eb8de29475d8a4b37e0
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/12/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="anchor-tag-helper"></a>Application d’assistance de balise d’ancrage
 
@@ -52,7 +50,7 @@ Si le `asp-controller` est spécifié et `asp-action` n’est pas le cas, la val
 <a href="/Home">All Speakers</a>
 ```
 
-### <a name="asp-action"></a>action d’ASP
+### <a name="asp-action"></a>asp-action
 
 `asp-action`nom de la méthode d’action dans le contrôleur qui est inclus dans le texte généré `href`. Par exemple, le code suivant défini généré `href` pour pointer vers la page de détails du présentateur :
 
@@ -70,7 +68,7 @@ Si aucun `asp-controller` attribut est spécifié, le contrôleur par défaut de
  
 Si l’attribut `asp-action` est `Index`, aucune action n’est ajoutée à l’URL menant à la valeur par défaut `Index` méthode appelée. L’action spécifiée (ou par défaut), doivent exister dans le contrôleur référencé dans `asp-controller`.
 
-### <a name="asp-page"></a>page ASP
+### <a name="asp-page"></a>asp-page
 
 Utilisez le `asp-page` attribut dans une balise d’ancrage pour définir son URL pointe vers une page spécifique. En ajoutant le préfixe du nom de la page avec une barre oblique « / » crée l’URL. L’URL dans l’exemple ci-dessous indique la page « Haut-parleur » dans le répertoire actif.
 
@@ -99,7 +97,7 @@ https://localhost:44399/Speakers/Index/2?page=%2FSpeaker
 > [!NOTE]
 > Pour utiliser le `asp-page` attribut dans les Pages Razor, l’URL doit être un chemin d’accès relatif, par exemple `"./Speaker"`. Chemins d’accès relatifs dans le `asp-page` attribut ne sont pas disponibles dans les vues MVC. Utilisez la syntaxe « / » pour les vues MVC à la place.
 
-### <a name="asp-route-value"></a>ASP - route-{value}
+### <a name="asp-route-value"></a>asp-route-{value}
 
 `asp-route-`est un préfixe d’itinéraire avec des caractères génériques. Toute valeur que vous placez une fois que le tiret fin sera interprété comme un paramètre d’itinéraire potentiels. Si un itinéraire par défaut n’est trouvé, ce préfixe d’itinéraire est adjointe à href généré comme une valeur et le paramètre de demande. Dans le cas contraire, elle sera remplacée dans le modèle d’itinéraire.
 
@@ -168,7 +166,7 @@ Si le paramètre `asp-controller` ou `asp-action` ne sont pas spécifiés, le m�
 
 `Name = "speakerevals"`Indique à l’application d’assistance de balise d’ancrage pour générer un itinéraire directement à cette méthode de contrôleur à l’aide de l’URL `/Speaker/Evaluations`. Si `asp-controller` ou `asp-action` est spécifié en plus de `asp-route`, l’itinéraire généré est peut-être pas ce que vous attendez. `asp-route`ne doit pas être utilisé avec un des attributs `asp-controller` ou `asp-action` afin d’éviter un conflit d’itinéraire.
 
-### <a name="asp-all-route-data"></a>ASP-all-données d’itinéraire
+### <a name="asp-all-route-data"></a>asp-all-route-data
 
 `asp-all-route-data`permet de créer un dictionnaire de paires clé / valeur où la clé est le nom du paramètre et la valeur est la valeur associée à cette clé.
 
@@ -237,7 +235,7 @@ Le code HTML généré inclut le segment de zones et est comme suit :
 > [!TIP]
 > Pour les zones MVC travailler dans une application web, le modèle d’itinéraire doit inclure une référence à la zone si elle existe. Ce modèle, qui est le deuxième paramètre de la `routes.MapRoute` l’appel de méthode, apparaît sous la forme :`template: '"{area:exists}/{controller=Home}/{action=Index}"'`
 
-### <a name="asp-protocol"></a>protocole d’ASP
+### <a name="asp-protocol"></a>asp-protocol
 
 Le `asp-protocol` de spécifier un protocole (tel que `https`) dans l’URL. Un exemple d’assistance à la balise d’ancrage qui inclut le protocole se présentera comme suit :
 

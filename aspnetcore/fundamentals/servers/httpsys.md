@@ -2,20 +2,18 @@
 title: "Implémentation du serveur web HTTP.sys dans ASP.NET Core"
 author: rick-anderson
 description: "Introduit HTTP.sys, un serveur web pour ASP.NET Core sur Windows. Basé sur le pilote de mode noyau Http.Sys, HTTP.sys est une alternative à Kestrel qui peut être utilisé pour une connexion directe à Internet sans IIS."
-keywords: "Préfixes ASP.NET Core,HttpSys,HTTP.sys,HttpListener,url, SSL"
 ms.author: riande
 manager: wpickett
 ms.date: 08/07/2017
 ms.topic: article
-ms.assetid: 0a7286e4-6428-424e-b5c4-5c98815cf61c
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/servers/httpsys
-ms.openlocfilehash: 8d46862af44379d8592efdf214a80214dce2d69d
-ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
+ms.openlocfilehash: 60301e1e3eb96f51e86ef9f8be61f5fd8a4c009c
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="httpsys-web-server-implementation-in-aspnet-core"></a>Implémentation du serveur web HTTP.sys dans ASP.NET Core
 
@@ -166,7 +164,7 @@ Voici la documentation de référence *netsh.exe*:
 
 Les ressources suivantes fournissent des instructions détaillées pour plusieurs scénarios. Les articles qui font référence à HttpListener s’appliquent également à HTTP.sys, comme les deux reposent sur Http.Sys.
 
-* [Comment : configurer un Port avec un certificat SSL](https://docs.microsoft.com/dotnet/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate)
+* [Guide pratique pour configurer un port avec un certificat SSL](https://docs.microsoft.com/dotnet/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate)
 * [Les communications HTTPS - HttpListener basé hébergement et la Certification Client](http://sunshaking.blogspot.com/2012/11/https-communication-httplistener-based.html) blog de tiers et est assez ancien mais dispose toujours des informations utiles.
 * [Comment : HttpListener à l’aide de procédure pas à pas ou le serveur Http du code non managé (C++) comme serveur SSL Simple](https://blogs.msdn.microsoft.com/jpsanders/2009/09/29/how-to-walkthrough-using-httplistener-or-http-server-unmanaged-code-c-as-an-ssl-simple-server/) ce qui est également un blog plus anciens avec des informations utiles.
 

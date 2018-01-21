@@ -2,20 +2,18 @@
 title: Mise en route avec ASP.NET Core et Entity Framework 6
 author: tdykstra
 description: Cet article explique comment utiliser Entity Framework 6 dans une application ASP.NET Core.
-keywords: ASP.NET Core, Entity Framework, EF 6
 ms.author: tdykstra
 manager: wpickett
 ms.date: 02/24/2017
 ms.topic: article
-ms.assetid: 016cc836-4c43-45a4-b9a7-9efaf53350df
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/entity-framework-6
-ms.openlocfilehash: 8abec95c591f20069e20eec55fd21503e74f8606
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 51445b8c110ad618aeb680148ccf4304a45ee16e
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="getting-started-with-aspnet-core-and-entity-framework-6"></a>Mise en route avec ASP.NET Core et Entity Framework 6
 
@@ -89,7 +87,7 @@ Cet exemple peut être créé à partir de zéro par les étapes suivantes dans 
 
 * Dans le projet de base, ajoutez un contrôleur et les vues pour vérifier que vous pouvez lire et écrire des données. (Notez que la structure de base de ASP.NET MVC ne fonctionne pas avec le contexte EF6 référencé à partir de la bibliothèque de classes).
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet article a fourni des conseils de base pour l’utilisation d’Entity Framework 6 dans une application ASP.NET Core.
 

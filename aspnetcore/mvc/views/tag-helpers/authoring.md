@@ -2,29 +2,27 @@
 title: "Création de programmes d’assistance de balise dans ASP.NET Core"
 author: rick-anderson
 description: "Découvrez comment créer des programmes d’assistance de balise dans ASP.NET Core."
-keywords: "ASP.NET Core, les programmes d’assistance de balise"
 ms.author: riande
 manager: wpickett
-ms.date: 06/14/2017
+ms.date: 01/19/2018
 ms.topic: article
-ms.assetid: 4f16d978-5695-4abf-a785-fdaabf3bbcb9
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/tag-helpers/authoring
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: cbe46ee1d3cd9f7a30a87d364074f1302f9af7ab
-ms.sourcegitcommit: 5834afb87e4262b9b88e60e3fe6c735e61a1e08d
+ms.openlocfilehash: 9aaf40377e07e53fd0b7ebb177bcbb2df52b7553
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/20/2017
+ms.lasthandoff: 01/19/2018
 ---
-# <a name="authoring-tag-helpers-in-aspnet-core-a-walkthrough-with-samples"></a>Programmes d’assistance de balise dans ASP.NET Core, une procédure pas à pas avec les exemples de création
+# <a name="author-tag-helpers-in-aspnet-core-a-walkthrough-with-samples"></a>Programmes d’assistance de balise auteur dans ASP.NET Core, une procédure pas à pas avec exemples
 
 Par [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 [Affichez ou téléchargez l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/tag-helpers/authoring/sample) ([procédure de téléchargement](xref:tutorials/index#how-to-download-a-sample))
 
-## <a name="getting-started-with-tag-helpers"></a>Prise en main de programmes d’assistance de balise
+## <a name="get-started-with-tag-helpers"></a>Prise en main les programmes d’assistance de balise
 
 Ce didacticiel fournit une introduction à la programmation des programmes d’assistance de balise. [Introduction aux applications d’assistance de balise](intro.md) décrit les avantages qui fournissent des programmes d’assistance de balise.
 
@@ -46,7 +44,7 @@ Le serveur utilisera notre programme d’assistance de balise par courrier élec
 
 ```html
 <a href="mailto:Support@contoso.com">Support@contoso.com</a>
-   ```
+```
 
 Autrement dit, une balise d’ancrage qui rend cette un lien par courrier électronique. Vous pouvez souhaiter procéder ainsi si vous écrivez un moteur de blog et que vous avez besoin pour envoyer un courrier électronique pour le marketing, prise en charge et autres contacts, tous au même domaine.
 
@@ -188,7 +186,7 @@ Vous pouvez également utiliser le `[HtmlTargetElement]` pour modifier le nom de
 [HtmlTargetElement("MyBold")]
    ```
 
-## <a name="passing-a-model-to-a-tag-helper"></a>Passage d’un modèle dans une application d’assistance de balise
+## <a name="pass-a-model-to-a-tag-helper"></a>Passer d’un modèle dans une application d’assistance de balise
 
 1.  Ajouter un *modèles* dossier.
 
@@ -285,7 +283,7 @@ L’application d’assistance de balise condition restitue la sortie lorsqu’i
 >
 >Le [nameof](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/nameof) opérateur protège le code doit il jamais être refactorisé (nous voulons modifier le nom à `RedCondition`).
 
-### <a name="avoiding-tag-helper-conflicts"></a>Prévention des conflits d’application d’assistance de balise
+### <a name="avoid-tag-helper-conflicts"></a>Éviter les conflits de l’application d’assistance de balise
 
 Dans cette section, vous écrivez une paire de liaison automatique les programmes d’assistance de balise. La première remplacera le balisage contenant une URL commençant par HTTP à un HTML d’ancrage balise qui contient la même URL (et produisant ainsi un lien vers l’URL). Le second sera faites de même pour une URL commençant par WWW.
 
@@ -329,7 +327,7 @@ Dans cette section, vous écrivez une paire de liaison automatique les programme
     
     Le code ci-dessus garantit que l’application d’assistance de balise HTTP s’exécute avant l’application d’assistance de balise WWW. Modification `Order` à `MaxValue` et vérifiez que le balisage généré pour la balise WWW est incorrect.
 
-## <a name="inspecting-and-retrieving-child-content"></a>Inspection et la récupération du contenu enfant
+## <a name="inspect-and-retrieve-child-content"></a>Inspecter et de récupérer le contenu enfant
 
 Les programmes d’assistance de balise fournissent plusieurs propriétés permettant de récupérer le contenu.
 

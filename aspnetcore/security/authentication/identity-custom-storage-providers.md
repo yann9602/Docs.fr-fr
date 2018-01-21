@@ -2,20 +2,18 @@
 title: "Les fournisseurs de stockage personnalisés pour ASP.NET Core Identity | Documents Microsoft"
 author: ardalis
 description: "Comment configurer les fournisseurs de stockage personnalisés pour ASP.NET Core Identity."
-keywords: "Fournisseurs de stockage personnalisés ASP.NET Core, identité,"
 ms.author: riande
 manager: wpickett
 ms.date: 05/24/2017
 ms.topic: article
-ms.assetid: b2ace545-ecf6-4664-b31e-b65bd4a6b025
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/identity-custom-storage-providers
-ms.openlocfilehash: 687ca96be5121502e816bdc856e17dcd5923fe05
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6a5feb9039c5b0e9823e5f22f4d55a70830dd3e6
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="custom-storage-providers-for-aspnet-core-identity"></a>Fournisseurs de stockage personnalisés pour ASP.NET Core Identity
 
@@ -135,7 +133,7 @@ Créer un `UserStore` classe qui fournit les méthodes pour toutes les opératio
 - IUserRoleStore https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.iuserrolestore-1
 - IUserClaimStore https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.iuserclaimstore-1
 - IUserPasswordStore https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.iuserpasswordstore-1
-- IUserSecurityStampStore<!-- make these all links and remove / -->
+- IUserSecurityStampStore <!-- make these all links and remove / -->
 - IUserEmailStore
 - IPhoneNumberStore
 - IQueryableUserStore

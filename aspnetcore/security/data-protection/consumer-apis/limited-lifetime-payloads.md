@@ -2,20 +2,18 @@
 title: "Limiter la durée de vie de charges utiles protégés"
 author: rick-anderson
 description: "Ce document explique comment limiter la durée de vie d’un contenu protégé à l’aide de l’API de protection des données ASP.NET Core."
-keywords: "ASP.NET Core, protection des données, la durée de vie de charge utile"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: 000175e2-10fc-43dd-bfc2-51e004b97b44
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/consumer-apis/limited-lifetime-payloads
-ms.openlocfilehash: 3fe2e97db118a92cf6fa003b9ce8a9dedf253136
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 144097cd1551c1d0aece5df20ce01e14146a41d1
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="limiting-the-lifetime-of-protected-payloads"></a>Limiter la durée de vie de charges utiles protégés
 

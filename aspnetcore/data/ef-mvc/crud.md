@@ -2,20 +2,18 @@
 title: "Cœur de ASP.NET MVC avec EF Core - CRUD - 2 de 10"
 author: tdykstra
 description: 
-keywords: "ASP.NET Core, Entity Framework Core, CRUD, créer, lire, mettre à jour, supprimer"
 ms.author: tdykstra
 manager: wpickett
 ms.date: 03/15/2017
 ms.topic: get-started-article
-ms.assetid: 6e1cd570-40f1-4b24-8b6e-7d2d27758f18
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/crud
-ms.openlocfilehash: 9fc2b4c126c4d109deb2125f0db70a355c04eb15
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7e495ba56958012713836c1dd75ac0c5a8bff942
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="create-read-update-and-delete---ef-core-with-aspnet-core-mvc-tutorial-2-of-10"></a>Créer, lire, mettre à jour et supprimer - Core EF avec le didacticiel d’ASP.NET MVC de base (2 sur 10)
 
@@ -294,7 +292,7 @@ Vous pouvez désactiver le suivi des objets d’entité dans la mémoire en appe
 
 Pour plus d’informations, consultez [vs de suivi. Aucun suivi](https://docs.microsoft.com/ef/core/querying/tracking).
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Vous avez maintenant un ensemble complet de pages qui effectuent des opérations CRUD simples pour les entités de Student. Dans l’étape suivante du didacticiel, vous allez développer les fonctionnalités de la **Index** page en ajoutant le tri, filtrage et la pagination.
 

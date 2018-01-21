@@ -2,21 +2,19 @@
 title: "Programmes d’assistance de balise dans les formulaires dans ASP.NET Core"
 author: rick-anderson
 description: "Décrit la fonction intégrée programmes d’assistance de balise utilisée avec des formulaires."
-keywords: "ASP.NET Core, d’assistance de balise, TagHelper, formulaire HTML, de formulaires"
 ms.author: riande
 manager: wpickett
 ms.date: 02/14/2017
 ms.topic: article
-ms.assetid: 25595059-4fac-4785-8152-f88590e3169b
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/working-with-forms
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: da36985206521798d3bfe71f6372dc5cc4fca09a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9fbe2c5cb495aabee0e1f0bdb3871641efa03599
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="introduction-to-using-tag-helpers-in-forms-in-aspnet-core"></a>Introduction à l’utilisation de programmes d’assistance de balise dans les formulaires dans ASP.NET Core
 
@@ -111,12 +109,12 @@ Le `Input` application d’assistance de balise définit le code HTML `type` att
 
 |Type .NET|Type d’entrée|
 |---|---|
-|Bool|type = « checkbox »|
-|Chaîne|type = « text »|
-|DateTime|type = « datetime »|
-|Byte|type = « number »|
-|Int|type = « number »|
-|Single, Double|type = « number »|
+|Bool|type=”checkbox”|
+|Chaîne|type=”text”|
+|DateTime|type=”datetime”|
+|Byte|type=”number”|
+|Int|type=”number”|
+|Single, Double|type=”number”|
 
 
 Le tableau suivant présente certaines commun [annotations de données](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.dataannotations.iattributeadapter) attributs l’application d’assistance de balise d’entrée est mappés à des types spécifiques d’entrée (pas de chaque attribut de validation est répertorié) :
@@ -124,13 +122,13 @@ Le tableau suivant présente certaines commun [annotations de données](https://
 
 |Attribut|Type d’entrée|
 |---|---|
-|[EmailAddress]|type = « email »|
-|[Url]|type = « url »|
-|[HiddenInput]|type = « hidden »|
-|[Phone]|type = « téléphone »|
-|[DataType(DataType.Password)]| type = « password »|
-|[DataType(DataType.Date)]| type = « date »|
-|[DataType(DataType.Time)]| type = « time »|
+|[EmailAddress]|type=”email”|
+|[Url]|type=”url”|
+|[HiddenInput]|type=”hidden”|
+|[Phone]|type=”tel”|
+|[DataType(DataType.Password)]| type=”password”|
+|[DataType(DataType.Date)]| type=”date”|
+|[DataType(DataType.Time)]| type=”time”|
 
 
 Aperçu :
@@ -366,7 +364,7 @@ Le `Validation Summary Tag Helper` est utilisé pour afficher un résumé des me
 |--- |--- |
 |ValidationSummary.All|Niveau de la propriété et le modèle|
 |ValidationSummary.ModelOnly|Modèle|
-|ValidationSummary.None|Aucune|
+|ValidationSummary.None|Aucun.|
 
 ### <a name="sample"></a>Exemple
 

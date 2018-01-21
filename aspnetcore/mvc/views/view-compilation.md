@@ -2,24 +2,22 @@
 title: "La précompilation et compilation de vue razor"
 author: rick-anderson
 description: "Un document de référence expliquant comment activer la compilation de vue MVC Razor et précompilation dans les applications ASP.NET Core."
-keywords: "Compilation de vue Razor, Razor antérieur à la compilation, la précompilation de Razor ASP.NET Core"
 ms.author: riande
 manager: wpickett
 ms.date: 12/13/2017
 ms.topic: article
-ms.assetid: ab4705b7-1638-1638-bc97-ea7f292fe92a
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/view-compilation
-ms.openlocfilehash: 6839892c104673af0fd0fd074d368f3f42259d76
-ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
+ms.openlocfilehash: 87989455c2fb6b5a922c7fb6133aa3e8cef42c88
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="razor-view-compilation-and-precompilation-in-aspnet-core"></a>Compilation de vue Razor et précompilation dans ASP.NET Core
 
-De [Rick Anderson](https://twitter.com/RickAndMSFT)
+Par [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 Vues Razor sont compilées lors de l’exécution lorsque la vue est appelée. ASP.NET Core 1.1.0 et une valeur supérieure peut éventuellement compiler vues Razor et les déployer avec l’application&mdash;processus s’appelé la précompilation. Les modèles de projet ASP.NET Core 2.x activent la précompilation par défaut.
 

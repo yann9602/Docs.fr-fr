@@ -2,20 +2,18 @@
 title: "Format de stockage de clés"
 author: tdykstra
 description: "Ce document explique les détails d’implémentation du format de stockage de clé de protection de données ASP.NET Core."
-keywords: "ASP.NET Core, protection des données, de stockage de clés"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: e8996478-f7bf-4b58-bab4-7fdb5d8556c5
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/implementation/key-storage-format
-ms.openlocfilehash: 4ebad05f7d55e954463ce5e277b419a7d6f773c0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4b796df19349227ceabad185c539720cee7e7c83
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="key-storage-format"></a>Format de stockage de clés
 

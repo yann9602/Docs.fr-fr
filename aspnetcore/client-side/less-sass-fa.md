@@ -2,20 +2,18 @@
 title: "Inférieur, Sass et la police impressionnant dans ASP.NET Core"
 author: ardalis
 description: "Découvrez comment utiliser inférieur, Sass et police impressionnant dans les applications ASP.NET Core."
-keywords: "ASP.NET Core, moins, Sass, police impressionnant, Préprocesseurs"
 ms.author: tdykstra
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: 94c988f9-95fd-425d-b37e-7f846598c6d4
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/less-sass-fa
-ms.openlocfilehash: 159377300d33e98393fd6705d0fec578f8f6b735
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c3a53d6118a72c00d61d9139b05325fd1cbd53da
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="introduction-to-styling-applications-with-less-sass-and-font-awesome-in-aspnet-core"></a>Introduction aux applications de style avec moins, Sass et police impressionnant dans ASP.NET Core
 
@@ -545,8 +543,8 @@ Cela génère les éléments suivants dans le navigateur, remarquez l’icône e
 
 Vous pouvez afficher la liste complète des icônes disponibles ici :
 
-http://fontawesome.IO/Icons/
+http://fontawesome.io/icons/
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Les applications web modernes exigent plus en plus réactives, fluide conceptions qui sont propres, intuitive et facile à utiliser à partir de différents périphériques. Gérer la complexité des feuilles de style CSS requis pour atteindre ces objectifs est mieux effectuée à l’aide d’un type de préprocesseur inférieur ou Sass. En outre, les kits comme police impressionnant fournissent rapidement des icônes bien connus pour les menus de navigation textuelle et expérience des boutons, l’amélioration de l’utilisateur globale de votre application.

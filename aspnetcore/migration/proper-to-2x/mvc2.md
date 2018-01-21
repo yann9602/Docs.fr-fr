@@ -2,20 +2,18 @@
 title: "Migration à partir de ASP.NET vers ASP.NET Core 2.0"
 author: isaac2004
 description: "Ce document de référence fournit de l’aide sur la migration d’applications ASP.NET MVC ou API web ASP.NET existantes vers ASP.NET Core 2.0."
-keywords: ASP.NET Core,MVC,migration
 ms.author: scaddie
 manager: wpickett
 ms.date: 08/27/2017
 ms.topic: article
-ms.assetid: 3155cc9e-d0c9-424b-886c-35c0ec6f9f4e
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: migration/mvc2
-ms.openlocfilehash: 68188072da5a857d730a1bc8a57df0ef6d10b922
-ms.sourcegitcommit: a3e88639a6bcf8fb4d634036dac93130c464a097
+ms.openlocfilehash: f9845449659960e82afd4f51d64084b7f55f68d4
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/18/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="migrating-from-aspnet-to-aspnet-core-20"></a>Migration à partir de ASP.NET vers ASP.NET Core 2.0
 
@@ -23,7 +21,7 @@ De [Isaac Levin](https://isaaclevin.com)
 
 Cet article sert de guide de référence pour la migration d’applications ASP.NET vers ASP.NET Core 2.0.
 
-## <a name="prerequisites"></a>Composants requis
+## <a name="prerequisites"></a>Prérequis
 
 * [SDK .NET Core 2.0.0](https://www.microsoft.com/net/core) ou version ultérieure
 
@@ -71,7 +69,7 @@ ASP.NET Core utilise une approche similaire mais n’a pas besoin d’OWIN pour 
 * Pages d’erreur
 * Fichiers statiques
 * ASP.NET Core MVC
-* Identité
+* identité
 
 [!code-csharp[Main](../../common/samples/WebApplication1/Startup.cs?highlight=8,9,10,14,17,19,21&start=58&end=84)]
 

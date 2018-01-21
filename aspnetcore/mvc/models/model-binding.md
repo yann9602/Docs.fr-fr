@@ -2,20 +2,18 @@
 title: "Liaison de modèle"
 author: rick-anderson
 description: 
-keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: b355a48e-a15c-4d58-b69c-899763613a97
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/models/model-binding
-ms.openlocfilehash: 40aa105dcf06b269025d0c44e5cd7bffef271e9d
-ms.sourcegitcommit: fe880bf4ed1c8116071c0e47c0babf3623b7f44a
+ms.openlocfilehash: 84b9c5dc3a87b739affaeaecaa180d1b01f49b8e
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="model-binding"></a>Liaison de modèle
 
@@ -73,7 +71,7 @@ Lorsqu’un paramètre est lié, liaison de modèle arrête la recherche de vale
 
 Si la liaison échoue, MVC ne lève pas une erreur. Chaque action qui accepte une entrée d’utilisateur doit vérifier le `ModelState.IsValid` propriété.
 
-Remarque : Chaque entrée dans le contrôleur de `ModelState` propriété est un `ModelStateEntry` contenant un `Errors` propriété. Il est rarement nécessaire interroger cette collection vous-même. Utilisez plutôt `ModelState.IsValid` .
+Remarque : Chaque entrée dans le contrôleur de `ModelState` propriété est un `ModelStateEntry` contenant un `Errors` propriété. Il est rarement nécessaire interroger cette collection vous-même. Utilisez plutôt `ModelState.IsValid`.
 
 En outre, il existe de certains types de données spéciaux que MVC doit prendre en compte lors de la liaison de modèle :
 

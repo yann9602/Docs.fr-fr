@@ -2,20 +2,18 @@
 title: "Prise en main de l’API de Protection des données"
 author: rick-anderson
 description: "Ce document explique comment utiliser l’API de protection des données ASP.NET Core pour protéger et déprotéger les données dans une application."
-keywords: "ASP.NET Core, protection des données"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: 39b7a73c-29d4-4137-b311-49529adcf3cb
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/using-data-protection
-ms.openlocfilehash: 535bfaf2077cda91c27e7d0d68b9804e8596070e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 54976a7f2ac13fe445eb2eea204f4f781813030f
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="getting-started-with-the-data-protection-apis"></a>Prise en main de l’API de Protection des données
 

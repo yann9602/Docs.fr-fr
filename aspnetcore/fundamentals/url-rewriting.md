@@ -2,20 +2,18 @@
 title: "Intergiciel (middleware) dans ASP.NET Core de réécriture d’URL"
 author: guardrex
 description: "En savoir plus sur les URL de réécriture et de redirection d’intergiciel (middleware) réécriture d’URL dans les applications ASP.NET Core."
-keywords: "ASP.NET Core, réécriture d’URL, réécriture d’URL, URL de redirection, la redirection d’URL, intergiciel (middleware), apache_mod"
 ms.author: riande
 manager: wpickett
 ms.date: 08/17/2017
 ms.topic: article
-ms.assetid: e6130638-c410-4161-9921-b658ce988bd1
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/url-rewriting
-ms.openlocfilehash: e07634a6d7ad97bf8735029b5c28d6935b71eb52
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: 769696931498605bd3cf3459279939afb86a4ee8
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="url-rewriting-middleware-in-aspnet-core"></a>Intergiciel (middleware) dans ASP.NET Core de réécriture d’URL
 
@@ -163,7 +161,7 @@ Il n’existe aucun aller-retour vers le serveur pour obtenir la ressource. Si l
 > * Commande vos règles de réécriture de la règle de mise en correspondance plus fréquemment à la règle de mise en correspondance moins fréquemment.
 > * Ignorer le traitement des règles restantes lorsqu’une correspondance est trouvée et aucun traitement de la règle supplémentaire n’est requis.
 
-### <a name="apache-modrewrite"></a>Mod_rewrite d’Apache
+### <a name="apache-modrewrite"></a>Apache mod_rewrite
 Appliquer des règles de mod_rewrite Apache avec `AddApacheModRewrite`. Assurez-vous que le fichier de règles est déployé avec l’application. Pour plus d’informations et des exemples de règles de mod_rewrite, consultez [Apache mod_rewrite](https://httpd.apache.org/docs/2.4/rewrite/).
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
@@ -266,7 +264,7 @@ L’intergiciel (middleware) publié avec ASP.NET Core 1.x ne prend pas en charg
 * Action de CustomResponse
 * Variables de serveur personnalisé
 * Caractères génériques
-* Action : CustomResponse
+* Action:CustomResponse
 * LogRewrittenUrl
 
 ---
@@ -274,7 +272,7 @@ L’intergiciel (middleware) publié avec ASP.NET Core 1.x ne prend pas en charg
 #### <a name="supported-server-variables"></a>Variables de serveur pris en charge
 L’intergiciel (middleware) prend en charge les variables de serveur de Module de réécriture d’URL IIS suivantes :
 * CONTENT_LENGTH
-* TYPE_CONTENU
+* CONTENT_TYPE
 * HTTP_ACCEPT
 * HTTP_CONNECTION
 * HTTP_COOKIE
@@ -299,7 +297,7 @@ L’intergiciel (middleware) prend en charge les variables de serveur de Module 
 ### <a name="method-based-rule"></a>Règle basée sur une méthode
 Utilisez `Add(Action<RewriteContext> applyRule)` pour implémenter votre propre logique de règle dans une méthode. Le `RewriteContext` expose le `HttpContext` pour une utilisation dans votre méthode. Le `context.Result` détermine comment supplémentaires du pipeline de gestion du traitement.
 
-| contexte. Résultat                       | Action                                                          |
+| context.Result                       | Action                                                          |
 | ------------------------------------ | --------------------------------------------------------------- |
 | `RuleResult.ContinueRules` (par défaut) | Application des règles                                         |
 | `RuleResult.EndResponse`             | Cesser d’appliquer les règles et envoyer la réponse                       |
@@ -380,7 +378,7 @@ Demande d’origine :`/image.jpg`
 * [Intergiciel (middleware)](middleware.md)
 * [Expressions régulières dans .NET](/dotnet/articles/standard/base-types/regular-expressions)
 * [Langage des expressions régulières - Aide-mémoire](/dotnet/articles/standard/base-types/quick-ref)
-* [Mod_rewrite d’Apache](https://httpd.apache.org/docs/2.4/rewrite/)
+* [Apache mod_rewrite](https://httpd.apache.org/docs/2.4/rewrite/)
 * [À l’aide du Module de réécriture d’Url 2.0 (pour IIS)](https://docs.microsoft.com/iis/extensions/url-rewrite-module/using-url-rewrite-module-20)
 * [Référence de Configuration de Module de réécriture d’URL](https://docs.microsoft.com/iis/extensions/url-rewrite-module/url-rewrite-module-configuration-reference)
 * [Forum de Module de réécriture de URL IIS](https://forums.iis.net/1152.aspx)

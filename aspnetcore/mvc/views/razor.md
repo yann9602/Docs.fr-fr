@@ -2,7 +2,6 @@
 title: "Référence de la syntaxe Razor pour ASP.NET Core"
 author: rick-anderson
 description: "En savoir plus sur la syntaxe Razor balisage pour l’incorporation de code serveur dans les pages Web."
-keywords: Directives de Razor ASP.NET Core, Razor,
 ms.author: riande
 manager: wpickett
 ms.date: 10/18/2017
@@ -10,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/razor
-ms.openlocfilehash: 6df769069fce52755a57d8404f88203a652a1ab9
-ms.sourcegitcommit: a3e88639a6bcf8fb4d634036dac93130c464a097
+ms.openlocfilehash: d932e28246998c60e2b3f9c77a2521fe55991e85
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/18/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="razor-syntax-for-aspnet-core"></a>Syntaxe Razor pour ASP.NET Core
 
@@ -24,7 +23,7 @@ Razor est une syntaxe de balisage pour l’incorporation de code serveur dans le
 
 ## <a name="rendering-html"></a>Rendu HTML
 
-La langue de Razor par défaut est HTML. HTML rendu à partir du balisage de Razor n’est pas différente de rendu HTML à partir d’un fichier HTML.  Balisage HTML dans *.cshtml* fichiers Razor est restitué par le serveur sans modification.
+La langue de Razor par défaut est HTML. HTML rendu à partir du balisage de Razor n’est pas différente de rendu HTML à partir d’un fichier HTML. Balisage HTML dans *.cshtml* fichiers Razor est restitué par le serveur sans modification.
 
 ## <a name="razor-syntax"></a>Syntaxe Razor
 
@@ -73,8 +72,8 @@ Les expressions implicites **ne peut pas** contiennent les génériques c#, comm
 
 Le code précédent génère une erreur du compilateur semblable à un des éléments suivants :
 
- * L’élément « int » n’a pas été fermé.  Tous les éléments doivent être à fermeture automatique ou concordent une balise de fin.
- *  Impossible de convertir le groupe de méthodes 'GenericMethod' au type 'object' non-délégué. Souhaitiez-vous appeler la méthode ? » 
+ * L’élément « int » n’a pas été fermé. Tous les éléments doivent être à fermeture automatique ou concordent une balise de fin.
+ * Impossible de convertir le groupe de méthodes 'GenericMethod' au type 'object' non-délégué. Souhaitiez-vous appeler la méthode ? » 
  
 Appels de méthode générique doivent être encapsulées dans un [expression Razor explicite](#explicit-razor-expressions) ou un [bloc de code Razor](#razor-code-blocks).
 
@@ -119,10 +118,10 @@ Les expressions explicites peuvent être utilisées pour afficher la sortie à p
 
 Le code précédent génère une erreur du compilateur semblable à un des éléments suivants :
 
- * L’élément « int » n’a pas été fermé.  Tous les éléments doivent être à fermeture automatique ou concordent une balise de fin.
- *  Impossible de convertir le groupe de méthodes 'GenericMethod' au type 'object' non-délégué. Souhaitiez-vous appeler la méthode ? » 
+ * L’élément « int » n’a pas été fermé. Tous les éléments doivent être à fermeture automatique ou concordent une balise de fin.
+ * Impossible de convertir le groupe de méthodes 'GenericMethod' au type 'object' non-délégué. Souhaitiez-vous appeler la méthode ? » 
  
- Le balisage suivant illustre l’écriture de façon correcte ce code.  Le code est écrit en tant qu’expression explicite :
+ Le balisage suivant illustre l’écriture de façon correcte ce code. Le code est écrit en tant qu’expression explicite :
 
 ```cshtml
 <p>@(GenericMethod<int>())</p>
@@ -232,7 +231,7 @@ Pour rendre le reste d’une ligne entière à l’intérieur d’un bloc de cod
 
 Sans le `@:` dans le code, une erreur d’exécution Razor est générée.
 
-Avertissement : Extra `@` caractères dans un fichier Razor risque de provoquer des erreurs du compilateur au niveau des instructions plus loin dans le bloc. Ces erreurs du compilateur peuvent être difficiles à comprendre, car l’erreur se produit avant l’erreur signalée.  Cette erreur est courant après la combinaison de plusieurs expressions implicite/explicite dans un bloc de code unique.
+Avertissement : Extra `@` caractères dans un fichier Razor risque de provoquer des erreurs du compilateur au niveau des instructions plus loin dans le bloc. Ces erreurs du compilateur peuvent être difficiles à comprendre, car l’erreur se produit avant l’erreur signalée. Cette erreur est courant après la combinaison de plusieurs expressions implicite/explicite dans un bloc de code unique.
 
 ## <a name="control-structures"></a>Structures de contrôle
 
@@ -285,7 +284,7 @@ Le balisage suivant montre comment utiliser une instruction switch :
 
 ### <a name="looping-for-foreach-while-and-do-while"></a>Bouclage @for, @foreach, @while, et @do tandis que
 
-Basé sur un modèle HTML peut être rendu avec des instructions de contrôle de boucle.  Pour afficher une liste de personnes :
+Basé sur un modèle HTML peut être rendu avec des instructions de contrôle de boucle. Pour afficher une liste de personnes :
 
 ```cshtml
 @{
@@ -496,7 +495,7 @@ Le code restitue le code HTML suivant :
 <div>Custom text: Gardyloo! - A Scottish warning yelled from a window before dumping a slop bucket on the street below.</div>
 ```
 
- `@model`et `@inherits` peut être utilisé dans la même vue.  `@inherits`peut être dans un *_ViewImports.cshtml* fichier importe de la vue :
+ `@model`et `@inherits` peut être utilisé dans la même vue. `@inherits`peut être dans un *_ViewImports.cshtml* fichier importe de la vue :
 
 [!code-cshtml[Main](razor/sample/Views/_ViewImportsModel.cshtml)]
 
@@ -558,7 +557,7 @@ Il existe trois directives qui se rapportent à [programmes d’assistance de ba
 
 * page (nécessite un cœur d’ASP.NET 2.0 et versions ultérieur)
 * fonctions
-* inherits
+* hérite
 * modèle
 * section
 * application d’assistance (non prises en charge par ASP.NET Core)
@@ -567,14 +566,14 @@ Mots clés de Razor sont précédés de `@(Razor Keyword)` (par exemple, `@(func
 
 ### <a name="c-razor-keywords"></a>Mots clés du langage c# Razor
 
-* case
+* casse
 * do
 * default
 * for
 * foreach
 * if
 * else
-* verrou
+* lock
 * switch
 * try
 * catch
@@ -587,7 +586,7 @@ Mots clés du langage c# Razor doivent être échappé en double avec `@(@C# Raz
 ### <a name="reserved-keywords-not-used-by-razor"></a>Mots clés réservés non utilisées par Razor
 
 * namespace
-* classe
+* class
 
 ## <a name="viewing-the-razor-c-class-generated-for-a-view"></a>Affichage de la classe c# Razor générée pour une vue
 

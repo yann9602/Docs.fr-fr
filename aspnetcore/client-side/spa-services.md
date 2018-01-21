@@ -2,21 +2,19 @@
 title: "À l’aide de JavaScriptServices pour la création d’Applications à Page unique"
 author: scottaddie
 description: "En savoir plus sur les avantages de l’utilisation de JavaScriptServices pour créer une Application de Page unique (SPA) est soutenu par ASP.NET Core."
-keywords: ASP.NET Core, angulaire, SPA, JavaScriptServices, SpaServices
 ms.author: scaddie
 manager: wpickett
 ms.date: 08/02/2017
 ms.topic: article
-ms.assetid: 4b30576b-2718-4c39-9253-a59966747893
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/spa-services
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 8d47910beef9195295c8da6ac81b83b3ffe20124
-ms.sourcegitcommit: fe880bf4ed1c8116071c0e47c0babf3623b7f44a
+ms.openlocfilehash: 6d84659c8c65bebb46551eb38bd52e405ff56016
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="using-javascriptservices-for-creating-single-page-applications-with-aspnet-core"></a>À l’aide de JavaScriptServices pour la création d’Applications à Page unique avec ASP.NET Core
 
@@ -85,7 +83,7 @@ Une application (également appelé isomorphes) universelle est une application 
 
 ASP.NET Core [programmes d’assistance de balise](xref:mvc/views/tag-helpers/intro) fournie par SpaServices simplifier l’implémentation de pré-rendu du côté serveur en appelant les fonctions JavaScript sur le serveur.
 
-### <a name="prerequisites"></a>Conditions préalables
+### <a name="prerequisites"></a>Prérequis
 
 Installez les éléments suivants :
 * [ASPNET-pré-rendu](https://www.npmjs.com/package/aspnet-prerendering) package npm :
@@ -142,7 +140,7 @@ Le `postList` tableau défini à l’intérieur de la `globals` objet est attach
 
 [!code-json[Main](../client-side/spa-services/sample/SpaServicesSampleApp/package.json?range=5)]
 
-### <a name="prerequisites"></a>Conditions préalables
+### <a name="prerequisites"></a>Prérequis
 
 Installez les éléments suivants :
 * [ASPNET-webpack](https://www.npmjs.com/package/aspnet-webpack) package npm :
@@ -169,7 +167,7 @@ Le *webpack.config.js* du fichier `output.publicPath` propriété indique à l�
 
 Pensez à Webpack [remplacement d’un Module à chaud](https://webpack.github.io/docs/hot-module-replacement-with-webpack.html) fonctionnalité (HMR) comme une évolution du [Webpack Dev Middleware](#webpack-dev-middleware). HMR présente les mêmes avantages, mais il simplifie davantage le flux de travail de développement en mettant à jour automatiquement de contenu de la page après la compilation des modifications. Ne pas confondre avec une actualisation du navigateur, ce qui entraînerait une interférence avec l’état en mémoire actuel et la session de débogage de SPA. Il existe un lien direct entre le service de l’intergiciel (middleware) de Webpack développement et le navigateur, ce qui signifie que les modifications sont envoyées au navigateur.
 
-### <a name="prerequisites"></a>Conditions préalables
+### <a name="prerequisites"></a>Prérequis
 
 Installez les éléments suivants :
 * [intergiciel Webpack à chaud](https://www.npmjs.com/package/webpack-hot-middleware) package npm :
@@ -206,7 +204,7 @@ Dans la plupart des SPAs basée sur ASP.NET Core, vous souhaiterez routage côt�
 
 Considérez le scénario dans lequel un itinéraire sans extension de `/some/page` est utilisé. Supposons que la demande n’à la correspondance un itinéraire côté serveur, mais son modèle ne correspond pas à un itinéraire côté client. Examinons à présent une demande entrante de `/images/user-512.png`, qui généralement s’attend à trouver un fichier image sur le serveur. Si ce chemin d’accès de la ressource demandée ne correspond pas à un itinéraire de côté serveur ou d’un fichier statique, il est peu probable que l’application côté client serait la gérer, il est souvent préférable de retourner un code d’état HTTP 404.
 
-### <a name="prerequisites"></a>Conditions préalables
+### <a name="prerequisites"></a>Prérequis
 
 Installez les éléments suivants :
 * Le package npm de routage côté client. À l’aide d’angulaire par exemple :
@@ -239,12 +237,12 @@ Une liste des modèles SPA disponibles s’affiche :
 
 | Modèles                                 | Nom court | Langue | Balises        |
 |:------------------------------------------|:-----------|:---------|:------------|
-| MVC ASP.NET Core avec angulaire             | angular    | [C#]     | MVC/Web/SPA |
-| MVC ASP.NET Core avec Aurelia             | aurelia    | [C#]     | MVC/Web/SPA |
-| MVC ASP.NET Core avec Knockout.js         | Knockout   | [C#]     | MVC/Web/SPA |
-| MVC ASP.NET Core avec React.js            | react      | [C#]     | MVC/Web/SPA |
-| MVC ASP.NET Core avec React.js et réédition  | reactredux | [C#]     | MVC/Web/SPA |
-| MVC ASP.NET Core avec Vue.js              | vue        | [C#]     | MVC/Web/SPA | 
+| MVC ASP.NET Core avec angulaire             | angular    | [C#]     | Web/MVC/SPA |
+| MVC ASP.NET Core avec Aurelia             | aurelia    | [C#]     | Web/MVC/SPA |
+| MVC ASP.NET Core avec Knockout.js         | Knockout   | [C#]     | Web/MVC/SPA |
+| MVC ASP.NET Core avec React.js            | react      | [C#]     | Web/MVC/SPA |
+| MVC ASP.NET Core avec React.js et réédition  | reactredux | [C#]     | Web/MVC/SPA |
+| MVC ASP.NET Core avec Vue.js              | vue        | [C#]     | Web/MVC/SPA | 
 
 Pour créer un nouveau projet à l’aide d’un des modèles de SPA, incluez le **nom court** du modèle dans le `dotnet new` commande. La commande suivante crée une application angulaire avec ASP.NET MVC de base configuré pour le côté serveur :
 

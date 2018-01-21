@@ -2,24 +2,22 @@
 title: "Gestion de clés de Protection des données et la durée de vie dans ASP.NET Core"
 author: rick-anderson
 description: "En savoir plus sur la gestion de clés de Protection des données et la durée de vie dans ASP.NET Core."
-keywords: "ASP.NET Core, clé de protection des données de gestion, DPAPI, durée de vie"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: ef7dad2a-7029-4ae5-8f06-1fbebedccaa4
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/configuration/default-settings
-ms.openlocfilehash: 4f5409acf4d934ced828153ccfd945834d0f1718
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 0993c68e37944a3aad863b98f92fe0140cfb746d
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="data-protection-key-management-and-lifetime-in-aspnet-core"></a>Gestion de clés de Protection des données et la durée de vie dans ASP.NET Core
 
-De [Rick Anderson](https://twitter.com/RickAndMSFT)
+Par [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 ## <a name="key-management"></a>Gestion de clés
 

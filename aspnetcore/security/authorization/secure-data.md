@@ -1,20 +1,18 @@
 ---
 title: "Créer une application ASP.NET Core et de données utilisateur protégées par l’autorisation"
 author: rick-anderson
-keywords: "ASP.NET Core, MVC, l’autorisation, rôles, sécurité, administrateur"
 ms.author: riande
 manager: wpickett
 ms.date: 05/22/2017
 ms.topic: article
-ms.assetid: abeb2f8e-dfbf-4398-a04c-338a613a65bc
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: security/authorization/secure-data
-ms.openlocfilehash: db95d46dafdd300d4ec13e8cc31a3d995016ab92
-ms.sourcegitcommit: f1436107b4c022b26f5235dddef103cec5aa6bff
+ms.openlocfilehash: 861ac619c7f5fb19a56c59536e20724d96bbddca
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/15/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="create-an-aspnet-core-app-with-user-data-protected-by-authorization"></a>Créer une application ASP.NET Core et de données utilisateur protégées par l’autorisation
 
@@ -53,7 +51,7 @@ L’application a été créée par [la structure](xref:tutorials/first-mvc-app-
 
 A `ContactIsOwnerAuthorizationHandler` Gestionnaire d’autorisation garantit qu’un utilisateur peut modifier uniquement leurs données. A `ContactManagerAuthorizationHandler` Gestionnaire d’autorisation permet aux gestionnaires d’approuver ou rejeter des contacts.  A `ContactAdministratorsAuthorizationHandler` Gestionnaire d’autorisation permet aux administrateurs pour approuver ou rejeter des contacts et à modifier/supprimer des contacts. 
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 Ce n’est pas un didacticiel de début. Vous devez être familiarisé avec :
 
@@ -321,4 +319,4 @@ Test de l’application d’amorçage la base de données. La méthode de la val
 
 * [ASP.NET Core d’autorisation Lab](https://github.com/blowdart/AspNetAuthorizationWorkshop). Ce laboratoire présente en détail sur les fonctionnalités de sécurité présentées dans ce didacticiel.
 * [Autorisation dans ASP.NET Core : Simple, des rôles, basée sur les revendications et personnalisées](index.md)
-* [D’autorisation personnalisée basée sur des stratégies](policies.md)
+* [Autorisation basée sur une stratégie personnalisée](policies.md)

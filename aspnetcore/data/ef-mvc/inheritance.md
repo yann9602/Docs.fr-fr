@@ -2,20 +2,18 @@
 title: "Cœur de ASP.NET MVC avec EF Core - héritage - 9, 10"
 author: tdykstra
 description: "Ce didacticiel vous indiquera comment implémenter l’héritage dans le modèle de données, à l’aide d’Entity Framework Core dans une application ASP.NET Core."
-keywords: "Héritage ASP.NET Core, Entity Framework Core,"
 ms.author: tdykstra
 manager: wpickett
 ms.date: 03/15/2017
 ms.topic: get-started-article
-ms.assetid: 41dc0db7-6f17-453e-aba6-633430609c74
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/inheritance
-ms.openlocfilehash: 10bde121dac3bdbbf0e55f2d146d91dea0f0210f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 756f1bbba73bd760f780d18c01597642dd1f7216
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="inheritance---ef-core-with-aspnet-core-mvc-tutorial-9-of-10"></a>Héritage - Core EF avec le didacticiel d’ASP.NET MVC de base (9 sur 10)
 
@@ -141,7 +139,7 @@ Avec le bouton droit de la table Person, puis cliquez sur **afficher les donnée
 
 ![Table Person dans SSOX - données de la table](inheritance/_static/ssox-person-data.png)
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Vous avez implémenté l’héritage table par hiérarchie pour le `Person`, `Student`, et `Instructor` classes. Pour plus d’informations sur l’héritage dans Entity Framework Core, consultez [héritage](https://docs.microsoft.com/ef/core/modeling/inheritance). Dans l’étape suivante du didacticiel, vous allez apprendre à gérer une variété de scénarios de Entity Framework relativement avancés.
 

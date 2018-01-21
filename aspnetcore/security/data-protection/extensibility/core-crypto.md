@@ -2,7 +2,6 @@
 title: "Extensibilité de chiffrement de base"
 author: rick-anderson
 description: "Explique les IAuthenticatedEncryptor, IAuthenticatedEncryptorDescriptor, IAuthenticatedEncryptorDescriptorDeserializer et la fabrique de niveau supérieur."
-keywords: ASP.NET Core, IAuthenticatedEncryptor, IAuthenticatedEncryptorDescriptor, IAuthenticatedEncryptorDescriptorDeserializer
 ms.author: riande
 manager: wpickett
 ms.date: 8/11/2017
@@ -10,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/extensibility/core-crypto
-ms.openlocfilehash: 69839562c39ab83531085e20dac1bd56e8d13d3f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b82c30fe40c4badc74645dafa9f0d13f6ffae031
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="core-cryptography-extensibility"></a>Extensibilité de chiffrement de base
 

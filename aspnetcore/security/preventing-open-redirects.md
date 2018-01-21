@@ -2,20 +2,18 @@
 title: "Prévention des attaques de redirection ouvert dans une application ASP.NET Core | Documents Microsoft"
 author: ardalis
 description: "Montre comment empêcher des attaques de redirection ouvert par rapport à une application ASP.NET Core"
-keywords: "Attaque de redirection ouvert ASP.NET Core, la sécurité,"
 ms.author: riande
 manager: wpickett
 ms.date: 07/07/2017
 ms.topic: article
-ms.assetid: 4604e563-e91a-4ecd-b7ed-00b3f1eee2b5
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/preventing-open-redirects
-ms.openlocfilehash: 4083845a77eb19d9ba9beb389a92ceb5c14edbde
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e57ae429e9af54ade74485361ba591cb75c16752
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="preventing-open-redirect-attacks-in-an-aspnet-core-app"></a>Prévention des attaques de redirection ouvert dans une application ASP.NET Core
 

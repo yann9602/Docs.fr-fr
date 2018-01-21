@@ -2,20 +2,18 @@
 title: "Cœur de ASP.NET MVC avec EF Core - Migrations - 4 10"
 author: tdykstra
 description: "Dans ce didacticiel, vous démarrez à l’aide de la fonctionnalité de migrations EF principales pour la gestion des modifications du modèle de données dans une application ASP.NET MVC de base."
-keywords: ASP.NET Core, Entity Framework Core, migrations
 ms.author: tdykstra
 manager: wpickett
 ms.date: 03/15/2017
 ms.topic: get-started-article
-ms.assetid: 81f6c9c2-a819-4f3a-97a4-4b0503b56c26
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/migrations
-ms.openlocfilehash: 20b05801ac666feef29fd05dd3e4738b1bd50b86
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9081ddd14e6ed9192c6bd8ce8b265d14dbca7e23
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="migrations---ef-core-with-aspnet-core-mvc-tutorial-4-of-10"></a>Migrations - Core EF avec le didacticiel d’ASP.NET MVC de base (4 sur 10)
 
@@ -165,7 +163,7 @@ Pour plus d’informations sur les commandes CLI, consultez [.NET Core CLI](http
 
 Pour plus d’informations sur les commandes PMC, consultez [Package Manager Console (Visual Studio)](https://docs.microsoft.com/ef/core/miscellaneous/cli/powershell).
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Dans ce didacticiel, vous avez vu comment créer et appliquer votre première migration. Dans l’étape suivante du didacticiel, vous pourrez commencer examinant rubriques plus avancées en développant le modèle de données. Tout au long du processus, vous allez créer et appliquer des migrations supplémentaires.
 

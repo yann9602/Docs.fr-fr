@@ -2,20 +2,18 @@
 title: "Fournisseurs de protection des données éphémères"
 author: rick-anderson
 description: "Ce document explique les détails d’implémentation des fournisseurs de protection des données éphémères ASP.NET Core."
-keywords: "ASP.NET Core, protection des données, les fournisseurs éphémères"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: af6ea1d0-0d9d-41df-a870-5dda24978e2f
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/implementation/key-storage-ephemeral
-ms.openlocfilehash: 51d4aaa3a669763c2e388a8186ebeaec6b57e77a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9c1d03373c9d7fb6dffb3583c58aa593fd3875f4
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="ephemeral-data-protection-providers"></a>Fournisseurs de protection des données éphémères
 

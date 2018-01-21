@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/creating-a-more-complex-data-model-for-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 350c2e4e92c8a53d22dd2500330281b4003a05e9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5283da2786d41c0ae06607185dd416aeb7d2b62a
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 <a name="creating-a-more-complex-data-model-for-an-aspnet-mvc-application-4-of-10"></a>Création d’un modèle de données plus complexe pour une Application ASP.NET MVC (4 sur 10)
 ====================
@@ -81,7 +81,7 @@ Vous pouvez également spécifier des règles de validation de données et des m
 
 Le [StringLength](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.stringlengthattribute.aspx) attribut ne sera pas empêcher un utilisateur d’entrer un espace blanc pour un nom. Vous pouvez utiliser la [RegularExpression](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.regularexpressionattribute.aspx) attribut à appliquer des restrictions à l’entrée. Par exemple, le code suivant requiert le premier caractère en majuscules et les autres caractères alphabétique :
 
-`[RegularExpression(@"^[A-Z]+[a-zA-Z''-'\s]*$")]`
+`[RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]`
 
 Le [MaxLength](https://msdn.microsoft.com/en-us/library/System.ComponentModel.DataAnnotations.MaxLengthAttribute.aspx) attribut offre une fonctionnalité similaire à la [StringLength](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.stringlengthattribute.aspx) d’attribut, mais ne fournit pas côté client validation.
 
@@ -295,17 +295,17 @@ Il existe une relation plusieurs-à-plusieurs entre la `Student` et `Course` ent
 
 L’illustration suivante montre l’aspect de ces relations dans un diagramme d’entité. (Ce diagramme a été généré à l’aide de la [Entity Framework Power Tools](https://visualstudiogallery.msdn.microsoft.com/72a60b14-1581-4b9b-89f2-846072eff19d); création du diagramme ne fait pas partie de ce didacticiel, il est uniquement utilisé ici à titre d’illustration.)
 
-![Student Course_many à many_relationship](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image11.png)
+![Student-Course_many-to-many_relationship](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image11.png)
 
 Chaque ligne de relation a une 1 à une extrémité et un astérisque (\*) à l’autre, qui indique une relation un-à-plusieurs.
 
 Si le `Enrollment` table n’a pas inclure les informations de catégorie, il doit uniquement contenir les deux clés étrangères `CourseID` et `StudentID`. Dans ce cas, il correspond à une table de jointure plusieurs-à-plusieurs *sans la charge utile* (ou un *table de jonction pure*) dans la base de données, et vous ne devez créer une classe de modèle pour qu’il tout. Le `Instructor` et `Course` entités avoir ce type de relation plusieurs-à-plusieurs, et comme vous pouvez le voir, il n’existe aucune classe d’entité entre eux :
 
-![Formateur Course_many à many_relationship](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image12.png)
+![Instructor-Course_many-to-many_relationship](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image12.png)
 
 Une table de jointure est requis dans la base de données, cependant, comme indiqué dans le schéma de base de données suivantes :
 
-![Formateur Course_many à many_relationship_tables](https://asp.net/media/2577802/Windows-Live-Writer_Creating-a.NET-MVC-Application-4-of-10h1_B662_Instructor-Course_many-to-many_relationship_tables_03e042cf-db89-4b4c-985a-e458351ada76.png)
+![Instructor-Course_many-to-many_relationship_tables](https://asp.net/media/2577802/Windows-Live-Writer_Creating-a.NET-MVC-Application-4-of-10h1_B662_Instructor-Course_many-to-many_relationship_tables_03e042cf-db89-4b4c-985a-e458351ada76.png)
 
 Entity Framework crée automatiquement le `CourseInstructor` table et que vous lisez et indirectement mettre à jour par la lecture et mise à jour la `Instructor.Courses` et `Course.Instructors` propriétés de navigation.
 
@@ -393,7 +393,7 @@ Avec le bouton droit le `CourseInstructor` de table et sélectionnez **afficher 
 
 ![Table_data_in_CourseInstructor_table](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image15.png)
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Vous avez maintenant un modèle de données plus complexe et de la base de données correspondante. Dans ce didacticiel vous en apprendrez davantage sur les différentes façons d’accéder aux données associées.
 

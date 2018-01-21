@@ -2,20 +2,18 @@
 title: "Création de sites et attrayantes et réactives avec les données d’amorçage"
 author: ardalis
 description: 
-keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: bd27832c-2877-4b7b-9337-e009361d845f
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/bootstrap
-ms.openlocfilehash: f89ad584600c3f12a936599de27f931aff0cd4b5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: aee3304515686fc8e45e8e2aafb79d957219f94a
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="building-beautiful-responsive-sites-with-bootstrap"></a>Création de sites et attrayantes et réactives avec les données d’amorçage
 
@@ -73,7 +71,7 @@ Le modèle de démarrage plus simple ressemble beaucoup le *_Layout.cshtml* fich
 
 ### <a name="basic-navigation"></a>Navigation de base
 
-Le modèle par défaut utilise un ensemble de `<div>` éléments afin d’afficher une barre de navigation supérieure et le corps de la page. Si vous utilisez HTML5, vous pouvez remplacer la première `<div>` la balise avec un `<nav>` balise pour obtenir le même effet, mais avec une sémantique plus précise.  Dans ce premier `<div>` vous pouvez voir d’autres. Tout d’abord, un `<div>` avec une classe de « conteneur », puis, dans, les deux autres `<div>` éléments : « barre de navigation en-tête » et « réduction de la barre de navigation ».  L’élément div d’en-tête de la barre de navigation inclut un bouton qui s’affiche lorsque l’écran est inférieure à une certaine largeur minimale, affichant 3 lignes horizontales (un dite « icône représentant un hamburger »). L’icône est restitué à l’aide de pure HTML et CSS ; Aucune image n’est requise. Voici le code qui affiche l’icône, avec chacun de la <span> une des barres blanches de rendu des balises :
+Le modèle par défaut utilise un ensemble de `<div>` éléments afin d’afficher une barre de navigation supérieure et le corps de la page. Si vous utilisez HTML5, vous pouvez remplacer la première `<div>` la balise avec un `<nav>` balise pour obtenir le même effet, mais avec une sémantique plus précise. Dans ce premier `<div>` vous pouvez voir d’autres. Tout d’abord, un `<div>` avec une classe de « conteneur », puis, dans, les deux autres `<div>` éléments : « barre de navigation en-tête » et « réduction de la barre de navigation ». L’élément div d’en-tête de la barre de navigation inclut un bouton qui s’affiche lorsque l’écran est inférieure à une certaine largeur minimale, affichant 3 lignes horizontales (un dite « icône représentant un hamburger »). L’icône est restitué à l’aide de pure HTML et CSS ; Aucune image n’est requise. Voici le code qui affiche l’icône, avec chacun de la <span> une des barres blanches de rendu des balises :
 
 ```html
 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -83,7 +81,7 @@ Le modèle par défaut utilise un ensemble de `<div>` éléments afin d’affich
 </button>
 ```
 
-Il inclut également le nom de l’application qui apparaît dans le coin supérieur gauche.  Le menu de navigation principal est restitué par le `<ul>` élément dans la deuxième div et inclut des liens pour chez eux, sur et de Contact. Des liens supplémentaires pour inscrire et de connexion sont ajoutés à la ligne _LoginPartial ligne 29. Sous le volet de navigation, le corps principal de chaque page est rendu dans un autre `<div>`, marqués avec les classes « conteneur » et « contenu du corps ». Dans le fichier de _Layout simple par défaut indiqué ici, le contenu de la page est rendu par l’affichage spécifique associé à la page, puis un simple `<footer>` est ajouté à la fin de la `<div>` élément.  Vous pouvez voir comment la fonction intégrée sur la page s’affiche à l’aide ce modèle :
+Il inclut également le nom de l’application qui apparaît dans le coin supérieur gauche. Le menu de navigation principal est restitué par le `<ul>` élément dans la deuxième div et inclut des liens pour chez eux, sur et de Contact. Des liens supplémentaires pour inscrire et de connexion sont ajoutés à la ligne _LoginPartial ligne 29. Sous le volet de navigation, le corps principal de chaque page est rendu dans un autre `<div>`, marqués avec les classes « conteneur » et « contenu du corps ». Dans le fichier de _Layout simple par défaut indiqué ici, le contenu de la page est rendu par l’affichage spécifique associé à la page, puis un simple `<footer>` est ajouté à la fin de la `<div>` élément. Vous pouvez voir comment la fonction intégrée sur la page s’affiche à l’aide ce modèle :
 
 ![Sur la page](bootstrap/_static/about-page-wide.png)
 
@@ -117,7 +115,7 @@ Ensuite, ajoutez supplémentaires `<div>` éléments pour chaque colonne et spé
 
 Préfixe de classe CSS | Niveau de l’appareil | Largeur
 :---: | :---: | :---:
-col-xs - | Téléphones | < 768px
+col-xs- | Téléphones | < 768px
 col-sm - | Tablettes | > = 768px
 col-md - | Ordinateurs de bureau | > = 992px
 col-lg - | Affiche de bureau plus grande | > = 1200px
@@ -134,9 +132,9 @@ Dans l’exemple ci-dessus, un et deux partage une ligne dans la disposition «�
 
 Dans cet exemple, une seule ligne `<div>` a été utilisé, et fixe d’amorçage a principalement l’attitude en ce qui concerne la mise en page et des colonnes d’empilement. En règle générale, vous devez spécifier une ligne `<div>` pour chaque ligne horizontale nécessite la mise en page, et bien entendu, vous pouvez imbriquer des grilles d’amorçage dans un autre. Lorsque vous procédez ainsi, chaque grille imbriquée occupera 100 % de la largeur de l’élément sur lequel il est placé, qui peut ensuite être subdivisée à l’aide des classes de colonne.
 
-### <a name="jumbotron"></a>JumboTron
+### <a name="jumbotron"></a>Jumbotron
 
-Si vous avez utilisé les modèles ASP.NET MVC par défaut dans Visual Studio 2012 ou 2013, vous avez probablement remarqué la Jumbotron en action. Il fait référence à une section pleine chasse volumineuse d’une page qui peut être utilisée pour afficher une image d’arrière-plan de grande taille, un appel à l’action, une rotation ou éléments similaires. Pour ajouter un jumbotron à une page, ajoutez simplement un `<div>` et lui donner une classe de « jumbotron », puis placer un conteneur `<div>` à l’intérieur et ajoutez votre contenu.  Nous pouvons ajuster facilement la norme sur la page à utiliser un jumbotron pour les titres principaux, qu'il affiche :
+Si vous avez utilisé les modèles ASP.NET MVC par défaut dans Visual Studio 2012 ou 2013, vous avez probablement remarqué la Jumbotron en action. Il fait référence à une section pleine chasse volumineuse d’une page qui peut être utilisée pour afficher une image d’arrière-plan de grande taille, un appel à l’action, une rotation ou éléments similaires. Pour ajouter un jumbotron à une page, ajoutez simplement un `<div>` et lui donner une classe de « jumbotron », puis placer un conteneur `<div>` à l’intérieur et ajoutez votre contenu. Nous pouvons ajuster facilement la norme sur la page à utiliser un jumbotron pour les titres principaux, qu'il affiche :
 
 ![exemple de JumboTron](bootstrap/_static/jumbotron.png)
 
@@ -154,7 +152,7 @@ Badges font référence aux légendes de petite taille, généralement numériqu
 
 ### <a name="alerts"></a>Alertes
 
-Vous devrez peut-être afficher un type de notification, une alerte ou message d’erreur pour les utilisateurs de votre application. C'est-à-dire, où les classes d’alerte standards sont utiles.  Il existe quatre niveaux de gravité différents jeux de couleurs associé :
+Vous devrez peut-être afficher un type de notification, une alerte ou message d’erreur pour les utilisateurs de votre application. C'est-à-dire, où les classes d’alerte standards sont utiles. Il existe quatre niveaux de gravité différents jeux de couleurs associé :
 
 ![alertes à thème](bootstrap/_static/theme-alerts.png)
 
@@ -164,23 +162,23 @@ Notre disposition inclut déjà une barre de navigation standard, mais le thème
 
 ![poste à thème](bootstrap/_static/theme-tabstrips.png)
 
-Barres de navigation sont générés de la même façon, mais sont un peu plus complexes.  Ils commencent par un `<nav>` ou `<div>` avec une classe de « barre de navigation », dans lequel un élément div conteneur conserve le reste des éléments. Notre page inclut déjà une barre de navigation dans son en-tête, celui illustré ci-dessous se développe simplement à ce sujet, ajout de la prise en charge pour un menu déroulant :
+Barres de navigation sont générés de la même façon, mais sont un peu plus complexes. Ils commencent par un `<nav>` ou `<div>` avec une classe de « barre de navigation », dans lequel un élément div conteneur conserve le reste des éléments. Notre page inclut déjà une barre de navigation dans son en-tête, celui illustré ci-dessous se développe simplement à ce sujet, ajout de la prise en charge pour un menu déroulant :
 
 ![barres de navigation à thème](bootstrap/_static/theme-navbars.png)
 
 ### <a name="additional-elements"></a>Éléments supplémentaires
 
-Le thème par défaut peut également servir à présenter des tableaux HTML dans un style de mise en forme correcte, y compris la prise en charge pour les vues distribuées. Il existe des étiquettes avec des styles sont semblables à celles des boutons. Vous pouvez créer des menus déroulants personnalisés qui prennent en charge les options de style supplémentaires au-delà de la norme HTML `<select>` élément, ainsi que les barres de navigation semblable à celui de notre site de démarrage par défaut est déjà utilisé. Si vous avez besoin d’une barre de progression, il existe plusieurs styles à sélectionner, ainsi que la liste des groupes et des panneaux d’incluent un titre et le contenu.  Explorer les options supplémentaires dans le thème d’amorçage standard ici :
+Le thème par défaut peut également servir à présenter des tableaux HTML dans un style de mise en forme correcte, y compris la prise en charge pour les vues distribuées. Il existe des étiquettes avec des styles sont semblables à celles des boutons. Vous pouvez créer des menus déroulants personnalisés qui prennent en charge les options de style supplémentaires au-delà de la norme HTML `<select>` élément, ainsi que les barres de navigation semblable à celui de notre site de démarrage par défaut est déjà utilisé. Si vous avez besoin d’une barre de progression, il existe plusieurs styles à sélectionner, ainsi que la liste des groupes et des panneaux d’incluent un titre et le contenu. Explorer les options supplémentaires dans le thème d’amorçage standard ici :
 
-[http://getbootstrap.com/Examples/Theme/](http://getbootstrap.com/examples/theme/)
+[http://getbootstrap.com/examples/theme/](http://getbootstrap.com/examples/theme/)
 
 ## <a name="more-themes"></a>Plus de thèmes
 
-Vous pouvez étendre le thème d’amorçage standard en remplaçant tout ou partie de ses CSS, régler les couleurs et les styles selon les besoins de votre propre application. Si vous souhaitez démarrer à partir d’un thème prêts à l’emploi, il existe plusieurs galeries de thème disponibles en ligne spécialisés dans les thèmes d’amorçage, telles que WrapBootstrap.com (qui possède un éventail de thèmes commerciales) et Bootswatch.com (qui offre des thèmes libres).  Certains des modèles disponibles payants fournissent un large éventail de fonctionnalités par-dessus le thème d’amorçage base, tels que prise en charge des menus d’administration et des tableaux de bord avec des jauges et graphiques enrichis. Est un exemple d’un modèle payant populaires Inspinia, actuellement vente pour $18, qui inclut un modèle MVC5 ASP.NET outre AngularJS et les versions HTML statiques. Vous trouverez ci-dessous une capture d’écran de l’exemple.
+Vous pouvez étendre le thème d’amorçage standard en remplaçant tout ou partie de ses CSS, régler les couleurs et les styles selon les besoins de votre propre application. Si vous souhaitez démarrer à partir d’un thème prêts à l’emploi, il existe plusieurs galeries de thème disponibles en ligne spécialisés dans les thèmes d’amorçage, telles que WrapBootstrap.com (qui possède un éventail de thèmes commerciales) et Bootswatch.com (qui offre des thèmes libres). Certains des modèles disponibles payants fournissent un large éventail de fonctionnalités par-dessus le thème d’amorçage base, tels que prise en charge des menus d’administration et des tableaux de bord avec des jauges et graphiques enrichis. Est un exemple d’un modèle payant populaires Inspinia, actuellement vente pour $18, qui inclut un modèle MVC5 ASP.NET outre AngularJS et les versions HTML statiques. Vous trouverez ci-dessous une capture d’écran de l’exemple.
 
 ![Exemple thème inspinia](bootstrap/_static/theme-inspinia.png)
 
-Si vous souhaitez modifier le thème d’amorçage, placez le *bootstrap.css* fichier pour le thème que vous souhaitez dans le **wwwroot/css** dossier et modifiez les références dans *_Layout.cshtml* afin qu’il pointe.  Modifier les liens pour tous les environnements :
+Si vous souhaitez modifier le thème d’amorçage, placez le *bootstrap.css* fichier pour le thème que vous souhaitez dans le **wwwroot/css** dossier et modifiez les références dans *_Layout.cshtml* afin qu’il pointe. Modifier les liens pour tous les environnements :
 
 ```html
 <environment names="Development">
@@ -218,6 +216,6 @@ Vues miniatures sont un composant de l’interface utilisateur commun utilisé p
 
 Bibliothèque de JavaScript du programme d’amorçage inclut la prise en charge API pour les composants inclus, ce qui vous permet de contrôler leur comportement par programme au sein de votre application. En outre, *bootstrap.js* inclut plus d’une dizaine plug-ins de jQuery personnalisées, en fournissant des fonctionnalités supplémentaires, comme des transitions, boîtes de dialogue modales, faites défiler la détection (où l’utilisateur a défilé dans le document en fonction des styles de mise à jour), comportement de réduction, tapis roulants et menus apposition dans la fenêtre de sorte qu’ils ne pas faire défiler l’écran. Il n’existe pas de suffisamment d’espace pour couvrir tous les modules complémentaires JavaScript intégrés Bootstrap – pour en savoir plus, consultez [http://getbootstrap.com/javascript/](http://getbootstrap.com/javascript/).
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Programme d’amorçage fournit une infrastructure web qui peut être utilisée pour rapidement et efficacement mise en page et le style d’un large éventail d’applications et sites Web. Typographie de base et des styles fournissent une apparence et convivialité agréable qui peuvent être manipulée aisément prise en charge du thème personnalisé qui peut être écrit à la main ou acheté dans le commerce. Il prend en charge un ordinateur hôte des composants web qui aurait nécessité coûteuse des contrôles tiers pour mener à bien, lors de la prise en charge des normes web modernes et ouvertes dans le passé.

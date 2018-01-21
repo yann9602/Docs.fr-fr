@@ -2,20 +2,18 @@
 title: Prise en charge de WebSocket dans ASP.NET Core
 author: tdykstra
 description: En savoir plus sur la prise en main WebSockets dans ASP.NET Core.
-keywords: ASP.NET Core, WebSockets
 ms.author: tdykstra
 manager: wpickett
 ms.date: 03/25/2017
 ms.topic: article
-ms.assetid: 0e0fedcd-a7b4-4479-8ae0-36eab0229d7e
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: fundamentals/websockets
-ms.openlocfilehash: 114d52d831668e5facd1142b5f9e5f68e7456f7e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 46c1f42b925a43df470d7491a1e259ab51ea5f50
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="introduction-to-websockets-in-aspnet-core"></a>Introduction à WebSockets dans ASP.NET Core
 
@@ -26,14 +24,14 @@ Cet article explique comment démarrer avec le protocole WebSocket dans ASP.NET 
 [Afficher ou télécharger l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/websockets/sample) ([comment télécharger](xref:tutorials/index#how-to-download-a-sample)). Consultez le [étapes](#next-steps) section pour plus d’informations.
 
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 * ASP.NET Core 1.1 (ne s’exécute pas sur la version 1.0)
 * Un système d’exploitation ASP.NET Core s’exécute sur :
   
   * Windows 7 / Windows Server 2008 et versions ultérieur
   * Linux
-  * MacOS
+  * macOS
 
 * **Exception**: Si votre application s’exécute sur Windows avec IIS, ou avec WebListener, vous devez utiliser :
 
@@ -56,7 +54,7 @@ Si vous ne souhaitez pas attendre que SignalR Core, vous pouvez utiliser des Web
 * Prise en charge pour les clients de l’appel de méthodes sur le serveur, ou vice versa.
 * Prise en charge pour la mise à l’échelle sur plusieurs serveurs.
 
-## <a name="how-to-use-it"></a>Comment l’utiliser
+## <a name="how-to-use-it"></a>Utilisation
 
 * Installer le [Microsoft.AspNetCore.WebSockets](https://www.nuget.org/packages/Microsoft.AspNetCore.WebSockets/) package.
 * Configurer l’intergiciel (middleware).

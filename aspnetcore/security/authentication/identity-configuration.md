@@ -2,7 +2,6 @@
 title: "Configurer l’identité de ASP.NET Core"
 author: AdrienTorris
 description: "Comprendre les valeurs par défaut de ASP.NET Core Identity et configurer les propriétés d’identité différents pour utiliser des valeurs personnalisées."
-keywords: "Authentification ASP.NET Core, identité, sécurité"
 ms.author: scaddie
 manager: wpickett
 ms.date: 01/11/2018
@@ -10,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/identity-configuration
-ms.openlocfilehash: ac204cb89aac1f90adc64c4f0bec4e946cb8c4d9
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: d3a13d1cef3417522460b44c52c1361c3e9d1162
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="configure-identity"></a>Configurer l’identité
 
@@ -103,7 +102,7 @@ Sous `ConfigureServices` dans le `Startup` (classe), vous pouvez configurer le c
 
 | Propriété                | Description                       | Par défaut |
 | ----------------------- | --------------------------------- | ------- |
-| `Cookie.Name`  | Le nom du cookie.  | . AspNetCore.Cookies.  |
+| `Cookie.Name`  | Le nom du cookie.  | .AspNetCore.Cookies.  |
 | `Cookie.HttpOnly`  | Lorsque la valeur est true, le cookie n’est pas accessible à partir de scripts côté client.  |  true |
 | `ExpireTimeSpan`  | Détermine combien de temps le ticket d’authentification stocké dans le cookie reste valide à partir du point de que sa création.  | 14 jours  |
 | `LoginPath`  | Lorsqu’un utilisateur n’est pas autorisé, il seront redirigé à ce chemin d’accès à la connexion. | / / Connexion au compte  |

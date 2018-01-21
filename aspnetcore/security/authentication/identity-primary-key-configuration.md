@@ -2,7 +2,6 @@
 title: "Configurer le type de données de clé primaire d’identité"
 author: AdrienTorris
 description: "Cet article présente les étapes de configuration du type de données utilisé pour la clé primaire ASP.NET Core Identity."
-keywords: "Clé primaire de ASP.NET Core, identité,"
 ms.author: scaddie
 manager: wpickett
 ms.date: 09/28/2017
@@ -10,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/identity-primary-key-configuration
-ms.openlocfilehash: 5734a9aa86fb2831bd054593ad41c3e3bda4729e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: da46aa90a434a978a55467da982d746eb2d959ee
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="configure-the-aspnet-core-identity-primary-key-data-type"></a>Configurer le type de données de clé primaire ASP.NET Core Identity
 

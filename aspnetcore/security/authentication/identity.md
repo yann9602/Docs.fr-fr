@@ -2,20 +2,18 @@
 title: "Introduction à l’identité sur ASP.NET Core"
 author: rick-anderson
 description: "Utiliser l’identité à une application ASP.NET Core"
-keywords: "Autorisation ASP.NET Core, identité, sécurité"
 ms.author: riande
 manager: wpickett
 ms.date: 01/02/2018
 ms.topic: article
-ms.assetid: cf119f21-1a2b-49a2-b052-547ccb66ee83
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/identity
-ms.openlocfilehash: fc8e076af92bd8f9a95e73abb66ce32cae8ab9cf
-ms.sourcegitcommit: 2d23ea501e0213bbacf65298acf1c8bd17209540
+ms.openlocfilehash: 436a5ecfd126c9660591cd55efc1cc52b9493136
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/09/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>Introduction à l’identité sur ASP.NET Core
 
@@ -146,7 +144,7 @@ Dans cette rubrique, vous allez apprendre à utiliser ASP.NET Core Identity pour
  
 7.  Afficher la base de données.
 
-    Si votre application utilise une base de données SQL Server (la valeur par défaut sur Windows et pour les utilisateurs de Visual Studio), vous pouvez afficher la base de données de l’application créée. Vous pouvez utiliser **SQL Server Management Studio**. Vous pouvez également, à partir de Visual Studio, sélectionnez **vue** > **l’Explorateur d’objets SQL Server**. Se connecter à **(localdb) \MSSQLLocalDB**. La base de données dont le nom correspond  **aspnet - <*nom de votre projet*>-<*chaîne de date*> ** s’affiche.
+    Si votre application utilise une base de données SQL Server (la valeur par défaut sur Windows et pour les utilisateurs de Visual Studio), vous pouvez afficher la base de données de l’application créée. Vous pouvez utiliser **SQL Server Management Studio**. Vous pouvez également, à partir de Visual Studio, sélectionnez **vue** > **l’Explorateur d’objets SQL Server**. Se connecter à **(localdb) \MSSQLLocalDB**. La base de données dont le nom correspond **aspnet - <*nom de votre projet*>-<*chaîne de date* >**  s’affiche.
 
     ![Menu contextuel sur la table de base de données AspNetUsers](identity/_static/04-db.png)
     

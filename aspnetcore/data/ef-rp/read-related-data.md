@@ -2,7 +2,6 @@
 title: "Pages Razor avec EF Core - lire les données associées - 6 de 8"
 author: rick-anderson
 description: "Dans ce didacticiel vous lire et afficher les données associées, autrement dit, les données Entity Framework charge dans les propriétés de navigation."
-keywords: "ASP.NET Core, Entity Framework Core, les données associées, jointures"
 ms.author: riande
 manager: wpickett
 ms.date: 11/05/2017
@@ -10,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/read-related-data
-ms.openlocfilehash: ba9b17ecdcb605d39117d03230b1db37e8e4d0dd
-ms.sourcegitcommit: 05e798c9bac7b9e9983599afb227ef393905d023
+ms.openlocfilehash: d0cdb5aaa4b1129c3f2404d069e9781ca16260b7
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="reading-related-data---ef-core-with-razor-pages-6-of-8"></a>Lecture liés de données - Core EF avec les Pages Razor (6 de 8)
 

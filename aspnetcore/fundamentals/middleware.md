@@ -2,20 +2,18 @@
 title: Intergiciel (middleware) ASP.NET Core
 author: rick-anderson
 description: "En savoir plus sur ASP.NET Core intergiciel (middleware) et le pipeline de requête."
-keywords: "ASP.NET Core, intergiciel (middleware), pipeline, délégué"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2017
 ms.topic: article
-ms.assetid: db9a86ab-46c2-40e0-baed-86e38c16af1f
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/middleware
-ms.openlocfilehash: ad8d207b1e6de396f16d098fb07ddc89bea2c520
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: af16046c97964e8e1c16a4f5989fcfa794741c4d
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="aspnet-core-middleware-fundamentals"></a>Notions de base ASP.NET Core intergiciel (middleware)
 
@@ -150,12 +148,12 @@ Vous configurez le pipeline HTTP à l’aide `Use`, `Run`, et `Map`. Le `Use` m�
 
 Le tableau suivant présente les demandes et réponses de `http://localhost:1234` en utilisant le code précédent :
 
-| Requête | Réponse |
+| Demande | Réponse |
 | --- | --- |
 | localhost:1234 | Bonjour à partir de la table non délégué.  |
-| localhost:1234 / map1 | Test de mappage 1 |
-| localhost:1234 / map2 | Test de mappage 2 |
-| localhost:1234 / map3 | Bonjour à partir de la table non délégué.  |
+| localhost:1234/map1 | Test de mappage 1 |
+| localhost:1234/map2 | Test de mappage 2 |
+| localhost:1234/map3 | Bonjour à partir de la table non délégué.  |
 
 Lorsque `Map` est utilisé, les segments de chemin d’accès de mise en correspondance sont supprimés de `HttpRequest.Path` et ajouté à `HttpRequest.PathBase` pour chaque demande.
 
@@ -165,10 +163,10 @@ Lorsque `Map` est utilisé, les segments de chemin d’accès de mise en corresp
 
 Le tableau suivant présente les demandes et réponses de `http://localhost:1234` en utilisant le code précédent :
 
-| Requête | Réponse |
+| Demande | Réponse |
 | --- | --- |
 | localhost:1234 | Bonjour à partir de la table non délégué.  |
-| localhost:1234 / ? branche = principale | Branche utilisé = principale|
+| localhost:1234/?branch=master | Branche utilisé = principale|
 
 `Map`prend en charge l’imbrication, par exemple :
 

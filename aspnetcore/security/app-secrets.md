@@ -2,7 +2,6 @@
 title: "Stockage sécurisé des secrets d’application pendant le développement dans ASP.NET Core"
 author: rick-anderson
 description: "Montre comment stocker des clés secrètes en toute sécurité pendant le développement"
-keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
 ms.date: 09/15/2017
@@ -10,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/app-secrets
-ms.openlocfilehash: 897d9b360ceeb5fbb0863ff1c1fcec039e1a8b8f
-ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
+ms.openlocfilehash: e2c11b768098b3d92ef702e0daad746963dc3856
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="safe-storage-of-app-secrets-during-development-in-aspnet-core"></a>Stockage sécurisé des secrets d’application pendant le développement dans ASP.NET Core
 

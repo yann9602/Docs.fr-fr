@@ -2,24 +2,22 @@
 title: Affichage des composants
 author: rick-anderson
 description: "Affichage des composants visent n’importe où que la logique de rendu réutilisables."
-keywords: ASP.NET Core, affichage des composants, vue partielle
 ms.author: riande
 manager: wpickett
 ms.date: 02/14/2017
 ms.topic: article
-ms.assetid: ab4705b7-59d7-4f31-bc97-ea7f292fe926
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/view-components
-ms.openlocfilehash: 2cf82df78c250cdfdd808d49acfc06dc2ea82f5f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2d93dcee102009661af708b9a9066e8af0bdbb17
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="view-components"></a>Affichage des composants
 
-De [Rick Anderson](https://twitter.com/RickAndMSFT)
+Par [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 [Affichez ou téléchargez l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/view-components/sample) ([procédure de téléchargement](xref:tutorials/index#how-to-download-a-sample))
 
@@ -78,8 +76,8 @@ Un composant de vue définit sa logique dans un `InvokeAsync` méthode qui retou
 
 Le runtime recherche dans la vue dans les chemins d’accès suivants :
 
-   * Vues /\<controller_name > /Components/\<view_component_name > /\<view_name >
-   * Vues/Shared/Components/\<view_component_name > /\<view_name >
+   * Views/\<controller_name>/Components/\<view_component_name>/\<view_name>
+   * Views/Shared/Components/\<view_component_name>/\<view_name>
 
 Le nom de la vue par défaut pour un composant de vue est *par défaut*, ce qui signifie que votre fichier d’affichage est généralement appelé *Default.cshtml*. Vous pouvez spécifier un nom d’affichage différent lors de la création du résultat de composant de vue ou lorsque vous appelez le `View` (méthode).
 

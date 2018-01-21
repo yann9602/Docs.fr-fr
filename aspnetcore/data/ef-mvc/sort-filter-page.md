@@ -2,19 +2,17 @@
 title: "Cœur de ASP.NET MVC avec EF Core - trier, filtrer, la pagination - 3 sur 10"
 author: tdykstra
 description: "Dans ce didacticiel, vous allez ajouter le tri, filtrage et d’échange vers la page à l’aide d’ASP.NET Core et Entity Framework Core."
-keywords: ASP.NET Core, Entity Framework Core, trier, filtrer, la pagination, regroupement
 ms.author: tdykstra
 ms.date: 03/15/2017
 ms.topic: get-started-article
-ms.assetid: e6c1ff3c-5673-43bf-9c2d-077f6ada1f29
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/sort-filter-page
-ms.openlocfilehash: 59fff4dbf4736f0776aac4072f3f4e2d40119842
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6da2073b18f6fff9738808c84441e59240caefe3
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="sorting-filtering-paging-and-grouping---ef-core-with-aspnet-core-mvc-tutorial-3-of-10"></a>Le tri, le filtrage, la pagination et le regroupement - Core EF avec le didacticiel ASP.NET Core MVC (partie 3 sur 10)
 
@@ -245,7 +243,7 @@ Exécutez l’application et accédez à la page à propos de. Le nombre d’ét
 
 ![Sur la page](sort-filter-page/_static/about.png)
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Dans ce didacticiel, vous avez vu comment effectuer le tri, le filtrage, la pagination et regroupement. Dans l’étape suivante du didacticiel, vous allez apprendre à gérer les modifications du modèle de données à l’aide des migrations.
 

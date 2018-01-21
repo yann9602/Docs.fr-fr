@@ -2,7 +2,6 @@
 title: "Hébergement dans ASP.NET Core"
 author: guardrex
 description: "En savoir plus sur l’hôte web dans ASP.NET Core, qui est responsable de la gestion de démarrage et la durée de vie des applications."
-keywords: "ASP.NET Core, web hôte, IWebHost, WebHostBuilder, IHostingEnvironment, IApplicationLifetime"
 ms.author: riande
 manager: wpickett
 ms.date: 09/21/2017
@@ -10,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/hosting
-ms.openlocfilehash: 8adc58d67f103e8d1fc8fe197cf392752bdaf660
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: 7f6712073002b73ca4ddd7586718c81e62cacbc2
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="hosting-in-aspnet-core"></a>Hébergement dans ASP.NET Core
 
@@ -35,7 +34,7 @@ Créer un hôte à l’aide d’une instance de [WebHostBuilder](/dotnet/api/mic
 * Configure [Kestrel](servers/kestrel.md) que le serveur web. Pour les options par défaut Kestrel, consultez [le Kestrel options section d’implémentation du serveur web Kestrel ASP.NET Core](xref:fundamentals/servers/kestrel#kestrel-options).
 * Définit le chemin d’accès retourné par la racine de contenu [Directory.GetCurrentDirectory](/dotnet/api/system.io.directory.getcurrentdirectory).
 * Configuration facultative de charge à partir de :
-  * *appSettings.JSON*.
+  * *appsettings.json*.
   * *appSettings. {Environnement} .json*.
   * [Les secrets utilisateur](xref:security/app-secrets) lorsque l’application s’exécute le `Development` environnement.
   * Variables d'environnement.

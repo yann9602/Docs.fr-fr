@@ -2,7 +2,6 @@
 title: "Articles basés sur les projets créés avec des comptes d’utilisateur individuels"
 author: rick-anderson
 description: "Ce document répertorie les articles basés sur les projets créés avec des comptes d’utilisateur individuels."
-keywords: "ASP.NET Core, d’autorisation, IAuthorizationService"
 ms.author: riande
 manager: wpickett
 ms.date: 11/30/2017
@@ -10,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/individual
-ms.openlocfilehash: 1864625e0ad6b4ec6fc2ada3fa7d93edec91b633
-ms.sourcegitcommit: 037d3900f739dbaa2ba14158e3d7dc81478952ad
+ms.openlocfilehash: 844514f2970b761ec65589765eb21421cd1962a1
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="articles-based-on-projects-created-with-individual-user-accounts"></a>Articles basés sur les projets créés avec des comptes d’utilisateur individuels
 

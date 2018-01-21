@@ -2,20 +2,18 @@
 title: "Mettre en cache d’assistance de balise dans le cœur d’ASP.NET MVC"
 author: pkellner
 description: "Montre comment travailler avec l’application d’assistance de balise de Cache"
-keywords: ASP.NET Core,tag helper
 ms.author: riande
 manager: wpickett
 ms.date: 02/14/2017
 ms.topic: article
-ms.assetid: c045d485-d1dc-4cea-a675-46be83b7a012
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: mvc/views/tag-helpers/builtin-th/cache-tag-helper
-ms.openlocfilehash: 74080d089dc7a72da96f9f18d613cb313cd930db
-ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
+ms.openlocfilehash: dfd9c3c0c4e50a99e4f8703b01bd9b384930b87a
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="cache-tag-helper-in-aspnet-core-mvc"></a>Mettre en cache d’assistance de balise dans le cœur d’ASP.NET MVC
 
@@ -60,7 +58,7 @@ Exemple :
 
 - - -
 
-### <a name="expires-on"></a>expiration sur 
+### <a name="expires-on"></a>expires-on 
 
 | Type d’attribut    | Exemple de valeur     |
 |----------------   |----------------   |
@@ -186,8 +184,8 @@ routes.MapRoute(
 
 | Type d’attribut    | Exemples de valeurs                |
 |----------------   |----------------               |
-| Chaîne            | ". AspNetCore.Identity.Application »                |
-|                   | ". AspNetCore.Identity.Application,HairColor » |
+| Chaîne            | ".AspNetCore.Identity.Application"                |
+|                   | ".AspNetCore.Identity.Application,HairColor" |
 
 Accepte une valeur d’en-tête unique ou une liste séparée par des virgules de valeurs d’en-tête qui déclenchent une actualisation du cache lorsque les valeurs d’en-tête changement de (s). L’exemple suivant présente le cookie associé d’identité ASP.NET. Lorsqu’un utilisateur est authentifié le cookie de la demande à définir qui déclenche une actualisation du cache.
 
@@ -264,10 +262,10 @@ public IActionResult Index(string myParam1,string myParam2,string myParam3)
 
 | Type d’attribut    | Exemples de valeurs                |
 |----------------   |----------------               |
-| Énumération CacheItemPriority  | « High »                   |
+| CacheItemPriority  | « High »                   |
 |                    | « Low » |
 |                    | « NeverRemove » |
-|                    | « Normal » |
+|                    | "Normal" |
 
 Fournit des instructions de suppression de cache au fournisseur de cache intégré. Supprimez le serveur web `Low` mettre en cache les entrées tout d’abord une mémoire insuffisante.
 

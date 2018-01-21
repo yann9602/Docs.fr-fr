@@ -2,20 +2,18 @@
 title: "Cœur de ASP.NET MVC avec EF Core - d’accès concurrentiel - 8 de 10"
 author: tdykstra
 description: "Ce didacticiel montre comment gérer les conflits lorsque plusieurs utilisateurs mettre à jour la même entité en même temps."
-keywords: "Concurrence d’accès ASP.NET Core, Entity Framework Core,"
 ms.author: tdykstra
 manager: wpickett
 ms.date: 03/15/2017
 ms.topic: get-started-article
-ms.assetid: 15e79e15-bda5-441d-80c7-8032a2628605
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/concurrency
-ms.openlocfilehash: ffe8ef968d7bde9755d5c55389f6f1548f03ffec
-ms.sourcegitcommit: 6e46abd65973dea796d364a514de9ec2e3e1c1ed
+ms.openlocfilehash: 69ffafc7f92cda75c001fe1098275766063113fb
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="handling-concurrency-conflicts---ef-core-with-aspnet-core-mvc-tutorial-8-of-10"></a>La gestion des conflits d’accès concurrentiel - Core EF avec le didacticiel d’ASP.NET MVC de base (8 sur 10)
 
@@ -277,7 +275,7 @@ Remplacez le code dans *Views/Departments/Create.cshtml* pour ajouter une option
 
 [!code-html[Main](intro/samples/cu/Views/Departments/Create.cshtml?highlight=32-34)]
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cette étape termine l’introduction à la gestion des conflits d’accès concurrentiel. Pour plus d’informations sur la façon de gérer l’accès concurrentiel dans EF Core, consultez [conflits d’accès concurrentiel](https://docs.microsoft.com/ef/core/saving/concurrency). Le didacticiel suivant montre comment implémenter l’héritage table par hiérarchie pour les entités Instructor et Student.
 
