@@ -130,6 +130,7 @@
 ## [Contrôleurs de test](xref:mvc/controllers/testing)
 ## [Débogage distant](/visualstudio/debugger/remote-debugging-azure)
 ## [Débogage d’instantané](/azure/application-insights/app-insights-snapshot-debugger)
+## [Débogage d’instantané dans Visual Studio](/visualstudio/debugger/debug-live-azure-applications)
 
 # [Accès aux données et stockage](data/index.md)
 ## [Bien démarrer avec les pages Razor et Entity Framework Core à l’aide de Visual Studio](xref:data/ef-rp/intro)
@@ -141,7 +142,7 @@
 ### [Ajouter Stockage Azure à l’aide des services connectés de Visual Studio](https://azure.microsoft.com/documentation/articles/vs-azure-tools-connected-services-storage/)
 ### [Bien démarrer avec le Stockage Blob et les Services connectés Visual Studio](https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-blobs/)
 ### [Bien démarrer avec le Stockage File d’attente et les Services connectés Visual Studio](https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-queues/)
-### [Mise en route avec le Stockage Table et les services connectés de Visual Studio](https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-tables/)
+### [Bien démarrer avec le Stockage Table et les services connectés de Visual Studio](https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-tables/)
 
 # [Développement côté client](xref:client-side/index)
 ## [Utiliser Gulp](xref:client-side/using-gulp)
