@@ -2,24 +2,22 @@
 title: Utilisation de SQL Server LocalDB
 author: rick-anderson
 description: Utilisation de SQL Server LocalDB avec une application MVC simple
-keywords: ASP.NET Core, SQL Server LocalDB, SQL Server, LocalDB
 ms.author: riande
 manager: wpickett
 ms.date: 03/07/2017
 ms.topic: get-started-article
-ms.assetid: ff8fd9b8-7c98-424d-8641-7524e23bf541
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/first-mvc-app/working-with-sql
-ms.openlocfilehash: 67894d05bfd44b0406d10cbbe30ddfdaf0d66636
-ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
+ms.openlocfilehash: 14b0f04ce904b34a03b3c5160e189e2e6d045734
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="working-with-sql-server-localdb"></a>Utilisation de SQL Server LocalDB
 
-De [Rick Anderson](https://twitter.com/RickAndMSFT)
+Par [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 L’objet `MvcMovieContext` gère la tâche de connexion à la base de données et de mappage d’objets `Movie` à des enregistrements de la base de données. Le contexte de base de données est inscrit auprès du conteneur [Injection de dépendances](xref:fundamentals/dependency-injection) dans la méthode `ConfigureServices` du fichier *Startup.cs* :
 

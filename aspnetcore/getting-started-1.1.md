@@ -2,20 +2,18 @@
 title: "Bien démarrer avec ASP.NET Core 1.1"
 author: rick-anderson
 description: "Didacticiel rapide qui crée et exécute une application Hello World simple à l’aide d’ASP.NET Core 1.1."
-keywords: "ASP.NET Core,didacticiel,bien démarrer"
 ms.author: riande
 manager: wpickett
 ms.date: 08/07/2017
 ms.topic: get-started-article
-ms.assetid: 73543e9d-d9d5-47d6-9664-17a9beea6cd3
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: getting-started-1.1
-ms.openlocfilehash: e8fd9ef60ebc1cff6ca0e03000ea50eebff0a9f9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7f178618508e1a1e9c49d8ace619b9f942998dae
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="getting-started-with-aspnet-core-11"></a>Bien démarrer avec ASP.NET Core 1.1
 

@@ -2,7 +2,6 @@
 title: "Ajout d’un nouveau champ à une page Razor"
 author: rick-anderson
 description: "Montre comment ajouter un nouveau champ à une page Razor avec Entity Framework Core"
-keywords: ASP.NET Core, Entity Framework Core, migrations
 ms.author: riande
 manager: wpickett
 ms.date: 08/07/2017
@@ -10,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: tutorials/razor-pages/new-field
-ms.openlocfilehash: 128b69513976a56104524bb803f2b8cb1daf1967
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cd804f127a32f0c6f9488b6bf7bf88be062335d0
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="adding-a-new-field-to-a-razor-page"></a>Ajout d’un nouveau champ à une page Razor
 
@@ -75,7 +74,7 @@ Consultez le [fichier SeedData.cs complet](https://github.com/aspnet/Docs/blob/m
 Générez la solution.
 
 <a name="pmc"></a> Dans le menu **Outils**, sélectionnez **Gestionnaire de package NuGet > Console du gestionnaire de package**.
-Dans la console du Gestionnaire de package, entrez les commandes suivantes :
+Dans la console du Gestionnaire de package, entrez les commandes suivantes :
 
 ```powershell
 Add-Migration Rating

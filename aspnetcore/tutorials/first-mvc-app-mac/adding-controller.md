@@ -2,20 +2,18 @@
 title: "Ajout d’un contrôleur à une application ASP.NET Core MVC"
 author: rick-anderson
 description: "Comment ajouter un contrôleur à une application ASP.NET MVC de base avec Visual Studio pour Mac"
-keywords: "ASP.NET Core, MVC, contrôleur"
 ms.author: riande
 manager: wpickett
 ms.date: 06/28/2017
 ms.topic: article
-ms.assetid: e04b6666-d0de-4d99-b78f-d6a0c4634a87
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/first-mvc-app-mac/adding-controller
-ms.openlocfilehash: 3a5a05d21844a30f2482841488dd7d92e5ba0475
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cb769dd53a0a58d585faeb02cc1d0fb4594c802d
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="adding-a-controller-to-an-aspnet-core-mvc-app-with-visual-studio-for-mac"></a>Ajout d’un contrôleur à une application ASP.NET Core MVC avec Visual Studio pour Mac
 
