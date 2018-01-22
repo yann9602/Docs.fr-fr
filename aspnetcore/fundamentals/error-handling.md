@@ -1,4 +1,4 @@
----
+﻿---
 title: Gestion des erreurs dans ASP.NET Core
 author: ardalis
 description: "Découvrez comment gérer les erreurs dans les applications ASP.NET Core."
@@ -30,7 +30,7 @@ Pour configurer une application pour afficher une page qui affiche des informati
 
 [!code-csharp[Main](error-handling/sample/Startup.cs?name=snippet_DevExceptionPage&highlight=7)]
 
-Put `UseDeveloperExceptionPage` avant tout intergiciel (middleware) que vous souhaitez intercepter les exceptions, telles que `app.UseMvc`.
+Placer `UseDeveloperExceptionPage` avant tout intergiciel (middleware) dont vous souhaitez intercepter les exceptions, telles que `app.UseMvc`.
 
 >[!WARNING]
 > Activer la page d’exception développeur **uniquement lorsque l’application est en cours d’exécution dans l’environnement de développement**. Vous ne souhaitez pas partager publiquement les informations sur les exceptions détaillées lors de l’exécution de l’application en production. [En savoir plus sur la configuration d’environnements](environments.md).
