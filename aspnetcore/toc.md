@@ -142,7 +142,7 @@
 ### [Ajouter Stockage Azure à l’aide des services connectés de Visual Studio](https://azure.microsoft.com/documentation/articles/vs-azure-tools-connected-services-storage/)
 ### [Bien démarrer avec le Stockage Blob et les Services connectés Visual Studio](https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-blobs/)
 ### [Bien démarrer avec le Stockage File d’attente et les Services connectés Visual Studio](https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-queues/)
-### [Bien démarrer avec le Stockage Table et les services connectés de Visual Studio](https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-tables/)
+### [Mise en route avec le Stockage Table et les services connectés de Visual Studio](https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-tables/)
 
 # [Développement côté client](xref:client-side/index)
 ## [Utiliser Gulp](xref:client-side/using-gulp)
@@ -205,6 +205,7 @@
 ### [Utiliser l’authentification par cookie sans Identity](xref:security/authentication/cookie)
 ### [Azure Active Directory](xref:security/authentication/azure-active-directory/index)
 #### [Intégrer Azure AD dans une application web ASP.NET Core](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-openidconnect-aspnetcore/)
+#### [Intégrer Azure AD B2C dans une application web ASP.NET Core orientée client](xref:security/authentication/azure-ad-b2c)
 #### [Appeler une API web ASP.NET Core à partir d’une application WPF via Azure AD](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-native-aspnetcore/)
 #### [Appeler une API web dans une application web ASP.NET Core via Azure AD](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore/)
 ### [Sécuriser les applications ASP.NET Core avec IdentityServer4](https://identityserver4.readthedocs.io/)
