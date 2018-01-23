@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2
 msc.type: authoredcontent
-ms.openlocfilehash: 7c563f566b8456b63ffe0a3c4876432c60a19e89
-ms.sourcegitcommit: 87168cdc409e7a7257f92a0f48f9c5ab320b5b28
+ms.openlocfilehash: 67ab1536b4a72abf8c0d3ed5aa0c48bc79a8fb5f
+ms.sourcegitcommit: 3d512ea991ac36dfd4c800b7d1f8a27bfc50635e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/23/2018
 ---
 <a name="attribute-routing-in-aspnet-web-api-2"></a>Routage d’attributs dans l’API Web ASP.NET 2
 ====================
@@ -68,7 +68,7 @@ Dans cet exemple, « 1 » est un numéro de commande, mais mappe « en attent
 `/orders/1`  
 `/orders/pending`
 
-**Types de paramètres multiples**
+**Plusieurs types de paramètres**
 
 Dans cet exemple, « 1 » est un numéro de commande, mais « 16/06/2013 » spécifie une date.
 

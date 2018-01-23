@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/advanced
-ms.openlocfilehash: ea83e5b17df80e5615dda49335247340d1cfb016
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: c5c06e61239c65cb1ff501a57777363a047a8db5
+ms.sourcegitcommit: f8ecf3d8f5b15f1e84ec86de3835b49ebe89fa1e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/23/2018
 ---
 # <a name="advanced-topics---ef-core-with-aspnet-core-mvc-tutorial-10-of-10"></a>Rubriques avancées - Core EF avec le didacticiel d’ASP.NET MVC de base (10 10)
 
@@ -169,7 +169,7 @@ _context.ChangeTracker.AutoDetectChangesEnabled = false;
 
 ## <a name="entity-framework-core-source-code-and-development-plans"></a>Entity Framework Core source code et le développement des plans
 
-Le code source pour Entity Framework Core est disponible à l’adresse [https://github.com/aspnet/EntityFrameworkCore](https://github.com/aspnet/EntityFrameworkCore). En plus de code source, vous pouvez obtenir les builds nocturnes, suivi des problèmes, spécifications de fonctionnalités, concevoir des notes de réunion, [la feuille de route pour le développement futur](https://github.com/aspnet/EntityFrameworkCore/wiki/Roadmap)et bien plus encore. Vous pouvez signaler des bogues, et vous pouvez contribuer à vos propres améliorations au code source EF.
+La source de l’Entity Framework Core est à [https://github.com/aspnet/EntityFrameworkCore](https://github.com/aspnet/EntityFrameworkCore). Le référentiel EF Core contient les builds nocturnes, suivi des problèmes, spécifications des fonctionnalités, notes, de la réunion de conception et le [la feuille de route pour le développement futur](https://github.com/aspnet/EntityFrameworkCore/wiki/Roadmap). Vous pouvez de fichiers ou rechercher des bogues et contribuer.
 
 Bien que le code source est ouvert, Entity Framework Core est entièrement pris en charge comme un produit Microsoft. L’équipe Microsoft Entity Framework conserve le contrôle sur lequel les contributions sont acceptées et teste toutes les modifications du code pour garantir la qualité de chaque version.
 
