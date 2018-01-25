@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: b88cd54040c02c977a83e20d7af7fda4fff969c1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3638c6779a0fcedaaa49623126b28ecf09a4954f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="migrating-an-existing-website-from-sql-membership-to-aspnet-identity"></a>Migration d’un site Web existant à partir de l’appartenance SQL pour ASP.NET Identity
 ====================
@@ -51,7 +51,7 @@ Pour ce didacticiel, nous allons prendre un modèle d’application web (Web For
 
 ### <a name="migrating-to-visual-studio-2013"></a>Migration vers Visual Studio 2013
 
-1. Installer Visual Studio Express 2013 pour le Web ou de Visual Studio 2013 avec le [dernières mises à jour](https://www.microsoft.com/en-us/download/details.aspx?id=44921).
+1. Installer Visual Studio Express 2013 pour le Web ou de Visual Studio 2013 avec le [dernières mises à jour](https://www.microsoft.com/download/details.aspx?id=44921).
 2. Ouvrez le projet ci-dessus dans votre version installée de Visual Studio. Si SQL Server Express n’est pas installé sur l’ordinateur, une invite s’affiche lorsque vous ouvrez le projet, étant donné que la chaîne de connexion utilise SQL Express. Vous pouvez choisir d’installer SQL Express comme contourner modification de la chaîne de connexion à la base de données locale. Pour cet article, nous allons le modifier à la base de données locale.
 3. Ouvrez le fichier web.config et modifier la chaîne de connexion. SQLExpess à v11.0 de (LocalDb). Supprimez ' User Instance = true' à partir de la chaîne de connexion.
 
@@ -89,7 +89,7 @@ Pour les classes d’identité ASP.NET fonctionne directement avec les données 
 | **IdentityUser** | **Type** | **IdentityRole** | **IdentityUserRole** | **IdentityUserLogin** | **IdentityUserClaim** |
 | --- | --- | --- | --- | --- | --- |
 | Id | chaîne | Id | RoleId | ProviderKey | Id |
-| Utilisateur | chaîne | Nom | ID d’utilisateur | ID d’utilisateur | ClaimType |
+| Utilisateur | chaîne | Name | UserId | UserId | ClaimType |
 | PasswordHash | chaîne |  |  | LoginProvider | ClaimValue |
 | SecurityStamp | chaîne |  |  |  | Utilisateur\_Id |
 | Messagerie | chaîne |  |  |  |  |
@@ -100,15 +100,15 @@ Pour les classes d’identité ASP.NET fonctionne directement avec les données 
 | LockoutEndDate | DateTime |  |  |  |  |
 | AccessFailedCount | int |  |  |  |  |
 
-Nous devons disposer des tables pour chacun de ces modèles avec des colonnes correspondant aux propriétés. Le mappage entre les classes et les tables est défini dans le `OnModelCreating` méthode de la `IdentityDBContext`. Il s’agit de la configuration de la méthode d’API fluent et peut trouver plus d’informations [ici](https://msdn.microsoft.com/en-us/data/jj591617.aspx). La configuration pour les classes est comme indiqué ci-dessous
+Nous devons disposer des tables pour chacun de ces modèles avec des colonnes correspondant aux propriétés. Le mappage entre les classes et les tables est défini dans le `OnModelCreating` méthode de la `IdentityDBContext`. Il s’agit de la configuration de la méthode d’API fluent et peut trouver plus d’informations [ici](https://msdn.microsoft.com/data/jj591617.aspx). La configuration pour les classes est comme indiqué ci-dessous
 
 | **Classe** | **Table** | **Clé primaire** | **Clé étrangère** |
 | --- | --- | --- | --- |
 | IdentityUser | AspnetUsers | Id |  |
 | IdentityRole | AspnetRoles | Id |  |
-| IdentityUserRole | AspnetUserRole | UserId + RoleId | Utilisateur\_Id -&gt;AspnetUsers RoleId -&gt;AspnetRoles |
-| IdentityUserLogin | AspnetUserLogins | ProviderKey + UserId + LoginProvider | UserId -&gt;AspnetUsers |
-| IdentityUserClaim | AspnetUserClaims | Id | Utilisateur\_Id -&gt;AspnetUsers |
+| IdentityUserRole | AspnetUserRole | UserId + RoleId | User\_Id-&gt;AspnetUsers RoleId-&gt;AspnetRoles |
+| IdentityUserLogin | AspnetUserLogins | ProviderKey + UserId + LoginProvider | UserId-&gt;AspnetUsers |
+| IdentityUserClaim | AspnetUserClaims | Id | User\_Id-&gt;AspnetUsers |
 
 Avec ces informations nous pouvons créer des instructions SQL pour créer des tables. Nous pouvons écrire chaque instruction individuellement ou générer la totalité du script à l’aide des commandes EntityFramework PowerShell que nous pouvons ensuite modifier en fonction des besoins. Pour ce faire, dans Visual Studio open le **Package Manager Console** à partir de la **vue** ou **outils** menu
 
@@ -122,7 +122,7 @@ Les informations utilisateur d’appartenance SQL avaient d’autres propriété
 
 [!code-sql[Main](migrating-an-existing-website-from-sql-membership-to-aspnet-identity/samples/sample1.sql)]
 
-Ensuite, nous avons besoin copier les informations existantes à partir de la base de données d’appartenance SQL aux tables nouvellement ajoutés pour l’identité. Cela est possible via SQL en copiant les données directement à partir d’une table vers une autre. Pour ajouter des données dans les lignes de table, nous utilisons le `INSERT INTO [Table]` construire. Pour copier à partir d’une autre table, nous pouvons utiliser le `INSERT INTO` instruction avec la `SELECT` instruction. Pour obtenir toutes les informations utilisateur que nous avons besoin pour interroger le *aspnet\_utilisateurs* et *aspnet\_appartenance* tables et copier les données à la *AspNetUsers*table. Nous utilisons le `INSERT INTO` et `SELECT` avec `JOIN` et `LEFT OUTER JOIN` instructions. Pour plus d’informations sur l’interrogation et la copie des données entre les tables, consultez [cela](https://technet.microsoft.com/en-us/library/ms190750%28v=sql.105%29.aspx) lien. En outre les tables AspnetUserLogins et AspnetUserClaims sont vides pour commencer car il n’existe aucune information de l’appartenance SQL qui correspond à ce par défaut. La seule information copiée est pour les utilisateurs et les rôles. Pour le projet créé dans les étapes précédentes, la requête SQL pour copier les informations dans la table users serait
+Ensuite, nous avons besoin copier les informations existantes à partir de la base de données d’appartenance SQL aux tables nouvellement ajoutés pour l’identité. Cela est possible via SQL en copiant les données directement à partir d’une table vers une autre. Pour ajouter des données dans les lignes de table, nous utilisons le `INSERT INTO [Table]` construire. Pour copier à partir d’une autre table, nous pouvons utiliser le `INSERT INTO` instruction avec la `SELECT` instruction. Pour obtenir toutes les informations utilisateur que nous avons besoin pour interroger le *aspnet\_utilisateurs* et *aspnet\_appartenance* tables et copier les données à la *AspNetUsers*table. Nous utilisons le `INSERT INTO` et `SELECT` avec `JOIN` et `LEFT OUTER JOIN` instructions. Pour plus d’informations sur l’interrogation et la copie des données entre les tables, consultez [cela](https://technet.microsoft.com/library/ms190750%28v=sql.105%29.aspx) lien. En outre les tables AspnetUserLogins et AspnetUserClaims sont vides pour commencer car il n’existe aucune information de l’appartenance SQL qui correspond à ce par défaut. La seule information copiée est pour les utilisateurs et les rôles. Pour le projet créé dans les étapes précédentes, la requête SQL pour copier les informations dans la table users serait
 
 [!code-sql[Main](migrating-an-existing-website-from-sql-membership-to-aspnet-identity/samples/sample2.sql)]
 
@@ -145,11 +145,11 @@ Ce fichier de script est spécifique à cet exemple. Pour les applications qui o
 
     Voici comment les informations contenues dans les tables d’appartenances SQL sont mappés vers le nouveau système d’identité.
 
-    ASPNET\_rôles--&gt; AspNetRoles
+    aspnet\_Roles --&gt; AspNetRoles
 
     ASP\_netUsers et asp\_netMembership--&gt; AspNetUsers
 
-    ASPNET\_UserInRoles--&gt; AspNetUserRoles
+    aspnet\_UserInRoles --&gt; AspNetUserRoles
 
     Comme expliqué dans la section ci-dessus, les tables AspNetUserClaims et AspNetUserLogins sont vides. Le champ 'Discriminateur' dans la table AspNetUser doit correspondre au nom de classe de modèle qui est défini comme une étape suivante. La colonne PasswordHash est également sous la forme ' mot de passe chiffré | salt du mot de passe | format de mot de passe '. Cela vous permet d’utiliser une logique de chiffrement d’appartenance SQL spéciale afin que vous puissiez réutiliser des anciens mots de passe. Dans, qui est expliquée plus loin dans l’article.
 

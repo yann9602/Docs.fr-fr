@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2
 msc.type: authoredcontent
-ms.openlocfilehash: 67ab1536b4a72abf8c0d3ed5aa0c48bc79a8fb5f
-ms.sourcegitcommit: 3d512ea991ac36dfd4c800b7d1f8a27bfc50635e
+ms.openlocfilehash: 173add73a150d3e13ae243d6548463da912dadee
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2018
+ms.lasthandoff: 01/24/2018
 ---
 <a name="attribute-routing-in-aspnet-web-api-2"></a>Routage d’attributs dans l’API Web ASP.NET 2
 ====================
@@ -261,7 +261,7 @@ Voici comment l’ordonnancement total est déterminé :
     3. Paramètres d’itinéraire sans contraintes.
     4. Segments de paramètre générique avec des contraintes.
     5. Segments de paramètre générique sans contrainte.
-3. Dans le cas d’égalité, les itinéraires sont classés par une comparaison de chaînes ordinale pas la casse ([OrdinalIgnoreCase](https://msdn.microsoft.com/en-us/library/system.stringcomparer.ordinalignorecase.aspx)) du modèle d’itinéraire.
+3. Dans le cas d’égalité, les itinéraires sont classés par une comparaison de chaînes ordinale pas la casse ([OrdinalIgnoreCase](https://msdn.microsoft.com/library/system.stringcomparer.ordinalignorecase.aspx)) du modèle d’itinéraire.
 
 Voici un exemple : Supposons que vous définissez le contrôleur suivant :
 

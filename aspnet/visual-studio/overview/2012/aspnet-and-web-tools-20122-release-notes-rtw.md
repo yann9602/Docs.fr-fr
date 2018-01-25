@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2012/aspnet-and-web-tools-20122-release-notes-rtw
 msc.type: content
-ms.openlocfilehash: b9abad56a5a5b9219f92cc5b96efee7250a97c55
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ab1642f1a3de298919aa9c6c1ddbd6bbb0cb99b5
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-and-web-tools-20122-release-notes"></a>Notes de version de ASP.NET et Web Tools 2012.2
 ====================
@@ -25,7 +25,7 @@ ms.lasthandoff: 11/10/2017
 
 - [Notes d’installation](#_Installation)
 - [Documentation](#_Documentation)
-- [Prise en charge](#_Support)
+- [Support](#_Support)
 - [Configuration logicielle requise](#_Software_Requirements)
 - [Nouvelles fonctionnalités dans ASP.NET et Web Tools 2012.2](#_New_Features_in)
 
@@ -152,7 +152,7 @@ Pour plus d’informations sur OData d’API Web ASP.NET, consultez [https://go.
 
 #### <a name="aspnet-web-api-tracing"></a>Suivi de l’API Web ASP.NET
 
-API Web ASP.NET Tracing intègre des données de suivi de votre API web avec le suivi de .NET. Il est maintenant activée par défaut dans le modèle de projet d’API Web. Données de suivi pour votre site web API est envoyé à la fenêtre Sortie et est rendu disponible via IntelliTrace. Le suivi d’API Web ASP.NET vous permet des informations de trace sur votre API Web lorsqu’il est hébergé dans Windows Azure grâce à une intégration [Diagnostics Windows Azure](https://msdn.microsoft.com/en-us/library/windowsazure/hh411529.aspx). Vous pouvez également installer et activer le suivi d’API Web ASP.NET dans les applications qui utilisent le package NuGet de traçage ASP.NET Web API ([http://www.nuget.org/packages/microsoft.aspnet.webapi.tracing](http://www.nuget.org/packages/microsoft.aspnet.webapi.tracing)).
+API Web ASP.NET Tracing intègre des données de suivi de votre API web avec le suivi de .NET. Il est maintenant activée par défaut dans le modèle de projet d’API Web. Données de suivi pour votre site web API est envoyé à la fenêtre Sortie et est rendu disponible via IntelliTrace. Le suivi d’API Web ASP.NET vous permet des informations de trace sur votre API Web lorsqu’il est hébergé dans Windows Azure grâce à une intégration [Diagnostics Windows Azure](https://msdn.microsoft.com/library/windowsazure/hh411529.aspx). Vous pouvez également installer et activer le suivi d’API Web ASP.NET dans les applications qui utilisent le package NuGet de traçage ASP.NET Web API ([http://www.nuget.org/packages/microsoft.aspnet.webapi.tracing](http://www.nuget.org/packages/microsoft.aspnet.webapi.tracing)).
 
 Pour plus d’informations sur la configuration et à l’aide d’ASP.NET Web API Tracing [https://go.microsoft.com/fwlink/?LinkID=269874](https://go.microsoft.com/fwlink/?LinkID=269874).
 
@@ -240,8 +240,8 @@ L’analyseur URI OData ne parvient pas à analyser correctement les littéraux 
 
 OData ne prend pas en charge les noms de propriétés de la casse dans les requêtes OData et le chemin d’accès odata. Consultez les éléments de travail :
 
-- [http://aspnetwebstack.codeplex.com/WorkItem/366](http://aspnetwebstack.codeplex.com/workitem/366)
-- [http://aspnetwebstack.codeplex.com/WorkItem/704](http://aspnetwebstack.codeplex.com/workitem/704)
+- [http://aspnetwebstack.codeplex.com/workitem/366](http://aspnetwebstack.codeplex.com/workitem/366)
+- [http://aspnetwebstack.codeplex.com/workitem/704](http://aspnetwebstack.codeplex.com/workitem/704)
 
 Si les utilisateurs disposent d’une casse différente sur le côté serveur et côté client javascript, il seront probablement rencontrer ce problème. Ce problème est inhérent dans le protocole odata. Toutefois, de nombreux utilisateurs signale ce problème. Pour le contourner, les utilisateurs doivent corriger leur cas de l’URL.
 
@@ -279,13 +279,13 @@ Référence de la solution de contournement [http://knockoutjs.com/documentation
 
 Fichier todo.model.js  
  fonction todolist(data), ajoutez suivantes :  
- **self.isSelected = ko.observable(false) ;**
+ **self.isSelected = ko.observable(false);**
 
 fonction todoList.prototype.addTodo, ajoutez le texte blacked suivant :  
- **self.isSelected(true) ;**  
- self.newTodoTitle (&quot;&quot;) ;
+ **self.isSelected(true);**  
+ self.newTodoTitle(&quot;&quot;);
 
 Index.cshtml, ajoutez le texte blacked suivant :  
  &lt;écran de lier aux données =&quot;soumettre : addTodo&quot;&gt;  
  &lt;entrée de classe =&quot;addTodo&quot; type =&quot;texte&quot; lier aux données =&quot;valeur : newTodoTitle, espace réservé : 'Type ici pour ajouter', blurOnEnter : la valeur est true, **hasfocus : isSelected**, événement : {flou : addTodo}&quot; /&gt;  
- &lt;/Form&gt;
+ &lt;/form&gt;

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/create_the_data_access_layer
 msc.type: authoredcontent
-ms.openlocfilehash: ebace10dc8a861ab38bd5c834c2225e3373f13fe
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 809609155b06c4632bd4f450082d84c432c7a46f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="create-the-data-access-layer"></a>Création de la couche d’accès aux données
 ====================
@@ -43,7 +43,7 @@ Ce didacticiel explique comment créer, accéder et passez en revue les données
 
 ## <a name="creating-the-data-models"></a>Création de modèles de données
 
-[Entity Framework](https://msdn.microsoft.com/en-us/data/aa937723) est une infrastructure de mappage relationnel objet (ORM). Il vous permet de travailler avec des données relationnelles en tant qu’objets, qui élimine la plupart du code d’accès aux données que vous devrez généralement écrire. À l’aide d’Entity Framework, vous pouvez émettre des requêtes à l’aide de [LINQ](https://msdn.microsoft.com/en-us/library/bb397926.aspx), puis récupérer et manipuler des données en tant qu’objets fortement typés. LINQ fournit des modèles pour l’interrogation et la mise à jour des données. Permet de vous concentrer sur la création du reste de votre application, plutôt que de vous concentrer sur les données de principes de base de l’accès à l’aide d’Entity Framework. Plus loin dans cette série de didacticiels, nous allons vous montrer comment utiliser les données pour remplir les requêtes de navigation et de produit.
+[Entity Framework](https://msdn.microsoft.com/data/aa937723) est une infrastructure de mappage relationnel objet (ORM). Il vous permet de travailler avec des données relationnelles en tant qu’objets, qui élimine la plupart du code d’accès aux données que vous devrez généralement écrire. À l’aide d’Entity Framework, vous pouvez émettre des requêtes à l’aide de [LINQ](https://msdn.microsoft.com/library/bb397926.aspx), puis récupérer et manipuler des données en tant qu’objets fortement typés. LINQ fournit des modèles pour l’interrogation et la mise à jour des données. Permet de vous concentrer sur la création du reste de votre application, plutôt que de vous concentrer sur les données de principes de base de l’accès à l’aide d’Entity Framework. Plus loin dans cette série de didacticiels, nous allons vous montrer comment utiliser les données pour remplir les requêtes de navigation et de produit.
 
 Entity Framework prend en charge un paradigme de développement appelé *Code First*. Code tout d’abord vous permet de définir vos modèles de données à l’aide de classes. Une classe est une construction qui vous permet de créer vos propres types personnalisés en regroupant des variables de types, méthodes et événements. Vous pouvez mapper les classes à une base de données ou les utiliser pour générer une base de données. Dans ce didacticiel, vous allez créer les modèles de données en écrivant des classes de modèle de données. Ensuite, vous allez permettent Entity Framework de créer la base de données à la volée à partir de ces nouvelles classes.
 
@@ -173,7 +173,7 @@ Pour vous assurer que toutes les classes et les modifications apportées à votr
 
 Si vous rencontrez une erreur, vérifiez à nouveau les étapes ci-dessus. Les informations contenues dans le **sortie** fenêtre indique quel fichier a un problème où une modification est nécessaire dans le fichier. Ces informations vous permettront de déterminer quelle partie de la procédure ci-dessus doivent être examinés et fixe dans votre projet.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Dans ce didacticiel de la série vous avez créé le modèle de données, ainsi, d’ajouter le code qui sera utilisé pour initialiser et de la base de données de valeur initiale. Vous avez également configuré l’application pour utiliser les modèles de données lorsque l’application est exécutée.
 
@@ -181,11 +181,11 @@ Dans l’étape suivante du didacticiel, vous allez mettre à jour l’interface
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-[Présentation d’Entity Framework](https://msdn.microsoft.com/en-us/library/bb399567.aspx)   
-[Guide du débutant pour ADO.NET Entity Framework](https://msdn.microsoft.com/en-us/data/ee712907)   
+[Présentation d’Entity Framework](https://msdn.microsoft.com/library/bb399567.aspx)   
+[Guide du débutant pour ADO.NET Entity Framework](https://msdn.microsoft.com/data/ee712907)   
 [Premier développement avec Entity Framework de code](http://www.msteched.com/2010/Europe/DEV212) (vidéo)   
-[Code première API Fluent relations](https://msdn.microsoft.com/en-us/data/hh134698)   
-[Code premier des Annotations de données](https://msdn.microsoft.com/en-us/data/gg193958)  
+[Code première API Fluent relations](https://msdn.microsoft.com/data/hh134698)   
+[Code premier des Annotations de données](https://msdn.microsoft.com/data/gg193958)  
 [Améliorations de productivité pour Entity Framework](https://blogs.msdn.com/b/efdesign/archive/2010/06/21/productivity-improvements-for-the-entity-framework.aspx?wa=wsignin1.0)
 
 >[!div class="step-by-step"]

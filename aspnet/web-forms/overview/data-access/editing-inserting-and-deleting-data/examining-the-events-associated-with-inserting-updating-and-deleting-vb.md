@@ -2,7 +2,7 @@
 uid: web-forms/overview/data-access/editing-inserting-and-deleting-data/examining-the-events-associated-with-inserting-updating-and-deleting-vb
 title: "Examiner les événements associés d’insertion, de mise à jour et de suppression (VB) | Documents Microsoft"
 author: rick-anderson
-description: "Dans ce didacticiel, que nous allons aborder l’utilisation des événements qui se produisent avant, pendant et après une instruction insert, update ou delete de l’opération d’un contrôle Web de données ASP.NET. W...."
+description: "Dans ce didacticiel, que nous allons aborder l’utilisation des événements qui se produisent avant, pendant et après une instruction insert, update ou delete de l’opération d’un contrôle Web de données ASP.NET. W..."
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/17/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/examining-the-events-associated-with-inserting-updating-and-deleting-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 5daa9d1fe63e4ad8ec8c667f84de00fadd77fefa
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 88f6beb3f3514c6a9784d4cb936a5b779ce75ae1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="examining-the-events-associated-with-inserting-updating-and-deleting-vb"></a>Examiner les événements liés à l’insertion, de mise à jour et de suppression (VB)
 ====================
@@ -162,12 +162,12 @@ Avec cette modification, la valeur de la `UnitPrice` affichées dans le ligne es
 
 Toutefois, la mise à jour un produit avec le symbole monétaire dans la zone de texte tel que $ 19 h 00 lève une `FormatException`. Lorsque le contrôle GridView tente d’assigner les valeurs fournies par l’utilisateur à l’ObjectDataSource `UpdateParameters` collection, il est impossible de convertir le `UnitPrice` de chaîne « 19 h 00 » dans le `Decimal` requis par le paramètre (voir Figure 11). Pour résoudre ce problème, nous pouvons créer un gestionnaire d’événements pour le contrôle du GridView `RowUpdating` événements et l’analyse fournie par l’utilisateur `UnitPrice` comme un format monétaire `Decimal`.
 
-Du contrôle GridView `RowUpdating` événement accepte comme deuxième paramètre, un objet de type [GridViewUpdateEventArgs](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridviewupdateeventargs(VS.80).aspx), qui inclut un `NewValues` dictionnaire en tant qu’une de ses propriétés qui contient les valeurs fournies par l’utilisateur est prêts à être attribué à l’ObjectDataSource `UpdateParameters` collection. Nous pouvons remplacer existants `UnitPrice` valeur dans le `NewValues` collection avec une valeur décimale analysée utilisant le format monétaire avec les lignes suivantes du code dans le `RowUpdating` Gestionnaire d’événements :
+Du contrôle GridView `RowUpdating` événement accepte comme deuxième paramètre, un objet de type [GridViewUpdateEventArgs](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridviewupdateeventargs(VS.80).aspx), qui inclut un `NewValues` dictionnaire en tant qu’une de ses propriétés qui contient les valeurs fournies par l’utilisateur est prêts à être attribué à l’ObjectDataSource `UpdateParameters` collection. Nous pouvons remplacer existants `UnitPrice` valeur dans le `NewValues` collection avec une valeur décimale analysée utilisant le format monétaire avec les lignes suivantes du code dans le `RowUpdating` Gestionnaire d’événements :
 
 
 [!code-vb[Main](examining-the-events-associated-with-inserting-updating-and-deleting-vb/samples/sample4.vb)]
 
-Si l’utilisateur a fourni un `UnitPrice` valeur (par exemple, « $ 19 h 00 »), cette valeur est remplacée par la valeur décimale calculée par [Decimal.Parse](https://msdn.microsoft.com/en-us/library/system.decimal.parse(VS.80).aspx), l’analyse de la valeur sous forme de devise. Cette analyse correctement la virgule décimale dans le cas des symboles monétaires, des virgules, décimal et ainsi de suite et utilise le [énumération NumberStyles](https://msdn.microsoft.com/en-US/library/system.globalization.numberstyles(VS.80).aspx) dans les [System.Globalization](https://msdn.microsoft.com/en-US/library/abeh092z(VS.80).aspx) espace de noms.
+Si l’utilisateur a fourni un `UnitPrice` valeur (par exemple, « $ 19 h 00 »), cette valeur est remplacée par la valeur décimale calculée par [Decimal.Parse](https://msdn.microsoft.com/library/system.decimal.parse(VS.80).aspx), l’analyse de la valeur sous forme de devise. Cette analyse correctement la virgule décimale dans le cas des symboles monétaires, des virgules, décimal et ainsi de suite et utilise le [énumération NumberStyles](https://msdn.microsoft.com/library/system.globalization.numberstyles(VS.80).aspx) dans les [System.Globalization](https://msdn.microsoft.com/library/abeh092z(VS.80).aspx) espace de noms.
 
 Figure 11 illustre à la fois le problème causé par les symboles monétaires dans fournie par l’utilisateur `UnitPrice`, ainsi que de la façon de GridView `RowUpdating` Gestionnaire d’événements peut être utilisé pour analyser correctement ce type d’entrée.
 
@@ -216,10 +216,10 @@ Si un utilisateur tente d’enregistrer un produit sans spécifier un prix, la m
 
 Jusqu'à présent, nous avons vu comment utiliser le contrôle du GridView `RowUpdating` événement pour modifier par programme les valeurs de paramètre affectées à l’ObjectDataSource `UpdateParameters` collection ainsi que la manière d’annuler la mise à jour de traiter complètement. Ces concepts s’appliquent aux contrôles DetailsView et FormView et s’appliquent également à l’insertion et la suppression.
 
-Ces tâches peuvent également être effectuées au niveau de ObjectDataSource via les gestionnaires d’événements pour son `Inserting`, `Updating`, et `Deleting` événements. Ces événements se déclenche avant l’appel de la méthode associée de l’objet sous-jacent et fournissent une opportunité de dernière chance de modifier la collection de paramètres d’entrée ou d’annuler l’opération ferme. Les gestionnaires d’événements pour ces trois événements sont passés à un objet de type [ObjectDataSourceMethodEventArgs](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.objectdatasourcemethodeventargs(VS.80).aspx) qui possède deux propriétés intéressantes :
+Ces tâches peuvent également être effectuées au niveau de ObjectDataSource via les gestionnaires d’événements pour son `Inserting`, `Updating`, et `Deleting` événements. Ces événements se déclenche avant l’appel de la méthode associée de l’objet sous-jacent et fournissent une opportunité de dernière chance de modifier la collection de paramètres d’entrée ou d’annuler l’opération ferme. Les gestionnaires d’événements pour ces trois événements sont passés à un objet de type [ObjectDataSourceMethodEventArgs](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasourcemethodeventargs(VS.80).aspx) qui possède deux propriétés intéressantes :
 
-- [Annuler](https://msdn.microsoft.com/en-US/library/system.componentmodel.canceleventargs.cancel(VS.80).aspx), qui, si la valeur `True`, annule l’opération en cours d’exécution
-- [InputParameters](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.objectdatasourcemethodeventargs.inputparameters(VS.80).aspx), qui est la collection de `InsertParameters`, `UpdateParameters`, ou `DeleteParameters`, selon si le Gestionnaire d’événements pour le `Inserting`, `Updating`, ou `Deleting` événement
+- [Annuler](https://msdn.microsoft.com/library/system.componentmodel.canceleventargs.cancel(VS.80).aspx), qui, si la valeur `True`, annule l’opération en cours d’exécution
+- [InputParameters](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasourcemethodeventargs.inputparameters(VS.80).aspx), qui est la collection de `InsertParameters`, `UpdateParameters`, ou `DeleteParameters`, selon si le Gestionnaire d’événements pour le `Inserting`, `Updating`, ou `Deleting` événement
 
 Pour illustrer l’utilisation avec les valeurs de paramètre au niveau de l’ObjectDataSource, nous allons inclure un contrôle DetailsView dans notre page qui permet aux utilisateurs d’ajouter un nouveau produit. Ce contrôle DetailsView permet de fournir une interface pour ajouter rapidement un nouveau produit à la base de données. Pour conserver une interface utilisateur cohérente lors de l’ajout d’un nouveau produit permet d’autoriser l’utilisateur à entrer uniquement des valeurs pour le `ProductName` et `UnitPrice` champs. Par défaut, ces valeurs ne sont pas fournies dans l’interface de l’insertion du DetailsView seront fixés à un `NULL` de base de données de valeur. Toutefois, nous pouvons utiliser l’ObjectDataSource `Inserting` événements d’injecter des valeurs par défaut différentes, comme nous le verrons dans quelques instants.
 
@@ -321,7 +321,7 @@ Cette fois lors de l’ajout d’un nouveau produit (par exemple, Soda Acme), le
 **Figure 20**: nouveaux produits maintenant avoir leurs `CategoryID` et `SupplierID` la valeur 1 ([cliquez pour afficher l’image en taille réelle](examining-the-events-associated-with-inserting-updating-and-deleting-vb/_static/image58.png))
 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Lors de la modification, insertion et la suppression de processus, à la fois le données Web et le contrôle ObjectDataSource parcourez un nombre d’événements préalables- et post-niveau. Dans ce didacticiel, nous examiner les événements de niveau préalable et vu comment les utiliser pour personnaliser les paramètres d’entrée ou d’annuler l’opération de modification de données entièrement à la fois le données et événements contrôle Web ObjectDataSource. Dans l’étape suivante du didacticiel, nous allons examiner la création et l’utilisation des gestionnaires d’événements pour les événements post-niveau.
 

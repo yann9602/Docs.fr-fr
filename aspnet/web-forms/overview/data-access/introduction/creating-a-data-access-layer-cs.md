@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/introduction/creating-a-data-access-layer-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c610f84cfb82f38f9c67b757aa341c7a1497369c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 927b2490b5c539a79bb9939b88942499b23cc464
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-a-data-access-layer-c"></a>Création d’une couche d’accès aux données (c#)
 ====================
@@ -79,17 +79,17 @@ Tout le code qui est spécifique à la source de données sous-jacente telles qu
 
 - **GetCategories(),** qui retourne des informations sur toutes les catégories
 - **GetProducts()**, qui retourne des informations sur tous les produits
-- **GetProductsByCategoryID (*categoryID*) **, qui retourne tous les produits qui appartiennent à une catégorie spécifiée
-- **GetProductByProductID (*productID*) **, qui retourne des informations sur un produit spécifique
+- **GetProductsByCategoryID (*categoryID*)**, qui retourne tous les produits qui appartiennent à une catégorie spécifiée
+- **GetProductByProductID (*productID*)**, qui retourne des informations sur un produit spécifique
 
 Ces méthodes, lorsqu’elle est appelée, seront se connecter à la base de données, exécuter une requête appropriée et retourner les résultats. Comment nous retourner ces résultats est important. Ces méthodes peuvent simplement retourner un jeu de données ou d’un DataReader remplie par la requête de base de données, mais dans l’idéal, ces résultats doivent être retournés à l’aide de *objets fortement typés*. Un objet fortement typé est dont le schéma est fortement défini au moment de la compilation, alors que l’inverse, un objet faiblement typé, un dont le schéma n’est pas connu jusqu'à l’exécution.
 
-Par exemple, le DataReader et le jeu de données (par défaut) sont des objets de faiblement typée, car leur schéma est défini par les colonnes retournées par la requête de base de données utilisée pour les remplir. Pour accéder à une colonne particulière à partir d’un DataTable faiblement typée que nous devons utiliser la syntaxe telle que :   ***DataTable*. Lignes [*index*] [«*columnName*»]**. La table de données de typage lâche dans cet exemple est exposée par le fait que nous avons besoin d’accéder au nom de colonne à l’aide d’une chaîne ou un index ordinal. Un DataTable fortement typée, en revanche, aura chacune de ses colonnes implémentés en tant que propriétés, résultant dans le code qui ressemble à :   ***DataTable*. Lignes [*index*].* nom de colonne***.
+Par exemple, le DataReader et le jeu de données (par défaut) sont des objets de faiblement typée, car leur schéma est défini par les colonnes retournées par la requête de base de données utilisée pour les remplir. Pour accéder à une colonne particulière à partir d’un DataTable faiblement typée, nous devons utiliser une syntaxe comme : ***DataTable*. Lignes [*index*] [«*columnName * »]**. La table de données de typage lâche dans cet exemple est exposée par le fait que nous avons besoin d’accéder au nom de colonne à l’aide d’une chaîne ou un index ordinal. Un DataTable fortement typée, en revanche, aura chacune de ses colonnes implémentés en tant que propriétés, résultant dans le code qui ressemble à : ***DataTable*. Lignes [*index*].* nom de colonne***.
 
 Pour retourner des objets fortement typés, les développeurs peuvent créer leurs propres objets métier personnalisée ou utiliser des DataSets typés. Un objet métier est implémenté par le développeur comme une classe dont les propriétés reflètent généralement les colonnes de la table sous-jacente de la base de données l’objet métier représente. Un DataSet typé est une classe générée automatiquement par Visual Studio basé sur un schéma de base de données et dont les membres sont fortement typées en fonction de ce schéma. Le DataSet typé elle-même se compose de classes qui étendent les classes DataRow, DataTable et DataSet ADO.NET. En plus des tables de données fortement typées, typés désormais également inclure des TableAdapters, qui sont des classes avec des méthodes pour remplir les tables de données du jeu de données et la propagation des modifications dans les tables de données à la base de données.
 
 > [!NOTE]
-> Pour plus d’informations sur les avantages et inconvénients de l’utilisation de DataSets typés par rapport à des objets métier personnalisées, reportez-vous à [composants de conception de la couche données et passer des données via](https://msdn.microsoft.com/en-us/library/ms978496.aspx).
+> Pour plus d’informations sur les avantages et inconvénients de l’utilisation de DataSets typés par rapport à des objets métier personnalisées, reportez-vous à [composants de conception de la couche données et passer des données via](https://msdn.microsoft.com/library/ms978496.aspx).
 
 
 Nous allons utiliser des DataSets fortement typés d’architecture des ces didacticiels. La figure 3 illustre le flux de travail entre les différentes couches d’une application qui utilise des DataSets typés.
@@ -114,7 +114,7 @@ Après avoir cliqué sur Ajouter, lorsque vous êtes invité à ajouter le jeu d
 
 Un DataSet typé sert d’une collection fortement typée de données ; Il est composé d’instances de DataTable fortement typée, chacun d’eux est à son tour composé d’instances de DataRow fortement typée. Nous allons créer une table de données fortement typées pour chacune des tables de base de données sous-jacentes que nous devons utiliser dans cette série de didacticiels. Commençons par la création d’un DataTable pour le **produits** table.
 
-Gardez à l’esprit que les tables de données fortement typées n’incluent pas toutes les informations sur la façon d’accéder aux données à partir de leur table de base de données sous-jacente. Afin de récupérer les données pour remplir le DataTable, nous utilisons une classe TableAdapter, qui fonctionne comme la couche d’accès aux données. Pour notre **produits** DataTable, le TableAdapter contiendra les méthodes **GetProducts()**,  **GetProductByCategoryID (*categoryID*) **, et ainsi de suite que nous allons appeler à partir de la couche de présentation. Le DataTable consiste à servir les objets fortement typé utilisés pour transmettre des données entre les couches.
+Gardez à l’esprit que les tables de données fortement typées n’incluent pas toutes les informations sur la façon d’accéder aux données à partir de leur table de base de données sous-jacente. Afin de récupérer les données pour remplir le DataTable, nous utilisons une classe TableAdapter, qui fonctionne comme la couche d’accès aux données. Pour notre **produits** DataTable, le TableAdapter contiendra les méthodes **GetProducts()**, **GetProductByCategoryID (*categoryID*)**, et ainsi de suite que nous allons appeler à partir de la couche de présentation. Le DataTable consiste à servir les objets fortement typé utilisés pour transmettre des données entre les couches.
 
 L’Assistant Configuration de TableAdapter commence par vous invitant à sélectionner la base de données à utiliser. La liste déroulante affiche les bases de données dans l’Explorateur de serveurs. Si vous n’avez pas ajouté à la base de données Northwind à l’Explorateur de serveurs, vous pouvez cliquer sur le bouton de nouvelle connexion pour l’instant à le faire.
 
@@ -217,7 +217,7 @@ Cet exemple requis que nous écrivons trois lignes de code dans la page de notre
 
 À ce stade notre **ProductsTableAdapter** classe a, mais une seule méthode, **GetProducts()**, qui retourne tous les produits dans la base de données. S’il est absolument utile de pouvoir travailler avec tous les produits, voici les heures lorsque nous vous souhaitez récupérer des informations sur un produit spécifique ou tous les produits qui appartiennent à une catégorie particulière. Pour ajouter ces fonctionnalités à notre couche d’accès aux données, nous pouvons ajouter des méthodes paramétrables au TableAdapter.
 
-Nous allons ajouter le  **GetProductsByCategoryID (*categoryID*) ** méthode. Pour ajouter une nouvelle méthode à la couche DAL, revenez au Concepteur de DataSet, cliquez dans le **ProductsTableAdapter** section et choisissez Ajouter une requête.
+Nous allons ajouter le **GetProductsByCategoryID (*categoryID*)** (méthode). Pour ajouter une nouvelle méthode à la couche DAL, revenez au Concepteur de DataSet, cliquez dans le **ProductsTableAdapter** section et choisissez Ajouter une requête.
 
 
 ![Avec le bouton droit sur le TableAdapter et choisissez Ajouter une requête](creating-a-data-access-layer-cs/_static/image38.png)
@@ -241,7 +241,7 @@ L’étape suivante consiste à définir la requête SQL utilisée pour accéder
 **Figure 16**: entrez une requête pour retourner uniquement les produits dans une catégorie spécifiée ([cliquez pour afficher l’image en taille réelle](creating-a-data-access-layer-cs/_static/image44.png))
 
 
-Dans la dernière étape que nous pouvons choisir les modèles à utiliser, ainsi que de personnaliser les noms des méthodes générées d’accès aux données. Pour le motif de remplissage, nous allons modifier le nom à **FillByCategoryID** et pour le retour d’un DataTable retour modèle (le  **obtenir*X*** méthodes), nous allons utiliser  **GetProductsByCategoryID**.
+Dans la dernière étape que nous pouvons choisir les modèles à utiliser, ainsi que de personnaliser les noms des méthodes générées d’accès aux données. Pour le motif de remplissage, nous allons modifier le nom à **FillByCategoryID** et pour le retour d’un DataTable retour modèle (le **obtenir * X*** méthodes), nous allons utiliser **GetProductsByCategoryID**.
 
 
 [![Choisissez les noms pour les méthodes TableAdapter](creating-a-data-access-layer-cs/_static/image46.png)](creating-a-data-access-layer-cs/_static/image45.png)
@@ -257,7 +257,7 @@ Après la fin de l’Assistant, le Concepteur de DataSet inclut les nouvelles m�
 **La figure 18**: le produits peut maintenant être interrogées par catégorie
 
 
-Prenez un moment pour ajouter un  **GetProductByProductID (*productID*) ** méthode à l’aide de la même technique.
+Prenez un moment pour ajouter un **GetProductByProductID (*productID*)** méthode à l’aide de la même technique.
 
 Ces requêtes paramétrables peuvent être testées directement depuis le Concepteur de DataSet. Avec le bouton droit sur la méthode du TableAdapter et choisissez les données d’aperçu. Ensuite, entrez les valeurs à utiliser pour les paramètres et cliquez sur Aperçu.
 
@@ -267,7 +267,7 @@ Ces requêtes paramétrables peuvent être testées directement depuis le Concep
 **Figure 19**: les produits appartenant à la catégorie boissons sont affichés ([cliquez pour afficher l’image en taille réelle](creating-a-data-access-layer-cs/_static/image51.png))
 
 
-Avec la  **GetProductsByCategoryID (*categoryID*) ** méthode dans notre DAL, nous pouvons maintenant créer une page ASP.NET qui affiche uniquement les produits dans une catégorie spécifiée. L’exemple suivant affiche tous les produits qui se trouvent dans la catégorie des boissons, et qui ont un **CategoryID** 1.
+Avec la **GetProductsByCategoryID (*categoryID*)** méthode dans notre DAL, nous pouvons maintenant créer une page ASP.NET qui affiche uniquement les produits dans une catégorie spécifiée. L’exemple suivant affiche tous les produits qui se trouvent dans la catégorie des boissons, et qui ont un **CategoryID** 1.
 
 Beverages.ASP
 
@@ -293,7 +293,7 @@ Il existe deux modèles couramment utilisés pour l’insertion, mise à jour et
 **Figure 21**: insérer chaque mise à jour et supprimer la demande est envoyée à la base de données immédiatement ([cliquez pour afficher l’image en taille réelle](creating-a-data-access-layer-cs/_static/image57.png))
 
 
-Autres modèles, désignées en tant que le lot de mise à jour de modèle, est mise à jour d’un DataSet, DataTable ou collection de DataRows dans un appel de méthode ensemble. Avec ce modèle un développeur supprime, insère, modifie la DataRows dans un DataTable et transmet ensuite ces DataRows ou un DataTable dans une méthode de mise à jour. Puis cette méthode énumère les DataRows passé, détermine si elles avez été modifiés, ajoutés ou supprimés (par le biais de DataRow [propriété RowState](https://msdn.microsoft.com/en-us/library/system.data.datarow.rowstate.aspx) valeur) et émet la demande de base de données appropriée pour chaque enregistrement.
+Autres modèles, désignées en tant que le lot de mise à jour de modèle, est mise à jour d’un DataSet, DataTable ou collection de DataRows dans un appel de méthode ensemble. Avec ce modèle un développeur supprime, insère, modifie la DataRows dans un DataTable et transmet ensuite ces DataRows ou un DataTable dans une méthode de mise à jour. Puis cette méthode énumère les DataRows passé, détermine si elles avez été modifiés, ajoutés ou supprimés (par le biais de DataRow [propriété RowState](https://msdn.microsoft.com/library/system.data.datarow.rowstate.aspx) valeur) et émet la demande de base de données appropriée pour chaque enregistrement.
 
 
 [![Toutes les modifications sont synchronisées avec la base de données lorsque la méthode de mise à jour est appelée.](creating-a-data-access-layer-cs/_static/image59.png)](creating-a-data-access-layer-cs/_static/image58.png)
@@ -339,7 +339,7 @@ Pour créer une telle méthode personnalisée, revenez dans le Concepteur de Dat
 **Figure 25**: créer une méthode pour ajouter une nouvelle ligne à la **produits** Table ([cliquez pour afficher l’image en taille réelle](creating-a-data-access-layer-cs/_static/image69.png))
 
 
-Dans l’écran suivant le **InsertCommand**de **CommandText** s’affiche. Augmenter cette requête en ajoutant des **sélectionner une étendue\_Identity() ne** à la fin de la requête, qui retourne la dernière valeur identity insérée dans une **identité** colonne dans la même portée. (Consultez la [documentation technique](https://msdn.microsoft.com/en-us/library/ms190315.aspx) pour plus d’informations sur **étendue\_Identity() ne** et la raison pour laquelle vous souhaitez probablement [utiliser étendue\_Identity() n’à la place de @ @IDENTITY](http://weblogs.sqlteam.com/travisl/archive/2003/10/29/405.aspx).) Assurez-vous que vous mettez fin à la **insérer** instruction par un point-virgule avant d’ajouter le **sélectionnez** instruction.
+Dans l’écran suivant le **InsertCommand**de **CommandText** s’affiche. Augmenter cette requête en ajoutant des **sélectionner une étendue\_Identity() ne** à la fin de la requête, qui retourne la dernière valeur identity insérée dans une **identité** colonne dans la même portée. (Consultez la [documentation technique](https://msdn.microsoft.com/library/ms190315.aspx) pour plus d’informations sur **étendue\_Identity() ne** et la raison pour laquelle vous souhaitez probablement [utiliser étendue\_Identity() n’à la place de @ @IDENTITY](http://weblogs.sqlteam.com/travisl/archive/2003/10/29/405.aspx).) Assurez-vous que vous mettez fin à la **insérer** instruction par un point-virgule avant d’ajouter le **sélectionnez** instruction.
 
 
 [![Augmenter la requête pour retourner la valeur SCOPE_IDENTITY()](creating-a-data-access-layer-cs/_static/image71.png)](creating-a-data-access-layer-cs/_static/image70.png)
@@ -391,7 +391,7 @@ Après la mise à jour la **GetProducts()** méthode à utiliser cette nouvelle 
 **La figure 30**: le **produits** DataTable présente deux nouvelles colonnes
 
 
-Prenez un moment pour mettre à jour le **sélectionnez** clause dans la  **GetProductsByCategoryID (*categoryID*) ** méthode ainsi.
+Prenez un moment pour mettre à jour le **sélectionnez** clause dans la **GetProductsByCategoryID (*categoryID*)** méthode ainsi.
 
 Si vous mettez à jour le **GetProducts()** **sélectionnez** à l’aide de **joindre** syntaxe le Concepteur de DataSet ne pourrez pas générer automatiquement les méthodes d’insertion, de mise à jour et de suppression les données de base de données à l’aide de la base de données dirigent de modèle. Au lieu de cela, vous devrez créer manuellement les beaucoup comme nous l’avons fait avec la **InsertProduct** méthode précédemment dans ce didacticiel. En outre, vous devrez manuellement fournissent la **InsertCommand**, **UpdateCommand**, et **DeleteCommand** valeurs de propriété si vous souhaitez utiliser le lot de mise à jour du modèle.
 
@@ -399,7 +399,7 @@ Si vous mettez à jour le **GetProducts()** **sélectionnez** à l’aide de **j
 
 Jusqu'à présent, nous avons étudié uniquement fonctionne avec un TableAdapter unique pour une table de base de données unique. Toutefois, la base de données Northwind contient plusieurs tables associées que nous aurons besoin pour travailler avec dans notre application web. Un DataSet typé peut contenir plusieurs liés DataTables. Par conséquent, pour terminer notre DAL, nous devons ajouter des tables de données pour les autres tables, que nous utiliserons dans ces didacticiels. Pour ajouter un nouveau TableAdapter à un DataSet typé, ouvrez le Concepteur de DataSet, avec le bouton droit dans le concepteur et choisissez Ajouter / TableAdapter. Cela créera un nouveau DataTable et TableAdapter et vous guident tout au long de l’Assistant, que nous avons examiné précédemment dans ce didacticiel.
 
-Prenez quelques minutes pour créer des TableAdapters et les requêtes suivantes d’à l’aide des méthodes suivantes. Notez que les requêtes dans le **ProductsTableAdapter** inclure de sous-requêtes pour saisir les noms de catégorie et le fournisseur de chaque produit. En outre, si vous avez effectué, vous avez déjà ajouté le **ProductsTableAdapter** de classe **GetProducts()** et  **GetProductsByCategoryID (*categoryID*) ** méthodes.
+Prenez quelques minutes pour créer des TableAdapters et les requêtes suivantes d’à l’aide des méthodes suivantes. Notez que les requêtes dans le **ProductsTableAdapter** inclure de sous-requêtes pour saisir les noms de catégorie et le fournisseur de chaque produit. En outre, si vous avez effectué, vous avez déjà ajouté le **ProductsTableAdapter** de classe **GetProducts()** et **GetProductsByCategoryID (*categoryID* )** méthodes.
 
 - **ProductsTableAdapter**
 
@@ -509,7 +509,7 @@ SuppliersAndProducts.aspx.cs
 **Figure 35**: nom de la société du fournisseur est répertorié dans la colonne de gauche, leurs produits dans la droite ([cliquez pour afficher l’image en taille réelle](creating-a-data-access-layer-cs/_static/image93.png))
 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Lorsque la création d’une application web de création de la couche DAL doit être une de vos premières étapes à suivre avant de commencer la création de la couche de présentation. Avec Visual Studio, la création d’une DAL basée sur les DataSets typés est une tâche qui peut être accomplie en 10 à 15 minutes sans écrire une ligne de code. Les didacticiels progresser seront appuiera sur cette couche DAL. Dans le [didacticiel suivant](creating-a-business-logic-layer-cs.md) nous allons définir un certain nombre de règles d’entreprise et voir comment les implémenter dans une couche de logique métier distincts.
 
@@ -520,18 +520,18 @@ Bonne programmation !
 Pour plus d’informations sur les sujets abordés dans ce didacticiel, consultez les ressources suivantes :
 
 - [Création de la couche DAL à l’aide de fortement typée des TableAdapters et les tables de données dans Visual Studio 2005 et ASP.NET 2.0](https://weblogs.asp.net/scottgu/435498)
-- [Conception des composants de la couche données et passer des données via les couches](https://msdn.microsoft.com/en-us/library/ms978496.aspx)
+- [Conception des composants de la couche données et passer des données via les couches](https://msdn.microsoft.com/library/ms978496.aspx)
 - [Créer une couche d’accès aux données avec le Concepteur de DataSet de Visual Studio 2005](http://www.theserverside.net/articles/showarticle.tss?id=DataSetDesigner)
 - [Chiffrement des informations de Configuration dans ASP.NET 2.0 Applications](http://aspnet.4guysfromrolla.com/articles/021506-1.aspx)
-- [Vue d’ensemble de TableAdapter](https://msdn.microsoft.com/en-us/library/bz9tthwx.aspx)
-- [Utilisation d’un DataSet typé](https://msdn.microsoft.com/en-us/library/esbykkzb.aspx)
+- [Vue d’ensemble de TableAdapter](https://msdn.microsoft.com/library/bz9tthwx.aspx)
+- [Utilisation d’un DataSet typé](https://msdn.microsoft.com/library/esbykkzb.aspx)
 - [L’accès des données fortement typées dans Visual Studio 2005 et ASP.NET 2.0](http://aspnet.4guysfromrolla.com/articles/020806-1.aspx)
 - [Comment étendre les méthodes TableAdapter](https://blogs.msdn.com/vbteam/archive/2005/05/04/ExtendingTableAdapters.aspx)
 - [La récupération des données scalaires à partir d’une procédure stockée](http://aspnet.4guysfromrolla.com/articles/062905-1.aspx)
 
 ### <a name="video-training-on-topics-contained-in-this-tutorial"></a>Formations vidéo sur les rubriques contenues dans ce didacticiel
 
-- [Couches d’accès aux données dans les Applications ASP.NET](../../../videos/data-access/adonet-data-services/data-access-layers-in-aspnet-applications.md)
+- [Couches d’accès aux données dans les applications ASP.NET](../../../videos/data-access/adonet-data-services/data-access-layers-in-aspnet-applications.md)
 - [Comment lier manuellement un groupe de données à un contrôle Datagrid](../../../videos/data-access/adonet-data-services/how-to-manually-bind-a-dataset-to-a-datagrid.md)
 - [Procédure : utiliser des jeux de données et les filtres à partir d’une Application ASP](../../../videos/data-access/adonet-data-services/how-to-work-with-datasets-and-filters-from-an-asp-application.md)
 

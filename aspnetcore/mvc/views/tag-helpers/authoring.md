@@ -10,11 +10,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/tag-helpers/authoring
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 9aaf40377e07e53fd0b7ebb177bcbb2df52b7553
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: a1f1b2c2e60a1337c15f019185c764d0a9ada1b5
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="author-tag-helpers-in-aspnet-core-a-walkthrough-with-samples"></a>Programmes d’assistance de balise auteur dans ASP.NET Core, une procédure pas à pas avec exemples
 
@@ -214,7 +214,7 @@ Vous pouvez également utiliser le `[HtmlTargetElement]` pour modifier le nom de
     [HtmlTargetElement("Website-Information")]
     ```
     
-    * Les éléments qui sont de fermeture automatique ont aucun contenu. Pour cet exemple, le balisage Razor utilise une balise de fermeture automatique, mais l’application d’assistance de balise créeront un [section](http://www.w3.org/TR/html5/sections.html#the-section-element) élément (qui n’est pas une fermeture automatique et que vous écrivez le contenu à l’intérieur du `section` élément). Par conséquent, vous devez définir `TagMode` à `StartTagAndEndTag` pour écrire la sortie. Ou bien, vous pouvez placer en commentaire le paramètre de ligne `TagMode` et écrire les balises avec une balise de fermeture. (Le balisage de l’exemple est fourni plus loin dans ce didacticiel.)
+    * Les éléments qui sont de fermeture automatique ont aucun contenu. Pour cet exemple, le balisage Razor utilise une balise de fermeture automatique, mais l’application d’assistance de balise créeront un [section](http://www.w3.org/TR/html5/sections.html#the-section-element) élément (qui n’est pas fermeture automatique et que vous écrivez le contenu à l’intérieur du `section` élément). Par conséquent, vous devez définir `TagMode` à `StartTagAndEndTag` pour écrire la sortie. Ou bien, vous pouvez placer en commentaire le paramètre de ligne `TagMode` et écrire les balises avec une balise de fermeture. (Le balisage de l’exemple est fourni plus loin dans ce didacticiel.)
     
     * Le `$` (signe dollar) dans la ligne suivante utilise une [interpolées chaîne](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/interpolated-strings):
     
@@ -274,7 +274,7 @@ L’application d’assistance de balise condition restitue la sortie lorsqu’i
 
     [!code-csharp[Main](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Controllers/HomeController.cs?range=9-18)]
 
-4.  Exécuter l’application et accédez à la page d’accueil. Le balisage de l’attribut conditional `div` ne sont pas rendus. Ajouter la chaîne de requête `?approved=true` à l’URL (par exemple, `http://localhost:1235/Home/Index?approved=true`). `approved`a la valeur true et que l’attribut conditional balisage s’affichera.
+4.  Exécuter l’application et accédez à la page d’accueil. Le balisage de l’attribut conditional `div` ne sera pas rendu. Ajouter la chaîne de requête `?approved=true` à l’URL (par exemple, `http://localhost:1235/Home/Index?approved=true`). `approved`a la valeur true et que l’attribut conditional balisage s’affichera.
 
 >[!NOTE]
 >Utilisez le [nameof](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/nameof) opérateur pour spécifier l’attribut cible, plutôt que de spécifier une chaîne comme vous le faisiez avec l’application d’assistance de balise en gras :
@@ -321,7 +321,7 @@ Dans cette section, vous écrivez une paire de liaison automatique les programme
     >
     >Le code ci-dessus vérifie si le contenu a été modifié et s’il a, il obtient le contenu à partir de la mémoire tampon de sortie.
 
-6.  Exécutez l’application et vérifiez que les deux liaisons fonctionnent comme prévu. Pendant qu’il peut apparaître de que notre programme d’assistance de balise de l’éditeur de liens automatique est correcte et complète, il a un problème subtil. Si l’application d’assistance de balise WWW s’exécute en premier, il se peut que les liens Web ne seront pas correctes. Mettre à jour le code en ajoutant le `Order` pour contrôler l’ordre de la balise s’exécute dans la surcharge. Le `Order` propriété détermine l’ordre d’exécution par rapport à d’autres programmes d’assistance de balise ciblant le même élément. La valeur d’ordre par défaut est égale à zéro et les instances ayant des valeurs inférieures sont exécutées en premier.
+6.  Exécutez l’application et vérifiez que les deux liaisons fonctionnent comme prévu. Pendant qu’il peut apparaître de que notre programme d’assistance de balise de l’éditeur de liens automatique est correcte et complète, il a un problème subtil. L’application d’assistance de balise WWW s’exécute en premier, les liens Web ne sont pas corrects. Mettre à jour le code en ajoutant le `Order` pour contrôler l’ordre de la balise s’exécute dans la surcharge. Le `Order` propriété détermine l’ordre d’exécution par rapport à d’autres programmes d’assistance de balise ciblant le même élément. La valeur d’ordre par défaut est égale à zéro et les instances ayant des valeurs inférieures sont exécutées en premier.
 
     [!code-csharp[Main](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/z2AutoLinkerCopy.cs?highlight=5,6,7,8&range=8-15)]
     
@@ -333,8 +333,8 @@ Les programmes d’assistance de balise fournissent plusieurs propriétés perme
 
 -  Le résultat de `GetChildContentAsync` peuvent être ajoutés à `output.Content`.
 -  Vous pouvez examiner le résultat de `GetChildContentAsync` avec `GetContent`.
--  Si vous modifiez `output.Content`, le corps TagHelper ne sera pas exécuté ou restitué, sauf si vous appelez `GetChildContentAsync` comme dans notre exemple auto-éditeur de liens :
+-  Si vous modifiez `output.Content`, le corps TagHelper ne seront pas exécuté ou restitué, sauf si vous appelez `GetChildContentAsync` comme dans notre exemple auto-éditeur de liens :
 
 [!code-csharp[Main](../../views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/z1AutoLinkerCopy.cs?highlight=5,6,10&range=8-21)]
 
--  Appels multiples à `GetChildContentAsync` renvoie la même valeur et ne sera pas exécuter de nouveau la `TagHelper` de corps, sauf si vous passez dans un paramètre false indiquant n’utilise pas le résultat mis en cache.
+-  Appels multiples à `GetChildContentAsync` retourne la même valeur et ré-n’exécute pas le `TagHelper` de corps, sauf si vous passez un paramètre false indiquant pour ne pas utiliser le résultat mis en cache.

@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: migration/http-modules
-ms.openlocfilehash: 44b2b38c284e678344432d4473162404b4bb75a5
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: a38ddc64583de05b4088cd31d48fbd7ee949d4e5
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="migrating-http-handlers-and-modules-to-aspnet-core-middleware"></a>Migration des gestionnaires HTTP et des modules pour ASP.NET Core intergiciel (middleware) 
 
@@ -105,11 +105,11 @@ Le *MyMiddlewareExtensions* classe d’assistance rend plus facile à configurer
 
 <a name="http-modules-shortcircuiting-middleware"></a>
 
-Votre module peut mettre fin à une demande, par exemple, si l’utilisateur n’est pas autorisé :
+Le module peut mettre fin à une demande, par exemple, si l’utilisateur n’est pas autorisé :
 
 [!code-csharp[Main](../migration/http-modules/sample/Asp.Net4/Asp.Net4/Modules/MyTerminatingModule.cs?highlight=9,10,11,12,13&name=snippet_Terminate)]
 
-Un intergiciel (middleware) gère cela en appelant ne pas `Invoke` sur l’intergiciel (middleware) suivant dans le pipeline. Gardez à l’esprit que cela ne termine pas entièrement la demande, car middlewares précédente est toujours appelé lorsque la réponse effectue sa manière via le pipeline.
+Un intergiciel (middleware) gère cela en appelant ne pas `Invoke` sur l’intergiciel (middleware) suivant dans le pipeline. Gardez à l’esprit que cela n’entièrement mettre fin à la demande, car middlewares précédente est toujours appelé lorsque la réponse effectue sa manière via le pipeline.
 
 [!code-csharp[Main](../migration/http-modules/sample/Asp.Net.Core/Middleware/MyTerminatingMiddleware.cs?highlight=7,8&name=snippet_Terminate)]
 
@@ -209,7 +209,7 @@ La nouvelle [système de configuration](xref:fundamentals/configuration/index) v
 
   Le [UseMiddleware](#http-modules-usemiddleware) méthode d’extension qui ajoute votre intergiciel (middleware) pour le `IApplicationBuilder` prend en charge l’injection de dépendances.
 
-  Cela n’est pas limitée à `IOptions` objets. De cette manière peut être ajoutée à n’importe quel autre objet nécessitant votre intergiciel (middleware).
+  Ce n’est pas limité à `IOptions` objets. De cette manière peut être ajoutée à n’importe quel autre objet nécessitant votre intergiciel (middleware).
 
 ## <a name="loading-middleware-options-through-direct-injection"></a>Chargement des options d’intergiciel (middleware) par le biais d’injection directe
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/batch-updating-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 506ecc9fad47cc39a0323e9ed18814c26e28ee47
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1210f9048401ca1b4e29d6dde9bf5dbef987091f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="batch-updating-c"></a>Lot de mise à jour (c#)
 ====================
@@ -47,7 +47,7 @@ Let s commencer !
 
 ## <a name="examining-the-steps-for-making-all-gridview-rows-editable"></a>Examiner les étapes pour effectuer toutes les lignes de GridView modifiable
 
-Comme indiqué dans le [une vue d’ensemble d’insertion, de mise à jour et de suppression des données](../editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-cs.md) (didacticiel), le contrôle GridView offre une prise en charge intégrée pour la modification de ses données sous-jacentes sur une ligne par ligne. En interne, le contrôle GridView notes quelle ligne est modifiable via son [ `EditIndex` propriété](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.editindex(VS.80).aspx). Le contrôle GridView est lié à sa source de données, il vérifie si l’index de la ligne est égale à la valeur de chaque ligne `EditIndex`. Dans ce cas, des interfaces de ligne s champs sont rendus à l’aide de leur modification. Pour BoundFields, l’interface de modification est une zone de texte dont `Text` est affectée à la valeur du champ de données spécifié par le s BoundField `DataField` propriété. Pour TemplateField, le `EditItemTemplate` est utilisé à la place de la `ItemTemplate`.
+Comme indiqué dans le [une vue d’ensemble d’insertion, de mise à jour et de suppression des données](../editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-cs.md) (didacticiel), le contrôle GridView offre une prise en charge intégrée pour la modification de ses données sous-jacentes sur une ligne par ligne. En interne, le contrôle GridView notes quelle ligne est modifiable via son [ `EditIndex` propriété](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.editindex(VS.80).aspx). Le contrôle GridView est lié à sa source de données, il vérifie si l’index de la ligne est égale à la valeur de chaque ligne `EditIndex`. Dans ce cas, des interfaces de ligne s champs sont rendus à l’aide de leur modification. Pour BoundFields, l’interface de modification est une zone de texte dont `Text` est affectée à la valeur du champ de données spécifié par le s BoundField `DataField` propriété. Pour TemplateField, le `EditItemTemplate` est utilisé à la place de la `ItemTemplate`.
 
 Rappelez-vous que le flux de travail démarre lorsqu’un utilisateur clique sur un bouton de modification de ligne s. Cela entraîne une publication, définit le s GridView `EditIndex` propriété à l’index de ligne où vous avez cliqué s et Reliaisons les données à la grille. Lorsqu’une ligne s bouton Cancel, lors de la publication du `EditIndex` est défini sur une valeur de `-1` avant les données à la grille de reliaison. Étant donné que les lignes de s GridView démarrer l’indexation à zéro, le paramètre `EditIndex` à `-1` a pour effet d’afficher le contrôle GridView en mode lecture seule.
 
@@ -240,7 +240,7 @@ Créez une méthode nommée `BatchUpdate` dans `BatchUpdate.aspx.cs` et ajoutez 
 
 [!code-csharp[Main](batch-updating-cs/samples/sample5.cs)]
 
-Cette méthode commence par la mise en route de tous les produits dans un `ProductsDataTable` via un appel à la couche BLL s `GetProducts` (méthode). Il énumère ensuite la `ProductGrid` GridView s [ `Rows` collection](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.rows(VS.80).aspx). Le `Rows` collection contient un [ `GridViewRow` instance](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridviewrow.aspx) pour chaque ligne affichée dans le GridView. Étant donné que nous montrons au plus dix lignes par page, le contrôle GridView s `Rows` collection auront pas plus de dix éléments.
+Cette méthode commence par la mise en route de tous les produits dans un `ProductsDataTable` via un appel à la couche BLL s `GetProducts` (méthode). Il énumère ensuite la `ProductGrid` GridView s [ `Rows` collection](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.rows(VS.80).aspx). Le `Rows` collection contient un [ `GridViewRow` instance](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridviewrow.aspx) pour chaque ligne affichée dans le GridView. Étant donné que nous montrons au plus dix lignes par page, le contrôle GridView s `Rows` collection auront pas plus de dix éléments.
 
 Pour chaque ligne le `ProductID` est retiré de la `DataKeys` approprié et collection `ProductsRow` est sélectionné dans le `ProductsDataTable`. Les contrôles d’entrée TemplateField quatre sont référencés par programmation et leurs valeurs assignées à le `ProductsRow` s propriétés de l’instance. Après chaque GridView les valeurs de ligne s ont été utilisées pour mettre à jour le `ProductsDataTable`, il s passé à la couche BLL s `UpdateWithTransaction` méthode qui, comme nous l’avons vu dans le didacticiel précédent, appelle simplement vers le bas dans la couche DAL s `UpdateWithTransaction` (méthode).
 
@@ -270,7 +270,7 @@ Pour ces types de situations, envisagez d’utiliser les éléments suivants `Ba
 
 [!code-csharp[Main](batch-updating-cs/samples/sample7.cs)]
 
-`BatchMethodAlternate`démarre en créant un nouveau vide `ProductsDataTable` nommé `products`. Parcourt les s GridView ensuite `Rows` collection et, pour chaque ligne Obtient les informations de produit spécifique à l’aide de la couche BLL s `GetProductByProductID(productID)` (méthode). Extraites `ProductsRow` instance possède des propriétés mises à jour de la même manière que `BatchUpdate`, mais après la mise à jour de la ligne, il est importé dans le `products``ProductsDataTable` via le DataTable s [ `ImportRow(DataRow)` méthode](https://msdn.microsoft.com/en-us/library/system.data.datatable.importrow(VS.80).aspx).
+`BatchMethodAlternate`démarre en créant un nouveau vide `ProductsDataTable` nommé `products`. Parcourt les s GridView ensuite `Rows` collection et, pour chaque ligne Obtient les informations de produit spécifique à l’aide de la couche BLL s `GetProductByProductID(productID)` (méthode). Extraites `ProductsRow` instance possède des propriétés mises à jour de la même manière que `BatchUpdate`, mais après la mise à jour de la ligne, il est importé dans le `products``ProductsDataTable` via le DataTable s [ `ImportRow(DataRow)` méthode](https://msdn.microsoft.com/library/system.data.datatable.importrow(VS.80).aspx).
 
 Après le `foreach` boucle se termine, `products` contient un `ProductsRow` instance pour chaque ligne dans le GridView. Depuis chacun de la `ProductsRow` instances ont été ajoutés à la `products` (au lieu de mise à jour), si nous passer à l’aveugle à la `UpdateWithTransaction` (méthode) le `ProductsTableAdatper` essaie d’insérer des enregistrements dans la base de données. Au lieu de cela, nous devons spécifier que chacune de ces lignes ont été modifiée (ne pas ajouté).
 
@@ -279,7 +279,7 @@ Cela peut être accompli en ajoutant une nouvelle méthode à la couche BLL nomm
 
 [!code-csharp[Main](batch-updating-cs/samples/sample8.cs)]
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Le contrôle GridView fournit des fonctionnalités d’édition intégrées par ligne, mais ne dispose pas de prise en charge pour la création d’interfaces totalement modifiables. Comme nous l’avons vu dans ce didacticiel, ces interfaces sont possibles, mais nécessitent un peu de travail. Pour créer un GridView où chaque ligne est modifiable, nous devons convertir les champs de s GridView TemplateField et définir l’interface de modification dans le `ItemTemplate` s. En outre, mettre à jour tout - type de contrôle de bouton Web doit être ajouté à la page, distincte du contrôle GridView. Ces boutons `Click` gestionnaires d’événements doivent énumérer le GridView s `Rows` collecte, stocke les modifications dans un `ProductsDataTable`et passer les informations de mise à jour dans la méthode appropriée de la couche BLL.
 

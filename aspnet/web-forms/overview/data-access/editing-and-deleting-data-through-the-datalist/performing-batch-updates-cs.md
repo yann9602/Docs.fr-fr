@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/performing-batch-updates-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 989bd80bf2d8b6548fd8e4abd492408a72104070
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 46db3c5d733b9c8b6e749a9b8ff1aa9a061c36df
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="performing-batch-updates-c"></a>Mise à jour de lot (c#)
 ====================
@@ -116,7 +116,7 @@ La figure 6 montre la page après que les mise à jour tous les boutons ont ét�
 
 Avec tous les éléments DataList s afficher l’interface de modification et l’ajout des mise à jour tous les boutons, il reste écrit le code pour effectuer la mise à jour par lots. Plus précisément, nous avons besoin parcourir les éléments du contrôle DataList s et appelez le `SuppliersBLL` classe s `UpdateSupplierAddress` méthode pour chacun d’eux.
 
-La collection de `DataListItem` instances utilisés DataList sont accessibles par le biais du contrôle DataList s [ `Items` propriété](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalist.items.aspx). Avec une référence à un `DataListItem`, nous pouvons saisir correspondant `SupplierID` à partir de la `DataKeys` collection et par programme de référence des contrôles Web de la zone de texte dans le `ItemTemplate` comme l’illustre le code suivant :
+La collection de `DataListItem` instances utilisés DataList sont accessibles par le biais du contrôle DataList s [ `Items` propriété](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.items.aspx). Avec une référence à un `DataListItem`, nous pouvons saisir correspondant `SupplierID` à partir de la `DataKeys` collection et par programme de référence des contrôles Web de la zone de texte dans le `ItemTemplate` comme l’illustre le code suivant :
 
 
 [!code-csharp[Main](performing-batch-updates-cs/samples/sample4.cs)]
@@ -131,7 +131,7 @@ Lorsque l’utilisateur clique sur l’un des boutons tout mettre à jour, le `U
 
 L’algorithme de mise à jour de lot utilisé pour les appels de ce didacticiel le `UpdateSupplierAddress` méthode pour *chaque* fournisseur dans le contrôle DataList, indépendamment de si leurs informations d’adresse a été modifiées. Alors que ce blind des mises à jour ne sont pas toujours généralement un problème de performances, elles peuvent entraîner des enregistrements superflus si vous re l’audit des modifications à la table de base de données. Par exemple, si vous utilisez des déclencheurs pour enregistrer toutes les `UPDATE` s pour le `Suppliers` table à une table d’audit, chaque fois qu’un utilisateur clique sur le bouton tout mettre à jour un enregistrement d’audit nouvelle sera créé pour chaque fournisseur dans le système, indépendamment de si l’utilisateur fait une modifications.
 
-Les classes ADO.NET DataTable et DataAdapter sont conçues pour prendre en charge les mises à jour par lots où les résultats uniquement modifié, supprimé et le nouvel enregistrement dans toute communication de base de données. Chaque ligne de la table de données a un [ `RowState` propriété](https://msdn.microsoft.com/en-us/library/system.data.datarow.rowstate.aspx) qui indique si la ligne a été ajoutée à la table de données, supprimé, modifié, ou s’il reste inchangée. Lorsqu’un DataTable est initialement renseigné, toutes les lignes sont marquées inchangées. Modification de la valeur de toutes les colonnes de s de ligne de marque la ligne modifiée.
+Les classes ADO.NET DataTable et DataAdapter sont conçues pour prendre en charge les mises à jour par lots où les résultats uniquement modifié, supprimé et le nouvel enregistrement dans toute communication de base de données. Chaque ligne de la table de données a un [ `RowState` propriété](https://msdn.microsoft.com/library/system.data.datarow.rowstate.aspx) qui indique si la ligne a été ajoutée à la table de données, supprimé, modifié, ou s’il reste inchangée. Lorsqu’un DataTable est initialement renseigné, toutes les lignes sont marquées inchangées. Modification de la valeur de toutes les colonnes de s de ligne de marque la ligne modifiée.
 
 Dans le `SuppliersBLL` classe nous mettre à jour les informations d’adresse de fournisseur spécifié s en première lecture dans l’enregistrement du fournisseur unique dans un `SuppliersDataTable` , puis définissez le `Address`, `City`, et `Country` les valeurs de colonne utilisant le code suivant :
 
@@ -155,7 +155,7 @@ Ou bien, nous pouvons effectuer le suivi indique s’il existe des différences 
 > Chaque fois que le `UpdateSupplierAddress` méthode est appelée, un appel est fait à la base de données pour récupérer des informations sur l’enregistrement mis à jour. Ensuite, si des modifications sont effectuées dans les données, un autre appel à la base de données est effectué pour mettre à jour la ligne de table. Ce flux de travail peut être optimisé en créant un `UpdateSupplierAddress` surcharge de méthode qui accepte un `EmployeesDataTable` instance a *tous les* des modifications de la `BatchUpdate.aspx` page. Ensuite, il peut être un appel à la base de données pour obtenir tous les enregistrements de la `Suppliers` table. Deux jeux de résultats peut ensuite être énumérés, et seuls les enregistrements où les modifications ont été pu être mis à jour.
 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Dans ce didacticiel, nous avons vu comment créer un contrôle DataList totalement modifiable, permettant à un utilisateur de modifier rapidement les informations d’adresse pour plusieurs fournisseurs. Nous avons commencé en définissant un contrôle Web de la zone de texte pour le fournisseur s adresse, ville et les valeurs de pays de l’interface de modification dans le contrôle DataList s `ItemTemplate`. Ensuite, nous avons ajouté la mise à jour tous les boutons au-dessus et au-dessous du contrôle DataList. Une fois un utilisateur a effectué ses modifications et cliqué sur un des boutons tout mettre à jour, le `DataListItem` s sont énumérées et un appel à la `SuppliersBLL` classe s `UpdateSupplierAddress` méthode est effectuée.
 

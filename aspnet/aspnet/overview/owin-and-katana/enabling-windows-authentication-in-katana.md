@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/owin-and-katana/enabling-windows-authentication-in-katana
 msc.type: authoredcontent
-ms.openlocfilehash: cc23a053fb1ba60ea84eca59e99f0e375fefc4cd
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8a26d356f7abafba021199761f9a49dcb81765c5
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="enabling-windows-authentication-in-katana"></a>L’activation de l’authentification Windows dans Katana
 ====================
@@ -34,7 +34,7 @@ Katana est l’implémentation Microsoft de [OWIN](http://owin.org/), l’Interf
 Katana fournit actuellement les deux serveurs, qui prennent en charge l’authentification intégrée de Windows :
 
 - **Microsoft.Owin.Host.SystemWeb**. Utilise IIS avec le pipeline ASP.NET.
-- **Microsoft.Owin.Host.HttpListener**. Utilise [System.Net.HttpListener](https://msdn.microsoft.com/en-us/library/system.net.httplistener.aspx). Ce serveur est actuellement l’option par défaut lors de l’hébergement des interconnexions.
+- **Microsoft.Owin.Host.HttpListener**. Utilise [System.Net.HttpListener](https://msdn.microsoft.com/library/system.net.httplistener.aspx). Ce serveur est actuellement l’option par défaut lors de l’hébergement des interconnexions.
 
 > [!NOTE]
 > Katana ne fournit pas actuellement d’intergiciel (middleware) OWIN pour l’authentification Windows, car cette fonctionnalité est déjà disponible dans les serveurs.
@@ -98,8 +98,8 @@ Vous pouvez envoyer une demande de Fiddler pour confirmer que l’application ut
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-[Une vue d’ensemble du projet Katana](an-overview-of-project-katana.md)
+[Vue d’ensemble du projet Katana](an-overview-of-project-katana.md)
 
-[System.Net.HttpListener](https://msdn.microsoft.com/en-us/library/system.net.httplistener.aspx)
+[System.Net.HttpListener](https://msdn.microsoft.com/library/system.net.httplistener.aspx)
 
 [Présentation de l’authentification de formulaires OWIN dans MVC 5](https://blogs.msdn.com/b/webdev/archive/2013/07/03/understanding-owin-forms-authentication-in-mvc-5.aspx)

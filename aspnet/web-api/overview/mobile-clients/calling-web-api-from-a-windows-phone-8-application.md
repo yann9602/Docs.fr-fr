@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/mobile-clients/calling-web-api-from-a-windows-phone-8-application
 msc.type: authoredcontent
-ms.openlocfilehash: 1637af40613f1384bd4adec707a5b1a8a07c704b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6e5a936decb27fd2e3b8cdcea44db8db822c98eb
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="calling-web-api-from-a-windows-phone-8-application-c"></a>Appel d’API Web à partir d’une Application de 8 Windows Phone (c#)
 ====================
@@ -33,11 +33,11 @@ Dans ce didacticiel de bout en bout, vous allez apprendre à utiliser des API We
 - Dans le [première partie de ce didacticiel](#STEP1), vous allez créer une application de l’API Web ASP.NET qui prend en charge toutes les opérations de création, lecture, mise à jour et supprimer (CRUD) pour gérer un catalogue de livres. Cette application doit utiliser le [exemple de fichier XML (books.xml)](https://msdn.microsoft.com/library/windows/desktop/ms762271.aspx) à partir de MSDN.
 - Dans le [deuxième partie de ce didacticiel](#STEP2), vous allez créer une application Windows Phone 8 interactive qui extrait les données de votre application d’API Web.
 
-#### <a name="prerequisites"></a>Conditions préalables
+#### <a name="prerequisites"></a>Prérequis
 
 - Visual Studio 2013 avec le Kit de développement Windows Phone 8 installé
 - Windows 8 ou version ultérieure sur un système 64 bits avec Hyper-V est installé
-- Pour obtenir la liste des exigences supplémentaires, consultez le *requise* section sur le [Windows Phone SDK 8.0](https://www.microsoft.com/en-us/download/details.aspx?id=35471) page de téléchargement.
+- Pour obtenir la liste des exigences supplémentaires, consultez le *requise* section sur le [Windows Phone SDK 8.0](https://www.microsoft.com/download/details.aspx?id=35471) page de téléchargement.
 
 > [!NOTE]
 > Si vous vous apprêtez à tester la connectivité entre l’API Web et les projets Windows Phone 8 sur votre système local, vous devez suivre les instructions fournies dans le  *[la connexion de l’émulateur de 8 Windows Phone pour les Applications de l’API Web sur un ordinateur Local Ordinateur](https://go.microsoft.com/fwlink/?LinkId=324014)*  article pour configurer votre environnement de test.

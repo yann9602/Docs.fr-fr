@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on
 msc.type: authoredcontent
-ms.openlocfilehash: aaa061e61b9bab5b33083851624f0487b2cf6473
-ms.sourcegitcommit: ccf08615ad59bc6f654560de33b93396113a2eb0
+ms.openlocfilehash: ccf4329e6684d07570bfaabfaa1a570664fb2ca3
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/11/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="create-an-aspnet-mvc-5-app-with-facebook-twitter-linkedin-and-google-oauth2-sign-on-c"></a>Créer une application ASP.NET MVC 5 avec Facebook, Twitter, LinkedIn et Google OAuth2 Sign-on (c#)
 ====================
@@ -32,7 +32,7 @@ Par [Rick Anderson](https://github.com/Rick-Anderson)
 
 
 <a id="start"></a>
-## <a name="getting-started"></a>Commencer
+## <a name="getting-started"></a>Prise en main
 
 Commencez par installer et exécuter [Visual Studio Express 2013 pour le Web](https://go.microsoft.com/fwlink/?LinkId=299058) ou [Visual Studio 2013](https://go.microsoft.com/fwlink/?LinkId=306566). Installation de Visual Studio [2013 Update 3](https://go.microsoft.com/fwlink/?LinkId=390521) ou une version ultérieure. Pour Dropbox, GitHub, Linkedin, Instagram, mémoire tampon, force de vente, le flux, pile Exchange, Tripit, twitch, Twitter, Yahoo et bien plus encore l’aide, consultez ce [un guide qui](http://www.oauthforaspnet.com/).
 
@@ -95,7 +95,7 @@ Pour vous connecter à des fournisseurs d’authentification tels que Google et 
 6. Sélectionnez le **Web** onglet et collez l’URL SSL dans le **Url Project** boîte. Enregistrez le fichier (CTRL + S). Vous aurez besoin de cette URL à configurer des applications de l’authentification Facebook et Google.  
   
     ![](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image10.png)
-7. Ajouter le [RequireHttps](https://msdn.microsoft.com/en-us/library/system.web.mvc.requirehttpsattribute.aspx) attribut le `Home` contrôleur pour toutes les demandes doit utiliser HTTPS. Une approche la plus sûre consiste à ajouter la [RequireHttps](https://msdn.microsoft.com/en-us/library/system.web.mvc.requirehttpsattribute.aspx) filtre à l’application. Consultez la section &quot;protéger l’Application avec SSL et de l’attribut autoriser&quot; dans mon tutoral [créer une application ASP.NET MVC avec l’authentification et de la base de données SQL et le déployer vers Azure App Service](https://docs.microsoft.com/aspnet/core/security/authorization/secure-data). Vous trouverez ci-dessous une partie du contrôleur Home.
+7. Ajouter le [RequireHttps](https://msdn.microsoft.com/library/system.web.mvc.requirehttpsattribute.aspx) attribut le `Home` contrôleur pour toutes les demandes doit utiliser HTTPS. Une approche la plus sûre consiste à ajouter la [RequireHttps](https://msdn.microsoft.com/library/system.web.mvc.requirehttpsattribute.aspx) filtre à l’application. Consultez la section &quot;protéger l’Application avec SSL et de l’attribut autoriser&quot; dans mon tutoral [créer une application ASP.NET MVC avec l’authentification et de la base de données SQL et le déployer vers Azure App Service](https://docs.microsoft.com/aspnet/core/security/authorization/secure-data). Vous trouverez ci-dessous une partie du contrôleur Home.
 
     [!code-csharp[Main](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/samples/sample1.cs?highlight=1)]
 8. Appuyez sur CTRL+F5 pour exécuter l'application. Si vous avez installé le certificat dans le passé, vous pouvez ignorer le reste de cette section et atteindre [création d’une application de Google OAuth 2 et la connexion de l’application au projet](#goog), dans le cas contraire, suivez les instructions pour approbation auto-signé certificat IIS Express a généré.  
@@ -173,7 +173,7 @@ Pour l’authentification Facebook OAuth2, vous devez copier certains paramètre
     ![Créer la boîte de dialogue nouvelle application](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image23.png)
 5. Envoyer la vérification de sécurité standard.
 
-    ![Vérification de sécurité](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image24.png)
+    ![Vérification de la sécurité](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image24.png)
 6. Sélectionnez **paramètres** de la barre de menu de gauche.![ Barre de menus du développeur Facebook](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image25.png)
 7. Sur le **base** section Paramètres de la page Sélectionnez **ajouter une plateforme** pour spécifier que vous ajoutez une application de site Web. ![Paramètres de base](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image26.png)
 8. Sélectionnez **site Web** parmi les choix de la plateforme.  
@@ -255,7 +255,7 @@ Supprimer la base de données d’appartenance afin de pouvoir à nouveau enregi
 
 1. Enable-Migrations
 2. Migration ajouter Init
-3. Base de données de mise à jour
+3. Update-Database
 
 Exécutez l’application et utilisez FaceBook et Google pour vous connecter et d’inscrire certains utilisateurs.
 
@@ -286,7 +286,7 @@ Suivez le didacticiel de mon [créer une application ASP.NET MVC avec l’authen
 
 1. Comment déployer votre application sur Azure.
 2. Comment sécuriser votre application avec des rôles.
-3. Comment sécuriser votre application avec le [RequireHttps](https://msdn.microsoft.com/en-us/library/system.web.mvc.requirehttpsattribute(v=vs.108).aspx) et [Authorize](https://msdn.microsoft.com/en-us/library/system.web.mvc.authorizeattribute(v=vs.100).aspx) filtres.
+3. Comment sécuriser votre application avec le [RequireHttps](https://msdn.microsoft.com/library/system.web.mvc.requirehttpsattribute(v=vs.108).aspx) et [Authorize](https://msdn.microsoft.com/library/system.web.mvc.authorizeattribute(v=vs.100).aspx) filtres.
 4. Comment utiliser l’API d’appartenance pour ajouter des utilisateurs et des rôles.
 
 Veuillez laisser des commentaires sur la façon dont vous avez aimé ce didacticiel et nous pouvons améliorer. Vous pouvez également demander de nouvelles rubriques à [afficher Me comment avec le Code](http://aspnet.uservoice.com/forums/228522-show-me-how-with-code). Vous pouvez même demander et voter sur les nouvelles fonctionnalités à ajouter à ASP.NET. Par exemple, vous pouvez voter pour un outil [créer et gérer des utilisateurs et des rôles.](http://aspnet.uservoice.com/forums/41199-general-asp-net/suggestions/5646857-asp-net-identity-membership-db-tool-to-mangage-use)

@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset
 msc.type: authoredcontent
-ms.openlocfilehash: e3d8ad6e00b7fcb95f1c9bbe556021269c1a0624
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5689031015279484cc616090a767a8c25eefa3c1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="create-a-secure-aspnet-mvc-5-web-app-with-log-in-email-confirmation-and-password-reset-c"></a>Créer une application de web ASP.NET MVC 5 sécurisée avec se connectent, envoyer par courrier électronique de confirmation et le mot de passe de la réinitialisation (c#)
 ====================
@@ -38,9 +38,9 @@ Commencez par installer et exécuter [Visual Studio Express 2013 pour le Web](ht
 
 1. Créez un projet Web ASP.NET et sélectionnez le modèle MVC. Web Forms prend également en charge ASP.NET Identity, afin que vous pouvez suivre des étapes similaires dans une application de formulaires web.  
     ![](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/_static/image1.png)
-2. Laissez l’authentification par défaut en tant que **comptes d’utilisateur individuels**. Si vous souhaitez héberger l’application dans Azure, laissez la case à cocher activée. Plus loin dans ce didacticiel, nous déploiera vers Azure. Vous pouvez [ouvrir un compte Azure gratuitement](https://azure.microsoft.com/en-us/pricing/free-trial/?WT.mc_id=A261C142F).
+2. Laissez l’authentification par défaut en tant que **comptes d’utilisateur individuels**. Si vous souhaitez héberger l’application dans Azure, laissez la case à cocher activée. Plus loin dans ce didacticiel, nous déploiera vers Azure. Vous pouvez [ouvrir un compte Azure gratuitement](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A261C142F).
 3. Définir le [projet pour utiliser SSL](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md).
-4. Exécuter l’application, cliquez sur le **inscrire** lier et inscrire un utilisateur. À ce stade, la seule validation de l’adresse de messagerie est avec le [[EmailAddress]](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.emailaddressattribute(v=vs.110).aspx) attribut.
+4. Exécuter l’application, cliquez sur le **inscrire** lier et inscrire un utilisateur. À ce stade, la seule validation de l’adresse de messagerie est avec le [[EmailAddress]](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.emailaddressattribute(v=vs.110).aspx) attribut.
 5. Dans l’Explorateur de serveurs, accédez à **données Connections\DefaultConnection\Tables\AspNetUsers**avec le bouton droit sur et sélectionnez **ouvrir la définition de la table**.
 
     L’illustration suivante montre le `AspNetUsers` schéma :
@@ -108,7 +108,7 @@ Créer un `Views\Shared\Info.cshtml` et ajoutez le balisage razor suivant :
 
 [!code-cshtml[Main](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/samples/sample8.cshtml)]
 
-Ajouter le [attribut Authorize](https://msdn.microsoft.com/en-us/library/system.web.mvc.authorizeattribute(v=vs.118).aspx) à la `Contact` méthode d’action du contrôleur Home. Vous pouvez utiliser le clic sur le **Contact** lien pour vérifier les utilisateurs anonymes n’ont accès et les utilisateurs authentifiés n’ont pas accès.
+Ajouter le [attribut Authorize](https://msdn.microsoft.com/library/system.web.mvc.authorizeattribute(v=vs.118).aspx) à la `Contact` méthode d’action du contrôleur Home. Vous pouvez utiliser le clic sur le **Contact** lien pour vérifier les utilisateurs anonymes n’ont accès et les utilisateurs authentifiés n’ont pas accès.
 
 [!code-csharp[Main](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/samples/sample9.cs?highlight=1)]
 
@@ -129,7 +129,7 @@ Supprimez les caractères de commentaire de la `HttpPost ForgotPassword` méthod
 
 [!code-csharp[Main](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/samples/sample12.cs?highlight=17-20)]
 
-Supprimez les caractères de commentaire de la `ForgotPassword` [ActionLink](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.linkextensions.actionlink(v=vs.118).aspx) dans les *Views\Account\Login.cshtml* fichier de vue razor :
+Supprimez les caractères de commentaire de la `ForgotPassword` [ActionLink](https://msdn.microsoft.com/library/system.web.mvc.html.linkextensions.actionlink(v=vs.118).aspx) dans les *Views\Account\Login.cshtml* fichier de vue razor :
 
 [!code-cshtml[Main](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/samples/sample13.cshtml?highlight=47-50)]
 

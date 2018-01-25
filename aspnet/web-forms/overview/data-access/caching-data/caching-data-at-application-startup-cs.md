@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/caching-data/caching-data-at-application-startup-cs
 msc.type: authoredcontent
-ms.openlocfilehash: ccf22f9e72777242ca0239aee69045ab03d56960
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3a618ad702763a59b87336784afd1cb74de06d4c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="caching-data-at-application-startup-c"></a>Mise en cache de données au démarrage de l’Application (c#)
 ====================
@@ -36,7 +36,7 @@ Les deux didacticiels précédents étudié la mise en cache des données dans l
 Une autre version de chargement proactive et le type que nous allons Explorer dans ce didacticiel, charge les données dans le cache au démarrage de l’application. Cette approche est particulièrement utile pour la mise en cache des données statiques, telles que les enregistrements des tables de recherche de base de données.
 
 > [!NOTE]
-> Pour une plus approfondies sur les différences entre proactif et réactif de chargement, ainsi que les listes de professionnels de le, les inconvénients et les recommandations de mise en œuvre, reportez-vous à la [gestion du contenu d’un Cache](https://msdn.microsoft.com/en-us/library/ms978503.aspx) section de la [ Guide d’Architecture pour les Applications .NET Framework de la mise en cache](https://msdn.microsoft.com/en-us/library/ms978498.aspx).
+> Pour une plus approfondies sur les différences entre proactif et réactif de chargement, ainsi que les listes de professionnels de le, les inconvénients et les recommandations de mise en œuvre, reportez-vous à la [gestion du contenu d’un Cache](https://msdn.microsoft.com/library/ms978503.aspx) section de la [ Guide d’Architecture pour les Applications .NET Framework de la mise en cache](https://msdn.microsoft.com/library/ms978498.aspx).
 
 
 ## <a name="step-1-determining-what-data-to-cache-at-application-startup"></a>Étape 1 : Déterminer les données à mettre en Cache au démarrage de l’Application
@@ -68,7 +68,7 @@ Lorsque vous travaillez avec une classe, en général, la classe doit être inst
 
 Avant que nous pouvons appeler *SomeMethod* ou fonctionnent avec *SomeProperty*, nous devons d’abord créer une instance de la classe à l’aide de la `new` (mot clé). *SomeMethod* et *SomeProperty* sont associés à une instance particulière. La durée de vie de ces membres est liée à la durée de vie de leur objet associé. *Les membres statiques*, quant à eux, sont des variables, propriétés et méthodes qui sont partagées entre *tous les* instances de la classe et, par conséquent, ont une durée de vie tant que la classe. Les membres statiques sont signalées par le mot clé `static`.
 
-En plus de membres statiques, données peuvent être mises en cache en utilisant l’état de l’application. Chaque application ASP.NET gère une collection nom/valeur s partagées entre tous les utilisateurs et les pages de l’application. Cette collection est accessible à l’aide de la [ `HttpContext` classe](https://msdn.microsoft.com/en-us/library/system.web.httpcontext.aspx) s [ `Application` propriété](https://msdn.microsoft.com/en-us/library/system.web.httpcontext.application.aspx)et utilisés à partir d’une classe code-behind de la page s ASP.NET comme suit :
+En plus de membres statiques, données peuvent être mises en cache en utilisant l’état de l’application. Chaque application ASP.NET gère une collection nom/valeur s partagées entre tous les utilisateurs et les pages de l’application. Cette collection est accessible à l’aide de la [ `HttpContext` classe](https://msdn.microsoft.com/library/system.web.httpcontext.aspx) s [ `Application` propriété](https://msdn.microsoft.com/library/system.web.httpcontext.application.aspx)et utilisés à partir d’une classe code-behind de la page s ASP.NET comme suit :
 
 
 [!code-csharp[Main](caching-data-at-application-startup-cs/samples/sample2.cs)]
@@ -135,7 +135,7 @@ La valeur par défaut `Global.asax` modèle de fichier inclut cinq méthodes au 
 - **`Session_Start`**s’exécute lorsqu’une nouvelle session est créée.
 - **`Session_End`**s’exécute lorsqu’une session a expiré ou a abandonné
 
-Le `Application_Start` Gestionnaire d’événements est appelé une seule fois pendant un cycle de vie de l’application s. Démarrage de l’application la première fois une ressource ASP.NET est demandée par l’application et continue de s’exécuter jusqu'à ce que l’application est redémarrée, ce qui peut se produire en modifiant le contenu de la `/Bin` dossier, modification `Global.asax`, modification le contenu dans le `App_Code` dossier, ou en modifiant le `Web.config` fichier, entre autres. Reportez-vous à [vue d’ensemble du Cycle de vie ASP.NET Application](https://msdn.microsoft.com/en-us/library/ms178473.aspx) pour plus d’informations sur le cycle de vie d’application.
+Le `Application_Start` Gestionnaire d’événements est appelé une seule fois pendant un cycle de vie de l’application s. Démarrage de l’application la première fois une ressource ASP.NET est demandée par l’application et continue de s’exécuter jusqu'à ce que l’application est redémarrée, ce qui peut se produire en modifiant le contenu de la `/Bin` dossier, modification `Global.asax`, modification le contenu dans le `App_Code` dossier, ou en modifiant le `Web.config` fichier, entre autres. Reportez-vous à [vue d’ensemble du Cycle de vie ASP.NET Application](https://msdn.microsoft.com/library/ms178473.aspx) pour plus d’informations sur le cycle de vie d’application.
 
 Pour ces didacticiels, nous avons besoin uniquement ajouter du code pour le `Application_Start` d’une méthode, c’est le cas hésitez pas à supprimer les autres. Dans `Application_Start`, appelez simplement le `StaticCache` classe s `LoadStaticCache()` (méthode), qui charge et mettre en cache les informations de fournisseur :
 
@@ -184,7 +184,7 @@ La figure 7 illustre la page via un navigateur. La sortie est le même avions no
 **Figure 7**: la mise en cache les données des fournisseurs s’affiche dans un contrôle GridView ([cliquez pour afficher l’image en taille réelle](caching-data-at-application-startup-cs/_static/image17.png))
 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 La plupart des chaque modèle de données contient une grande quantité de données statiques, généralement implémentées sous la forme de tables de recherche. Étant donné que ces informations sont statiques, là s aucune raison de cette information doit être affichée en permanence pour accéder à la base de données chaque heure. En outre, en raison de sa nature statique, lors de la mise en cache les données là s pas nécessaire pour un délai d’expiration. Dans ce didacticiel, nous avons vu comment ces données en mémoire cache dans le cache de données, état de l’application et via une variable membre statique. Ces informations sont mises en cache au démarrage de l’application et restent dans le cache pendant la durée de vie application s.
 

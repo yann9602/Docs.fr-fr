@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/web-development-best-practices
 msc.type: authoredcontent
-ms.openlocfilehash: a40a3779ddc416e141dd27b665f43830a43590b1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: de536a0ca39cb752c0962f0c4ae36eb00b586bff
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="web-development-best-practices-building-real-world-cloud-apps-with-azure"></a>Développement Web meilleures pratiques (génération d’applications Cloud du monde réel avec Azure)
 ====================
@@ -130,7 +130,7 @@ Et cette prise en charge asynchrone fonctionne pas seulement pour les insertions
 
 Il existe une `Async` version de la `ToList` méthode car, dans ce code, qui est la méthode qui entraîne une requête à envoyer à la base de données. Le `Where` et `OrderByDescending` méthodes uniquement configurer la requête, alors que le `ToListAsync` méthode exécute la requête et stocke la réponse dans le `result` variable.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Vous pouvez implémenter les recommandations de développement web présentées ici dans n’importe quel site web de programmation framework et n’importe quel environnement de cloud, mais nous avons outils dans ASP.NET et Windows Azure permet de simplifier. Si vous suivez ces modèles, vous pouvez faire évoluer facilement votre couche web, et vous allez réduire vos dépenses, car chaque serveur sera en mesure de gérer davantage de trafic.
 
@@ -142,20 +142,20 @@ Pour plus d’informations, consultez les ressources suivantes.
 
 Serveurs web sans état :
 
-- [Microsoft Patterns et pratiques - Guide de l’échelle automatique](https://msdn.microsoft.com/en-us/library/dn589774.aspx).
+- [Microsoft Patterns et pratiques - Guide de l’échelle automatique](https://msdn.microsoft.com/library/dn589774.aspx).
 - [Affinité dans les Sites Web Windows Azure de l’Instance de désactivation ARR](https://azure.microsoft.com/blog/2013/11/18/disabling-arrs-instance-affinity-in-windows-azure-web-sites/). Billet de blog de Erez Benari, explique l’affinité de session dans les Sites Web Windows Azure.
 
 CDN :
 
 - [Prévention de défaillance : Création de Services de cloud computing évolutive et robuste](https://channel9.msdn.com/Series/FailSafe). Série de vidéos de neuf parties par Ulrich Homann, Marc Mercuri et Mark Simms. Consultez la discussion du CDN dans l’épisode 3 en commençant à 1:34:00.
-- [Microsoft Patterns et pratiques statiques hébergement du contenu de modèle](https://msdn.microsoft.com/en-us/library/dn589776.aspx)
+- [Microsoft Patterns et pratiques statiques hébergement du contenu de modèle](https://msdn.microsoft.com/library/dn589776.aspx)
 - [Révisions du CDN](http://www.cdnreviews.com/). Vue d’ensemble des nombreuses CDN.
 
 Programmation asynchrone :
 
 - [Utilisation de méthodes asynchrones dans ASP.NET MVC 4](../../../../mvc/overview/performance/using-asynchronous-methods-in-aspnet-mvc-4.md). Didacticiel de Rick Anderson.
-- [Programmation asynchrone avec Async et Await (c# et Visual Basic)](https://msdn.microsoft.com/en-us/library/vstudio/hh191443.aspx). Livre blanc MSDN qui explique le raisonnement pour la programmation asynchrone, comment il fonctionne dans ASP.NET 4.5 et comment écrire du code pour l’implémenter.
-- [Requête de Async Entity Framework et enregistrer](https://msdn.microsoft.com/en-us/data/jj819165)
+- [Programmation asynchrone avec Async et Await (c# et Visual Basic)](https://msdn.microsoft.com/library/vstudio/hh191443.aspx). Livre blanc MSDN qui explique le raisonnement pour la programmation asynchrone, comment il fonctionne dans ASP.NET 4.5 et comment écrire du code pour l’implémenter.
+- [Requête de Async Entity Framework et enregistrer](https://msdn.microsoft.com/data/jj819165)
 - [Comment créer des Applications Web ASP.NET en utilisant Async](https://channel9.msdn.com/Events/TechEd/NorthAmerica/2013/DEV-B337#fbid=tgkT4SR_DK7). Vidéo de présentation par Rowan Miller. Inclut une démonstration de graphique de la programmation asynchrone comment faciliter une augmentation considérable de débit du serveur web dans des conditions de charge élevée.
 - [Prévention de défaillance : Création de Services de cloud computing évolutive et robuste](https://channel9.msdn.com/Series/FailSafe). Série de vidéos de neuf parties par Ulrich Homann, Marc Mercuri et Mark Simms. Pour des discussions sur l’impact de la programmation asynchrone sur l’évolutivité, consultez épisode 4 et épisode 8.
 - [L’astuce de l’utilisation de méthodes asynchrones dans ASP.NET 4.5 plus un piège n important](http://www.hanselman.com/blog/TheMagicOfUsingAsynchronousMethodsInASPNET45PlusAnImportantGotcha.aspx). Billet de blog par Scott Hanselman, principalement sur l’utilisation d’async dans les applications Web Forms ASP.NET.

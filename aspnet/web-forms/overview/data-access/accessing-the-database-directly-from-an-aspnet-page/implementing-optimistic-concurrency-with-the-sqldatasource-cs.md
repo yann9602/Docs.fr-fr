@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/implementing-optimistic-concurrency-with-the-sqldatasource-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 69ba9e47071956385e96a28372454a3ae93ccc89
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b089a0b25aa5a520f3e20af8ec5212072ad7c7bf
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="implementing-optimistic-concurrency-with-the-sqldatasource-c"></a>Implémentation de l’accès concurrentiel optimiste avec le SqlDataSource (c#)
 ====================
@@ -116,8 +116,8 @@ De même, la `DeleteCommand` propriété et `DeleteParameters` collection doit s
 
 En plus de l’augmentation de la `WHERE` clauses de la `UpdateCommand` et `DeleteCommand` propriétés (et ajout de paramètres supplémentaires pour les collections de paramètres respectifs), en sélectionnant l’utilisation optimiste option d’accès concurrentiel s’ajuste à deux autres propriétés :
 
-- Modifications du [ `ConflictDetection` propriété](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.sqldatasource.conflictdetection.aspx) de `OverwriteChanges` (la valeur par défaut) pour`CompareAllValues`
-- Modifications du [ `OldValuesParameterFormatString` propriété](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.sqldatasource.oldvaluesparameterformatstring.aspx) à partir de {0} (la valeur par défaut) à original\_{0}.
+- Modifications du [ `ConflictDetection` propriété](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.conflictdetection.aspx) de `OverwriteChanges` (la valeur par défaut) pour`CompareAllValues`
+- Modifications du [ `OldValuesParameterFormatString` propriété](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.oldvaluesparameterformatstring.aspx) à partir de {0} (la valeur par défaut) à original\_{0}.
 
 Lorsque les données de contrôle Web appelant le SqlDataSource s `Update()` ou `Delete()` (méthode), il transmet les valeurs d’origine. Si les opérations de mappage SqlDataSource `ConflictDetection` est définie sur `CompareAllValues`, ces valeurs d’origine sont ajoutées à la commande. Le `OldValuesParameterFormatString` propriété fournit le modèle d’affectation de noms utilisé pour ces paramètres à valeur d’origine. L’Assistant Configurer la Source de données utilise d’origine\_{0} et les noms de chaque paramètre d’origine dans le `UpdateCommand` et `DeleteCommand` propriétés et `UpdateParameters` et `DeleteParameters` collections en conséquence.
 
@@ -221,7 +221,7 @@ Comme le montre la Figure 9, ces deux gestionnaires d’événements, un message
 **Figure 9**: un Message s’affiche en cas de défaillance une Violation d’accès concurrentiel ([cliquez pour afficher l’image en taille réelle](implementing-optimistic-concurrency-with-the-sqldatasource-cs/_static/image16.png))
 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Lorsque vous créez une application web où de multiples utilisateurs peuvent modifier les mêmes données, il est important de considérer les options de contrôle d’accès concurrentiel. Par défaut, les données ASP.NET de contrôles Web et les contrôles de source de données n’appliquent pas de n’importe quel contrôle d’accès concurrentiel. Comme nous l’avons vu dans ce didacticiel, l’implémentation de contrôle d’accès concurrentiel optimiste avec le SqlDataSource est relativement simple et rapide. Le SqlDataSource gère la plupart du gros du travail pour votre ajout augmentée `WHERE` clauses pour le générées automatiquement `UPDATE` et `DELETE` , mais les instructions sont quelques subtilités dans la gestion des `NULL` valeur des colonnes, comme indiqué dans les La gestion correcte de `NULL` les valeurs de section.
 

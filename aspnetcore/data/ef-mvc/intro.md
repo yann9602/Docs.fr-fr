@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/intro
-ms.openlocfilehash: df13726689c430ab19786e104ea7404051107aa9
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: c30556368ba24fb38cf3347dd49f171b5246514c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="getting-started-with-aspnet-core-mvc-and-entity-framework-core-using-visual-studio-1-of-10"></a>Mise en route avec ASP.NET MVC de base et d’Entity Framework Core, à l’aide de Visual Studio (1 / 10)
 
@@ -27,7 +27,7 @@ L’exemple d’application est un site web pour une université fictif de Conto
 
 [Télécharger ou afficher l’application terminée.](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-mvc/intro/samples/cu-final)
 
-EF Core 2.0 est la dernière version de EF mais n’a pas encore de toutes les fonctionnalités EF 6.x. Pour plus d’informations sur comment choisir entre EF 6.x et EF Core, consultez [EF Core vs. EF6.x](https://docs.microsoft.com/ef/efcore-and-ef6/). Si vous choisissez EF 6.x, consultez [la version précédente de cette série de didacticiels](https://docs.microsoft.com/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application).
+EF Core 2.0 est la dernière version de EF mais ne dispose pas encore toutes les fonctionnalités EF 6.x. Pour plus d’informations sur comment choisir entre EF 6.x et EF Core, consultez [EF Core vs. EF6.x](https://docs.microsoft.com/ef/efcore-and-ef6/). Si vous choisissez EF 6.x, consultez [la version précédente de cette série de didacticiels](https://docs.microsoft.com/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application).
 
 > [!NOTE]
 > * Pour la version 1.1 de base ASP.NET de ce didacticiel, consultez le [version VS 2017 mise à jour 2 de ce didacticiel au format PDF](https://github.com/aspnet/Docs/blob/master/aspnetcore/data/ef-mvc/intro/_static/efmvc1.1.pdf).
@@ -204,7 +204,7 @@ Ouvrez le *appsettings.json* et ajoutez une chaîne de connexion comme indiqué 
 
 ### <a name="sql-server-express-localdb"></a>SQL Server Express LocalDB
 
-La chaîne de connexion spécifie une base de données de la base de données SQL Server locale. LocalDB est une version légère de SQL Server Express Database Engine et est conçue pour le développement d’applications, pas les fins de production. LocalDB démarre à la demande et s’exécute en mode utilisateur, ce qui n’implique aucune configuration complexe. Par défaut, LocalDB crée *.mdf* dans les fichiers de base de données la `C:/Users/<user>` active.
+La chaîne de connexion spécifie une base de données de la base de données SQL Server locale. LocalDB est une version légère de SQL Server Express Database Engine et est conçue pour le développement d’applications, pas les fins de production. LocalDB démarre à la demande et s’exécute en mode utilisateur, il n’existe aucune configuration complexe. Par défaut, LocalDB crée *.mdf* dans les fichiers de base de données la `C:/Users/<user>` active.
 
 ## <a name="add-code-to-initialize-the-database-with-test-data"></a>Ajoutez du code pour initialiser la base de données de test
 

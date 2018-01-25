@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/dependency-injection
-ms.openlocfilehash: 21cffcd285879fdca81cb7d92d0f079d4bf7756c
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 946d695c572379c3ebc2eda1569f186f25ab9bfc
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="dependency-injection-into-controllers"></a>Injection de dépendance dans les contrôleurs
 
@@ -87,7 +87,7 @@ Parfois, vous n’avez pas besoin d’un service pour plusieurs actions dans vot
 
 ## <a name="accessing-settings-from-a-controller"></a>L’accès aux paramètres d’un contrôleur
 
-L’accès aux paramètres de configuration ou d’application à partir d’un contrôleur est un modèle commun. Cet accès doit utiliser le modèle des Options décrit dans [configuration](xref:fundamentals/configuration/index). Vous généralement ne devez pas demander les paramètres directement à partir de votre contrôleur à l’aide de l’injection de dépendances. Une meilleure approche consiste à demande un `IOptions<T>` instance, où `T` est la classe de configuration que vous avez besoin.
+L’accès aux paramètres de configuration ou d’application à partir d’un contrôleur est un modèle commun. Cet accès doit utiliser le modèle des Options décrit dans [configuration](xref:fundamentals/configuration/index). Généralement, vous ne doit pas demander les paramètres directement à partir de votre contrôleur à l’aide de l’injection de dépendances. Une meilleure approche consiste à demande un `IOptions<T>` instance, où `T` est la classe de configuration que vous avez besoin.
 
 Pour utiliser le modèle d’options, vous devez créer une classe qui représente les options, comme celle-ci :
 

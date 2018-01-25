@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript
 msc.type: authoredcontent
-ms.openlocfilehash: 68870caf1608e596962650cf653e5b455b82382a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 29b45c07b5498542abbf22c4c3001b1cee41edc9
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript"></a>Création d’un MVC 3 Application avec Razor et JavaScript non Obstrusif
 ====================
@@ -68,7 +68,7 @@ Nommez la classe `UserModel`. Remplacez le contenu de la *UserModel* fichier ave
 
 [!code-csharp[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample2.cs)]
 
-La `UserModel` classe représente les utilisateurs. Chaque membre de la classe est annoté avec le [requis](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.requiredattribute.aspx) attribut à partir de la [DataAnnotations](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.aspx) espace de noms. Les attributs dans le [DataAnnotations](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.aspx) espace de noms fournissent la validation côté client et serveur automatique pour les applications web.
+La `UserModel` classe représente les utilisateurs. Chaque membre de la classe est annoté avec le [requis](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.requiredattribute.aspx) attribut à partir de la [DataAnnotations](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx) espace de noms. Les attributs dans le [DataAnnotations](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx) espace de noms fournissent la validation côté client et serveur automatique pour les applications web.
 
 Ouvrir le `HomeController` et ajouter un `using` directive afin que vous pouvez accéder à la `UserModel` et `Users` classes :
 
@@ -172,7 +172,7 @@ Vous devez également inclure plusieurs fichiers JavaScript dans l’affichage. 
 
 Les deux premiers scripts jQuery sont hébergés par le contenu remise réseau CDN Microsoft Ajax (). En tirant parti du CDN Microsoft Ajax, vous pouvez considérablement améliorer les performances du premier accès de vos applications.
 
-Exécutez l’application et cliquez sur un lien d’édition. Afficher le code source dans le navigateur. La source du navigateur présente beaucoup d’attributs de la forme `data-val` (pour la validation de données). Lors de la validation côté client et le JavaScript non obstrusif est activé, les champs d’entrée avec une règle de validation côté client contient le `data-val="true"` attribut pour déclencher la validation client non obstructive. Par exemple, le `City` champ dans le modèle a été décoré avec le [requis](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.requiredattribute.aspx) attribut, ce qui génère le code HTML indiqué dans l’exemple suivant :
+Exécutez l’application et cliquez sur un lien d’édition. Afficher le code source dans le navigateur. La source du navigateur présente beaucoup d’attributs de la forme `data-val` (pour la validation de données). Lors de la validation côté client et le JavaScript non obstrusif est activé, les champs d’entrée avec une règle de validation côté client contient le `data-val="true"` attribut pour déclencher la validation client non obstructive. Par exemple, le `City` champ dans le modèle a été décoré avec le [requis](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.requiredattribute.aspx) attribut, ce qui génère le code HTML indiqué dans l’exemple suivant :
 
 [!code-cshtml[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample15.cshtml)]
 
@@ -180,7 +180,7 @@ Pour chaque règle de validation côté client, un attribut est ajouté qui pré
 
 ![Ville requis](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image14.png)
 
-De même, pour chaque paramètre dans la règle de validation côté client, un attribut est ajouté qui présente sous la forme `data-val-rulename-paramname=paramvalue`. Par exemple, le `FirstName` propriété est annotée avec le [StringLength](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.stringlengthattribute.aspx) d’attribut et spécifie une longueur minimale de 3 et une longueur maximale de 8. La règle de validation de données nommée `length` porte le nom de paramètre `max` et la valeur du paramètre 8. L’exemple suivant montre le code HTML qui est généré pour le `FirstName` champ lorsque vous modifiez un des utilisateurs :
+De même, pour chaque paramètre dans la règle de validation côté client, un attribut est ajouté qui présente sous la forme `data-val-rulename-paramname=paramvalue`. Par exemple, le `FirstName` propriété est annotée avec le [StringLength](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.stringlengthattribute.aspx) d’attribut et spécifie une longueur minimale de 3 et une longueur maximale de 8. La règle de validation de données nommée `length` porte le nom de paramètre `max` et la valeur du paramètre 8. L’exemple suivant montre le code HTML qui est généré pour le `FirstName` champ lorsque vous modifiez un des utilisateurs :
 
 [!code-cshtml[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample16.cshtml)]
 

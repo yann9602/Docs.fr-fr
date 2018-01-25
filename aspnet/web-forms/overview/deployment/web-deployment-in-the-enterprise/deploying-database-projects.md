@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/deploying-database-projects
 msc.type: authoredcontent
-ms.openlocfilehash: aef8229f2920bd026e3dbf063afb57cffb9b21d0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9b1f9a19c76e33b5d996cb4d562cf0c1a3e2f83b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-database-projects"></a>Déploiement de projets de base de données
 ====================
@@ -65,7 +65,7 @@ Il existe différentes approches différentes pour le déploiement de projets de
 Il existe trois approches principales que vous pouvez utiliser pour déployer un projet de base de données :
 
 - Vous pouvez utiliser la fonctionnalité de déploiement avec le type de projet de base de données dans Visual Studio 2010. Lorsque vous générez et déployez un projet de base de données dans Visual Studio 2010, le processus de déploiement utilise le manifeste de déploiement pour générer un fichier de déploiement basé sur SQL spécifique à la configuration de build. Cela crée la base de données si elle n’existent déjà ou apportez les modifications nécessaires à la base de données s’il n’existe pas déjà. Vous pouvez également utiliser SQLCMD.exe pour exécuter ce fichier sur votre serveur de destination, ou vous pouvez définir Visual Studio pour créer et exécuter le fichier. L’inconvénient de cette approche est que vous avez uniquement un contrôle limité sur les paramètres de déploiement. Vous devrez souvent également modifier le fichier de déploiement de SQL pour fournir les valeurs des variables spécifiques à l’environnement. Vous pouvez uniquement utiliser cette approche basée sur un ordinateur avec Visual Studio 2010 est installé et que le développeur doit connaître et fournir des informations d’identification et des chaînes de connexion pour tous les environnements de destination.
-- Vous pouvez utiliser l’outil de déploiement Web Internet Information Services (IIS) (Web Deploy) pour [déployer une base de données dans le cadre d’un projet d’application web](https://msdn.microsoft.com/en-us/library/dd465343.aspx). Toutefois, cette approche est beaucoup plus complexe si vous souhaitez déployer un projet de base de données au lieu de simplement répliquer une base de données local existant sur un serveur de destination. Vous pouvez configurer Web Deploy pour exécuter le script de déploiement SQL générés par le projet de base de données, mais pour ce faire, vous devez créer un fichier de cibles WPP personnalisé pour votre projet d’application web. Cela ajoute une quantité substantielle de complexité au processus de déploiement. En outre, Web Deploy ne pas directement en charge les mises à jour incrémentielles de bases de données existantes. Pour plus d’informations sur cette approche, consultez [étendre le Pipeline de publication Web au projet de base de données de package déployé fichier SQL](https://go.microsoft.com/?linkid=9805121).
+- Vous pouvez utiliser l’outil de déploiement Web Internet Information Services (IIS) (Web Deploy) pour [déployer une base de données dans le cadre d’un projet d’application web](https://msdn.microsoft.com/library/dd465343.aspx). Toutefois, cette approche est beaucoup plus complexe si vous souhaitez déployer un projet de base de données au lieu de simplement répliquer une base de données local existant sur un serveur de destination. Vous pouvez configurer Web Deploy pour exécuter le script de déploiement SQL générés par le projet de base de données, mais pour ce faire, vous devez créer un fichier de cibles WPP personnalisé pour votre projet d’application web. Cela ajoute une quantité substantielle de complexité au processus de déploiement. En outre, Web Deploy ne pas directement en charge les mises à jour incrémentielles de bases de données existantes. Pour plus d’informations sur cette approche, consultez [étendre le Pipeline de publication Web au projet de base de données de package déployé fichier SQL](https://go.microsoft.com/?linkid=9805121).
 - Vous pouvez utiliser l’utilitaire VSDBCMD pour déployer la base de données à l’aide du schéma de base de données ou le manifeste de déploiement. Vous pouvez appeler VSDBCMD.exe à partir d’une cible de MSBuild, ce qui vous permet de publier des bases de données dans le cadre d’un processus de déploiement plus grande, sous forme de script. Vous pouvez remplacer les variables dans votre fichier .sqlcmdvars et les lots d’autres propriétés de base de données à partir d’une commande VSDBCMD, ce qui vous permet de personnaliser votre déploiement pour différents environnements sans créer plusieurs configurations de build. VSDBCMD fournit des fonctionnalités de différenciation, ce qui signifie que les modifications apportées uniquement le nécessaire pour aligner une base de données de destination avec votre schéma de base de données. VSDBCMD propose également un large éventail d’options de ligne de commande, ce qui vous donne un contrôle affiné sur le processus de déploiement.
 
 À partir de cette vue d’ensemble, vous pouvez voir que l’utilisation de VSDBCMD MSBuild est l’approche la mieux adaptée à un scénario de déploiement standard de l’entreprise :
@@ -97,7 +97,7 @@ Dans ce cas :
 - Le **/dd+** (ou **/DeployToDatabase+**) commutateur indique que vous souhaitez créer un déploiement et le déployer dans l’environnement cible. Si vous spécifiez **/dd-**, ou omettez le commutateur, VSDBCMD génère un script de déploiement, mais il déploiera pas à l’environnement cible. Ce commutateur est souvent la source de confusion et est expliqué plus en détail dans la section suivante.
 - Le **/script** (ou **/DeploymentScriptFile**) commutateur spécifie où vous souhaitez générer le script de déploiement. Cette valeur n’affecte pas le processus de déploiement.
 
-Pour plus d’informations sur VSDBCMD, consultez [référence de ligne de commande pour VSDBCMD. EXE (déploiement et importation de schéma)](https://msdn.microsoft.com/en-us/library/dd193283.aspx) et [Comment : préparer une base de données pour le déploiement à partir d’une invite de commandes à l’aide de VSDBCMD. EXE](https://msdn.microsoft.com/en-us/library/dd193258.aspx).
+Pour plus d’informations sur VSDBCMD, consultez [référence de ligne de commande pour VSDBCMD. EXE (déploiement et importation de schéma)](https://msdn.microsoft.com/library/dd193283.aspx) et [Comment : préparer une base de données pour le déploiement à partir d’une invite de commandes à l’aide de VSDBCMD. EXE](https://msdn.microsoft.com/library/dd193258.aspx).
 
 Pour obtenir un exemple de comment vous pouvez utiliser VSDBCMD à partir d’un fichier projet MSBuild, consultez [comprendre le processus de génération](understanding-the-build-process.md). Pour obtenir des exemples montrant comment configurer les paramètres de déploiement de base de données pour plusieurs environnements, consultez [personnalisation des déploiements de base de données pour plusieurs environnements](../advanced-enterprise-web-deployment/customizing-database-deployments-for-multiple-environments.md).
 
@@ -145,10 +145,10 @@ Pour plus d’informations sur la personnalisation des déploiements de la base 
 
 Ces rubriques sur MSDN fournissent des conseils plus large et des informations générales sur les projets de base de données de Visual Studio et le processus de déploiement de base de données :
 
-- [Projets de base de données Visual Studio 2010 SQL Server](https://msdn.microsoft.com/en-us/library/ff678491.aspx)
-- [Gestion des modifications de la base de données](https://msdn.microsoft.com/en-us/library/aa833404.aspx)
-- [Comment : préparer une base de données pour le déploiement à partir d’une invite de commandes à l’aide de VSDBCMD. EXE](https://msdn.microsoft.com/en-us/library/dd193258.aspx)
-- [Une vue d’ensemble de la génération de la base de données et de déploiement](https://msdn.microsoft.com/en-us/library/aa833165.aspx)
+- [Projets de base de données Visual Studio 2010 SQL Server](https://msdn.microsoft.com/library/ff678491.aspx)
+- [Gestion des modifications de la base de données](https://msdn.microsoft.com/library/aa833404.aspx)
+- [Comment : préparer une base de données pour le déploiement à partir d’une invite de commandes à l’aide de VSDBCMD. EXE](https://msdn.microsoft.com/library/dd193258.aspx)
+- [Une vue d’ensemble de la génération de la base de données et de déploiement](https://msdn.microsoft.com/library/aa833165.aspx)
 
 >[!div class="step-by-step"]
 [Précédent](deploying-web-packages.md)

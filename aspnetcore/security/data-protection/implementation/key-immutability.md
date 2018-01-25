@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/implementation/key-immutability
-ms.openlocfilehash: 8e46e634266fa5f082c47f3be306009eb54bcbcc
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 425b8ba9769c2b5ac635693b045e52c110f25205
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="key-immutability-and-changing-settings"></a>Immuabilité et la modification des paramètres de clé
 
@@ -21,7 +21,7 @@ Une fois qu’un objet est persistant dans le magasin de sauvegarde, sa représe
 
 Une conséquence de ce comportement est qu’une fois qu’une clé est écrite dans le magasin de stockage, il est immuable. Ses dates de création, d’activation et d’expiration ne sont pas modifiables, si elle peut révoquées à l’aide de `IKeyManager`. En outre, ses informations algorithmiques sous-jacentes, support de gestion et le chiffrement sur les propriétés rest sont également immuables.
 
-Si le développeur modifie un paramètre qui affecte la persistance des clés, ces modifications ne prendront effet jusqu'à la prochaine génération d’une clé, soit via un appel explicite à `IKeyManager.CreateNewKey` ou via de la protection système de données propre [clé automatique génération](key-management.md#data-protection-implementation-key-management) comportement. Les paramètres qui affectent la persistance des clés sont les suivantes :
+Si le développeur modifie un paramètre qui affecte la persistance des clés, ces modifications ne sont pas en vigueur jusqu'à la prochaine génération d’une clé, soit via un appel explicite à `IKeyManager.CreateNewKey` ou via de la protection système de données propre [clé automatique génération](key-management.md#data-protection-implementation-key-management) comportement. Les paramètres qui affectent la persistance des clés sont les suivantes :
 
 * [La durée de vie de clé par défaut](key-management.md#data-protection-implementation-key-management)
 

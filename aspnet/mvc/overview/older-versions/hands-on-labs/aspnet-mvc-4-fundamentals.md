@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-fundamentals
 msc.type: authoredcontent
-ms.openlocfilehash: 086084b63cceca1c2d4e0bd4e5b654aaad6637a9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 468f6d5dabb645b1c005680dc5a1ffc4debd63b6
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-mvc-4-fundamentals"></a>Notions de base ASP.NET MVC 4
 ====================
@@ -32,7 +32,7 @@ par [Web Camps équipe](https://twitter.com/webcamps)
 > > Cet atelier pratique suppose que le développeur a une expérience dans les technologies de développement Web, tels que HTML et JavaScript.
 > 
 > 
-> Tous les exemples de code et des extraits de code sont inclus dans le Kit de formation Camps Web, disponible à l’adresse [https://www.microsoft.com/en-us/download/29843](https://www.microsoft.com/en-us/download/29843).
+> Tous les exemples de code et des extraits de code sont inclus dans le Kit de formation Camps Web, disponible à l’adresse [https://www.microsoft.com/download/29843](https://www.microsoft.com/download/29843).
 
 
 <a id="The_Music_Store_application"></a>
@@ -76,7 +76,7 @@ Dans cet atelier pratique, vous allez apprendre comment :
 <a id="Prerequisites"></a>
 
 <a id="Prerequisites"></a>
-### <a name="prerequisites"></a>Conditions préalables
+### <a name="prerequisites"></a>Prérequis
 
 Vous devez disposer des éléments suivants pour effectuer ce laboratoire :
 
@@ -319,7 +319,7 @@ Dans cette tâche, vous allez utiliser le **querystring** pour envoyer des param
     > [!NOTE]
     > Vous utilisez la **HttpUtility.HtmlEncode** méthode utilitaire pour empêche les utilisateurs à partir de l’injection de Javascript dans la vue avec un lien comme   **/magasin/Parcourir ? Genre =&lt;script&gt;window.location='[http://hackersite.com](http://hackersite.com)'&lt;/script&gt;**.
     > 
-    > Pour plus d’informations, visitez [cet article msdn](https://msdn.microsoft.com/en-us/library/a2a4yykt(v=VS.80).aspx).
+    > Pour plus d’informations, visitez [cet article msdn](https://msdn.microsoft.com/library/a2a4yykt(v=VS.80).aspx).
 
 <a id="Ex3Task2"></a>
 
@@ -964,7 +964,7 @@ Dans cet exercice, vous découvrirez les améliorations dans les modèles de pro
         *SimpleMembership inclus dans la solution*
 
         > [!NOTE]
-        > Obtenir des informations supplémentaires [OAuthWebSecurity](https://msdn.microsoft.com/en-us/library/jj158393(v=vs.111).aspx) dans MSDN.
+        > Obtenir des informations supplémentaires [OAuthWebSecurity](https://msdn.microsoft.com/library/jj158393(v=vs.111).aspx) dans MSDN.
 
 > [!NOTE]
 > En outre, vous pouvez déployer cette application à Sites Web Windows Azure suit [annexe b : publication une Application ASP.NET MVC 4, à l’aide de Web Deploy](#AppendixB).
@@ -975,7 +975,7 @@ Dans cet exercice, vous découvrirez les améliorations dans les modèles de pro
 <a id="Summary"></a>
 
 <a id="Summary"></a>
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 À la fin de cet atelier pratique, vous avez appris les notions de base d’ASP.NET MVC :
 

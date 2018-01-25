@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 8d11bf47f8c43040ef30d7132f0bb756748dbacd
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d54c0e133bc2f6f2021821dc16cdf86cc23a5667
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="sorting-filtering-and-paging-with-the-entity-framework-in-an-aspnet-mvc-application"></a>Tri, filtrage et la pagination avec Entity Framework dans une Application ASP.NET MVC
 ====================
@@ -60,7 +60,7 @@ Il s’agit d’instructions ternaires. Premier spécifie que si le `sortOrder` 
 | Date de l’ordre croissant | ascending | descending |
 | Date décroissant | ascending | ascending |
 
-La méthode utilise [LINQ to Entities](https://msdn.microsoft.com/en-us/library/bb386964.aspx) pour spécifier la colonne à trier. Le code crée une [IQueryable](https://msdn.microsoft.com/en-us/library/bb351562.aspx) variable avant le `switch` instruction modifie dans le `switch` instruction et appelle le `ToList` méthode après le `switch` instruction. Lorsque vous créez et modifiez `IQueryable` variables, aucune requête n’est envoyée à la base de données. La requête n’est pas exécutée jusqu'à ce que vous convertissez la `IQueryable` objet dans une collection en appelant une méthode comme `ToList`. Par conséquent, ce code génère une requête unique qui n’est pas exécutée tant que la `return View` instruction.
+La méthode utilise [LINQ to Entities](https://msdn.microsoft.com/library/bb386964.aspx) pour spécifier la colonne à trier. Le code crée une [IQueryable](https://msdn.microsoft.com/library/bb351562.aspx) variable avant le `switch` instruction modifie dans le `switch` instruction et appelle le `ToList` méthode après le `switch` instruction. Lorsque vous créez et modifiez `IQueryable` variables, aucune requête n’est envoyée à la base de données. La requête n’est pas exécutée jusqu'à ce que vous convertissez la `IQueryable` objet dans une collection en appelant une méthode comme `ToList`. Par conséquent, ce code génère une requête unique qui n’est pas exécutée tant que la `return View` instruction.
 
 Comme alternative à l’écriture d’instructions LINQ différentes pour chaque ordre de tri, vous pouvez créer dynamiquement une instruction LINQ. Pour plus d’informations à propos de LINQ dynamique, consultez [LINQ dynamique](https://go.microsoft.com/fwlink/?LinkID=323957).
 
@@ -90,7 +90,7 @@ Dans *Controllers\StudentController.cs*, remplacez le `Index` méthode avec le c
 
 [!code-csharp[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample4.cs?highlight=1,7-11)]
 
-Vous avez ajouté un `searchString` paramètre à la `Index` (méthode). La valeur de chaîne de recherche est reçue à partir d’une zone de texte que vous ajouterez à la vue Index. Vous avez également ajouté à l’instruction LINQ un `where` clause qui sélectionne uniquement les étudiants dont prénom ou le nom contient la chaîne de recherche. L’instruction qui ajoute le [où](https://msdn.microsoft.com/en-us/library/bb535040.aspx) clause est exécutée uniquement s’il existe une valeur à rechercher.
+Vous avez ajouté un `searchString` paramètre à la `Index` (méthode). La valeur de chaîne de recherche est reçue à partir d’une zone de texte que vous ajouterez à la vue Index. Vous avez également ajouté à l’instruction LINQ un `where` clause qui sélectionne uniquement les étudiants dont prénom ou le nom contient la chaîne de recherche. L’instruction qui ajoute le [où](https://msdn.microsoft.com/library/bb535040.aspx) clause est exécutée uniquement s’il existe une valeur à rechercher.
 
 > [!NOTE]
 > Dans de nombreux cas, vous pouvez appeler la même méthode sur un jeu d’entités Entity Framework ou comme une méthode d’extension sur une collection en mémoire. Les résultats sont normalement les mêmes, mais dans certains cas, peuvent être différents.
@@ -160,7 +160,7 @@ Une autre propriété, `ViewBag.CurrentFilter`, fournit la vue avec la chaîne d
 
 [!code-csharp[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample11.cs)]
 
-Le `ToPagedList` méthode prend un numéro de page. Les deux points d’interrogation représentent le [opérateur de fusion null](https://msdn.microsoft.com/en-us/library/ms173224.aspx). L’opérateur de fusion null définit une valeur par défaut pour un type nullable ; l’expression `(page ?? 1)` signifie retourne la valeur de `page` si elle a une valeur, ou retourne 1 si `page` a la valeur null.
+Le `ToPagedList` méthode prend un numéro de page. Les deux points d’interrogation représentent le [opérateur de fusion null](https://msdn.microsoft.com/library/ms173224.aspx). L’opérateur de fusion null définit une valeur par défaut pour un type nullable ; l’expression `(page ?? 1)` signifie retourne la valeur de `page` si elle a une valeur, ou retourne 1 si `page` a la valeur null.
 
 ### <a name="add-paging-links-to-the-student-index-view"></a>Ajouter des liens de pagination à la vue Index étudiant
 
@@ -172,11 +172,11 @@ Le `@model` instruction en haut de la page spécifie que la vue obtient désorma
 
 Le `using` instruction pour `PagedList.Mvc` donne accès à l’application d’assistance MVC de boutons de pagination.
 
-Le code utilise une surcharge de [BeginForm](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.formextensions.beginform(v=vs.108).aspx) qui lui permet de spécifier [FormMethod.Get](https://msdn.microsoft.com/en-us/library/system.web.mvc.formmethod(v=vs.100).aspx/css).
+Le code utilise une surcharge de [BeginForm](https://msdn.microsoft.com/library/system.web.mvc.html.formextensions.beginform(v=vs.108).aspx) qui lui permet de spécifier [FormMethod.Get](https://msdn.microsoft.com/library/system.web.mvc.formmethod(v=vs.100).aspx/css).
 
 [!code-cshtml[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample13.cshtml?highlight=1)]
 
-La valeur par défaut [BeginForm](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.formextensions.beginform(v=vs.108).aspx) envoie des données de formulaire avec une publication, ce qui signifie que les paramètres sont passés dans le corps du message HTTP et non dans l’URL sous forme de chaînes de requête. Lorsque vous spécifiez HTTP GET, les données du formulaire sont passées dans l’URL sous forme de chaînes de requête, ce qui permet aux utilisateurs de l’URL de signet. Le [recommandations du W3C pour l’utilisation de HTTP GET](http://www.w3.org/2001/tag/doc/whenToUseGet.html) est recommandé que vous devez utiliser GET lorsque l’action n’entraîne pas une mise à jour.
+La valeur par défaut [BeginForm](https://msdn.microsoft.com/library/system.web.mvc.html.formextensions.beginform(v=vs.108).aspx) envoie des données de formulaire avec une publication, ce qui signifie que les paramètres sont passés dans le corps du message HTTP et non dans l’URL sous forme de chaînes de requête. Lorsque vous spécifiez HTTP GET, les données du formulaire sont passées dans l’URL sous forme de chaînes de requête, ce qui permet aux utilisateurs de l’URL de signet. Le [recommandations du W3C pour l’utilisation de HTTP GET](http://www.w3.org/2001/tag/doc/whenToUseGet.html) est recommandé que vous devez utiliser GET lorsque l’action n’entraîne pas une mise à jour.
 
 La zone de texte est initialisée avec la chaîne de recherche en cours lorsque vous cliquez sur une nouvelle page, vous voyez la chaîne de recherche actuel.
 
@@ -250,7 +250,7 @@ Exécutez l’application et cliquez sur le **sur** lien. Le nombre d’étudian
 
 ![About_page](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image9.png)
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Dans ce didacticiel, vous avez vu comment créer un modèle de données et mettre en œuvre CRUD de base, le tri, le filtrage, la pagination et la fonctionnalité de regroupement. Dans le didacticiel suivant vous commencerez examinant rubriques plus avancées en développant le modèle de données.
 

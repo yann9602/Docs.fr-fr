@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-1
 msc.type: authoredcontent
-ms.openlocfilehash: 9320c8a2aadb3b3c5bd6cd90b59d8a72db384c0c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4b5507021af47d96c29809c9830d0558f5501f87
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc---part-1"></a>Utilisation de HTML5 et du calendrier contextuel jQuery UI avec ASP.NET MVC - partie 1
 ====================
@@ -51,11 +51,11 @@ Vous allez ajouter des modèles (plus particulièrement, modifier et afficher le
 
 Voici ce que vous allez apprendre :
 
-- Comment utiliser les attributs de la [DataAnnotations](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.aspx) espace de noms pour contrôler le format de données lorsqu’elle est affichée et lorsqu’il est en mode d’édition.
+- Comment utiliser les attributs de la [DataAnnotations](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx) espace de noms pour contrôler le format de données lorsqu’elle est affichée et lorsqu’il est en mode d’édition.
 - Comment créer des modèles (modifier et afficher les modèles) pour contrôler la mise en forme des données.
 - Comment ajouter la [sélecteur de dates jQuery UI](http://jqueryui.com/demos/datepicker/) comme un moyen d’entrer des champs de date.
 
-### <a name="getting-started"></a>Commencer
+### <a name="getting-started"></a>Prise en main
 
 Si vous n’avez pas encore l’application de liste de films à partir du projet de démarrage, le télécharger à l’aide du lien suivant : [télécharger](https://code.msdn.microsoft.com/Project/Download/FileDownload.aspx?https://archive.msdn.microsoft.com/Project/Download/FileDownload.aspx?ProjectName=aspnetmvcsamples&amp;DownloadId=15800). Puis, dans l’Explorateur Windows, cliquez sur le *MvcMovie.zip* fichier et sélectionnez **propriétés**. Dans le **MvcMovie.zip propriétés** boîte de dialogue, sélectionnez **Unblock**. (Le déblocage empêche un avertissement de sécurité qui se produit lorsque vous essayez d’utiliser un *.zip* fichier que vous avez téléchargé à partir du web.)
 
@@ -67,7 +67,7 @@ Dans **l’Explorateur de solutions**, double-cliquez sur le *Views\Shared\\_Lay
 
 ![](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-1/_static/image3.png)
 
-La mise en forme pour la date et le prix est le résultat de l’utilisation de la [DisplayFormat](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.displayformatattribute.aspx) attribut sur les propriétés de la `Movie` classe.
+La mise en forme pour la date et le prix est le résultat de l’utilisation de la [DisplayFormat](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayformatattribute.aspx) attribut sur les propriétés de la `Movie` classe.
 
 Ouvrir le *Movie.cs* de fichiers et commentez la `DisplayFormat` de l’attribut le `ReleaseDate` et `Price` propriétés. Résultant `Movie` classe ressemble à ceci :
 
@@ -79,11 +79,11 @@ Appuyez sur CTRL + F5 pour exécuter l’application et sélectionnez le **accue
 
 ### <a name="using-the-dataannotations-datatype-attribute-to-specify-the-data-type"></a>Pour spécifier le Type de données à l’aide de l’attribut de type de données DataAnnotations
 
-Remplacer la commenté `DisplayFormat` d’attribut pour le `ReleaseDate` propriété avec le [DataType](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatype.aspx) d’attribut, à l’aide de la `Date` énumération. Remplacez le `DisplayFormat` d’attribut pour le `Price` propriété avec le [type de données](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatype.aspx) attribut là encore, cette fois en utilisant le `Currency` énumération. Voici à quoi ressemble le code terminé :
+Remplacer la commenté `DisplayFormat` d’attribut pour le `ReleaseDate` propriété avec le [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) d’attribut, à l’aide de la `Date` énumération. Remplacez le `DisplayFormat` d’attribut pour le `Price` propriété avec le [type de données](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) attribut là encore, cette fois en utilisant le `Currency` énumération. Voici à quoi ressemble le code terminé :
 
 [!code-csharp[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-1/samples/sample2.cs)]
 
-Exécutez l'application. Maintenant la date de publication et les propriétés de prix sont correctement mis en forme (qui est, à l’aide des formats de date et de devise appropriés). Le [DataType](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatype.aspx) attribut fournit des métadonnées de type pour l’intégrées ASP.NET MVC modèles afin que les champs de rendu dans le format correct. À l’aide de la `DataType` attribut est préférable à l’utilisation de la `DisplayFormat` attribut qui a été initialement dans le code, car le `DataType` attribut rend le modèle plus claire et plus souple pour des raisons comme internationalisation.
+Exécutez l'application. Maintenant la date de publication et les propriétés de prix sont correctement mis en forme (qui est, à l’aide des formats de date et de devise appropriés). Le [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) attribut fournit des métadonnées de type pour l’intégrées ASP.NET MVC modèles afin que les champs de rendu dans le format correct. À l’aide de la `DataType` attribut est préférable à l’utilisation de la `DisplayFormat` attribut qui a été initialement dans le code, car le `DataType` attribut rend le modèle plus claire et plus souple pour des raisons comme internationalisation.
 
 Dans la section suivante, vous verrez comment créer des modèles personnalisés pour afficher les champs de date.
 

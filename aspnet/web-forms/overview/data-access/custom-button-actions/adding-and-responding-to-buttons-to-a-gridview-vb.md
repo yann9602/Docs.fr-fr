@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/custom-button-actions/adding-and-responding-to-buttons-to-a-gridview-vb
 msc.type: authoredcontent
-ms.openlocfilehash: ba66c867df93a9e1a0bb7897052ace7300b672af
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8a642a9a8e25d64028df0b5d8741da3008700652
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-and-responding-to-buttons-to-a-gridview-vb"></a>Ajout et la réponse à des boutons pour un GridView (VB)
 ====================
@@ -199,7 +199,7 @@ Avec la `DiscontinueAllProductsForSupplier(supplierID)` méthode dans la couche 
 **Figure 15**: ajouter un interrompre tous les produits Web contrôle au s FormView `ItemTemplate` ([cliquez pour afficher l’image en taille réelle](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image41.png))
 
 
-Lorsque le bouton est activé par une visite de l’utilisateur s’ensuit de la page, une publication (postback) ainsi que les FormView [ `ItemCommand` événement](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.formview.itemcommand.aspx) se déclenche. Pour exécuter du code personnalisé en réponse à ce bouton, nous pouvons créer un gestionnaire d’événements pour cet événement. Sachez, cependant, que le `ItemCommand` événement est déclenché chaque fois que *tout* Button, LinkButton ou ImageButton Web est activé dans le FormView. Cela signifie que lorsque l’utilisateur déplace d’une page à l’autre dans le FormView, le `ItemCommand` se déclenche des événements ; même chose lorsque l’utilisateur clique sur Nouveau, modifier ou supprimer dans un FormView qui prend en charge d’insertion, de mise à jour ou la suppression.
+Lorsque le bouton est activé par une visite de l’utilisateur s’ensuit de la page, une publication (postback) ainsi que les FormView [ `ItemCommand` événement](https://msdn.microsoft.com/library/system.web.ui.webcontrols.formview.itemcommand.aspx) se déclenche. Pour exécuter du code personnalisé en réponse à ce bouton, nous pouvons créer un gestionnaire d’événements pour cet événement. Sachez, cependant, que le `ItemCommand` événement est déclenché chaque fois que *tout* Button, LinkButton ou ImageButton Web est activé dans le FormView. Cela signifie que lorsque l’utilisateur déplace d’une page à l’autre dans le FormView, le `ItemCommand` se déclenche des événements ; même chose lorsque l’utilisateur clique sur Nouveau, modifier ou supprimer dans un FormView qui prend en charge d’insertion, de mise à jour ou la suppression.
 
 Étant donné que le `ItemCommand` se déclenche, quelle que soit le bouton est activé, dans le gestionnaire, nous devons déterminer si utilisateur a cliqué sur le bouton Arrêter tous les produits des événements, ou s’il s’agissait d’une autre bouton. Pour ce faire, nous pouvons définir le contrôle de bouton Web s `CommandName` propriété à une valeur d’identification. Lorsque le bouton est activé, cela `CommandName` valeur passée dans le `ItemCommand` Gestionnaire d’événements, ce qui nous permet de déterminer si le bouton Arrêter tous les produits est le bouton cliqué. Définir le s interrompre le bouton tous les produits `CommandName` propriété DiscontinueProducts.
 
@@ -215,7 +215,7 @@ Ensuite, créez un gestionnaire d’événements pour les opérations de mappage
 
 [!code-vb[Main](adding-and-responding-to-buttons-to-a-gridview-vb/samples/sample7.vb)]
 
-Notez que la `SupplierID` du fournisseur sélectionné en cours dans le FormView sont accessibles en utilisant le FormView s [ `SelectedValue` propriété](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.formview.selectedvalue.aspx). Le `SelectedValue` propriété retourne la première clé de données valeur de l’enregistrement s’affiche dans le FormView. Le FormView s [ `DataKeyNames` propriété](https://msdn.microsoft.com/en-us/system.web.ui.webcontrols.formview.datakeynames.aspx), ce qui indique les données sont extraites les champs à partir de laquelle les valeurs de clé de données est automatiquement définie pour `SupplierID` par Visual Studio lors de la liaison ObjectDataSource à l’arrière du FormView à l’étape 2.
+Notez que la `SupplierID` du fournisseur sélectionné en cours dans le FormView sont accessibles en utilisant le FormView s [ `SelectedValue` propriété](https://msdn.microsoft.com/library/system.web.ui.webcontrols.formview.selectedvalue.aspx). Le `SelectedValue` propriété retourne la première clé de données valeur de l’enregistrement s’affiche dans le FormView. Le FormView s [ `DataKeyNames` propriété](https://msdn.microsoft.com/system.web.ui.webcontrols.formview.datakeynames.aspx), ce qui indique les données sont extraites les champs à partir de laquelle les valeurs de clé de données est automatiquement définie pour `SupplierID` par Visual Studio lors de la liaison ObjectDataSource à l’arrière du FormView à l’étape 2.
 
 Avec la `ItemCommand` Gestionnaire d’événements créé, prenez un moment pour tester la page. Accédez à la Quesos de Cooperativa 'Las Cabras' fournisseur (il s le cinquième fournisseur dans le FormView pour moi). Ce fournisseur fournit deux produits, Queso Cabrales et Queso Manchego La Pastora, qui sont tous deux *pas* abandonné.
 
@@ -252,7 +252,7 @@ Cette surcharge récupère des informations sur le produit spécifié via la cou
 
 ## <a name="step-7-adding-the-increase-and-decrease-buttons-to-the-gridview"></a>Étape 7 : Ajout de l’augmentation et la diminution de boutons au contrôle GridView
 
-Le GridView (et DetailsView) sont tous deux constituées d’une collection de champs. En plus de BoundFields, CheckBoxFields et TemplateField, ASP.NET inclut ButtonField, ce qui, comme son nom l’indique, le rendu sous la forme d’une colonne avec un bouton, LinkButton ou ImageButton pour chaque ligne. Similaire à FormView, en cliquant sur *tout* dans le GridView boutons de pagination, modifier ou supprimer boutons, boutons de tri et ainsi de suite avec le bouton provoque une publication (postback) et déclenche le GridView s [ `RowCommand` événement](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.rowcommand.aspx).
+Le GridView (et DetailsView) sont tous deux constituées d’une collection de champs. En plus de BoundFields, CheckBoxFields et TemplateField, ASP.NET inclut ButtonField, ce qui, comme son nom l’indique, le rendu sous la forme d’une colonne avec un bouton, LinkButton ou ImageButton pour chaque ligne. Similaire à FormView, en cliquant sur *tout* dans le GridView boutons de pagination, modifier ou supprimer boutons, boutons de tri et ainsi de suite avec le bouton provoque une publication (postback) et déclenche le GridView s [ `RowCommand` événement](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.rowcommand.aspx).
 
 Le ButtonField a un `CommandName` propriété qui affecte la valeur spécifiée à chacun de ses boutons `CommandName` propriétés. Comme avec le contrôle FormView, le `CommandName` valeur est utilisée par le `RowCommand` Gestionnaire d’événements pour déterminer quel bouton a été utilisé.
 
@@ -264,7 +264,7 @@ S permettent d’ajouter deux ButtonFields nouveau au GridView, une avec un text
 **La figure 18**: ajouter deux ButtonFields pour le contrôle GridView
 
 
-Déplacer les deux ButtonFields afin qu’ils apparaissent en tant que les deux premiers champs de GridView. Ensuite, définissez la `Text` propriétés de ces deux ButtonFields à + 10 % de prix et de prix -10 % et la `CommandName` propriétés IncreasePrice et DecreasePrice, respectivement. Par défaut, un ButtonField rend sa colonne de boutons en tant que LinkButton. Cela peut être modifié, toutefois, via le s ButtonField [ `ButtonType` propriété](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.buttonfieldbase.buttontype.aspx). S permettent de disposer de ces deux ButtonFields rendus sous forme de boutons de commande standards ; Par conséquent, définir le `ButtonType` propriété `Button`. Figure 19 montre les champs de la boîte de dialogue après ont apporté ces modifications ; qui est le balisage déclaratif de GridView s.
+Déplacer les deux ButtonFields afin qu’ils apparaissent en tant que les deux premiers champs de GridView. Ensuite, définissez la `Text` propriétés de ces deux ButtonFields à + 10 % de prix et de prix -10 % et la `CommandName` propriétés IncreasePrice et DecreasePrice, respectivement. Par défaut, un ButtonField rend sa colonne de boutons en tant que LinkButton. Cela peut être modifié, toutefois, via le s ButtonField [ `ButtonType` propriété](https://msdn.microsoft.com/library/system.web.ui.webcontrols.buttonfieldbase.buttontype.aspx). S permettent de disposer de ces deux ButtonFields rendus sous forme de boutons de commande standards ; Par conséquent, définir le `ButtonType` propriété `Button`. Figure 19 montre les champs de la boîte de dialogue après ont apporté ces modifications ; qui est le balisage déclaratif de GridView s.
 
 
 ![Configurer le texte de ButtonFields, CommandName et ButtonType propriétés](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image49.png)
@@ -302,7 +302,7 @@ Figure 20 montre la page lors de l’affichage des produits de grand-mère Kelly
 > `<asp:Button runat="server" ... CommandArgument='<%# CType(Container, GridViewRow).RowIndex %>' />`.
 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Tous les contrôles GridView, DetailsView et FormView peuvent inclure des boutons, LinkButton ou ImageButtons. Ces boutons, lorsque vous cliquez dessus, provoquent une publication et de déclencher la `ItemCommand` événements dans les contrôles FormView et DetailsView et `RowCommand` événement dans le GridView. Ces contrôles Web de données ont des fonctionnalités intégrées pour gérer les actions courantes liées à la commande, telles que la suppression ou modification d’enregistrements. Toutefois, nous pouvons également utiliser les boutons qui, lorsque vous cliquez sur, de réagir à l’exécution de notre propre code personnalisé.
 

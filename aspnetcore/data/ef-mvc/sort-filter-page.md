@@ -8,11 +8,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/sort-filter-page
-ms.openlocfilehash: 6da2073b18f6fff9738808c84441e59240caefe3
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 60ac1844e7747002d72aa892a47490cb7a416359
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="sorting-filtering-paging-and-grouping---ef-core-with-aspnet-core-mvc-tutorial-3-of-10"></a>Le tri, le filtrage, la pagination et le regroupement - Core EF avec le didacticiel ASP.NET Core MVC (partie 3 sur 10)
 
@@ -53,7 +53,7 @@ Il s’agit d’instructions ternaires. La première condition spécifie que si 
 | Date de l’ordre croissant       | ascending           | descending     |
 | Date décroissant      | ascending           | ascending      |
 
-La méthode utilise LINQ to Entities pour spécifier la colonne à trier. Le code crée un `IQueryable` variable avant l’instruction switch, il modifie dans l’instruction switch et appelle le `ToListAsync` méthode après le `switch` instruction. Lorsque vous créez et modifiez `IQueryable` variables, aucune requête n’est envoyée à la base de données. La requête n’est pas exécutée jusqu'à ce que vous convertissez la `IQueryable` objet dans une collection en appelant une méthode comme `ToListAsync`. Par conséquent, ce code génère une requête unique qui n’est pas exécutée tant que la `return View` instruction.
+La méthode utilise LINQ to Entities pour spécifier la colonne à trier. Le code crée un `IQueryable` variable avant l’instruction switch, il modifie dans l’instruction switch et appelle le `ToListAsync` méthode après le `switch` instruction. Lorsque vous créez et modifiez `IQueryable` variables, aucune requête n’est envoyée à la base de données. La requête n’est pas exécutée tant que vous convertissez la `IQueryable` objet dans une collection en appelant une méthode comme `ToListAsync`. Par conséquent, ce code génère une requête unique qui n’est pas exécutée tant que la `return View` instruction.
 
 Ce code peut obtenir documentée avec un grand nombre de colonnes. [Le didacticiel dernière de cette série](advanced.md#dynamic-linq) montre comment écrire du code qui vous permet de passer le nom de la `OrderBy` colonne dans une variable de chaîne.
 
@@ -92,7 +92,7 @@ Dans *Views/Student/Index.cshtml*, ajoutez le code en surbrillance immédiatemen
 
 [!code-html[](intro/samples/cu/Views/Students/Index3.cshtml?range=9-23&highlight=5-13)]
 
-Ce code utilise le `<form>` [d’assistance de balise](xref:mvc/views/tag-helpers/intro) pour ajouter la zone de texte de recherche et le bouton. Par défaut, le `<form>` application d’assistance de balise envoie des données de formulaire avec une publication, ce qui signifie que les paramètres sont passés dans le corps du message HTTP et non dans l’URL sous forme de chaînes de requête. Lorsque vous spécifiez HTTP GET, les données du formulaire sont passées dans l’URL sous forme de chaînes de requête, ce qui permet aux utilisateurs de l’URL de signet. W3C instructions il est conseillé que vous devez utiliser obtenir lors de l’action n’entraîne pas une mise à jour.
+Ce code utilise le `<form>` [d’assistance de balise](xref:mvc/views/tag-helpers/intro) pour ajouter la zone de texte de recherche et le bouton. Par défaut, le `<form>` application d’assistance de balise envoie des données de formulaire avec une publication, ce qui signifie que les paramètres sont passés dans le corps du message HTTP et non dans l’URL sous forme de chaînes de requête. Lorsque vous spécifiez HTTP GET, les données du formulaire sont passées dans l’URL sous forme de chaînes de requête, ce qui permet aux utilisateurs de l’URL de signet. W3C instructions il est conseillé que vous devez utiliser obtenir lors de l’action ne produit pas une mise à jour.
 
 Exécuter l’application, sélectionnez le **étudiants** onglet, entrez une chaîne de recherche, puis cliquez sur Rechercher pour vérifier que le filtrage fonctionne.
 

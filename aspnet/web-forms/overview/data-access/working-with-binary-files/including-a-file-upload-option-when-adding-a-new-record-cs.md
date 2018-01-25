@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/including-a-file-upload-option-when-adding-a-new-record-cs
 msc.type: authoredcontent
-ms.openlocfilehash: fcb791868e6af9eef1614d039d11ef5232b40af5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 384251e5d0d72c6d1cc014c929a5d504be11d1d6
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="including-a-file-upload-option-when-adding-a-new-record-c"></a>Y compris une Option de téléchargement de fichier lors de l’ajout d’un nouvel enregistrement (c#)
 ====================
@@ -176,7 +176,7 @@ Si un utilisateur télécharge un type de fichier incorrect, nous devons annuler
 
 ## <a name="step-6-saving-the-uploaded-brochure-to-the-web-server-s-file-system"></a>Étape 6 : L’enregistrement de la Brochure téléchargée dans le système de fichiers Web Server s
 
-Lorsque l’utilisateur entre les valeurs pour une nouvelle catégorie et clique sur le bouton d’insertion, une publication (postback) se produit et le flux de travail insertion se déroule. Tout d’abord, le contrôle DetailsView s [ `ItemInserting` événement](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.detailsview.iteminserting.aspx) se déclenche. Ensuite, le s ObjectDataSource `Insert()` méthode est appelée, ce qui aboutit à un nouvel enregistrement est ajouté à la `Categories` table. Après cela, le contrôle DetailsView s [ `ItemInserted` événement](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.detailsview.iteminserted.aspx) se déclenche.
+Lorsque l’utilisateur entre les valeurs pour une nouvelle catégorie et clique sur le bouton d’insertion, une publication (postback) se produit et le flux de travail insertion se déroule. Tout d’abord, le contrôle DetailsView s [ `ItemInserting` événement](https://msdn.microsoft.com/library/system.web.ui.webcontrols.detailsview.iteminserting.aspx) se déclenche. Ensuite, le s ObjectDataSource `Insert()` méthode est appelée, ce qui aboutit à un nouvel enregistrement est ajouté à la `Categories` table. Après cela, le contrôle DetailsView s [ `ItemInserted` événement](https://msdn.microsoft.com/library/system.web.ui.webcontrols.detailsview.iteminserted.aspx) se déclenche.
 
 Avant du s ObjectDataSource `Insert()` méthode est appelée, nous devons d’abord vous assurer que les types de fichiers appropriées ont été téléchargés par l’utilisateur et puis enregistrez la brochure PDF dans le système de fichiers de serveur s web. Créer un gestionnaire d’événements pour le contrôle DetailsView s `ItemInserting` événement et ajoutez le code suivant :
 
@@ -191,7 +191,7 @@ Le Gestionnaire d’événements démarre en référençant la `BrochureUpload` 
 
 Comme indiqué dans le [téléchargement de fichiers](uploading-files-cs.md) didacticiel, soyez prudent lors de l’enregistrement de fichiers au système de fichiers pour ce téléchargement d’un seul utilisateur s ne sont pas remplacés s d’un autre. Pour ce didacticiel, nous va tenter d’utiliser le même nom que le fichier téléchargé. S’il en existe déjà un fichier dans le `~/Brochures` répertoire portant ce même nom de fichier, toutefois, nous allons ajouter un nombre à la fin jusqu'à ce qu’un nom unique est trouvé. Par exemple, si l’utilisateur télécharge un fichier brochure nommé `Meats.pdf`, mais il existe déjà un fichier nommé `Meats.pdf` dans les `~/Brochures` dossier, nous allons modifier le nom de fichier enregistré pour `Meats-1.pdf`. Si qui existe, nous essaierons de `Meats-2.pdf`, et ainsi de suite jusqu'à ce qu’un nom de fichier unique est trouvé.
 
-Le code suivant utilise la [ `File.Exists(path)` méthode](https://msdn.microsoft.com/en-us/library/system.io.file.exists.aspx) pour déterminer si un fichier existe déjà avec le nom de fichier spécifié. Dans ce cas, il continue d’essayer des nouveaux noms de fichiers de brochure jusqu'à ce qu’aucun conflit n’est trouvée.
+Le code suivant utilise la [ `File.Exists(path)` méthode](https://msdn.microsoft.com/library/system.io.file.exists.aspx) pour déterminer si un fichier existe déjà avec le nom de fichier spécifié. Dans ce cas, il continue d’essayer des nouveaux noms de fichiers de brochure jusqu'à ce qu’aucun conflit n’est trouvée.
 
 
 [!code-csharp[Main](including-a-file-upload-option-when-adding-a-new-record-cs/samples/sample7.cs)]
@@ -268,7 +268,7 @@ Comme indiqué précédemment dans le [BLL - gestion et des Exceptions au niveau
 
 [!code-csharp[Main](including-a-file-upload-option-when-adding-a-new-record-cs/samples/sample13.cs)]
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Il existe un nombre d’étapes qui doivent être effectuées pour fournir une interface basée sur le web pour ajouter des enregistrements qui incluent des données binaires. Si les données binaires sont stockées directement dans la base de données, sans doute que vous devez mettre à jour de l’architecture, ajout de méthodes spécifiques pour gérer le cas où les données binaires sont insérées. Une fois que l’architecture a été mis à jour, l’étape suivante crée l’interface d’insertion, ce qui peut être effectué à l’aide d’un contrôle DetailsView qui a été personnalisé afin d’inclure un contrôle FileUpload pour chaque champ de données binaires. Les données transmises peuvent être enregistrées dans le système de fichiers de serveur s web ou assignées à un paramètre de source de données dans le contrôle DetailsView s `ItemInserting` Gestionnaire d’événements.
 

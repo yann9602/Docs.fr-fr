@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/overview
-ms.openlocfilehash: ad8a1dfae89a7ecd5573c16ba70d7d12216b4c57
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 3c3279e7d25704f5e70bbd83cf9feebda8319203
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="overview-of-aspnet-core-mvc"></a>Vue d’ensemble du modèle MVC d’ASP.NET Core
 
@@ -50,7 +50,7 @@ Les vues sont chargés pour la présentation du contenu via l’interface utilis
 Les contrôleurs sont les composants qui gèrent l’intervention de l’utilisateur, travailler avec le modèle et finalement sélectionnent une vue à restituer. Dans une application MVC, la vue affiche uniquement les informations ; le contrôleur gère et répond à l’entrée d’utilisateur et d’interaction. Dans le modèle MVC, le contrôleur est le point d’entrée initial et est chargé de sélectionner quel modèle pour travailler avec les types et la vue à restituer (par conséquent, son nom - elle contrôle la manière dont l’application répond à une requête donnée).
 
 > [!NOTE]
-> Contrôleurs de ne doivent pas être trop complexe par trop de responsabilités. Pour conserver la logique du contrôleur de devenir trop complexe, utilisez la [principe de responsabilité unique](http://deviq.com/single-responsibility-principle/) par émission de données logique d’entreprise dans le modèle de domaine et le contrôleur.
+> Contrôleurs ne doit pas être trop complexe par trop de responsabilités. Pour conserver la logique du contrôleur de devenir trop complexe, utilisez la [principe de responsabilité unique](http://deviq.com/single-responsibility-principle/) par émission de données logique d’entreprise dans le modèle de domaine et le contrôleur.
 
 >[!TIP]
 > Si vous trouvez que les actions de contrôleur effectuent fréquemment les mêmes types d’actions, vous pouvez suivre le [vous-même ne répétez principe](http://deviq.com/don-t-repeat-yourself/) en déplaçant ces actions courantes dans [filtres](#filters).

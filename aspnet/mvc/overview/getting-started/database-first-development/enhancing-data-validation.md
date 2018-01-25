@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/enhancing-data-validation
 msc.type: authoredcontent
-ms.openlocfilehash: 465be4b51ab280d0b3e2f4b33362fa771480d5e1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 842496c2d3ec56fb81f2409dd7d05d800f83799b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="ef-database-first-with-aspnet-mvc-enhancing-data-validation"></a>Base de données EF tout d’abord avec ASP.NET MVC : amélioration de la Validation des données
 ====================
@@ -51,7 +51,7 @@ Accédez à la page de modification des inscriptions et tentent de fournir un ni
 
 ![Erreur de plage de niveau](enhancing-data-validation/_static/image2.png)
 
-Pour obtenir une liste complète des annotations de validation de données que vous pouvez appliquer aux classes et propriétés, consultez [System.ComponentModel.DataAnnotations](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.aspx).
+Pour obtenir une liste complète des annotations de validation de données que vous pouvez appliquer aux classes et propriétés, consultez [System.ComponentModel.DataAnnotations](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx).
 
 ## <a name="add-metadata-classes"></a>Ajouter des classes de métadonnées
 

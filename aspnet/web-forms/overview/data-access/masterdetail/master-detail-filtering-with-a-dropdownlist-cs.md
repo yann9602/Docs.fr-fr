@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-filtering-with-a-dropdownlist-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 4632d3939204a954ed4fac88a04b0fea9bb15c83
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cf3058ac095bc2ed728a716e70f962e260eef5a2
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="masterdetail-filtering-with-a-dropdownlist-c"></a>Maître/détail, le filtrage avec une liste déroulante (c#)
 ====================
@@ -31,7 +31,7 @@ par [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 Un type commun de rapport est la *maître/détail rapport*, dans lequel le rapport commence en affichant un ensemble d’enregistrements « maîtres ». L’utilisateur peut puis accédez à un des enregistrements maîtres, donc affichage « Détails. » de cet enregistrement maître Maître/détail des rapports est un choix idéal pour visualiser les relations un-à-plusieurs, tels qu’un rapport affichant toutes les catégories et puis permettant à un utilisateur de sélectionner une catégorie particulière et ses produits associés à afficher. En outre, les rapports maître/détail sont utiles pour afficher des informations détaillées à partir des tables en particulier « larges » (ceux qui ont un grand nombre de colonnes). Par exemple, le niveau « maître » d’un rapport maître/détail peut afficher uniquement le nom et l’unité de prix du produit des produits dans la base de données, et exploration d’un produit particulier affiche les champs de produits supplémentaires (catégorie, fournisseur, quantité par unité, et ainsi de suite).
 
-Il existe plusieurs façons avec laquelle un rapport maître/détail peut être implémenté. Cet aspect ainsi que les trois didacticiels, nous allons examiner une variété de rapports maître/détail. Dans ce didacticiel, nous verrons comment afficher les enregistrements maîtres dans un [contrôle DropDownList](https://msdn.microsoft.com/en-us/library/dtx91y0z.aspx) et les détails de l’élément sélectionné dans un contrôle GridView. En particulier, rapport de maître/détail de ce didacticiel répertorie les informations de catégorie et produit.
+Il existe plusieurs façons avec laquelle un rapport maître/détail peut être implémenté. Cet aspect ainsi que les trois didacticiels, nous allons examiner une variété de rapports maître/détail. Dans ce didacticiel, nous verrons comment afficher les enregistrements maîtres dans un [contrôle DropDownList](https://msdn.microsoft.com/library/dtx91y0z.aspx) et les détails de l’élément sélectionné dans un contrôle GridView. En particulier, rapport de maître/détail de ce didacticiel répertorie les informations de catégorie et produit.
 
 ## <a name="step-1-displaying-the-categories-in-a-dropdownlist"></a>Étape 1 : Afficher les catégories dans une liste déroulante
 
@@ -97,7 +97,7 @@ Après le choix de cette méthode, l’Assistant ObjectDataSource nous invite po
 
 Prenez un moment à consulter notre progression dans un navigateur. Lors de la première visite de la page, les produits appartenant à la catégorie sélectionnée (boissons) sont affichées (comme indiqué dans la Figure 9), mais la modification DropDownList ne mettre à jour les données. Il s’agit, car une publication (postback) doit survenir pour que le contrôle GridView à mettre à jour. Pour ce faire, nous avons deux options (qui ne requiert l’écriture de code) :
 
-- **Définir les catégories DropDownList**[propriété AutoPostBack](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.listcontrol.autopostback%28VS.80%29.aspx)**sur True.** (Vous pouvez pour cela en activant l’option Activer AutoPostBack dans la balise de DropDownList.) Cela déclenchera une publication (postback) lorsque vous sélectionnez de DropDownList élément est modifié par l’utilisateur. Par conséquent, lorsque l’utilisateur sélectionne une nouvelle catégorie dans la liste déroulante résulte d’une publication (postback) et le contrôle GridView sera mise à jour avec les produits de la catégorie qui vient d’être sélectionnée. (Il s’agit de l’approche que j’ai utilisé dans ce didacticiel.)
+- **Définir les catégories DropDownList**[propriété AutoPostBack](https://msdn.microsoft.com/library/system.web.ui.webcontrols.listcontrol.autopostback%28VS.80%29.aspx)**sur True.** (Vous pouvez pour cela en activant l’option Activer AutoPostBack dans la balise de DropDownList.) Cela déclenchera une publication (postback) lorsque vous sélectionnez de DropDownList élément est modifié par l’utilisateur. Par conséquent, lorsque l’utilisateur sélectionne une nouvelle catégorie dans la liste déroulante résulte d’une publication (postback) et le contrôle GridView sera mise à jour avec les produits de la catégorie qui vient d’être sélectionnée. (Il s’agit de l’approche que j’ai utilisé dans ce didacticiel.)
 - **Ajouter un contrôle bouton en regard de DropDownList.** Définir son `Text` propriété de l’actualisation ou quelque chose de similaire. Avec cette approche, l’utilisateur doit sélectionner une nouvelle catégorie et puis cliquez sur le bouton. Cliquez sur le bouton entraîne une publication (postback) et mettre à jour le contrôle GridView pour répertorier les produits de la catégorie sélectionnée.
 
 Figures 9 et 10 illustrent le rapport maître/détail en action.
@@ -159,7 +159,7 @@ La figure 14 illustre une capture d’écran de `FilterByDropDownList.aspx` lors
 **La figure 14**: tous les produits sont désormais répertoriés par défaut ([cliquez pour afficher l’image en taille réelle](master-detail-filtering-with-a-dropdownlist-cs/_static/image40.png))
 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Lors de l’affichage des données hiérarchiquement relatives, il vous aide souvent à présenter les données à l’aide de rapports maître/détail, à partir de laquelle l’utilisateur peut démarrer vous parcourez attentivement les données à partir du haut de la hiérarchie et afficher des détails. Dans ce didacticiel, nous avons examiné création d’un rapport maître/détail simple montrant les produits d’une catégorie sélectionnée. Cela a été accompli en utilisant une liste déroulante pour obtenir la liste des catégories et un GridView pour les produits appartenant à la catégorie sélectionnée.
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/preparing-databases
 msc.type: authoredcontent
-ms.openlocfilehash: 1f19d54a5f2679f790575d520b28472d4ff3233f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: caa79725ede320c4bd3e87ac246966c57175eb8e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-preparing-for-database-deployment"></a>Déploiement de Web ASP.NET à l’aide de Visual Studio : préparation pour le déploiement de la base de données
 ====================
@@ -52,7 +52,7 @@ Pour plus d’informations sur les éditions de SQL Server, y compris LocalDB, c
 Pour l’accès de la base de données, l’application Contoso University requiert les logiciels suivants doivent être déployés avec l’application, car il n’est pas inclus dans le .NET Framework :
 
 - [ASP.NET Universal Providers](http://www.hanselman.com/blog/IntroducingSystemWebProvidersASPNETUniversalProvidersForSessionMembershipRolesAndUserProfileOnSQLCompactAndSQLAzure.aspx) (permet le système d’appartenance ASP.NET utiliser la base de données SQL Azure)
-- [Entity Framework](https://msdn.microsoft.com/en-us/library/gg696172.aspx)
+- [Entity Framework](https://msdn.microsoft.com/library/gg696172.aspx)
 
 Étant donné que ce logiciel est inclus dans les packages NuGet, le projet est déjà configuré afin que les assemblys nécessaires sont déployés avec le projet. (Les liens pointent vers les versions actuelles de ces packages, ce qui peuvent être plus récentes que celle qui est installée dans le projet de démarrage que vous avez téléchargé pour ce didacticiel.)
 
@@ -171,12 +171,12 @@ Ici, vous préfèrent généralement les mêmes données en production que vous 
 Vous allez déployer les utilisateurs de développement à l’environnement de test et les utilisateurs de production à intermédiaire et de production. Vous allez créer deux scripts SQL dans ce didacticiel, un pour le développement et un environnement de production pour ce faire, et dans les didacticiels suivants vous configurerez le processus de publication pour les exécuter.
 
 > [!NOTE]
-> La base de données d’appartenance stocke un hachage des mots de passe de compte. Pour déployer des comptes à partir d’un ordinateur à un autre, il se peut que vous devez vous assurer que les routines de hachage ne génèrent pas hachages différents sur le serveur de destination et sur l’ordinateur source. Ils génèrent les hachages mêmes lorsque vous utilisez les fournisseurs universels ASP.NET, tant que vous ne modifiez pas l’algorithme par défaut. L’algorithme par défaut est HMACSHA256 et qu’il est spécifié dans le **validation** attribut de la  **[machineKey](https://msdn.microsoft.com/en-us/library/system.web.configuration.machinekeysection.aspx)**  élément dans le fichier Web.config.
+> La base de données d’appartenance stocke un hachage des mots de passe de compte. Pour déployer des comptes à partir d’un ordinateur à un autre, il se peut que vous devez vous assurer que les routines de hachage ne génèrent pas hachages différents sur le serveur de destination et sur l’ordinateur source. Ils génèrent les hachages mêmes lorsque vous utilisez les fournisseurs universels ASP.NET, tant que vous ne modifiez pas l’algorithme par défaut. L’algorithme par défaut est HMACSHA256 et qu’il est spécifié dans le **validation** attribut de la  **[machineKey](https://msdn.microsoft.com/library/system.web.configuration.machinekeysection.aspx)**  élément dans le fichier Web.config.
 
 
 Vous pouvez créer des scripts de déploiement de données manuellement, à l’aide de SQL Server Management Studio (SSMS), ou à l’aide d’un outil tiers. Cette suite de ce didacticiel, vous allez apprendre à le faire dans SSMS, mais si vous ne souhaitez pas installer et utiliser SSMS vous pouvez obtenir les scripts à partir de la version complète du projet et passez à la section où vous les stockez dans le dossier de solution.
 
-Pour installer SSMS, installez-le à partir de [centre de téléchargement : Microsoft SQL Server 2012 Express](https://www.microsoft.com/en-us/download/details.aspx?id=29062) en cliquant sur [ENU\x64\SQLManagementStudio\_x64\_ENU.exe](https://download.microsoft.com/download/8/D/D/8DD7BDBA-CEF7-4D8E-8C16-D9F69527F909/ENU/x64/SQLManagementStudio_x64_ENU.exe) ou [ ENU\x86\SQLManagementStudio\_x86\_ENU.exe](https://download.microsoft.com/download/8/D/D/8DD7BDBA-CEF7-4D8E-8C16-D9F69527F909/ENU/x86/SQLManagementStudio_x86_ENU.exe). Si vous choisissez une autre pour votre système, il n’est pas à installer, et vous pouvez essayez-en un autre.
+Pour installer SSMS, installez-le à partir de [centre de téléchargement : Microsoft SQL Server 2012 Express](https://www.microsoft.com/download/details.aspx?id=29062) en cliquant sur [ENU\x64\SQLManagementStudio\_x64\_ENU.exe](https://download.microsoft.com/download/8/D/D/8DD7BDBA-CEF7-4D8E-8C16-D9F69527F909/ENU/x64/SQLManagementStudio_x64_ENU.exe) ou [ ENU\x86\SQLManagementStudio\_x86\_ENU.exe](https://download.microsoft.com/download/8/D/D/8DD7BDBA-CEF7-4D8E-8C16-D9F69527F909/ENU/x86/SQLManagementStudio_x86_ENU.exe). Si vous choisissez une autre pour votre système, il n’est pas à installer, et vous pouvez essayez-en un autre.
 
 (Notez qu’il s’agit d’un téléchargement de 600 mégaoctets. Il peut prendre beaucoup de temps à installer et nécessite un redémarrage de votre ordinateur.)
 
@@ -221,7 +221,7 @@ Dans la première page du centre d’Installation de SQL Server, cliquez sur **n
 - Cliquez sur **OK**.
 - Suivez la même procédure que vous avez utilisé précédemment pour créer un script pour le fichier de production. Nommez le fichier de script *aspnet-données-prod.sql*.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Les deux bases de données sont désormais prêtes à être déployée et vous avez deux scripts de déploiement de données dans votre dossier de solution.
 
@@ -231,7 +231,7 @@ Dans ce didacticiel, vous configurez les paramètres de projet qui affectent le 
 
 ## <a name="more-information"></a>Informations complémentaires
 
-Pour plus d’informations sur NuGet, consultez [gérer les bibliothèques de projets avec NuGet](https://msdn.microsoft.com/en-us/magazine/hh547106.aspx) et [Documentation de NuGet](http://docs.nuget.org/docs/start-here/overview). Si vous ne souhaitez pas utiliser NuGet, vous devez apprendre à analyser un package NuGet pour déterminer ce qu’il fait lorsqu’il est installé. (Par exemple, il peut configurer *Web.config* transformations, configurer des scripts PowerShell à exécuter au moment de la génération, etc..) Pour en savoir plus sur le fonctionne de NuGet, consultez [créer et publier un Package](http://docs.nuget.org/docs/creating-packages/creating-and-publishing-a-package) et [fichier de Configuration et des Transformations de Code Source](http://docs.nuget.org/docs/creating-packages/configuration-file-and-source-code-transformations).
+Pour plus d’informations sur NuGet, consultez [gérer les bibliothèques de projets avec NuGet](https://msdn.microsoft.com/magazine/hh547106.aspx) et [Documentation de NuGet](http://docs.nuget.org/docs/start-here/overview). Si vous ne souhaitez pas utiliser NuGet, vous devez apprendre à analyser un package NuGet pour déterminer ce qu’il fait lorsqu’il est installé. (Par exemple, il peut configurer *Web.config* transformations, configurer des scripts PowerShell à exécuter au moment de la génération, etc..) Pour en savoir plus sur le fonctionne de NuGet, consultez [créer et publier un Package](http://docs.nuget.org/docs/creating-packages/creating-and-publishing-a-package) et [fichier de Configuration et des Transformations de Code Source](http://docs.nuget.org/docs/creating-packages/configuration-file-and-source-code-transformations).
 
 >[!div class="step-by-step"]
 [Précédent](introduction.md)

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/web-config-transformations
 msc.type: authoredcontent
-ms.openlocfilehash: a88d8f35c770b362b74f787fee2c60a7577bccb2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a526275d76618c325a6b00f33cc550f28ab0cc00
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-webconfig-file-transformations"></a>Déploiement de Web ASP.NET à l’aide de Visual Studio : Transformations du fichier Web.config
 ====================
@@ -35,7 +35,7 @@ Rappel : Si vous obtenez un message d’erreur, ou quelque chose ne fonctionne 
 
 ## <a name="webconfig-transformations-versus-web-deploy-parameters"></a>Transformations Web.config par rapport aux paramètres de déploiement Web
 
-Il existe deux façons d’automatiser le processus de modification *Web.config* les paramètres des fichiers : [transformations Web.config](https://msdn.microsoft.com/en-us/library/dd465326.aspx) et [paramètres de déploiement Web](https://msdn.microsoft.com/en-us/library/ff398068.aspx). A *Web.config* fichier de transformation contient le balisage XML qui spécifie comment modifier le *Web.config* fichier lorsqu’il est déployé. Vous pouvez spécifier des modifications pour spécifiques à différentes configurations de build et spécifique des profils de publication. Les configurations de build par défaut sont Debug et Release, et vous pouvez créer des configurations de build personnalisée. Un profil de publication correspond généralement à un environnement de destination. (Vous allez apprendre plus sur Publier les profils dans le [déploiement vers IIS comme environnement de Test](deploying-to-iis.md) didacticiel.)
+Il existe deux façons d’automatiser le processus de modification *Web.config* les paramètres des fichiers : [transformations Web.config](https://msdn.microsoft.com/library/dd465326.aspx) et [paramètres de déploiement Web](https://msdn.microsoft.com/library/ff398068.aspx). A *Web.config* fichier de transformation contient le balisage XML qui spécifie comment modifier le *Web.config* fichier lorsqu’il est déployé. Vous pouvez spécifier des modifications pour spécifiques à différentes configurations de build et spécifique des profils de publication. Les configurations de build par défaut sont Debug et Release, et vous pouvez créer des configurations de build personnalisée. Un profil de publication correspond généralement à un environnement de destination. (Vous allez apprendre plus sur Publier les profils dans le [déploiement vers IIS comme environnement de Test](deploying-to-iis.md) didacticiel.)
 
 Paramètres de déploiement Web peuvent servir à spécifier les différents types de paramètres qui doivent être configurés au cours du déploiement, y compris les paramètres qui sont trouvent dans *Web.config* fichiers. Lorsqu’il est utilisé pour spécifier *Web.config* fichier change, les paramètres de Web Deploy sont plus complexes à configurer, mais ils sont utiles lorsque vous ne connaissez pas la valeur à définir jusqu'à ce que vous déployez. Par exemple, dans un environnement d’entreprise, vous pouvez créer un *package de déploiement* et lui donner à une personne du département informatique pour installer en production, et que cette personne doit être en mesure d’entrer des chaînes de connexion ou mots de passe que vous ne connaître.
 
@@ -140,7 +140,7 @@ Cette transformation appartienne dans les fichiers de transformation de profil d
 
 Bien que le fichier de transformation par défaut contient un exemple qui montre comment mettre à jour une chaîne de connexion, dans la plupart des cas il est inutile configurer des transformations de chaîne de connexion, car vous pouvez spécifier des chaînes de connexion dans le profil de publication. Vous devez le faire le [déployer sur IIS](deploying-to-iis.md) et [déployer en production](deploying-to-production.md) didacticiels.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Vous avez maintenant terminé l’autant que possible avec *Web.config* transformations avant que vous créez les profils de publication et que vous avez déjà vu un aperçu de ce que sera dans le fichier Web.config déployé.
 

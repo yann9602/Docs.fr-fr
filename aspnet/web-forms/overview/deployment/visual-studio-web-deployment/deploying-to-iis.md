@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-iis
 msc.type: authoredcontent
-ms.openlocfilehash: 97910940f9de26ca71b111b945581d2de6650b02
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 01f72e0240e84944f8ffece9a2dbc5802be4646b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-to-test"></a>Déploiement de Web ASP.NET à l’aide de Visual Studio : déploiement de Test
 ====================
@@ -40,7 +40,7 @@ Vous pouvez tester votre application de manière plus fiable des façons suivant
 
 Option 2 est le moyen le plus fiable pour tester, et si vous procédez ainsi, vous ne sont pas nécessairement à options 1. Toutefois, si vous déployez sur une option fournisseur d’hébergement tiers 2 n’est peut-être pas possible ou peut être coûteuse, afin que cette série de didacticiels affiche les deux méthodes. Conseils pour l’option 2 sont fourni dans le [déploiement dans l’environnement de Production](deploying-to-production.md) didacticiel.
 
-Pour plus d’informations sur l’utilisation de serveurs web dans Visual Studio, consultez [serveurs Web dans Visual Studio pour les projets Web ASP.NET](https://msdn.microsoft.com/en-us/library/58wxa9w5.aspx).
+Pour plus d’informations sur l’utilisation de serveurs web dans Visual Studio, consultez [serveurs Web dans Visual Studio pour les projets Web ASP.NET](https://msdn.microsoft.com/library/58wxa9w5.aspx).
 
 Rappel : Si vous obtenez un message d’erreur, ou quelque chose ne fonctionne pas lorsque vous parcourez le didacticiel, veillez à consulter le [page Résolution des problèmes](troubleshooting.md).
 
@@ -73,7 +73,7 @@ Après avoir installé IIS, exécutez **Gestionnaire des services Internet** pou
     [![Inetmgr_showing_4.0_app_pools](deploying-to-iis/_static/image3.png)](deploying-to-iis/_static/image2.png)
 4. Si vous voyez uniquement deux pools d’applications et les deux sont définies pour le .NET Framework 2.0, vous devez installer ASP.NET 4 dans IIS.
 
-    Pour Windows 8, consultez les instructions dans la précédente section pour s’assurer que ASP.NET 4.5 est installé, ou consultez [cet article](https://support.microsoft.com/kb/2736284). Pour Windows 7, ouvrez une fenêtre d’invite de commandes en cliquant sur **invite de commandes** dans les fenêtres **Démarrer** menu et en sélectionnant **exécuter en tant qu’administrateur**. Puis exécutez [aspnet\_regiis.exe](https://msdn.microsoft.com/en-us/library/k6h9cz8h.aspx) pour installer ASP.NET 4 dans IIS, à l’aide des commandes suivantes. (Dans les systèmes 32 bits, remplacez « Framework64 » avec « Infrastructure »).
+    Pour Windows 8, consultez les instructions dans la précédente section pour s’assurer que ASP.NET 4.5 est installé, ou consultez [cet article](https://support.microsoft.com/kb/2736284). Pour Windows 7, ouvrez une fenêtre d’invite de commandes en cliquant sur **invite de commandes** dans les fenêtres **Démarrer** menu et en sélectionnant **exécuter en tant qu’administrateur**. Puis exécutez [aspnet\_regiis.exe](https://msdn.microsoft.com/library/k6h9cz8h.aspx) pour installer ASP.NET 4 dans IIS, à l’aide des commandes suivantes. (Dans les systèmes 32 bits, remplacez « Framework64 » avec « Infrastructure »).
 
     [!code-console[Main](deploying-to-iis/samples/sample1.cmd)]
 
@@ -94,9 +94,9 @@ IIS est maintenant prêt à publier une application web, mais vous pouvez le fai
 
 Base de données locale n’est pas conçu pour fonctionner dans IIS, pour votre environnement de test, vous devez disposer de SQL Server Express est installé. Si vous utilisez Visual Studio 2010 SQL Server Express est déjà installé par défaut. Si vous utilisez Visual Studio 2012, vous devez l’installer.
 
-Pour installer SQL Server Express, installez-le à partir de [centre de téléchargement : Microsoft SQL Server 2012 Express](https://www.microsoft.com/en-us/download/details.aspx?id=29062) en cliquant sur [ENU\x64\SQLEXPR\_x64\_ENU.exe](https://download.microsoft.com/download/8/D/D/8DD7BDBA-CEF7-4D8E-8C16-D9F69527F909/ENU/x64/SQLEXPR_x64_ENU.exe) ou [ ENU\x86\SQLEXPR\_x86\_ENU.exe](https://download.microsoft.com/download/8/D/D/8DD7BDBA-CEF7-4D8E-8C16-D9F69527F909/ENU/x86/SQLEXPR_x86_ENU.exe). Si vous choisissez une autre pour votre système, il n’est pas à installer, et vous pouvez essayez-en un autre.
+Pour installer SQL Server Express, installez-le à partir de [centre de téléchargement : Microsoft SQL Server 2012 Express](https://www.microsoft.com/download/details.aspx?id=29062) en cliquant sur [ENU\x64\SQLEXPR\_x64\_ENU.exe](https://download.microsoft.com/download/8/D/D/8DD7BDBA-CEF7-4D8E-8C16-D9F69527F909/ENU/x64/SQLEXPR_x64_ENU.exe) ou [ ENU\x86\SQLEXPR\_x86\_ENU.exe](https://download.microsoft.com/download/8/D/D/8DD7BDBA-CEF7-4D8E-8C16-D9F69527F909/ENU/x86/SQLEXPR_x86_ENU.exe). Si vous choisissez une autre pour votre système, il n’est pas à installer, et vous pouvez essayez-en un autre.
 
-Dans la première page du centre d’Installation de SQL Server, cliquez sur **nouvelle installation SQL Server autonome ou ajouter des fonctionnalités à une installation existante**, suivez les instructions, en acceptant les choix par défaut. Dans l’Assistant installation, acceptez les paramètres par défaut. Pour plus d’informations sur les options d’installation, consultez [installer SQL Server 2012 à partir de l’Assistant Installation (programme d’installation)](https://msdn.microsoft.com/en-us/library/ms143219.aspx).
+Dans la première page du centre d’Installation de SQL Server, cliquez sur **nouvelle installation SQL Server autonome ou ajouter des fonctionnalités à une installation existante**, suivez les instructions, en acceptant les choix par défaut. Dans l’Assistant installation, acceptez les paramètres par défaut. Pour plus d’informations sur les options d’installation, consultez [installer SQL Server 2012 à partir de l’Assistant Installation (programme d’installation)](https://msdn.microsoft.com/library/ms143219.aspx).
 
 ## <a name="create-sql-server-express-databases-for-the-test-environment"></a>Créer des bases de données SQL Server Express pour l’environnement de test
 
@@ -233,7 +233,7 @@ Les étapes suivantes s’appliquent à la **DefaultConnection** de la base de d
 
 Lorsque Visual Studio détecte un Entity Framework `DbContext` (classe), il crée une entrée dans le **bases de données** section a une **exécuter des Migrations Code First** case à cocher au lieu d’une  **Mettre à jour de la base de données** case à cocher. Pour ce didacticiel, vous utiliserez cette case à cocher pour spécifier le déploiement de Migrations Code First.
 
-Dans certains scénarios, vous utilisez peut-être une `DbContext` base de données, mais vous souhaitez utiliser le fournisseur dbDacFx au lieu de Migrations pour déployer la base de données. Dans ce cas, consultez [comment déployer une base de données Code First sans Migrations ?](https://msdn.microsoft.com/en-us/library/ee942158.aspx#deploy_code_first_without_migrations) dans le Forum aux questions de déploiement Web ASP.NET sur MSDN.
+Dans certains scénarios, vous utilisez peut-être une `DbContext` base de données, mais vous souhaitez utiliser le fournisseur dbDacFx au lieu de Migrations pour déployer la base de données. Dans ce cas, consultez [comment déployer une base de données Code First sans Migrations ?](https://msdn.microsoft.com/library/ee942158.aspx#deploy_code_first_without_migrations) dans le Forum aux questions de déploiement Web ASP.NET sur MSDN.
 
 Les étapes suivantes s’appliquent à la **SchoolContext** de la base de données dans le **bases de données** section de la boîte de dialogue.
 
@@ -318,7 +318,7 @@ Cette chaîne de connexion supplémentaires vous permet de spécifier un compte 
 1. Dans le **paramètres** onglet de la **publier le site Web** Assistant, entrez la chaîne de connexion qui spécifie un utilisateur avec les autorisations de mise à jour de schéma de base de données complète, puis désactivez la **utiliser cette chaîne de connexion lors de l’exécution** case à cocher. Dans le fichier Web.config déployé, cela devient le `DatabasePublish` chaîne de connexion.
 2. Créer une transformation du fichier Web.config pour la chaîne de connexion que vous souhaitez que l’application peut utiliser au moment de l’exécution.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Vous avez déployé votre application à IIS sur votre ordinateur de développement et testé il.
 
@@ -332,7 +332,7 @@ Pour plus d’informations sur l’exécution d’IIS ou IIS Express dans Visual
 
 - [Présentation d’IIS Express](https://www.iis.net/learn/extensions/introduction-to-iis-express/iis-express-overview) sur le site IIS.net.
 - [Présentation d’IIS Express](https://weblogs.asp.net/scottgu/archive/2010/06/28/introducing-iis-express.aspx) sur le blog de Scott Guthrie.
-- [Pour les projets Web ASP.NET des serveurs dans Visual Studio Web](https://msdn.microsoft.com/en-us/library/58wxa9w5.aspx).
+- [Pour les projets Web ASP.NET des serveurs dans Visual Studio Web](https://msdn.microsoft.com/library/58wxa9w5.aspx).
 - [Principales différences entre IIS et le serveur de développement ASP.NET](../../older-versions-getting-started/deploying-web-site-projects/core-differences-between-iis-and-the-asp-net-development-server-cs.md) sur le site ASP.NET.
 
 Pour plus d’informations sur les problèmes susceptibles de se produire lorsque votre application s’exécute en confiance moyenne, consultez [hébergeant des Applications ASP.NET en mode de confiance moyenne](http://www.4guysfromrolla.com/articles/100307-1.aspx) sur les 4 Guys Rolla site.

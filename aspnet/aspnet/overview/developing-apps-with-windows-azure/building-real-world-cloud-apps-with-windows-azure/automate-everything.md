@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything
 msc.type: authoredcontent
-ms.openlocfilehash: cf1cb7b07ffe8750724e58e4fb66854c9a033a54
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: aa8bb895ed6eaa0ef4c5752f475ea7c911544ef2
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="automate-everything-building-real-world-cloud-apps-with-azure"></a>Automatiser tout (création d’applications de Cloud du monde réel avec Azure)
 ====================
@@ -45,7 +45,7 @@ En d’autres termes, la période de temps entre lorsque vous avez une idée pou
 
 Dans le [présentation de ce livre électronique](introduction.md), vous avez vu la console web, le portail de gestion Azure. Le portail de gestion vous permet de surveiller et gérer toutes les ressources que vous avez déployé sur Azure. Il s’agit d’un moyen simple pour créer et supprimer des services tels que les applications web et les machines virtuelles, configurez ces services, surveiller l’opération de service et ainsi de suite. Il s’agit d’un outil très utile, mais son utilisation est un processus manuel. Si vous allez développer une application de production de n’importe quelle taille, en particulier dans un environnement d’équipe, nous vous recommandons vous accédez via le portail de l’interface utilisateur pour en savoir plus et Explorer Azure et automatisez les processus que vous allez être opération de façon répétée.
 
-Presque tout ce que vous pouvez le faire manuellement dans le portail de gestion ou à partir de Visual Studio peut également faire en appelant l’API de gestion REST. Vous pouvez écrire des scripts à l’aide de [Windows PowerShell](https://msdn.microsoft.com/en-us/library/windowsazure/jj156055.aspx), ou vous pouvez utiliser une infrastructure open source tels que [Chef](http://www.opscode.com/chef/) ou [Puppet](http://puppetlabs.com/puppet/what-is-puppet). Vous pouvez également utiliser l’outil de ligne de commande d’interpréteur de commandes dans un environnement Mac ou Linux. Azure API de script pour les différents environnements, et il possède un [API de gestion .NET](http://www.hanselman.com/blog/PennyPinchingInTheCloudAutomatingEverythingWithTheWindowsAzureManagementLibrariesAndNET.aspx) au cas où vous souhaitez écrire du code au lieu de script.
+Presque tout ce que vous pouvez le faire manuellement dans le portail de gestion ou à partir de Visual Studio peut également faire en appelant l’API de gestion REST. Vous pouvez écrire des scripts à l’aide de [Windows PowerShell](https://msdn.microsoft.com/library/windowsazure/jj156055.aspx), ou vous pouvez utiliser une infrastructure open source tels que [Chef](http://www.opscode.com/chef/) ou [Puppet](http://puppetlabs.com/puppet/what-is-puppet). Vous pouvez également utiliser l’outil de ligne de commande d’interpréteur de commandes dans un environnement Mac ou Linux. Azure API de script pour les différents environnements, et il possède un [API de gestion .NET](http://www.hanselman.com/blog/PennyPinchingInTheCloudAutomatingEverythingWithTheWindowsAzureManagementLibrariesAndNET.aspx) au cas où vous souhaitez écrire du code au lieu de script.
 
 Pour l’application corriger, nous avons créé des scripts Windows PowerShell qui automatisent les processus de création d’un environnement de test et de déploiement du projet à cet environnement, et nous allons passer en revue quelques-unes du contenu de ces scripts.
 
@@ -245,7 +245,7 @@ Et lorsqu’il est terminé, le navigateur s’ouvre avec le site en cours d’e
 
 ![Corriger application déployée sur Windows Azure](automate-everything/_static/image7.png)
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Avec ces scripts, vous pouvez être certain que les mêmes étapes seront toujours exécutées dans le même ordre que celui utilisant les mêmes options. Cela permet de garantir que chaque développeur de l’équipe n’oublié quelque chose ou tromper quelque chose ou déployer un élément personnalisé sur son propre ordinateur qui ne sont pas réellement fonctionnent de manière identique dans l’environnement d’un autre membre de l’équipe ou de production.
 

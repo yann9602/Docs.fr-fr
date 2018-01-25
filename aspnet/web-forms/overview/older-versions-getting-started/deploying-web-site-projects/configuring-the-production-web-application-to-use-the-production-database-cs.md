@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-the-production-web-application-to-use-the-production-database-cs
 msc.type: authoredcontent
-ms.openlocfilehash: e99b74030104bf17d4d79cd7670cf903270fa51f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 21eac6a4d829795f02eeeca5f9870b1ab8132d08
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="configuring-the-production-web-application-to-use-the-production-database-c"></a>Configuration de l’Application Web de Production à utiliser la base de données de Production (c#)
 ====================
@@ -37,7 +37,7 @@ Il n’est pas rare que les informations de configuration à diffèrent entre le
 
 ## <a name="examining-the-connection-string-information"></a>Examiner les informations de chaîne de connexion
 
-La chaîne de connexion utilisée par l’application web critiques est stockée dans le fichier de configuration s application `Web.config`. `Web.config`inclut une section spéciale pour le stockage des chaînes de connexion, nommés invoque [ &lt;connectionStrings&gt;](https://msdn.microsoft.com/en-us/library/bf7sd233.aspx). Le `Web.config` fichier pour le site Web critiques comporte une chaîne de connexion définie dans cette section nommée `ReviewsConnectionString`:
+La chaîne de connexion utilisée par l’application web critiques est stockée dans le fichier de configuration s application `Web.config`. `Web.config`inclut une section spéciale pour le stockage des chaînes de connexion, nommés invoque [ &lt;connectionStrings&gt;](https://msdn.microsoft.com/library/bf7sd233.aspx). Le `Web.config` fichier pour le site Web critiques comporte une chaîne de connexion définie dans cette section nommée `ReviewsConnectionString`:
 
 [!code-xml[Main](configuring-the-production-web-application-to-use-the-production-database-cs/samples/sample1.xml)]
 
@@ -46,7 +46,7 @@ La chaîne de connexion - Source de données =. \SQLEXPRESS ; AttachDbFilename 
 - `Data Source`-Spécifie l’emplacement du serveur de base de données et le nom d’instance de serveur de base de données (le cas échéant). La valeur, `.\SQLEXPRESS`, est un exemple dans lequel il existe un serveur de base de données et un nom d’instance. La période de Spécifie que le serveur de base de données est sur le même ordinateur que l’application ; le nom d’instance est `SQLEXPRESS`.
 - `AttachDbFilename`-Spécifie l’emplacement du fichier de base de données. La valeur contient l’espace réservé `|DataDirectory|`, qui est résolu sur le chemin d’accès complet de l’application s `App_Data` dossier lors de l’exécution.
 - `Integrated Security`-une valeur booléenne qui indique s’il faut utiliser un nom d’utilisateur/mot de passe spécifié lors de la connexion à la base de données (false) ou Windows actuel des informations d’identification de compte (true).
-- `User Instance`-une option de configuration spécifique pour les éditions SQL Server Express qui indique s’il faut autoriser les utilisateurs non-administrateurs sur l’ordinateur local, attachent et se connecter à une base de données SQL Server Express Edition. Consultez [Instances utilisateur SQL Server Express](https://msdn.microsoft.com/en-us/library/ms254504.aspx) pour plus d’informations sur ce paramètre.
+- `User Instance`-une option de configuration spécifique pour les éditions SQL Server Express qui indique s’il faut autoriser les utilisateurs non-administrateurs sur l’ordinateur local, attachent et se connecter à une base de données SQL Server Express Edition. Consultez [Instances utilisateur SQL Server Express](https://msdn.microsoft.com/library/ms254504.aspx) pour plus d’informations sur ce paramètre.
   
 
 Les options de chaîne de connexion autorisés dépendent de la base de données que vous êtes connecté et le fournisseur de base de données ADO.NET utilisé. Par exemple, la chaîne de connexion pour la connexion à un Microsoft SQL Server diffère de la base de données utilisé pour se connecter à une base de données Oracle. De même, la connexion à une base de données Microsoft SQL Server à l’aide du fournisseur SqlClient utilise une chaîne de connexion différents que lorsque vous utilisez le fournisseur OLE DB.
@@ -71,7 +71,7 @@ Ensuite, spécifiez les différentes informations de connexion de la base de don
 
 La base de données des environnement de production doit figurer dans l’Explorateur de serveurs. Sélectionnez la base de données à partir de l’Explorateur de serveurs et accédez à la fenêtre Propriétés. Vous y trouverez une propriété de chaîne de connexion avec la chaîne de connexion de base de données s. Si que vous utilisez une base de données Microsoft SQL Server sur la production et le fournisseur SqlClient votre chaîne de connexion doit ressembler à ce qui suit :
 
-**Source de données =*nom_serveur*; Catalogue initial =*databaseName*; Persist Security Info = True ; ID d’utilisateur =*nom d’utilisateur*; Mot de passe =*mot de passe***
+**Source de données =*nom_serveur*; Catalogue initial =*databaseName*; Persist Security Info = True ; ID d’utilisateur =*nom d’utilisateur*; Mot de passe = * mot de passe***
 
 Où *nom_serveur*, *databaseName*, *nom d’utilisateur*, et *mot de passe* sont avec les valeurs pour le nom du serveur de base de données, la base de données nom et le nom d’utilisateur et mot de passe fournie par votre société d’hôte web.
 
@@ -137,7 +137,7 @@ Avec cette modification, les environnements de développement et de production c
 > Vous pouvez spécifier les informations pour toute `Web.config` élément dans un fichier distinct et l’utilisation la `configSource` attribut faire référence à ce fichier depuis `Web.config`.
 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Applications pilotées par les données utilisent généralement des bases de données différentes dans les environnements de développement et de production. Par conséquent, les chaînes de connexion de base de données stockées dans la configuration de s d’application web doivent être uniques pour chaque environnement. Dans ce didacticiel, nous avons étudié comment déterminer la chaîne de connexion de base de données de production et les façons de mettre à jour les informations de chaîne de connexion unique dans les deux environnements.
 
@@ -147,10 +147,10 @@ Bonne programmation !
 
 Pour plus d’informations sur les sujets abordés dans ce didacticiel, consultez les ressources suivantes :
 
-- [Chaînes de connexion et les fichiers de Configuration](https://msdn.microsoft.com/en-us/library/ms254494.aspx)
+- [Chaînes de connexion et fichiers de configuration](https://msdn.microsoft.com/library/ms254494.aspx)
 - [Configuration de la base de données de chaînes d’informations @ ConnectionStrings.com](http://www.connectionstrings.com/)
 - [Déplacer les paramètres du fichier Web.config](http://www.asp101.com/tips/index.asp?id=154)
-- [Documentation technique pour le &lt;connectionStrings&gt; élément](https://msdn.microsoft.com/en-us/library/bf7sd233.aspx)
+- [Documentation technique pour le &lt;connectionStrings&gt; élément](https://msdn.microsoft.com/library/bf7sd233.aspx)
 
 >[!div class="step-by-step"]
 [Précédent](deploying-a-database-cs.md)

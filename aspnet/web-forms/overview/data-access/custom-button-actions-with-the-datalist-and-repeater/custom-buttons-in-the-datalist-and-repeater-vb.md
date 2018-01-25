@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/custom-button-actions-with-the-datalist-and-repeater/custom-buttons-in-the-datalist-and-repeater-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 14e245f5fd25079b4ee1dee566ca451f955a8b25
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: fc6c297f08790cdcc74867df21e32258017c5a7d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="custom-buttons-in-the-datalist-and-repeater-vb"></a>Boutons personnalisés dans le contrôle DataList et répéteur (VB)
 ====================
@@ -114,17 +114,17 @@ Pour cet exemple, définissez le LinkButton s `CommandName` propriété ShowProd
 
 Lorsque le bouton est activé, une publication (postback) se produit et le s DataList ou répéteur `ItemCommand` se déclenche des événements. Le Gestionnaire d’événements est passé le bouton s `CommandName` et `CommandArgument` valeurs.
 
-Créer un gestionnaire d’événements pour le répéteur s `ItemCommand` événement et notez le second paramètre passé dans le Gestionnaire d’événements (nommé `e`). Cet deuxième paramètre est de type [ `RepeaterCommandEventArgs` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.repeatercommandeventargs.aspx) et contient les quatre propriétés suivantes :
+Créer un gestionnaire d’événements pour le répéteur s `ItemCommand` événement et notez le second paramètre passé dans le Gestionnaire d’événements (nommé `e`). Cet deuxième paramètre est de type [ `RepeaterCommandEventArgs` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.repeatercommandeventargs.aspx) et contient les quatre propriétés suivantes :
 
 - `CommandArgument`la valeur du bouton concerné s `CommandArgument` propriété
 - `CommandName`la valeur du bouton s `CommandName` propriété
 - `CommandSource`une référence au contrôle de bouton l’utilisateur a cliqué
-- `Item`une référence à la [ `RepeaterItem` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.repeateritem.aspx) qui contient le bouton l’utilisateur a cliqué ; chaque enregistrement lié à la répétition est reconnu comme un`RepeaterItem`
+- `Item`une référence à la [ `RepeaterItem` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.repeateritem.aspx) qui contient le bouton l’utilisateur a cliqué ; chaque enregistrement lié à la répétition est reconnu comme un`RepeaterItem`
 
 Depuis la catégorie sélectionnée s `CategoryID` est transmise le `CommandArgument` propriété, nous pouvons obtenir l’ensemble des produits associés à la catégorie sélectionnée dans le `ItemCommand` Gestionnaire d’événements. Ces produits peuvent alors être liés à un contrôle BulletedList dans le `ItemTemplate` (qui nous ve encore à ajouter). Tout ce qui reste, puis ajoutez BulletedList, référencez-la dans le `ItemCommand` Gestionnaire d’événements et le lier l’ensemble de produits pour la catégorie sélectionnée, ce qui nous allons neutraliser à l’étape 4.
 
 > [!NOTE]
-> DataList s `ItemCommand` un objet de type est passé au gestionnaire d’événements [ `DataListCommandEventArgs` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalistcommandeventargs.aspx), qui offre les quatre propriétés en tant que mêmes le `RepeaterCommandEventArgs` classe.
+> DataList s `ItemCommand` un objet de type est passé au gestionnaire d’événements [ `DataListCommandEventArgs` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalistcommandeventargs.aspx), qui offre les quatre propriétés en tant que mêmes le `RepeaterCommandEventArgs` classe.
 
 
 ## <a name="step-4-displaying-the-selected-category-s-products-in-a-bulleted-list"></a>Étape 4 : Affichage des produits s catégorie sélectionnée dans une liste à puces
@@ -154,7 +154,7 @@ Après avoir effectué la `ItemCommand` Gestionnaire d’événements, prenez un
 **Figure 7**: A BulletedList est utilisé pour afficher les produits de la catégorie sélectionnée ([cliquez pour afficher l’image en taille réelle](custom-buttons-in-the-datalist-and-repeater-vb/_static/image17.png))
 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Les contrôles DataList et répéteur peuvent inclure n’importe quel nombre de boutons, LinkButton ou ImageButtons dans leurs modèles. Ces boutons, lorsque vous cliquez dessus, provoquent une publication et de déclencher la `ItemCommand` événement. Pour associer l’action personnalisée de côté serveur avec un bouton, créez un gestionnaire d’événements pour le `ItemCommand` événement. Dans ce gestionnaire d’événements, vérifiez tout d’abord entrant `CommandName` valeur pour déterminer quel bouton a été utilisé. Des informations supplémentaires peuvent éventuellement être fournies par le bouton s `CommandArgument` propriété.
 

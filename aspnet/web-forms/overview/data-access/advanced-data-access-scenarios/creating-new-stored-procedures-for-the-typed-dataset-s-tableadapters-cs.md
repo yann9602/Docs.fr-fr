@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 4e8b4e6a12c010b227ee9a236130cbfd26d75657
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 715f7e3fae89e773b686faa7c49522c587693eec
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-new-stored-procedures-for-the-typed-datasets-tableadapters-c"></a>Création de procédures stockées pour TableAdapters le groupe de données typé (c#)
 ====================
@@ -47,7 +47,7 @@ Les fonctions sont une construction commune à tous les langages de programmatio
 > Les procédures stockées sont souvent appelées sprocs ou SPs.
 
 
-Les procédures stockées sont créées à l’aide de la [ `CREATE PROCEDURE` ](https://msdn.microsoft.com/en-us/library/aa258259(SQL.80).aspx) instruction T-SQL. Par exemple, le script T-SQL suivant crée une procédure stockée nommée `GetProductsByCategoryID` qui prend un paramètre unique nommé `@CategoryID` et retourne le `ProductID`, `ProductName`, `UnitPrice`, et `Discontinued` les champs de ces colonnes dans le `Products` table qui a une correspondance `CategoryID` valeur :
+Les procédures stockées sont créées à l’aide de la [ `CREATE PROCEDURE` ](https://msdn.microsoft.com/library/aa258259(SQL.80).aspx) instruction T-SQL. Par exemple, le script T-SQL suivant crée une procédure stockée nommée `GetProductsByCategoryID` qui prend un paramètre unique nommé `@CategoryID` et retourne le `ProductID`, `ProductName`, `UnitPrice`, et `Discontinued` les champs de ces colonnes dans le `Products` table qui a une correspondance `CategoryID` valeur :
 
 
 [!code-sql[Main](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/samples/sample1.sql)]
@@ -370,7 +370,7 @@ Quelle que soit l’amélioration que le contrôle GridView ou non, tester les f
 **Figure 24**: les produits peuvent être affichés, modifié et supprimé du contrôle GridView ([cliquez pour afficher l’image en taille réelle](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/_static/image58.png))
 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Les TableAdapters dans un DataSet typé peut accéder aux données à partir de la base de données à l’aide d’instructions SQL ad hoc ou via des procédures stockées. Utilisation des procédures stockées, soit les procédures stockées existantes peuvent être utilisés quand ou de l’Assistant TableAdapter peut être paramétrée pour créer de nouvelles procédures stockées basées sur un `SELECT` requête. Dans ce didacticiel, nous Explorer comment les procédures stockées créées automatiquement pour vous.
 
@@ -384,7 +384,7 @@ Bonne programmation !
 
 Pour plus d’informations sur les sujets abordés dans ce didacticiel, consultez les ressources suivantes :
 
-- [Créer et maintenir les procédures stockées](https://msdn.microsoft.com/en-us/library/aa214299(SQL.80).aspx)
+- [Créer et maintenir les procédures stockées](https://msdn.microsoft.com/library/aa214299(SQL.80).aspx)
 - [La récupération des données scalaires à partir d’une procédure stockée](http://aspnet.4guysfromrolla.com/articles/062905-1.aspx)
 - [Présentation des procédures stockées de SQL Server](http://www.awprofessional.com/articles/article.asp?p=25288&amp;rl=1)
 - [Procédures stockées : Une vue d’ensemble](http://www.sqlteam.com/item.asp?ItemID=563)

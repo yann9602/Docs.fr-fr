@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/precompiling-your-website-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e9f2e2d71815a2e8f17d3c505b48b69a23bceb1c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7cc487aa5276c601fed632e82d7b6d32d1b53b58
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="precompiling-your-website-vb"></a>La précompilation de votre site Web (VB)
 ====================
@@ -66,12 +66,12 @@ Il est possible d’utiliser la compilation explicite avec le modèle WSP. Vous 
 
 ## <a name="precompilation-options"></a>Options de précompilation
 
-Le .NET Framework est fourni avec un [outil de compilation ASP.NET (`aspnet_compiler.exe`)](https://msdn.microsoft.com/en-us/library/ms229863.aspx) qui vous permet de compiler le code source (et même le contenu) d’une application ASP.NET créée à l’aide du modèle WSP. Cet outil a été publié avec la version 2.0 du .NET Framework et se trouve dans le `%WINDIR%\Microsoft.NET\Framework\v2.0.50727` dossier ; il peut être utilisé à partir de la ligne de commande ou lancé au sein de Visual Studio via l’option de publier le Site Web du menu Build.
+Le .NET Framework est fourni avec un [outil de compilation ASP.NET (`aspnet_compiler.exe`)](https://msdn.microsoft.com/library/ms229863.aspx) qui vous permet de compiler le code source (et même le contenu) d’une application ASP.NET créée à l’aide du modèle WSP. Cet outil a été publié avec la version 2.0 du .NET Framework et se trouve dans le `%WINDIR%\Microsoft.NET\Framework\v2.0.50727` dossier ; il peut être utilisé à partir de la ligne de commande ou lancé au sein de Visual Studio via l’option de publier le Site Web du menu Build.
 
 L’outil de compilation fournit deux formes générales de la compilation : la précompilation pour le déploiement et la précompilation sur place. Avec la précompilation sur place, vous exécutez le `aspnet_compiler.exe` outil à partir de la ligne de commande et spécifiez le chemin d’accès du répertoire virtuel ou un chemin d’accès physique d’un site Web qui se trouve sur votre ordinateur. L’outil de compilation compile ensuite chaque page ASP.NET dans le projet, le stockage de la version compilée dans le `%WINDIR%\Microsoft.NET\Framework\v2.0.50727\Temporary ASP.NET Files` dossier comme si les pages avaient chacun été visités pour la première fois à partir d’un navigateur. Précompilation sur place peut accélérer la première demande effectuée dans des pages ASP.NET qui vient d’être déployés sur votre site, car elle évite le runtime d’avoir à effectuer cette étape. Toutefois, la précompilation sur place n’est pas utile pour la majorité des sites Web hébergés, car elle requiert que vous êtes en mesure d’exécuter des programmes à partir du serveur web en ligne de commande. Dans les environnements d’hébergement partagés, ce niveau d’accès n’est pas autorisé.
 
 > [!NOTE]
-> Pour plus d’informations sur la précompilation sur place, consultez [Comment : précompiler des Sites Web ASP.NET](https://msdn.microsoft.com/en-us/library/ms227972.aspx) et [la précompilation dans ASP.NET 2.0](http://www.odetocode.com/Articles/417.aspx).
+> Pour plus d’informations sur la précompilation sur place, consultez [Comment : précompiler des Sites Web ASP.NET](https://msdn.microsoft.com/library/ms227972.aspx) et [la précompilation dans ASP.NET 2.0](http://www.odetocode.com/Articles/417.aspx).
 
 
 Au lieu de compiler les pages du site Web à le `Temporary ASP.NET Files` dossier, la précompilation pour le déploiement compile les pages dans un répertoire de votre choix et dans un format qui peut être déployé dans l’environnement de production.
@@ -107,10 +107,10 @@ Après avoir précompilé le site Web, accédez à l’emplacement cible que vou
 **Figure 3**: le dossier d’emplacement cible inclut les fichiers pour le déploiement  
  ([Cliquez pour afficher l’image en taille réelle](precompiling-your-website-vb/_static/image9.png))
 
-Contrairement à la compilation explicite dans WAP, la précompilation pour le processus de déploiement ne crée pas un assembly pour l’ensemble du site. Au lieu de cela, il lots ensemble plusieurs pages dans chaque assembly. Il compile également la `Global.asax` de fichiers (le cas échéant) dans son propre assembly, ainsi que toutes les classes dans le `App_Code` dossier. Les fichiers qui contiennent le balisage déclaratif pour ASP.NET web pages, les contrôles utilisateur et les pages maîtres (`.aspx`, `.ascx`, et `.master` des fichiers, respectivement) sont copiés en tant que-dans le répertoire d’emplacement cible. De même, le `Web.config` fichier est copié directement, ainsi que les fichiers statiques, tels que des images, des classes CSS et des fichiers PDF. Pour obtenir une description plus formelle de la façon dont l’outil de compilation gère divers types de fichiers, reportez-vous à [gestion de fichier au cours de précompilation ASP.NET](https://msdn.microsoft.com/en-us/library/e22s60h9.aspx).
+Contrairement à la compilation explicite dans WAP, la précompilation pour le processus de déploiement ne crée pas un assembly pour l’ensemble du site. Au lieu de cela, il lots ensemble plusieurs pages dans chaque assembly. Il compile également la `Global.asax` de fichiers (le cas échéant) dans son propre assembly, ainsi que toutes les classes dans le `App_Code` dossier. Les fichiers qui contiennent le balisage déclaratif pour ASP.NET web pages, les contrôles utilisateur et les pages maîtres (`.aspx`, `.ascx`, et `.master` des fichiers, respectivement) sont copiés en tant que-dans le répertoire d’emplacement cible. De même, le `Web.config` fichier est copié directement, ainsi que les fichiers statiques, tels que des images, des classes CSS et des fichiers PDF. Pour obtenir une description plus formelle de la façon dont l’outil de compilation gère divers types de fichiers, reportez-vous à [gestion de fichier au cours de précompilation ASP.NET](https://msdn.microsoft.com/library/e22s60h9.aspx).
 
 > [!NOTE]
-> Vous pouvez demander à l’outil de compilation pour créer un assembly par page ASP.NET, contrôle utilisateur ou page maître en activant la case à cocher « Utilisé fixé d’affectation de noms et assemblys de page unique » à partir de la boîte de dialogue Publier le Site Web. Chaque page ASP.NET compilée dans son propre assembly permet pour un contrôle plus précis sur le déploiement. Par exemple, si vous mis à jour d’une page web ASP.NET et nécessaires au déploiement de cette modification, vous devez déployer uniquement de cette page `.aspx` de fichiers et de l’assembly associé à l’environnement de production. Consultez [Comment : générer des noms fixes avec l’outil de Compilation ASP.NET](https://msdn.microsoft.com/en-us/library/ms228040.aspx) pour plus d’informations.
+> Vous pouvez demander à l’outil de compilation pour créer un assembly par page ASP.NET, contrôle utilisateur ou page maître en activant la case à cocher « Utilisé fixé d’affectation de noms et assemblys de page unique » à partir de la boîte de dialogue Publier le Site Web. Chaque page ASP.NET compilée dans son propre assembly permet pour un contrôle plus précis sur le déploiement. Par exemple, si vous mis à jour d’une page web ASP.NET et nécessaires au déploiement de cette modification, vous devez déployer uniquement de cette page `.aspx` de fichiers et de l’assembly associé à l’environnement de production. Consultez [Comment : générer des noms fixes avec l’outil de Compilation ASP.NET](https://msdn.microsoft.com/library/ms228040.aspx) pour plus d’informations.
 
 
 Le répertoire d’emplacement cible contient également un fichier qui ne fait pas partie du projet web précompilé, à savoir `PrecompiledApp.config`. Ce fichier informe le runtime ASP.NET que l’application a été précompilée et si elle a été précompilée avec une interface utilisateur de mettre à jour ou MIDI modifiable.
@@ -173,7 +173,7 @@ Pour les sites avec des différences de configuration entre les environnements d
 
 Pour un petit rappel sur la copie des fichiers à partir de l’environnement de développement sur l’environnement de production, reportez-vous à la [ *déploiement de votre site Web à l’aide d’un FTP Client* ](deploying-your-site-using-an-ftp-client-vb.md) et [  *Déploiement de votre site Web à l’aide de Visual Studio* ](determining-what-files-need-to-be-deployed-vb.md) didacticiels.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 ASP.NET prend en charge deux modes de compilation : automatique et explicite. Comme expliqué dans les didacticiels précédents, les projets d’Application Web (WAP) utilisation de la compilation explicite tandis que les projets de Site Web (WSPs) utilisation de la compilation automatique, par défaut. Toutefois, il est possible de compiler un WSP avant le déploiement à l’aide de l’outil de compilation ASP.NET.
 
@@ -185,8 +185,8 @@ Bonne programmation !
 
 Pour plus d’informations sur les sujets abordés dans ce didacticiel, consultez les ressources suivantes :
 
-- [Précompilation du Site Web ASP.NET](https://msdn.microsoft.com/en-us/library/ms228015.aspx)
-- [Code-behind et la Compilation dans ASP.NET 2.0](https://msdn.microsoft.com/en-us/magazine/cc163675.aspx)
+- [Précompilation du Site Web ASP.NET](https://msdn.microsoft.com/library/ms228015.aspx)
+- [Code-behind et la Compilation dans ASP.NET 2.0](https://msdn.microsoft.com/magazine/cc163675.aspx)
 - [Précompilation dans ASP.NET](http://www.odetocode.com/Articles/417.aspx)
 - [Options du Site précompilé dans ASP.NET](http://www.dotnetperls.com/precompiled)
 

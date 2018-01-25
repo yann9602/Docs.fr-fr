@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: migration/configuration
-ms.openlocfilehash: 90d9f730d31c2c70aec3d47610b9031a7d8e621b
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 51665059d1d803cbe57bc9a884a0e91eac9e7cb4
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="migrating-configuration"></a>Migration de la Configuration
 
@@ -33,7 +33,7 @@ Pour cet article, nous avons commencé avec le projet ASP.NET Core partiellement
 
 [!code-csharp[Main](configuration/samples/WebApp1/src/WebApp1/Startup.cs?range=11-21)]
 
-Notez qu’à ce stade, le *Startup.cs* fichier n’est pas compilé, car il faut toujours ajouter les éléments suivants `using` instruction :
+Notez qu’à ce stade, le *Startup.cs* fichier ne sera pas compilé, qu’il faut toujours ajouter les éléments suivants `using` instruction :
 
 ```csharp
 using Microsoft.Extensions.Configuration;

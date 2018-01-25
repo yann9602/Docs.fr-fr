@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/security/introduction-to-security
 msc.type: authoredcontent
-ms.openlocfilehash: ffe71f8ea7105db4d5a0c156e2b4e76d6e40761d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1cb9f15a958028822b50decf4b420c36596ce25e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="introduction-to-signalr-security"></a>Introduction à la sécurité de SignalR
 ====================
@@ -71,7 +71,7 @@ Ce document contient les sections suivantes :
 
 SignalR ne fournit pas toutes les fonctionnalités d’authentification des utilisateurs. Au lieu de cela, vous intégrez les fonctionnalités SignalR dans la structure existante de l’authentification pour une application. Vous authentifiez les utilisateurs que vous feriez normalement dans votre application et de travailler avec les résultats de l’authentification dans votre SignalR le code. Par exemple, vous pouvez authentifier les utilisateurs avec l’authentification par formulaire ASP.NET et ensuite appliquer les utilisateurs dans votre concentrateur, ou des rôles sont autorisés à appeler une méthode. Dans votre concentrateur, vous pouvez également passer des informations d’authentification, telles que le nom d’utilisateur ou si un utilisateur appartient à un rôle, et le client.
 
-SignalR fournit le [Authorize](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.authorizeattribute(v=vs.111).aspx) attribut pour spécifier les utilisateurs qui ont accès à une méthode ou un concentrateur. Vous appliquez l’attribut Authorize à un concentrateur ou des méthodes dans un concentrateur. Sans l’attribut Authorize, toutes les méthodes publiques sur le concentrateur sont disponibles pour un client qui est connecté au concentrateur. Pour plus d’informations sur les concentrateurs, consultez [authentification et autorisation pour les concentrateurs SignalR](hub-authorization.md).
+SignalR fournit le [Authorize](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.authorizeattribute(v=vs.111).aspx) attribut pour spécifier les utilisateurs qui ont accès à une méthode ou un concentrateur. Vous appliquez l’attribut Authorize à un concentrateur ou des méthodes dans un concentrateur. Sans l’attribut Authorize, toutes les méthodes publiques sur le concentrateur sont disponibles pour un client qui est connecté au concentrateur. Pour plus d’informations sur les concentrateurs, consultez [authentification et autorisation pour les concentrateurs SignalR](hub-authorization.md).
 
 Vous appliquez le `Authorize` attribut concentrateurs, mais les connexions non persistantes. Pour appliquer des règles d’autorisation lorsque vous utilisez un `PersistentConnection` vous devez substituer la `AuthorizeRequest` (méthode). Pour plus d’informations sur les connexions persistantes, consultez [authentification et autorisation pour les connexions persistantes SignalR](persistent-connection-authorization.md).
 

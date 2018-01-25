@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-a-sql-server-database-update-11-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: 898259885da8a089db296bd0f400ee8863877d08
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: aeec69c7373a111d30e8f32a374a9f02fb4c080a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-a-sql-server-database-update---11-of-12"></a>Déploiement d’Application Web ASP.NET avec SQL Server Compact à l’aide de Visual Studio ou Visual Web Developer : déploiement d’une mise à jour de base de données de serveur SQL - 11 12
 ====================
@@ -153,13 +153,13 @@ Vous avez correctement déployé une mise à jour d’application qui comportait
 
 ## <a name="more-information"></a>Informations complémentaires
 
-Cette étape termine cette série de didacticiels sur le déploiement d’une application de web ASP.NET sur un fournisseur d’hébergement tiers. Pour plus d’informations sur les sujets abordés dans ces didacticiels, consultez le [ASP.NET Deployment Content Map](https://msdn.microsoft.com/en-us/library/bb386521(v=vs.110).aspx) sur le site web MSDN.
+Cette étape termine cette série de didacticiels sur le déploiement d’une application de web ASP.NET sur un fournisseur d’hébergement tiers. Pour plus d’informations sur les sujets abordés dans ces didacticiels, consultez le [ASP.NET Deployment Content Map](https://msdn.microsoft.com/library/bb386521(v=vs.110).aspx) sur le site web MSDN.
 
 ## <a name="acknowledgements"></a>Remerciements
 
 J’aimerais remercier les personnes suivantes qui a effectué des contributions significatives pour le contenu de cette série de didacticiels :
 
-- [Blog d’Alberto Poblacion, MVP &amp; MCT, Espagne](https://mvp.support.microsoft.com/profile/Alberto)
+- [Alberto Poblacion, MVP &amp; MCT, Spain](https://mvp.support.microsoft.com/profile/Alberto)
 - Jarod Ferguson, MVP de développement de plate-forme de données, États-Unis
 - Sévères Mittal, Microsoft
 - [Kristina Olson, Microsoft](https://blogs.iis.net/krolson/default.aspx)
@@ -170,7 +170,7 @@ J’aimerais remercier les personnes suivantes qui a effectué des contributions
 - [Sayed Hashimi, Microsoft](http://sedodream.com/default.aspx)(twitter : [ @sayedihashimi ](http://twitter.com/sayedihashimi))
 - [Scott Hanselman](http://www.hanselman.com/blog/) (twitter : [ @shanselman ](http://twitter.com/shanselman))
 - [Scott Hunter, Microsoft](https://blogs.msdn.com/b/scothu/) (twitter : [ @coolcsh ](http://twitter.com/coolcsh))
-- [Srđan Božović, Serbie](http://msforge.net/blogs/zmajcek/)
+- [Srđan Božović, Serbia](http://msforge.net/blogs/zmajcek/)
 - [Vishal Joshi, Microsoft](http://vishaljoshi.blogspot.com/) (twitter : [ @vishalrjoshi ](http://twitter.com/vishalrjoshi))
 
 >[!div class="step-by-step"]

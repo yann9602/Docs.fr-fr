@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/testing-and-debugging/introduction-to-debugging
 msc.type: authoredcontent
-ms.openlocfilehash: 2bc1f096540d17095ef760eed67b458fcd4e1372
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 0b6b5a886efe515b434948dade1ae840ddaecd42
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="introduction-to-debugging-aspnet-web-pages-razor-sites"></a>Introduction au débogage ASP.NET Web Pages (Razor) Sites
 ====================
@@ -71,7 +71,7 @@ Le `ServerInfo` d’assistance est un outil de diagnostic qui vous donne une vue
     - Informations d’exécution de HTTP. Cette section fournit des informations que la version de Microsoft .NET Framework que votre page web est en cours d’exécution sous le chemin d’accès, de plus d’informations sur le cache et ainsi de suite. (Comme vous l’avez appris dans [Introduction à ASP.NET Web Programming à l’aide de la syntaxe Razor](https://go.microsoft.com/fwlink/?LinkId=202890), à l’aide de la syntaxe reposent sur la technologie de Microsoft ASP.NET web server, qui est elle-même basée sur un logiciel complet de Razor ASP.NET Web Pages bibliothèque de développement appelé le .NET Framework.)
     - Variables d’environnement. Cette section fournit une liste de toutes les variables d’environnement locales et leurs valeurs sur le serveur web.
 
-    Une description complète de toutes les informations de serveur et de la demande est dépasse le cadre de cet article, mais vous pouvez voir que la `ServerInfo` programme d’assistance retourne un grand nombre d’informations de diagnostic. Pour plus d’informations sur les valeurs qui `ServerInfo` retourne, consultez [Variables d’environnement reconnu](https://technet.microsoft.com/en-us/library/dd560744(WS.10).aspx) sur le site Web Microsoft TechNet et [Variables serveur IIS](https://msdn.microsoft.com/en-us/library/ms524602(VS.90).aspx) sur le site Web MSDN.
+    Une description complète de toutes les informations de serveur et de la demande est dépasse le cadre de cet article, mais vous pouvez voir que la `ServerInfo` programme d’assistance retourne un grand nombre d’informations de diagnostic. Pour plus d’informations sur les valeurs qui `ServerInfo` retourne, consultez [Variables d’environnement reconnu](https://technet.microsoft.com/library/dd560744(WS.10).aspx) sur le site Web Microsoft TechNet et [Variables serveur IIS](https://msdn.microsoft.com/library/ms524602(VS.90).aspx) sur le site Web MSDN.
 
 ## <a name="embedding-output-expressions-to-display-page-values"></a>Incorporation des Expressions de sortie pour afficher les valeurs de la Page
 
@@ -139,5 +139,5 @@ Pour plus d’informations sur l’utilisation du débogueur intégré dans Visu
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
 - [Programmation de Pages Web ASP.NET (Razor) à l’aide de Visual Studio](https://go.microsoft.com/fwlink/?LinkId=205854)
-- [Variables de serveur IIS](https://msdn.microsoft.com/en-us/library/ms524602(VS.90).aspx) (MSDN)
-- [Reconnu des Variables d’environnement](https://technet.microsoft.com/en-us/library/dd560744(WS.10).aspx) (TechNet)
+- [Variables de serveur IIS](https://msdn.microsoft.com/library/ms524602(VS.90).aspx) (MSDN)
+- [Reconnu des Variables d’environnement](https://technet.microsoft.com/library/dd560744(WS.10).aspx) (TechNet)

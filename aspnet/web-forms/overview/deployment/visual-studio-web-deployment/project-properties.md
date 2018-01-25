@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/project-properties
 msc.type: authoredcontent
-ms.openlocfilehash: 68a1892dcf8055d8cc898f471a96d86e8abb64de
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 85b6dbcc8d40c168a49513ef6b549f9ec7fa5097
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-project-properties"></a>Déploiement de Web ASP.NET à l’aide de Visual Studio : propriétés du projet
 ====================
@@ -45,7 +45,7 @@ Lorsque la fenêtre s’affiche, la valeur par défaut indiquant les paramètres
 
 Avec **Active (Release)** ou **version** sélectionné, vous voyez les valeurs qui sont efficaces lorsque vous déployez à l’aide de la configuration de build Release :
 
-- Dans le **éléments à déployer** boîte, **uniquement les fichiers nécessaires pour exécuter l’application** est sélectionnée. Autres options sont **tous les fichiers dans ce projet** ou **tous les fichiers dans ce dossier de projet**. En laissant la sélection par défaut vous éviterez de déployer les fichiers de code source, par exemple. Ce paramètre est la raison pour laquelle pourquoi les dossiers qui contiennent les fichiers binaires SQL Server Compact devaient être inclus dans le projet. Pour plus d’informations sur ce paramètre, consultez **pourquoi ne pas tous les fichiers dans le dossier du projet sont déployés ?** dans [Forum aux questions du déploiement de projet d’Application ASP.NET Web](https://msdn.microsoft.com/en-us/library/ee942158.aspx).
+- Dans le **éléments à déployer** boîte, **uniquement les fichiers nécessaires pour exécuter l’application** est sélectionnée. Autres options sont **tous les fichiers dans ce projet** ou **tous les fichiers dans ce dossier de projet**. En laissant la sélection par défaut vous éviterez de déployer les fichiers de code source, par exemple. Ce paramètre est la raison pour laquelle pourquoi les dossiers qui contiennent les fichiers binaires SQL Server Compact devaient être inclus dans le projet. Pour plus d’informations sur ce paramètre, consultez **pourquoi ne pas tous les fichiers dans le dossier du projet sont déployés ?** dans [Forum aux questions du déploiement de projet d’Application ASP.NET Web](https://msdn.microsoft.com/library/ee942158.aspx).
 - **Les symboles de débogage exclure généré** est sélectionnée. Vous ne le débogage lorsque vous utilisez cette configuration de build.
 - **Inclure toutes les bases de données configurées sous l’onglet Package/Publication SQL** est sélectionnée. Spécifie si Visual Studio déployer des bases de données, ainsi que des fichiers. Bien que la case à cocher étiquette mentionne uniquement la **Package/Publication SQL** onglet, décocher cette case est également désactiver le déploiement de base de données qui est configuré dans le profil de publication. Vous allez effectuer que plus tard, afin de la case à cocher doit rester sélectionnée. Le **Package/Publication SQL** est utilisé pour une méthode que vous n’utiliserez pas dans ces didacticiels de publication de base de données héritée.
 - Le **paramètres de Package de déploiement Web** section ne s’applique pas parce que vous utilisez un seul clic publier dans ces didacticiels.
@@ -60,11 +60,11 @@ Comme vous l’avez vu dans le didacticiel précédent, le [package Elmah NuGet]
 
 Exclusion de fichiers ou dossiers spécifiques du déploiement est une exigence courante ; un autre exemple consisterait à un dossier que les utilisateurs peuvent télécharger des fichiers. Vous ne souhaitez pas que les fichiers journaux ou téléchargé les fichiers qui ont été créés dans votre environnement de développement pour être déployée en production. Et si vous déployez une mise à jour en production, que vous ne souhaitez pas le processus de déploiement pour supprimer des fichiers qui existent dans la production. (Selon la façon dont vous définissez une option de déploiement, si un fichier existe dans le site de destination, mais pas du site source lorsque vous déployez, Web Deploy supprime de la destination.)
 
-Comme vous l’avez vu plus haut dans ce didacticiel, les **éléments à déployer** option dans le **Package/Publication Web** onglet est définie sur **uniquement les fichiers nécessaires pour exécuter cette application**. Par conséquent, les fichiers journaux qui sont créés par Elmah dans le développement ne seront pas déployés, qui est ce que vous voulez. (Pour être déployé, ils doivent être inclus dans le projet et leurs **Action de génération** propriété devrait être défini sur **contenu**. Pour plus d’informations, consultez **pourquoi ne pas tous les fichiers dans le dossier du projet sont déployés ?** dans [Forum aux questions du déploiement de projet d’Application ASP.NET Web](https://msdn.microsoft.com/en-us/library/ee942158.aspx)). Toutefois, Web Deploy ne crée pas un dossier dans le site de destination sauf s’il existe au moins un fichier à copier à celui-ci. Par conséquent, vous allez ajouter un *.txt* fichier dans le dossier d’agir comme un espace réservé, afin que le dossier sera copié.
+Comme vous l’avez vu plus haut dans ce didacticiel, les **éléments à déployer** option dans le **Package/Publication Web** onglet est définie sur **uniquement les fichiers nécessaires pour exécuter cette application**. Par conséquent, les fichiers journaux qui sont créés par Elmah dans le développement ne seront pas déployés, qui est ce que vous voulez. (Pour être déployé, ils doivent être inclus dans le projet et leurs **Action de génération** propriété devrait être défini sur **contenu**. Pour plus d’informations, consultez **pourquoi ne pas tous les fichiers dans le dossier du projet sont déployés ?** dans [Forum aux questions du déploiement de projet d’Application ASP.NET Web](https://msdn.microsoft.com/library/ee942158.aspx)). Toutefois, Web Deploy ne crée pas un dossier dans le site de destination sauf s’il existe au moins un fichier à copier à celui-ci. Par conséquent, vous allez ajouter un *.txt* fichier dans le dossier d’agir comme un espace réservé, afin que le dossier sera copié.
 
 Dans **l’Explorateur de solutions**, cliquez sur le *Elmah* dossier, sélectionnez **ajouter un nouvel élément**et créer un fichier texte nommé *substitution.txt*. Placer le texte suivant : « Il s’agit d’un fichier d’espace réservé pour vous assurer que le dossier de déploiement. » Et enregistrez le fichier. C’est qu’il vous suffit pour faire en sorte que Visual Studio déploie ce fichier et le dossier, car le **Action de génération** propriété du *.txt* fichiers est définie sur **decontenu**par défaut.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Vous avez maintenant terminé toutes les tâches de configuration de déploiement. Dans l’étape suivante du didacticiel, vous allez déployer le site de l’Université de Contoso à l’environnement de test et testez-le.
 

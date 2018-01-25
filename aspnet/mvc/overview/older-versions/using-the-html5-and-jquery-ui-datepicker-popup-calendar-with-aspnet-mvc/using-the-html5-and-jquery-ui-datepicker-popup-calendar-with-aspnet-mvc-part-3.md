@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3
 msc.type: authoredcontent
-ms.openlocfilehash: dc81961094928025e25cf62ce4d51d12bc67b80c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7d4ed67254c2b0fc2aef748cfab1c8f628b25641
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc---part-3"></a>Utilisation de HTML5 et du calendrier contextuel jQuery UI avec ASP.NET MVC - partie 3
 ====================
@@ -86,14 +86,14 @@ Vous avez déjà vu que vous pouvez spécifier le format ou le modèle pour une 
 - Appliquer le `DisplayFormat` d’attribut à une propriété dans le modèle. Par exemple, le code suivant provoque la date à afficher sans le temps :
 
     [!code-csharp[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3/samples/sample8.cs)]
-- Appliquer un [type de données](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatype.aspx) d’attribut à une propriété dans le modèle et en spécifiant le type de données. Par exemple, le code suivant provoque la date à afficher sans le temps.
+- Appliquer un [type de données](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) d’attribut à une propriété dans le modèle et en spécifiant le type de données. Par exemple, le code suivant provoque la date à afficher sans le temps.
 
     [!code-csharp[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3/samples/sample9.cs)]
 
     Si l’application contient un *date.cshtml* modèle dans le *Views\Shared\DisplayTemplates* dossier ou le *Views\Movies\DisplayTemplates* dossier, ce modèle permet de restituer le `DateTime` propriété. Dans le cas contraire, le système de création de modèles ASP.NET intégré affiche la propriété en tant que date.
 - Création d’un modèle d’affichage dans le *Views\Shared\DisplayTemplates* dossier ou le *Views\Movies\DisplayTemplates* dossier dont le nom correspond au type de données que vous souhaitez mettre en forme. Par exemple, vous avez vu le *Views\Shared\DisplayTemplates\DateTime.cshtml* a été utilisé pour restituer `DateTime` propriétés dans un modèle, sans ajout d’un attribut au modèle et sans ajouter tout balisage aux vues.
-- À l’aide de la [UIHint](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.uihintattribute.uihint.aspx) attribut sur le modèle pour spécifier le modèle pour afficher la propriété de modèle.
-- Ajouter explicitement le nom de modèle d’affichage pour le [Html.DisplayFor](https://msdn.microsoft.com/en-us/library/ee407420.aspx) appeler dans une vue.
+- À l’aide de la [UIHint](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.uihintattribute.uihint.aspx) attribut sur le modèle pour spécifier le modèle pour afficher la propriété de modèle.
+- Ajouter explicitement le nom de modèle d’affichage pour le [Html.DisplayFor](https://msdn.microsoft.com/library/ee407420.aspx) appeler dans une vue.
 
 L’approche que vous utilisez dépend de ce que vous devez faire dans votre application. Il n’est pas rare de combiner ces approches pour obtenir exactement le type de mise en forme dont vous avez besoin.
 

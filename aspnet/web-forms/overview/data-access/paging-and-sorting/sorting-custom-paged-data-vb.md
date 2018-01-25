@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/sorting-custom-paged-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: f7ba21116c2f5f976ffa95955247a49dc5f81e6c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ee02915a5c69d824c6450157b0c734a2e2ab5c11
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="sorting-custom-paged-data-vb"></a>Tri personnalisé paginée des données (VB)
 ====================
@@ -51,7 +51,7 @@ Malheureusement, paramétrables `ORDER BY` clauses ne sont pas autorisés. Au li
 
 - Écrire des requêtes de codé en dur pour chacune des expressions de tri qui peuvent être utilisées ; Ensuite, utilisez `IF/ELSE` instructions T-SQL pour déterminer la requête à exécuter.
 - Utilisez un `CASE` instruction pour fournir dynamique `ORDER BY` expressions en fonction de la `@sortExpressio` n paramètre d’entrée ; consultez la section dynamiquement les résultats de requête de tri dans permet [la puissance de SQL `CASE` instructions](http://www.4guysfromrolla.com/webtech/102704-1.shtml) Pour plus d’informations.
-- Concevoir la requête appropriée sous forme de chaîne dans la procédure stockée, puis utilisez [le `sp_executesql` procédure stockée système](https://msdn.microsoft.com/en-us/library/ms188001.aspx) pour exécuter la requête dynamique.
+- Concevoir la requête appropriée sous forme de chaîne dans la procédure stockée, puis utilisez [le `sp_executesql` procédure stockée système](https://msdn.microsoft.com/library/ms188001.aspx) pour exécuter la requête dynamique.
 
 Chacune de ces solutions de contournement présente certains inconvénients. La première option n’est pas aussi facile à gérer en tant que les deux autres car il nécessite que vous créez une requête pour chaque expression de tri possibles. Par conséquent, si vous décidez ultérieurement ajouter des champs de nouveau, pouvant être triées au GridView vous devrez également revenir en arrière et mettre à jour la procédure stockée. La deuxième approche a certaines subtilités qui présentent des problèmes de performances lors du tri des colonnes de la base de données autre qu’une chaîne et souffre également les mêmes problèmes de facilité de gestion en tant que la première. Et la troisième option, qui utilise des instructions SQL dynamiques, présente le risque d’attaque par injection SQL si un intrus est en mesure d’exécuter la procédure stockée, en passant les valeurs de paramètre d’entrée de leur choix.
 
@@ -126,7 +126,7 @@ Maintenant que nous avons étendu la couche DAL, nous re prêt à activer à la 
 
 Avoir complété la couche DAL et la couche BLL pour inclure des méthodes qui utilisent la `GetProductsPagedAndSorted` une procédure stockée, tout ce qui reste consiste à configurer l’ObjectDataSource dans le `SortParameter.aspx` page à utiliser la nouvelle méthode de la couche BLL et pour passer le `SortExpression` paramètre basé sur le colonne de l’utilisateur a demandé à trier les résultats.
 
-Commencez par modifier le s ObjectDataSource `SelectMethod` de `GetProductsPaged` à `GetProductsPagedAndSorted`. Cela est possible via l’Assistant Configurer la Source de données, à partir de la fenêtre Propriétés, ou directement par le biais de la syntaxe déclarative. Ensuite, nous avons besoin fournir une valeur pour ObjectDataSource s [ `SortParameterName` propriété](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.objectdatasource.sortparametername.aspx). Si cette propriété est définie, ObjectDataSource essaie de passer dans le GridView s `SortExpression` propriété le `SelectMethod`. En particulier, ObjectDataSource recherche un paramètre d’entrée dont le nom est égal à la valeur de la `SortParameterName` propriété. Depuis la couche BLL s `GetProductsPagedAndSorted` méthode possède le paramètre d’entrée de tri expression nommé `sortExpression`, définissez le s ObjectDataSource `SortExpression` propriété SortExpression.
+Commencez par modifier le s ObjectDataSource `SelectMethod` de `GetProductsPaged` à `GetProductsPagedAndSorted`. Cela est possible via l’Assistant Configurer la Source de données, à partir de la fenêtre Propriétés, ou directement par le biais de la syntaxe déclarative. Ensuite, nous avons besoin fournir une valeur pour ObjectDataSource s [ `SortParameterName` propriété](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.sortparametername.aspx). Si cette propriété est définie, ObjectDataSource essaie de passer dans le GridView s `SortExpression` propriété le `SelectMethod`. En particulier, ObjectDataSource recherche un paramètre d’entrée dont le nom est égal à la valeur de la `SortParameterName` propriété. Depuis la couche BLL s `GetProductsPagedAndSorted` méthode possède le paramètre d’entrée de tri expression nommé `sortExpression`, définissez le s ObjectDataSource `SortExpression` propriété SortExpression.
 
 Après avoir apporté ces deux modifications, la syntaxe déclarative de s ObjectDataSource doit ressembler à ce qui suit :
 
@@ -139,7 +139,7 @@ Après avoir apporté ces deux modifications, la syntaxe déclarative de s Objec
 
 Pour activer le tri dans le GridView, cochez simplement la case à cocher Activer le tri dans la balise active de s GridView, qui définit le GridView s `AllowSorting` propriété `true` et entraîne le texte d’en-tête pour chaque colonne se présentent sous la forme d’un bouton de lien. Lorsque l’utilisateur final clique sur l’un de l’en-tête LinkButton, se poursuivent d’une publication (postback), les étapes suivantes s’écouler :
 
-1. Les mises à jour de GridView son [ `SortExpression` propriété](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.gridview.sortexpression.aspx) à la valeur de la `SortExpression` du champ dont le lien en-tête utilisateur a cliqué
+1. Les mises à jour de GridView son [ `SortExpression` propriété](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.sortexpression.aspx) à la valeur de la `SortExpression` du champ dont le lien en-tête utilisateur a cliqué
 2. ObjectDataSource appelle la couche BLL s `GetProductsPagedAndSorted` méthode, en passant le contrôle GridView s `SortExpression` propriété en tant que la valeur de la méthode s `sortExpression` paramètre d’entrée (ainsi que les `startRowIndex` et `maximumRows` les valeurs de paramètre d’entrée)
 3. La couche BLL appelle la couche DAL s `GetProductsPagedAndSorted` (méthode)
 4. La couche DAL exécute le `GetProductsPagedAndSorted` une procédure stockée, passant dans le `@sortExpression` paramètre (avec la `@startRowIndex` et `@maximumRows` les valeurs de paramètre d’entrée)
@@ -174,7 +174,7 @@ Cette exception se produit parce que le `SortExpression` des s GridView `Supplie
 **La figure 10**: les résultats peuvent maintenant être triés par fournisseur ([cliquez pour afficher l’image en taille réelle](sorting-custom-paged-data-vb/_static/image16.png))
 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 L’implémentation de la pagination personnalisée, que nous avons examiné dans le didacticiel précédent requis que l’ordre selon lequel les résultats ont été triées être spécifiées au moment du design. En résumé, cela signifie que l’implémentation de la pagination personnalisée, que nous avons implémenté pas pu, en même temps, fournir des fonctionnalités de tri. Dans ce didacticiel nous ont surmonté cette limitation en étendant la procédure stockée à partir de la première à inclure un `@sortExpression` paramètre d’entrée par laquelle les résultats peuvent être triées.
 

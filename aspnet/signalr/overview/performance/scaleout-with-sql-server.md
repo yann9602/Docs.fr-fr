@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/performance/scaleout-with-sql-server
 msc.type: authoredcontent
-ms.openlocfilehash: 5bf625a1ef8cc8ceab0014fadfab0c8a23dbc8da
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 18ce212f5cb7849d522248f9c462b5b48e3487ed
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="signalr-scaleout-with-sql-server"></a>Montée en charge SignalR avec SQL Server
 ====================
@@ -44,7 +44,7 @@ Dans ce didacticiel, vous utiliserez SQL Server pour distribuer des messages ent
 
 ![](scaleout-with-sql-server/_static/image1.png)
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 Microsoft SQL Server 2005 ou version ultérieure. Le fond de panier prend en charge les éditions de bureau et serveur de SQL Server. Il ne prend pas en charge SQL Server Compact Edition ou la base de données SQL Azure. (Si votre application est hébergée sur Azure, envisagez le fond de panier de Service Bus à la place.)
 
@@ -62,7 +62,7 @@ Avant du didacticiel détaillé, voici une vue d’ensemble rapide des opératio
 
     [!code-csharp[Main](scaleout-with-sql-server/samples/sample1.cs)]
 
- Ce code configure le fond de panier avec les valeurs par défaut [TableCount](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.sqlscaleoutconfiguration.tablecount(v=vs.118).aspx) et [MaxQueueLength](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.messaging.scaleoutconfiguration.maxqueuelength(v=vs.118).aspx). Pour plus d’informations sur la modification de ces valeurs, consultez [SignalR performances : montée en puissance parallèle métriques](signalr-performance.md#scaleout_metrics). 
+ Ce code configure le fond de panier avec les valeurs par défaut [TableCount](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.sqlscaleoutconfiguration.tablecount(v=vs.118).aspx) et [MaxQueueLength](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.messaging.scaleoutconfiguration.maxqueuelength(v=vs.118).aspx). Pour plus d’informations sur la modification de ces valeurs, consultez [SignalR performances : montée en puissance parallèle métriques](signalr-performance.md#scaleout_metrics). 
 
 ## <a name="configure-the-database"></a>Configurer la base de données
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/getting-started/tutorial-server-broadcast-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: cd800062e87c07a0ef1d8d3d32c910aaf3e683cc
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 98a7ce4991d58181177cf56976888e9fd1526987
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="tutorial-server-broadcast-with-signalr-2"></a>Didacticiel : Serveur de diffusion avec SignalR 2
 ====================
@@ -86,7 +86,7 @@ Le [Microsoft.AspNet.SignalR.Sample](http://nuget.org/packages/microsoft.aspnet.
 
 <a id="prerequisites"></a>
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 Avant de commencer, assurez-vous que vous disposez de Visual Studio 2013 est installé sur votre ordinateur. Si vous n’avez pas Visual Studio, consultez [téléchargements ASP.NET](https://www.asp.net/downloads) pour obtenir la version gratuite Visual Studio 2013 Express.
 
@@ -133,7 +133,7 @@ Vous souhaitez seulement une instance de la classe StockTicker exécutés sur le
 
     [!code-csharp[Main](tutorial-server-broadcast-with-signalr/samples/sample2.cs)]
 
-    Le [Hub](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.hub(v=vs.111).aspx) classe est utilisée pour définir des méthodes, les clients peuvent appeler sur le serveur. Vous définissez une méthode : `GetAllStocks()`. Lorsqu’un client se connecte initialement au serveur, il appelle cette méthode pour obtenir une liste de tous les stocks avec leurs prix actuel. La méthode peut s’exécuter de façon synchrone et renvoyer `IEnumerable<Stock>` , car il retourne les données de la mémoire. Si la méthode avait obtenir les données en effectuant ce qui nécessiterait en attente, telles que la recherche d’une base de données ou un appel de service web, vous devez spécifier `Task<IEnumerable<Stock>>` comme valeur de retour pour permettre le traitement asynchrone. Pour plus d’informations, consultez [ASP.NET SignalR concentrateurs API Guide - Server - quand exécuter de façon asynchrone](../guide-to-the-api/hubs-api-guide-server.md#asyncmethods).
+    Le [Hub](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hub(v=vs.111).aspx) classe est utilisée pour définir des méthodes, les clients peuvent appeler sur le serveur. Vous définissez une méthode : `GetAllStocks()`. Lorsqu’un client se connecte initialement au serveur, il appelle cette méthode pour obtenir une liste de tous les stocks avec leurs prix actuel. La méthode peut s’exécuter de façon synchrone et renvoyer `IEnumerable<Stock>` , car il retourne les données de la mémoire. Si la méthode avait obtenir les données en effectuant ce qui nécessiterait en attente, telles que la recherche d’une base de données ou un appel de service web, vous devez spécifier `Task<IEnumerable<Stock>>` comme valeur de retour pour permettre le traitement asynchrone. Pour plus d’informations, consultez [ASP.NET SignalR concentrateurs API Guide - Server - quand exécuter de façon asynchrone](../guide-to-the-api/hubs-api-guide-server.md#asyncmethods).
 
     L’attribut HubName spécifie comment le concentrateur sera référencé dans le code JavaScript sur le client. Le nom par défaut sur le client si vous n’utilisez pas cet attribut est une version de casse mixte, le nom de classe, qui dans ce cas serait stockTickerHub.
 
@@ -146,7 +146,7 @@ Vous souhaitez seulement une instance de la classe StockTicker exécutés sur le
 
     ### <a name="storing-the-singleton-instance-in-a-static-field"></a>Le stockage de l’instance de singleton dans un champ statique
 
-    Le code initialise statiques \_champ d’instance qui stocke la propriété d’Instance avec une instance de la classe et cela est la seule instance de la classe qui peut être créée, car le constructeur est marqué comme privé. [L’initialisation tardive](https://msdn.microsoft.com/en-us/library/dd997286.aspx) est utilisé pour le \_champ d’instance, pas pour des raisons de performances, mais sur, vérifiez que la création de l’instance est thread-safe.
+    Le code initialise statiques \_champ d’instance qui stocke la propriété d’Instance avec une instance de la classe et cela est la seule instance de la classe qui peut être créée, car le constructeur est marqué comme privé. [L’initialisation tardive](https://msdn.microsoft.com/library/dd997286.aspx) est utilisé pour le \_champ d’instance, pas pour des raisons de performances, mais sur, vérifiez que la création de l’instance est thread-safe.
 
     [!code-csharp[Main](tutorial-server-broadcast-with-signalr/samples/sample4.cs)]
 
@@ -160,7 +160,7 @@ Vous souhaitez seulement une instance de la classe StockTicker exécutés sur le
 
     [!code-csharp[Main](tutorial-server-broadcast-with-signalr/samples/sample6.cs)]
 
-    La collection d’actions est définie comme un [ConcurrentDictionary](https://msdn.microsoft.com/en-us/library/dd287191.aspx) type pour la sécurité des threads. En guise d’alternative, vous pouvez utiliser un [dictionnaire](https://msdn.microsoft.com/en-us/library/xfhwa508.aspx) de l’objet et les verrous explicitement le dictionnaire lorsque vous apportez des modifications à ce dernier.
+    La collection d’actions est définie comme un [ConcurrentDictionary](https://msdn.microsoft.com/library/dd287191.aspx) type pour la sécurité des threads. En guise d’alternative, vous pouvez utiliser un [dictionnaire](https://msdn.microsoft.com/library/xfhwa508.aspx) de l’objet et les verrous explicitement le dictionnaire lorsque vous apportez des modifications à ce dernier.
 
     Pour cet exemple d’application, il est OK pour stocker les données d’application en mémoire et perdre de données lors de la suppression de l’instance de StockTicker. Dans une application réelle vous le feriez avec un magasin de données back-end, par exemple une base de données.
 
@@ -172,7 +172,7 @@ Vous souhaitez seulement une instance de la classe StockTicker exécutés sur le
 
     UpdateStockPrices est appelée par la minuterie, dont la valeur NULL dans le paramètre state. Avant la mise à jour des prix, un verrou le \_updateStockPricesLock objet. Le code vérifie si un autre thread est déjà mise à jour des prix, et il appelle ensuite TryUpdateStockPrice sur chaque action dans la liste. La méthode TryUpdateStockPrice décide s’il faut modifier le prix de stock et la quantité pour le modifier. Si le prix de stock est modifié, BroadcastStockPrice est appelée pour diffuser la modification de cotation à tous les clients connectés.
 
-    Le \_updatingStockPrices indicateur est marqué comme [volatile](https://msdn.microsoft.com/en-us/library/x13ttww7.aspx) pour vous assurer que l’accès lui est thread-safe.
+    Le \_updatingStockPrices indicateur est marqué comme [volatile](https://msdn.microsoft.com/library/x13ttww7.aspx) pour vous assurer que l’accès lui est thread-safe.
 
     [!code-csharp[Main](tutorial-server-broadcast-with-signalr/samples/sample8.cs)]
 
@@ -192,7 +192,7 @@ Vous souhaitez seulement une instance de la classe StockTicker exécutés sur le
 
     La méthode updateStockPrice que vous appelez dans BroadcastStockPrice n’existe pas encore ; vous l’ajouterez ultérieurement lorsque vous écrivez du code qui s’exécute sur le client. Vous pouvez faire référence à updateStockPrice ici Clients.All étant dynamique, ce qui signifie que l’expression est évaluée au moment de l’exécution. Lorsque cet appel de méthode s’exécute, SignalR envoie le nom de méthode et la valeur du paramètre au client et si le client possède une méthode nommée updateStockPrice, cette méthode est appelée et la valeur du paramètre est passée à ce dernier.
 
-    Clients.All signifie envoyer à tous les clients. SignalR vous donne des autres options pour spécifier les clients ou les groupes de clients pour envoyer à. Pour plus d’informations, consultez [HubConnectionContext](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.hubs.hubconnectioncontext(v=vs.111).aspx).
+    Clients.All signifie envoyer à tous les clients. SignalR vous donne des autres options pour spécifier les clients ou les groupes de clients pour envoyer à. Pour plus d’informations, consultez [HubConnectionContext](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.hubconnectioncontext(v=vs.111).aspx).
 
 ### <a name="register-the-signalr-route"></a>Inscrire l’itinéraire SignalR
 
@@ -412,4 +412,4 @@ Pour en savoir plus avancées concepts de développement SignalR, visitez les si
 - [SignalR Github et exemples](https://github.com/SignalR/SignalR)
 - [SignalR Wiki](https://github.com/SignalR/SignalR/wiki)
 
-Pour une procédure pas à pas sur la façon de déployer une application SignalR dans Azure, consultez [à l’aide de SignalR avec les applications Web dans Azure App Service](../deployment/using-signalr-with-azure-web-sites.md). Pour plus d’informations sur la façon de déployer un projet web Visual Studio sur un Site Web de Windows Azure, consultez [créer une application web ASP.NET dans Azure App Service](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-get-started/).
+Pour une procédure pas à pas sur la façon de déployer une application SignalR dans Azure, consultez [à l’aide de SignalR avec les applications Web dans Azure App Service](../deployment/using-signalr-with-azure-web-sites.md). Pour plus d’informations sur la façon de déployer un projet web Visual Studio sur un Site Web de Windows Azure, consultez [créer une application web ASP.NET dans Azure App Service](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-get-started/).

@@ -2,7 +2,7 @@
 uid: web-forms/overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests
 title: "À l’aide d’Entity Framework 4.0 et du contrôle ObjectDataSource, partie 2 : ajout d’une couche de logique métier et des Tests unitaires | Documents Microsoft"
 author: tdykstra
-description: "Cette série de didacticiels s’appuie sur l’application web de l’université Contoso qui est créée par la prise en main de la série de didacticiels Entity Framework 4.0. JE..."
+description: "Cette série de didacticiels s’appuie sur l’application web de l’université Contoso qui est créée par la prise en main de la série de didacticiels Entity Framework 4.0. I..."
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/26/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests
 msc.type: authoredcontent
-ms.openlocfilehash: 0440f807c7baa7b92e5f05590eca9cc237b5aef9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: df37acd8901b457f7887afe767d42d53e45e4815
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-the-entity-framework-40-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests"></a>À l’aide d’Entity Framework 4.0 et du contrôle ObjectDataSource, partie 2 : ajout d’une couche de logique métier et des Tests unitaires
 ====================
@@ -74,7 +74,7 @@ La variable de classe qui conserve une référence à la classe de l’espace de
 Les méthodes CRUD qui appellent la classe de l’espace de stockage et les deux constructeurs permettent d’utiliser la classe de logique métier avec tout magasin de données back-end vous choisissez. La classe de logique métier n’a pas besoin de savoir comment la classe il appelle conserve les données. (Cela est souvent appelé *ignorant la persistance*.) Cela facilite les tests unitaires, car vous pouvez vous connecter à la classe de logique métier pour une implémentation d’un référentiel qui utilise un élément simple en tant que mémoire `List` collections pour stocker les données.
 
 > [!NOTE]
-> Techniquement, les objets d’entité sont toujours pas ignorant la persistance, car ils sont instanciés à partir des classes qui héritent d’Entity Framework `EntityObject` classe. Ignorance de persistance terminée, vous pouvez utiliser *bons vieux objets CLR*, ou *POCOs*, à la place des objets qui héritent de la `EntityObject` classe. À l’aide de POCOs est dépasse le cadre de ce didacticiel. Pour plus d’informations, consultez [testabilité et Entity Framework 4.0](https://msdn.microsoft.com/en-us/library/ff714955.aspx) sur le site Web MSDN.)
+> Techniquement, les objets d’entité sont toujours pas ignorant la persistance, car ils sont instanciés à partir des classes qui héritent d’Entity Framework `EntityObject` classe. Ignorance de persistance terminée, vous pouvez utiliser *bons vieux objets CLR*, ou *POCOs*, à la place des objets qui héritent de la `EntityObject` classe. À l’aide de POCOs est dépasse le cadre de ce didacticiel. Pour plus d’informations, consultez [testabilité et Entity Framework 4.0](https://msdn.microsoft.com/library/ff714955.aspx) sur le site Web MSDN.)
 
 
 Vous pouvez vous connecter à présent le `ObjectDataSource` contrôles à la logique métier classe à la place de l’espace de stockage et vérifier que tout fonctionne comme auparavant.
@@ -221,7 +221,7 @@ Ajoutez le Gestionnaire d’événements suivantes :
 
 Vous pouvez maintenant tester la *DepartmentsAdd.aspx.cs* page pour vérifier qu’elle gère également correctement tente d’établir une personne de l’administrateur de plus d’un service.
 
-Cette étape termine la présentation de l’implémentation du modèle de référentiel pour l’utilisation de la `ObjectDataSource` contrôle avec Entity Framework. Pour plus d’informations sur le modèle de référentiel et la testabilité, consultez le livre blanc MSDN [testabilité et Entity Framework 4.0](https://msdn.microsoft.com/en-us/library/ff714955.aspx).
+Cette étape termine la présentation de l’implémentation du modèle de référentiel pour l’utilisation de la `ObjectDataSource` contrôle avec Entity Framework. Pour plus d’informations sur le modèle de référentiel et la testabilité, consultez le livre blanc MSDN [testabilité et Entity Framework 4.0](https://msdn.microsoft.com/library/ff714955.aspx).
 
 Dans ce didacticiel, vous allez apprendre à ajouter le tri et le filtrage des fonctionnalités à l’application.
 

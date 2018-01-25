@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/4-working-with-forms
 msc.type: authoredcontent
-ms.openlocfilehash: fcdded3a7e80ee797eae445f347735f0f7b3d7ad
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8579c444fd19d1a366349cc09f9f768de23055f8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="working-with-html-forms-in-aspnet-web-pages-razor-sites"></a>Utilisation des formulaires HTML dans les Sites ASP.NET Web Pages (Razor)
 ====================
@@ -134,12 +134,12 @@ Vous pouvez résoudre ce problème, toutefois. Vous avez accès aux valeurs qui 
     Le `value` attribut de la `<input>` éléments a été défini dynamiquement lire la valeur de champ de la `Request.Form` objet. La première fois que la page est demandée, les valeurs dans le `Request.Form` objet sont toutes vides. Cela convient, car cette façon le formulaire est vide.
 2. Lancement de la page dans votre navigateur, renseignez les champs de formulaire ou les laisser vierge, puis cliquez sur **Submit**. Une page qui affiche les valeurs saisies s’affiche.
 
-    ![formulaires-5](4-working-with-forms/_static/image5.jpg)
+    ![forms-5](4-working-with-forms/_static/image5.jpg)
 
 <a id="Additional_Resources"></a>
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-- [1 001 façons pour obtenir une entrée à partir des utilisateurs Web](https://msdn.microsoft.com/en-us/library/ms971057.aspx)
-- [L’utilisation de formulaires et le traitement de l’entrée d’utilisateur](https://msdn.microsoft.com/en-us/library/ms525182(VS.90).aspx)
-- [Validation des entrées d’utilisateur dans les Sites ASP.NET Web Pages](https://go.microsoft.com/fwlink/?LinkId=253002)
-- [À l’aide de la saisie semi-automatique dans les formulaires HTML](https://msdn.microsoft.com/en-us/library/ms533032(VS.85).aspx)
+- [1 001 façons pour obtenir une entrée à partir des utilisateurs Web](https://msdn.microsoft.com/library/ms971057.aspx)
+- [L’utilisation de formulaires et le traitement de l’entrée d’utilisateur](https://msdn.microsoft.com/library/ms525182(VS.90).aspx)
+- [Validation des entrées utilisateur dans les sites ASP.NET Web Pages](https://go.microsoft.com/fwlink/?LinkId=253002)
+- [À l’aide de la saisie semi-automatique dans les formulaires HTML](https://msdn.microsoft.com/library/ms533032(VS.85).aspx)

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-a-code-update
 msc.type: authoredcontent
-ms.openlocfilehash: 10da2b5013ae1348b69ea4f456d81bb4c4b73df6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f6861c702c1ccb19e5a4eee484a622079e205f86
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-a-code-update"></a>Déploiement de Web ASP.NET à l’aide de Visual Studio : déploiement d’une mise à jour du Code
 ====================
@@ -79,7 +79,7 @@ Déploiement sur l’environnement de test est maintenant très simple de l’ex
 
 Vous le feriez normalement également effectuer un test de régression (autrement dit, le reste du site pour vous assurer que la nouvelle modification n’a pas été arrête toutes les fonctionnalités de test). Mais pour ce didacticiel, vous allez ignorer cette étape et passez pour déployer la mise à jour à intermédiaire et de production.
 
-Lorsque vous redéployez, Web Deploy détermine automatiquement les fichiers qui ont été modifiés et seules les copies des fichiers modifiés sur le serveur. Par défaut, Web Deploy utilise dernière modification des dates sur les fichiers pour déterminer celles qui ont été modifiés. Certains systèmes de contrôle de code source modifier les dates même de fichier lorsque vous ne modifiez pas le contenu du fichier. Dans ce cas, vous pouvez souhaiter configurer Web Deploy pour utiliser les sommes de contrôle pour déterminer quels fichiers ont été modifiés. Pour plus d’informations, consultez [pourquoi tous mes fichiers obtenir redéployés bien que n’avez pas les modifier ?](https://msdn.microsoft.com/en-us/library/ee942158.aspx#use_checksum) dans le Forum aux questions de déploiement de ASP.NET.
+Lorsque vous redéployez, Web Deploy détermine automatiquement les fichiers qui ont été modifiés et seules les copies des fichiers modifiés sur le serveur. Par défaut, Web Deploy utilise dernière modification des dates sur les fichiers pour déterminer celles qui ont été modifiés. Certains systèmes de contrôle de code source modifier les dates même de fichier lorsque vous ne modifiez pas le contenu du fichier. Dans ce cas, vous pouvez souhaiter configurer Web Deploy pour utiliser les sommes de contrôle pour déterminer quels fichiers ont été modifiés. Pour plus d’informations, consultez [pourquoi tous mes fichiers obtenir redéployés bien que n’avez pas les modifier ?](https://msdn.microsoft.com/library/ee942158.aspx#use_checksum) dans le Forum aux questions de déploiement de ASP.NET.
 
 ## <a name="take-the-application-offline-during-deployment"></a>Déconnecter l’application en mode hors connexion pendant le déploiement
 
@@ -199,7 +199,7 @@ Supposons que vous ne l’arrière-plan est bleu et souhaitez revenir à la coul
     ![Page d’accueil avec CSS normal](deploying-a-code-update/_static/image15.png)
 6. Fermez le navigateur.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Vous avez vu désormais plusieurs façons de déployer une mise à jour d’application qui n’implique pas une modification de la base de données, et que vous avez vu comment prévisualiser les modifications pour vérifier que ce qui sera mis à jour est ce que vous attendez. La page de formateurs a maintenant un **cours traités** section.
 

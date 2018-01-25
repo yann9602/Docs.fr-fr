@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/examining-the-details-and-delete-methods
 msc.type: authoredcontent
-ms.openlocfilehash: 213626147424e08d10d6442034ec450174200b09
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f3c56356aaa595e200a16fe0045a8b00dc5823b7
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="examining-the-details-and-delete-methods"></a>Examiner les détails et les méthodes de suppression
 ====================
@@ -58,7 +58,7 @@ Une autre méthode pour éviter tout problème avec les méthodes qui ont des si
 
 [!code-csharp[Main](examining-the-details-and-delete-methods/samples/sample4.cs)]
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Vous avez maintenant une application ASP.NET MVC complète qui stocke les données dans une base de données de base de données locale. Vous pouvez créer, lire, mettre à jour, supprimer et rechercher des films.
 
@@ -66,7 +66,7 @@ Vous avez maintenant une application ASP.NET MVC complète qui stocke les donné
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Après avoir généré et testé une application web, l’étape suivante consiste à rendre disponible à d’autres personnes à utiliser sur Internet. Pour ce faire, vous devez déployer vers un fournisseur d’hébergement web. Microsoft propose d’hébergement web gratuit pour jusqu'à 10 sites web dans un [libérer le compte d’évaluation de Windows Azure](https://www.windowsazure.com/en-us/pricing/free-trial/?WT.mc_id=A443DD604). Je vous suggère ensuite suivre mon didacticiel [déployer une application de Secure ASP.NET MVC avec base de données SQL, OAuth et l’appartenance à un Site Web de Windows Azure](https://docs.microsoft.com/aspnet/core/security/authorization/secure-data). Un excellent didacticiel est de niveau intermédiaire de Tom Dykstra [création d’un modèle de données Entity Framework pour une Application ASP.NET MVC](../../getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md). [StackOverflow](http://stackoverflow.com/help) et [forums d’ASP.NET MVC](https://forums.asp.net/1146.aspx) sont une bonne place pour poser des questions. Suivez [me](https://twitter.com/RickAndMSFT) sur twitter, vous pouvez obtenir les mises à jour sur mon didacticiels plus récente.
+Après avoir généré et testé une application web, l’étape suivante consiste à rendre disponible à d’autres personnes à utiliser sur Internet. Pour ce faire, vous devez déployer vers un fournisseur d’hébergement web. Microsoft propose d’hébergement web gratuit pour jusqu'à 10 sites web dans un [libérer le compte d’évaluation de Windows Azure](https://www.windowsazure.com/pricing/free-trial/?WT.mc_id=A443DD604). Je vous suggère ensuite suivre mon didacticiel [déployer une application de Secure ASP.NET MVC avec base de données SQL, OAuth et l’appartenance à un Site Web de Windows Azure](https://docs.microsoft.com/aspnet/core/security/authorization/secure-data). Un excellent didacticiel est de niveau intermédiaire de Tom Dykstra [création d’un modèle de données Entity Framework pour une Application ASP.NET MVC](../../getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md). [StackOverflow](http://stackoverflow.com/help) et [forums d’ASP.NET MVC](https://forums.asp.net/1146.aspx) sont une bonne place pour poser des questions. Suivez [me](https://twitter.com/RickAndMSFT) sur twitter, vous pouvez obtenir les mises à jour sur mon didacticiels plus récente.
 
 Commentaires sont Bienvenue.
 

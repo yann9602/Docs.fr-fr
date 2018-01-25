@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/adding-validation-controls-to-the-datalist-s-editing-interface-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 06f3e59d0e6fd59a83934084422816360e915bd7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b80b25933679d5c5b465af24cf6ff5d3b824b401
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-validation-controls-to-the-datalists-editing-interface-c"></a>Ajout de contrôles de Validation à l’Interface de modification du contrôle DataList (c#)
 ====================
@@ -71,11 +71,11 @@ Après avoir déplacé le contenu et le code à partir de `ErrorHandling.aspx` �
 
 Lors de la construction des formulaires de saisie de données, il est important que les utilisateurs entrent tous les champs obligatoires et que leurs données d’entrée fournies sont des valeurs juridiques, mis en forme correctement. Pour aider à garantir que d’une entrée utilisateur s est valides, ASP.NET fournit les cinq contrôles de validation intégrées qui sont conçues pour valider la valeur d’un contrôle Web d’entrée unique :
 
-- [RequiredFieldValidator](https://msdn.microsoft.com/en-us/library/5hbw267h(VS.80).aspx) garantit qu’une valeur a été fournie.
-- [CompareValidator](https://msdn.microsoft.com/en-us/library/db330ayw(VS.80).aspx) valide une valeur à une autre valeur de contrôle Web ou une valeur constante ou garantit que le format de valeur s est autorisé pour un type de données spécifié
-- [RangeValidator](https://msdn.microsoft.com/en-us/library/f70d09xt.aspx) garantit qu’une valeur est comprise dans une plage de valeurs
-- [RegularExpressionValidator](https://msdn.microsoft.com/en-US/library/eahwtc9e.aspx) valide une valeur par rapport à un [expression régulière](http://en.wikipedia.org/wiki/Regular_expression)
-- [CustomValidator](https://msdn.microsoft.com/en-us/library/9eee01cx(VS.80).aspx) valide une valeur par rapport à une méthode personnalisée, définie par l’utilisateur
+- [RequiredFieldValidator](https://msdn.microsoft.com/library/5hbw267h(VS.80).aspx) garantit qu’une valeur a été fournie.
+- [CompareValidator](https://msdn.microsoft.com/library/db330ayw(VS.80).aspx) valide une valeur à une autre valeur de contrôle Web ou une valeur constante ou garantit que le format de valeur s est autorisé pour un type de données spécifié
+- [RangeValidator](https://msdn.microsoft.com/library/f70d09xt.aspx) garantit qu’une valeur est comprise dans une plage de valeurs
+- [RegularExpressionValidator](https://msdn.microsoft.com/library/eahwtc9e.aspx) valide une valeur par rapport à un [expression régulière](http://en.wikipedia.org/wiki/Regular_expression)
+- [CustomValidator](https://msdn.microsoft.com/library/9eee01cx(VS.80).aspx) valide une valeur par rapport à une méthode personnalisée, définie par l’utilisateur
 
 Pour plus d’informations sur ces cinq contrôles faire référence à la [Ajout de contrôles de Validation à la modification et l’insertion des Interfaces](../editing-inserting-and-deleting-data/adding-validation-controls-to-the-editing-and-inserting-interfaces-cs.md) didacticiel ou retirer le [section contrôles de Validation](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/ctrlref/validation/default.aspx) de la [Les didacticiels de démarrage rapide ASP.NET](https://quickstarts.asp.net).
 
@@ -93,7 +93,7 @@ Permettent de commencer par ajouter les contrôles de validation nécessaires au
 **Figure 3**: ajouter un contrôle RequiredFieldValidator à la `EditItemTemplate After` le `ProductName` zone de texte ([cliquez pour afficher l’image en taille réelle](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image9.png))
 
 
-Tous les contrôles de validation de travail à valider l’entrée d’un contrôle Web ASP.NET unique. Par conséquent, nous devons indiquer que nous venons d’ajouter RequiredFieldValidator doit valider par rapport à la `ProductName` zone de texte ; cela en définissant le contrôle de validation s [ `ControlToValidate` propriété](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.basevalidator.controltovalidate(VS.80).aspx) à la `ID` de le contrôle Web approprié (`ProductName`, dans cette instance). Ensuite, définissez la [ `ErrorMessage` propriété](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.basevalidator.errormessage(VS.80).aspx) à, vous devez fournir le nom de produit s et [ `Text` propriété](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.basevalidator.text(VS.80).aspx) à \*. Le `Text` valeur de propriété, si fourni, est le texte affiché par le contrôle de validation si la validation échoue. Le `ErrorMessage` les valeurs de propriété, qui est requis, sont utilisé par le contrôle ValidationSummary ; si le `Text` valeur de propriété est omise, la `ErrorMessage` valeur de propriété est affichée par le contrôle de validation d’entrée non valide.
+Tous les contrôles de validation de travail à valider l’entrée d’un contrôle Web ASP.NET unique. Par conséquent, nous devons indiquer que nous venons d’ajouter RequiredFieldValidator doit valider par rapport à la `ProductName` zone de texte ; cela en définissant le contrôle de validation s [ `ControlToValidate` propriété](https://msdn.microsoft.com/library/system.web.ui.webcontrols.basevalidator.controltovalidate(VS.80).aspx) à la `ID` de le contrôle Web approprié (`ProductName`, dans cette instance). Ensuite, définissez la [ `ErrorMessage` propriété](https://msdn.microsoft.com/library/system.web.ui.webcontrols.basevalidator.errormessage(VS.80).aspx) à, vous devez fournir le nom de produit s et [ `Text` propriété](https://msdn.microsoft.com/library/system.web.ui.webcontrols.basevalidator.text(VS.80).aspx) à \*. Le `Text` valeur de propriété, si fourni, est le texte affiché par le contrôle de validation si la validation échoue. Le `ErrorMessage` les valeurs de propriété, qui est requis, sont utilisé par le contrôle ValidationSummary ; si le `Text` valeur de propriété est omise, la `ErrorMessage` valeur de propriété est affichée par le contrôle de validation d’entrée non valide.
 
 Après avoir défini ces trois propriétés de RequiredFieldValidator, votre écran doit ressembler à la Figure 4.
 
@@ -105,7 +105,7 @@ Après avoir défini ces trois propriétés de RequiredFieldValidator, votre éc
 
 Avec RequiredFieldValidator ajouté à la `EditItemTemplate`, tous les que reste plus qu’à ajouter la validation nécessaire pour le prix du produit s zone de texte. Étant donné que le `UnitPrice` est facultatif lorsque vous modifiez un enregistrement, nous n’avez pas besoin pour ajouter un contrôle RequiredFieldValidator. Nous ne, toutefois, besoin d’ajouter un CompareValidator pour vous assurer que le `UnitPrice`, si fourni, est correctement mise en forme comme une valeur monétaire et est supérieur ou égal à 0.
 
-Ajouter le contrôle CompareValidator dans le `EditItemTemplate` et définir son `ControlToValidate` propriété `UnitPrice`, ses `ErrorMessage` propriété le prix doit être supérieur ou égal à zéro et ne peut pas inclure le symbole monétaire et son `Text` propriété \*. Pour indiquer que le `UnitPrice` valeur doit être supérieure ou égale à 0, définir le s CompareValidator [ `Operator` propriété](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.comparevalidator.operator(VS.80).aspx) à `GreaterThanEqual`, ses [ `ValueToCompare` propriété](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.comparevalidator.valuetocompare(VS.80).aspx) 0, et son [ `Type` propriété](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.basecomparevalidator.type.aspx) à `Currency`.
+Ajouter le contrôle CompareValidator dans le `EditItemTemplate` et définir son `ControlToValidate` propriété `UnitPrice`, ses `ErrorMessage` propriété le prix doit être supérieur ou égal à zéro et ne peut pas inclure le symbole monétaire et son `Text` propriété \*. Pour indiquer que le `UnitPrice` valeur doit être supérieure ou égale à 0, définir le s CompareValidator [ `Operator` propriété](https://msdn.microsoft.com/library/system.web.ui.webcontrols.comparevalidator.operator(VS.80).aspx) à `GreaterThanEqual`, ses [ `ValueToCompare` propriété](https://msdn.microsoft.com/library/system.web.ui.webcontrols.comparevalidator.valuetocompare(VS.80).aspx) 0, et son [ `Type` propriété](https://msdn.microsoft.com/library/system.web.ui.webcontrols.basecomparevalidator.type.aspx) à `Currency`.
 
 Après l’ajout de ces deux contrôles de validation, du contrôle DataList s `EditItemTemplate` la syntaxe déclarative s doit ressembler à ce qui suit :
 
@@ -144,13 +144,13 @@ Par défaut, les contrôles de validation Web émettent JavaScript pour effectue
 
 Le bouton Annuler est un exemple. Imaginez qu’un utilisateur entre des données non valides, tels que l’omission du nom de produit s, puis décide she ne t voulez-vous enregistrer le produit une fois toutes les et appuie sur le bouton Annuler. Actuellement, le bouton Annuler déclenche les contrôles de validation sur la page, ce qui signalent que le nom du produit est manquant et empêcher la publication (postback). Notre utilisateur dispose à taper du texte dans le `ProductName` zone de texte pour annuler le processus de modification.
 
-Heureusement, le bouton, LinkButton et ImageButton ont un [ `CausesValidation` propriété](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.button.causesvalidation.aspx) qui peut indiquer ou non en cliquant sur le bouton doit initialiser la logique de validation (valeur par défaut est `True`). Définir le bouton Annuler s `CausesValidation` propriété `False`.
+Heureusement, le bouton, LinkButton et ImageButton ont un [ `CausesValidation` propriété](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.causesvalidation.aspx) qui peut indiquer ou non en cliquant sur le bouton doit initialiser la logique de validation (valeur par défaut est `True`). Définir le bouton Annuler s `CausesValidation` propriété `False`.
 
 ## <a name="ensuring-the-inputs-are-valid-in-the-updatecommand-event-handler"></a>Assurer les entrées sont valides dans le Gestionnaire d’événements UpdateCommand
 
 En raison du script côté client émis par les contrôles de validation, si un utilisateur entre des entrées non valides les contrôles de validation annuler toutes les publications (postback) initié par un bouton, LinkButton, ou ImageButton contrôles dont `CausesValidation` propriétés sont `True` (le valeur par défaut). Toutefois, si un utilisateur visite avec un navigateur archaïque ou dont prise en charge JavaScript a été désactivée, les vérifications de validation côté client seront exécute pas.
 
-Tous les contrôles de validation ASP.NET Répétez la logique de validation immédiatement lors de la publication et signaler la validité globale des entrées page s via le [ `Page.IsValid` propriété](https://msdn.microsoft.com/en-us/library/system.web.ui.page.isvalid.aspx). Toutefois, le flux de page n’est pas interrompu ou arrêté dans une façon basée sur la valeur de `Page.IsValid`. En tant que développeurs, il est de notre responsabilité pour vous assurer que le `Page.IsValid` a la valeur de propriété `True` avant de continuer avec le code qui suppose valid les données d’entrée.
+Tous les contrôles de validation ASP.NET Répétez la logique de validation immédiatement lors de la publication et signaler la validité globale des entrées page s via le [ `Page.IsValid` propriété](https://msdn.microsoft.com/library/system.web.ui.page.isvalid.aspx). Toutefois, le flux de page n’est pas interrompu ou arrêté dans une façon basée sur la valeur de `Page.IsValid`. En tant que développeurs, il est de notre responsabilité pour vous assurer que le `Page.IsValid` a la valeur de propriété `True` avant de continuer avec le code qui suppose valid les données d’entrée.
 
 Si un utilisateur a désactivé JavaScript, visite notre page, modifie un produit, entre une valeur du prix de trop coûteuse et clique sur le bouton de mise à jour, la validation côté client est ignorée et résulte d’une publication (postback). Lors de la publication, la page s ASP.NET `UpdateCommand` s’exécute le Gestionnaire d’événements et une exception est levée lors de la tentative d’analyse trop coûteuses à un `Decimal`. Étant donné que nous avons la gestion des exceptions, cette exception sera gérée normalement, mais nous aurions pu empêcher les données non valides glissement via en premier lieu par la procédure uniquement avec les `UpdateCommand` Gestionnaire d’événements si `Page.IsValid` a la valeur `True`.
 
@@ -167,9 +167,9 @@ Avec cet ajout, le produit va tenter de mettre à jour uniquement si les donnée
 
 ## <a name="step-3-summarizing-data-entry-problems"></a>Étape 3 : Synthèse des problèmes de saisie de données
 
-Outre les contrôles de cinq validation, ASP.NET inclut les [contrôle ValidationSummary](https://msdn.microsoft.com/en-US/library/f9h59855(VS.80).aspx), qui affiche le `ErrorMessage` s de ces contrôles de validation qui a détecté des données non valides. Ces données peuvent être affichées sous forme de texte sur la page web ou via un messagebox modale, côté client. Permettent d’améliorer ce didacticiel pour inclure la synthèse de tous les problèmes de validation côté client messagebox s.
+Outre les contrôles de cinq validation, ASP.NET inclut les [contrôle ValidationSummary](https://msdn.microsoft.com/library/f9h59855(VS.80).aspx), qui affiche le `ErrorMessage` s de ces contrôles de validation qui a détecté des données non valides. Ces données peuvent être affichées sous forme de texte sur la page web ou via un messagebox modale, côté client. Permettent d’améliorer ce didacticiel pour inclure la synthèse de tous les problèmes de validation côté client messagebox s.
 
-Pour ce faire, faites glisser un contrôle ValidationSummary à partir de la boîte à outils vers le concepteur. L’emplacement de t ne contrôle ValidationSummary vraiment a d’importance, car nous allons configurer pour uniquement afficher le résumé dans messagebox. Après avoir ajouté le contrôle, définissez son [ `ShowSummary` propriété](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.validationsummary.showsummary(VS.80).aspx) à `False` et son [ `ShowMessageBox` propriété](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.validationsummary.showmessagebox(VS.80).aspx) à `True`. Avec cet ajout, des erreurs de validation sont résumés dans un messagebox côté client (voir Figure 6).
+Pour ce faire, faites glisser un contrôle ValidationSummary à partir de la boîte à outils vers le concepteur. L’emplacement de t ne contrôle ValidationSummary vraiment a d’importance, car nous allons configurer pour uniquement afficher le résumé dans messagebox. Après avoir ajouté le contrôle, définissez son [ `ShowSummary` propriété](https://msdn.microsoft.com/library/system.web.ui.webcontrols.validationsummary.showsummary(VS.80).aspx) à `False` et son [ `ShowMessageBox` propriété](https://msdn.microsoft.com/library/system.web.ui.webcontrols.validationsummary.showmessagebox(VS.80).aspx) à `True`. Avec cet ajout, des erreurs de validation sont résumés dans un messagebox côté client (voir Figure 6).
 
 
 [![Les erreurs de Validation sont résumés dans un Messagebox côté Client](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image17.png)](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image16.png)
@@ -177,7 +177,7 @@ Pour ce faire, faites glisser un contrôle ValidationSummary à partir de la bo�
 **Figure 6**: les erreurs de Validation sont résumés dans un Messagebox côté Client ([cliquez pour afficher l’image en taille réelle](adding-validation-controls-to-the-datalist-s-editing-interface-cs/_static/image18.png))
 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Dans ce didacticiel, nous avons vu comment réduire la probabilité d’exceptions à l’aide de contrôles de validation proactive vous assurer que les entrées de nos utilisateurs sont valides avant d’essayer de les utiliser dans le flux de travail de mise à jour. ASP.NET fournit les cinq contrôles Web validation qui sont conçues pour inspecter un site Web particulier contrôlent s d’entrée et rapport sur la validité d’entrée s. Dans ce didacticiel nous avons utilisé deux de ces cinq contrôles RequiredFieldValidator et CompareValidator pour vous assurer que le nom du produit s a été fourni et que le prix est un format monétaire avec une valeur supérieure ou égale à zéro.
 

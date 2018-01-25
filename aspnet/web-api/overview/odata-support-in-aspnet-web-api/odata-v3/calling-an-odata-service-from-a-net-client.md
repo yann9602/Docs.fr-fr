@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v3/calling-an-odata-service-from-a-net-client
 msc.type: authoredcontent
-ms.openlocfilehash: f6266045ebf55fb7ae691bfb55e9c90cd4edcc96
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 497102cfa98680f2156a56ff9e36d84b7c820020
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="calling-an-odata-service-from-a-net-client-c"></a>Appel à un Service OData à partir d’un Client .NET (c#)
 ====================
@@ -30,7 +30,7 @@ par [Mike Wasson](https://github.com/MikeWasson)
 > 
 > 
 > - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads) (fonctionne avec Visual Studio 2012)
-> - [Bibliothèque cliente WCF Data Services](https://msdn.microsoft.com/en-us/library/cc668772.aspx)
+> - [Bibliothèque cliente WCF Data Services](https://msdn.microsoft.com/library/cc668772.aspx)
 > - API Web 2. (L’exemple de service OData est créé à l’aide des API Web 2, mais l’application cliente ne dépend pas des API Web).
 
 
@@ -46,7 +46,7 @@ Les articles suivants décrivent comment implémenter le service OData dans l’
 
 - [Création d’un point de terminaison OData dans l’API Web 2](creating-an-odata-endpoint.md)
 - [Relations d’entité OData dans l’API Web 2](working-with-entity-relations.md)
-- [Actions OData dans l’API Web 2](odata-actions.md)
+- [Actions OData dans Web API 2](odata-actions.md)
 
 ## <a name="generate-the-service-proxy"></a>Générer le Proxy de Service
 
@@ -118,7 +118,7 @@ Pour le reste de cette rubrique, je n’affiche pas l’ensemble du `Main` fonct
 
 OData définit [options de requête](../supporting-odata-query-options.md) qui peut être utilisé pour filtrer, trier, données de la page et ainsi de suite. Dans le proxy de service, vous pouvez appliquer ces options à l’aide de diverses expressions LINQ.
 
-Dans cette section, je vous montrerai courts exemples. Pour plus d’informations, consultez la rubrique [considérations de LINQ (WCF Data Services)](https://msdn.microsoft.com/en-us/library/ee622463.aspx) sur MSDN.
+Dans cette section, je vous montrerai courts exemples. Pour plus d’informations, consultez la rubrique [considérations de LINQ (WCF Data Services)](https://msdn.microsoft.com/library/ee622463.aspx) sur MSDN.
 
 ### <a name="filtering-filter"></a>Filtrage ($filter)
 
@@ -226,7 +226,7 @@ Par exemple, le `RateProduct` action prend le paramètre nommé « Évaluation�
 
 [!code-csharp[Main](calling-an-odata-service-from-a-net-client/samples/sample24.cs)]
 
-Pour plus d’informations, consultez[appeler les opérations de Service et les Actions](https://msdn.microsoft.com/en-us/library/hh230677.aspx).
+Pour plus d’informations, consultez[appeler les opérations de Service et les Actions](https://msdn.microsoft.com/library/hh230677.aspx).
 
 Une option consiste à étendre le **conteneur** classe afin de fournir une méthode fortement typée qui appelle l’action :
 

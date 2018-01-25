@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2013/using-browser-link
 msc.type: authoredcontent
-ms.openlocfilehash: 14f67d81a5b460da591b8fb27fedf53d228e7717
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e5a13405a303580ec8c1d4cdacafc26c6f8ff34a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-browser-link-in-visual-studio-2013"></a>À l’aide du lien de navigateur dans Visual Studio 2013
 ====================
@@ -67,9 +67,9 @@ Lorsque j’ai cliqué sur le **Actualiser** bouton, la modification est apparue
 
 ![](using-browser-link/_static/image8.png)
 
-**Remarques**
+**Notes**
 
-- Pour activer le lien du navigateur, définissez `debug=true` dans les [ &lt;compilation&gt; ](https://msdn.microsoft.com/en-us/library/s10awwz0(v=vs.85).aspx) élément dans le fichier Web.config du projet.
+- Pour activer le lien du navigateur, définissez `debug=true` dans les [ &lt;compilation&gt; ](https://msdn.microsoft.com/library/s10awwz0(v=vs.85).aspx) élément dans le fichier Web.config du projet.
 - L’application doit s’exécuter sur localhost.
 - L’application doit cibler .NET 4.0 ou version ultérieure.
 

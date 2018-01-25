@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-repeater/paging-report-data-in-a-datalist-or-repeater-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 5cb469252dc36ced98357dd984d36668af1c430b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 66f1065c41352f355dd5f1be43443165df909b93
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="paging-report-data-in-a-datalist-or-repeater-control-vb"></a>La pagination des données de rapport dans un contrôle DataList ou d’un contrôle de répéteur (VB)
 ====================
@@ -80,7 +80,7 @@ Dans les didacticiels précédents, nous avons vu comment parcourir les données
 
 *La pagination personnalisée* résout les problèmes de performances de pagination par défaut en saisissant uniquement le sous-ensemble précis d’enregistrements à afficher sur la page demandée. Lors de l’implémentation de la pagination personnalisée, nous devons écrire la requête SQL qui retourne uniquement le jeu d’enregistrements approprié efficacement. Nous avons vu comment créer une telle requête à l’aide de SQL Server 2005 s nouvelle [ `ROW_NUMBER()` mot clé](http://www.4guysfromrolla.com/webtech/010406-1.shtml) dans les [efficacement la pagination via grandes quantités de données](../paging-and-sorting/efficiently-paging-through-large-amounts-of-data-vb.md) didacticiel.
 
-Pour implémenter la pagination par défaut dans les contrôles DataList ou répéteur, nous pouvons utiliser le [ `PagedDataSource` classe](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.pageddatasource.aspx) comme wrapper pour le `ProductsDataTable` dont le contenu est en cours de pagination. Le `PagedDataSource` classe a un `DataSource` propriété qui peut être affectée à n’importe quel objet énumérable et [ `PageSize` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.pageddatasource.pagesize.aspx) et [ `CurrentPageIndex` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.pageddatasource.currentpageindex.aspx) propriétés qui indiquent le nombre d’enregistrements à Afficher par page et l’index de page actuel. Une fois que ces propriétés ont été définies, le `PagedDataSource` peut être utilisé comme source de données de toutes les données de contrôle Web. Le `PagedDataSource`, lors de l’énumération, retournent seulement le sous-ensemble approprié d’enregistrements de son interne `DataSource` selon la `PageSize` et `CurrentPageIndex` propriétés. La figure 4 illustre les fonctionnalités de la `PagedDataSource` classe.
+Pour implémenter la pagination par défaut dans les contrôles DataList ou répéteur, nous pouvons utiliser le [ `PagedDataSource` classe](https://msdn.microsoft.com/library/system.web.ui.webcontrols.pageddatasource.aspx) comme wrapper pour le `ProductsDataTable` dont le contenu est en cours de pagination. Le `PagedDataSource` classe a un `DataSource` propriété qui peut être affectée à n’importe quel objet énumérable et [ `PageSize` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.pageddatasource.pagesize.aspx) et [ `CurrentPageIndex` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.pageddatasource.currentpageindex.aspx) propriétés qui indiquent le nombre d’enregistrements à Afficher par page et l’index de page actuel. Une fois que ces propriétés ont été définies, le `PagedDataSource` peut être utilisé comme source de données de toutes les données de contrôle Web. Le `PagedDataSource`, lors de l’énumération, retournent seulement le sous-ensemble approprié d’enregistrements de son interne `DataSource` selon la `PageSize` et `CurrentPageIndex` propriétés. La figure 4 illustre les fonctionnalités de la `PagedDataSource` classe.
 
 
 ![Le PagedDataSource encapsule un objet énumérable avec une Interface paginable](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image6.png)
@@ -204,7 +204,7 @@ En plus de `TotalRowCount`, prenez une minute pour créer des propriétés au ni
 
 ## <a name="determining-the-total-number-of-records-being-paged-through"></a>Déterminer le nombre Total d’enregistrements en cours par le biais de pagination
 
-Le `PagedDataSource` objet retourné par le s ObjectDataSource `Select()` méthode est qu’il contient *tous les* des enregistrements produit, même si uniquement un sous-ensemble d'entre elles s’affichent dans le contrôle DataList. Le `PagedDataSource` s [ `Count` propriété](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.pageddatasource.count.aspx) retourne uniquement le nombre d’éléments qui s’affichera dans le contrôle DataList ; le [ `DataSourceCount` propriété](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.pageddatasource.datasourcecount.aspx) retourne le nombre total d’éléments dans le `PagedDataSource`. Par conséquent, nous devons attribuer ASP.NET page s `TotalRowCount` la valeur de la propriété de la `PagedDataSource` s `DataSourceCount` propriété.
+Le `PagedDataSource` objet retourné par le s ObjectDataSource `Select()` méthode est qu’il contient *tous les* des enregistrements produit, même si uniquement un sous-ensemble d'entre elles s’affichent dans le contrôle DataList. Le `PagedDataSource` s [ `Count` propriété](https://msdn.microsoft.com/library/system.web.ui.webcontrols.pageddatasource.count.aspx) retourne uniquement le nombre d’éléments qui s’affichera dans le contrôle DataList ; le [ `DataSourceCount` propriété](https://msdn.microsoft.com/library/system.web.ui.webcontrols.pageddatasource.datasourcecount.aspx) retourne le nombre total d’éléments dans le `PagedDataSource`. Par conséquent, nous devons attribuer ASP.NET page s `TotalRowCount` la valeur de la propriété de la `PagedDataSource` s `DataSourceCount` propriété.
 
 Pour ce faire, créez un gestionnaire d’événements pour ObjectDataSource s `Selected` événement. Dans le `Selected` Gestionnaire d’événements, nous avons accès à la valeur de retour de la s ObjectDataSource `Select()` méthode dans ce cas, le `PagedDataSource`.
 
@@ -224,7 +224,7 @@ Avec la `Click` terminer des gestionnaires d’événements, les enregistrements
 
 ## <a name="disabling-paging-interface-controls"></a>La désactivation de la pagination des contrôles d’Interface
 
-Actuellement, les quatre boutons sont activés, quelle que soit la page affichée. Toutefois, vous souhaitez désactiver les boutons de la première et précédent lors de l’affichage de la première page de données et les boutons suivant et dernier lors de l’affichage de la dernière page. Le `PagedDataSource` objet retourné par le s ObjectDataSource `Select()` méthode possède des propriétés [ `IsFirstPage` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.pageddatasource.isfirstpage.aspx) et [ `IsLastPage` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.pageddatasource.islastpage.aspx) que nous pouvons examiner pour déterminer si nous visualisons la première ou dernière page de données.
+Actuellement, les quatre boutons sont activés, quelle que soit la page affichée. Toutefois, vous souhaitez désactiver les boutons de la première et précédent lors de l’affichage de la première page de données et les boutons suivant et dernier lors de l’affichage de la dernière page. Le `PagedDataSource` objet retourné par le s ObjectDataSource `Select()` méthode possède des propriétés [ `IsFirstPage` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.pageddatasource.isfirstpage.aspx) et [ `IsLastPage` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.pageddatasource.islastpage.aspx) que nous pouvons examiner pour déterminer si nous visualisons la première ou dernière page de données.
 
 Ajoutez le code suivant au s ObjectDataSource `Selected` Gestionnaire d’événements :
 
@@ -263,7 +263,7 @@ Depuis s’il n’y a aucun `PagedDataSource` avec la pagination personnalisée,
 
 Nous allons explorer l’implémentation de la pagination personnalisée plus en détail dans le didacticiel suivant.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Alors que le contrôle DataList ni un répéteur offre hors de la prise en charge la pagination trouvé dans le GridView, DetailsView et FormView contrôle, ces fonctionnalités peuvent être ajoutées avec un minimum d’effort. Le moyen le plus simple pour implémenter la pagination par défaut est d’encapsuler l’ensemble des produits au sein d’un `PagedDataSource` , puis lier la `PagedDataSource` à DataList ou répéteur. Dans ce didacticiel, nous avons ajouté la `GetProductsAsPagedDataSource` méthode à la `ProductsBLL` classe pour retourner le `PagedDataSource`. Le `ProductsBLL` classe contient déjà les méthodes nécessaires pour la pagination personnalisée `GetProductsPaged` et `TotalNumberOfProducts`.
 

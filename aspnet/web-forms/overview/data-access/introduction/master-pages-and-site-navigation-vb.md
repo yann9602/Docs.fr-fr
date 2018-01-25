@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/introduction/master-pages-and-site-navigation-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b14bb4279ac5f6a986fc597b97176b61150044c8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7bb8a9bccbd9dfbbf983618ecd32588fd8f69c64
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="master-pages-and-site-navigation-vb"></a>Les Pages maîtres et Navigation du Site (VB)
 ====================
@@ -167,11 +167,11 @@ Le plan de site définit la structure de navigation du site Web, qui est une hi�
 **La figure 10**: le plan de Site représente une Structure hiérarchique de navigation ([cliquez pour afficher l’image en taille réelle](master-pages-and-site-navigation-vb/_static/image26.png))
 
 
-ASP.NET expose la structure du plan de site par le biais du .NET Framework [SiteMap classe](https://msdn.microsoft.com/en-us/library/system.web.sitemap.aspx). Cette classe a un `CurrentNode` propriété, qui retourne des informations sur la section que l’utilisateur visite actuellement ; le `RootNode` propriété retourne la racine du plan de site (accueil, dans notre plan de site). À la fois le `CurrentNode` et `RootNode` propriétés retour [SiteMapNode](https://msdn.microsoft.com/en-us/library/system.web.sitemapnode.aspx) instances qui ont des propriétés comme `ParentNode`, `ChildNodes`, `NextSibling`, `PreviousSibling`, et ainsi de suite, qui permettent du plan de site hiérarchie à traiter.
+ASP.NET expose la structure du plan de site par le biais du .NET Framework [SiteMap classe](https://msdn.microsoft.com/library/system.web.sitemap.aspx). Cette classe a un `CurrentNode` propriété, qui retourne des informations sur la section que l’utilisateur visite actuellement ; le `RootNode` propriété retourne la racine du plan de site (accueil, dans notre plan de site). À la fois le `CurrentNode` et `RootNode` propriétés retour [SiteMapNode](https://msdn.microsoft.com/library/system.web.sitemapnode.aspx) instances qui ont des propriétés comme `ParentNode`, `ChildNodes`, `NextSibling`, `PreviousSibling`, et ainsi de suite, qui permettent du plan de site hiérarchie à traiter.
 
 ## <a name="step-3-displaying-a-menu-based-on-the-site-map"></a>Étape 3 : Afficher un Menu basé sur le plan de Site
 
-L’accès aux données dans ASP.NET 2.0 peut être effectué par programmation, comme dans ASP.NET 1.x, ou de façon déclarative, via le nouveau [contrôles de source de données](https://msdn.microsoft.com/en-us/library/ms227679.aspx). Il existe plusieurs contrôles de source de données intégrés tels que le contrôle SqlDataSource, pour accéder aux données de la base de données relationnelle, le contrôle ObjectDataSource, pour accéder aux données à partir de classes et d’autres. Vous pouvez même créer votre propre [contrôles de source de données personnalisé](https://msdn.microsoft.com/asp.net/reference/data/default.aspx?pull=/library/en-us/dnvs05/html/DataSourceCon1.asp).
+L’accès aux données dans ASP.NET 2.0 peut être effectué par programmation, comme dans ASP.NET 1.x, ou de façon déclarative, via le nouveau [contrôles de source de données](https://msdn.microsoft.com/library/ms227679.aspx). Il existe plusieurs contrôles de source de données intégrés tels que le contrôle SqlDataSource, pour accéder aux données de la base de données relationnelle, le contrôle ObjectDataSource, pour accéder aux données à partir de classes et d’autres. Vous pouvez même créer votre propre [contrôles de source de données personnalisé](https://msdn.microsoft.com/asp.net/reference/data/default.aspx?pull=/library/dnvs05/html/DataSourceCon1.asp).
 
 Les contrôles de source de données font Office de proxy entre votre page ASP.NET et les données sous-jacentes. Pour afficher les données récupérées d’un contrôle de source de données, nous allons généralement ajouter un autre contrôle à la page et la lier au contrôle de source de données. Pour lier un contrôle Web à un contrôle de source de données, définissez simplement le contrôle de Web `DataSourceID` propriété la valeur du contrôle de source de données `ID` propriété.
 
@@ -218,7 +218,7 @@ Ce menu est dans la page maître et lié à la carte de site définie dans `Web.
 
 Tous les contrôles ASP.NET peuvent persister éventuellement leur état à la [l’état d’affichage](https://msdn.microsoft.com/msdnmag/issues/03/02/CuttingEdge/), ce qui est sérialisé comme un champ masqué dans le code HTML restitué. État d’affichage utilisée par les contrôles à mémoriser leur état modifiée par programmation sur des publications, telles que les données liées à un contrôle Web de données. Alors que l’état d’affichage permet d’informations pour être conservés sur des publications, il augmente la taille de la balise qui doit être envoyée au client et risque d’encombrement de la page grave si ne sont pas étroitement surveillés. Données des contrôles Web en particulier le GridView sont particulièrement connus pour l’ajout des dizaines de kilo-octets supplémentaires du balisage à une page. Cette augmentation peut être négligeable pour les utilisateurs à large bande ou l’intranet, l’état d’affichage peut ajouter des quelques secondes à l’aller-retour pour les utilisateurs d’accès à distance.
 
-Pour voir l’impact de l’état d’affichage, visitez une page dans un navigateur, puis ensuite afficher la source envoyée par la page web (dans Internet Explorer, accédez au menu Affichage et choisissez l’option Source). Vous pouvez également activer [le traçage des pages](https://msdn.microsoft.com/en-us/library/sfbfw58f.aspx) pour voir l’allocation d’état d’affichage utilisée par chacun des contrôles sur la page. Afficher les informations d’état sont sérialisées dans un champ de formulaire masqué appelé `__VIEWSTATE`, situé dans un `<div>` élément situé juste après l’ouverture `<form>` balise. État d’affichage est conservée uniquement lorsqu’il existe un formulaire Web est utilisée ; Si votre page ASP.NET n’inclut pas un `<form runat="server">` dans sa syntaxe déclarative n’aura pas un `__VIEWSTATE` champ de formulaire masqué dans le balisage restitué.
+Pour voir l’impact de l’état d’affichage, visitez une page dans un navigateur, puis ensuite afficher la source envoyée par la page web (dans Internet Explorer, accédez au menu Affichage et choisissez l’option Source). Vous pouvez également activer [le traçage des pages](https://msdn.microsoft.com/library/sfbfw58f.aspx) pour voir l’allocation d’état d’affichage utilisée par chacun des contrôles sur la page. Afficher les informations d’état sont sérialisées dans un champ de formulaire masqué appelé `__VIEWSTATE`, situé dans un `<div>` élément situé juste après l’ouverture `<form>` balise. État d’affichage est conservée uniquement lorsqu’il existe un formulaire Web est utilisée ; Si votre page ASP.NET n’inclut pas un `<form runat="server">` dans sa syntaxe déclarative n’aura pas un `__VIEWSTATE` champ de formulaire masqué dans le balisage restitué.
 
 Le `__VIEWSTATE` champ de formulaire généré par la page maître ajoute environ 1 800 octets au balisage généré de la page. Cette augmentation supplémentaire est principalement due au contrôle du répéteur, comme le contenu du contrôle SiteMapDataSource est conservée à l’état d’affichage. Pendant un 1 800 octets supplémentaires peut ne pas sembler rien heureux, lors de l’utilisation d’un GridView avec de nombreux champs et enregistrements, l’état d’affichage peut augmenter facilement par un facteur de 10 ou plus.
 
@@ -252,7 +252,7 @@ La barre de navigation affiche la page actuelle visite de l’utilisateur dans l
 
 Les didacticiels de notre site sont décomposent en différentes catégories de rapports de base, le filtrage, la mise en forme personnalisée, et ainsi de suite avec un dossier pour chaque catégorie et les didacticiels correspondantes que les pages ASP.NET dans ce dossier. En outre, chaque dossier contient un `Default.aspx` page. De cette page par défaut, s’affichent tous les didacticiels pour la section en cours. Autrement dit, pour le `Default.aspx` dans les `BasicReporting` dossier nous aurait des liens vers des `SimpleDisplay.aspx`, `DeclarativeParams.aspx`, et `ProgrammaticParams.aspx`. Ici, là encore, nous pouvons utiliser le `SiteMap` classe et un contrôle Web pour afficher ces informations en fonction de la carte de site de données définis dans `Web.sitemap`.
 
-Nous allons afficher une liste non triée à l’aide d’un répéteur, mais cette fois, que nous allons afficher le titre et la description des didacticiels. Étant donné que le balisage et le code pour accomplir ce sera doivent être répété pour chaque `Default.aspx` page, nous pouvons encapsuler cette logique de l’interface utilisateur dans un [contrôle utilisateur](https://msdn.microsoft.com/en-us/library/y6wb1a0e.aspx). Créez un dossier dans le site Web appelé `UserControls` et ajouter à celle d’un nouvel élément du type de contrôle utilisateur Web nommé `SectionLevelTutorialListing.ascx`et ajoutez le balisage suivant :
+Nous allons afficher une liste non triée à l’aide d’un répéteur, mais cette fois, que nous allons afficher le titre et la description des didacticiels. Étant donné que le balisage et le code pour accomplir ce sera doivent être répété pour chaque `Default.aspx` page, nous pouvons encapsuler cette logique de l’interface utilisateur dans un [contrôle utilisateur](https://msdn.microsoft.com/library/y6wb1a0e.aspx). Créez un dossier dans le site Web appelé `UserControls` et ajouter à celle d’un nouvel élément du type de contrôle utilisateur Web nommé `SectionLevelTutorialListing.ascx`et ajoutez le balisage suivant :
 
 
 [![Ajouter un nouveau contrôle utilisateur Web dans le dossier de contrôles utilisateur](master-pages-and-site-navigation-vb/_static/image30.png)](master-pages-and-site-navigation-vb/_static/image29.png)
@@ -285,7 +285,7 @@ Une fois que cette répéteur a été créé, ouvrez le `Default.aspx` pages dan
 **Figure 15**: la base des didacticiels Reporting sont répertoriés ([cliquez pour afficher l’image en taille réelle](master-pages-and-site-navigation-vb/_static/image37.png))
 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Avec le plan de site défini et la page maître terminée, nous avons maintenant un schéma de mise en page et de navigation de page cohérente pour nos didacticiels liées aux données. Quel que soit le nombre de pages nous ajoutons à notre site, mise à jour les informations de navigation à l’échelle du site page mise en page ou le site est un processus simple et rapide en raison de ces informations est centralisées. Plus précisément, les informations de mise en page sont définies dans la page maître `Site.master` et le site mapper dans `Web.sitemap`. Nous avons n’a pas besoin d’écrire *tout* de code pour obtenir ce mécanisme de mise en page et de navigation de page de l’échelle du site, et nous conservent une prise en charge complète WYSIWYG de concepteur dans Visual Studio.
 
@@ -297,15 +297,15 @@ Bonne programmation !
 
 Pour plus d’informations sur les sujets abordés dans ce didacticiel, consultez les ressources suivantes :
 
-- [Vue d’ensemble des Pages maîtres ASP.NET](https://msdn.microsoft.com/en-us/library/wtxbf3hh.aspx)
+- [Vue d’ensemble des Pages maîtres ASP.NET](https://msdn.microsoft.com/library/wtxbf3hh.aspx)
 - [Pages maîtres dans ASP.NET 2.0](http://odetocode.com/Articles/419.aspx)
 - [Modèles ASP.NET 2.0](https://msdn.microsoft.com/asp.net/reference/design/templates/default.aspx)
-- [Vue d’ensemble de Navigation de Site ASP.NET](https://msdn.microsoft.com/en-us/library/e468hxky.aspx)
+- [Vue d’ensemble de Navigation de Site ASP.NET](https://msdn.microsoft.com/library/e468hxky.aspx)
 - [Examen de ASP.NET 2.0 de Navigation du Site](http://aspnet.4guysfromrolla.com/articles/111605-1.aspx)
 - [Fonctionnalités de Navigation ASP.NET 2.0 de Site](https://weblogs.asp.net/scottgu/archive/2005/11/20/431019.aspx)
-- [État d’affichage ASP.NET présentation](https://msdn.microsoft.com/library/default.asp?url=/library/en-us/dnaspp/html/viewstate.asp)
-- [Comment : activer le traçage d’une Page ASP.NET](https://msdn.microsoft.com/en-us/library/94c55d08%28VS.80%29.aspx)
-- [Contrôles utilisateur ASP.NET](https://msdn.microsoft.com/en-us/library/y6wb1a0e.aspx)
+- [État d’affichage ASP.NET présentation](https://msdn.microsoft.com/library/default.asp?url=/library/dnaspp/html/viewstate.asp)
+- [Comment : activer le traçage d’une Page ASP.NET](https://msdn.microsoft.com/library/94c55d08%28VS.80%29.aspx)
+- [Contrôles utilisateur ASP.NET](https://msdn.microsoft.com/library/y6wb1a0e.aspx)
 
 ## <a name="about-the-author"></a>À propos de l’auteur
 

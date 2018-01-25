@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/security/16-adding-security-and-membership
 msc.type: authoredcontent
-ms.openlocfilehash: f0cee96005416bd9ef8befaf34890f415cf5ff3c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: af2eeb128cff554e7ae3d903e2117861087344e9
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-security-and-membership-to-an-aspnet-web-pages-razor-site"></a>Ajout de sécurité et l’appartenance à un Site de Pages (Razor) Web ASP.NET
 ====================
@@ -100,7 +100,7 @@ La procédure suivante décrit comment créer le site et le configurer.
 7. Enregistrez et fermez  *\_AppStart.cshtml*.
 8. Exécutez le *Default.cshtml* page dans un navigateur.
 
-    ![sécurité-appartenance-2](16-adding-security-and-membership/_static/image1.png)
+    ![security-membership-2](16-adding-security-and-membership/_static/image1.png)
 
     > [!NOTE]
     > Si vous voyez une erreur indiquant qu’une propriété doit être une instance de `ExtendedMembershipProvider`, le site ne peut pas être configuré pour utiliser le système d’appartenance ASP.NET Web Pages (SimpleMembership). Cela peut parfois se produire si le serveur du fournisseur d’hébergement est configuré différemment de votre serveur local. Pour résoudre ce problème, ajoutez l’élément suivant sur le site *Web.config* fichier :
@@ -111,7 +111,7 @@ La procédure suivante décrit comment créer le site et le configurer.
 9. Dans le coin supérieur droit de la page, cliquez sur le **inscrire** lien. Le *Register.cshtml* page s’affiche.
 10. Entrez un nom d’utilisateur et un mot de passe, puis activez **inscrire**.
 
-    ![sécurité-appartenance-3](16-adding-security-and-membership/_static/image2.png)
+    ![security-membership-3](16-adding-security-and-membership/_static/image2.png)
 
     Lorsque vous avez créé le site Web à partir de la **Starter Site** modèle, une base de données nommée *StarterSite.sdf* a été créé dans la table *application\_données* dossier. Pendant l’inscription, vos informations utilisateur sont ajoutées à la base de données. Si vous définissez les valeurs SMTP, un message est envoyé à l’adresse de messagerie, que vous avez utilisé afin de terminer l’inscription.
 
@@ -124,7 +124,7 @@ La procédure suivante décrit comment créer le site et le configurer.
 
     Une fois que vous vous connectez, la **connexion** et **inscrire** liens sont remplacés par un **déconnexion** lien. Votre nom de connexion s’affiche sous forme de lien. (Le lien permet d’aller à une page dans laquelle vous pouvez modifier votre mot de passe.)
 
-    ![sécurité-appartenance-6](16-adding-security-and-membership/_static/image5.png)
+    ![security-membership-6](16-adding-security-and-membership/_static/image5.png)
 
     > [!NOTE]
     > Par défaut, ASP.NET web pages envoyer des informations d’identification au serveur en texte clair (en tant que texte lisible). Un site de production doit-elle utiliser le protocole HTTP sécurisé (https://, également connu sous le *SSL* ou SSL) pour chiffrer les informations sensibles qui sont échangées avec le serveur. Vous pouvez requis messagerie envoi de messages à l’aide de SSL en définissant `WebMail.EnableSsl=true` comme dans l’exemple précédent. Pour plus d’informations sur le protocole SSL, consultez [sécurisation des Communications Web : les certificats SSL et https://](https://go.microsoft.com/fwlink/?LinkId=208660).
@@ -181,11 +181,11 @@ Le système d’appartenance ASP.NET est configuré pour prendre en charge les r
 1. Dans WebMatrix, cliquez sur le **bases de données** sélecteur d’espace de travail.
 2. Dans le volet gauche, ouvrez le *StarterSite.sdf* ouverture d’un nœud, le **Tables** nœud, puis double-cliquez sur le *pages Web\_rôles* table.
 
-    ![sécurité-appartenance-7](16-adding-security-and-membership/_static/image6.png)
+    ![security-membership-7](16-adding-security-and-membership/_static/image6.png)
 3. Ajouter un rôle appelé &quot;admin&quot;. Le *RoleId* est renseigné automatiquement. (Il est la clé primaire et a été défini pour être un champ d’identité, comme expliqué dans [Introduction à l’utilisation d’une base de données dans les Sites ASP.NET Web Pages](https://go.microsoft.com/fwlink/?LinkId=202893).)
 4. Prenez note de ce qui est la valeur pour le *RoleId* champ. (S’il s’agit du premier rôle que vous définissez, il est égal à 1.)
 
-    ![sécurité-appartenance-8](16-adding-security-and-membership/_static/image7.png)
+    ![security-membership-8](16-adding-security-and-membership/_static/image7.png)
 5. Fermer le *pages Web\_rôles* table.
 6. Ouvrez le *UserProfile* table.
 7. Prenez note de la *UserId* valeur d’une ou plusieurs des utilisateurs dans la table et puis fermez la table.
@@ -212,7 +212,7 @@ Le système d’appartenance ASP.NET est configuré pour prendre en charge les r
 
 La page de connexion s’arrête pas les programmes automatiques (parfois appelé *robots web* ou *robots*) auprès de votre site Web. Cette procédure décrit comment activer un test ReCaptcha pour la page d’inscription.
 
-![/Media/38777/ch16securitymembership-18.jpg](16-adding-security-and-membership/_static/image1.jpg)
+![/media/38777/ch16securitymembership-18.jpg](16-adding-security-and-membership/_static/image1.jpg)
 
 1. Inscrire votre site Web, consultez ReCaptcha.Net ([http://recaptcha.net](http://recaptcha.net)). Lorsque vous avez terminé l’inscription, vous obtenez une clé publique et une clé privée.
 2. Ajoutez la bibliothèque de programmes d’assistance ASP.NET Web à votre site Web, comme décrit dans [programmes d’assistance de l’installation dans un Site de Pages Web ASP.NET](https://go.microsoft.com/fwlink/?LinkId=252372), si vous n’avez pas encore.
@@ -230,7 +230,7 @@ La page de connexion s’arrête pas les programmes automatiques (parfois appel�
 1. Exécutez *Default.cshtml* dans un navigateur. Si vous êtes connecté au site, cliquez sur le **déconnexion** lien.
 2. Cliquez sur le **inscrire** liez et l’inscription à l’aide du test CAPTCHA de test.
 
-    ![sécurité-appartenance-10.](16-adding-security-and-membership/_static/image9.png)
+    ![security-membership-10](16-adding-security-and-membership/_static/image9.png)
 
 Pour plus d’informations sur la `ReCaptcha` assistance, consultez [à un CATPCHA empêcher automatisée programmes (robots) à partir d’à l’aide de votre Site Web ASP.NET](https://go.microsoft.com/fwlink/?LinkId=251967).
 
@@ -254,20 +254,20 @@ La procédure décrite précédemment dans cet article s’appuie sur l’utilis
 
 Le processus de base est décrite dans le billet de blog [la façon la plus simple pour implémenter la sécurité de ASP.NET Razor](http://mikepope.com/blog/DisplayBlog.aspx?permalink=2240). La plupart du travail est effectuée à l’aide les méthodes suivantes et les propriétés de la `WebSecurity` assistance :
 
-- [WebSecurty.UserExists](https://msdn.microsoft.com/en-us/library/webmatrix.webdata.websecurity.userexists(v=vs.99).aspx), [WebSecurity.CreateUserAndAccount](https://msdn.microsoft.com/en-us/library/webmatrix.webdata.websecurity.createuserandaccount(v=vs.99).aspx). Ces méthodes vous permettent de déterminer si un utilisateur est déjà inscrit et pour les enregistrer.
-- [WebSecurty.IsAuthenticated](https://msdn.microsoft.com/en-us/library/webmatrix.webdata.websecurity.isauthenticated(v=vs.99).aspx). Cette propriété vous permet de déterminer si l’utilisateur actuel est connecté. Cela est utile pour rediriger les utilisateurs vers une page de connexion si elles ne sont pas connectés.
-- [WebSecurity.Login](https://msdn.microsoft.com/en-us/library/webmatrix.webdata.websecurity.login(v=vs.99).aspx), [WebSecurity.Logout](https://msdn.microsoft.com/en-us/library/webmatrix.webdata.websecurity.logout(v=vs.99).aspx). Ces méthodes connecter à un utilisateur ou out.
-- [WebSecurity.CurrentUserName](https://msdn.microsoft.com/en-us/library/webmatrix.webdata.websecurity.currentusername(v=vs.99).aspx). Cette propriété est utile pour afficher le nom de connexion de l’utilisateur actuel (si l’utilisateur est connecté).
-- [WebSecurity.ConfirmAccount](https://msdn.microsoft.com/en-us/library/gg569286(v=vs.99).aspx). Cette méthode est utile si vous configurez l’e-mail de confirmation pour l’inscription. (Détails sont décrits dans le billet de blog [à l’aide de la fonctionnalité de confirmation pour la sécurité des Pages Web ASP.NET](http://mikepope.com/blog/DisplayBlog.aspx?permalink=2267).)
+- [WebSecurty.UserExists](https://msdn.microsoft.com/library/webmatrix.webdata.websecurity.userexists(v=vs.99).aspx), [WebSecurity.CreateUserAndAccount](https://msdn.microsoft.com/library/webmatrix.webdata.websecurity.createuserandaccount(v=vs.99).aspx). Ces méthodes vous permettent de déterminer si un utilisateur est déjà inscrit et pour les enregistrer.
+- [WebSecurty.IsAuthenticated](https://msdn.microsoft.com/library/webmatrix.webdata.websecurity.isauthenticated(v=vs.99).aspx). Cette propriété vous permet de déterminer si l’utilisateur actuel est connecté. Cela est utile pour rediriger les utilisateurs vers une page de connexion si elles ne sont pas connectés.
+- [WebSecurity.Login](https://msdn.microsoft.com/library/webmatrix.webdata.websecurity.login(v=vs.99).aspx), [WebSecurity.Logout](https://msdn.microsoft.com/library/webmatrix.webdata.websecurity.logout(v=vs.99).aspx). Ces méthodes connecter à un utilisateur ou out.
+- [WebSecurity.CurrentUserName](https://msdn.microsoft.com/library/webmatrix.webdata.websecurity.currentusername(v=vs.99).aspx). Cette propriété est utile pour afficher le nom de connexion de l’utilisateur actuel (si l’utilisateur est connecté).
+- [WebSecurity.ConfirmAccount](https://msdn.microsoft.com/library/gg569286(v=vs.99).aspx). Cette méthode est utile si vous configurez l’e-mail de confirmation pour l’inscription. (Détails sont décrits dans le billet de blog [à l’aide de la fonctionnalité de confirmation pour la sécurité des Pages Web ASP.NET](http://mikepope.com/blog/DisplayBlog.aspx?permalink=2267).)
 
-Pour gérer les rôles, vous pouvez utiliser la [rôles](https://msdn.microsoft.com/en-us/library/gg538398(v=vs.99).aspx) et [appartenance](https://msdn.microsoft.com/en-us/library/gg569035(v=vs.99).aspx) des classes, comme décrit dans l’entrée de blog.
+Pour gérer les rôles, vous pouvez utiliser la [rôles](https://msdn.microsoft.com/library/gg538398(v=vs.99).aspx) et [appartenance](https://msdn.microsoft.com/library/gg569035(v=vs.99).aspx) des classes, comme décrit dans l’entrée de blog.
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-- [Personnalisation du comportement de l’échelle du Site](https://go.microsoft.com/fwlink/?LinkId=202906)
+- [Personnalisation du comportement à l’échelle du site](https://go.microsoft.com/fwlink/?LinkId=202906)
 - [Sécurisation des Communications Web : Les certificats SSL et https://](https://go.microsoft.com/fwlink/?LinkId=208660)
 - [La façon la plus simple pour implémenter la sécurité de ASP.NET Razor](http://mikepope.com/blog/DisplayBlog.aspx?permalink=2240) et [à l’aide de la fonctionnalité de confirmation pour la sécurité des Pages Web ASP.NET](http://mikepope.com/blog/DisplayBlog.aspx?permalink=2267). Il s’agit des billets de blog qui décrivent comment implémenter les fonctionnalités d’appartenance ASP.NET sans utiliser le **Starter Site** modèle.
-- [L’activation de la connexion à partir des Sites externes dans un Site de Pages Web ASP.NET](https://go.microsoft.com/fwlink/?LinkId=251969)
-- [Référence de l’API de classe WebSecurity](https://msdn.microsoft.com/en-us/library/webmatrix.webdata.websecurity(v=vs.99)) (MSDN)
-- [Référence de l’API de classe SimpleRoleProvider](https://msdn.microsoft.com/en-us/library/webmatrix.webdata.simpleroleprovider(v=vs.99)) (MSDN)
-- [Référence de l’API de classe SimpleMembershipProvider](https://msdn.microsoft.com/en-us/library/webmatrix.webdata.simplemembershipprovider(v=vs.99)) (MSDN)
+- [Activation de la connexion à partir de sites externes dans un site ASP.NET Web Pages](https://go.microsoft.com/fwlink/?LinkId=251969)
+- [Référence de l’API de classe WebSecurity](https://msdn.microsoft.com/library/webmatrix.webdata.websecurity(v=vs.99)) (MSDN)
+- [Référence de l’API de classe SimpleRoleProvider](https://msdn.microsoft.com/library/webmatrix.webdata.simpleroleprovider(v=vs.99)) (MSDN)
+- [Référence de l’API de classe SimpleMembershipProvider](https://msdn.microsoft.com/library/webmatrix.webdata.simplemembershipprovider(v=vs.99)) (MSDN)

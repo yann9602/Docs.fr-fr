@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/displaying-data-with-the-datalist-and-repeater-controls-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b6e71470ae2888ac4332f896c34f666618a425e7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 20a092ee2886932664705c22c3aa88d8a2f7f0ef
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="displaying-data-with-the-datalist-and-repeater-controls-vb"></a>Affichage des données avec le contrôle DataList et le contrôle de répéteur (VB)
 ====================
@@ -163,7 +163,7 @@ Outre le `ItemTemplate`, le contrôle DataList prend en charge les six autres mo
 
 - `HeaderTemplate`Si fourni, ajoute une ligne d’en-tête à la sortie et est utilisé pour rendre cette ligne
 - `AlternatingItemTemplate`utilisé pour afficher les éléments de remplacement
-- `SelectedItemTemplate`utilisé pour restituer l’élément sélectionné ; l’élément sélectionné est l’élément dont l’index correspond à du contrôle DataList s [ `SelectedIndex` propriété](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.datalist.selectedindex.aspx)
+- `SelectedItemTemplate`utilisé pour restituer l’élément sélectionné ; l’élément sélectionné est l’élément dont l’index correspond à du contrôle DataList s [ `SelectedIndex` propriété](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.selectedindex.aspx)
 - `EditItemTemplate`utilisé pour restituer l’élément en cours de modification
 - `SeparatorTemplate`Si fourni, ajoute un séparateur entre chaque élément et est utilisé pour restituer ce séparateur
 - `FooterTemplate`-Si fourni, ajoute une ligne de pied de page à la sortie et est utilisé pour rendre cette ligne
@@ -222,7 +222,7 @@ Dans ASP.NET 1.x, le contrôle a été couramment utilisé pour afficher une lis
 - Dans `SectionLevelTutorialListing.ascx`, un répéteur a été utilisé pour afficher une liste à puces des sections enfants de la section de mappage de site en cours
 
 > [!NOTE]
-> ASP.NET 2.0 introduit la nouvelle [contrôle BulletedList](https://msdn.microsoft.com/en-us/library/ms228101.aspx), ce qui peut être lié à un contrôle de source de données afin d’afficher une liste à puces simple. Avec le contrôle BulletedList nous n’avez pas besoin de spécifier un des HTML liés à la liste ; au lieu de cela, nous indiquer simplement le champ de données à afficher en tant que le texte de chaque élément de liste.
+> ASP.NET 2.0 introduit la nouvelle [contrôle BulletedList](https://msdn.microsoft.com/library/ms228101.aspx), ce qui peut être lié à un contrôle de source de données afin d’afficher une liste à puces simple. Avec le contrôle BulletedList nous n’avez pas besoin de spécifier un des HTML liés à la liste ; au lieu de cela, nous indiquer simplement le champ de données à afficher en tant que le texte de chaque élément de liste.
 
 
 Répéteur sert un bloc catch de toutes les données de contrôle Web. Si il n’est pas un contrôle qui génère le balisage requis, le contrôle du répéteur peut être utilisé. Pour illustrer l’utilisation de répéteur, permettent d’obtenir la liste des catégories affiché au-dessus du contrôle DataList informations de produit créé à l’étape 2 s. En particulier, permettent de s ont les catégories affichées dans une seule ligne HTML `<table>` avec chaque catégorie affiché sous la forme d’une colonne dans la table.
@@ -300,7 +300,7 @@ La figure 18 montre le répéteur après avoir apporté ces modifications.
 **La figure 18**: la catégorie colonnes autre dans la couleur d’arrière-plan et inclut une ligne d’en-tête ([cliquez pour afficher l’image en taille réelle](displaying-data-with-the-datalist-and-repeater-controls-vb/_static/image50.png))
 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Alors que le contrôle GridView facilite l’afficher, modifier, supprimer, trier et parcourir les données, l’apparence est très bruts et grille. Pour mieux contrôler l’apparence, nous devons nous tourner vers les contrôles DataList ou du répéteur. Ces deux contrôles affichent un ensemble d’enregistrements à l’aide de modèles au lieu de BoundFields, CheckBoxFields et ainsi de suite.
 

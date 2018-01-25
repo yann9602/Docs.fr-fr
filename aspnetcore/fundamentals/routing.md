@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/routing
-ms.openlocfilehash: ffa3178dc4e3aac3ba51c29b7efa3f71eb56bcfe
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 8f6f4fac89afe14d83d629128fc3e4632ae95510
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="routing-in-aspnet-core"></a>Le routage ASP.NET Core
 
@@ -100,7 +100,7 @@ routes.MapRoute(
 
 Ce modèle correspond à un chemin d’accès de l’URL comme `/Products/Details/17` et extraire les valeurs d’itinéraire `{ controller = Products, action = Details, id = 17 }`. Les valeurs d’itinéraire sont déterminées par le fractionnement le chemin d’accès de l’URL en segments et correspondant à chaque segment avec le *paramètre d’itinéraire* nom dans le modèle d’itinéraire. Paramètres d’itinéraire sont nommés. Ils sont définis en incluant le nom du paramètre entouré d’accolades `{ }`.
 
-Le modèle ci-dessus peut également correspondre le chemin d’accès URL `/` et génère les valeurs `{ controller = Home, action = Index }`. Cela se produit car le `{controller}` et `{action}` paramètres d’itinéraire ont des valeurs par défaut et le `id` paramètre d’itinéraire est facultatif. Égal `=` signe suivi d’une valeur une fois que le nom de paramètre d’itinéraire définit une valeur par défaut pour le paramètre. Un point d’interrogation `?` après le nom de paramètre d’itinéraire définit le paramètre comme facultatif. Paramètres avec une valeur par défaut d’itinéraire *toujours* produisent une valeur de routage lors de l’itinéraire correspond à - paramètres optionnels ne produisent pas une valeur de l’itinéraire s’il y a aucun segment de chemin d’accès d’URL correspondante.
+Le modèle ci-dessus peut également correspondre le chemin d’accès URL `/` et génère les valeurs `{ controller = Home, action = Index }`. Cela se produit car le `{controller}` et `{action}` paramètres d’itinéraire ont des valeurs par défaut et le `id` paramètre d’itinéraire est facultatif. Égal `=` signe suivi d’une valeur une fois que le nom de paramètre d’itinéraire définit une valeur par défaut pour le paramètre. Un point d’interrogation `?` après le nom de paramètre d’itinéraire définit le paramètre comme facultatif. Paramètres avec une valeur par défaut d’itinéraire *toujours* produisent une valeur de routage lors de l’itinéraire correspond à - paramètres facultatifs ne produisent une valeur de routage s’il y a aucun segment de chemin d’accès d’URL correspondante.
 
 Consultez [référence du modèle d’itinéraire](#route-template-reference) pour une description complète des fonctionnalités de modèle d’itinéraire et la syntaxe.
 

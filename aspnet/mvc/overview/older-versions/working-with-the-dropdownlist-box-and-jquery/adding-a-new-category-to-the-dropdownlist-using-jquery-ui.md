@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/working-with-the-dropdownlist-box-and-jquery/adding-a-new-category-to-the-dropdownlist-using-jquery-ui
 msc.type: authoredcontent
-ms.openlocfilehash: 0cc51fbe84124a62f0c1254faab796cbcdc7efd6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: de661616ff3ca83052ae74d3ae6810d014aff764
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-a-new-category-to-the-dropdownlist-using-jquery-ui"></a>Ajout d’une nouvelle catégorie à DropDownList à l’aide de jQuery UI
 ====================
@@ -90,7 +90,7 @@ Le `var createGenreForm` est sélectionné dans le `createGenreForm` ID. Le `cre
 
 [!code-cshtml[Main](adding-a-new-category-to-the-dropdownlist-using-jquery-ui/samples/sample7.cshtml)]
 
-Le [Html.BeginForm](https://msdn.microsoft.com/en-us/library/dd492714.aspx) surcharge d’assistance utilisée dans le *Views\Genre\\_CreateGenre.cshtml* fichier génère du code HTML avec un attribut d’action contenant l’URL pour envoyer le formulaire. Vous pouvez le voir en affichant la page de l’album créer dans un navigateur et en sélectionnant Afficher source dans le navigateur. Le balisage suivant montre le code HTML généré, contenant la balise de formulaire.
+Le [Html.BeginForm](https://msdn.microsoft.com/library/dd492714.aspx) surcharge d’assistance utilisée dans le *Views\Genre\\_CreateGenre.cshtml* fichier génère du code HTML avec un attribut d’action contenant l’URL pour envoyer le formulaire. Vous pouvez le voir en affichant la page de l’album créer dans un navigateur et en sélectionnant Afficher source dans le navigateur. Le balisage suivant montre le code HTML généré, contenant la balise de formulaire.
 
 [!code-html[Main](adding-a-new-category-to-the-dropdownlist-using-jquery-ui/samples/sample8.html)]
 

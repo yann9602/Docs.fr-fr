@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/scenario-configuring-a-staging-environment-for-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: b5f223f59a8b222f4f01322d228cf7434e3dfc14
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 683a0cf88225fee762e82925afe3785a2defd5bf
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="scenario-configuring-a-staging-environment-for-web-deployment"></a>Scénario : Configuration d’un environnement intermédiaire pour le déploiement Web
 ====================
@@ -35,7 +35,7 @@ Un grand nombre d’organisations utilisent des environnements intermédiaires p
 - Modifications dans les applications sont déployées des intervalles fréquents, par conséquent, l’environnement doit prendre en charge de la seule étape ou déploiement automatisé.
 
 > [!NOTE]
-> Montée en puissance parallèle d’un déploiement de base de données sur plusieurs serveurs est dépasse le cadre de ce didacticiel. Pour plus d’informations sur cette zone, consultez [la documentation en ligne de SQL Server](https://technet.microsoft.com/en-us/library/ms130214.aspx).
+> Montée en puissance parallèle d’un déploiement de base de données sur plusieurs serveurs est dépasse le cadre de ce didacticiel. Pour plus d’informations sur cette zone, consultez [la documentation en ligne de SQL Server](https://technet.microsoft.com/library/ms130214.aspx).
 
 
 Par exemple, dans notre [scénario du didacticiel](../deploying-web-applications-in-enterprise-scenarios/enterprise-web-deployment-scenario-overview.md), Team Foundation Server (TFS) gère la solution de gestionnaire de contacts. L’administrateur TFS, Rob Walters, a créé une définition de build qui permet aux développeurs de déclencher un déploiement dans l’environnement intermédiaire en fonction des besoins.

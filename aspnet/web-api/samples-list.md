@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/samples-list
 msc.type: content
-ms.openlocfilehash: 2f40cd4bebdd64c3a4b94cfc1e717fa4b304e57e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1e1f43bbeedfc052f0b3a3924f51b544a5a79dca
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="web-api-samples-list"></a>Liste d’exemples API Web
 ====================
@@ -24,7 +24,7 @@ ms.lasthandoff: 11/10/2017
 
 **Exemple de traduire Bing** | [source de Visual Studio 2012](http://aspnet.codeplex.com/SourceControl/changeset/view/15dfe7e0759f#Samples%2fNet45%2fCS%2fHttpClient%2fBingTranslateSample%2fReadMe.txt)
 
-Montre comment appeler le [service de Microsoft Translator](https://msdn.microsoft.com/en-us/library/ff512419.aspx) à l’aide de la **HttpClient** classe. L’API du service Microsoft Translator requiert un jeton OAuth, qui obtient de l’application en envoyant une demande au serveur de jeton Azure pour chaque demande au service de traduction. Le résultat à partir du serveur de jeton est chargé dans la demande envoyée au service de traduction. Avant d’exécuter cet exemple, vous devez obtenir un [clé d’application à partir d’Azure Marketplace](https://msdn.microsoft.com/en-us/library/hh454950.aspx) et renseignez les informations contenues dans l’exemple de classe AccessTokenMessageHandler.
+Montre comment appeler le [service de Microsoft Translator](https://msdn.microsoft.com/library/ff512419.aspx) à l’aide de la **HttpClient** classe. L’API du service Microsoft Translator requiert un jeton OAuth, qui obtient de l’application en envoyant une demande au serveur de jeton Azure pour chaque demande au service de traduction. Le résultat à partir du serveur de jeton est chargé dans la demande envoyée au service de traduction. Avant d’exécuter cet exemple, vous devez obtenir un [clé d’application à partir d’Azure Marketplace](https://msdn.microsoft.com/library/hh454950.aspx) et renseignez les informations contenues dans l’exemple de classe AccessTokenMessageHandler.
 
 **Exemple de Google Maps** | [description détaillée](https://blogs.msdn.com/b/henrikn/archive/2012/02/17/downloading-a-google-map-to-local-file.aspx) | [source de Visual Studio 2012](http://aspnet.codeplex.com/SourceControl/changeset/view/15dfe7e0759f#Samples%2fNet45%2fCS%2fHttpClient%2fGoogleMapsSample%2fReadMe.txt)
 
@@ -83,7 +83,7 @@ Montre comment télécharger des fichiers à un **ApiController** à l’aide du
 
 **Fichier de téléchargement dans l’exemple Azure Blob Store** | [description détaillée](https://blogs.msdn.com/b/yaohuang1/archive/2012/07/02/asp-net-web-api-and-azure-blob-storage.aspx) | [source de Visual Studio 2012](http://aspnet.codeplex.com/SourceControl/changeset/view/61dfed023e50#Samples%2fNet45%2fCS%2fWebApi%2fAzureBlobsFileUploadSample%2fReadMe.txt)
 
-Cet exemple est semblable à l’exemple de téléchargement de fichier, mais au lieu d’enregistrer les fichiers téléchargés sur le disque local, elle charge de façon asynchrone les fichiers à [magasin d’objets Blob Azure](https://docs.microsoft.com/azure/storage/blobs/storage-dotnet-how-to-use-blobs) à l’aide de [Windows Azure SDK pour .NET](https://www.windowsazure.com/en-us/develop/net/). Il fournit également un mécanisme permettant de répertorier les objets BLOB présents dans un [le conteneur de stockage d’objets Blob Azure](https://docs.microsoft.com/azure/storage/blobs/storage-dotnet-how-to-use-blobs). Vous pouvez essayer de l’exemple en cours d’exécution par rapport à **émulateur de stockage Azure** qui est livré avec le Kit de développement logiciel Azure. Si vous avez un [compte de stockage Azure](https://docs.microsoft.com/azure/storage/blobs/storage-dotnet-how-to-use-blobs), vous pouvez exécuter sur le service de stockage réel également.
+Cet exemple est semblable à l’exemple de téléchargement de fichier, mais au lieu d’enregistrer les fichiers téléchargés sur le disque local, elle charge de façon asynchrone les fichiers à [magasin d’objets Blob Azure](https://docs.microsoft.com/azure/storage/blobs/storage-dotnet-how-to-use-blobs) à l’aide de [Windows Azure SDK pour .NET](https://www.windowsazure.com/develop/net/). Il fournit également un mécanisme permettant de répertorier les objets BLOB présents dans un [le conteneur de stockage d’objets Blob Azure](https://docs.microsoft.com/azure/storage/blobs/storage-dotnet-how-to-use-blobs). Vous pouvez essayer de l’exemple en cours d’exécution par rapport à **émulateur de stockage Azure** qui est livré avec le Kit de développement logiciel Azure. Si vous avez un [compte de stockage Azure](https://docs.microsoft.com/azure/storage/blobs/storage-dotnet-how-to-use-blobs), vous pouvez exécuter sur le service de stockage réel également.
 
 **Exemple de Pipeline gestionnaire HTTP Message** | [description détaillée](https://blogs.msdn.com/b/henrikn/archive/2012/08/07/httpclient-httpclienthandler-and-httpwebrequesthandler.aspx) | [source de Visual Studio 2010](http://aspnet.codeplex.com/SourceControl/changeset/view/15dfe7e0759f#Samples%2fNet4%2fCS%2fWebApi%2fHttpMessageHandlerPipelineSample%2fReadMe.txt)
 

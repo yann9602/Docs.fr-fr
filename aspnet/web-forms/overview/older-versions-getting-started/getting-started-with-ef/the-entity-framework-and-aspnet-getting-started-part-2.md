@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-2
 msc.type: authoredcontent
-ms.openlocfilehash: 4e2a3176aaedccd40ef6b619efa3c4052dd8470b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a549bd62bd78573c368784fd1529a830e009b0d4
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-2"></a>Mise en route avec base de données Entity Framework 4.0 tout d’abord et 4 les Web Forms ASP.NET - partie 2
 ====================
@@ -35,7 +35,7 @@ Dans le didacticiel précédent, vous avez créé un site web, une base de donn�
 
 [![Image18](the-entity-framework-and-aspnet-getting-started-part-2/_static/image6.png)](the-entity-framework-and-aspnet-getting-started-part-2/_static/image5.png)
 
-Notez que dans cette application vous ne sera pas ajouter la validation d’entrée vers les pages qui mettent à jour de la base de données, et certains de la gestion des erreurs ne seront pas aussi robuste que requis dans une application de production. Qui conserve le didacticiel consacré à Entity Framework et les conserve à partir de la mise en route trop long. Pour plus d’informations sur l’ajout de ces fonctionnalités à votre application, consultez [validation des entrées d’utilisateur dans les Pages Web ASP.NET](https://msdn.microsoft.com/en-us/library/7kh55542.aspx) et [gestion des erreurs dans les Pages ASP.NET et les Applications](https://msdn.microsoft.com/en-us/library/w16865z6.aspx).
+Notez que dans cette application vous ne sera pas ajouter la validation d’entrée vers les pages qui mettent à jour de la base de données, et certains de la gestion des erreurs ne seront pas aussi robuste que requis dans une application de production. Qui conserve le didacticiel consacré à Entity Framework et les conserve à partir de la mise en route trop long. Pour plus d’informations sur l’ajout de ces fonctionnalités à votre application, consultez [validation des entrées d’utilisateur dans les Pages Web ASP.NET](https://msdn.microsoft.com/library/7kh55542.aspx) et [gestion des erreurs dans les Pages ASP.NET et les Applications](https://msdn.microsoft.com/library/w16865z6.aspx).
 
 ## <a name="adding-and-configuring-the-entitydatasource-control"></a>Ajout et configuration du contrôle EntityDataSource
 
@@ -157,13 +157,13 @@ Dans le balisage de la `EntityDataSource` contrôler, supprimez le `ConnectionSt
 
 - Performances améliorées. Lorsque le `EntityDataSource` contrôle initialise le modèle de données à l’aide de la `ConnectionString` et `DefaultContainerName` attributs, il effectue un travail supplémentaire pour charger les métadonnées sur chaque demande. Cela n’est pas nécessaire si vous spécifiez le `ContextTypeName` attribut.
 - Chargement différé est activé par défaut dans les classes de contexte d’objet généré (tel que `SchoolEntities` dans ce didacticiel) dans Entity Framework 4.0. Cela signifie que les propriétés de navigation sont automatiquement chargées avec les données associées droit lorsque vous avez besoin. Chargement différé est expliqué plus en détail plus loin dans ce didacticiel.
-- Toutes les personnalisations que vous avez appliqués à la classe de contexte d’objet (dans ce cas, le `SchoolEntities` classe) sera disponible pour les contrôles qui utilisent la `EntityDataSource` contrôle. Personnalisation de la classe de contexte d’objet est une rubrique avancée qui n’est pas couverte dans cette série de didacticiels. Pour plus d’informations, consultez [étendre les Types Entity Framework généré](https://msdn.microsoft.com/en-us/library/dd456844.aspx).
+- Toutes les personnalisations que vous avez appliqués à la classe de contexte d’objet (dans ce cas, le `SchoolEntities` classe) sera disponible pour les contrôles qui utilisent la `EntityDataSource` contrôle. Personnalisation de la classe de contexte d’objet est une rubrique avancée qui n’est pas couverte dans cette série de didacticiels. Pour plus d’informations, consultez [étendre les Types Entity Framework généré](https://msdn.microsoft.com/library/dd456844.aspx).
 
 Le balisage ressemblera maintenant l’exemple suivant (l’ordre des propriétés peut être différent) :
 
 [!code-aspx[Main](the-entity-framework-and-aspnet-getting-started-part-2/samples/sample6.aspx)]
 
-Le `EnableFlattening` attribut fait référence à une fonctionnalité qui a été nécessaire dans les versions antérieures d’Entity Framework, car les colonnes clés étrangères n’étaient pas exposés en tant que propriétés de l’entité. La version actuelle vous permet d’utiliser *des associations de clés étrangères*, ce qui signifie que les propriétés de clé étrangère sont exposées pour tout sauf plusieurs-à-plusieurs associations. Si vos entités ont des propriétés de clé étrangère et non [types complexes](https://msdn.microsoft.com/en-us/library/bb738472.aspx), vous pouvez laisser cet attribut la valeur `False`. Ne retirez pas l’attribut à partir du balisage, car la valeur par défaut est `True`. Pour plus d’informations, consultez [APLANISSEMENT d’objets (EntityDataSource)](https://msdn.microsoft.com/en-us/library/ee404746.aspx).
+Le `EnableFlattening` attribut fait référence à une fonctionnalité qui a été nécessaire dans les versions antérieures d’Entity Framework, car les colonnes clés étrangères n’étaient pas exposés en tant que propriétés de l’entité. La version actuelle vous permet d’utiliser *des associations de clés étrangères*, ce qui signifie que les propriétés de clé étrangère sont exposées pour tout sauf plusieurs-à-plusieurs associations. Si vos entités ont des propriétés de clé étrangère et non [types complexes](https://msdn.microsoft.com/library/bb738472.aspx), vous pouvez laisser cet attribut la valeur `False`. Ne retirez pas l’attribut à partir du balisage, car la valeur par défaut est `True`. Pour plus d’informations, consultez [APLANISSEMENT d’objets (EntityDataSource)](https://msdn.microsoft.com/library/ee404746.aspx).
 
 Exécutez la page et vous voyez une liste d’étudiants et les employés (vous allez filtrer pour les étudiants simplement dans le didacticiel suivant). Le prénom et le nom sont indiquées.
 

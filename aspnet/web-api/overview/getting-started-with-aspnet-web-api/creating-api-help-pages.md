@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/creating-api-help-pages
 msc.type: authoredcontent
-ms.openlocfilehash: 18d04492529e96b6c0e14f1d7a30378b4832f4c8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 37fd26ebaea192cb540c443eff8a07343ab8c15b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-help-pages-for-aspnet-web-api"></a>Création de Pages d’aide pour l’API Web ASP.NET
 ====================
@@ -76,7 +76,7 @@ En outre, assurez-vous qu’inscrire des zones. Dans le fichier Global.asax, ajo
 
 ## <a name="adding-api-documentation"></a>Ajout de Documentation de l’API
 
-Par défaut, l’aide de pages ont des chaînes d’espace réservé pour la documentation. Vous pouvez utiliser [les commentaires de documentation XML](https://msdn.microsoft.com/en-us/library/b2s063f7.aspx) pour créer la documentation. Pour activer cette fonctionnalité, ouvrez le fichier de zones/HelpPage/application\_Start/HelpPageConfig.cs et ne commentez pas la ligne suivante :
+Par défaut, l’aide de pages ont des chaînes d’espace réservé pour la documentation. Vous pouvez utiliser [les commentaires de documentation XML](https://msdn.microsoft.com/library/b2s063f7.aspx) pour créer la documentation. Pour activer cette fonctionnalité, ouvrez le fichier de zones/HelpPage/application\_Start/HelpPageConfig.cs et ne commentez pas la ligne suivante :
 
 [!code-csharp[Main](creating-api-help-pages/samples/sample3.cs)]
 
@@ -107,8 +107,8 @@ La page d’aide lit les chaînes à partir du fichier XML en cours d’exécuti
 Les pages d’aide sont générés sur le **ApiExplorer** (classe), qui fait partie de l’infrastructure API Web. Le **ApiExplorer** classe fournit les matières premières pour la création d’une page d’aide. Pour chaque API, **ApiExplorer** contient un **ApiDescription** qui décrit l’API. Pour cela, une « API » est définie comme la combinaison de la méthode HTTP et un URI relatif. Par exemple, Voici certaines API distinctes :
 
 - OBTENIR /api/Products
-- OBTENIR/API/produits / {id}
-- VALIDER les produits/api /
+- GET /api/Products/{id}
+- POST /api/Products
 
 Si une action de contrôleur prend en charge plusieurs méthodes HTTP, le **ApiExplorer** traite chaque méthode comme une API distincte.
 

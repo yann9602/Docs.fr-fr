@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/inheritance
-ms.openlocfilehash: 756f1bbba73bd760f780d18c01597642dd1f7216
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: a4ae696bdd114ab9c36d1218f753fa3d515f2300
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="inheritance---ef-core-with-aspnet-core-mvc-tutorial-9-of-10"></a>Héritage - Core EF avec le didacticiel d’ASP.NET MVC de base (9 sur 10)
 
@@ -106,7 +106,7 @@ Ce code prend en charge les tâches de mise à jour de base de données suivante
 
 * Rend HireDate nullable étant donné que les lignes de l’étudiant n’ont des dates d’embauche.
 
-* Ajoute un champ temporaire qui sera utilisé pour mettre à jour les clés étrangères qui pointent vers les étudiants. Lorsque vous copiez des étudiants dans la table Person ils obtenez de nouvelles valeurs de clé primaires.
+* Ajoute un champ temporaire qui sera utilisé pour mettre à jour les clés étrangères qui pointent vers les étudiants. Lorsque vous copiez des étudiants dans la table Person qu’ils obtiendront les nouvelles valeurs de clé primaires.
 
 * Copie des données à partir de la table de l’étudiant dans la table Person. Cela provoque des étudiants obtenir attribué les nouvelles valeurs de clé primaires.
 

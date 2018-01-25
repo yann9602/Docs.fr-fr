@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/nested-master-pages-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 6483d24e15529f1c4a8662ddeee5943d4c043c5f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 97513a5a6ac7a958a03626f16a328ecb0b85c03f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="nested-master-pages-c"></a>Pages maîtres imbriquées (c#)
 ====================
@@ -342,7 +342,7 @@ Cette modification en place, sélection de page maître de l’utilisateur repre
 **Figure 13**: la Page d’Administration Nested utilise la Page de principale de niveau supérieur sélectionné par l’utilisateur ([cliquez pour afficher l’image en taille réelle](nested-master-pages-cs/_static/image39.png))
 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Quantité pages Comment contenu like peuvent lier à une page maître, il est possible de créer une prédiction imbriquée des pages maîtres par une page maître enfant se lient à une page maître parent. La page maître enfant peut définir des contrôles de contenu pour chacun des ContentPlaceHolders de son parent ; Il peut ensuite ajouter ses propres contrôles ContentPlaceHolder (ainsi que d’autres balises) à ces contrôles de contenu. Les pages maîtres imbriquées sont très utiles dans les applications web de grande taille où toutes les pages partagent une apparence principale, mais certaines sections du site qui nécessitera unique.
 
@@ -352,7 +352,7 @@ Bonne programmation !
 
 Pour plus d’informations sur les sujets abordés dans ce didacticiel, consultez les ressources suivantes :
 
-- [Pages maîtres ASP.NET imbriquées](https://msdn.microsoft.com/en-us/library/x2b3ktt7.aspx)
+- [Pages maîtres ASP.NET imbriquées](https://msdn.microsoft.com/library/x2b3ktt7.aspx)
 - [Conseils pour les Pages maîtres imbriquées et de conception de Visual Studio 2005](https://weblogs.asp.net/scottgu/archive/2005/11/11/430382.aspx)
 - [Visual Studio 2008 imbriqués prise en charge de la Page maître](https://weblogs.asp.net/scottgu/archive/2007/07/09/vs-2008-nested-master-page-support.aspx)
 

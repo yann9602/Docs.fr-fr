@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/creating-a-site-wide-layout-using-master-pages-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 5e3507acda4958fa7caa4a22fec7603deaec73c2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8061a2aff318d397116cbc0bc0a8ce24ef35c7fb
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-a-site-wide-layout-using-master-pages-c"></a>Création d’une disposition à l’échelle du Site à l’aide de Pages maîtres (c#)
 ====================
@@ -60,7 +60,7 @@ Création d’un site Web avec une disposition cohérente des pages au niveau du
 
 Il existe de nombreuses techniques pour créer des pages web avec une apparence et convivialité cohérentes. Une approche naïve consiste à simplement copier et coller le balisage de mise en forme commune dans toutes les pages web, mais cette approche présente plusieurs inconvénients. Pour commencer, chaque fois qu’une nouvelle page est créée, vous devez vous rappeler copier et coller le contenu partagé dans la page. Ce type copier- coller les opérations sont pour l’erreur que vous pouvez accidentellement copier uniquement un sous-ensemble de la balise partagée dans une nouvelle page. Et pour conclure, cette approche permet de remplacer l’apparence du site existant avec un autre une véritable faibles, car chaque page dans le site doit être modifiée pour pouvoir utiliser la nouvelle apparence.
 
-Avant la version 2.0 d’ASP.NET, les développeurs souvent placés balisage courantes dans la page [contrôles utilisateur](https://msdn.microsoft.com/en-us/library/y6wb1a0e.aspx) puis à ajouter ces contrôles utilisateur à chaque page. Cette approche requis que le développeur de pages n’oubliez pas d’ajouter manuellement les contrôles utilisateur à chaque nouvelle page, mais autorisée pour les modifications à l’échelle du site plus faciles, car lors de la mise à jour de la balise courantes que les contrôles utilisateur doivent être modifiées. Malheureusement, Visual Studio .NET 2002 et 2003 - les versions de Visual Studio permet de créer des applications ASP.NET 1.x - rendues des contrôles utilisateur dans la vue de conception sous forme de zones grises. Par conséquent, les développeurs de page à l’aide de cette approche bénéficient pas d’un environnement au moment du design WYSIWYG.
+Avant la version 2.0 d’ASP.NET, les développeurs souvent placés balisage courantes dans la page [contrôles utilisateur](https://msdn.microsoft.com/library/y6wb1a0e.aspx) puis à ajouter ces contrôles utilisateur à chaque page. Cette approche requis que le développeur de pages n’oubliez pas d’ajouter manuellement les contrôles utilisateur à chaque nouvelle page, mais autorisée pour les modifications à l’échelle du site plus faciles, car lors de la mise à jour de la balise courantes que les contrôles utilisateur doivent être modifiées. Malheureusement, Visual Studio .NET 2002 et 2003 - les versions de Visual Studio permet de créer des applications ASP.NET 1.x - rendues des contrôles utilisateur dans la vue de conception sous forme de zones grises. Par conséquent, les développeurs de page à l’aide de cette approche bénéficient pas d’un environnement au moment du design WYSIWYG.
 
 Les points faibles de l’utilisation de contrôles utilisateur ont été traités dans la version 2.0 d’ASP.NET et Visual Studio 2005 avec l’introduction de *pages maîtres*. Une page maître est un type spécial de page ASP.NET qui définit les deux le balisage au niveau du site et le *régions* où associés *pages de contenu* définir leur balisage personnalisée. Comme nous allons le voir à l’étape 1, ces régions sont définies par les contrôles ContentPlaceHolder. Le contrôle ContentPlaceHolder indique simplement une position dans la hiérarchie des contrôles de la page maître où le contenu personnalisé peut être ajoutée à une page de contenu.
 
@@ -95,7 +95,7 @@ Maintenant que nous l’avons vu comment des pages maîtres, examinons une créa
 Nous pouvons découvrir la création et l’utilisation des pages maîtres et de contenu, nous devons tout d’abord un site Web ASP.NET. Commencez par créer un nouveau fichier basé sur le système site Web ASP.NET. Pour ce faire, lancez Visual Web Developer et dans le menu fichier et cliquez sur Nouveau Site Web, affichage de la boîte de dialogue Nouveau Site Web boîte (voir Figure 4). Choisissez le modèle de Site Web ASP.NET, la valeur de la liste déroulante emplacement système de fichiers, choisissez un dossier pour placer le site web et définir le langage c#. Cela crée un nouveau site web avec un `Default.aspx` page ASP.NET, une `App_Data` dossier et un `Web.config` fichier.
 
 > [!NOTE]
-> Visual Studio prend en charge deux modes de gestion de projet : projets de Site Web et les projets d’Application Web. Projets de Site Web n’ont pas un fichier projet, alors que les projets d’Application Web simulent l’architecture de projet dans Visual Studio .NET 2002/2003 - ils incluent un fichier projet et compiler le code de source du projet dans un assembly unique, qui est placé dans le `/bin` dossier. Les projets Visual Studio 2005 initialement uniquement pris en charge Web Site, bien que le [modèle de projet d’Application Web](https://msdn.microsoft.com/en-us/library/aa730880(vs.80).aspx) a été réintroduit avec Service Pack 1 ; Visual Studio 2008 propose les deux modèles de projet. Visual Web Developer 2005 et 2008 éditions, toutefois, ne prennent en charge les projets de Site Web. Utiliser le modèle de projet de Site Web pour mon démonstrations de cette série de didacticiels. Si vous utilisez une édition Express non et que vous souhaitez utiliser le modèle de projet d’Application Web à la place, n’hésitez pas à effectuer cette opération, mais gardez à l’esprit qu’il peut y avoir des différences entre ce que vous voyez sur votre écran et les étapes à suivre et les captures d’écran indiqués et instructio NS fournies dans ces didacticiels.
+> Visual Studio prend en charge deux modes de gestion de projet : projets de Site Web et les projets d’Application Web. Projets de Site Web n’ont pas un fichier projet, alors que les projets d’Application Web simulent l’architecture de projet dans Visual Studio .NET 2002/2003 - ils incluent un fichier projet et compiler le code de source du projet dans un assembly unique, qui est placé dans le `/bin` dossier. Les projets Visual Studio 2005 initialement uniquement pris en charge Web Site, bien que le [modèle de projet d’Application Web](https://msdn.microsoft.com/library/aa730880(vs.80).aspx) a été réintroduit avec Service Pack 1 ; Visual Studio 2008 propose les deux modèles de projet. Visual Web Developer 2005 et 2008 éditions, toutefois, ne prennent en charge les projets de Site Web. Utiliser le modèle de projet de Site Web pour mon démonstrations de cette série de didacticiels. Si vous utilisez une édition Express non et que vous souhaitez utiliser le modèle de projet d’Application Web à la place, n’hésitez pas à effectuer cette opération, mais gardez à l’esprit qu’il peut y avoir des différences entre ce que vous voyez sur votre écran et les étapes à suivre et les captures d’écran indiqués et instructio NS fournies dans ces didacticiels.
 
 
 [![Créer un Site Web de système de nouveaux fichiers](creating-a-site-wide-layout-using-master-pages-cs/_static/image9.png)](creating-a-site-wide-layout-using-master-pages-cs/_static/image8.png)
@@ -115,7 +115,7 @@ L’ajout d’un nouveau fichier de page maître via Visual Web Developer de cr�
 
 [!code-aspx[Main](creating-a-site-wide-layout-using-master-pages-cs/samples/sample1.aspx)]
 
-La première ligne dans le balisage déclaratif est la [ `@Master` directive](https://msdn.microsoft.com/en-us/library/ms228176.aspx). Le `@Master` la directive est similaire à la [ `@Page` directive](https://msdn.microsoft.com/en-us/library/ydy4x04a.aspx) qui s’affiche dans les pages ASP.NET. Il définit le langage côté serveur (c#) et des informations sur l’emplacement et l’héritage de classe code-behind de la page maître.
+La première ligne dans le balisage déclaratif est la [ `@Master` directive](https://msdn.microsoft.com/library/ms228176.aspx). Le `@Master` la directive est similaire à la [ `@Page` directive](https://msdn.microsoft.com/library/ydy4x04a.aspx) qui s’affiche dans les pages ASP.NET. Il définit le langage côté serveur (c#) et des informations sur l’emplacement et l’héritage de classe code-behind de la page maître.
 
 Le `DOCTYPE` et le balisage déclaratif de la page s’affiche sous le `@Master` la directive. Cette page inclut HTML statique avec quatre contrôles côté serveur :
 
@@ -163,7 +163,7 @@ Au fil des années, j’ai créé un nombre d’applications web ASP.NET pour le
 Heureusement, il existe des sites Web innumerous qui proposent des modèles de conception HTML libres - Google a renvoyé les résultats de plus de six millions pour le terme de recherche « modèles de site Web gratuit ». Un de mes préférés est [OpenDesigns.org](http://opendesigns.org/). Une fois que vous trouvez un modèle de site Web que vous le souhaitez, ajoutez les fichiers CSS et les images à votre projet de site Web et intégrer HTML du modèle de votre page maître.
 
 > [!NOTE]
-> Microsoft propose également un certain nombre de [libre ASP.NET démarrer Kit modèles](https://msdn.microsoft.com/en-us/asp.net/aa336613.aspx) qui s’intègrent dans la boîte de dialogue Nouveau Site Web dans Visual Studio.
+> Microsoft propose également un certain nombre de [libre ASP.NET démarrer Kit modèles](https://msdn.microsoft.com/asp.net/aa336613.aspx) qui s’intègrent dans la boîte de dialogue Nouveau Site Web dans Visual Studio.
 
 
 ## <a name="step-2-creating-associated-content-pages"></a>Étape 2 : Création de Pages de contenu associées
@@ -260,7 +260,7 @@ Le code ci-dessus définit l’étiquette `Text` propriété à la date et l’h
 > Comme l’illustre cet exemple, les pages maîtres peuvent contenir des contrôles serveur Web, de code et de gestionnaires d’événements.
 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Les pages maîtres permettent aux développeurs ASP.NET concevoir une disposition cohérente au niveau du site qui est facilement modifiable. Création de pages maîtres et leurs pages de contenu associées est aussi simple que la création des pages ASP.NET standard, comme Visual Web Developer offre une prise en charge au moment du design enrichie.
 
@@ -272,8 +272,8 @@ Bonne programmation !
 
 Pour plus d’informations sur les sujets abordés dans ce didacticiel, consultez les ressources suivantes :
 
-- [ASP.NET pour les concepteurs : libérer les modèles de conception et des conseils sur la création de sites Web ASP.NET à l’aide des normes Web](https://msdn.microsoft.com/en-us/asp.net/aa336602.aspx)
-- [Vue d’ensemble des Pages maîtres ASP.NET](https://msdn.microsoft.com/en-us/library/wtxbf3hh.aspx)
+- [ASP.NET pour les concepteurs : libérer les modèles de conception et des conseils sur la création de sites Web ASP.NET à l’aide des normes Web](https://msdn.microsoft.com/asp.net/aa336602.aspx)
+- [Vue d’ensemble des Pages maîtres ASP.NET](https://msdn.microsoft.com/library/wtxbf3hh.aspx)
 - [Didacticiels de feuilles de style (CSS) en cascade](http://www.w3schools.com/css/default.asp)
 - [Définition dynamique de titre de la Page](http://aspnet.4guysfromrolla.com/articles/051006-1.aspx)
 - [Pages maîtres dans ASP.NET](http://www.odetocode.com/articles/419.aspx)

@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 348940748e3c33ace03d1b8f41615e9814cf6b40
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 205d5ddcd0c3240c87ec5705a6676215eb67942d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="updating-related-data-with-the-entity-framework-in-an-aspnet-mvc-application"></a>Mise à jour des données associées avec Entity Framework dans une Application ASP.NET MVC
 ====================
@@ -127,7 +127,7 @@ Le code effectue les opérations suivantes :
 
 - Modifie le nom de la méthode `EditPost` , car la signature est désormais le même que le `HttpGet` (méthode) (le `ActionName` attribut spécifie que l’URL /Edit/ est toujours utilisé).
 - Obtient les valeurs combinées `Instructor` entité à partir de la base de données à l’aide d’un chargement hâtif pour le `OfficeAssignment` propriété de navigation. Il est identique à ce que vous avez fait le `HttpGet` `Edit` (méthode).
-- Met à jour récupérées `Instructor` entité avec les valeurs de classeur de modèles. Le [TryUpdateModel](https://msdn.microsoft.com/en-us/library/dd470908(v=vs.108).aspx) vous permet de surcharge utilisée *liste blanche* les propriétés que vous souhaitez inclure. Cela empêche la validation excessive, comme expliqué dans [le deuxième didacticiel](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application.md).
+- Met à jour récupérées `Instructor` entité avec les valeurs de classeur de modèles. Le [TryUpdateModel](https://msdn.microsoft.com/library/dd470908(v=vs.108).aspx) vous permet de surcharge utilisée *liste blanche* les propriétés que vous souhaitez inclure. Cela empêche la validation excessive, comme expliqué dans [le deuxième didacticiel](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application.md).
 
     [!code-csharp[Main](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample12.cs)]
 - Si l’emplacement du bureau est vide, définit le `Instructor.OfficeAssignment` propriété NULL afin que la ligne correspondante dans la `OfficeAssignment` table va être supprimée.
@@ -163,7 +163,7 @@ Dans *InstructorController.cs*, remplacez le `HttpGet` `Edit` méthode avec le c
 
 Le code ajoute un chargement hâtif pour le `Courses` propriété de navigation et appelle la nouvelle `PopulateAssignedCourseData` méthode pour fournir des informations du tableau de case à cocher à l’aide de la `AssignedCourseData` afficher la classe de modèle.
 
-Le code dans le `PopulateAssignedCourseData` méthode lit à travers toutes les `Course` entités pour charger une liste de cours à l’aide de l’affichage de classe de modèle. Pour chaque cours, le code vérifie l’existence de cours dans le formateur `Courses` propriété de navigation. Pour créer l’efficacité des recherches lors de la vérification si un cours est affecté pour le formateur, les cours affectés pour le formateur sont placés dans un [HashSet](https://msdn.microsoft.com/en-us/library/bb359438.aspx) collection. Le `Assigned` est définie sur `true` pour les cours le formateur est affecté. La vue utilise cette propriété pour déterminer les zones doivent être affichées en tant que vérification sélectionné. Enfin, la liste est passée à l’affichage dans un `ViewBag` propriété.
+Le code dans le `PopulateAssignedCourseData` méthode lit à travers toutes les `Course` entités pour charger une liste de cours à l’aide de l’affichage de classe de modèle. Pour chaque cours, le code vérifie l’existence de cours dans le formateur `Courses` propriété de navigation. Pour créer l’efficacité des recherches lors de la vérification si un cours est affecté pour le formateur, les cours affectés pour le formateur sont placés dans un [HashSet](https://msdn.microsoft.com/library/bb359438.aspx) collection. Le `Assigned` est définie sur `true` pour les cours le formateur est affecté. La vue utilise cette propriété pour déterminer les zones doivent être affichées en tant que vérification sélectionné. Enfin, la liste est passée à l’affichage dans un `ViewBag` propriété.
 
 Ensuite, ajoutez le code qui est exécuté lorsque l’utilisateur clique sur **enregistrer**. Remplacez le `EditPost` méthode avec le code suivant, qui appelle une méthode qui met à jour la `Courses` propriété de navigation de la `Instructor` entité. Les modifications sont mises en surbrillance.
 
@@ -171,7 +171,7 @@ Ensuite, ajoutez le code qui est exécuté lorsque l’utilisateur clique sur **
 
 La signature de méthode est désormais différente de la `HttpGet` `Edit` méthode, de sorte que si le nom de la méthode change de `EditPost` à `Edit`.
 
-Puisque la vue n’a pas une collection de `Course` entités, le binder de modèle ne peut pas mettre à jour automatiquement le `Courses` propriété de navigation. Au lieu d’utiliser le classeur de modèles pour mettre à jour le `Courses` propriété de navigation, vous devez le faire dans la nouvelle `UpdateInstructorCourses` (méthode). Par conséquent, vous devez exclure le `Courses` propriété à partir de la liaison de modèle. Cela ne nécessite aucune modification pour le code qui appelle [TryUpdateModel](https://msdn.microsoft.com/en-us/library/dd470908(v=vs.98).aspx) , car vous utilisez le *liste approuvées* de surcharge et `Courses` n’est pas dans la liste d’inclusion.
+Puisque la vue n’a pas une collection de `Course` entités, le binder de modèle ne peut pas mettre à jour automatiquement le `Courses` propriété de navigation. Au lieu d’utiliser le classeur de modèles pour mettre à jour le `Courses` propriété de navigation, vous devez le faire dans la nouvelle `UpdateInstructorCourses` (méthode). Par conséquent, vous devez exclure le `Courses` propriété à partir de la liaison de modèle. Cela ne nécessite aucune modification pour le code qui appelle [TryUpdateModel](https://msdn.microsoft.com/library/dd470908(v=vs.98).aspx) , car vous utilisez le *liste approuvées* de surcharge et `Courses` n’est pas dans la liste d’inclusion.
 
 Si aucune vérification de zones ont été sélectionnés, le code dans `UpdateInstructorCourses` initialise le `Courses` propriété de navigation avec une collection vide :
 
@@ -266,9 +266,9 @@ Exécuter la page de création et ajoutez un formateur.
 <a id="transactions"></a>
 ## <a name="handling-transactions"></a>La gestion des Transactions
 
-Comme expliqué dans la [didacticiel de fonctionnalités de base CRUD](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application.md), par défaut Entity Framework implémente implicitement des transactions. Pour les scénarios où vous avez besoin de plus contrôler--par exemple, si vous souhaitez inclure des opérations effectuées en dehors d’Entity Framework dans une transaction, consultez [utiliser des Transactions](https://msdn.microsoft.com/en-US/data/dn456843) sur MSDN.
+Comme expliqué dans la [didacticiel de fonctionnalités de base CRUD](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application.md), par défaut Entity Framework implémente implicitement des transactions. Pour les scénarios où vous avez besoin de plus contrôler--par exemple, si vous souhaitez inclure des opérations effectuées en dehors d’Entity Framework dans une transaction, consultez [utiliser des Transactions](https://msdn.microsoft.com/data/dn456843) sur MSDN.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Vous avez maintenant terminé cette introduction à l’utilisation des données associées. Jusqu'à présent dans ces didacticiels, vous avez travaillé avec le code qui effectue des e/s synchrones. Vous pouvez apporter à l’application d’utiliser plus efficacement les ressources du serveur web en implémentant le code asynchrone, et c’est ce que vous allez faire dans l’étape suivante du didacticiel.
 

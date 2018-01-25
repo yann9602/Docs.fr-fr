@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/views/using-page-inspector-in-aspnet-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: 6aa9f16f166ecf5529ae33a17951eb5ea425e7af
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5b443963a089f96a9dab11b7db4a25451075d6be
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-page-inspector-in-aspnet-mvc"></a>Utilisation de l'Inspecteur de page dans ASP.NET MVC
 ====================
@@ -44,9 +44,9 @@ par Tim Ammann
 
 <a id="_prerequisites"></a><a id="_1_prerequisites"></a>
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
-- [Visual Studio 2012](https://www.microsoft.com/visualstudio/11/en-us) ou [Visual Studio Express 2012 pour Web](https://www.microsoft.com/visualstudio/11/en-us/downloads#express-web).
+- [Visual Studio 2012](https://www.microsoft.com/visualstudio/11) ou [Visual Studio Express 2012 pour Web](https://www.microsoft.com/visualstudio/11/downloads#express-web).
 
 > [!NOTE]
 > Pour obtenir la dernière version de l’inspecteur de Page, utilisez [Web Platform Installer](https://go.microsoft.com/fwlink/?LinkId=255386) pour installer le Kit de développement logiciel Windows Azure pour .NET 2.0.
@@ -84,9 +84,9 @@ Dans **l’Explorateur de solutions**, développez le **vues** dossier, puis le 
 
 ![Afficher les Index.cshtml dans l’inspecteur de Page](using-page-inspector-in-aspnet-mvc/_static/image8.png)
 
-Par défaut, l’inspecteur de Page est ancré dans une fenêtre sur le côté gauche de l’environnement Visual Studio. Si vous préférez, vous pouvez ancrer ailleurs ou détacher la fenêtre. Consultez [Comment : réorganiser et ancrer des fenêtres](https://msdn.microsoft.com/en-us/library/z4y0hsax.aspx).
+Par défaut, l’inspecteur de Page est ancré dans une fenêtre sur le côté gauche de l’environnement Visual Studio. Si vous préférez, vous pouvez ancrer ailleurs ou détacher la fenêtre. Consultez [Comment : réorganiser et ancrer des fenêtres](https://msdn.microsoft.com/library/z4y0hsax.aspx).
 
-Le volet supérieur de la fenêtre de l’inspecteur de Page affiche la page actuelle dans une fenêtre de navigateur. Le volet inférieur affiche la page dans le balisage HTML, ainsi que certains onglets qui vous permettent d’inspecter les différents aspects de la page. Le volet inférieur est similaire à la [outils de développement F12](https://msdn.microsoft.com/en-us/ie/aa740478) dans Internet Explorer.
+Le volet supérieur de la fenêtre de l’inspecteur de Page affiche la page actuelle dans une fenêtre de navigateur. Le volet inférieur affiche la page dans le balisage HTML, ainsi que certains onglets qui vous permettent d’inspecter les différents aspects de la page. Le volet inférieur est similaire à la [outils de développement F12](https://msdn.microsoft.com/ie/aa740478) dans Internet Explorer.
 
 ![Application ASP.NET MVC dans l’inspecteur de Page](using-page-inspector-in-aspnet-mvc/_static/image10.png)
 

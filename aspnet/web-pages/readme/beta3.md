@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/readme/beta3
 msc.type: content
-ms.openlocfilehash: 5fad4b659dafe5470aeb84d320ff711b8840d1e0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: def2f4b3e54c8de539e10c1b526a1dababeca8fb
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="web-matrix-and-aspnet-web-pages-razor-beta-3-release-readme"></a>Matrice Web et Lisezmoi de version bêta 3 ASP.NET Web Pages (Razor)
 ====================
@@ -73,7 +73,7 @@ ms.lasthandoff: 11/10/2017
 
 > Le .NET Framework version 4 est requis pour la version bêta de WebMatrix. Dans certains cas, le programme d’installation de la version bêta de WebMatrix vous permet d’essayer d’installer sur une plateforme qui ne fait pas partie de l’ensemble de la configuration prise en charge. En particulier, Windows Vista sans la mise à jour SP1 vous permet de commencer l’installation de WebMatrix bêta, mais le composant .NET Framework 4 échoue et bloquer l’installation.
 > 
-> **Solution de contournement**  
+> **Workaround**  
 > Installer sur une plateforme prise en charge, notamment :
 > 
 > - Windows 7
@@ -86,7 +86,7 @@ ms.lasthandoff: 11/10/2017
 
 #### <a name="issue-cannot-install-webmatrix-beta-3-if-microsoft-visual-studio-2008-is-installed-without-microsoft-visual-studio-2008-sp1"></a>Problème : Ne peut pas installer WebMatrix bêta 3 si Microsoft Visual Studio 2008 est installé sans Microsoft Visual Studio 2008 SP1
 
-> **Solution de contournement**  
+> **Workaround**  
 > Installer [Microsoft Visual Studio 2008 SP1](https://www.microsoft.com/downloads/details.aspx?FamilyId=FBEE1648-7106-44A7-9649-6D9F6D58056E&amp;displaylang=en) à partir du centre de téléchargement Microsoft.
 
 
@@ -94,10 +94,10 @@ ms.lasthandoff: 11/10/2017
 
 > Les assemblys managés pour SQL Server Compact 4.0 ne sont pas placés dans le global assembly cache (GAC) lorsque vous installez SQL Server Compact 4.0 sur un ordinateur 64 bits et de l’ordinateur dispose uniquement du .NET Framework 3.5 SP1 Client Profile installé. Les assemblys managés qui ne sont pas installés dans le GAC sont :
 > 
-> - *System.Data.SqlServerCe.dll* (fournisseur ADO.NET)
+> - *System.Data.SqlServerCe.dll* (ADO.NET provider)
 > - *System.Data.SqlServerCe.Entity.dll* (ADO.NET Entity Framework)
 > 
-> **Solution de contournement**  
+> **Workaround**  
 > Désinstaller SQL Server Compact 4.0. Téléchargez et installez la version complète de .NET Framework 3.5 SP1 à partir de l’emplacement suivant :  
 >   
 > [Microsoft .NET Framework 3.5 Service pack 1 (Package complet)](https://go.microsoft.com/fwlink/?LinkId=194828)  
@@ -109,7 +109,7 @@ ms.lasthandoff: 11/10/2017
 
 > La désinstallation de SQL Server Compact à l’aide des options de ligne de commande ne fonctionne pas dans cette version.
 > 
-> **Solution de contournement**  
+> **Workaround**  
 > Utilisez *programmes et fonctionnalités* dans le panneau de configuration Windows pour désinstaller Microsoft SQL Server Compact 4.0.
 
 
@@ -120,8 +120,8 @@ ms.lasthandoff: 11/10/2017
 Cette section du document décrit les nouvelles fonctionnalités, des modifications et des problèmes connus avec la version bêta 3 d’ASP.NET Web Pages avec syntaxe Razor.
 
 - [Nouvelles fonctionnalités](#NewFeatures)
-- [Modifications](#Changes)
-- [Problèmes](#Issues)
+- [Changes](#Changes)
+- [Issues](#Issues)
 
 <a id="NewFeatures"></a>
 
@@ -164,7 +164,7 @@ Cette section du document décrit les nouvelles fonctionnalités, des modificati
 
 #### <a name="change-webpagecontexthttpcontext-removed"></a>Modifications : « WebPageContext.HttpContext » supprimées
 
-> Le `WebPageContext.HttpContext` propriété a été supprimée. Utilisez plutôt `HttpContext.Current` . (Le `WebPageContext.HttpContext` propriété simplement encapsulée cela.)
+> Le `WebPageContext.HttpContext` propriété a été supprimée. Utilisez plutôt `HttpContext.Current`. (Le `WebPageContext.HttpContext` propriété simplement encapsulée cela.)
 
 
 #### <a name="change-facebook-helper-moved-to-new-package"></a>Modification : Application auxiliaire « Facebook » déplacé vers le nouveau package
@@ -212,7 +212,7 @@ Cette section du document décrit les nouvelles fonctionnalités, des modificati
 > 
 > Cela peut poser un problème si vous envisagez d’utiliser une table utilisateur personnalisée pour l’appartenance mais passez le nom de table incorrect pour le `WebSecurity.InitializeDatabaseConnection` (méthode). Étant donné que la méthode ne pas par défaut lève une erreur si la table que vous spécifiez n’existe pas, et parce qu’il crée à la place d’une nouvelle table, l’application peut apparaître pour travailler. Toutefois, code d’application qui s’appuie sur la table d’utilisateur personnalisée (et sur les champs qu’elle contient) peut éventuellement échouer avec des erreurs inattendues.
 > 
-> **Solution de contournement**  
+> **Workaround**  
 > Assurez-vous que le nom est passé dans le `InitializeDatabaseConnection` correspondances méthode le profil utilisateur dans la base de données d’appartenance de table, ou assurez-vous que le `autoCreateTables` paramètre est défini sur false.
 
 
@@ -227,7 +227,7 @@ Cette section du document décrit les nouvelles fonctionnalités, des modificati
 
 > Si vous utilisez des assemblys personnalisés dans un projet dans Visual Studio, les espaces de noms déclarés dans ces assemblys ne sont pas importés automatiquement au moment du design. Par conséquent, les références aux types personnalisés peuvent ne pas être reconnus au moment du design et sont marqués comme non reconnu dans Visual Studio (en utilisant un tilde « »). Ce problème se produit uniquement au moment du design dans Visual Studio ; l’application s’exécute correctement.
 > 
-> **Solution de contournement**  
+> **Workaround**  
 > Inclure un `using` instruction (`imports` en Visual Basic) qui fait référence à des entités qui ne sont pas reconnues au moment du design.
 
 
@@ -242,7 +242,7 @@ Cette section du document décrit les nouvelles fonctionnalités, des modificati
 
 > Une fois que vous mettez à niveau vers la version bêta 3, vous pouvez voir une erreur qui une classe d’assistance (par exemple, la `Facebook` classe) est introuvable. À compter de la version bêta 2 et en continuant à la bêta 3, les programmes d’assistance ont été déplacés vers les packages que vous devez installer explicitement. Les sites existants ne sont pas mis à niveau afin d’inclure ces packages ; Cela inclut les sites de la *\My Documents\IISExpress* ou *\My Documents\My Sites Web* dossiers. En particulier, vous recevez cette erreur si vous utilisez le site par défaut dans *Mes Sites* (WebSite1), qui inclut une référence à la `Twitter` helper.
 > 
-> **Solution de contournement**  
+> **Workaround**  
 > Commentez les appels à des programmes d’assistance dans le site, exécutez le  *\_Admin* page et installer l’ou les packages qui incluent les programmes d’assistance que vous souhaitez utiliser. Une fois que vous avez installé le package, vous pouvez ne pas commenter les lignes qui référencent des programmes d’assistance.
 
 
@@ -265,7 +265,7 @@ Cette section du document décrit les nouvelles fonctionnalités, des modificati
 > 
 > [!code-xml[Main](beta3/samples/sample5.xml)]
 > 
-> Pour plus d’informations sur la configuration d’un serveur proxy, consultez [ &lt;proxy&gt; élément (paramètres réseau)](https://msdn.microsoft.com/en-us/library/sa91de1e.aspx) sur le site Web MSDN.
+> Pour plus d’informations sur la configuration d’un serveur proxy, consultez [ &lt;proxy&gt; élément (paramètres réseau)](https://msdn.microsoft.com/library/sa91de1e.aspx) sur le site Web MSDN.
 
 
 #### <a name="issue-microsoftwebinfrastructuredll-cannot-be-loaded-error"></a>Problème : Erreur « Impossible de charger Microsoft.Web.Infrastructure.dll »
@@ -274,7 +274,7 @@ Cette section du document décrit les nouvelles fonctionnalités, des modificati
 > 
 > Ce problème ne se produit pas si vous avez chargé la version bêta 3 sur un ordinateur sain.
 > 
-> **Solution de contournement**  
+> **Workaround**  
 > Dans le panneau de configuration, désinstallez les Pages Web ASP.NET. Ensuite, réinstallez la version bêta 3.
 
 
@@ -295,7 +295,7 @@ Cette section du document décrit les nouvelles fonctionnalités, des modificati
 
 > Pendant le déploiement, les copies des assemblys ASP.NET Web Pages (par exemple, *Microsoft.WebPages.dll*) pour le *Bin* dossier du site Web sur le serveur. (Cela peut être dû au automatiquement pendant le déploiement ou parce que le développeur copiée explicitement les assemblys.) Toutefois, lorsque la version bêta 3 est installée, erreurs se produit, telles que les erreurs certains types ne peut pas être trouvés. Cela se produit, car plusieurs types de Pages Web ASP.NET ont été déplacées dans différents espaces de noms pour la version bêta 3.
 > 
-> **Solution de contournement**   
+> **Workaround**   
 > Désactivez le *Bin* dossier de l’application déployée, copiez les nouveaux assemblys dans le dossier (ou redéployer l’application), puis redémarrez l’application.
 
 
@@ -307,7 +307,7 @@ Cette section du document décrit les nouvelles fonctionnalités, des modificati
 >   
 > Le problème se produit car la réécriture d’URL n’est pas activée par défaut pour IIS 7 ou IIS 7.5. Le scénario voyez généralement cette est que vous ne voyez pas le problème lors du test localement à l’aide d’IIS Express, mais que vous le rencontrez lorsque vous déployez votre site Web sur un site Web d’hébergement.
 > 
-> **Solution de contournement**
+> **Workaround**
 > 
 > - Si vous avez un contrôle sur l’ordinateur du serveur, sur l’ordinateur serveur installer la mise à jour qui est décrite dans [une mise à jour n’est disponible qu’Active certains gestionnaires d’IIS 7.0 ou IIS 7.5 pour gérer les demandes dont l’URL ne se termine pas par un point](https://support.microsoft.com/kb/980368).
 > - Si vous n’avez pas de contrôle sur l’ordinateur du serveur (par exemple, vous déployez sur un site Web d’hébergement), ajoutez le code suivant du site Web *Web.config* fichier :
@@ -320,7 +320,7 @@ Cette section du document décrit les nouvelles fonctionnalités, des modificati
 
 > Si vous utilisez les Pages Web ASP.NET dans un projet d’Application Web ou d’une application ASP.NET MVC, vous pouvez voir une erreur qui *WebPageHttpApplication* est introuvable.
 > 
-> **Solution de contournement**  
+> **Workaround**  
 > Si vous obtenez cette erreur, modifiez la classe de base dont dérive l’application. Dans le *Global.asax* , modifiez la ligne suivante :
 > 
 > [!code-csharp[Main](beta3/samples/sample8.cs)]
@@ -340,7 +340,7 @@ Cette section du document décrit les nouvelles fonctionnalités, des modificati
 > 
 > 1. Copiez les assemblys du moteur de base de données à la *Bin* dossier (et sous-dossiers) de l’application sur l’ordinateur cible : 
 > 
->     - Copie *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Desktop\System.Data.SqlServerCe.dll* **à** *\Bin*
+>     - Copy *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Desktop\System.Data.SqlServerCe.dll* **to** *\Bin*
 >     - Copie *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\x86\\** **à** *\Bin\x86*
 >     - Copie *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\amd64\\** **à** *\Bin\amd64*
 > 2. Dans le dossier racine du site Web, créez ou ouvrez un *Web.config* fichier. (Dans la version bêta 3 de WebMatrix, ce type de fichier est disponible si vous cliquez sur **tous les** dans les **choisir un Type de fichier** boîte de dialogue.)
@@ -354,7 +354,7 @@ Cette section du document décrit les nouvelles fonctionnalités, des modificati
 
 > Si vous utilisez Visual Basic (création *.vbhtml* fichiers), le `Database` et `WebGrid` programmes d’assistance ne fonctionnent pas si l’application est configurée pour utiliser la confiance moyenne.
 > 
-> **Solution de contournement**  
+> **Workaround**  
 > Définissez temporairement l’application pour utiliser la confiance totale.
 
 <a id="Known_Issues_SQL_Server_Compact"></a>
@@ -364,7 +364,7 @@ Cette section du document décrit les nouvelles fonctionnalités, des modificati
 
 > SQL Server Compact 4.0 ne reconnaît pas le `Encrypt` propriété de la `SqlCeConnection` classe. Vous ne devez pas utiliser cette propriété pour chiffrer les fichiers de base de données. Le `Encrypt` propriété a été déconseillée dans la version 3.5 de SQL Server Compact et a été conservée uniquement pour la compatibilité descendante. 
 > 
-> **Solution de contournement**  
+> **Workaround**  
 > Utilisez le `Encryption Mode` propriété de la `SqlCeConnection` classe pour chiffrer les fichiers de base de données SQL Server Compact 4.0. L’exemple suivant montre comment créer une base de données SQL Server Compact 4.0 chiffrées à l’aide du `Encryption Mode` propriété :
 >  
 > [!code-csharp[Main](beta3/samples/sample11.cs)]
@@ -388,7 +388,7 @@ Cette section du document décrit les nouvelles fonctionnalités, des modificati
 
 > Le natif DLL de SQL Server Compact 4.0 peut-être le Microsoft Visual C++ 2008 bibliothèques Runtime (x 86, IA64 et x 64), le Service Pack 1.
 > 
-> **Solution de contournement**  
+> **Workaround**  
 > Installez le .NET Framework 3.5 SP1. Cette commande installe également le Runtime bibliothèques de Visual C++ 2008 SP1. Vous pouvez télécharger les bibliothèques à partir de l’emplacement suivant :   
 >   
 > [Mise à jour de la sécurité de Microsoft Visual C++ 2008 Service Pack 1 Redistributable Package ATL](https://go.microsoft.com/fwlink/?LinkId=194827)
@@ -403,7 +403,7 @@ Cette section du document décrit les nouvelles fonctionnalités, des modificati
 > 
 > [!code-xml[Main](beta3/samples/sample17.xml)]
 > 
-> **Solution de contournement**  
+> **Workaround**  
 > Désinstaller SQL Server Compact 4.0 CTP1. Téléchargez et installez la version complète du .NET Framework à partir de l’emplacement suivant :
 > 
 > [Microsoft .NET Framework 3.5 Service pack 1 (Package complet)](https://go.microsoft.com/fwlink/?LinkId=194828)  
@@ -418,7 +418,7 @@ Cette section du document décrit les nouvelles fonctionnalités, des modificati
 
 #### <a name="issue-installing-an-application-can-take-a-long-time-if-the-users-my-documents-folder-is-redirected-to-a-network-share"></a>Problème : Installation d’une application peut prendre beaucoup de temps si le dossier Mes Documents de l’utilisateur est redirigé vers un partage réseau
 
-> **Solution de contournement**  
+> **Workaround**  
 > Aucun. L’application peut prendre un certain temps à installer, mais ne s’installe correctement.
 
 
@@ -430,7 +430,7 @@ Cette section du document décrit les nouvelles fonctionnalités, des modificati
 
 > Dans le **paramètres de publication** boîte de dialogue, si l’URL de destination ne commence pas par `http://` ou `https://`, le site peut ne pas fonctionne après le déploiement.
 > 
-> **Solution de contournement**  
+> **Workaround**  
 > Assurez-vous qu’avant de publier un site, l’URL de destination dans le **paramètres de publication** boîte de dialogue commence par `http://` ou `https://`.
 
 
@@ -438,7 +438,7 @@ Cette section du document décrit les nouvelles fonctionnalités, des modificati
 
 > L’erreur peut se produire pour plusieurs raisons. Vous pouvez voir cette erreur est si le script de base de données contient un guillemet simple (') et le jeu de caractères par défaut de la destination MySQL de base de données n’est pas au format UTF-8.
 > 
-> **Solution de contournement**  
+> **Workaround**  
 > Définir le caractère par défaut définie pour la base de données MySQL à distance au format UTF-8.
 
 
@@ -480,7 +480,7 @@ Cette section du document décrit les nouvelles fonctionnalités, des modificati
 > - Sur Windows Vista ou Windows 7, vous êtes connecté avec un compte qui ne dispose pas des privilèges d’administrateur et contrôle de compte d’utilisateur (UAC) est désactivé.
 > - Vous utilisez Microsoft Windows XP ou Microsoft Windows Server 2003.
 > 
-> **Solution de contournement**  
+> **Workaround**  
 > La plupart des tâches dans la version bêta 3 de WebMatrix ne nécessitent pas d’autorisation d’administrateur. Pour ce faire, vous pouvez effectuer l’opération en tant qu’administrateur, ou procédez comme suit :
 > 
 > - Sur Windows Vista ou Windows 7, activer le compte d’utilisateur.
@@ -491,7 +491,7 @@ Cette section du document décrit les nouvelles fonctionnalités, des modificati
 
 > Le **Site à partir de la galerie Web** option est désactivée si le serveur Web Platform Installer 3.0 n’est pas installé.
 > 
-> **Solution de contournement**  
+> **Workaround**  
 > Installer le [Microsoft Web Platform Installer 3.0](https://go.microsoft.com/fwlink/?LinkID=194638).
 
 
@@ -499,7 +499,7 @@ Cette section du document décrit les nouvelles fonctionnalités, des modificati
 
 > Sur Windows Server 2003, lorsque vous lancez une page ou que vous démarrez IIS Express, IIS Express ne démarre pas. Pour les pages Web, une erreur s’affiche qui indique que l’application a été démarrée par un utilisateur non-administrateur.
 > 
-> **Solution de contournement**  
+> **Workaround**  
 > Démarrer la version bêta 3 de WebMatrix en tant qu’administrateur. Pour plus d’informations, consultez l’article suivant de la base de connaissances :  
 >   
 > [Une application est démarrée par un utilisateur non-administrateur ne peut pas écouter le trafic HTTP de l’ordinateur sur lequel l’application s’exécute sous Windows Vista, Windows Server 2003 ou Windows XP.](https://support.microsoft.com/kb/939786)
@@ -509,7 +509,7 @@ Cette section du document décrit les nouvelles fonctionnalités, des modificati
 
 > Google Chrome n’est pas affiché dans la liste des navigateurs sous **exécuter** sur la **accueil** onglet.
 > 
-> **Solution de contournement**  
+> **Workaround**  
 > Certaines versions de Google Chrome n’inscrivent pas eux-mêmes correctement avec la fonctionnalité programmes par défaut de Windows. Pour résoudre ce problème, démarrez Google Chrome, cliquez sur le *personnaliser et contrôle Google Chrome* menu, cliquez sur *Options*, puis cliquez sur *Vérifiez Google Chrome mon navigateur par défaut*.
 
 
@@ -517,7 +517,7 @@ Cette section du document décrit les nouvelles fonctionnalités, des modificati
 
 > Le **clé étrangère** boîte de dialogue ne vous permet pas à entrer le nom de clé primaire de la table de clé primaire.
 > 
-> **Solution de contournement**  
+> **Workaround**  
 > Cela est intentionnel. Vous n’avez pas besoin d’entrer le nom de la clé primaire de la table de clé primaire.
 
 
@@ -525,7 +525,7 @@ Cette section du document décrit les nouvelles fonctionnalités, des modificati
 
 > Le **relations** sous le **Table** onglet dans le **bases de données** espace de travail est désactivé pour les bases de données SQL Server Compact.
 > 
-> **Solution de contournement**  
+> **Workaround**  
 > Aucun. SQL Server Compact ne prend pas en charge les relations entre les tables.
 
 
@@ -533,7 +533,7 @@ Cette section du document décrit les nouvelles fonctionnalités, des modificati
 
 > Dans SQL Server Compact 4.0, si vous ne spécifiez pas un type de données tel que `SqlDbType` ou `DbType` pour les paramètres dans les requêtes paramétrables, une exception est levée lorsque la requête s’exécute.
 > 
-> **Solution de contournement**  
+> **Workaround**  
 > Définir explicitement le type de données pour les paramètres tels que `SqlDbType` ou `DbType`. Ceci est très important dans le cas des types de données BLOB (`image` et `ntext`). Utilisez un code semblable au suivant :
 > 
 > [!code-sql[Main](beta3/samples/sample20.sql)]
@@ -549,8 +549,8 @@ Pour plus d’informations sur la version bêta 3 de WebMatrix, consultez les si
 
 - [IIS.net](http://iis.net/)
 - [ASP.NET](https://asp.net/webmatrix)
-- [Web Microsoft.com à](https://www.microsoft.com/web)
+- [Microsoft.com/web](https://www.microsoft.com/web)
 
 * * *
 
-© 2010 Microsoft Corporation. Tous droits réservés. [Conditions d’utilisation](https://msdn.microsoft.com/en-us/cc300389.aspx).
+© 2010 Microsoft Corporation. Tous droits réservés. [Conditions d’utilisation](https://msdn.microsoft.cos/cc300389.aspx).

@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2013/release-notes
 msc.type: authoredcontent
-ms.openlocfilehash: 10835c39d3bca752ed3068a23fecaaab56449e41
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7f38a0f2693aeb2a4884b9c03719b583423957a8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-and-web-tools-for-visual-studio-2013-release-notes"></a>ASP.NET et Web Tools pour les Notes de publication Visual Studio 2013
 ====================
@@ -137,8 +137,8 @@ Dans Visual Studio 2013 avec le SDK Azure pour .NET 2.2, vous pouvez utiliser **
 
 Pour plus d'informations, reportez-vous aux ressources suivantes :
 
-- [Créer une application web ASP.NET dans Azure App Service](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-get-started/)
-- [Résoudre les problèmes d’une application web dans Azure App Service à l’aide de Visual Studio](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)
+- [Créer une application web ASP.NET dans Azure App Service](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-get-started/)
+- [Résoudre les problèmes d’une application web dans Azure App Service à l’aide de Visual Studio](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)
 
 <a id="publish"></a>
 ## <a name="web-publish-enhancements"></a>Améliorations de la publication sur le Web
@@ -185,7 +185,7 @@ Pour plus d’informations sur la mise à niveau des projets MVC 4 à 5 de MVC, 
 
 ### <a name="aspnet-identity"></a>ASP.NET Identity
 
-Les modèles de projet MVC ont été mis à jour pour utiliser ASP.NET Identity pour l’authentification et la gestion d’identité. Vous trouverez un didacticiel avec l’authentification Facebook et Google et la nouvelle API d’appartenance à [création d’une application ASP.NET MVC 5 avec Facebook et Google OAuth2 et OpenID Sign-on](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md) et [créer une application ASP.NET MVC avec l’authentification et Base de données SQL et le déployer vers Azure App Service](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/).
+Les modèles de projet MVC ont été mis à jour pour utiliser ASP.NET Identity pour l’authentification et la gestion d’identité. Vous trouverez un didacticiel avec l’authentification Facebook et Google et la nouvelle API d’appartenance à [création d’une application ASP.NET MVC 5 avec Facebook et Google OAuth2 et OpenID Sign-on](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md) et [créer une application ASP.NET MVC avec l’authentification et Base de données SQL et le déployer vers Azure App Service](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/).
 
 ### <a name="bootstrap"></a>programme d’amorçage
 
@@ -643,7 +643,7 @@ Cette section décrit les problèmes connus et les modifications avec rupture da
     Ce problème sera résolu dans la prochaine version.
 2. Après la mise à niveau d’une application MVC4 vers MVC5, générez la solution et lancez-le. Vous devez voir l’erreur suivante :
 
-    [A] System.Web.WebPages.Razor.Configuration.HostSection ne peut pas être converti en [B]System.Web.WebPages.Razor.Configuration.HostSection. Le type A provient ' System.Web.WebPages.Razor, Version = 2.0.0.0, Culture = neutral, PublicKeyToken = 31bf3856ad364e35' dans le contexte 'Default' à l’emplacement ' C:\windows\Microsoft.Net\assembly\GAC\_MSIL\System.Web.WebPages.Razor\ v4.0\_2.0.0.0\_\_31bf3856ad364e35\System.Web.WebPages.Razor.dll'. Type B provient « System.Web.WebPages.Razor, Version = 3.0.0.0, Culture = neutral, PublicKeyToken = 31bf3856ad364e35' dans le contexte 'Default' à l’emplacement ' C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\6d05bbd0\ e8b5908e\assembly\dl3\c9cbca63\f8910382\_6273ce01\System.Web.WebPages.Razor.dll'.
+    [A] System.Web.WebPages.Razor.Configuration.HostSection ne peut pas être converti en [B]System.Web.WebPages.Razor.Configuration.HostSection. Le type A provient ' System.Web.WebPages.Razor, Version = 2.0.0.0, Culture = neutral, PublicKeyToken = 31bf3856ad364e35' dans le contexte 'Default' à l’emplacement ' C:\windows\Microsoft.Net\assembly\GAC\_MSIL\System.Web.WebPages.Razor\ v4.0\_2.0.0.0\_\_31bf3856ad364e35\System.Web.WebPages.Razor.dll'. Type B originates from 'System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' in the context 'Default' at location 'C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\6d05bbd0\e8b5908e\assembly\dl3\c9cbca63\f8910382\_6273ce01\System.Web.WebPages.Razor.dll'.
 
     Pour corriger l’erreur ci-dessus, ouvrez *tous les* les fichiers Web.config (y compris celles figurant dans le dossier Views) dans votre projet, puis effectuez les éléments suivants :
 
@@ -666,7 +666,7 @@ Cette section décrit les problèmes connus et les modifications avec rupture da
     À :
 
     `@Html.TextBoxFor(person => person.Age)`
-4. ASP.NET MVC 5 ne prend plus en mode de confiance partielle. Projets de liaison pour les binaires MVC ou WebAPI doivent supprimer le [SecurityTransparent](https://msdn.microsoft.com/en-us/library/system.security.securitytransparentattribute.aspx) attribut et la [AllowPartiallyTrustedCallers](https://msdn.microsoft.com/en-us/library/system.security.allowpartiallytrustedcallersattribute.aspx) attribut. Suppression de ces attributs permet d’éliminer les erreurs du compilateur tels que les éléments suivants.
+4. ASP.NET MVC 5 ne prend plus en mode de confiance partielle. Projets de liaison pour les binaires MVC ou WebAPI doivent supprimer le [SecurityTransparent](https://msdn.microsoft.com/library/system.security.securitytransparentattribute.aspx) attribut et la [AllowPartiallyTrustedCallers](https://msdn.microsoft.com/library/system.security.allowpartiallytrustedcallersattribute.aspx) attribut. Suppression de ces attributs permet d’éliminer les erreurs du compilateur tels que les éléments suivants.
 
     `Attempt by security transparent method ‘MyComponent' to access security critical type 'System.Web.Mvc.MvcHtmlString' failed. Assembly 'PagedList.Mvc, Version=4.3.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1' is marked with the AllowPartiallyTrustedCallersAttribute, and uses the level 2 security transparency model. Level 2 transparency causes all methods in AllowPartiallyTrustedCallers assemblies to become security transparent by default, which may be the cause of this exception.`
 

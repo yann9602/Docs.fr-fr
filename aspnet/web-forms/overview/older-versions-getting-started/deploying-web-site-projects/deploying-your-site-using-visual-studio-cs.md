@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-your-site-using-visual-studio-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 15d3d2c70346abad5addab5c29d4af9f238b39da
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c0c32c3dd24be5edfea3e17695753973f3fad30a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-your-site-using-visual-studio-c"></a>Déploiement de votre Site à l’aide de Visual Studio (c#)
 ====================
@@ -33,7 +33,7 @@ Le didacticiel précédent examiné comment déployer une application de web ASP
 
 
 > [!NOTE]
-> Autres outils liées au déploiement proposés par Visual Studio incluent [projets d’installation Web](https://msdn.microsoft.com/en-us/library/wx3b589t.aspx) et [projets de déploiement Web](https://www.microsoft.com/downloads/details.aspx?FamilyId=0AA30AE8-C73B-4BDD-BB1B-FE697256C459&amp;displaylang=en) Add-In. Projets d’installation Web empaqueter le contenu d’un site Web et les informations de configuration dans un seul fichier MSI. Cette option est particulièrement utile pour les sites Web qui sont déployés dans un intranet ou pour les entreprises qui vendent une application web des clients installer sur leurs serveurs web. Le Web déploiement de projets est qu'un Visual Studio complément, qui facilite la spécification des différences de configuration entre les builds pour les environnements de développement et les environnements de production. Projets d’installation Web ne sont pas abordés dans cette série de didacticiels ; Projets de déploiement Web sont résumées dans le [ *les différences entre développement Configuration commune et Production* ](common-configuration-differences-between-development-and-production-cs.md) didacticiel.
+> Autres outils liées au déploiement proposés par Visual Studio incluent [projets d’installation Web](https://msdn.microsoft.com/library/wx3b589t.aspx) et [projets de déploiement Web](https://www.microsoft.com/downloads/details.aspx?FamilyId=0AA30AE8-C73B-4BDD-BB1B-FE697256C459&amp;displaylang=en) Add-In. Projets d’installation Web empaqueter le contenu d’un site Web et les informations de configuration dans un seul fichier MSI. Cette option est particulièrement utile pour les sites Web qui sont déployés dans un intranet ou pour les entreprises qui vendent une application web des clients installer sur leurs serveurs web. Le Web déploiement de projets est qu'un Visual Studio complément, qui facilite la spécification des différences de configuration entre les builds pour les environnements de développement et les environnements de production. Projets d’installation Web ne sont pas abordés dans cette série de didacticiels ; Projets de déploiement Web sont résumées dans le [ *les différences entre développement Configuration commune et Production* ](common-configuration-differences-between-development-and-production-cs.md) didacticiel.
 
 
 ## <a name="deploying-your-site-using-the-copy-web-site-tool"></a>Déploiement de votre Site à l’aide de l’outil Copier le Site Web
@@ -139,7 +139,7 @@ L’option de publication est un outil moins subtils que l’outil Copier le Sit
 
 Il n’est pas rare d’avoir certains fichiers dont le contenu est différente entre la production et les environnements de développement. Un exemple de clé est le fichier de configuration de l’application, `Web.config`. Étant donné que l’option Publier copie les fichiers d’application web qu’il remplace les fichiers de configuration personnalisée de l’environnement de production avec la version dans l’environnement de développement. Le didacticiel suivant traite de cette rubrique et propose des conseils pour le déploiement d’une application web lorsqu’il existent de telles différences.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Déploiement d’un site Web implique la copie des fichiers nécessaires à partir de l’environnement de développement à l’environnement de production. Le didacticiel précédent a montré comment transférer des fichiers à l’aide d’un client FTP comme FileZilla. Ce didacticiel examiné deux outils de déploiement dans Visual Studio : l’outil Copier le Site Web et l’option de publication. L’outil Copier le Site Web est similaire à un client FTP car il a une interface à deux volets de l’énumération des fichiers sur l’ordinateur local et un ordinateur distant spécifié qui vous permettent de télécharger des fichiers entre les deux ordinateurs. L’option de publication est un outil plus pointu explicitement compile le projet, puis déploie l’application entière vers la destination spécifiée.
 
@@ -149,11 +149,11 @@ Bonne programmation !
 
 Pour plus d’informations sur les sujets abordés dans ce didacticiel, consultez les ressources suivantes :
 
-- [Copie de Site Web avec l’outil Copier le Site Web](https://msdn.microsoft.com/en-us/library/1cc82atw.aspx)
+- [Copie de Site Web avec l’outil Copier le Site Web](https://msdn.microsoft.com/library/1cc82atw.aspx)
 - [Comment faire : déployer un Site Web à l’aide de l’outil Copier le Site Web](../../../videos/how-do-i/how-do-i-deploy-a-web-site-using-the-copy-web-site-tool.md) (vidéo)
-- [Comment : Publier des projets d’Application Web](https://msdn.microsoft.com/en-us/library/aa983453.aspx)
-- [Comment : Publier des Sites Web](https://msdn.microsoft.com/en-us/library/20yh9f1b.aspx)
-- [Le programme d’installation et de déploiement des projets dans Visual Studio](https://msdn.microsoft.com/en-us/library/wx3b589t.aspx)
+- [Comment : Publier des projets d’Application Web](https://msdn.microsoft.com/library/aa983453.aspx)
+- [Comment : Publier des Sites Web](https://msdn.microsoft.com/library/20yh9f1b.aspx)
+- [Le programme d’installation et de déploiement des projets dans Visual Studio](https://msdn.microsoft.com/library/wx3b589t.aspx)
 
 >[!div class="step-by-step"]
 [Précédent](deploying-your-site-using-an-ftp-client-cs.md)

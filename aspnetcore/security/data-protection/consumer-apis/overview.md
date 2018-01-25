@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/consumer-apis/overview
-ms.openlocfilehash: 5ec11dce3ba485a84b6ce5f7ddaf16430162659c
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 2545226314ebf57d7a0d644d8edfb5354dcc6e5e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="consumer-apis-overview"></a>Vue d’ensemble des API de consommateur
 
@@ -25,13 +25,13 @@ L’interface du fournisseur représente la racine du système de protection des
 
 ## <a name="idataprotector"></a>IDataProtector
 
-L’interface de protecteur est retourné par un appel à `CreateProtector`, et il est cette interface dans laquelle les utilisateurs peuvent utiliser pour effectuer protéger et déprotéger les opérations.
+L’interface de protecteur est retourné par un appel à `CreateProtector`et il cette interface dans laquelle les utilisateurs peuvent utiliser pour effectuer protéger et déprotéger des opérations.
 
 Pour protéger une partie des données, passer les données à le `Protect` (méthode). L’interface de base définit une méthode qui convertit byte [-] -> byte [], mais il existe également une surcharge (fournie en tant qu’une méthode d’extension) qui convertit la chaîne -> chaîne. La sécurité offerte par les deux méthodes est identique. le développeur doit choisir quelle que soit la surcharge est plus pratique pour les cas d’utilisation. Quelle que soit la surcharge choisie, la valeur retournée par la protection méthode est désormais protégée (enciphered et répondre à tous les systèmes), et l’application peut envoyer à un client non fiable.
 
 Pour ôter la protection d’une donnée précédemment protégé, passer les données protégées sur le `Unprotect` (méthode). (Il n’y byte []-basé sur chaîne et en fonction des surcharges pour des raisons pratiques de développement.) Si la charge utile protégée a été générée par un appel précédent à `Protect` sur ce même `IDataProtector`, le `Unprotect` méthode retournera la charge non protégée d’origine. Si la charge utile protégée a été falsifiée ou a été créée par un autre `IDataProtector`, le `Unprotect` méthode lèvera CryptographicException.
 
-Le concept d’identiques ou différents `IDataProtector` ties sauvegarder sur le concept d’objectif. Si deux `IDataProtector` les instances ont été générées à partir de la même racine `IDataProtectionProvider` mais via des chaînes d’objectif différent dans l’appel à `IDataProtectionProvider.CreateProtector`, puis ils sont considérés comme [protecteurs différentes](purpose-strings.md), et une ne pourrez pas ôter la protection charges utiles générées par l’autre.
+Le concept d’identiques ou différents `IDataProtector` ties sauvegarder sur le concept d’objectif. Si deux `IDataProtector` les instances ont été générées à partir de la même racine `IDataProtectionProvider` mais via des chaînes d’objectif différent dans l’appel à `IDataProtectionProvider.CreateProtector`, puis elles sont considérées comme [protecteurs différentes](purpose-strings.md), et une ne pourra plus être ôter la protection charges utiles générées par l’autre.
 
 ## <a name="consuming-these-interfaces"></a>Consommation de ces interfaces.
 
@@ -55,4 +55,4 @@ Le package Microsoft.AspNetCore.DataProtection.Abstractions contient une méthod
 [!code-csharp[Main](./overview/samples/getdataprotector.cs?highlight=15)]
 
 >[!TIP]
-> Instances de `IDataProtectionProvider` et `IDataProtector` sont thread-safe pour les appelants plusieurs. Il est prévu que, une fois qu’un composant obtient une référence à une `IDataProtector` via un appel à `CreateProtector`, il utilisera cette référence pour les appels multiples à `Protect` et `Unprotect`. Un appel à `Unprotect` lève CryptographicException si la charge utile protégée ne peut pas être vérifiée ou déchiffrée. Certains composants peuvent souhaiter ignorer les erreurs pendant les opérations ; ôter la protection un composant qui lit les cookies d’authentification peut gérer cette erreur et traiter la demande comme s’il n’avait aucun cookie tout plutôt qu’échouer la requête ferme. Les composants dont vous souhaitez que ce comportement doivent spécifiquement intercepter CryptographicException au lieu d’absorber toutes les exceptions.
+> Instances de `IDataProtectionProvider` et `IDataProtector` sont thread-safe pour les appelants plusieurs. Il a prévu qui une fois qu’un composant obtient une référence à un `IDataProtector` via un appel à `CreateProtector`, il utilisera cette référence pour les appels multiples à `Protect` et `Unprotect`. Un appel à `Unprotect` lève CryptographicException si la charge utile protégée ne peut pas être vérifiée ou déchiffrée. Certains composants peuvent souhaiter ignorer les erreurs pendant les opérations ; ôter la protection un composant qui lit les cookies d’authentification peut gérer cette erreur et traiter la demande comme s’il n’avait aucun cookie tout plutôt qu’échouer la requête ferme. Les composants dont vous souhaitez que ce comportement doivent spécifiquement intercepter CryptographicException au lieu d’absorber toutes les exceptions.

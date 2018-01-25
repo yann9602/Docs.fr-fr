@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/enhancing-the-gridview/adding-a-gridview-column-of-checkboxes-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 4796d5d9fcf1f924e9baa9bc56424a9d719425c9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6f238b8ea8dfbde67dbad7a52d6b4851d67402a8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-a-gridview-column-of-checkboxes-c"></a>Ajout d’une colonne de GridView des cases à cocher (c#)
 ====================
@@ -100,7 +100,7 @@ Avec le contrôle TemplateField et la case à cocher Web ajouté, chaque ligne i
 
 À ce stade, nous avons une colonne de cases à cocher, mais aucun moyen de déterminer les cases à cocher ont été vérifiées lors de la publication. Lorsque l’utilisateur clique sur le bouton Supprimer les produits sélectionnés, cependant, nous devons savoir les cases à cocher ont été contrôlées afin de supprimer les produits.
 
-Le contrôle GridView s [ `Rows` propriété](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.rows.aspx) fournit l’accès aux lignes de données dans le GridView. Nous pouvons parcourir ces lignes, accéder par programme le contrôle de case à cocher, puis consultez son `Checked` propriété pour déterminer si la case à cocher a été sélectionné.
+Le contrôle GridView s [ `Rows` propriété](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.rows.aspx) fournit l’accès aux lignes de données dans le GridView. Nous pouvons parcourir ces lignes, accéder par programme le contrôle de case à cocher, puis consultez son `Checked` propriété pour déterminer si la case à cocher a été sélectionné.
 
 Créer un gestionnaire d’événements pour le `DeleteSelectedProducts` le contrôle bouton Web s `Click` événement et ajoutez le code suivant :
 
@@ -148,7 +148,7 @@ Avec ce code, en cliquant sur le bouton Vérifier tout entraîne une publication
 > Affichage d’une colonne de cases à cocher, une approche en sélectionnant ou désélectionnant toutes les cases à cocher lorsque est via une case à cocher dans la ligne d’en-tête. En outre, en cours vérifie toutes les / décochez toutes les implémentations requiert une publication (postback). Les cases à cocher activée ou désactivée, cependant, peut être entièrement par le biais d’un script côté client, en fournissant une expérience utilisateur plus active. Pour Explorer à l’aide d’une case à cocher de la ligne en-tête pour tout et désélectionner tout en détail, ainsi que d’en savoir plus sur l’utilisation des techniques de côté client, consultez [la vérification toutes les cases à cocher dans un Script côté Client à l’aide de GridView et une case à cocher tous les vérifier](http://aspnet.4guysfromrolla.com/articles/053106-1.aspx).
 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Dans les cas où vous avez besoin pour permettre aux utilisateurs de choisir un nombre arbitraire de lignes à partir d’un GridView, avant de continuer, l’ajout d’une colonne de cases à cocher est une option. Comme nous l’avons vu dans ce didacticiel, y compris une colonne de cases à cocher dans le GridView implique l’ajout de TemplateField avec un contrôle de case à cocher Web. À l’aide d’un contrôle Web (par opposition à l’injection de balisage directement dans le modèle, comme nous l’avons fait dans le didacticiel précédent) ASP.NET automatiquement se souvient de cases à cocher ont été et n’ont pas été vérifiées via la publication (postback). Nous pouvons également accéder par programme les cases à cocher dans le code pour déterminer si une case à cocher donnée est activé, ou pour modifier l’état activé.
 

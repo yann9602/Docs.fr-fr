@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/consumer-apis/dangerous-unprotect
-ms.openlocfilehash: f2425de3f790cd8dab17940ec52a2a7e170cc630
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 08a8ad9b3b3cc2de48751d4149bf39c58954fd90
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="unprotecting-payloads-whose-keys-have-been-revoked"></a>Ôter la protection de charges utiles dont les clés ont été révoqués.
 
@@ -44,6 +44,6 @@ Cette API prend la charge utile de protégé (en tant que tableau d’octets) et
 * `wasRevoked`: valeur de la valeur true si la clé utilisée pour protéger cette charge utile a été révoquée.
 
 >[!WARNING]
-> Soyez extrêmement prudent lorsque vous passez `ignoreRevocationErrors: true` à la `DangerousUnprotect` (méthode). Si, après avoir appelé cette méthode le `wasRevoked` valeur est true, la clé utilisée pour protéger cette charge utile a été révoquée, puis les authenticité de la charge utile doivent être traitée comme étant suspecte. Dans ce cas, uniquement fonctionner sur la charge utile non protégée si vous avez une garantie distincte qu’il est authentique, par exemple, qu’il le provenant d’une base de données sécurisée, plutôt que d’envoyées par un client web non fiable.
+> Soyez extrêmement prudent lorsque vous passez `ignoreRevocationErrors: true` à la `DangerousUnprotect` (méthode). Si, après avoir appelé cette méthode le `wasRevoked` valeur est true, la clé utilisée pour protéger cette charge utile a été révoquée, puis les authenticité de la charge utile doivent être traitée comme étant suspecte. Dans ce cas, uniquement continue à fonctionner sur la charge utile non protégée si vous avez une garantie distincte qu’il est authentique, par exemple, qu’il provient d’une base de données sécurisée, plutôt que d’envoyées par un client web non fiable.
 
 [!code-csharp[Main](dangerous-unprotect/samples/dangerous-unprotect.cs)]

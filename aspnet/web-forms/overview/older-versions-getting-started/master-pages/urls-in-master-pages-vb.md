@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/urls-in-master-pages-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 603457655e2490e1685f53d2cec643cb9382a59d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8aa0ed2fbf385e4b8dbb7e7a3bdb152f1e016e67
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="urls-in-master-pages-vb"></a>URL dans les Pages maîtres (VB)
 ====================
@@ -108,7 +108,7 @@ La bonne nouvelle est que ASP.NET propose une méthode pour générer une URL re
 
 Plutôt que de coder en dur une URL absolue, ASP.NET permet aux développeurs de page à utiliser le tilde (`~`) pour indiquer la racine de l’application web. Par exemple, plus haut dans ce didacticiel, j’ai utilisé la notation `~/Admin/Default.aspx` dans le texte pour faire référence à la `Default.aspx` page dans le `Admin` dossier. Le `~` indique que le `Admin` dossier est un sous-dossier de la racine de l’application web.
 
-Le `Control` de classe [ `ResolveClientUrl` méthode](https://msdn.microsoft.com/en-us/library/system.web.ui.control.resolveclienturl.aspx) accepte une URL et le modifie pour une URL relative appropriée pour la page web sur lequel réside le contrôle. Par exemple, l’appel `ResolveClientUrl("~/Images/PoweredByASPNET.gif")` de `About.aspx` retourne `Images/PoweredByASPNET.gif`. Appel de `~/Admin/Default.aspx`, cependant, retourne `../Images/PoweredByASPNET.gif`.
+Le `Control` de classe [ `ResolveClientUrl` méthode](https://msdn.microsoft.com/library/system.web.ui.control.resolveclienturl.aspx) accepte une URL et le modifie pour une URL relative appropriée pour la page web sur lequel réside le contrôle. Par exemple, l’appel `ResolveClientUrl("~/Images/PoweredByASPNET.gif")` de `About.aspx` retourne `Images/PoweredByASPNET.gif`. Appel de `~/Admin/Default.aspx`, cependant, retourne `../Images/PoweredByASPNET.gif`.
 
 > [!NOTE]
 > Étant donné que tous les contrôles de serveur ASP.NET dérivent de la `Control` (classe), tous les contrôles serveur ont accès à la `ResolveClientUrl` (méthode). Même la `Page` classe dérive de la `Control` (classe), c'est-à-dire que vous pouvez utiliser cette méthode directement à partir de classes de code-behind de vos pages ASP.NET.
@@ -148,7 +148,7 @@ Supprimer le `<a>` balisage d’élément et ajouter un contrôle de lien hypert
 
 [!code-aspx[Main](urls-in-master-pages-vb/samples/sample8.aspx)]
 
-Voilà ! À ce stade, toutes les URL dans notre page maître reposent correctement lors du rendu à une page de contenu, quelle que soit les dossiers de la page maître et la page de contenu sont situés dans.
+C’est tout ! À ce stade, toutes les URL dans notre page maître reposent correctement lors du rendu à une page de contenu, quelle que soit les dossiers de la page maître et la page de contenu sont situés dans.
 
 ### <a name="automatic-url-resolution-in-theheadsection"></a>Résolution des URL automatique dans le`<head>`Section
 
@@ -164,7 +164,7 @@ Pour cela, vous devez revoir la `~/Admin/Default.aspx` page et afficher la sourc
 
 [!code-html[Main](urls-in-master-pages-vb/samples/sample10.html)]
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Les pages maîtres sont très souvent des liens, des images et autres ressources externes qui doivent être spécifiés via une URL. Étant donné que la page maître et les pages de contenu ne peuvent pas exister dans le même dossier, il est important abstenir d’à l’aide des URL relatives. S’il est possible d’utiliser des URL absolues codée en dur, faisant ainsi étroitement associe l’URL absolue à l’application web. Si les modifications de l’URL absolue - comme il le fait souvent lors du déplacement ou de déploiement d’une application web - vous devrez n’oubliez pas de revenir en arrière et mettre à jour l’URL absolues.
 

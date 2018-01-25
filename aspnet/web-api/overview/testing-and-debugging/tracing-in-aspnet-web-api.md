@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/testing-and-debugging/tracing-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: f35c8a10018ce796e2d905d6ee839ff09bb380a1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7392ae5d9bc4c3aab45a9373099a0ee18e873a4f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="tracing-in-aspnet-web-api-2"></a>Le traçage dans ASP.NET Web API 2
 ====================
@@ -58,7 +58,7 @@ Ouvrez le fichier WebApiConfig.cs dans l’application\_dossier de démarrage. A
 
 [!code-csharp[Main](tracing-in-aspnet-web-api/samples/sample2.cs?highlight=6)]
 
-Ce code ajoute la [SystemDiagnosticsTraceWriter](https://msdn.microsoft.com/en-us/library/system.web.http.tracing.systemdiagnosticstracewriter.aspx) classe pour le pipeline de l’API Web. Le **SystemDiagnosticsTraceWriter** classe écrit des traces à [System.Diagnostics.Trace](https://msdn.microsoft.com/en-us/library/system.diagnostics.trace).
+Ce code ajoute la [SystemDiagnosticsTraceWriter](https://msdn.microsoft.com/library/system.web.http.tracing.systemdiagnosticstracewriter.aspx) classe pour le pipeline de l’API Web. Le **SystemDiagnosticsTraceWriter** classe écrit des traces à [System.Diagnostics.Trace](https://msdn.microsoft.com/library/system.diagnostics.trace).
 
 Pour afficher les traces, exécutez l’application dans le débogueur. Dans le navigateur, accédez à `/api/values`.
 
@@ -68,7 +68,7 @@ Les instructions de trace sont écrites dans la fenêtre Sortie dans Visual Stud
 
 [![](tracing-in-aspnet-web-api/_static/image7.png)](tracing-in-aspnet-web-api/_static/image6.png)
 
-Étant donné que **SystemDiagnosticsTraceWriter** écrit des traces à **System.Diagnostics.Trace**, vous pouvez inscrire d’autres écouteurs de traçage ; par exemple, pour écrire des traces dans un fichier journal. Pour plus d’informations sur les enregistreurs de trace, consultez le [écouteurs de traçage](https://msdn.microsoft.com/en-us/library/4y5y10s7.aspx) rubrique sur MSDN.
+Étant donné que **SystemDiagnosticsTraceWriter** écrit des traces à **System.Diagnostics.Trace**, vous pouvez inscrire d’autres écouteurs de traçage ; par exemple, pour écrire des traces dans un fichier journal. Pour plus d’informations sur les enregistreurs de trace, consultez le [écouteurs de traçage](https://msdn.microsoft.com/library/4y5y10s7.aspx) rubrique sur MSDN.
 
 ### <a name="configuring-systemdiagnosticstracewriter"></a>Configuration SystemDiagnosticsTraceWriter
 
@@ -89,7 +89,7 @@ Ajout d’un writer de suivi vous donne un accès immédiat aux traces créées 
 
 Pour obtenir le writer de suivi, appelez **HttpConfiguration.Services.GetTraceWriter**. À partir d’un contrôleur, cette méthode est accessible via la **ApiController.Configuration** propriété.
 
-Pour écrire une trace, vous pouvez appeler la **ITraceWriter.Trace** (méthode) directement, mais la [ITraceWriterExtensions](https://msdn.microsoft.com/en-us/library/system.web.http.tracing.itracewriterextensions.aspx) classe définit des méthodes d’extension qui sont plus convivial. Par exemple, le **Info** méthode illustrée ci-dessus crée une trace avec niveau de trace **informations**.
+Pour écrire une trace, vous pouvez appeler la **ITraceWriter.Trace** (méthode) directement, mais la [ITraceWriterExtensions](https://msdn.microsoft.com/library/system.web.http.tracing.itracewriterextensions.aspx) classe définit des méthodes d’extension qui sont plus convivial. Par exemple, le **Info** méthode illustrée ci-dessus crée une trace avec niveau de trace **informations**.
 
 ## <a name="web-api-tracing-infrastructure"></a>Infrastructure de traçage d’API Web
 

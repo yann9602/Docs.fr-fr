@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/complex-data-model
-ms.openlocfilehash: 5b5645936504333573950b5bd17f5a037ffd984f
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: d844e2a69e4bbfdf3942f2666ead0047bdf83b7a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="creating-a-complex-data-model---ef-core-with-aspnet-core-mvc-tutorial-5-of-10"></a>Création d’un modèle de données complexes - Core EF avec le didacticiel d’ASP.NET MVC de base (5 sur 10)
 
@@ -39,9 +39,9 @@ Dans *Models/Student.cs*, ajouter un `using` instruction pour le `System.Compone
 
 [!code-csharp[Main](intro/samples/cu/Models/Student.cs?name=snippet_DataType&highlight=3,12-13)]
 
-L’attribut `DataType` sert à spécifier un type de données qui est plus spécifique que le type intrinsèque de la base de données. Dans ce cas, nous voulons uniquement le suivi de la date, pas la date et l’heure. Le `DataType` énumération fournit de nombreux types de données, telles que Date, Time, numéro de téléphone, devise, EmailAddress et bien plus encore. L’attribut `DataType` peut également permettre à l’application de fournir automatiquement des fonctionnalités propres au type. Par exemple, vous pouvez créer un lien `mailto:` pour `DataType.EmailAddress`, et vous pouvez fournir un sélecteur de date pour `DataType.Date` dans les navigateurs qui prennent en charge HTML5. Le `DataType` émet un attribut HTML 5 `data-` attributs (données prononcé tiret) qui peuvent de comprendre les navigateurs HTML 5. Le `DataType` attributs ne fournissent pas de validation.
+Le `DataType` attribut est utilisé pour spécifier un type de données qui est plus spécifique que le type intrinsèque de la base de données. Dans ce cas, nous voulons uniquement le suivi de la date, pas la date et l’heure. Le `DataType` énumération fournit de nombreux types de données, telles que Date, Time, numéro de téléphone, devise, EmailAddress et bien plus encore. L’attribut `DataType` peut également permettre à l’application de fournir automatiquement des fonctionnalités propres au type. Par exemple, vous pouvez créer un lien `mailto:` pour `DataType.EmailAddress`, et vous pouvez fournir un sélecteur de date pour `DataType.Date` dans les navigateurs qui prennent en charge HTML5. Le `DataType` émet un attribut HTML 5 `data-` attributs (données prononcé tiret) qui peuvent de comprendre les navigateurs HTML 5. Le `DataType` les attributs ne fournissent aucune validation.
 
-`DataType.Date` ne spécifie pas le format de la date qui s’affiche. Par défaut, le champ de données s’affiche selon les formats par défaut en fonction CultureInfo du serveur.
+`DataType.Date`ne spécifie pas le format de la date qui s’affiche. Par défaut, le champ de données s’affiche selon les formats par défaut en fonction CultureInfo du serveur.
 
 L’attribut `DisplayFormat` est utilisé pour spécifier explicitement le format de date :
 
@@ -103,7 +103,7 @@ Exécuter l’application, sélectionnez le **étudiants** , cliquez sur **crée
 
 Vous pouvez également utiliser des attributs pour contrôler la façon dont les classes et les propriétés sont mappées à la base de données. Supposons que vous aviez utilisé le nom `FirstMidName` pour le prénom, car le champ peut également contenir un deuxième prénom. Mais vous souhaitez que la colonne de base de données nommé `FirstName`, car les utilisateurs qui doit écrire des requêtes ad-hoc par rapport à la base de données sont habitués à ce nom. Pour effectuer ce mappage, vous pouvez utiliser la `Column` attribut.
 
-Le `Column` attribut spécifie que lorsque la base de données est créé, la colonne de la `Student` table qui mappe à la `FirstMidName` propriété sera nommée `FirstName`. En d’autres termes, lorsque votre code fait référence à `Student.FirstMidName`, les données proviennent ou être mis à jour dans le `FirstName` colonne de la `Student` table. Si vous ne spécifiez pas les noms de colonnes, elles reçoivent le même nom que le nom de propriété.
+Le `Column` attribut spécifie que lorsque la base de données est créé, la colonne de la `Student` table qui mappe à la `FirstMidName` propriété sera nommée `FirstName`. En d’autres termes, lorsque votre code fait référence à `Student.FirstMidName`, les données proviennent ou être mis à jour dans le `FirstName` colonne de la `Student` table. Si vous ne spécifiez pas les noms de colonnes, donnés le même nom que le nom de propriété.
 
 Dans le *Student.cs* , ajoutez un `using` instruction pour `System.ComponentModel.DataAnnotations.Schema` et ajoutez l’attribut de nom de colonne à la `FirstMidName` la propriété, comme indiqué dans le code en surbrillance suivant :
 
@@ -125,7 +125,7 @@ Dans **l’Explorateur d’objets SQL Server**, ouvrez le Concepteur de tables S
 
 ![Table d’étudiants dans SSOX après la migration](complex-data-model/_static/ssox-after-migration.png)
 
-Avant d’appliquer les deux premières migrations, les colonnes de nom sont de type nvarchar (max). Il s’agit de nvarchar (50) et le nom de colonne est devenue FirstMidName FirstName.
+Avant d’appliquer les deux premières migrations, les colonnes de nom sont de type nvarchar (max). Ils sont maintenant nvarchar (50) et le nom de colonne a été modifiée à partir de FirstMidName FirstName.
 
 > [!Note]
 > Si vous essayez de compiler avant de terminer la création de toutes les classes d’entité dans les sections suivantes, vous pouvez obtenir les erreurs du compilateur.
@@ -231,7 +231,7 @@ Dans *Models/Course.cs*, remplacez le code que vous avez ajouté précédemment 
 
 L’entité de cours possède une propriété de clé étrangère `DepartmentID` qui pointe vers l’entité de service associée et il a un `Department` propriété de navigation.
 
-Entity Framework ne requiert pas vous permet d’ajouter une propriété de clé étrangère à votre modèle de données lorsque vous disposez d’une propriété de navigation pour une entité associée.  EF crée des clés étrangères dans la base de données partout où elles sont nécessaires et crée automatiquement [occulter les propriétés](https://docs.microsoft.com/ef/core/modeling/shadow-properties) pour eux. Mais ayant la clé étrangère dans le modèle de données peut rendre les mises à jour plus simple et plus efficace. Par exemple, lorsque vous lisez une entité de cours à modifier, l’entité du service est null si vous ne le charge pas, par conséquent, lorsque vous mettez à jour l’entité de cours, vous devez tout d’abord récupérer l’entité du service. Lorsque la propriété de clé étrangère `DepartmentID` est inclus dans le modèle de données, vous n’avez pas besoin récupérer l’entité du service avant de mettre à jour.
+Entity Framework ne requiert pas vous permet d’ajouter une propriété de clé étrangère à votre modèle de données lorsque vous disposez d’une propriété de navigation pour une entité associée.  EF crée des clés étrangères dans la base de données partout où ils sont nécessaires et crée automatiquement [occulter les propriétés](https://docs.microsoft.com/ef/core/modeling/shadow-properties) pour eux. Mais ayant la clé étrangère dans le modèle de données peut rendre les mises à jour plus simple et plus efficace. Par exemple, lorsque vous lisez une entité de cours à modifier, l’entité du service est null si vous ne le charge pas, par conséquent, lorsque vous mettez à jour l’entité de cours, vous devez tout d’abord récupérer l’entité du service. Lorsque la propriété de clé étrangère `DepartmentID` est inclus dans le modèle de données, vous n’avez pas besoin récupérer l’entité du service avant de mettre à jour.
 
 ### <a name="the-databasegenerated-attribute"></a>L’attribut DatabaseGenerated
 
@@ -308,7 +308,7 @@ public ICollection<Course> Courses { get; set; }
 ```
 
 > [!NOTE]
-> Par convention, Entity Framework permet la suppression en cascade pour les clés étrangères non nullables et pour les relations plusieurs-à-plusieurs. Cela peut entraîner des règles de suppression en cascade circulaire, ce qui provoquent une exception lorsque vous essayez d’ajouter une migration. Par exemple, si vous n’avez pas défini la propriété Department.InstructorID Nullable, EF serait configurer une règle de suppression en cascade pour supprimer le formateur lorsque vous supprimez le service, qui n’est pas ce que vous voulez effectuer. Si vos règles d’entreprise nécessaire le `InstructorID` propriété soit non nullable, vous devez utiliser l’instruction API fluent suivante pour désactiver la suppression en cascade sur la relation :
+> Par convention, Entity Framework permet la suppression en cascade pour les clés étrangères non nullables et pour les relations plusieurs-à-plusieurs. Cela peut entraîner des règles de suppression en cascade circulaire, ce qui provoquent une exception lorsque vous essayez d’ajouter une migration. Par exemple, si vous n’avez pas défini la propriété Department.InstructorID Nullable, EF serait configurer une règle de suppression en cascade pour supprimer le formateur lorsque vous supprimez le service, qui n’est pas de ce que vous voulez effectuer. Si vos règles d’entreprise nécessaire le `InstructorID` propriété soit non nullable, vous devez utiliser l’instruction API fluent suivante pour désactiver la suppression en cascade sur la relation :
 > ```csharp
 > modelBuilder.Entity<Department>()
 >    .HasOne(d => d.Administrator)
@@ -354,7 +354,7 @@ Chaque ligne de relation comporte un 1 à une extrémité et un astérisque (*) 
 
 Si la table Enrollment n’a pas été incluent des informations de catégorie, il faudrait uniquement contenir les deux clés étrangères CourseID et StudentID. Dans ce cas, il serait une table de jointure plusieurs-à-plusieurs sans la charge utile (ou une table de jonction pure) dans la base de données. Les entités du formateur et de cours ont ce type de relation plusieurs-à-plusieurs, et l’étape suivante consiste à créer une classe d’entité pour fonctionner comme une table de jonction sans la charge utile.
 
-(EF 6.x prend en charge n’est pas le cas de tables de jointure implicite pour les relations plusieurs-à-plusieurs, mais EF Core. Pour plus d’informations, consultez la [discussion dans le référentiel GitHub de noyaux EF](https://github.com/aspnet/EntityFramework/issues/1368).) 
+(EF 6.x prend en charge les tables de jointure implicite pour les relations plusieurs-à-plusieurs, mais EF Core ne. Pour plus d’informations, consultez la [discussion dans le référentiel GitHub de noyaux EF](https://github.com/aspnet/EntityFramework/issues/1368).) 
 
 ## <a name="the-courseassignment-entity"></a>L’entité CourseAssignment
 

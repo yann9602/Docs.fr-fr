@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-introduction-1-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: 7c03453e64cfc065d9f424702cc5af373e9bf536
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9c0edb301de85d15b9a3527382b72211f6f3d3ec
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-introduction---1-of-12"></a>Déploiement d’Application Web ASP.NET avec SQL Server Compact à l’aide de Visual Studio : Introduction - 1 de 12
 ====================
@@ -63,7 +63,7 @@ Le fournisseur d’hébergement pour ce didacticiel, Cytanium.com, est une des n
 
 ## <a name="deploying-web-site-projects"></a>Déploiement de projets de Site Web
 
-Université de Contoso est un projet d’application web Visual Studio. La plupart des méthodes de déploiement et des outils présentés dans ce didacticiel ne s’appliquent pas aux [projets de Site Web](https://msdn.microsoft.com/en-us/library/dd547590.aspx). Pour plus d’informations sur la façon de déployer des projets de site web, consultez [ASP.NET Deployment Content Map](https://msdn.microsoft.com/en-us/library/bb386521.aspx#deployment_for_web_site_projects).
+Université de Contoso est un projet d’application web Visual Studio. La plupart des méthodes de déploiement et des outils présentés dans ce didacticiel ne s’appliquent pas aux [projets de Site Web](https://msdn.microsoft.com/library/dd547590.aspx). Pour plus d’informations sur la façon de déployer des projets de site web, consultez [ASP.NET Deployment Content Map](https://msdn.microsoft.com/library/bb386521.aspx#deployment_for_web_site_projects).
 
 ## <a name="deploying-aspnet-mvc-projects"></a>Déploiement de projets ASP.NET MVC
 
@@ -81,7 +81,7 @@ Lorsqu’une erreur se produit pendant le déploiement, ou si le site déployé 
 
 Commentaires sur les didacticiels sont les bienvenus, et lorsque le didacticiel est mis à jour tous les efforts seront établie à tenir des corrections de compte ou des suggestions d’amélioration est fournies dans les commentaires de didacticiel.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 Avant de commencer, assurez-vous que vous avez Windows 7 ou version ultérieure et qu’un des produits suivants installés sur votre ordinateur :
 
@@ -110,7 +110,7 @@ Pour préparer à effectuer les étapes du didacticiel, début de l’enregistre
 
 Démarrez Visual Studio, ouvrez le projet, appuyez sur CTRL-F5 pour l’exécuter.
 
-[![Home_Page](deployment-to-a-hosting-provider-introduction-1-of-12/_static/image2.png)](deployment-to-a-hosting-provider-introduction-1-of-12/_static/image1.png)
+[![Home_page](deployment-to-a-hosting-provider-introduction-1-of-12/_static/image2.png)](deployment-to-a-hosting-provider-introduction-1-of-12/_static/image1.png)
 
 Les pages de site Web sont accessibles à partir de la barre de menus et vous permettent d’effectuer les fonctions suivantes :
 

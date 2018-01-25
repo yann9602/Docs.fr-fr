@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/extensibility/core-crypto
-ms.openlocfilehash: b82c30fe40c4badc74645dafa9f0d13f6ffae031
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 8a3f4cf267998ddc7f393401059ca9d83ef2d8e7
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="core-cryptography-extensibility"></a>Extensibilité de chiffrement de base
 
@@ -128,7 +128,7 @@ Le descripteur sérialisé peut contenir des informations sensibles telles que d
 >[!TIP]
 > Il existe une API d’assistance pour définir cet attribut. Appelez la méthode d’extension que XElement.markasrequiresencryption() situé dans l’espace de noms Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.
 
-Il peut également être cas où le descripteur sérialisé ne contient pas d’informations sensibles. Prenez de nouveau le cas d’une clé de chiffrement stockée dans un HSM. Le matériel de clé ne peut pas écrire le descripteur lors de la sérialisation lui-même, car le HSM expose pas le matériel sous forme de texte en clair. Au lieu de cela, le descripteur peut écrire la version de la clé encapsulée de la clé (si le module HSM autorise l’exportation de cette manière) ou l’identificateur unique du HSM pour la clé.
+Il peut également être cas où le descripteur sérialisé ne contient pas d’informations sensibles. Prenez de nouveau le cas d’une clé de chiffrement stockée dans un HSM. Le matériel de clé ne peut pas écrire le descripteur lors de la sérialisation lui-même, car le HSM ne sera pas exposer les informations sous forme de texte en clair. Au lieu de cela, le descripteur peut écrire la version de la clé encapsulée de la clé (si le module HSM autorise l’exportation de cette manière) ou l’identificateur unique du HSM pour la clé.
 
 <a name="data-protection-extensibility-core-crypto-iauthenticatedencryptordescriptordeserializer"></a>
 
@@ -157,7 +157,7 @@ Le **AlgorithmConfiguration** classe représente un type qui sait comment créer
 
 * CreateNewDescriptor() : IAuthenticatedEncryptorDescriptor
 
-Considérez AlgorithmConfiguration comme la fabrique de niveau supérieur. La configuration sert de modèle. Elle encapsule les informations algorithmiques (par exemple, cette configuration génère descripteurs avec une clé principale de AES-128-GCM), mais il n’est pas encore associé à une clé spécifique.
+Considérez AlgorithmConfiguration comme la fabrique de niveau supérieur. La configuration sert de modèle. Elle encapsule les informations algorithmiques (par exemple, cette configuration génère descripteurs avec une clé principale de AES-128-GCM), mais il n’a pas encore associé à une clé spécifique.
 
 Lorsque CreateNewDescriptor est appelée, nouvelle clé est créée uniquement pour cet appel et un nouveau IAuthenticatedEncryptorDescriptor est générée qui encapsule cette clé et les informations algorithmiques nécessaire pour utiliser le matériel. Le matériel de clé peut être créé dans le logiciel (et dans la mémoire), il peut être créé et conservée dans un HSM et ainsi de suite. Le point essentiel est que les deux appels à CreateNewDescriptor ne devraient jamais créer des instances IAuthenticatedEncryptorDescriptor équivalents.
 
@@ -169,7 +169,7 @@ Le **IAuthenticatedEncryptorConfiguration** interface représente un type qui sa
 
 * CreateNewDescriptor() : IAuthenticatedEncryptorDescriptor
 
-Considérez IAuthenticatedEncryptorConfiguration comme la fabrique de niveau supérieur. La configuration sert de modèle. Elle encapsule les informations algorithmiques (par exemple, cette configuration génère descripteurs avec une clé principale de AES-128-GCM), mais il n’est pas encore associé à une clé spécifique.
+Considérez IAuthenticatedEncryptorConfiguration comme la fabrique de niveau supérieur. La configuration sert de modèle. Elle encapsule les informations algorithmiques (par exemple, cette configuration génère descripteurs avec une clé principale de AES-128-GCM), mais il n’a pas encore associé à une clé spécifique.
 
 Lorsque CreateNewDescriptor est appelée, nouvelle clé est créée uniquement pour cet appel et un nouveau IAuthenticatedEncryptorDescriptor est générée qui encapsule cette clé et les informations algorithmiques nécessaire pour utiliser le matériel. Le matériel de clé peut être créé dans le logiciel (et dans la mémoire), il peut être créé et conservée dans un HSM et ainsi de suite. Le point essentiel est que les deux appels à CreateNewDescriptor ne devraient jamais créer des instances IAuthenticatedEncryptorDescriptor équivalents.
 

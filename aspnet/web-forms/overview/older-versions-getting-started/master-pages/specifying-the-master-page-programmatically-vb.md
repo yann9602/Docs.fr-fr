@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/specifying-the-master-page-programmatically-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 090d0777b9d541003c3115d0da7cd974820c2939
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 191de7546e2ba913fda0c8c8a8bfd3531b53336e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="specifying-the-master-page-programmatically-vb"></a>Spécification de la Page maître par programme (VB)
 ====================
@@ -34,7 +34,7 @@ Depuis l’exemple de la première [ *création d’une disposition à l’éche
 
 [!code-aspx[Main](specifying-the-master-page-programmatically-vb/samples/sample1.aspx)]
 
-Le [ `Page` classe](https://msdn.microsoft.com/en-us/library/system.web.ui.page.aspx) dans les `System.Web.UI` espace de noms inclut un [ `MasterPageFile` propriété](https://msdn.microsoft.com/en-us/library/system.web.ui.page.masterpagefile.aspx) qui retourne le chemin d’accès pour le contenu de page maître ; c’est cette propriété est définie par le `@Page` la directive. Cette propriété peut également être utilisée pour spécifier par programme le contenu de page maître. Cette approche est utile si vous souhaitez affecter dynamiquement la page maître en fonction de facteurs externes, telles que l’utilisateur visite de la page.
+Le [ `Page` classe](https://msdn.microsoft.com/library/system.web.ui.page.aspx) dans les `System.Web.UI` espace de noms inclut un [ `MasterPageFile` propriété](https://msdn.microsoft.com/library/system.web.ui.page.masterpagefile.aspx) qui retourne le chemin d’accès pour le contenu de page maître ; c’est cette propriété est définie par le `@Page` la directive. Cette propriété peut également être utilisée pour spécifier par programme le contenu de page maître. Cette approche est utile si vous souhaitez affecter dynamiquement la page maître en fonction de facteurs externes, telles que l’utilisateur visite de la page.
 
 Dans ce didacticiel, nous ajouter une deuxième page maître à notre site Web et décider dynamiquement la page maître à utiliser lors de l’exécution.
 
@@ -54,7 +54,7 @@ La figure 1 illustre cette fusion. Étape 1 dans la Figure 1 illustre le contenu
 
 Page maître partakes dans cette fusion dépend de la valeur de la `Page` l’objet `MasterPageFile` propriété. Définissant le `MasterPageFile` d’attribut dans le `@Page` directive a pour effet d’attribution de la `Page`de `MasterPageFile` propriété durant la phase d’initialisation, ce qui constitue la première étape du cycle de vie de la page. Nous pouvons également définir cette propriété par programme. Toutefois, il est impératif que cette propriété est définie avant la fusion dans la Figure 1 a lieu.
 
-Au début de la phase PreInit le `Page` déclenche l’objet son [ `PreInit` événement](https://msdn.microsoft.com/en-us/library/system.web.ui.page.preinit.aspx) et appelle son [ `OnPreInit` méthode](https://msdn.microsoft.com/en-us/library/system.web.ui.page.onpreinit.aspx). Pour définir la page maître par programme, puis, nous pouvons créer un gestionnaire d’événements pour le `PreInit` événement ou remplacement le `OnPreInit` (méthode). Examinons les deux approches.
+Au début de la phase PreInit le `Page` déclenche l’objet son [ `PreInit` événement](https://msdn.microsoft.com/library/system.web.ui.page.preinit.aspx) et appelle son [ `OnPreInit` méthode](https://msdn.microsoft.com/library/system.web.ui.page.onpreinit.aspx). Pour définir la page maître par programme, puis, nous pouvons créer un gestionnaire d’événements pour le `PreInit` événement ou remplacement le `OnPreInit` (méthode). Examinons les deux approches.
 
 Commencez par ouvrir `Default.aspx.vb`, le fichier de classe code-behind pour la page d’accueil de notre site. Ajouter un gestionnaire d’événements de la page `PreInit` événements en tapant le code suivant :
 
@@ -264,7 +264,7 @@ Avec ce code en place, visitez le `ChooseMasterPage.aspx` page. Au départ, le `
 **Figure 07**: Pages de contenu sont maintenant affichés à l’aide de la `Alternate.master` Page maître ([cliquez pour afficher l’image en taille réelle](specifying-the-master-page-programmatically-vb/_static/image21.png))
 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Quand une page de contenu est visitée, ses contrôles de contenu sont fusionnées avec les contrôles ContentPlaceHolder de sa page maître. Le contenu de page maître est représentée par le `Page` la classe `MasterPageFile` propriété, qui est affectée à la `@Page` de la directive `MasterPageFile` attribut au cours de l’étape d’initialisation. En tant que ce didacticiel ont montré, nous pouvons affecter une valeur à la `MasterPageFile` propriété tant que nous le faire avant la fin de la phase PreInit. Possibilité de spécifier par programme la page maître, la porte pour des scénarios plus avancés, tels que la liaison dynamique d’une page de contenu à une page maître en fonction de facteurs externes s’ouvre.
 
@@ -275,8 +275,8 @@ Bonne programmation !
 Pour plus d’informations sur les sujets abordés dans ce didacticiel, consultez les ressources suivantes :
 
 - [Diagramme de cycle de vie de Page ASP.NET](http://emanish.googlepages.com/Asp.Net2.0Lifecycle.PNG)
-- [Vue d’ensemble du cycle de vie de Page ASP.NET](https://msdn.microsoft.com/en-us/library/ms178472.aspx)
-- [Vue d’ensemble de l’apparences et des thèmes ASP.NET](https://msdn.microsoft.com/en-us/library/ykzx33wh.aspx)
+- [Vue d’ensemble du cycle de vie de Page ASP.NET](https://msdn.microsoft.com/library/ms178472.aspx)
+- [Vue d’ensemble de l’apparences et des thèmes ASP.NET](https://msdn.microsoft.com/library/ykzx33wh.aspx)
 - [Les Pages maîtres : Conseils, astuces et pièges](http://www.odetocode.com/articles/450.aspx)
 - [Thèmes dans ASP.NET](http://www.odetocode.com/articles/423.aspx)
 

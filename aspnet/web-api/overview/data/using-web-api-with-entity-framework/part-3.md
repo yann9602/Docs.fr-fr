@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/data/using-web-api-with-entity-framework/part-3
 msc.type: authoredcontent
-ms.openlocfilehash: df75a69644033cc76fee86b5a9692ab65beb4d01
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1ca627397f0f100d13388f9afc27ff481886e098
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="use-code-first-migrations-to-seed-the-database"></a>Utilisez Migrations Code First pour amorcer la base de données
 ====================
@@ -24,7 +24,7 @@ par [Mike Wasson](https://github.com/MikeWasson)
 
 [Télécharger le projet terminé](https://github.com/MikeWasson/BookService)
 
-Dans cette section, vous allez utiliser [Migrations Code First](https://msdn.microsoft.com/en-us/data/jj591621) dans EF pour amorcer la base de données de test.
+Dans cette section, vous allez utiliser [Migrations Code First](https://msdn.microsoft.com/data/jj591621) dans EF pour amorcer la base de données de test.
 
 À partir de la **outils** menu, sélectionnez **Gestionnaire de Package de bibliothèque**, puis sélectionnez **Package Manager Console**. Dans la fenêtre de Console du Gestionnaire de Package, entrez la commande suivante :
 
@@ -46,7 +46,7 @@ Dans la fenêtre de Console du Gestionnaire de Package, tapez les commandes suiv
 
 [!code-console[Main](part-3/samples/sample4.cmd)]
 
-La première commande génère du code qui crée la base de données, et la deuxième commande exécute ce code. La base de données est créé localement, à l’aide de [LocalDB](https://msdn.microsoft.com/en-us/library/hh510202.aspx).
+La première commande génère du code qui crée la base de données, et la deuxième commande exécute ce code. La base de données est créé localement, à l’aide de [LocalDB](https://msdn.microsoft.com/library/hh510202.aspx).
 
 ![](part-3/_static/image2.png)
 
@@ -69,8 +69,8 @@ L’API permet les opérations CRUD sur la base de données. Voici un résumé d
 | OBTENIR les api/auteurs | Obtenir tous les auteurs. |
 | GET api/auteurs / {id} | Obtenir un auteur par ID. |
 | Auteurs/api/POST | Créer un nouvel auteur. |
-| PUT/API/auteurs / {id} | Mettre à jour un auteur existant. |
-| Supprimer/API/auteurs / {id} | Supprimer un auteur. |
+| PUT /api/authors/{id} | Mettre à jour un auteur existant. |
+| DELETE /api/authors/{id} | Supprimer un auteur. |
 
 | Documentation |  |
 | --- | -- |

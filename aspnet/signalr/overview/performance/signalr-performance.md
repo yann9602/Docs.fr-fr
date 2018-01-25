@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/performance/signalr-performance
 msc.type: authoredcontent
-ms.openlocfilehash: dec2602e47fbcb838643a506a7e3feebda9d9c81
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4468ee8031afccca847db67bd4b5b263f0a2c5ac
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="signalr-performance"></a>Performances de SignalR
 ====================
@@ -87,7 +87,7 @@ En diminuant l’encombrement de mémoire (autrement dit, la quantité de mémoi
 
 ### <a name="tuning-your-signalr-server-for-performance"></a>Réglage de votre serveur SignalR pour des performances
 
-Les paramètres de configuration suivants peuvent être utilisés pour paramétrer votre serveur pour de meilleures performances dans une application SignalR. Pour obtenir des informations générales sur la façon d’améliorer les performances dans une application ASP.NET, consultez [amélioration des performances ASP.NET](https://msdn.microsoft.com/en-us/library/ff647787.aspx).
+Les paramètres de configuration suivants peuvent être utilisés pour paramétrer votre serveur pour de meilleures performances dans une application SignalR. Pour obtenir des informations générales sur la façon d’améliorer les performances dans une application ASP.NET, consultez [amélioration des performances ASP.NET](https://msdn.microsoft.com/library/ff647787.aspx).
 
 **Paramètres de configuration SignalR**
 
@@ -104,7 +104,7 @@ Les paramètres de configuration suivants peuvent être utilisés pour paramétr
     [!code-console[Main](signalr-performance/samples/sample4.cmd)]
 - **ApplicationPool QueueLength**: il s’agit du nombre maximal de demandes que Http.sys files d’attente du pool d’applications. Lorsque la file d’attente est pleine, les nouvelles demandes reçoivent la réponse 503 « Service indisponible ». La valeur par défaut est 1000.
 
-    Raccourcir la longueur de file d’attente pour le processus de travail dans le pool d’applications qui héberge votre application sera économiser des ressources mémoire. Pour plus d’informations, consultez [gestion paramétrage et configuration des Pools d’applications](https://technet.microsoft.com/en-us/library/cc745955.aspx).
+    Raccourcir la longueur de file d’attente pour le processus de travail dans le pool d’applications qui héberge votre application sera économiser des ressources mémoire. Pour plus d’informations, consultez [gestion paramétrage et configuration des Pools d’applications](https://technet.microsoft.com/library/cc745955.aspx).
 
 **Paramètres de configuration ASP.NET**
 
@@ -191,7 +191,7 @@ Les métriques suivantes mesurent le trafic via le bus de messages SignalR inter
 - **Bus de messages des Messages publiés par seconde**
 - **Message Bus abonnés actuel**
 - **Nombre Total d’abonnés message Bus**
-- **Les abonnés de Bus de messages/s**
+- **Message Bus Subscribers/Sec**
 - **Bus de messages allouée travailleurs**
 - **Threads de travail occupés de Bus de messages**
 - **Actuel de rubriques de Bus de messages**
@@ -215,7 +215,7 @@ Les métriques suivantes mesurent les erreurs générées par le trafic des mess
 
 Les métriques suivantes mesurent le trafic et les erreurs générées par le fournisseur de montée en puissance parallèle. A **flux** dans ce contexte est une unité d’échelle utilisée par le fournisseur de montée en charge ; il s’agit une table si SQL Server est utilisée, une rubrique si Service Bus est utilisé et un abonnement si Redis est utilisé. Chaque flux garantit ordonnée en lecture et les opérations d’écriture ; un seul flux étant un goulot d’étranglement potentiel de mise à l’échelle, le nombre de flux peut être augmenté pour aider à réduire ce goulot d’étranglement. Si plusieurs flux de données est utilisés, SignalR distribue automatiquement des messages de (partition) dans ces flux d’une manière qui garantit que les messages envoyés à partir d’une connexion donnée sont dans l’ordre.
 
-Le [MaxQueueLength](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.messaging.scaleoutconfiguration.maxqueuelength(v=vs.118).aspx) paramètre détermine la longueur de la file d’envoi de montée en puissance parallèle géré par SignalR. Lui affectant une valeur supérieure à 0 place tous les messages dans une file d’attente d’envoi à envoyer à la fois au fond de panier de messagerie configuré. Si la taille de la file d’attente dépasse la longueur configurée, les appels suivants à envoyer va échouent immédiatement avec un [InvalidOperationException](https://msdn.microsoft.com/en-us/library/system.invalidoperationexception(v=vs.118).aspx) jusqu'à ce que le nombre de messages dans la file d’attente est inférieure à celle du paramètre à nouveau. File d’attente est désactivée par défaut, car les fonds de panier implémentés ont généralement leur propre queuing ou le contrôle de flux en place. Dans le cas de SQL Server, le regroupement de connexions limite efficacement le nombre d’envois continue à un moment donné.
+Le [MaxQueueLength](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.messaging.scaleoutconfiguration.maxqueuelength(v=vs.118).aspx) paramètre détermine la longueur de la file d’envoi de montée en puissance parallèle géré par SignalR. Lui affectant une valeur supérieure à 0 place tous les messages dans une file d’attente d’envoi à envoyer à la fois au fond de panier de messagerie configuré. Si la taille de la file d’attente dépasse la longueur configurée, les appels suivants à envoyer va échouent immédiatement avec un [InvalidOperationException](https://msdn.microsoft.com/library/system.invalidoperationexception(v=vs.118).aspx) jusqu'à ce que le nombre de messages dans la file d’attente est inférieure à celle du paramètre à nouveau. File d’attente est désactivée par défaut, car les fonds de panier implémentés ont généralement leur propre queuing ou le contrôle de flux en place. Dans le cas de SQL Server, le regroupement de connexions limite efficacement le nombre d’envois continue à un moment donné.
 
 Par défaut, un seul flux est utilisé pour SQL Server et de Redis, cinq flux sont utilisés pour Service Bus et file d’attente est désactivée, mais ces paramètres peuvent être modifiés via la configuration de SQL Server et Service Bus :
 
@@ -245,7 +245,7 @@ Pour plus d’informations sur ce que ces compteurs sont de mesure, consultez [S
 
 Les compteurs de performances suivants peuvent également être utiles pour surveiller les performances de votre application.
 
-**Mémoire**
+**Memory**
 
 - Mémoire CLR .NET\\nombre d’octets dans tous les segments de mémoire (pour w3wp)
 
@@ -255,7 +255,7 @@ Les compteurs de performances suivants peuvent également être utiles pour surv
 - ASP.NET\Queued
 - ASP.NET\Rejected
 
-**PROCESSEUR**
+**CPU**
 
 - Temps de processeur Information\Processor
 
@@ -280,6 +280,6 @@ Les compteurs de performances suivants peuvent également être utiles pour surv
 
 Pour plus d’informations sur les performances d’ASP.NET la surveillance et de paramétrage, consultez les rubriques suivantes :
 
-- [Vue d’ensemble des performances ASP.NET](https://msdn.microsoft.com/en-us/library/cc668225(v=vs.100).aspx)
+- [Vue d’ensemble des performances ASP.NET](https://msdn.microsoft.com/library/cc668225(v=vs.100).aspx)
 - [Utilisation de Thread ASP.NET sur IIS 6.0, IIS 7.0 et IIS 7.5](https://blogs.msdn.com/b/tmarq/archive/2007/07/21/asp-net-thread-usage-on-iis-7-0-and-6-0.aspx)
-- [&lt;applicationPool&gt; élément (paramètres Web)](https://msdn.microsoft.com/en-us/library/dd560842.aspx)
+- [&lt;applicationPool&gt; élément (paramètres Web)](https://msdn.microsoft.com/library/dd560842.aspx)

@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-custom-action-filters
 msc.type: authoredcontent
-ms.openlocfilehash: 6362f0506934ca3b3cc86e1a927af75e7bc4e1d3
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 103cd68c576463d87d0077cc149f9b89c6e028e8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-mvc-4-custom-action-filters"></a>Filtres d’Action personnalisés ASP.NET MVC 4
 ====================
@@ -44,7 +44,7 @@ Dans cet atelier pratique, vous allez apprendre comment :
 <a id="Prerequisites"></a>
 
 <a id="Prerequisites"></a>
-### <a name="prerequisites"></a>Conditions préalables
+### <a name="prerequisites"></a>Prérequis
 
 Vous devez disposer des éléments suivants pour effectuer ce laboratoire :
 
@@ -96,7 +96,7 @@ Le filtre étendra **ActionFilterAttributeClass** et remplacez **OnActionExecuti
 > - **Résultat** filtre, qui encapsule l’exécution de l’objet de classe ActionResult. Ce filtre peut exécuter d’autres traitements du résultat, telles que la modification de la réponse HTTP.
 > - **Exception** filtre, qui s’exécute si une exception non gérée levée dans une méthode d’action, en commençant par les filtres d’autorisation et se terminant par l’exécution du résultat. Filtres d’exception peuvent être utilisés pour des tâches telles que la journalisation ou l’affichage d’une page d’erreur.
 > 
-> Pour plus d’informations sur les fournisseurs de filtres, visitez ce lien MSDN : ([https://msdn.microsoft.com/en-us/library/dd410209.aspx](https://msdn.microsoft.com/en-us/library/dd410209.aspx)).
+> Pour plus d’informations sur les fournisseurs de filtres, visitez ce lien MSDN : ([https://msdn.microsoft.com/library/dd410209.aspx](https://msdn.microsoft.com/library/dd410209.aspx)).
 
 
 <a id="AboutLoggingFeature"></a>
@@ -164,7 +164,7 @@ Dans cette tâche, vous allez créer une classe d’attributs de filtre personna
     > [!NOTE]
     > **OnActionExecuting** à l’aide de la méthode **Entity Framework** pour ajouter un historique ActionLog. Il crée et remplit une nouvelle instance de l’entité avec les informations de contexte à partir de **filterContext**.
     > 
-    > Vous pouvez en savoir plus sur **ControllerContext** classe à [msdn](https://msdn.microsoft.com/en-us/library/system.web.mvc.controllercontext.aspx).
+    > Vous pouvez en savoir plus sur **ControllerContext** classe à [msdn](https://msdn.microsoft.com/library/system.web.mvc.controllercontext.aspx).
 
 <a id="Ex1Task2"></a>
 
@@ -231,7 +231,7 @@ Vous pouvez définir un **étendue** pour chacun des filtres, par exemple, vous 
 
 En outre, chaque filtre d’action a une propriété de commande qui est utilisée pour déterminer l’ordre d’exécution dans la portée du filtre.
 
-Pour plus d’informations sur l’ordre d’exécution de filtres d’Action personnalisée, consultez cet article MSDN : ([https://msdn.microsoft.com/en-us/library/dd381609(v=vs.98).aspx](https://msdn.microsoft.com/en-us/library/dd381609(v=vs.98).aspx)).
+Pour plus d’informations sur l’ordre d’exécution de filtres d’Action personnalisée, consultez cet article MSDN : ([https://msdn.microsoft.com/library/dd381609(v=vs.98).aspx](https://msdn.microsoft.com/library/dd381609(v=vs.98).aspx)).
 
 <a id="Ex2Task1"></a>
 
@@ -361,7 +361,7 @@ Dans cette tâche, vous mettrez à jour la solution pour enregistrer le nouveau 
 <a id="Summary"></a>
 
 <a id="Summary"></a>
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 À la fin de cet atelier pratique, vous avez appris comment étendre un filtre d’action pour exécuter des actions personnalisées. Vous avez également appris à injecter n’importe quel filtre à vos contrôleurs de page. Les concepts suivants ont été utilisés :
 

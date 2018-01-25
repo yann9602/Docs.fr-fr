@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/action-results
 msc.type: authoredcontent
-ms.openlocfilehash: 68b82661b97434795e1c306b168033dfcde529bc
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d0db5c6d45020861d7295ab1db989caee525fff9
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="action-results-in-web-api-2"></a>Résultats d’action dans l’API Web 2
 ====================
@@ -27,7 +27,7 @@ Cette rubrique décrit comment les API Web ASP.NET convertit la valeur de retour
 Une action de contrôleur d’API Web peut renvoyer la valeur d’une des opérations suivantes :
 
 1. void
-2. **Valeur HttpResponseMessage**
+2. **HttpResponseMessage**
 3. **IHttpActionResult**
 4. Un autre type
 
@@ -36,7 +36,7 @@ En fonction de ces est retournée, API Web utilise un mécanisme différent pour
 | Type de retour | Comment les API Web crée la réponse |
 | --- | --- |
 | void | Retour 204 vide (aucun contenu) |
-| **Valeur HttpResponseMessage** | Convertir directement à un message de réponse HTTP. |
+| **HttpResponseMessage** | Convertir directement à un message de réponse HTTP. |
 | **IHttpActionResult** | Appelez **ExecuteAsync** pour créer un **HttpResponseMessage**, puis la convertir en un message de réponse HTTP. |
 | Autre type | Écrire la valeur de retournée sérialisée dans le corps de réponse ; retourner 200 (OK). |
 
@@ -54,9 +54,9 @@ Réponse HTTP :
 
 [!code-console[Main](action-results/samples/sample2.cmd)]
 
-## <a name="httpresponsemessage"></a>Valeur HttpResponseMessage
+## <a name="httpresponsemessage"></a>HttpResponseMessage
 
-Si l’action retourne un [HttpResponseMessage](https://msdn.microsoft.com/en-us/library/system.net.http.httpresponsemessage.aspx), API Web convertit la valeur de retour directement dans un message de réponse HTTP, en utilisant les propriétés de la **HttpResponseMessage** objet à remplir la réponse.
+Si l’action retourne un [HttpResponseMessage](https://msdn.microsoft.com/library/system.net.http.httpresponsemessage.aspx), API Web convertit la valeur de retour directement dans un message de réponse HTTP, en utilisant les propriétés de la **HttpResponseMessage** objet à remplir la réponse.
 
 Cette option vous donne un contrôle important sur le message de réponse. Par exemple, l’action du contrôleur suivant définit l’en-tête Cache-Control.
 
@@ -98,9 +98,9 @@ Réponse :
 
 [!code-console[Main](action-results/samples/sample9.cmd)]
 
-Plus souvent, vous utiliserez le **IHttpActionResult** implémentations définies dans le  **[System.Web.Http.Results](https://msdn.microsoft.com/en-us/library/system.web.http.results.aspx)**  espace de noms. Le **ApiController** classe définit des méthodes d’assistance qui retournent les résultats d’action intégrés.
+Plus souvent, vous utiliserez le **IHttpActionResult** implémentations définies dans le  **[System.Web.Http.Results](https://msdn.microsoft.com/library/system.web.http.results.aspx)**  espace de noms. Le **ApiController** classe définit des méthodes d’assistance qui retournent les résultats d’action intégrés.
 
-Dans l’exemple suivant, si la demande ne correspond pas à un ID de produit existant, le contrôleur appelle [ApiController.NotFound](https://msdn.microsoft.com/en-us/library/system.web.http.apicontroller.notfound.aspx) pour créer une réponse 404 (introuvable). Sinon, le contrôleur appelle [ApiController.OK](https://msdn.microsoft.com/en-us/library/dn314591.aspx), ce qui crée une réponse de 200 (OK) qui contient le produit.
+Dans l’exemple suivant, si la demande ne correspond pas à un ID de produit existant, le contrôleur appelle [ApiController.NotFound](https://msdn.microsoft.com/library/system.web.http.apicontroller.notfound.aspx) pour créer une réponse 404 (introuvable). Sinon, le contrôleur appelle [ApiController.OK](https://msdn.microsoft.com/library/dn314591.aspx), ce qui crée une réponse de 200 (OK) qui contient le produit.
 
 [!code-csharp[Main](action-results/samples/sample10.cs)]
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/servers/httpsys
-ms.openlocfilehash: 60301e1e3eb96f51e86ef9f8be61f5fd8a4c009c
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 6fc356d8ecc1b699269286f244000b493e48a2c5
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="httpsys-web-server-implementation-in-aspnet-core"></a>Implémentation du serveur web HTTP.sys dans ASP.NET Core
 
@@ -140,7 +140,7 @@ Dans Visual Studio, le profil de démarrage par défaut est pour IIS Express. Po
 
 ## <a name="preregister-url-prefixes-and-configure-ssl"></a>Préenregistrer des préfixes d’URL et de configurer le protocole SSL
 
-IIS et HTTP.sys s’appuient sur le pilote sous-jacent de mode noyau Http.Sys pour écouter les demandes et le traitement initiale. Dans IIS, l’interface utilisateur de gestion vous donne un moyen relativement facile à configurer tous les éléments. Toutefois, vous devez configurer Http.Sys vous-même. L’outil intégré permettant d’effectuer d’autres termes *netsh.exe*. 
+IIS et HTTP.sys s’appuient sur le pilote sous-jacent de mode noyau Http.Sys pour écouter les demandes et le traitement initiale. Dans IIS, l’interface utilisateur de gestion vous donne un moyen relativement facile à configurer tous les éléments. Toutefois, vous devez configurer Http.Sys vous-même. L’outil intégré pour cela de *netsh.exe*. 
 
 Avec *netsh.exe* vous pouvez réserver des préfixes d’URL et attribuer des certificats SSL. L’outil nécessite des privilèges d’administrateur.
 

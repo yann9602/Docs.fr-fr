@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-7
 msc.type: authoredcontent
-ms.openlocfilehash: 7697763b97e36304d686c77e8cedd060d630c530
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: aeea122636f5235364e6a40cb6e041b1fe221317
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-7"></a>Mise en route avec base de données Entity Framework 4.0 tout d’abord et 4 les Web Forms ASP.NET - partie 7
 ====================
@@ -75,7 +75,7 @@ Pour créer une procédure stockée qui lit plutôt que mises à jour des donné
 
 Les procédures stockées sont maintenant définies dans la base de données, mais ils doivent être ajoutés au modèle de données pour les rendre disponibles pour Entity Framework. Ouvrez *SchoolModel.edmx*, cliquez sur l’aire de conception, puis sélectionnez **modèle de mise à jour à partir de la base de données**. Dans le **ajouter** onglet de la **choisir vos objets de base de données** boîte de dialogue, développez **de procédures stockées**, sélectionnez les procédures stockées qui vient d’être créés et le `DeletePerson` procédure stockée, puis cliquez sur **Terminer**.
 
-[![Image20](the-entity-framework-and-aspnet-getting-started-part-7/_static/image6.png)](the-entity-framework-and-aspnet-getting-started-part-7/_static/image5.png)
+[![image20](the-entity-framework-and-aspnet-getting-started-part-7/_static/image6.png)](the-entity-framework-and-aspnet-getting-started-part-7/_static/image5.png)
 
 ## <a name="mapping-the-stored-procedures"></a>Les procédures stockées de mappage
 
@@ -85,7 +85,7 @@ Dans le Concepteur de modèle de données, cliquez sur le `Student` entité et s
 
 Le **détails de mappage** fenêtre s’affiche, dans laquelle vous pouvez spécifier des procédures stockées que Entity Framework doit utiliser pour l’insertion, mise à jour et suppression d’entités de ce type.
 
-[![Image22](the-entity-framework-and-aspnet-getting-started-part-7/_static/image10.png)](the-entity-framework-and-aspnet-getting-started-part-7/_static/image9.png)
+[![image22](the-entity-framework-and-aspnet-getting-started-part-7/_static/image10.png)](the-entity-framework-and-aspnet-getting-started-part-7/_static/image9.png)
 
 Définir le **insérer** à fonction **InsertStudent**. La fenêtre affiche une liste de paramètres de procédure stockée, chacun d’eux doit être mappée à une propriété d’entité. Deux d'entre elles sont mappées automatiquement, car les noms sont identiques. Il n’existe aucune propriété d’entité nommée `FirstName`, donc vous devez sélectionner manuellement `FirstMidName` dans la liste déroulante qui affiche les propriétés de l’entité disponible. (C’est parce que vous avez modifié le nom de la `FirstName` propriété `FirstMidName` dans le premier didacticiel.)
 
@@ -93,7 +93,7 @@ Définir le **insérer** à fonction **InsertStudent**. La fenêtre affiche une 
 
 Dans le même **détails de mappage** fenêtre, mappez le `Update` à fonction le `UpdateStudent` procédure stockée (veillez à spécifier `FirstMidName` comme valeur du paramètre `FirstName`, comme vous l’avez fait le `Insert` procédure stockée) et le `Delete` à fonction le `DeletePerson` procédure stockée.
 
-[![Image01](the-entity-framework-and-aspnet-getting-started-part-7/_static/image14.png)](the-entity-framework-and-aspnet-getting-started-part-7/_static/image13.png)
+[![image01](the-entity-framework-and-aspnet-getting-started-part-7/_static/image14.png)](the-entity-framework-and-aspnet-getting-started-part-7/_static/image13.png)
 
 Suivez la même procédure pour mapper l’insert, update et delete des procédures stockées pour les formateurs à la `Instructor` entité.
 
@@ -135,7 +135,7 @@ Remplacez ceci par le code suivant :
 
 La page utilise désormais la `GetCourses` procédure stockée pour récupérer la liste de tous les cours. Exécutez la page pour vérifier qu’elle fonctionne comme auparavant.
 
-(Les propriétés de navigation d’entités récupérées par une procédure stockée ne peuvent pas être remplies automatiquement avec les données liées à ces entités, en fonction de `ObjectContext` paramètres par défaut. Pour plus d’informations, consultez [le chargement des objets connexes](https://msdn.microsoft.com/en-us/library/bb896272.aspx) dans MSDN Library.)
+(Les propriétés de navigation d’entités récupérées par une procédure stockée ne peuvent pas être remplies automatiquement avec les données liées à ces entités, en fonction de `ObjectContext` paramètres par défaut. Pour plus d’informations, consultez [le chargement des objets connexes](https://msdn.microsoft.com/library/bb896272.aspx) dans MSDN Library.)
 
 Dans l’étape suivante du didacticiel, vous allez apprendre à utiliser les fonctionnalités Dynamic Data pour faciliter le test de données mise en forme et la validation de règles de programme et. Au lieu de spécifier les règles de chaque page web telles que des chaînes de format de données et indique si un champ est obligatoire, vous pouvez spécifier des règles de ce type dans les métadonnées de modèle de données et elles sont appliquées automatiquement sur chaque page.
 

@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/update-related-data
-ms.openlocfilehash: 817bfd48dce94e7dbad96cb6f822494e3adfae1d
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 236589d0202a7f30f1e1a9d69902000fd9a2dd71
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="updating-related-data---ef-core-razor-pages-7-of-8"></a>Mise à jour des données connexes - Pages Razor de noyaux EF (7 sur 8)
 
@@ -103,7 +103,7 @@ Tester le code mis à jour. Créer, modifier et supprimer un cours.
 
 ## <a name="add-asnotracking-to-the-details-and-delete-page-models"></a>Ajouter AsNoTracking les détails et supprimer des modèles de page
 
-[AsNoTracking](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.entityframeworkqueryableextensions.asnotracking?view=efcore-2.0#Microsoft_EntityFrameworkCore_EntityFrameworkQueryableExtensions_AsNoTracking__1_System_Linq_IQueryable___0__) peut améliorer les performances lorsque le suivi n’est pas obligatoire. Ajouter `AsNoTracking` au modèle de page de suppression et de détails. Le code suivant montre le modèle mis à jour de la page Supprimer :
+[AsNoTracking](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.entityframeworkqueryableextensions.asnotracking?view=efcore-2.0#Microsoft_EntityFrameworkCore_EntityFrameworkQueryableExtensions_AsNoTracking__1_System_Linq_IQueryable___0__) peut améliorer les performances lorsque le suivi n’est pas nécessaire. Ajouter `AsNoTracking` au modèle de page de suppression et de détails. Le code suivant montre le modèle mis à jour de la page Supprimer :
 
 [!code-csharp[Main](intro/samples/cu/Pages/Courses/Delete.cshtml.cs?name=snippet&highlight=21,23,40,41)]
 
@@ -164,7 +164,7 @@ Instructeurs enseigner à n’importe quel nombre de cours. Dans cette section, 
 Cases à cocher Activer les modifications aux cours à que formateur est assigné. Une case à cocher s’affiche pour chaque cours dans la base de données. Cours auquel appartient le formateur sont vérifiées. L’utilisateur peut sélectionner ou désactivez les cases à cocher pour modifier les affectations de cours. Si le nombre de cours ont été nettement supérieur :
 
 * Vous devrez sans doute utiliser une interface utilisateur différente pour afficher les cours.
-* La méthode de manipulation d’une entité de jointure pour créer ou supprimer des relations ne modifie pas.
+* La méthode de manipulation d’une entité de jointure pour créer ou supprimer des relations ne changera.
 
 ### <a name="add-classes-to-support-create-and-edit-instructor-pages"></a>Ajouter des classes pour prendre en charge créer et modifier des pages de formateur
 

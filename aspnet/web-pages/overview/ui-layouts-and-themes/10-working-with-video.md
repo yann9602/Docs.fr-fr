@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/10-working-with-video
 msc.type: authoredcontent
-ms.openlocfilehash: 0e1849fb780908b55520d8108e2227d046759987
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a14659997d86d1b5cf5381e21e997c1a03a3f57c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="displaying-video-in-an-aspnet-web-pages-razor-site"></a>Affichant la vidéo dans un Site de Pages (Razor) Web ASP.NET
 ====================
@@ -118,7 +118,7 @@ Cette procédure vous montre comment lire une vidéo Flash nommée *sample.swf*.
     [!code-cshtml[Main](10-working-with-video/samples/sample2.cshtml)]
 4. Exécutez la page dans un navigateur. (Assurez-vous que la page est sélectionnée dans le **fichiers** espace de travail avant de l’exécuter.) La page s’affiche et la vidéo est lue automatiquement. 
 
-    ![[image] ] (10-working-with-video/_static/image1.jpg "ch08_video-1.jpg")
+    ![[image]](10-working-with-video/_static/image1.jpg "ch08_video-1.jpg")
 
 Vous pouvez définir le `quality` paramètre pour une vidéo Flash à `low`, `autolow`, `autohigh`, `medium`, `high`, et `best`:
 
@@ -148,7 +148,7 @@ La procédure suivante vous montre comment lire une vidéo de la fenêtre suppor
     [!code-cshtml[Main](10-working-with-video/samples/sample5.cshtml)]
 4. Exécutez la page dans un navigateur. La vidéo charge et lit automatiquement. 
 
-    ![[image] ] (10-working-with-video/_static/image2.jpg "ch08_video-2.jpg")
+    ![[image]](10-working-with-video/_static/image2.jpg "ch08_video-2.jpg")
 
 Vous pouvez définir `playCount` vers un entier qui indique combien de fois pour lire la vidéo automatiquement :
 
@@ -162,7 +162,7 @@ Par défaut, audio est activé lorsque la vidéo est lue. Vous pouvez désactive
 
 [!code-cshtml[Main](10-working-with-video/samples/sample8.cshtml)]
 
-Vous pouvez contrôler le niveau audio de la vidéo MediaPlayer en définissant le `volume` paramètre à une valeur comprise entre 0 et 100. La valeur par défaut est 50. Voici un exemple :
+Vous pouvez contrôler le niveau audio de la vidéo MediaPlayer en définissant le `volume` paramètre à une valeur comprise entre 0 et 100. La valeur par défaut est 50. Voici un exemple :
 
 [!code-cshtml[Main](10-working-with-video/samples/sample9.cshtml)]
 
@@ -178,14 +178,14 @@ Cette procédure vous montre comment lire une vidéo de contenu dans un Silverli
     [!code-cshtml[Main](10-working-with-video/samples/sample10.cshtml)]
 4. Exécutez la page dans un navigateur. 
 
-    ![[image] ] (10-working-with-video/_static/image3.jpg "ch08_video-3.jpg")
+    ![[image]](10-working-with-video/_static/image3.jpg "ch08_video-3.jpg")
 
 <a id="Additional_Resources"></a>
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
 
-[Vue d’ensemble de Silverlight](https://msdn.microsoft.com/en-us/library/bb404700(VS.95).aspx)
+[Vue d’ensemble de Silverlight](https://msdn.microsoft.com/library/bb404700(VS.95).aspx)
 
 [Attributs de balise d’objet et incorporer un périphérique flash](http://kb2.adobe.com/cps/127/tn_12701.html)
 
-[Les balises PARAM de kit de développement logiciel Windows Media Player 11](https://msdn.microsoft.com/en-us/library/aa392321(VS.85).aspx)
+[Les balises PARAM de kit de développement logiciel Windows Media Player 11](https://msdn.microsoft.com/library/aa392321(VS.85).aspx)

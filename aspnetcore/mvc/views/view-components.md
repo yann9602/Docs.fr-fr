@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/view-components
-ms.openlocfilehash: 2d93dcee102009661af708b9a9066e8af0bdbb17
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 65074ca02a1365db278d348d4e024121a6eb4634
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="view-components"></a>Affichage des composants
 
@@ -60,7 +60,7 @@ Une classe de composant de vue :
 
 * Prend entièrement en charge le constructeur [injection de dépendance](../../fundamentals/dependency-injection.md)
 
-* Ne font pas partie du cycle de vie du contrôleur, ce qui signifie que vous ne pouvez pas utiliser [filtres](../controllers/filters.md) dans un composant de vue
+* Ne font partie du cycle de vie du contrôleur, ce qui signifie que vous ne pouvez pas utiliser [filtres](../controllers/filters.md) dans un composant de vue
 
 ### <a name="view-component-methods"></a>Afficher les méthodes de composant
 
@@ -130,7 +130,7 @@ Dans l’exemple ci-dessus, le `PriorityList` composant de vue devient `priority
 
 ### <a name="invoking-a-view-component-directly-from-a-controller"></a>Appel d’un composant de vue directement à partir d’un contrôleur
 
-Affichage des composants sont généralement appelées à partir d’une vue, mais vous pouvez les appeler directement à partir d’une méthode de contrôleur. Lors de l’affichage des composants ne définissent pas de points de terminaison tels que les contrôleurs, vous pouvez facilement implémenter une action du contrôleur qui retourne le contenu d’un `ViewComponentResult`.
+Affichage des composants sont généralement appelées à partir d’une vue, mais vous pouvez les appeler directement à partir d’une méthode de contrôleur. Alors que les composants de la vue ne définissent les points de terminaison tels que les contrôleurs, vous pouvez facilement implémenter une action du contrôleur qui retourne le contenu d’un `ViewComponentResult`.
 
 Dans cet exemple, le composant de vue est appelé directement à partir du contrôleur :
 
@@ -212,17 +212,17 @@ Exécutez l’application et vérifier l’affichage de PVC.
 
 ![Composant de vue de priorité](view-components/_static/pvc.png)
 
-Si la vue PVC n’est pas affichée, vérifiez que vous appelez le composant de vue avec une priorité de 4 ou version ultérieure.
+Si la vue de PVC n’est pas affichée, vérifiez que vous appelez le composant de vue avec une priorité de 4 ou version ultérieure.
 
 ### <a name="examine-the-view-path"></a>Examinez le chemin d’accès de la vue
 
-* Modifiez le paramètre de priorité inférieure ou égale à trois afin de la vue priority n’est pas renvoyée.
+* Modifiez le paramètre de priorité inférieure ou égale à trois afin de la vue priority n’est pas retournée.
 * Renommez temporairement le *Views/Todo/Components/PriorityList/Default.cshtml* à *1Default.cshtml*.
 * Tester l’application, vous obtiendrez l’erreur suivante :
 
    ```
    An unhandled exception occurred while processing the request.
-   InvalidOperationException: The view 'Components/PriorityList/Default' was not found. The following locations were searched:
+   InvalidOperationException: The view 'Components/PriorityList/Default' wasn't found. The following locations were searched:
    /Views/ToDo/Components/PriorityList/Default.cshtml
    /Views/Shared/Components/PriorityList/Default.cshtml
    EnsureSuccessful

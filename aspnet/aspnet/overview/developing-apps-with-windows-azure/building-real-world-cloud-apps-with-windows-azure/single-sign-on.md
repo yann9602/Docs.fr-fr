@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/single-sign-on
 msc.type: authoredcontent
-ms.openlocfilehash: f0d465b363652c691c203d608f2cb9d139e72fed
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b3640c94a8ae9ede330c0fe6a392acb5843cb65c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="single-sign-on-building-real-world-cloud-apps-with-azure"></a>Single Sign-On (génération d’applications Cloud du monde réel avec Azure)
 ====================
@@ -31,12 +31,12 @@ Il existe plusieurs problèmes de sécurité à considérer lorsque vous dévelo
 
 ## <a name="introduction-to-azure-ad"></a>Introduction à Azure AD
 
-[Azure AD](https://docs.microsoft.com/azure/active-directory/) fournit [Active Directory](https://msdn.microsoft.com/en-us/library/windows/desktop/aa746492.aspx) dans le cloud. Fonctionnalités clés sont les suivantes :
+[Azure AD](https://docs.microsoft.com/azure/active-directory/) fournit [Active Directory](https://msdn.microsoft.com/library/windows/desktop/aa746492.aspx) dans le cloud. Fonctionnalités clés sont les suivantes :
 
 - Il s’intègre à Active Directory local.
 - Il active l’authentification unique avec vos applications.
 - Il prend en charge des normes ouvertes telles que [SAML](http://en.wikipedia.org/wiki/SAML_2.0), [WS-Fed](http://en.wikipedia.org/wiki/WS-Federation), et [OAuth 2.0](http://oauth.net/2/).
-- Il prend en charge Enterprise [Graph API REST](https://msdn.microsoft.com/en-us/library/hh974476.aspx).
+- Il prend en charge Enterprise [Graph API REST](https://msdn.microsoft.com/library/hh974476.aspx).
 
 Supposons que vous avez un environnement Windows Server Active Directory local que vous utilisez pour permettre aux employés se connectent à des applications de l’Intranet :
 
@@ -64,7 +64,7 @@ Si votre entreprise est à l’aide d’ou en déplaçant dans Office 365, la bo
 
 ## <a name="set-up-an-azure-ad-tenant"></a>Configurer un locataire Azure AD
 
-un annuaire Azure AD est appelé une annonce Azure [client](https://technet.microsoft.com/en-us/library/jj573650.aspx), et la configuration d’un client est assez simple. Nous allons vous montrer comment procéder dans le portail de gestion Azure afin d’illustrer les concepts, mais bien entendu, comme les autres fonctions de portail vous pouvez également le faire à l’aide d’un script ou une API de gestion.
+un annuaire Azure AD est appelé une annonce Azure [client](https://technet.microsoft.com/library/jj573650.aspx), et la configuration d’un client est assez simple. Nous allons vous montrer comment procéder dans le portail de gestion Azure afin d’illustrer les concepts, mais bien entendu, comme les autres fonctions de portail vous pouvez également le faire à l’aide d’un script ou une API de gestion.
 
 Dans le portail de gestion, cliquez sur l’onglet Active Directory.
 
@@ -118,7 +118,7 @@ Cliquez sur **suivant**, puis indiquez si vous souhaitez stocker un hachage de v
 
 ![Assistant de configuration d’outil de synchronisation de WA AD](single-sign-on/_static/image17.png)
 
-Le hachage de mot de passe que vous pouvez stocker dans le cloud est un hachage unidirectionnel ; les mots de passe réels ne sont jamais stockées dans Azure AD. Si vous décidez par rapport à la stocker les hachages dans le cloud, vous devrez utiliser [Active Directory Federation Services](https://technet.microsoft.com/en-us/library/hh831502.aspx) (ADFS). Il existe également [autres facteurs à prendre en compte lorsque choisir s’il faut ou non utiliser AD FS](https://technet.microsoft.com/en-us/library/jj573653.aspx). L’option ADFS nécessite quelques étapes de configuration supplémentaires.
+Le hachage de mot de passe que vous pouvez stocker dans le cloud est un hachage unidirectionnel ; les mots de passe réels ne sont jamais stockées dans Azure AD. Si vous décidez par rapport à la stocker les hachages dans le cloud, vous devrez utiliser [Active Directory Federation Services](https://technet.microsoft.com/library/hh831502.aspx) (ADFS). Il existe également [autres facteurs à prendre en compte lorsque choisir s’il faut ou non utiliser AD FS](https://technet.microsoft.com/library/jj573653.aspx). L’option ADFS nécessite quelques étapes de configuration supplémentaires.
 
 Si vous choisissez de stocker les hachages dans le cloud, vous avez terminé, l’outil démarre la synchronisation des annuaires lorsque vous cliquez sur **suivant**.
 
@@ -156,7 +156,7 @@ Sélectionnez les comptes de société, entrez votre nom de domaine, puis sélec
 
 ![Configurer la boîte de dialogue authentification](single-sign-on/_static/image24.png)
 
-Vous pouvez également donner à la lecture de l’application ou en lecture/écriture pour les données d’annuaire. Si vous procédez ainsi, il peut utiliser le [Azure Graph API REST](https://msdn.microsoft.com/en-us/library/windowsazure/hh974476.aspx) pour rechercher le numéro de téléphone des utilisateurs, savoir si elles ne sont au bureau, lorsque leur dernière ouverture de session, etc.
+Vous pouvez également donner à la lecture de l’application ou en lecture/écriture pour les données d’annuaire. Si vous procédez ainsi, il peut utiliser le [Azure Graph API REST](https://msdn.microsoft.com/library/windowsazure/hh974476.aspx) pour rechercher le numéro de téléphone des utilisateurs, savoir si elles ne sont au bureau, lorsque leur dernière ouverture de session, etc.
 
 C’est tout ce que vous avez à faire : Visual Studio vous demande les informations d’identification d’un administrateur pour votre locataire Azure AD, puis il configure votre projet et votre client Azure AD pour l’application.
 
@@ -172,7 +172,7 @@ Lorsque vous déployez l’application sur Azure, il vous est sélectionné un *
 
 Ces captures d’écran proviennent d’un didacticiel complet qui montre comment générer une application qui utilise l’authentification Azure AD : [développement des applications ASP.NET avec Azure Active Directory](../../../../identity/overview/getting-started/developing-aspnet-apps-with-windows-azure-active-directory.md).
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Dans ce chapitre vous a appris que Azure Active Directory, Visual Studio et ASP.NET, rendent facile à configurer l’authentification unique dans les applications Internet aux utilisateurs de votre organisation. Vos utilisateurs peuvent se connecter dans les applications Internet à l’aide de ces mêmes informations qu’ils utilisent pour se connecter à l’aide d’Active Directory dans votre réseau interne.
 
@@ -186,7 +186,7 @@ Pour plus d'informations, reportez-vous aux ressources suivantes :
 - [Documentation Azure Active Directory](https://docs.microsoft.com/azure/active-directory/). Page du portail pour la documentation d’Azure AD sur le site windowsazure.com. Pour consulter des didacticiels pas à pas, consultez le **développer** section.
 - [L’authentification multifacteur Azure](https://docs.microsoft.com/azure/multi-factor-authentication/). Page du portail pour plus d’informations sur l’authentification multifacteur dans Azure.
 - [Options d’authentification de compte de société](../../../../visual-studio/overview/2013/creating-web-projects-in-visual-studio.md#orgauthoptions). Explication des options d’authentification Azure AD dans la boîte de dialogue Nouveau projet Visual Studio 2013.
-- [Microsoft Patterns and Practices - de modèle d’identité fédérée](https://msdn.microsoft.com/en-us/library/dn589790.aspx).
+- [Microsoft Patterns and Practices - de modèle d’identité fédérée](https://msdn.microsoft.com/library/dn589790.aspx).
 - [Comment faire : Installer l’outil de synchronisation Azure Active Directory](https://social.technet.microsoft.com/wiki/contents/articles/19098.howto-install-the-windows-azure-active-directory-sync-tool-now-with-pictures.aspx).
 - [Active Directory Federation Services 2.0 Content Map](https://social.technet.microsoft.com/wiki/contents/articles/2735.ad-fs-2-0-content-map.aspx). Liens vers la documentation sur AD FS 2.0.
 - [Autorisation basée sur les rôles et de listes ACL dans une Application Windows Azure AD](https://code.msdn.microsoft.com/Role-Based-and-ACL-Based-86ad71a1). Exemple d’application.

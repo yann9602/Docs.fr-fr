@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/accessing-your-models-data-from-a-controller
 msc.type: authoredcontent
-ms.openlocfilehash: cfae339ff2af1b71f7f46b6fd567456256660f8c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5ee29dbc5b4566273592041d94458104e6e0f65e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="accessing-your-models-data-from-a-controller-c"></a>L’accès aux données de votre modèle à partir d’un contrôleur (c#)
 ====================
@@ -92,7 +92,7 @@ Plus haut dans ce didacticiel, vous avez vu comment un contrôleur peut passer d
 
 ASP.NET MVC offre également la possibilité de passer fortement typée des données ou des objets à un modèle d’affichage. Cela fortement typées approche permet une meilleure compilation la vérification de votre code et le plus riche IntelliSense dans l’éditeur de Visual Web Developer. Nous utilisons cette approche avec la `MoviesController` classe et *Index.cshtml* afficher le modèle.
 
-Notez comment le code crée un [ `List` ](https://msdn.microsoft.com/en-us/library/6sh2ey19.aspx) de l’objet lorsqu’il appelle le `View` méthode d’assistance dans le `Index` méthode d’action. Le code transmet ensuite `Movies` liste à partir du contrôleur à la vue :
+Notez comment le code crée un [ `List` ](https://msdn.microsoft.com/library/6sh2ey19.aspx) de l’objet lorsqu’il appelle le `View` méthode d’assistance dans le `Index` méthode d’action. Le code transmet ensuite `Movies` liste à partir du contrôleur à la vue :
 
 [!code-csharp[Main](accessing-your-models-data-from-a-controller/samples/sample3.cs)]
 

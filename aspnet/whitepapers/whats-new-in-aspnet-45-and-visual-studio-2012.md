@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/whats-new-in-aspnet-45-and-visual-studio-2012
 msc.type: content
-ms.openlocfilehash: 93fdc7ca241198dc1d7c4c1f6be0a61b15790039
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4487eb7436c0b6241505f41621a7f31b89c38b28
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="whats-new-in-aspnet-45-and-visual-studio-2012"></a>Nouveautés de ASP.NET 4.5 et Visual Studio 2012
 ====================
@@ -36,7 +36,7 @@ ms.lasthandoff: 11/10/2017
     - [Prise en charge pour les demandes non validées](#_Toc318097381)
     - [Bibliothèque AntiXSS](#_Toc318097382)
     - [Prise en charge pour le protocole WebSocket](#_Toc318097383)
-    - [Groupement et minimisation](#_Toc318097384)
+    - [Bundles et minimisation](#_Toc318097384)
     - [Améliorations des performances pour l’hébergement Web](#_Toc_perf)
 
         - [Facteurs de performances clés](#_Toc_perf_1)
@@ -74,13 +74,13 @@ ms.lasthandoff: 11/10/2017
         - [Génération de gestionnaire d’événements](#_Toc318097404)
         - [Mise en retrait intelligente](#_Toc318097405)
         - [Réduire automatiquement la saisie semi-automatique des instructions](#_Toc318097406)
-    - [Éditeur JavaScript](#_Toc318097407)
+    - [JavaScript Editor](#_Toc318097407)
 
         - [Mise en relief du code](#_Toc318097408)
         - [Accolades correspondantes](#_Toc318097409)
         - [Atteindre la définition](#_Toc318097410)
         - [Prise en charge ECMAScript5](#_Toc318097411)
-        - [IntelliSense de DOM](#_Toc318097412)
+        - [DOM IntelliSense](#_Toc318097412)
         - [Surcharges de signature VSDOC](#_Toc318097413)
         - [Références implicites](#_Toc318097414)
     - [Éditeur CSS](#_Toc318097415)
@@ -231,7 +231,7 @@ Un navigateur client établit une connexion WebSocket en créant un modèle DOM 
 
 Vous pouvez créer des points de terminaison WebSocket dans ASP.NET à l’aide de n’importe quel type de module ou gestionnaire. Dans l’exemple précédent, un fichier .ashx a été utilisé, car les fichiers .ashx sont un moyen rapide pour créer un gestionnaire.
 
-Selon le protocole WebSocket, une application ASP.NET accepte une demande du client WebSocket en indiquant que la demande doit être mis à niveau à partir d’une requête HTTP GET à une demande WebSocket. Voici un exemple :
+Selon le protocole WebSocket, une application ASP.NET accepte une demande du client WebSocket en indiquant que la demande doit être mis à niveau à partir d’une requête HTTP GET à une demande WebSocket. Voici un exemple :
 
 [!code-csharp[Main](whats-new-in-aspnet-45-and-visual-studio-2012/samples/sample9.cs)]
 
@@ -266,19 +266,19 @@ En outre, vous pouvez définir l’activation ou la désactivation de l’optimi
 
 Lorsque les fichiers sont regroupés, ils sont d’abord triés par ordre alphabétique (la façon qu’ils sont affichés dans **l’Explorateur de solutions**). Ils sont ensuite classées afin que connu des bibliothèques et leurs extensions personnalisées (par exemple, jQuery, MooTools et Dojo) sont chargées en premier. Par exemple, la commande finale pour le regroupement du dossier Scripts comme indiqué ci-dessus sera :
 
-1. jQuery-1.6.2.js
-2. jQuery-ui.js
-3. jQuery.Tools.js
+1. jquery-1.6.2.js
+2. jquery-ui.js
+3. jquery.tools.js
 4. a.js
 
 Fichiers CSS sont également triés par ordre alphabétique et puis remaniés reset.css et normalize.css précèdent n’importe quel autre fichier. L’ordre de tri finale de d’empaqueter le dossier Styles ci-dessus sera alors :
 
-1. Reset.CSS
-2. Content.CSS
-3. Forms.CSS
-4. Globals.CSS
-5. menu.CSS
-6. styles.CSS
+1. reset.css
+2. content.css
+3. forms.css
+4. globals.css
+5. menu.css
+6. styles.css
 
 <a id="_Toc_perf"></a>
 ### <a name="performance-improvements-for-web-hosting"></a>Améliorations des performances pour l’hébergement Web
@@ -330,7 +330,7 @@ Pour afficher toutes les options, exécutez l’outil sans argument.
 
 **Spécification**: .NET Framework 4.5
 
-Pour un démarrage à froid de site, non seulement font assemblys doivent être lues à partir du disque, mais le site doit être compilé par JIT. Pour un site complex, cette opération peut ajouter des délais significatifs. Une nouvelle technique à usage général dans le .NET Framework 4.5 permet de réduire ces délais en répartissant de compilation JIT sur les cœurs de processeurs disponibles. Pour cela, autant et aussi tôt que possible en utilisant les informations collectées au cours de précédente lance du site. Cette fonctionnalité implémentée par le [System.Runtime.ProfileOptimization.StartProfile](https://msdn.microsoft.com/en-us/library/system.runtime.profileoptimization.startprofile(VS.110).aspx) (méthode).
+Pour un démarrage à froid de site, non seulement font assemblys doivent être lues à partir du disque, mais le site doit être compilé par JIT. Pour un site complex, cette opération peut ajouter des délais significatifs. Une nouvelle technique à usage général dans le .NET Framework 4.5 permet de réduire ces délais en répartissant de compilation JIT sur les cœurs de processeurs disponibles. Pour cela, autant et aussi tôt que possible en utilisant les informations collectées au cours de précédente lance du site. Cette fonctionnalité implémentée par le [System.Runtime.ProfileOptimization.StartProfile](https://msdn.microsoft.com/library/system.runtime.profileoptimization.startprofile(VS.110).aspx) (méthode).
 
 À l’aide de plusieurs cœurs de la compilation JIT est activée par défaut dans ASP.NET, vous n’avez pas besoin de faire quelque chose pour tirer parti de cette fonctionnalité. Si vous souhaitez désactiver cette fonctionnalité, vérifiez le paramètre suivant dans le fichier Web.config :
 
@@ -743,7 +743,7 @@ La commande de la définition d’atteindre vous permet d’accéder à la sourc
 L’éditeur prend en charge les API et la nouvelle syntaxe ECMAScript5, la dernière version de la norme qui décrit le langage JavaScript.
 
 <a id="_Toc318097412"></a>
-#### <a name="dom-intellisense"></a>IntelliSense de DOM
+#### <a name="dom-intellisense"></a>DOM IntelliSense
 
 IntelliSense pour les API DOM a été améliorée, avec prise en charge de nombreuses nouvelles API de HTML5, y compris *querySelector*, stockage DOM, messagerie, la messagerie entre documents et *canevas*. DOM IntelliSense est maintenant piloté par un seul fichier JavaScript simple, plutôt que par une définition de bibliothèque de type natif. Cela vous permet de facilement étendre ou remplacer.
 
@@ -902,15 +902,15 @@ Le serveur web par défaut pour les projets de test web dans Visual Studio est d
 <a id="_Toc318097429"></a>
 ## <a name="disclaimer"></a>Exclusion de responsabilité
 
-Ce document est une version préliminaire et peut être modifié substantiellement avant le lancement de la version commerciale finale du logiciel qu'il décrit.
+Ce document est une version préliminaire et peut être modifié substantiellement avant le lancement de la mise en production commerciale finale du logiciel qu’il décrit.
 
-Les informations contenues dans ce document correspondent à la connaissance que Microsoft Corporation possède des problèmes abordés à la date de la publication. Microsoft devant répondre à des conditions de marché qui évoluent, ce document ne doit pas être considéré comme un engagement de sa part, et Microsoft ne peut pas garantir l'exactitude des informations présentées à la date de la publication.
+Les informations contenues dans ce document correspondent à la connaissance que Microsoft Corporation possède des problèmes abordés à la date de la publication. Microsoft devant répondre à des conditions de marché qui évoluent, ce document ne doit pas être considéré comme un engagement de sa part, et Microsoft ne peut pas garantir l’exactitude des informations présentées à la date de la publication.
 
 Ce livre blanc est fourni à titre d'information uniquement. MICROSOFT NE FOURNIT AUCUNE GARANTIE, EXPRESSE, IMPLICITE OU LÉGALE, QUANT AUX INFORMATIONS CONTENUES DANS CE DOCUMENT.
 
 L'utilisateur est tenu d'observer la réglementation relative aux droits d'auteur applicable dans son pays. Aucune partie de ce document ne peut être reproduite, stockée ou introduite dans un système de restitution, ou transmise à quelque fin ou par quelque moyen que ce soit (électronique, mécanique, photocopie, enregistrement ou autre) sans la permission expresse et écrite de Microsoft Corporation.
 
-Microsoft peut détenir des brevets, avoir déposé des demandes d'enregistrement de brevets ou être titulaire de marques, droits d'auteur ou autres droits de propriété intellectuelle portant sur tout ou partie des éléments qui font l'objet du présent document. Sauf stipulation expresse contraire d'un contrat de licence écrit de Microsoft, la fourniture de ce document n'a pas pour effet de vous concéder une licence sur ces brevets, marques, droits d'auteur ou autres droits de propriété intellectuelle.
+Microsoft peut détenir des brevets, avoir déposé des demandes d’enregistrement de brevets ou être titulaire de marques, droits d’auteur ou autres droits de propriété intellectuelle portant sur tout ou partie des éléments qui font l’objet du présent document. Sauf stipulation expresse contraire d’un contrat de licence écrit de Microsoft, la fourniture de ce document n’a pas pour effet de vous concéder une licence sur ces brevets, marques, droits d’auteur ou autres droits de propriété intellectuelle.
 
 Sauf mention contraire, les noms de sociétés, d'organisations, de produits et de domaines, les adresses de messagerie, les logos, et les noms de personnes et de lieux, ou les événements utilisés dans les exemples, sont fictifs et toute ressemblance avec des noms ou des événements réels est purement fortuite et involontaire.
 

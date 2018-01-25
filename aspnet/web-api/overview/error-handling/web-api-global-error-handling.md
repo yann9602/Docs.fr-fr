@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/error-handling/web-api-global-error-handling
 msc.type: authoredcontent
-ms.openlocfilehash: d2bdf04b4da2a099f3a2af100b16682c68f946f2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c593c56ba3d0ee8ebf6dc425408d2c3b91c83f93
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="global-error-handling-in-aspnet-web-api-2"></a>Global Gestion des erreurs dans ASP.NET Web API 2
 ====================
@@ -46,7 +46,7 @@ En plus de [filtres d’exception](exception-handling.md), [gestionnaires de mes
 1. Nous prenons en charge l’inscription de plusieurs enregistreurs d’événements exception, mais uniquement un seul gestionnaire d’exceptions.
 2. Enregistreurs d’événements exception toujours appelées, même si nous sommes sur le point d’abandonner la connexion. Gestionnaires d’exceptions appelés uniquement lorsque nous sommes toujours en mesure de choisir le message de réponse à envoyer.
 
-Les deux services offrent un accès à un contexte d’exception qui contient des informations pertinentes à partir du point où l’exception a été détectée, en particulier le [HttpRequestMessage](https://msdn.microsoft.com/en-us/library/system.net.http.httprequestmessage(v=vs.110).aspx), le [HttpRequestContext](https://msdn.microsoft.com/en-us/library/system.web.http.controllers.httprequestcontext(v=vs.118).aspx), la levée d’exception et la source de l’exception (détails ci-dessous).
+Les deux services offrent un accès à un contexte d’exception qui contient des informations pertinentes à partir du point où l’exception a été détectée, en particulier le [HttpRequestMessage](https://msdn.microsoft.com/library/system.net.http.httprequestmessage(v=vs.110).aspx), le [HttpRequestContext](https://msdn.microsoft.com/library/system.web.http.controllers.httprequestcontext(v=vs.118).aspx), la levée d’exception et la source de l’exception (détails ci-dessous).
 
 ### <a name="design-principles"></a>Principes de conception
 
@@ -97,7 +97,7 @@ Dans supplémentaires pour le `ExceptionContext`, un gestionnaire obtient une se
 
 [!code-csharp[Main](web-api-global-error-handling/samples/sample5.cs)]
 
-Un gestionnaire d’exception indique qu’il a géré une exception en définissant le `Result` propriété à un résultat d’action (par exemple, un [ExceptionResult](https://msdn.microsoft.com/en-us/library/system.web.http.results.exceptionresult(v=vs.118).aspx), [InternalServerErrorResult](https://msdn.microsoft.com/en-us/library/system.web.http.results.internalservererrorresult(v=vs.118).aspx), [ StatusCodeResult](https://msdn.microsoft.com/en-us/library/system.web.http.results.statuscoderesult(v=vs.118).aspx), ou un résultat personnalisé). Si le `Result` propriété a la valeur null, l’exception n’est pas gérée et l’exception d’origine sera levée de nouveau.
+Un gestionnaire d’exception indique qu’il a géré une exception en définissant le `Result` propriété à un résultat d’action (par exemple, un [ExceptionResult](https://msdn.microsoft.com/library/system.web.http.results.exceptionresult(v=vs.118).aspx), [InternalServerErrorResult](https://msdn.microsoft.com/library/system.web.http.results.internalservererrorresult(v=vs.118).aspx), [ StatusCodeResult](https://msdn.microsoft.com/library/system.web.http.results.statuscoderesult(v=vs.118).aspx), ou un résultat personnalisé). Si le `Result` propriété a la valeur null, l’exception n’est pas gérée et l’exception d’origine sera levée de nouveau.
 
 Pour les exceptions en haut de la pile des appels, nous avons effectué une étape supplémentaire pour garantir que la réponse est appropriée pour les appelants de l’API. Si l’exception se propage jusqu'à l’ordinateur hôte, l’appelant verriez l’écran jaune de décès ou un autre hôte fourni de réponse qui est en général, HTML et sont généralement pas une réponse d’erreur API appropriée. Dans ce cas, le démarrage de résultat non null, et uniquement si un gestionnaire d’exceptions personnalisé définit de manière explicite jusqu'à `null` (non gérées) sera l’exception se propager à l’ordinateur hôte. Paramètre `Result` à `null` dans ce cas, peut être utile pour deux scénarios :
 

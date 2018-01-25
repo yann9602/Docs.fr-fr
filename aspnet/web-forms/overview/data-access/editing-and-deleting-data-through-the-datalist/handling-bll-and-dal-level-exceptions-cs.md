@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/handling-bll-and-dal-level-exceptions-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 659976d40f6109422f222d794b54d837faeb0764
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 284f3bebcd07c9cc70b3a7d645f353f5797889a7
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="handling-bll--and-dal-level-exceptions-c"></a>La gestion des Exceptions de niveau BLL et DAL (c#)
 ====================
@@ -101,7 +101,7 @@ Lorsqu’une erreur se produit, nous voulons uniquement l’étiquette à affich
 
 Lorsqu’une exception est levée, vous devez entrer les détails de l’exception pour le `ExceptionDetails` Label, contrôle s `Text` propriété. Étant donné que son état d’affichage est désactivé, sur les publications ultérieures le `Text` les modifications par programme la propriété s seront perdues, revenez au texte par défaut (une chaîne vide), masquant ainsi le message d’avertissement.
 
-Pour déterminer lorsqu’une erreur a été levée pour afficher un message utile sur la page, nous devons ajouter une `Try ... Catch` bloquer à le `UpdateCommand` Gestionnaire d’événements. Le `Try` partie contient du code qui peut provoquer une exception, tandis que le `Catch` bloc contient du code qui est exécuté en cas d’une exception. Extraire le [notions de base la gestion des exceptions](https://msdn.microsoft.com/en-us/library/2w8f0bss.aspx) section dans la documentation .NET Framework pour plus d’informations sur la `Try ... Catch` bloc.
+Pour déterminer lorsqu’une erreur a été levée pour afficher un message utile sur la page, nous devons ajouter une `Try ... Catch` bloquer à le `UpdateCommand` Gestionnaire d’événements. Le `Try` partie contient du code qui peut provoquer une exception, tandis que le `Catch` bloc contient du code qui est exécuté en cas d’une exception. Extraire le [notions de base la gestion des exceptions](https://msdn.microsoft.com/library/2w8f0bss.aspx) section dans la documentation .NET Framework pour plus d’informations sur la `Try ... Catch` bloc.
 
 
 [!code-csharp[Main](handling-bll-and-dal-level-exceptions-cs/samples/sample5.cs)]
@@ -128,7 +128,7 @@ Avec la `Try ... Catch` bloquer en place, les utilisateurs sont présentées ave
 **Figure 5**: un Message d’erreur est affiché quand un prix négatif entrant ([cliquez pour afficher l’image en taille réelle](handling-bll-and-dal-level-exceptions-cs/_static/image13.png))
 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Le GridView et ObjectDataSource fournissent des gestionnaires d’événements post-niveau qui incluent des informations sur les exceptions qui ont été générées pendant le flux de travail de mise à jour et suppression, ainsi que les propriétés qui peuvent être définies pour indiquer si l’exception a été géré. Ces fonctionnalités, toutefois, ne sont pas disponibles lorsque utilisez du contrôle DataList et à l’aide de la couche BLL directement. Au lieu de cela, nous sommes responsables de l’implémentation de la gestion des exceptions.
 
@@ -142,7 +142,7 @@ Bonne programmation !
 
 Pour plus d’informations sur les sujets abordés dans ce didacticiel, consultez les ressources suivantes :
 
-- [Règles de conception pour les Exceptions](https://msdn.microsoft.com/en-us/library/ms298399.aspx)
+- [Instructions de conception pour les exceptions](https://msdn.microsoft.com/library/ms298399.aspx)
 - [Modules de journalisation de l’erreur et les gestionnaires (ELMAH)](http://workspaces.gotdotnet.com/elmah) (une bibliothèque open source pour la journalisation des erreurs)
 - [Enterprise Library pour .NET Framework 2.0](https://www.microsoft.com/downloads/details.aspx?familyid=5A14E870-406B-4F2A-B723-97BA84AE80B5&amp;displaylang=en) (y compris le bloc d’Application de gestion des exceptions)
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/older-versions/self-host-a-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: b308ee9ec209ba8bbb021827655c83443dd149e6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 564f859e73a88ac9c5f27e9b8f7409ec126642f8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="self-host-aspnet-web-api-1-c"></a>Auto-hébergement ASP.NET Web API 1 (c#)
 ====================
@@ -43,7 +43,7 @@ Dans le **modèles** volet, sélectionnez **modèles installés** et développez
 
 ## <a name="set-the-target-framework-visual-studio-2010"></a>Définir le Framework cible (Visual Studio 2010)
 
-Si vous utilisez Visual Studio 2010, modifier le framework cible pour le .NET Framework 4.0. (Par défaut, le modèle de projet cible le [du profil .net Framework Client](https://msdn.microsoft.com/en-us/library/cc656912.aspx#features_not_included_in_the_net_framework_client_profile).)
+Si vous utilisez Visual Studio 2010, modifier le framework cible pour le .NET Framework 4.0. (Par défaut, le modèle de projet cible le [du profil .net Framework Client](https://msdn.microsoft.com/library/cc656912.aspx#features_not_included_in_the_net_framework_client_profile).)
 
 Dans l’Explorateur de solutions, cliquez sur le projet et sélectionnez **propriétés**. Dans le **framework cible** déroulante liste, de modifier le framework cible pour le .NET Framework 4.0. Lorsque vous êtes invité à appliquer la modification, cliquez sur **Oui**.
 
@@ -101,8 +101,8 @@ Pour plus d’informations sur le code de ce contrôleur, consultez le [mise en 
 | URI | Description |
 | --- | --- |
 | produits/api / | Obtenir une liste de tous les produits. |
-| /API/produits/*id* | Obtenir un produit par ID. |
-| / API/produits / ? catégorie =*catégorie* | Obtenir une liste de produits par catégorie. |
+| /api/products/*id* | Obtenir un produit par ID. |
+| /api/products/?category=*category* | Obtenir une liste de produits par catégorie. |
 
 ## <a name="host-the-web-api"></a>Hôte de l’API Web
 

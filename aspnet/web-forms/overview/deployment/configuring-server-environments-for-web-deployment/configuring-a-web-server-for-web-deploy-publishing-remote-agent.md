@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-remote-agent
 msc.type: authoredcontent
-ms.openlocfilehash: 61e357198ffa4e93d35b7fa4619270da630547c6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 23195949121cd13ca4b1809b8db91a7320d1fdd2
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="configuring-a-web-server-for-web-deploy-publishing-remote-agent"></a>Configuration d’un serveur Web pour la publication (Agent distant) de déploiement Web
 ====================
@@ -65,7 +65,7 @@ Cette rubrique vous indique comment effectuer chacune de ces procédures. Les t�
 - Le serveur a une adresse IP statique.
 
 > [!NOTE]
-> Pour plus d’informations sur la jonction des ordinateurs à un domaine, consultez [jonction au domaine et ouverture d’une session](https://technet.microsoft.com/en-us/library/cc725618(v=WS.10).aspx). Pour plus d’informations sur la configuration des adresses IP statiques, consultez [configurer une adresse IP statique](https://technet.microsoft.com/en-us/library/cc754203(v=ws.10).aspx). Le service de l’Agent distant pris en charge par IIS 6 et versions ultérieures et ne nécessite pas d’être joints à un domaine. Toutefois, les étapes décrites dans ce didacticiel ont été développés et testés sur IIS 7.5 et procédures pour d’autres versions peuvent varier.
+> Pour plus d’informations sur la jonction des ordinateurs à un domaine, consultez [jonction au domaine et ouverture d’une session](https://technet.microsoft.com/library/cc725618(v=WS.10).aspx). Pour plus d’informations sur la configuration des adresses IP statiques, consultez [configurer une adresse IP statique](https://technet.microsoft.com/library/cc754203(v=ws.10).aspx). Le service de l’Agent distant pris en charge par IIS 6 et versions ultérieures et ne nécessite pas d’être joints à un domaine. Toutefois, les étapes décrites dans ce didacticiel ont été développés et testés sur IIS 7.5 et procédures pour d’autres versions peuvent varier.
 
 
 ## <a name="install-products-and-components"></a>Installer les produits et composants
@@ -108,7 +108,7 @@ Dans ce cas, vous devez installer les opérations suivantes :
 11. Passez en revue les termes du contrat de licence et si vous acceptez les termes du contrat, cliquez sur **J’accepte**.
 12. Une fois l’installation terminée, cliquez sur **Terminer**, puis fermez le **Web Platform Installer 3.0** fenêtre.
 
-Si vous avez installé le .NET Framework 4.0 avant d’installer IIS, vous devez exécuter le [outil ASP.NET IIS Registration](https://msdn.microsoft.com/en-us/library/k6h9cz8h(v=VS.100).aspx) (aspnet\_regiis.exe) pour inscrire la dernière version de ASP.NET avec IIS. Si vous ne le faites pas, vous trouverez que IIS sera contenu statique (comme les fichiers HTML) sans problème, mais elle retournera **404.0 d’erreur HTTP – introuvable** lorsque vous tentez d’accéder au contenu ASP.NET. Vous pouvez utiliser cette procédure pour vous assurer qu’ASP.NET 4.0 est enregistré.
+Si vous avez installé le .NET Framework 4.0 avant d’installer IIS, vous devez exécuter le [outil ASP.NET IIS Registration](https://msdn.microsoft.com/library/k6h9cz8h(v=VS.100).aspx) (aspnet\_regiis.exe) pour inscrire la dernière version de ASP.NET avec IIS. Si vous ne le faites pas, vous trouverez que IIS sera contenu statique (comme les fichiers HTML) sans problème, mais elle retournera **404.0 d’erreur HTTP – introuvable** lorsque vous tentez d’accéder au contenu ASP.NET. Vous pouvez utiliser cette procédure pour vous assurer qu’ASP.NET 4.0 est enregistré.
 
 **Pour inscrire ASP.NET 4.0 avec IIS**
 
@@ -154,7 +154,7 @@ Bien que rien ne vous empêche de déploiement de contenu au site Web par défau
     ![](configuring-a-web-server-for-web-deploy-publishing-remote-agent/_static/image4.png)
 
     > [!NOTE]
-    > Dans un environnement de production, vous souhaiterez probablement héberger votre site Web sur le port 80 et de configurer un en-tête d’hôte, ainsi que les enregistrements DNS correspondants. Pour plus d’informations sur la configuration des en-têtes d’hôtes dans IIS 7, consultez [configurer un en-tête d’hôte pour un Site Web (IIS 7)](https://technet.microsoft.com/en-us/library/cc753195(WS.10).aspx). Pour plus d’informations sur le rôle de serveur DNS dans Windows Server 2008 R2, consultez [vue d’ensemble du serveur DNS](https://technet.microsoft.com/en-gb/library/cc770392.aspx) et [serveur DNS](https://technet.microsoft.com/en-us/windowsserver/dd448607).
+    > Dans un environnement de production, vous souhaiterez probablement héberger votre site Web sur le port 80 et de configurer un en-tête d’hôte, ainsi que les enregistrements DNS correspondants. Pour plus d’informations sur la configuration des en-têtes d’hôtes dans IIS 7, consultez [configurer un en-tête d’hôte pour un Site Web (IIS 7)](https://technet.microsoft.com/library/cc753195(WS.10).aspx). Pour plus d’informations sur le rôle de serveur DNS dans Windows Server 2008 R2, consultez [vue d’ensemble du serveur DNS](https://technet.microsoft.com/en-gb/library/cc770392.aspx) et [serveur DNS](https://technet.microsoft.com/windowsserver/dd448607).
 9. Dans le volet **Actions** , sous **Modifier le Site**, cliquez sur **Liaisons**.
 10. Dans le **liaisons de Site** boîte de dialogue, cliquez sur **ajouter**.
 
@@ -198,8 +198,8 @@ L’approche la plus courante consiste à affecter des autorisations à l’ordi
 
     ![](configuring-a-web-server-for-web-deploy-publishing-remote-agent/_static/image8.png)
 5. Dans le **sélectionner des utilisateurs ou groupes** boîte de dialogue, tapez **IIS\_IUSRS**, cliquez sur **vérifier les noms**, puis cliquez sur **OK**.
-6. Dans le **autorisations pour***[nom du dossier]*boîte de dialogue, notez que le nouveau groupe a été affecté le **en lecture &amp; exécuter**, **liste du dossier contenu**, et **en lecture** autorisations par défaut. Laissez inchangée et cliquez sur **OK**.
-7. Cliquez sur **OK** pour fermer la *[nom du dossier]***propriétés** boîte de dialogue.
+6. Dans le **autorisations pour *** [nom du dossier]*boîte de dialogue, notez que le nouveau groupe a été affecté le **en lecture &amp; exécuter**, **répertorier le contenu du dossier**, et **En lecture** autorisations par défaut. Laissez inchangée et cliquez sur **OK**.
+7. Cliquez sur **OK** pour fermer la *[nom du dossier] *** propriétés** boîte de dialogue.
 
 En tant que dernière tâche avant de tenter de déployer des packages web à votre serveur, vous devez vous assurer que le Service de l’Agent de déploiement Web est en cours d’exécution. Lorsque vous déployez un package à partir d’un ordinateur distant, le Service de l’Agent de déploiement Web est chargé pour extraire et installer le contenu du package. Le service est démarré par défaut lorsque vous installez l’outil de déploiement Web et s’exécute sous l’identité Service réseau.
 

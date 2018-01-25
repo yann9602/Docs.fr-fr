@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2013/aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes
 msc.type: authoredcontent
-ms.openlocfilehash: d3a8183fecaf830b2ee1211acd56da86454b4437
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 0e7ad52662f7ceaa1f087d007d0b14b610f90bee
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-and-web-tools-20132--for-visual-studio-2013-release-notes"></a>ASP.NET et outils Web 2013.2 pour les Notes de publication Visual Studio 2013
 ====================
@@ -218,7 +218,7 @@ NuGet 2.8.1 que RTM sera publié en avril 2014. Voici les points importants dans
 - [Gestion des erreurs global](../../../web-api/overview/releases/whats-new-in-aspnet-web-api-21.md#global-error)
 - [Améliorations de routage d’attribut](../../../web-api/overview/releases/whats-new-in-aspnet-web-api-21.md#attribute-routing)
 - [Améliorations de la page](../../../web-api/overview/releases/whats-new-in-aspnet-web-api-21.md#help-page)
-- [Prise en charge IgnoreRoute](../../../web-api/overview/releases/whats-new-in-aspnet-web-api-21.md#ignoreroute)
+- [IgnoreRoute support](../../../web-api/overview/releases/whats-new-in-aspnet-web-api-21.md#ignoreroute)
 - [Formateur de type de média BSON](../../../web-api/overview/releases/whats-new-in-aspnet-web-api-21.md#bson)
 - [Meilleure prise en charge pour les filtres d’async](../../../web-api/overview/releases/whats-new-in-aspnet-web-api-21.md#async-filters)
 - [Analyse du client de mise en forme de la bibliothèque de la requête](../../../web-api/overview/releases/whats-new-in-aspnet-web-api-21.md#query-parsing)
@@ -232,10 +232,10 @@ NuGet 2.8.1 que RTM sera publié en avril 2014. Voici les points importants dans
 <a id="ef"></a>
 ### <a name="entity-framework-61"></a>Entity Framework 6.1
 
-Entity Framework a été mis à jour à la version 6.1 du runtime et outils. 6.1 Entity Framework (EF) est une mise à jour mineure Entity Framework 6 et inclut un certain nombre de correctifs de bogues et de nouvelles fonctionnalités. Pour plus d’informations sur EF6.1, y compris des liens vers la documentation pour les nouvelles fonctionnalités, consultez [Entity Framework Version historique](https://msdn.microsoft.com/en-US/data/jj574253). Les nouvelles fonctionnalités dans cette version sont les suivantes :
+Entity Framework a été mis à jour à la version 6.1 du runtime et outils. 6.1 Entity Framework (EF) est une mise à jour mineure Entity Framework 6 et inclut un certain nombre de correctifs de bogues et de nouvelles fonctionnalités. Pour plus d’informations sur EF6.1, y compris des liens vers la documentation pour les nouvelles fonctionnalités, consultez [Entity Framework Version historique](https://msdn.microsoft.com/data/jj574253). Les nouvelles fonctionnalités dans cette version sont les suivantes :
 
 - **Consolidation des outils** fournit un moyen cohérent de créer un nouveau modèle EF. Cette fonctionnalité s’étend de l’Assistant Entity Data Model ADO.NET pour prendre en charge la création de modèles de Code First, y compris l’ingénierie à rebours à partir de la base de données existante. Ces fonctionnalités étaient précédemment disponibles dans la qualité bêta dans EF Power Tools.
-- **Gestion des échecs de validation de transaction** propose les nouvelles [System.Data.Entity.Infrastructure.CommitFailureHandler](https://msdn.microsoft.com/en-us/library/system.data.entity.infrastructure.commitfailurehandler(v=vs.113).aspx) qui utilise la capacité récemment introduite pour intercepter des opérations de transaction. Le **CommitFailureHandler** permet la récupération automatique des échecs de connexion lors de la validation d’une transaction.
+- **Gestion des échecs de validation de transaction** propose les nouvelles [System.Data.Entity.Infrastructure.CommitFailureHandler](https://msdn.microsoft.com/library/system.data.entity.infrastructure.commitfailurehandler(v=vs.113).aspx) qui utilise la capacité récemment introduite pour intercepter des opérations de transaction. Le **CommitFailureHandler** permet la récupération automatique des échecs de connexion lors de la validation d’une transaction.
 - **IndexAttribute** autorise les index d’être spécifiés en plaçant un attribut sur une propriété (ou propriétés) dans votre modèle Code First. Code d’abord crée ensuite un index correspondant dans la base de données.
 - **L’API de mappage publique** fournit l’accès aux EF d’informations sur la façon dont les propriétés et les types sont mappés à des colonnes et tables de la base de données. Dans les versions précédentes cette API a été interne.
 - **Possibilité de configurer des intercepteurs via le fichier App/Web.config**(autorisant les intercepteurs doit être ajouté sans avoir à recompiler l’application).

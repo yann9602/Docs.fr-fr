@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/less-sass-fa
-ms.openlocfilehash: c3a53d6118a72c00d61d9139b05325fd1cbd53da
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 764b11bbd301c0116488265d32f7d46dfc5bce27
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="introduction-to-styling-applications-with-less-sass-and-font-awesome-in-aspnet-core"></a>Introduction aux applications de style avec moins, Sass et police impressionnant dans ASP.NET Core
 
@@ -246,7 +246,7 @@ nav {
 }
 ```
 
-Notez que dans ce cas, tous les éléments subordonnés de `nav` contenus dans son étendue. Il n’est plus toute répétition des éléments parents (`nav`, `li`, `a`), et le nombre total de la ligne a supprimé ainsi (même si certains des qui est un résultat de l’utilisation de valeurs sur les mêmes lignes dans le deuxième exemple). Il peut être très utile, Oui, pour afficher toutes les règles pour un élément d’interface utilisateur donné au sein d’une portée limitée explicitement, dans ce cas définie du reste du fichier par des accolades.
+Notez que dans ce cas, tous les éléments subordonnés de `nav` contenus dans son étendue. Il n’est plus toute répétition des éléments parents (`nav`, `li`, `a`), et le nombre total de la ligne a été supprimé également (bien que certaines des qui est un résultat de l’utilisation de valeurs sur les mêmes lignes dans le deuxième exemple). Il peut être très utile, Oui, pour afficher toutes les règles pour un élément d’interface utilisateur donné au sein d’une portée limitée explicitement, dans ce cas définie du reste du fichier par des accolades.
 
 Le `&` syntaxe est une fonctionnalité moins sélecteur et qui représente le parent de sélection en cours. Par conséquent, dans l’un {...} bloc, `&` représente un `a` balise et par conséquent `&:link` équivaut à `a:link`.
 
@@ -321,7 +321,7 @@ Inférieur fournit un nombre de fonctionnalités supplémentaires, mais cela doi
 
 ## <a name="sass"></a>Sass
 
-Sass est similaire à une valeur inférieure, en fournissant la prise en charge pour la plupart de ces fonctionnalités, mais avec une syntaxe légèrement différente. Il est construit à l’aide de Ruby, plutôt que JavaScript, ainsi que les exigences de configuration différents. Le langage Sass d’origine n’a pas utilisé des accolades ou des points-virgules, mais au lieu de cela défini étendue à l’aide d’un espace blanc et mise en retrait. Dans la version 3 de Sass, introduite une nouvelle syntaxe, **SCSS** (« CSS Sassy »). SCSS est similaire à CSS dans la mesure où il ignore les espaces blancs et les niveaux de mise en retrait et utilise à la place des points-virgules et des accolades.
+Sass est similaire à une valeur inférieure, en fournissant la prise en charge pour la plupart de ces fonctionnalités, mais avec une syntaxe légèrement différente. Il est construit à l’aide de Ruby, plutôt que JavaScript, ainsi que les exigences de configuration différents. Le langage Sass d’origine n’a pas d’utiliser des accolades ou des points-virgules, mais au lieu de cela défini étendue à l’aide d’un espace blanc et mise en retrait. Dans la version 3 de Sass, introduite une nouvelle syntaxe, **SCSS** (« CSS Sassy »). SCSS est similaire à CSS dans la mesure où il ignore les espaces blancs et les niveaux de mise en retrait et utilise à la place des points-virgules et des accolades.
 
 Pour installer Sass, en général, vous installez d’abord Ruby (préinstallé sur Mac) et puis exécutez :
 

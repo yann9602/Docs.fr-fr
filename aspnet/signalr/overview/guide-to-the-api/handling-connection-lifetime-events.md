@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/guide-to-the-api/handling-connection-lifetime-events
 msc.type: authoredcontent
-ms.openlocfilehash: 7a0a549f73ea303ec5694bb69d4eac52beb54098
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2fd9cafd8d7706807998793c3c39377fe9604266
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="understanding-and-handling-connection-lifetime-events-in-signalr"></a>Compréhension et gestion des événements de durée de vie de connexion SignalR
 ====================
@@ -69,7 +69,7 @@ Cet article contient les sections suivantes :
 - [Comment se déconnecter d’un client dans le code serveur](#disconnectclientfromserver)
 - [Détection de la raison d’une déconnexion](#detectingreasonfordisconnection)
 
-Des liens vers des rubriques de référence de l’API sont à la version de .NET 4.5 de l’API. Si vous utilisez le .NET 4, consultez [la version de .NET 4 des rubriques API](https://msdn.microsoft.com/en-us/library/jj891075(v=vs.100).aspx).
+Des liens vers des rubriques de référence de l’API sont à la version de .NET 4.5 de l’API. Si vous utilisez le .NET 4, consultez [la version de .NET 4 des rubriques API](https://msdn.microsoft.com/library/jj891075(v=vs.100).aspx).
 
 <a id="terminology"></a>
 

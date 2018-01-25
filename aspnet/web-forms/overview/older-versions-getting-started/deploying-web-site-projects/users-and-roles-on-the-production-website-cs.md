@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/users-and-roles-on-the-production-website-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 0825b6bd6ca8d75f90cb7c4079e3af0213c5c4e9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 68f3a45b6a393f7b6a12b7c296a374536b0d66d6
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="users-and-roles-on-the-production-website-c"></a>Les utilisateurs et les rôles sur le site Web de Production (c#)
 ====================
@@ -37,7 +37,7 @@ Un défi courant pour les développeurs qui utilisent les services d’appartena
 
 ## <a name="using-the-aspnet-web-site-administration-tool"></a>À l’aide de l’outil d’Administration de Site Web ASP.NET
 
-ASP.NET inclut un [outil Administration de Site Web](https://msdn.microsoft.com/en-us/library/yy40ytx0.aspx) (WSAT) qui facilite la tâche pour créer et gérer des rôles et des comptes d’utilisateur et pour spécifier des règles d’autorisation basées sur les utilisateurs et les rôles. Pour utiliser le WSAT, cliquez sur l’icône de Configuration ASP.NET dans l’Explorateur de solutions, ou dans le menu projet ou le site Web et choisissez l’option de Configuration ASP.NET. Chacune de ces approches lance un navigateur web et il pointe vers le WSAT à une adresse telle que :`http://localhost:portNumber/asp.netwebadminfiles/default.aspx?applicationPhysicalPath=pathToApplication`
+ASP.NET inclut un [outil Administration de Site Web](https://msdn.microsoft.com/library/yy40ytx0.aspx) (WSAT) qui facilite la tâche pour créer et gérer des rôles et des comptes d’utilisateur et pour spécifier des règles d’autorisation basées sur les utilisateurs et les rôles. Pour utiliser le WSAT, cliquez sur l’icône de Configuration ASP.NET dans l’Explorateur de solutions, ou dans le menu projet ou le site Web et choisissez l’option de Configuration ASP.NET. Chacune de ces approches lance un navigateur web et il pointe vers le WSAT à une adresse telle que :`http://localhost:portNumber/asp.netwebadminfiles/default.aspx?applicationPhysicalPath=pathToApplication`
 
 Le WSAT est divisé en trois sections :
 
@@ -102,7 +102,7 @@ Pour une présentation plus détaillée de création d’utilisateur et le rôle
 
 Pour implémenter des fonctionnalités comme le WSAT sur le site Web de production, vous pouvez toujours générer votre propre série de pages web qui implémentent les fonctionnalités de la WSAT. Pour commencer, consultez le code source WSAT, qui se trouve dans le dossier `%WINDIR%\Microsoft.NET\Framework\v2.0.50727\ASP.NETWebAdminFiles`. Une autre option consiste à utiliser alternative de Dan Clem WSAT, lequel il partage dans son article, [propagée votre propre Site Web outil d’Administration](http://aspnet.4guysfromrolla.com/articles/052307-1.aspx). Dan parcourt les lecteurs via le processus de création d’un outil personnalisé de type WSAT, inclut le code source de son application pour le téléchargement (en c#) et donne des instructions détaillées pour l’ajout de son WSAT personnalisée à un site Web hébergé.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 L’outil d’Administration ASP.NET Web Site (WSAT) peut être utilisé conjointement avec les services d’application d’appartenance et les rôles pour gérer les informations utilisateur et le rôle de votre site Web. Malheureusement, le WSAT est uniquement accessible localement et ne peut pas être visité à partir de votre site Web de production. Toutefois, en modifiant la chaîne de connexion dans le développement, environnement pour pointer vers la base de données de production, vous pouvez utiliser le WSAT pour gérer les utilisateurs et les rôles sur le site Web de production.
 
@@ -116,7 +116,7 @@ Pour plus d’informations sur les sujets abordés dans ce didacticiel, consulte
 
 - [Examen des ASP. L’appartenance, rôles et profil de NET](http://aspnet.4guysfromrolla.com/articles/120705-1.aspx)
 - [Restauration de votre propre outil d’Administration de Site Web](http://aspnet.4guysfromrolla.com/articles/052307-1.aspx)
-- [Présentation de l’outil Administration Site Web](https://msdn.microsoft.com/en-us/library/yy40ytx0.aspx)
+- [Présentation de l’outil Administration Site Web](https://msdn.microsoft.com/library/yy40ytx0.aspx)
 - [Didacticiels de sécurité de site Web](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md)
 
 >[!div class="step-by-step"]

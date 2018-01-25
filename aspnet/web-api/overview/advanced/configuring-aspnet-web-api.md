@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/advanced/configuring-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 1c007c4c327b7cde6ff52c6b0022acdff3c9b137
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f9b471fe2afdce278869a2e4d9b693a78030324b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="configuring-aspnet-web-api-2"></a>Configuration d’ASP.NET Web API 2
 ====================
@@ -33,14 +33,14 @@ Cette rubrique décrit comment configurer l’API Web ASP.NET.
 <a id="settings"></a>
 ## <a name="configuration-settings"></a>Paramètres de configuration
 
-Paramètres de configuration d’API Web sont définies dans le [HttpConfiguration](https://msdn.microsoft.com/en-us/library/system.web.http.httpconfiguration.aspx) classe.
+Paramètres de configuration d’API Web sont définies dans le [HttpConfiguration](https://msdn.microsoft.com/library/system.web.http.httpconfiguration.aspx) classe.
 
 | Membre | Description |
 | --- | --- |
 | **DependencyResolver** | Permet l’injection de dépendances pour les contrôleurs. Consultez [à l’aide de la résolution des dépendances Web API](dependency-injection.md). |
 | **Filtres** | Filtres d’action. |
-| **Formateurs** | [Formateurs de type de média](../formats-and-model-binding/media-formatters.md). |
-| **IncludeErrorDetailPolicy** | Spécifie si le serveur doit inclure les détails de l’erreur, telles que les messages d’exception et des traces de pile, dans les messages de réponse HTTP. Consultez [IncludeErrorDetailPolicy](https://msdn.microsoft.com/en-us/library/system.web.http.includeerrordetailpolicy(v=vs.108)). |
+| **Formatters** | [Formateurs de type de média](../formats-and-model-binding/media-formatters.md). |
+| **IncludeErrorDetailPolicy** | Spécifie si le serveur doit inclure les détails de l’erreur, telles que les messages d’exception et des traces de pile, dans les messages de réponse HTTP. Consultez [IncludeErrorDetailPolicy](https://msdn.microsoft.com/library/system.web.http.includeerrordetailpolicy(v=vs.108)). |
 | **Initialiseur** | Une fonction qui effectue l’initialisation finale de la **HttpConfiguration**. |
 | **MessageHandlers** | [Gestionnaires de messages HTTP](http-message-handlers.md). |
 | **ParameterBindingRules** | Une collection de règles pour la liaison de paramètres sur les actions de contrôleur. |
@@ -49,14 +49,14 @@ Paramètres de configuration d’API Web sont définies dans le [HttpConfigurati
 | **Services** | La collection de services. Consultez [Services](#services). |
 
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 [Visual Studio 2017](https://www.visualstudio.com/vs/) Community, Professional ou Enterprise Edition.
 
 <a id="webhost"></a>
 ## <a name="configuring-web-api-with-aspnet-hosting"></a>Configuration des API Web avec hébergement ASP.NET
 
-Dans une application ASP.NET, configurez l’API Web en appelant [GlobalConfiguration.Configure](https://msdn.microsoft.com/en-us/library/system.web.http.globalconfiguration.configure.aspx) dans les **Application\_Démarrer** (méthode). Le **configurer** méthode prend un délégué avec un seul paramètre de type **HttpConfiguration**. Effectuez toutes les votre configuration à l’intérieur du délégué.
+Dans une application ASP.NET, configurez l’API Web en appelant [GlobalConfiguration.Configure](https://msdn.microsoft.com/library/system.web.http.globalconfiguration.configure.aspx) dans les **Application\_Démarrer** (méthode). Le **configurer** méthode prend un délégué avec un seul paramètre de type **HttpConfiguration**. Effectuez toutes les votre configuration à l’intérieur du délégué.
 
 Voici un exemple d’utilisation d’un délégué anonyme :
 

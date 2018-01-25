@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/common-configuration-differences-between-development-and-production-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 3a98ee93df9ef7c94b3d0da81c095cccedadf05f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8de1acada8713abf5f92c1f13fa82a5d4ccc18be
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="common-configuration-differences-between-development-and-production-vb"></a>Différences de Configuration commune entre le développement et de Production (VB)
 ====================
@@ -38,7 +38,7 @@ Lorsque vous déployez une application web, il est important que les information
 
 Le `Web.config` fichier comprend un assortiment d’informations de configuration pour une application ASP.NET. Certaines de ces informations de configuration est le même quelle que soit l’environnement. Par exemple, les paramètres d’authentification et les règles d’autorisation d’URL indiquée dans le `Web.config` du fichier `<authentication>` et `<authorization>` éléments sont généralement identiques, quelle que soit l’environnement. Mais les autres informations de configuration - notamment des informations sur les ressources externes - généralement diffèrent selon l’environnement.
 
-Chaînes de connexion de base de données sont un exemple d’informations de configuration qui diffère selon l’environnement. Lorsqu’une application web communique avec un serveur de base de données doit tout d’abord établir une connexion, et qui est possible grâce à une [chaîne de connexion](http://www.connectionstrings.com/Articles/Show/what-is-a-connection-string). Bien qu’il soit possible de coder en dur la chaîne de connexion de base de données directement dans les pages web ou le code qui se connecte à la base de données, il est préférable de placer `Web.config`de [ `<connectionStrings>` élément](https://msdn.microsoft.com/en-us/library/bf7sd233.aspx) afin que la chaîne de connexion les informations sont dans un emplacement unique et centralisé. Souvent une autre base de données est utilisé au cours du développement est utilisée dans la production ; Par conséquent, les informations de chaîne de connexion doivent être uniques pour chaque environnement.
+Chaînes de connexion de base de données sont un exemple d’informations de configuration qui diffère selon l’environnement. Lorsqu’une application web communique avec un serveur de base de données doit tout d’abord établir une connexion, et qui est possible grâce à une [chaîne de connexion](http://www.connectionstrings.com/Articles/Show/what-is-a-connection-string). Bien qu’il soit possible de coder en dur la chaîne de connexion de base de données directement dans les pages web ou le code qui se connecte à la base de données, il est préférable de placer `Web.config`de [ `<connectionStrings>` élément](https://msdn.microsoft.com/library/bf7sd233.aspx) afin que la chaîne de connexion les informations sont dans un emplacement unique et centralisé. Souvent une autre base de données est utilisé au cours du développement est utilisée dans la production ; Par conséquent, les informations de chaîne de connexion doivent être uniques pour chaque environnement.
 
 > [!NOTE]
 > Didacticiels futures Découvrez le déploiement d’applications pilotées par les données, à partir de laquelle nous allons approfondir les spécificités de la façon dont les chaînes de connexion de base de données sont stockées dans le fichier de configuration.
@@ -48,7 +48,7 @@ Le comportement attendu des environnements de développement et de production di
 
 ### <a name="configuration-settings-that-impact-performance"></a>Paramètres de configuration qui affectent les performances
 
-Lors de la visite d’une page ASP.NET pour la première fois (ou la première fois après que qu’il a changé), son balisage déclaratif doit être convertie en une classe et cette classe doit être compilée. Si l’application web utilise une compilation automatique classe code-behind de la page doit être compilé, trop. Vous pouvez configurer un vaste choix d’options de compilation via le `Web.config` du fichier [ `<compilation>` élément](https://msdn.microsoft.com/en-us/library/s10awwz0.aspx).
+Lors de la visite d’une page ASP.NET pour la première fois (ou la première fois après que qu’il a changé), son balisage déclaratif doit être convertie en une classe et cette classe doit être compilée. Si l’application web utilise une compilation automatique classe code-behind de la page doit être compilé, trop. Vous pouvez configurer un vaste choix d’options de compilation via le `Web.config` du fichier [ `<compilation>` élément](https://msdn.microsoft.com/library/s10awwz0.aspx).
 
 L’attribut de débogage est un des attributs plus importants dans le `<compilation>` élément. Si le `debug` attribut est défini sur « true », les assemblys compilés incluent les symboles de débogage, qui sont nécessaires lorsque vous déboguez une application dans Visual Studio. Toutefois, les symboles de débogage augmentent la taille de l’assembly et imposent des exigences de mémoire supplémentaire lors de l’exécution du code. En outre, lorsque la `debug` attribut est défini sur « true » à n’importe quel contenu retourné par `WebResource.axd` n'est pas mis en cache, ce qui signifie que que chaque fois qu’un utilisateur visite une page, ils devront télécharger à nouveau le contenu statique retourné par `WebResource.axd`.
 
@@ -68,7 +68,7 @@ Lorsqu’une exception non gérée se produit dans une application ASP.NET, il s
 - Un message d’exception détails s’affiche, qui inclut des informations sur l’exception qui a été levée uniquement.
 - Une page d’erreur personnalisée s’affiche, qui est une page ASP.NET que vous créez qui affiche un message que vous le souhaitez.
 
-Que se passe-t-il en cas d’une exception non prise en charge dépend de la `Web.config` du fichier [ `<customErrors>` section](https://msdn.microsoft.com/en-us/library/h0hfz6fc.aspx).
+Que se passe-t-il en cas d’une exception non prise en charge dépend de la `Web.config` du fichier [ `<customErrors>` section](https://msdn.microsoft.com/library/h0hfz6fc.aspx).
 
 Lorsque vous développez et testez une application, qu'il est utile de consulter les détails d’une exception dans le navigateur. Toutefois, affichant les détails de l’exception dans une application de production est un risque de sécurité potentiel. En outre, il est unflattering et permet un aspect de votre site Web. Dans l’idéal, en cas d’une exception non prise en charge une application web dans l’environnement de développement affiche les détails de l’exception lors de la même application en production affiche une page d’erreurs personnalisée.
 
@@ -76,7 +76,7 @@ Lorsque vous développez et testez une application, qu'il est utile de consulter
 > La valeur par défaut `<customErrors>` paramètre section affiche les détails de l’exception de message uniquement lorsque la page visitée via localhost et affiche la page d’erreur générique runtime dans le cas contraire. Ce n’est pas idéale, mais elle est garantie pour savoir que le comportement par défaut ne révèle pas les détails d’exception pour les visiteurs non local. Un didacticiel futures examine la `<customErrors>` section plus en détail et montre comment une page d’erreur personnalisée indiqué lorsqu’une erreur se produit en production.
 
 
-Une autre fonctionnalité d’ASP.NET qui s’avère utile lors du développement est le suivi. Le suivi, s’il est activé, enregistre des informations sur chaque demande entrante et fournit une page web spéciale, `Trace.axd`, pour l’affichage des détails de la demande récente. Vous pouvez activer et configurer le suivi via la [ `<trace>` élément](https://msdn.microsoft.com/en-us/library/6915t83k.aspx) dans `Web.config`.
+Une autre fonctionnalité d’ASP.NET qui s’avère utile lors du développement est le suivi. Le suivi, s’il est activé, enregistre des informations sur chaque demande entrante et fournit une page web spéciale, `Trace.axd`, pour l’affichage des détails de la demande récente. Vous pouvez activer et configurer le suivi via la [ `<trace>` élément](https://msdn.microsoft.com/library/6915t83k.aspx) dans `Web.config`.
 
 Si vous activez le traçage Assurez-vous que qu’il est désactivé en production. Étant donné que les informations de trace incluent les cookies, les données de session et les autres informations potentiellement sensibles, il est important de désactiver le suivi en production. La bonne nouvelle est que, par défaut, le suivi est désactivé et le `Trace.axd` fichier est uniquement accessible via localhost. Si vous modifiez ces paramètres par défaut dans le développement Assurez-vous qu’ils sont désactivés précédent en production.
 
@@ -110,13 +110,13 @@ informations de configuration qui obtient copiées dans ce répertoire comme sui
 
 Pour déployer la build d’application web du projet de déploiement Web et puis copiez les fichiers du dossier de sortie du projet dans l’environnement de production.
 
-Pour en savoir plus sur l’utilisation du projet de déploiement Web extraire [cet article de projets de déploiement Web](https://msdn.microsoft.com/en-us/magazine/cc163448.aspx) extrait du numéro d’avril 2007 de [MSDN Magazine](https://msdn.microsoft.com/en-us/magazine/default.aspx), ou consultez les liens dans la section obtenir des informations supplémentaires à la fin de ce didacticiel.
+Pour en savoir plus sur l’utilisation du projet de déploiement Web extraire [cet article de projets de déploiement Web](https://msdn.microsoft.com/magazine/cc163448.aspx) extrait du numéro d’avril 2007 de [MSDN Magazine](https://msdn.microsoft.com/magazine/default.aspx), ou consultez les liens dans la section obtenir des informations supplémentaires à la fin de ce didacticiel.
 
 > [!NOTE]
 > Vous ne pouvez pas utiliser le projet de déploiement Web avec Visual Web Developer, car le projet de déploiement Web est implémenté comme un Visual Studio complément et les éditions Visual Studio Express (y compris Visual Web Developer) ne prennent pas en charge les compléments.
 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Les ressources externes et le comportement d’une application web en cours de développement sont en général différentes de celle utilisée lorsque la même application est en production. Par exemple, les chaînes de connexion de base de données, les options de compilation et le comportement lorsqu’une exception non gérée se produit couramment diffèrent entre les environnements. Le processus de déploiement doit prendre en compte ces différences. Que nous avons abordée dans ce didacticiel, l’approche la plus simple consiste à copier manuellement un autre fichier de configuration à l’environnement de production. Solutions spécifiques plus fluides sont possibles lorsque vous utilisez le Web déploiement de projet complément, ou avec un processus de génération ou de déploiement plus formel capable de gérer ces personnalisations.
 
@@ -134,7 +134,7 @@ Pour plus d’informations sur les sujets abordés dans ce didacticiel, consulte
 - [Paramètres de Configuration de la clé lors du déploiement d’une base de données](http://aspnet.4guysfromrolla.com/articles/121008-1.aspx)
 - [Téléchargement de projets de déploiement Visual Studio 2008 Web](https://www.microsoft.com/downloads/details.aspx?FamilyId=0AA30AE8-C73B-4BDD-BB1B-FE697256C459&amp;displaylang=en) | [téléchargement de projets de déploiement Visual Studio 2005 Web](https://download.microsoft.com/download/9/4/9/9496adc4-574e-4043-bb70-bc841e27f13c/WebDeploymentSetup.msi)
 - [Projets de déploiement Web de Visual Studio 2008](https://weblogs.asp.net/scottgu/archive/2005/11/06/429723.aspx) | [Visual Studio 2008 déploiement projet prise en charge Web publié](https://weblogs.asp.net/scottgu/archive/2008/01/28/vs-2008-web-deployment-project-support-released.aspx)
-- [Projets de déploiement Web](https://msdn.microsoft.com/en-us/magazine/cc163448.aspx)
+- [Projets de déploiement web](https://msdn.microsoft.com/magazine/cc163448.aspx)
 
 >[!div class="step-by-step"]
 [Précédent](deploying-your-site-using-visual-studio-vb.md)

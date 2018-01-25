@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/owin-and-katana/katana-samples
 msc.type: authoredcontent
-ms.openlocfilehash: 5540164bda8db31c4e78b49ecb7f7c573acca013
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 815355c00c9c15cfefa5f98dc89da676743b0390
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="katana-samples"></a>Exemples de Katana
 ====================
@@ -52,4 +52,4 @@ Montre comment prendre en charge les requêtes HTTP pour les fichiers statiques 
 Cet exemple montre comment héberger OWIN dans IIS et ajouter des API Web au pipeline OWIN.
 
 **Exemple de Socket de Web** | [Code Source](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/Katana/WebSocketSample/WebSocketServer/Startup.cs)   
-Montre comment prendre en charge de WebSocket dans OWIN à l’aide de la [System.Net.WebSockets.WebSocket](https://msdn.microsoft.com/en-us/library/system.net.websockets.websocket(v=vs.110).aspx) classe.
+Montre comment prendre en charge de WebSocket dans OWIN à l’aide de la [System.Net.WebSockets.WebSocket](https://msdn.microsoft.com/library/system.net.websockets.websocket(v=vs.110).aspx) classe.

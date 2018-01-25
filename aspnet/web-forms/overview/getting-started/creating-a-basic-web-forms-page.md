@@ -12,17 +12,17 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/creating-a-basic-web-forms-page
 msc.type: authoredcontent
-ms.openlocfilehash: 20e920ff63444c0d69cecb972619b07fe6d23097
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6b699cc939292b7ab0167dba7cfa6a00b681ef3a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-a-basic-aspnet-45-web-forms-page-in-visual-studio-2013"></a>Création d’une base ASP.NET Web 4.5 Page Forms dans Visual Studio 2013
 ====================
 Par [Erik Reitan](https://github.com/Erikre)
 
-Cette procédure pas à pas vous fournit une introduction à l’environnement de développement Web dans [Microsoft Visual Studio 2013](https://www.microsoft.com/visualstudio/11/en-us/downloads#vs) et dans [Microsoft Visual Studio Express 2013 pour le Web](https://www.microsoft.com/visualstudio/11/en-us/downloads#express-web). Cette procédure pas à pas vous guide à travers la création d’une page Web Forms ASP.NET simple et illustre les techniques de base de la création d’une page, l’ajout de contrôles et l’écriture de code.
+Cette procédure pas à pas vous fournit une introduction à l’environnement de développement Web dans [Microsoft Visual Studio 2013](https://www.microsoft.com/visualstudio/11/downloads#vs) et dans [Microsoft Visual Studio Express 2013 pour le Web](https://www.microsoft.com/visualstudio/11/downloads#express-web). Cette procédure pas à pas vous guide à travers la création d’une page Web Forms ASP.NET simple et illustre les techniques de base de la création d’une page, l’ajout de contrôles et l’écriture de code.
 
 Cette procédure pas à pas décrit notamment les tâches suivantes :
 
@@ -33,12 +33,12 @@ Cette procédure pas à pas décrit notamment les tâches suivantes :
 - Ajout de gestionnaires d’événements.
 - En cours d’exécution et le test d’une page à partir de Visual Studio.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 
 Pour exécuter cette procédure pas à pas, vous avez besoin des éléments suivants :
 
-- [Microsoft Visual Studio 2013](https://www.microsoft.com/visualstudio/11/en-us/downloads#vs) ou [Microsoft Visual Studio Express 2013 pour le Web](https://www.microsoft.com/visualstudio/11/en-us/downloads#express-web). Le .NET Framework est installé automatiquement. 
+- [Microsoft Visual Studio 2013](https://www.microsoft.com/visualstudio/11/downloads#vs) ou [Microsoft Visual Studio Express 2013 pour le Web](https://www.microsoft.com/visualstudio/11/downloads#express-web). Le .NET Framework est installé automatiquement. 
 
     > [!NOTE] 
     > 
@@ -94,7 +94,7 @@ Examinez l’illustration ci-dessus et correspond au texte à la liste suivante,
 - Fenêtre de document. Affiche les documents que vous travaillez dans les fenêtres à onglets. Vous pouvez basculer entre les documents en cliquant sur les onglets.
 - **Propriétés** fenêtre. Permet de modifier les paramètres de la page, des éléments HTML, des contrôles et d’autres objets.
 - Afficher les onglets. Présenter des vues différentes du même document. **Conception** vue est une surface de modification proche du WYSIWYG. **Source** affichage est l’éditeur HTML de la page. **Fractionnement** affiche à la fois le **conception** affichage et le **Source** le document. Vous allez travailler avec les **conception** et **Source** vues plus loin dans cette procédure pas à pas. Si vous préférez ouvrir des pages Web dans **conception** afficher, dans le **outils** menu, cliquez sur **Options**, sélectionnez le **Concepteur HTML** nœud, puis remplacez le **Démarrer les Pages en** option.
-- **Boîte à outils**. Fournit des contrôles et des éléments HTML que vous pouvez faire glisser vers votre page. **Boîte à outils** éléments sont regroupés selon leur fonction.
+- **ToolBox**. Fournit des contrôles et des éléments HTML que vous pouvez faire glisser vers votre page. **Boîte à outils** éléments sont regroupés selon leur fonction.
 - S **erver Explorer**. Affiche les connexions de base de données. Si l’Explorateur de serveurs n’est pas visible, dans le menu Affichage, cliquez sur l’Explorateur de serveurs.
 
 

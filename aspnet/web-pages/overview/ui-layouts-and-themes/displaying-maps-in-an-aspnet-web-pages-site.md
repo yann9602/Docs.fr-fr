@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/displaying-maps-in-an-aspnet-web-pages-site
 msc.type: authoredcontent
-ms.openlocfilehash: a802e4fed81fadca195c8aa83c37c7100ac5cbec
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6f3e6a0cfb8c08cd971e88986d0f059dd8237aab
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="displaying-maps-in-an-aspnet-web-pages-razor-site"></a>Affichage des mappages dans un Site de Pages (Razor) Web ASP.NET
 ====================
@@ -70,7 +70,7 @@ Enfin, si vous souhaitez utiliser Bing maps, vous devez tout d’abord créer un
     Vous pouvez spécifier que vous souhaitez utiliser la clé pour **/Test d’évaluation de**. Si vous testez la fonction de mappage sur votre ordinateur à l’aide de WebMatrix et IIS Express, consultez le **Site** espace de travail et notez l’URL de votre site (par exemple, `http://localhost:50408`, bien que votre numéro de port sera probablement différent). Vous pouvez utiliser cette *localhost* adresse que le site lorsque vous inscrivez.
 2. Une fois que vous avez enregistré pour un compte, accédez au centre des comptes Bing Maps, puis cliquez sur **clés créez ou affichez**:
 
-    ![mappage de-2](displaying-maps-in-an-aspnet-web-pages-site/_static/image1.png)
+    ![mapping-2](displaying-maps-in-an-aspnet-web-pages-site/_static/image1.png)
 3. Enregistrement de la clé Bing crée.
 
 ## <a name="creating-a-map-based-on-an-address-using-google"></a>Création d’une table basée sur une adresse (à l’aide de Google)
@@ -114,4 +114,4 @@ Cet exemple montre comment créer une table basée sur des coordonnées. Cet exe
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
 
-[Référence de l’API Microsoft.Maps](https://msdn.microsoft.com/en-us/library/gg427611.aspx)
+[Référence de l’API Microsoft.Maps](https://msdn.microsoft.com/library/gg427611.aspx)

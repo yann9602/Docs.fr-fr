@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/implementation/key-management
-ms.openlocfilehash: 53adb067751917a9539a310bb7d91e599696f213
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 9c4d293355e26d8bf5ba1360b070a7b9809bfe56
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="key-management"></a>Gestion de clés
 
@@ -48,9 +48,9 @@ Il existe une exception. Si le développeur a [désactivé la génération autom
 
 ## <a name="key-expiration-and-rolling"></a>Expiration de clés et de restauration
 
-Lorsqu’une clé est créée, elle reçoit automatiquement une date d’activation {now + 2 jours} et une date d’expiration de {now + 90 jours}. Le délai de 2 jours avant l’activation donne le temps clé se propagent dans le système. Autrement dit, il permet aux autres applications pointant vers le magasin de stockage observer la clé à leur prochaine période d’actualisation automatique, optimisant ainsi le risque que lorsque la clé anneau active fait deviennent s’il est propagée à toutes les applications devront peut-être l’utiliser.
+Lorsqu’une clé est créée, elle a automatiquement donné une date d’activation {now + 2 jours} et une date d’expiration de {now + 90 jours}. Le délai de 2 jours avant l’activation donne le temps clé se propagent dans le système. Autrement dit, il permet aux autres applications pointant vers le magasin de stockage observer la clé à leur prochaine période d’actualisation automatique, optimisant ainsi le risque que lorsque la clé anneau active fait deviennent s’il est propagée à toutes les applications devront peut-être l’utiliser.
 
-Si la clé par défaut va expirer dans les 2 jours, et si la boucle de clé n’a pas déjà une clé qui sera active lors de l’expiration de la clé par défaut, le système de protection des données est conservées automatiquement une nouvelle clé dans l’anneau de clé. Cette nouvelle clé a une date d’activation {date d’expiration de la clé par défaut} et une date d’expiration de {now + 90 jours}. Ainsi, le système restaurer automatiquement les clés sur une base régulière sans aucune interruption de service.
+Si la clé par défaut va expirer dans les 2 jours, et si l’anneau de clé n’a pas encore une clé qui sera active lors de l’expiration de la clé par défaut, le système de protection des données est conservées automatiquement une nouvelle clé dans l’anneau de clé. Cette nouvelle clé a une date d’activation {date d’expiration de la clé par défaut} et une date d’expiration de {now + 90 jours}. Ainsi, le système restaurer automatiquement les clés sur une base régulière sans aucune interruption de service.
 
 Il peut y avoir des circonstances où une clé sera créée avec l’activation immédiate. Un exemple serait lorsque l’application n’a pas exécuté pendant une période et toutes les clés dans l’anneau de clé ont expiré. Dans ce cas, la clé reçoit une date d’activation de {maintenant} sans le délai d’activation de 2 jours normal.
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/advanced/custom-model-binding
-ms.openlocfilehash: d8b94f53954c5ab63ccf3aab4eb7a7a7dbea487b
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 85d5ca18944e774d1f2577459c6c45acde01e4d9
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="custom-model-binding"></a>Liaison de modèle personnalisé
 
@@ -100,7 +100,7 @@ Le code suivant montre comment utiliser le `AuthorEntityBinder` dans une méthod
 
 [!code-csharp[Main](custom-model-binding/sample/CustomModelBindingSample/Controllers/BoundAuthorsController.cs?name=demo2&highlight=2)]
 
-Le `ModelBinder` attribut peut être utilisé pour appliquer la `AuthorEntityBinder` aux paramètres qui n’utilisent pas les conventions utilisées par défaut :
+Le `ModelBinder` attribut peut être utilisé pour appliquer la `AuthorEntityBinder` aux paramètres qui n’utilisent pas les conventions par défaut :
 
 [!code-csharp[Main](custom-model-binding/sample/CustomModelBindingSample/Controllers/BoundAuthorsController.cs?name=demo1&highlight=2)]
 
@@ -133,6 +133,6 @@ Ajout de votre fournisseur à la fin de la collection peut entraîner un classeu
 ## <a name="recommendations-and-best-practices"></a>Recommandations et meilleures pratiques
 
 Classeurs de modèles personnalisé :
-- Déconseillé définir les codes d’état ou de retourner des résultats (par exemple, 404 introuvable). En cas de liaison de modèle, un [filtre d’action](xref:mvc/controllers/filters) ou logique dans la méthode d’action doit gérer l’échec.
+- Ne doit pas tenter de définir des codes d’état ou de retourner des résultats (par exemple, 404 introuvable). En cas de liaison de modèle, un [filtre d’action](xref:mvc/controllers/filters) ou logique dans la méthode d’action doit gérer l’échec.
 - Sont particulièrement utiles pour la suppression du code répétitif et problèmes transversaux à partir des méthodes d’action.
-- Ne doit généralement pas être utilisé pour convertir une chaîne en un type personnalisé, un [ `TypeConverter` ](https://docs.microsoft.com//dotnet/api/system.componentmodel.typeconverter) est généralement une meilleure option.
+- En règle générale, ne doivent pas être utilisées pour convertir une chaîne en un type personnalisé, un [ `TypeConverter` ](https://docs.microsoft.com//dotnet/api/system.componentmodel.typeconverter) est généralement une meilleure option.

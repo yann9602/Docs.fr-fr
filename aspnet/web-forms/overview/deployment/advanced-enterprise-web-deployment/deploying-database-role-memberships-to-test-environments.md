@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/deploying-database-role-memberships-to-test-environments
 msc.type: authoredcontent
-ms.openlocfilehash: ac780c6cd522f9216cafe3b5f23772ef6ebf5d11
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 226c28622f76e866fba1fc33cf9b9b7a01e5295b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-database-role-memberships-to-test-environments"></a>Déploiement des appartenances aux rôles de base de données dans les environnements de Test
 ====================
@@ -87,7 +87,7 @@ Dans l’idéal, vous exécuterez les scripts Transact-SQL requises dans le cadr
 
 
 > [!NOTE]
-> Pour plus d’informations sur les options de ligne de commande sqlcmd, consultez [utilitaire sqlcmd](https://msdn.microsoft.com/en-us/library/ms162773.aspx).
+> Pour plus d’informations sur les options de ligne de commande sqlcmd, consultez [utilitaire sqlcmd](https://msdn.microsoft.com/library/ms162773.aspx).
 
 
 Avant de vous incorporez cette commande dans une cible MSBuild, vous devez envisager les conditions dans lesquelles vous souhaitez que le script à exécuter :
@@ -130,7 +130,7 @@ Cette rubrique décrit une façon dans laquelle vous pouvez ajouter des utilisat
 
 ## <a name="further-reading"></a>informations supplémentaires
 
-Pour plus d’informations sur l’utilisation de VSDBCMD pour déployer des projets de base de données, consultez [déploiement de projets de base de données](../web-deployment-in-the-enterprise/deploying-database-projects.md). Pour obtenir des conseils sur la personnalisation des déploiements de base de données pour les environnements cibles différentes, consultez [personnalisation des déploiements de base de données pour plusieurs environnements](customizing-database-deployments-for-multiple-environments.md). Pour plus d’informations sur l’utilisation des fichiers projet MSBuild personnalisés pour contrôler le processus de déploiement, consultez [présentation du fichier de projet](../web-deployment-in-the-enterprise/understanding-the-project-file.md) et [comprendre le processus de génération](../web-deployment-in-the-enterprise/understanding-the-build-process.md). Pour plus d’informations sur les options de ligne de commande sqlcmd, consultez [utilitaire sqlcmd](https://msdn.microsoft.com/en-us/library/ms162773.aspx).
+Pour plus d’informations sur l’utilisation de VSDBCMD pour déployer des projets de base de données, consultez [déploiement de projets de base de données](../web-deployment-in-the-enterprise/deploying-database-projects.md). Pour obtenir des conseils sur la personnalisation des déploiements de base de données pour les environnements cibles différentes, consultez [personnalisation des déploiements de base de données pour plusieurs environnements](customizing-database-deployments-for-multiple-environments.md). Pour plus d’informations sur l’utilisation des fichiers projet MSBuild personnalisés pour contrôler le processus de déploiement, consultez [présentation du fichier de projet](../web-deployment-in-the-enterprise/understanding-the-project-file.md) et [comprendre le processus de génération](../web-deployment-in-the-enterprise/understanding-the-build-process.md). Pour plus d’informations sur les options de ligne de commande sqlcmd, consultez [utilitaire sqlcmd](https://msdn.microsoft.com/library/ms162773.aspx).
 
 >[!div class="step-by-step"]
 [Précédent](customizing-database-deployments-for-multiple-environments.md)

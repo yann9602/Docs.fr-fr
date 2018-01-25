@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: mvc/views/tag-helpers/builtin-th/image-tag-helper
-ms.openlocfilehash: 438c5afb96dce6d8978d26159a3b460614111988
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: d0857e1926c341b2357bc824fa379c4fc30affbc
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="imagetaghelper"></a>ImageTagHelper
 
@@ -55,7 +55,7 @@ La valeur affectée au paramètre `v` est la valeur de hachage de fichier sur le
 Pour activer l’assistance de balise d’Image, l’attribut src est requis sur le `<img>` élément. 
 
 > [!NOTE]
-> L’assistance de balise d’Image utilise le `Cache` fournisseur sur le serveur web local pour stocker le texte calculé `Sha512` d’un fichier donné. Si le fichier est demandé à nouveau le `Sha512` ne doivent pas être recalculées. Le Cache est invalidé par un observateur de fichier qui est associé au fichier lors du fichier `Sha512` est calculée.
+> L’assistance de balise d’Image utilise le `Cache` fournisseur sur le serveur web local pour stocker le texte calculé `Sha512` d’un fichier donné. Si le fichier est demandé à nouveau le `Sha512` ne doivent être recalculées. Le Cache est invalidé par un observateur de fichier qui est associé au fichier lors du fichier `Sha512` est calculée.
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
