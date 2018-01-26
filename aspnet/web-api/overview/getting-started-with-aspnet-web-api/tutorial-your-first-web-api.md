@@ -11,11 +11,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: fa1cd068a7466e0b6b6fe7716090c8a7afd2a4d5
-ms.sourcegitcommit: ec9371e2fbfcb8d62e7e7cae69e7752f3f205385
+ms.openlocfilehash: 6ff9fd279a03197f761454bba3f180d7428b1b1f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="getting-started-with-aspnet-web-api-2-c"></a>Getting Started with ASP.NET Web API 2 (c#)
 ====================
@@ -107,12 +107,12 @@ Le contrôleur définit deux méthodes qui retournent des produits :
 - Le `GetAllProducts` méthode renvoie la liste complète des produits en tant qu’un **IEnumerable&lt;produit&gt;**  type.
 - Le `GetProduct` méthode recherche un produit unique par son ID.
 
-Voilà ! Vous avez un site web API. Chaque méthode sur le contrôleur correspond à un ou plusieurs URI :
+C’est tout ! Vous avez un site web API. Chaque méthode sur le contrôleur correspond à un ou plusieurs URI :
 
 | Méthode de contrôleur | URI |
 | --- | --- |
 | GetAllProducts | produits/api / |
-| GetProduct | /API/produits/*id* |
+| GetProduct | /api/products/*id* |
 
 Pour le `GetProduct` (méthode), la *id* dans l’URI est un espace réservé. Par exemple, pour obtenir le produit avec l’ID de 5, l’URI est `api/products/5`.
 
@@ -186,11 +186,11 @@ Vous voulez voir le site terminé en cours d’exécution comme une application 
 
 Vous avez besoin d’un compte Azure pour déployer cette solution sur Azure. Si vous n’avez pas déjà un compte, vous disposez des options suivantes :
 
-- [Ouvrir un compte Azure gratuitement](https://azure.microsoft.com/en-us/pricing/free-trial/?WT.mc_id=A443DD604) -vous obtenez des crédits que vous pouvez utiliser pour tester les services Azure payants et même après qu’ils soient utilisés jusqu'à, vous pouvez conserver le compte et libérer de l’utilisation des services Azure.
-- [Activer les abonnés MSDN](https://azure.microsoft.com/en-us/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A443DD604) -votre abonnement MSDN vous donne des crédits chaque mois que vous pouvez utiliser pour les services Azure payants.
+- [Ouvrir un compte Azure gratuitement](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A443DD604) -vous obtenez des crédits que vous pouvez utiliser pour tester les services Azure payants et même après qu’ils soient utilisés jusqu'à, vous pouvez conserver le compte et libérer de l’utilisation des services Azure.
+- [Activer les abonnés MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A443DD604) -votre abonnement MSDN vous donne des crédits chaque mois que vous pouvez utiliser pour les services Azure payants.
 
 ## <a name="next-steps"></a>Étapes suivantes
 
 - Pour obtenir un exemple plus complet d’un service HTTP qui prend en charge les actions de POST, PUT et DELETE et écrit dans une base de données, consultez [à l’aide de Web API 2 avec Entity Framework 6](../data/using-web-api-with-entity-framework/part-1.md).
 - Pour plus d’informations sur la création d’applications web fluide et réactif sur un service HTTP, consultez [Application à une Page ASP.NET](../../../single-page-application/index.md).
-- Pour plus d’informations sur la façon de déployer un projet web Visual Studio pour le Service d’applications Azure, consultez [créer une application web ASP.NET dans Azure App Service](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-get-started/).
+- Pour plus d’informations sur la façon de déployer un projet web Visual Studio pour le Service d’applications Azure, consultez [créer une application web ASP.NET dans Azure App Service](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-get-started/).

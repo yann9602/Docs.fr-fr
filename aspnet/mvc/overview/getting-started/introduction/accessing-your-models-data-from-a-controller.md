@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/accessing-your-models-data-from-a-controller
 msc.type: authoredcontent
-ms.openlocfilehash: b60913cef4b62745cf167e6074834bf7d0c228d1
-ms.sourcegitcommit: d1d8071d4093bf2444b5ae19d6e45c3d187e338b
+ms.openlocfilehash: 91bfa5fe3c5bd3029b7d7c12c8831e1653fb1d2b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/19/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="accessing-your-models-data-from-a-controller"></a>L’accès aux données de votre modèle à partir d’un contrôleur
 ====================
@@ -87,7 +87,7 @@ Une demande pour le `Movies` contrôleur retourne toutes les entrées de la `Mov
 
 Plus haut dans ce didacticiel, vous avez vu comment un contrôleur peut passer des données ou des objets à un modèle de vue à l’aide de la `ViewBag` objet. Le `ViewBag` est un objet dynamique qui fournit un moyen pratique de la liaison tardive pour passer des informations à une vue.
 
-MVC fournit également la possibilité de passer *fortement* objets typés à un modèle d’affichage. Cette approche fortement typée permet une meilleure compilation au moment de la vérification de votre code et plus riche [IntelliSense](https://msdn.microsoft.com/en-us/library/hcw1s69b(v=vs.120).aspx) dans l’éditeur Visual Studio. Le mécanisme de génération de modèles automatique dans Visual Studio utilisé cette approche (autrement dit, en passant un *fortement* modèle typé) avec le `MoviesController` modèles de classe et de la vue lors de sa création les méthodes et les vues.
+MVC fournit également la possibilité de passer *fortement* objets typés à un modèle d’affichage. Cette approche fortement typée permet une meilleure compilation au moment de la vérification de votre code et plus riche [IntelliSense](https://msdn.microsoft.com/library/hcw1s69b(v=vs.120).aspx) dans l’éditeur Visual Studio. Le mécanisme de génération de modèles automatique dans Visual Studio utilisé cette approche (autrement dit, en passant un *fortement* modèle typé) avec le `MoviesController` modèles de classe et de la vue lors de sa création les méthodes et les vues.
 
 Dans le *Controllers\MoviesController.cs* fichier examiner générées `Details` (méthode). Le `Details` méthode est indiquée ci-dessous.
 
@@ -109,9 +109,9 @@ En incluant un `@model` instruction en haut du fichier de modèle de vue, vous p
 
 [!code-cshtml[Main](accessing-your-models-data-from-a-controller/samples/sample6.cshtml)]
 
-Cette directive `@model` vous permet d’accéder au film que le contrôleur a passé à la vue en utilisant un objet `Model` qui est fortement typé. Par exemple, dans le *Details.cshtml* modèle, le code transmet chaque champ de vidéo à la `DisplayNameFor` et [DisplayFor](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.displayextensions.displayfor(VS.98).aspx) programmes d’assistance HTML avec fortement typé `Model` objet. Le `Create` et `Edit` méthodes et les modèles d’affichage également passer un objet du modèle.
+Cette directive `@model` vous permet d’accéder au film que le contrôleur a passé à la vue en utilisant un objet `Model` qui est fortement typé. Par exemple, dans le *Details.cshtml* modèle, le code transmet chaque champ de vidéo à la `DisplayNameFor` et [DisplayFor](https://msdn.microsoft.com/library/system.web.mvc.html.displayextensions.displayfor(VS.98).aspx) programmes d’assistance HTML avec fortement typé `Model` objet. Le `Create` et `Edit` méthodes et les modèles d’affichage également passer un objet du modèle.
 
-Examinez le *Index.cshtml* afficher le modèle et le `Index` méthode dans le *MoviesController.cs* fichier. Notez comment le code crée un [ `List` ](https://msdn.microsoft.com/en-us/library/6sh2ey19.aspx) de l’objet lorsqu’il appelle le `View` méthode d’assistance dans le `Index` méthode d’action. Le code transmet ensuite `Movies` liste à partir de la `Index` méthode d’action à la vue :
+Examinez le *Index.cshtml* afficher le modèle et le `Index` méthode dans le *MoviesController.cs* fichier. Notez comment le code crée un [ `List` ](https://msdn.microsoft.com/library/6sh2ey19.aspx) de l’objet lorsqu’il appelle le `View` méthode d’assistance dans le `Index` méthode d’action. Le code transmet ensuite `Movies` liste à partir de la `Index` méthode d’action à la vue :
 
 [!code-csharp[Main](accessing-your-models-data-from-a-controller/samples/sample7.cs?highlight=3)]
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/master-pages-and-asp-net-ajax-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 86ec6454313f5a6e78c0f64433ef4e5a4f8461ee
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6e09951be5483ed098b8cab6517335f9962a5d95
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="master-pages-and-aspnet-ajax-c"></a>AJAX ASP.NET et les Pages maîtres (c#)
 ====================
@@ -31,7 +31,7 @@ par [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 Sur plusieurs années, plus en plus de développeurs ont été génération [AJAX](http://en.wikipedia.org/wiki/Ajax_(programming))-activé des applications web. Un site Web compatibles AJAX utilise un nombre de technologies web connexes pour offrir une expérience utilisateur plus réactive. Créer des applications ASP.NET compatibles AJAX est étonnamment facile grâce à Microsoft [infrastructure ASP.NET AJAX](../../../../ajax/index.md). ASP.NET AJAX est intégrée à ASP.NET 3.5 et Visual Studio 2008 ; Il est également disponible en téléchargement séparé pour les applications ASP.NET 2.0.
 
-Lors de la création de pages web compatibles AJAX avec l’infrastructure ASP.NET AJAX, vous devez ajouter précisément une [contrôle ScriptManager](https://msdn.microsoft.com/en-us/library/bb398863.aspx) à chaque page qui utilise l’infrastructure. Comme son nom l’indique, ScriptManager gère le script côté client utilisé dans les pages web compatibles AJAX. Au minimum, ScriptManager émet un code HTML qui indique au navigateur de télécharger les fichiers JavaScript utilisés Client ASP.NET AJAX Library. Il peut également être utilisé pour inscrire des fichiers JavaScript personnalisés, services web compatibles sur le script et fonctionnalités de service d’application personnalisée.
+Lors de la création de pages web compatibles AJAX avec l’infrastructure ASP.NET AJAX, vous devez ajouter précisément une [contrôle ScriptManager](https://msdn.microsoft.com/library/bb398863.aspx) à chaque page qui utilise l’infrastructure. Comme son nom l’indique, ScriptManager gère le script côté client utilisé dans les pages web compatibles AJAX. Au minimum, ScriptManager émet un code HTML qui indique au navigateur de télécharger les fichiers JavaScript utilisés Client ASP.NET AJAX Library. Il peut également être utilisé pour inscrire des fichiers JavaScript personnalisés, services web compatibles sur le script et fonctionnalités de service d’application personnalisée.
 
 Si les pages de votre maître d’utilise de site (comme il le devrait), il est nécessairement inutile ajouter un contrôle ScriptManager à chaque page de contenu unique ; au lieu de cela, vous pouvez ajouter un contrôle ScriptManager à la page maître. Ce didacticiel montre comment ajouter le contrôle ScriptManager à la page maître. Il examine également comment utiliser le contrôle ScriptManagerProxy pour inscrire des scripts personnalisés et des services de script dans une page de contenu spécifique.
 
@@ -117,7 +117,7 @@ Configurer le contrôle SqlDataSource pour se connecter à la base de données N
 
 [!code-sql[Main](master-pages-and-asp-net-ajax-cs/samples/sample3.sql)]
 
-Le `TOP 1` mot clé dans le `SELECT` clause retourne uniquement le premier enregistrement retourné par la requête. Le [ `NEWID()` fonction](https://msdn.microsoft.com/en-us/library/ms190348.aspx) génère un nouveau [valeur d’identificateur global unique (GUID)](http://en.wikipedia.org/wiki/Globally_Unique_Identifier) et peut être utilisé dans un `ORDER BY` clause pour retourner les enregistrements de la table dans un ordre aléatoire.
+Le `TOP 1` mot clé dans le `SELECT` clause retourne uniquement le premier enregistrement retourné par la requête. Le [ `NEWID()` fonction](https://msdn.microsoft.com/library/ms190348.aspx) génère un nouveau [valeur d’identificateur global unique (GUID)](http://en.wikipedia.org/wiki/Globally_Unique_Identifier) et peut être utilisé dans un `ORDER BY` clause pour retourner les enregistrements de la table dans un ordre aléatoire.
 
 
 [![Configurer le SqlDataSource pour retourner un enregistrement unique, sélectionné aléatoirement](master-pages-and-asp-net-ajax-cs/_static/image11.png)](master-pages-and-asp-net-ajax-cs/_static/image10.png)
@@ -243,7 +243,7 @@ La figure 11 illustre cette page lors de la première visite via un navigateur. 
 **Figure 12**: cliquez sur le bouton Resume pour redémarrer la minuterie ([cliquez pour afficher l’image en taille réelle](master-pages-and-asp-net-ajax-cs/_static/image36.png))
 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Lors de la création d’applications web compatibles AJAX à l’aide de l’infrastructure ASP.NET AJAX, il est impératif que chaque page web compatibles AJAX inclut un contrôle ScriptManager. Pour faciliter ce processus, nous pouvons ajouter un ScriptManager à la page maître, plutôt que d’avoir à mémoriser ajouter un ScriptManager à chaque page de contenu. Étape 1 a montré comment ajouter un ScriptManager à la page maître lors de l’étape 2 est examiné pour implémenter les fonctionnalités AJAX dans une page de contenu.
 

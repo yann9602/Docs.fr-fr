@@ -12,24 +12,24 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/performance/profile-and-debug-your-aspnet-mvc-app-with-glimpse
 msc.type: authoredcontent
-ms.openlocfilehash: 98b21a54ba00a8c82c3be7ba4e39d44041ed42c6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9cfdced21251b482ca527dda9c3a698de77cc8ca
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="profile-and-debug-your-aspnet-mvc-app-with-glimpse"></a>Profiler et déboguer votre application ASP.NET MVC avec aperçu
 ====================
 Par [Rick Anderson](https://github.com/Rick-Anderson)
 
-> Aperçu est plein essor et augmente la famille de packages de NuGet open source qui fournit des performances détaillés, débogage et des informations de diagnostic pour les applications ASP.NET. Il est très facile à installer, léger et ultra rapide et affiche les mesures de performances clés au bas de chaque page. Il vous permet d’approfondir votre application lorsque vous avez besoin savoir ce qui se passe au niveau du serveur. Aperçu fournit des informations précieuses bien que nous vous recommandons de que vous l’utilisez dans votre cycle de développement, y compris de votre environnement de test Azure. Alors que [Fiddler](http://www.telerik.com/fiddler) et [outils de développement F-12](https://msdn.microsoft.com/en-us/library/ie/gg589512(v=vs.85).aspx) fournissent un côté client vue Aperçu fournit une vue détaillée du serveur. Ce didacticiel se concentrera sur l’utilisation de l’aperçu ASP.NET MVC et les packages EF, mais de nombreux autres packages sont disponibles. Lorsque cela est possible de lier sera à approprié [visualiser docs](http://getglimpse.com/Docs/) qui vous aider à gérer. Aperçu est un projet open source, vous pouvez trop contribuer au code source et les documents.
+> Aperçu est plein essor et augmente la famille de packages de NuGet open source qui fournit des performances détaillés, débogage et des informations de diagnostic pour les applications ASP.NET. Il est très facile à installer, léger et ultra rapide et affiche les mesures de performances clés au bas de chaque page. Il vous permet d’approfondir votre application lorsque vous avez besoin savoir ce qui se passe au niveau du serveur. Aperçu fournit des informations précieuses bien que nous vous recommandons de que vous l’utilisez dans votre cycle de développement, y compris de votre environnement de test Azure. Alors que [Fiddler](http://www.telerik.com/fiddler) et [outils de développement F-12](https://msdn.microsoft.com/library/ie/gg589512(v=vs.85).aspx) fournissent un côté client vue Aperçu fournit une vue détaillée du serveur. Ce didacticiel se concentrera sur l’utilisation de l’aperçu ASP.NET MVC et les packages EF, mais de nombreux autres packages sont disponibles. Lorsque cela est possible de lier sera à approprié [visualiser docs](http://getglimpse.com/Docs/) qui vous aider à gérer. Aperçu est un projet open source, vous pouvez trop contribuer au code source et les documents.
 
 
 - [L’installation d’aperçu](#ig)
 - [Activer l’aperçu pour localhost](#eg)
 - [L’onglet de la chronologie](#Time)
 - [Liaison de données](#mb)
-- [Itinéraires](#route)
+- [Routes](#route)
 - [À l’aide de Glimpse dans Azure](#da)
 - [Ressources supplémentaires pour MSBuild](#addRes)
 
@@ -100,7 +100,7 @@ Le [onglet de liaison de modèle](http://getglimpse.com/Docs/Model-Binding-Tab) 
 ![visualiser la vue de modèle de liaison](profile-and-debug-your-aspnet-mvc-app-with-glimpse/_static/image11.png)
 
 <a id="route"></a>
-## <a name="routes"></a>Itinéraires
+## <a name="routes"></a>Routes
 
  L’onglet Aperçu itinéraires sera peuvent vous aider à déboguer et comprendre le routage. Dans l’image ci-dessous, l’itinéraire de produit est sélectionné (et elle est affichée en vert, une convention d’aperçu). ![nom du produit sélectionné](profile-and-debug-your-aspnet-mvc-app-with-glimpse/_static/image12.png) jetons contraintes, les zones et les données d’itinéraire sont également affichés. Consultez [Glimpse itinéraires](http://getglimpse.com/Docs/Routes-Tab) et [attribut routage dans ASP.NET MVC 5](https://blogs.msdn.com/b/webdev/archive/2013/10/17/attribute-routing-in-asp-net-mvc-5.aspx) pour plus d’informations. 
 
@@ -113,7 +113,7 @@ La stratégie de sécurité par défaut aperçu autorise uniquement les données
 
 Cette modification uniquement, tout utilisateur peut consulter vos données d’aperçu sur un site distant. Envisagez d’ajouter le balisage ci-dessus pour un profil de publication afin qu’il a déployé uniquement un appliqué lorsque vous utilisez ce profil de publication (par exemple, votre proifle test Azure.) Pour restreindre les données d’aperçu, nous allons ajouter le `canViewGlimpseData` rôle et autorise uniquement les utilisateurs de ce rôle pour afficher les données d’aperçu.
 
-Supprimez les commentaires de la *GlimpseSecurityPolicy.cs* de fichiers et de modifier le [IsInRole](https://msdn.microsoft.com/en-us/library/system.security.principal.iprincipal.isinrole(v=vs.110).aspx) appeler à partir de `Administrator` à la `canViewGlimpseData` rôle :
+Supprimez les commentaires de la *GlimpseSecurityPolicy.cs* de fichiers et de modifier le [IsInRole](https://msdn.microsoft.com/library/system.security.principal.iprincipal.isinrole(v=vs.110).aspx) appeler à partir de `Administrator` à la `canViewGlimpseData` rôle :
 
 [!code-csharp[Main](profile-and-debug-your-aspnet-mvc-app-with-glimpse/samples/sample4.cs?highlight=6)]
 
@@ -121,10 +121,10 @@ Supprimez les commentaires de la *GlimpseSecurityPolicy.cs* de fichiers et de mo
 > Sécurité - les données enrichies fournies par l’aperçu peut exposer la sécurité de votre application. Microsoft n’a pas effectué un audit de sécurité de Glimpse pour une utilisation sur les applications de l’environnement de production.
 
 
-Pour plus d’informations sur l’ajout de rôles, consultez Mes [déployer une application web de Secure ASP.NET MVC 5 avec l’appartenance, OAuth et base de données SQL Azure](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/) didacticiel.
+Pour plus d’informations sur l’ajout de rôles, consultez Mes [déployer une application web de Secure ASP.NET MVC 5 avec l’appartenance, OAuth et base de données SQL Azure](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/) didacticiel.
 
 <a id="addRes"></a>
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-- [Déployer une application sécurisée ASP.NET MVC 5 avec l’appartenance, OAuth et base de données SQL Azure](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/)
+- [Déployer une application sécurisée ASP.NET MVC 5 avec l’appartenance, OAuth et base de données SQL Azure](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/)
 - [Visualiser la Configuration](http://getglimpse.com/Docs/Configuration) -page de documentation sur la configuration des onglets, stratégie d’exécution, la journalisation et bien plus encore.

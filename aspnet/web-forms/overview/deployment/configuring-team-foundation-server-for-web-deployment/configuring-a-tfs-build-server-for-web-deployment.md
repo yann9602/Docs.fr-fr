@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/configuring-a-tfs-build-server-for-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 505cca303b5569b2f676adab767d742cb5cd21a7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: de31a9dffb95b863a4ec38b74fd2c6e03f287a7f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="configuring-a-tfs-build-server-for-web-deployment"></a>Configuration d’un serveur de Build TFS pour le déploiement Web
 ====================
@@ -58,13 +58,13 @@ Lorsque vous configurez un serveur de builds, la première tâche consiste à in
 - Créer un *le contrôleur de build* et un ou plusieurs *agents de build*. Chaque contrôleur de build gère un ensemble d’agents de build. Lorsque vous la file d’attente une build, le contrôleur de build assigne la tâche de génération à un agent de build disponible. Chaque collection de projets d’équipe dans TFS est mappée à un contrôleur de build unique.
 - Configurer un dossier de dépôt pour les sorties de génération. Il s’agit d’un partage réseau. Une génération, comme les packages de déploiement web, sont envoyés dans le dossier de dépôt.
 
-Le [administration de Team Foundation Build](https://msdn.microsoft.com/en-us/library/ms252495.aspx) chapitre sur MSDN contient toutes les ressources que vous avez besoin pour effectuer ces tâches :
+Le [administration de Team Foundation Build](https://msdn.microsoft.com/library/ms252495.aspx) chapitre sur MSDN contient toutes les ressources que vous avez besoin pour effectuer ces tâches :
 
-- Pour obtenir une vue d’ensemble conceptuelle de Team Foundation Build, y compris le service de build, les contrôleurs de build et les agents de build, consultez [présentation d’un système de génération Team Foundation](https://msdn.microsoft.com/en-us/library/dd793166.aspx).
-- Pour plus d’informations sur l’installation et configuration du service de build, consultez [configurer un ordinateur de Build](https://msdn.microsoft.com/en-us/library/ms181712.aspx).
-- Pour plus d’informations sur la création des contrôleurs de build, consultez [créer et utiliser avec un contrôleur de Build](https://msdn.microsoft.com/en-us/library/ee330987.aspx).
-- Pour plus d’informations sur la création des agents de build, consultez [créer et utiliser des Agents de Build](https://msdn.microsoft.com/en-us/library/bb399135.aspx).
-- Pour plus d’informations sur la création et configuration de dossiers de dépôt, consultez [configurer des dossiers cibles](https://msdn.microsoft.com/en-us/library/bb778394.aspx).
+- Pour obtenir une vue d’ensemble conceptuelle de Team Foundation Build, y compris le service de build, les contrôleurs de build et les agents de build, consultez [présentation d’un système de génération Team Foundation](https://msdn.microsoft.com/library/dd793166.aspx).
+- Pour plus d’informations sur l’installation et configuration du service de build, consultez [configurer un ordinateur de Build](https://msdn.microsoft.com/library/ms181712.aspx).
+- Pour plus d’informations sur la création des contrôleurs de build, consultez [créer et utiliser avec un contrôleur de Build](https://msdn.microsoft.com/library/ee330987.aspx).
+- Pour plus d’informations sur la création des agents de build, consultez [créer et utiliser des Agents de Build](https://msdn.microsoft.com/library/bb399135.aspx).
+- Pour plus d’informations sur la création et configuration de dossiers de dépôt, consultez [configurer des dossiers cibles](https://msdn.microsoft.com/library/bb778394.aspx).
 
 ## <a name="install-required-products-and-components"></a>Installer des composants et des produits requis
 
@@ -114,7 +114,7 @@ La meilleure façon d’installer les composants de plateforme web commune consi
 
 ## <a name="further-reading"></a>informations supplémentaires
 
-Pour obtenir des instructions plus générales sur l’utilisation de Team Build, consultez [administration de Team Foundation Build](https://msdn.microsoft.com/en-us/library/ms252495.aspx).
+Pour obtenir des instructions plus générales sur l’utilisation de Team Build, consultez [administration de Team Foundation Build](https://msdn.microsoft.com/library/ms252495.aspx).
 
 >[!div class="step-by-step"]
 [Précédent](adding-content-to-source-control.md)

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/basic-reporting/declarative-parameters-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 3a4685741e0acab7a944e2822a5c43c5cf3e9cf1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4bbe32ae65f71196fc1f939671b9d1a24bee8c34
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="declarative-parameters-c"></a>Paramètres déclaratifs (c#)
 ====================
@@ -111,7 +111,7 @@ Ensuite, ajoutez un contrôle GridView à la page et, à partir de la balise act
 **Figure 8**: la valeur de paramètre à la `CountryName` valeur de contrôle ([cliquez pour afficher l’image en taille réelle](declarative-parameters-cs/_static/image24.png))
 
 
-Balisage déclaratif de l’ObjectDataSource diffère légèrement de notre premier exemple, à l’aide un [ControlParameter](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.controlparameter.aspx) au lieu de la norme `Parameter` objet. A `ControlParameter` possède des propriétés supplémentaires pour spécifier le `ID` du contrôle Web et de la valeur de propriété à utiliser pour le paramètre (`PropertyName`). L’Assistant Configurer la Source de données a été assez intelligent pour déterminer que, pour une zone de texte, nous voudrez probablement utiliser le `Text` propriété pour la valeur du paramètre. Si, toutefois, vous souhaitez utiliser une valeur de propriété différente dans le contrôle Web, vous pouvez modifier le `PropertyName` valeur ici ou en cliquant sur le lien « Afficher les propriétés avancées » dans l’Assistant.
+Balisage déclaratif de l’ObjectDataSource diffère légèrement de notre premier exemple, à l’aide un [ControlParameter](https://msdn.microsoft.com/library/system.web.ui.webcontrols.controlparameter.aspx) au lieu de la norme `Parameter` objet. A `ControlParameter` possède des propriétés supplémentaires pour spécifier le `ID` du contrôle Web et de la valeur de propriété à utiliser pour le paramètre (`PropertyName`). L’Assistant Configurer la Source de données a été assez intelligent pour déterminer que, pour une zone de texte, nous voudrez probablement utiliser le `Text` propriété pour la valeur du paramètre. Si, toutefois, vous souhaitez utiliser une valeur de propriété différente dans le contrôle Web, vous pouvez modifier le `PropertyName` valeur ici ou en cliquant sur le lien « Afficher les propriétés avancées » dans l’Assistant.
 
 [!code-aspx[Main](declarative-parameters-cs/samples/sample2.aspx)]
 
@@ -147,7 +147,7 @@ Avec cette modification le `DeclarativeParams.aspx` page affiche tous les fourni
 **La figure 10**: tous les fournisseurs sont maintenant affichés par défaut ([cliquez pour afficher l’image en taille réelle](declarative-parameters-cs/_static/image30.png))
 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Pour pouvoir utiliser les méthodes avec des paramètres d’entrée, nous devons spécifier les valeurs pour les paramètres de l’ObjectDataSource `SelectParameters` collection. Autorisent les différents types de paramètres pour la valeur du paramètre doit être obtenu à partir de sources différentes. Le type de paramètre par défaut utilise une valeur codée en dur, mais comme facilement (et sans une ligne de code) des valeurs de paramètre peuvent être obtenues à partir de la chaîne de requête, Session variables, les cookies et même entré par l’utilisateur de valeurs à partir de contrôles Web sur la page.
 

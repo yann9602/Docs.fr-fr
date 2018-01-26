@@ -2,20 +2,18 @@
 title: "Cœur de ASP.NET MVC avec Entity Framework Core - didacticiel 1 sur 10"
 author: tdykstra
 description: 
-keywords: Didacticiel de ASP.NET Core, Entity Framework Core,
 ms.author: tdykstra
 manager: wpickett
 ms.date: 03/15/2017
 ms.topic: get-started-article
-ms.assetid: b67c3d4a-f2bf-4132-a48b-4b0d599d7981
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/intro
-ms.openlocfilehash: 2b21c7fb35c65d9374723faac5b812289023a0f6
-ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
+ms.openlocfilehash: c30556368ba24fb38cf3347dd49f171b5246514c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="getting-started-with-aspnet-core-mvc-and-entity-framework-core-using-visual-studio-1-of-10"></a>Mise en route avec ASP.NET MVC de base et d’Entity Framework Core, à l’aide de Visual Studio (1 / 10)
 
@@ -29,13 +27,13 @@ L’exemple d’application est un site web pour une université fictif de Conto
 
 [Télécharger ou afficher l’application terminée.](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-mvc/intro/samples/cu-final)
 
-EF Core 2.0 est la dernière version de EF mais n’a pas encore de toutes les fonctionnalités EF 6.x. Pour plus d’informations sur comment choisir entre EF 6.x et EF Core, consultez [EF Core vs. EF6.x](https://docs.microsoft.com/ef/efcore-and-ef6/). Si vous choisissez EF 6.x, consultez [la version précédente de cette série de didacticiels](https://docs.microsoft.com/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application).
+EF Core 2.0 est la dernière version de EF mais ne dispose pas encore toutes les fonctionnalités EF 6.x. Pour plus d’informations sur comment choisir entre EF 6.x et EF Core, consultez [EF Core vs. EF6.x](https://docs.microsoft.com/ef/efcore-and-ef6/). Si vous choisissez EF 6.x, consultez [la version précédente de cette série de didacticiels](https://docs.microsoft.com/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application).
 
 > [!NOTE]
 > * Pour la version 1.1 de base ASP.NET de ce didacticiel, consultez le [version VS 2017 mise à jour 2 de ce didacticiel au format PDF](https://github.com/aspnet/Docs/blob/master/aspnetcore/data/ef-mvc/intro/_static/efmvc1.1.pdf).
 > * Pour obtenir la version Visual Studio 2015 de ce didacticiel, consultez la [version VS 2015 de la documentation ASP.NET Core au format PDF](https://github.com/aspnet/Docs/blob/master/aspnetcore/common/_static/aspnet-core-project-json.pdf).
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 [!INCLUDE[install 2.0](../../includes/install2.0.md)]
 
@@ -44,7 +42,7 @@ EF Core 2.0 est la dernière version de EF mais n’a pas encore de toutes les f
 Si vous rencontrez un problème que vous ne pouvez pas résoudre, vous trouverez généralement la solution en comparant votre code pour le [projet achevé](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-mvc/intro/samples/cu-final). Pour obtenir la liste des erreurs courantes et comment les résoudre, consultez [la section de dépannage du didacticiel dernière dans la série](advanced.md#common-errors). Si vous ne trouvez pas ce dont vous avez besoin il, vous pouvez publier une question dans StackOverflow.com pour [ASP.NET Core](https://stackoverflow.com/questions/tagged/asp.net-core) ou [EF Core](https://stackoverflow.com/questions/tagged/entity-framework-core).
 
 > [!TIP] 
-> Il s’agit d’une série de 10 didacticiels, chacun d’eux s’appuie sur les opérations réalisées dans les didacticiels antérieures.  Pensez à enregistrer une copie du projet après chaque didacticiel réussite.  Si vous rencontrez des problèmes, vous pouvez ensuite démarrer sur à partir du didacticiel précédent, au lieu de revenir au début de l’ensemble de la série.
+> Il s’agit d’une série de 10 didacticiels, chacun d’eux s’appuie sur les opérations réalisées dans les didacticiels antérieures. Pensez à enregistrer une copie du projet après chaque didacticiel réussite. Si vous rencontrez des problèmes, vous pouvez ensuite démarrer sur à partir du didacticiel précédent, au lieu de revenir au début de l’ensemble de la série.
 
 ## <a name="the-contoso-university-web-application"></a>L’application web de Contoso University
 
@@ -136,7 +134,7 @@ Le `ID` propriété deviendra la colonne de clé primaire de la table de base de
 
 Le `Enrollments` est une propriété de navigation. Propriétés de navigation contiennent d’autres entités qui sont associées à cette entité. Dans ce cas, le `Enrollments` propriété d’un `Student entity` contiendra tous les `Enrollment` entités qui sont associées à cette `Student` entité. En d’autres termes, si une ligne donnée d’étudiant dans la base de données a deux d’inscription des lignes liées (lignes qui contiennent la valeur de clé primaire qui student dans leur colonne StudentID de clé étrangère), qui `Student` l’entité `Enrollments` celles contiendra la propriété de navigation deux `Enrollment` entités.
 
-Si une propriété de navigation peut contenir plusieurs entités (par exemple, les relations plusieurs-à-plusieurs ou un-à-plusieurs), son type doit être une liste dans laquelle les entrées peuvent être ajoutées, supprimées et mis à jour, telles que `ICollection<T>`.  Vous pouvez spécifier `ICollection<T>` ou un type tel que `List<T>` ou `HashSet<T>`. Si vous spécifiez `ICollection<T>`, EF crée un `HashSet<T>` collection par défaut.
+Si une propriété de navigation peut contenir plusieurs entités (par exemple, les relations plusieurs-à-plusieurs ou un-à-plusieurs), son type doit être une liste dans laquelle les entrées peuvent être ajoutées, supprimées et mis à jour, telles que `ICollection<T>`. Vous pouvez spécifier `ICollection<T>` ou un type tel que `List<T>` ou `HashSet<T>`. Si vous spécifiez `ICollection<T>`, EF crée un `HashSet<T>` collection par défaut.
 
 ### <a name="the-enrollment-entity"></a>L’entité de l’inscription
 
@@ -206,11 +204,11 @@ Ouvrez le *appsettings.json* et ajoutez une chaîne de connexion comme indiqué 
 
 ### <a name="sql-server-express-localdb"></a>SQL Server Express LocalDB
 
-La chaîne de connexion spécifie une base de données de la base de données SQL Server locale. LocalDB est une version légère de SQL Server Express Database Engine et est conçue pour le développement d’applications, pas les fins de production. LocalDB démarre à la demande et s’exécute en mode utilisateur, ce qui n’implique aucune configuration complexe. Par défaut, LocalDB crée *.mdf* dans les fichiers de base de données la `C:/Users/<user>` active.
+La chaîne de connexion spécifie une base de données de la base de données SQL Server locale. LocalDB est une version légère de SQL Server Express Database Engine et est conçue pour le développement d’applications, pas les fins de production. LocalDB démarre à la demande et s’exécute en mode utilisateur, il n’existe aucune configuration complexe. Par défaut, LocalDB crée *.mdf* dans les fichiers de base de données la `C:/Users/<user>` active.
 
 ## <a name="add-code-to-initialize-the-database-with-test-data"></a>Ajoutez du code pour initialiser la base de données de test
 
-Entity Framework crée une base de données vide pour vous.  Dans cette section, vous écrivez une méthode qui est appelée après que la base de données est créée pour la remplir avec des données de test.
+Entity Framework crée une base de données vide pour vous. Dans cette section, vous écrivez une méthode qui est appelée après que la base de données est créée pour la remplir avec des données de test.
 
 Vous allez utiliser le `EnsureCreated` méthode pour créer automatiquement la base de données. Dans un [didacticiel ultérieur](migrations.md) vous allez apprendre à gérer les modifications apportées au modèle à l’aide de Migrations Code First pour modifier le schéma de base de données au lieu de devoir supprimer et recréer la base de données.
 
@@ -218,7 +216,7 @@ Dans le *données* dossier, créez un nouveau fichier de classe nommé *DbInitia
 
 [!code-csharp[Main](intro/samples/cu/Data/DbInitializer.cs?name=snippet_Intro)]
 
-Le code vérifie s’il existe des étudiants dans la base de données, et dans le cas contraire, il suppose que la base de données est nouveau et doit être exécutée avec les données de test.  Il charge les données de test dans les tableaux plutôt que `List<T>` collections pour optimiser les performances.
+Le code vérifie s’il existe des étudiants dans la base de données, et dans le cas contraire, il suppose que la base de données est nouveau et doit être exécutée avec les données de test. Il charge les données de test dans les tableaux plutôt que `List<T>` collections pour optimiser les performances.
 
 Dans *Program.cs*, modifiez le `Main` méthode effectuer les opérations suivantes sur le démarrage de l’application :
 
@@ -244,10 +242,10 @@ La création automatique de méthodes d’action CRUD et de vues est appelée à
 
 * Avec le bouton droit le **contrôleurs** dossier **l’Explorateur de solutions** et sélectionnez **Ajouter > nouvel élément structuré**.
 
-Si le **ajouter des dépendances MVC** boîte de dialogue apparaît :
+Si la boîte de dialogue **Ajouter des dépendances MVC** apparaît :
 
-* [Mettre à jour de Visual Studio vers la dernière version](https://www.visualstudio.com/downloads/). Les versions de Visual Studio avant 15.5 affichent cette boîte de dialogue.
-* Si vous ne pouvez pas mettre à jour, sélectionnez **ajouter**, puis suivez les étapes de contrôleur d’ajouter à nouveau.
+* [Effectuez la mise à jour de Visual Studio vers la dernière version](https://www.visualstudio.com/downloads/). Les versions de Visual Studio antérieures à 15.5 affichent cette boîte de dialogue.
+* Si vous ne pouvez pas effectuer la mise à jour, sélectionnez **ADD**, puis suivez à nouveau les étapes pour ajouter un contrôleur.
 
 * Dans le **ajouter une vue de structure** boîte de dialogue :
 
@@ -353,7 +351,7 @@ Dans le code suivant, le `async` (mot clé), `Task<T>` valeur de retour, `await`
 
 Éléments à connaître lorsque vous écrivez du code asynchrone qui utilise Entity Framework :
 
-* Uniquement les instructions qui génèrent des requêtes ou des commandes à envoyer à la base de données sont exécutées de façon asynchrone. Qui inclut, par exemple, `ToListAsync`, `SingleOrDefaultAsync`, et `SaveChangesAsync`.  Il n’inclut pas, par exemple, les instructions qui modifient simplement un `IQueryable`, tel que `var students = context.Students.Where(s => s.LastName == "Davolio")`.
+* Uniquement les instructions qui génèrent des requêtes ou des commandes à envoyer à la base de données sont exécutées de façon asynchrone. Qui inclut, par exemple, `ToListAsync`, `SingleOrDefaultAsync`, et `SaveChangesAsync`. Il n’inclut pas, par exemple, les instructions qui modifient simplement un `IQueryable`, tel que `var students = context.Students.Where(s => s.LastName == "Davolio")`.
 
 * Un contexte EF n’est pas thread-safe : n’essayez pas d’effectuer plusieurs opérations en parallèle. Lorsque vous appelez une méthode EF async, vous devez toujours utiliser le `await` (mot clé).
 
@@ -361,9 +359,9 @@ Dans le code suivant, le `async` (mot clé), `Task<T>` valeur de retour, `await`
 
 Pour plus d’informations sur la programmation asynchrone dans .NET, consultez [vue d’ensemble de Async](https://docs.microsoft.com/dotnet/articles/standard/async).
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Vous venez de créer une application simple qui utilise l’Entity Framework Core et SQL Server Express LocalDB pour stocker et afficher des données. Dans ce didacticiel, vous allez apprendre à effectuer CRUD de base (créer, lire, mettre à jour, supprimer) les opérations.
 
 >[!div class="step-by-step"]
-[Next](crud.md)  
+[Next](crud.md)

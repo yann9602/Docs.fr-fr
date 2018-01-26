@@ -2,20 +2,18 @@
 title: "Injection de dépendance dans les vues"
 author: ardalis
 description: 
-keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: 80fb9e43-e4db-4af2-b2a8-e1364a712f69
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/dependency-injection
-ms.openlocfilehash: 4586f50bc663b7269914dfff28b61342e3991a48
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a1258dbe2e659f6c5149d15b37451810ec7d6601
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="dependency-injection-into-views"></a>Injection de dépendance dans les vues
 
@@ -43,7 +41,7 @@ Le `StatisticsService` effectue des calculs sur l’ensemble de `ToDoItem` insta
 
 [!code-csharp[Main](../../mvc/views/dependency-injection/sample/src/ViewInjectSample/Model/Services/StatisticsService.cs?highlight=15,20,26)]
 
-Le référentiel de l’exemple utilise une collection en mémoire. L’implémentation ci-dessus (qui fonctionne sur toutes les données en mémoire) n’est pas recommandée pour les jeux de données volumineux, accessible à distance.
+Le référentiel de l’exemple utilise une collection en mémoire. L’implémentation ci-dessus (qui fonctionne sur toutes les données en mémoire) n’est pas recommandé pour les jeux de données volumineux, accessible à distance.
 
 L’exemple affiche les données du modèle lié à la vue et le service injectés dans la vue :
 

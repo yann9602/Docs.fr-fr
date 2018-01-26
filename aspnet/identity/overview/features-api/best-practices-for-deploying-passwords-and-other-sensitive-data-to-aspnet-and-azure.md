@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure
 msc.type: authoredcontent
-ms.openlocfilehash: 465c9cf6f452c268e7e23509e7a29547df5d3e83
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 995d9a088e3095f36a01d2adb19ec08e6a6d1b3e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure-app-service"></a>Meilleures pratiques pour le déploiement des mots de passe et autres données sensibles sur ASP.NET et Service d’applications Azure
 ====================
@@ -54,7 +54,7 @@ Le balisage dans le fichier externe (*AppSettingsSecrets.config* dans cet exempl
 Le runtime ASP.NET fusionne le contenu du fichier externe avec le balisage dans &lt;appSettings&gt; élément. Le runtime ignore l’attribut de fichier si le fichier spécifié est introuvable.
 
 > [!WARNING]
-> Sécurité : n’ajoutez pas votre *secrets .config* de fichiers à votre projet ou la vérifier dans le contrôle de code source. Par défaut, Visual Studio affecte la `Build Action` à `Content`, ce qui signifie que le fichier est déployé. Pour plus d’informations, consultez [pourquoi ne pas tous les fichiers dans le dossier du projet sont déployés ?](https://msdn.microsoft.com/en-us/library/ee942158(v=vs.110).aspx#can_i_exclude_specific_files_or_folders_from_deployment) Bien que vous pouvez utiliser n’importe quelle extension pour le *secrets .config* fichier, il est préférable qu’il soit *.config*, comme les fichiers de configuration ne sont pas pris en charge par IIS. Notez également que la *AppSettingsSecrets.config* fichier est à deux niveaux de répertoire au-dessus de la *web.config* de fichiers, par conséquent, il est complètement hors du répertoire de solution. En déplaçant le fichier du répertoire de la solution, &quot;git ajouter \* &quot; ne sera pas l’ajouter à votre référentiel.
+> Sécurité : n’ajoutez pas votre *secrets .config* de fichiers à votre projet ou la vérifier dans le contrôle de code source. Par défaut, Visual Studio affecte la `Build Action` à `Content`, ce qui signifie que le fichier est déployé. Pour plus d’informations, consultez [pourquoi ne pas tous les fichiers dans le dossier du projet sont déployés ?](https://msdn.microsoft.com/library/ee942158(v=vs.110).aspx#can_i_exclude_specific_files_or_folders_from_deployment) Bien que vous pouvez utiliser n’importe quelle extension pour le *secrets .config* fichier, il est préférable qu’il soit *.config*, comme les fichiers de configuration ne sont pas pris en charge par IIS. Notez également que la *AppSettingsSecrets.config* fichier est à deux niveaux de répertoire au-dessus de la *web.config* de fichiers, par conséquent, il est complètement hors du répertoire de solution. En déplaçant le fichier du répertoire de la solution, &quot;git ajouter \* &quot; ne sera pas l’ajouter à votre référentiel.
 
 
 <a id="con"></a>
@@ -96,7 +96,7 @@ Lorsque vous déployez votre application web sur Azure, le *AppSettingsSecrets.c
 
 Le **paramètres de l’application** et **chaîne de connexion** valeurs remplacent les mêmes paramètres dans le *web.config* fichier. Dans notre exemple, nous n’avez pas déployé ces paramètres dans Azure, mais si ces clés se trouvaient dans le *web.config* fichier, les paramètres affichés sur le portail sont prioritaire.
 
-Une meilleure pratique consiste à suivre un [DevOps workflow](../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything.md) et utiliser [Azure PowerShell](https://azure.microsoft.com/en-us/documentation/articles/install-configure-powershell/) (ou une autre infrastructure, tels que [Chef](http://www.opscode.com/chef/) ou [Puppet](http://puppetlabs.com/puppet/what-is-puppet)) à automatiser la définition de ces valeurs dans Azure. Le script PowerShell suivant utilise [Export-CliXml](http://www.powershellcookbook.com/recipe/PukO/securely-store-credentials-on-disk) pour exporter les secrets chiffrés sur le disque :
+Une meilleure pratique consiste à suivre un [DevOps workflow](../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything.md) et utiliser [Azure PowerShell](https://azure.microsoft.com/documentation/articles/install-configure-powershell/) (ou une autre infrastructure, tels que [Chef](http://www.opscode.com/chef/) ou [Puppet](http://puppetlabs.com/puppet/what-is-puppet)) à automatiser la définition de ces valeurs dans Azure. Le script PowerShell suivant utilise [Export-CliXml](http://www.powershellcookbook.com/recipe/PukO/securely-store-credentials-on-disk) pour exporter les secrets chiffrés sur le disque :
 
 [!code-powershell[Main](best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure/samples/sample6.ps1)]
 
@@ -105,7 +105,7 @@ Dans le script ci-dessus, « Name » est le nom de la clé secrète, tel que �
 [!code-powershell[Main](best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure/samples/sample7.ps1)]
 
 > [!WARNING]
-> Sécurité - n’incluez pas les mots de passe ou autres secrets dans le script PowerShell, en effectuant ce empêche l’objectif de l’utilisation d’un script PowerShell pour déployer des données sensibles. Le [Get-Credential](https://technet.microsoft.com/en-us/library/hh849815.aspx) applet de commande fournit un mécanisme sécurisé pour obtenir un mot de passe. À l’aide d’une invite de commandes de l’interface utilisateur peut empêcher une fuite d’un mot de passe.
+> Sécurité - n’incluez pas les mots de passe ou autres secrets dans le script PowerShell, en effectuant ce empêche l’objectif de l’utilisation d’un script PowerShell pour déployer des données sensibles. Le [Get-Credential](https://technet.microsoft.com/library/hh849815.aspx) applet de commande fournit un mécanisme sécurisé pour obtenir un mot de passe. À l’aide d’une invite de commandes de l’interface utilisateur peut empêcher une fuite d’un mot de passe.
 
 
 ### <a name="deploying-db-connection-strings"></a>Déploiement des chaînes de connexion de base de données
@@ -119,7 +119,7 @@ Depuis les paires clé-valeur pour les deux **paramètres de l’application** e
 
 ## <a name="notes-for-on-premises-servers"></a>Notes pour les serveurs locaux
 
-Si vous déployez vers les serveurs web locaux, vous pouvez aider les secrets sécurisés par [chiffrer les sections de configuration des fichiers de configuration](https://msdn.microsoft.com/en-us/library/ff647398.aspx). En guise d’alternative, vous pouvez utiliser la même approche recommandée pour les sites Web Azure : conserver les paramètres de développement dans les fichiers de configuration et utiliser des valeurs de variables d’environnement pour les paramètres de production. Dans ce cas, toutefois, vous devez écrire du code d’application pour la fonctionnalité est automatique dans les sites Web Azure : récupérer les paramètres des variables d’environnement et utiliser ces valeurs à la place du fichier de configuration ou utiliser le fichier de configuration lorsque variables d’environnement sont introuvables.
+Si vous déployez vers les serveurs web locaux, vous pouvez aider les secrets sécurisés par [chiffrer les sections de configuration des fichiers de configuration](https://msdn.microsoft.com/library/ff647398.aspx). En guise d’alternative, vous pouvez utiliser la même approche recommandée pour les sites Web Azure : conserver les paramètres de développement dans les fichiers de configuration et utiliser des valeurs de variables d’environnement pour les paramètres de production. Dans ce cas, toutefois, vous devez écrire du code d’application pour la fonctionnalité est automatique dans les sites Web Azure : récupérer les paramètres des variables d’environnement et utiliser ces valeurs à la place du fichier de configuration ou utiliser le fichier de configuration lorsque variables d’environnement sont introuvables.
 
 <a id="addRes"></a>
 ## <a name="additional-resources"></a>Ressources supplémentaires

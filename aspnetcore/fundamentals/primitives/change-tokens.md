@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/primitives/change-tokens
-ms.openlocfilehash: a9479e3d676ed4dc880996a4a77de30d82b84cd5
-ms.sourcegitcommit: 216dfac27542f10a79274a9ce60dc449e888ed20
+ms.openlocfilehash: 94bf356fcbfab3930804485c1b65e4a0f4c52b8e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="detect-changes-with-change-tokens-in-aspnet-core"></a>Détecte les modifications avec modification de jetons dans ASP.NET Core
 
@@ -135,7 +135,7 @@ Un bouton active et désactive la surveillance :
 
 [!code-csharp[Main](change-tokens/sample/Pages/Index.cshtml.cs?name=snippet2)]
 
-Lorsque `OnPostStartMonitoring` est déclenchée, l’analyse est activée, et l’état actuel est désactivée. Lorsque `OnPostStopMonitoring` est déclenchée, l’analyse est désactivée et l’état est défini pour indiquer que la surveillance n’est pas activée.
+Lorsque `OnPostStartMonitoring` est déclenchée, l’analyse est activée, et l’état actuel est désactivée. Lorsque `OnPostStopMonitoring` est déclenchée, l’analyse est désactivée et l’état est défini pour indiquer que l’analyse n’est pas produit.
 
 ## <a name="monitoring-cached-file-changes"></a>Surveillance des modifications de fichier mis en cache
 
@@ -199,10 +199,10 @@ var compositeChangeToken =
 
 ## <a name="see-also"></a>Voir aussi
 
-* [La mise en cache en mémoire](xref:performance/caching/memory)
-* [Utilisation avec un cache distribué](xref:performance/caching/distributed)
-* [Détection des modifications avec modification de jetons](xref:fundamentals/primitives/change-tokens)
+* [Mise en cache en mémoire](xref:performance/caching/memory)
+* [Utilisation d’un cache distribué](xref:performance/caching/distributed)
+* [Détecter les modifications à l’aide de jetons de modification](xref:fundamentals/primitives/change-tokens)
 * [Mise en cache des réponses](xref:performance/caching/response)
 * [Intergiciel de mise en cache des réponses](xref:performance/caching/middleware)
-* [Application d’assistance de balise de cache](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
-* [Application d’assistance de balise de Cache distribué](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)
+* [Tag Helper de cache](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
+* [Tag Helper de cache distribué](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)

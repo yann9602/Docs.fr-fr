@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-production
 msc.type: authoredcontent
-ms.openlocfilehash: 2c49e7f6925b1ca172642747c5052ba97d70d036
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: abd3f3f78dd9a9e6394e2f61aa9bd692810ca875
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-to-production"></a>Déploiement de Web ASP.NET à l’aide de Visual Studio : déploiement en Production
 ====================
@@ -150,7 +150,7 @@ Maintenant que vous avez créé une application web et la base de données pour 
     5. Fermer le **configurer les mises à jour de base de données** boîte de dialogue.
 10. Sous **SchoolContext** dans les **bases de données** section, sélectionnez **exécuter fonctionnalité Migrations Code First (s’exécute sur le démarrage de l’application)**.
 
-    Visual Studio affiche **exécuter des Migrations Code First** au lieu de **mise à jour de la base de données** pour `DbContext` classes. Si vous souhaitez utiliser le fournisseur dbDacFx au lieu de Migrations pour déployer une base de données auxquels vous accédez à l’aide un `DbContext` de classe, consultez [comment déployer une base de données Code First sans Migrations ?](https://msdn.microsoft.com/en-us/library/ee942158.aspx#deploy_code_first_without_migrations) dans le Forum aux questions de déploiement Web pour Visual Studio et ASP.NET sur MSDN.
+    Visual Studio affiche **exécuter des Migrations Code First** au lieu de **mise à jour de la base de données** pour `DbContext` classes. Si vous souhaitez utiliser le fournisseur dbDacFx au lieu de Migrations pour déployer une base de données auxquels vous accédez à l’aide un `DbContext` de classe, consultez [comment déployer une base de données Code First sans Migrations ?](https://msdn.microsoft.com/library/ee942158.aspx#deploy_code_first_without_migrations) dans le Forum aux questions de déploiement Web pour Visual Studio et ASP.NET sur MSDN.
 
     Le **paramètres** onglet ressemble maintenant à l’exemple suivant :
 
@@ -193,7 +193,7 @@ Une considération importante pour l’application intermédiaire est qu’est p
 - Utiliser une URL masquée qui serait impossible à deviner.
 - Créer un *robots.txt* fichier pour vous assurer que les moteurs de recherche pas analysera les liens de rapport et d’application de test à ce dernier dans les résultats de la recherche.
 
-La première de ces méthodes est la plus efficace, mais n’est pas couverte dans ce didacticiel, car cela nécessiterait que vous déployez sur un Service de Cloud Azure au lieu du Service d’applications Azure. Pour plus d’informations sur les Services de cloud computing et les restrictions IP dans Azure, consultez [de calcul hébergeant Options fournies par Azure](https://docs.microsoft.com/azure/cloud-services/cloud-services-choose-me) et [bloc des adresses IP spécifiques d’accéder à un rôle Web](https://msdn.microsoft.com/en-us/library/windowsazure/jj154098.aspx). Si vous déployez sur un fournisseur d’hébergement tiers, contactez le fournisseur pour savoir comment implémenter des restrictions d’adresse IP.
+La première de ces méthodes est la plus efficace, mais n’est pas couverte dans ce didacticiel, car cela nécessiterait que vous déployez sur un Service de Cloud Azure au lieu du Service d’applications Azure. Pour plus d’informations sur les Services de cloud computing et les restrictions IP dans Azure, consultez [de calcul hébergeant Options fournies par Azure](https://docs.microsoft.com/azure/cloud-services/cloud-services-choose-me) et [bloc des adresses IP spécifiques d’accéder à un rôle Web](https://msdn.microsoft.com/library/windowsazure/jj154098.aspx). Si vous déployez sur un fournisseur d’hébergement tiers, contactez le fournisseur pour savoir comment implémenter des restrictions d’adresse IP.
 
 Pour ce didacticiel, vous allez créer un *robots.txt* fichier.
 
@@ -256,7 +256,7 @@ Par défaut, *.pubxml* fichiers sont inclus dans le projet lorsque vous créez u
 
 Pour chaque *.pubxml* fichier est un *. pubxml.user* fichier. Le *. pubxml.user* fichier contient le mot de passe chiffré si vous avez sélectionné le **enregistrer le mot de passe** option et, par défaut, il est exclu du projet.
 
-A *.pubxml* fichier contient les paramètres qui se rapportent à un profil de publication spécifique. Si vous souhaitez configurer les paramètres qui s’appliquent à tous les profils, vous pouvez créer un *. wpp.targets* fichier. Le processus de génération importe ces fichiers dans le *.csproj* ou *.vbproj* fichier projet, pour que la plupart des paramètres que vous pouvez configurer dans le fichier projet peut être configuré dans ces fichiers. Pour plus d’informations sur *.pubxml* fichiers et *. wpp.targets* de fichiers, consultez [Comment : modifier les paramètres de déploiement dans les fichiers de profil de publication (.pubxml) et le. wpp.targets fichier dans Visual Studio Projets Web](https://msdn.microsoft.com/en-us/library/ff398069.aspx).
+A *.pubxml* fichier contient les paramètres qui se rapportent à un profil de publication spécifique. Si vous souhaitez configurer les paramètres qui s’appliquent à tous les profils, vous pouvez créer un *. wpp.targets* fichier. Le processus de génération importe ces fichiers dans le *.csproj* ou *.vbproj* fichier projet, pour que la plupart des paramètres que vous pouvez configurer dans le fichier projet peut être configuré dans ces fichiers. Pour plus d’informations sur *.pubxml* fichiers et *. wpp.targets* de fichiers, consultez [Comment : modifier les paramètres de déploiement dans les fichiers de profil de publication (.pubxml) et le. wpp.targets fichier dans Visual Studio Projets Web](https://msdn.microsoft.com/library/ff398069.aspx).
 
 1. Dans **l’Explorateur de solutions**, développez **propriétés** et développez **PublishProfiles**.
 2. Avec le bouton droit *Production.pubxml* et cliquez sur **ouvrir**.
@@ -271,7 +271,7 @@ A *.pubxml* fichier contient les paramètres qui se rapportent à un profil de p
 
     [!code-xml[Main](deploying-to-production/samples/sample4.xml?highlight=18-20)]
 
-    Pour plus d’informations sur la façon d’exclure des fichiers et dossiers, consultez [exclure certains fichiers ou dossiers de déploiement ?](https://msdn.microsoft.com/en-us/library/ee942158.aspx#can_i_exclude_specific_files_or_folders_from_deployment) dans les **Forum aux questions de déploiement Web pour Visual Studio et ASP.NET** sur MSDN.
+    Pour plus d’informations sur la façon d’exclure des fichiers et dossiers, consultez [exclure certains fichiers ou dossiers de déploiement ?](https://msdn.microsoft.com/library/ee942158.aspx#can_i_exclude_specific_files_or_folders_from_deployment) dans les **Forum aux questions de déploiement Web pour Visual Studio et ASP.NET** sur MSDN.
 
 ### <a name="deploy-to-production"></a>Déployer en production
 
@@ -295,7 +295,7 @@ Vous avez désormais déployé et testé votre application web et il est publiqu
 Dans l’étape suivante du didacticiel, vous allez mettre à jour le code de l’application et déploiement de la modification pour les environnements de test, intermédiaire et de production.
 
 > [!NOTE]
-> Pendant que votre application est en cours d’utilisation dans l’environnement de production vous être devez implémenter un plan de récupération. Autrement dit, vous devez être sauvegarder régulièrement vos bases de données à partir de l’application de production vers un emplacement de stockage sécurisé, et vous devez conserver plusieurs générations de ces sauvegardes. Lorsque vous mettez à jour la base de données, vous devez vous une copie de sauvegarde à partir d’immédiatement avant la modification. Ensuite, si vous commettez une erreur et ne Découvrez qu’une fois que vous l’avez déployée en production, vous serez toujours en mesure de récupérer la base de données à l’état, qu'il se trouvait avant qu’il a été endommagé. Pour plus d’informations, consultez [sauvegarde de base de données SQL Azure et de restauration](https://msdn.microsoft.com/en-us/library/windowsazure/jj650016.aspx).
+> Pendant que votre application est en cours d’utilisation dans l’environnement de production vous être devez implémenter un plan de récupération. Autrement dit, vous devez être sauvegarder régulièrement vos bases de données à partir de l’application de production vers un emplacement de stockage sécurisé, et vous devez conserver plusieurs générations de ces sauvegardes. Lorsque vous mettez à jour la base de données, vous devez vous une copie de sauvegarde à partir d’immédiatement avant la modification. Ensuite, si vous commettez une erreur et ne Découvrez qu’une fois que vous l’avez déployée en production, vous serez toujours en mesure de récupérer la base de données à l’état, qu'il se trouvait avant qu’il a été endommagé. Pour plus d’informations, consultez [sauvegarde de base de données SQL Azure et de restauration](https://msdn.microsoft.com/library/windowsazure/jj650016.aspx).
 
 
 > [!NOTE]

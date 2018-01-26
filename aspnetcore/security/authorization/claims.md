@@ -2,20 +2,18 @@
 title: "Autorisation basée sur les revendications"
 author: rick-anderson
 description: "Ce document explique comment ajouter des contrôles de revendications d’autorisation dans une application ASP.NET Core."
-keywords: "ASP.NET Core, d’autorisation, les revendications"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: 737be5cd-3511-4f1c-b0ce-65403fb5eed3
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authorization/claims
-ms.openlocfilehash: eebaddabdd360f34b6ff44e8f4f9f1f10fda6406
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 870bdf79abc2c94745ab5da6997a37ed0e4ea4e2
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="claims-based-authorization"></a>Autorisation basée sur les revendications
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-authentication-and-profile-application-services
 msc.type: authoredcontent
-ms.openlocfilehash: 7e0ddc15fac9af40a0a20a99979a80517eb1b6a2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 182276f9f91b99beb1ce0fc40dcda1f19376669a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="understanding-aspnet-ajax-authentication-and-profile-application-services"></a>Présentation de l’authentification ASP.NET AJAX et les Services d’Application de profil
 ====================
@@ -43,7 +43,7 @@ Le service d’authentification permet aux utilisateurs de fournir des informati
 
 Le service de profil permet l’intégration automatique et le stockage des données utilisateur en fonction de l’appartenance, tel que fourni par le service d’authentification. Les données stockées sont spécifiées par le fichier web.config, et les différents fournisseurs de services de profilage gérer la gestion des données. Comme avec le service d’authentification, le service de profil d’AJAX est compatible avec le service de profil ASP.NET standard, afin que les pages actuellement incorporation des fonctionnalités du service de profil ASP.NET ne doivent pas être divisés en incluant la prise en charge d’AJAX.
 
-Incorporation de l’authentification ASP.NET et les services de profilage eux-mêmes dans une application se trouve en dehors de la portée de ce livre blanc. Pour plus d’informations sur la rubrique, consultez MSDN Library font référence à l’article Gestion des utilisateurs à l’aide de l’appartenance à [https://msdn.microsoft.com/en-us/library/tw292whz.aspx](https://msdn.microsoft.com/en-us/library/tw292whz.aspx). ASP.NET inclut également un utilitaire permettant de configurer automatiquement l’appartenance à un serveur SQL, qui est le fournisseur de service d’authentification par défaut pour l’appartenance d’ASP.NET. Pour plus d’informations, consultez l’article ASP.NET SQL Server Registration Tool (Aspnet\_regsql.exe) à [https://msdn.microsoft.com/en-us/library/ms229862(vs.80).aspx](https://msdn.microsoft.com/en-us/library/ms229862(vs.80).aspx).
+Incorporation de l’authentification ASP.NET et les services de profilage eux-mêmes dans une application se trouve en dehors de la portée de ce livre blanc. Pour plus d’informations sur la rubrique, consultez MSDN Library font référence à l’article Gestion des utilisateurs à l’aide de l’appartenance à [https://msdn.microsoft.com/library/tw292whz.aspx](https://msdn.microsoft.com/library/tw292whz.aspx). ASP.NET inclut également un utilitaire permettant de configurer automatiquement l’appartenance à un serveur SQL, qui est le fournisseur de service d’authentification par défaut pour l’appartenance d’ASP.NET. Pour plus d’informations, consultez l’article ASP.NET SQL Server Registration Tool (Aspnet\_regsql.exe) à [https://msdn.microsoft.com/library/ms229862(vs.80).aspx](https://msdn.microsoft.com/library/ms229862(vs.80).aspx).
 
 ## <a name="using-the-aspnet-ajax-authentication-service"></a>*À l’aide du Service d’authentification ASP.NET AJAX*
 
@@ -195,7 +195,7 @@ Script client pourront accéder au nom, Address.Line1, Address.Line2, Address.Ci
 
 Une fois que le Service de profilage AJAX est configuré, il sera disponible immédiatement dans les pages ; Toutefois, il aura être chargé qu’une seule fois avant d’être utilisé.
 
-*Membres de Sys.Services.ProfileService*
+*Sys.Services.ProfileService members*
 
 *champ de propriétés :*
 
@@ -249,7 +249,7 @@ La référence de la fonction spécifiée par cette propriété doit avoir la si
 
 | **Nom du paramètre** | **Signification** |
 | --- | --- |
-| Erreur | Spécifie les informations d’erreur. |
+| Error | Spécifie les informations d’erreur. |
 | userContext | Spécifie les informations de contexte utilisateur fournies quand la charge ou enregistrer la fonction a été appelée. |
 | MethodName | Le nom de la méthode d’appel. |
 
@@ -335,13 +335,13 @@ Pour définir le chemin d’accès par programme dans le script, vous devez util
 
 [!code-aspx[Main](understanding-asp-net-ajax-authentication-and-profile-application-services/samples/sample16.aspx)]
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 -En particulier, les services de profilage, l’appartenance et l’authentification - les services ASP.NET sont facilement exposées à JavaScript sur le navigateur client. Cela permet aux développeurs d’intégrer leur code côté client avec le mécanisme d’authentification, sans en fonction des contrôles tels qu’UpdatePanel pour faire l’essentiel. Données de profil peuvent être protégées à partir du client, en utilisant les paramètres de configuration web ; aucune donnée n’est disponible par défaut, et les développeurs doivent participer à des propriétés de profil.
 
 En outre, en créant des implémentations de service web simplifié avec des signatures de méthode équivalente, les développeurs peuvent créer des fournisseurs de script personnalisé pour ces services ASP.NET intrinsèques. Prise en charge de ces techniques simplifie le développement d’applications clientes élaborées, tout en offrant aux développeurs un large éventail de flexibilité pour répondre aux besoins spécifiques.
 
-## <a name="bio"></a>*BIO*
+## <a name="bio"></a>*Bio*
 
 Scott caté travaille avec les technologies Microsoft Web depuis 1997 et est le directeur de myKB.com ([www.myKB.com](http://www.myKB.com)) où il est spécialisé dans l’écriture d’ASP.NET en fonction des applications axées sur les solutions logicielles de la Base de connaissances. Scott peut être contacté par courrier électronique en [ scott.cate@myKB.com ](mailto:scott.cate@myKB.com) ou son blog à [ScottCate.com](http://ScottCate.com)
 

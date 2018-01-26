@@ -2,24 +2,22 @@
 title: "Empêche le script entre sites"
 author: rick-anderson
 description: "Ce document présente l’écriture de scripts entre sites (XSS) et techniques pour traiter cette vulnérabilité dans une application ASP.NET Core."
-keywords: "Vulnérabilité de ASP.NET Core, XSS,"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: 95790927-2bfe-445e-b1fd-429c2c7030ce
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/cross-site-scripting
-ms.openlocfilehash: fdb26a8338b98135cfc3f6bce9d87285e9a7eb12
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3aaab9d4fecd3f0d0da6a0df4d83bee090b329ea
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="preventing-cross-site-scripting"></a>Empêche le script entre sites
 
-De [Rick Anderson](https://twitter.com/RickAndMSFT)
+Par [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 Écriture de scripts entre sites (XSS) est une faille de sécurité qui permet à un attaquant d’installer les scripts côté client (généralement JavaScript) dans les pages web. Lorsque vous chargez des pages concernées, les scripts des personnes malveillantes s’exécutent les autres utilisateurs, l’activation de la personne malveillante de voler des cookies et des jetons, modifier le contenu de la page web via la manipulation du modèle DOM ou rediriger le navigateur vers une autre page. Vulnérabilités XSS se produisent généralement lorsqu’une application accepte l’entrée utilisateur et génère dans une page sans validation, d’encodage ou d’échappement.
 
@@ -58,7 +56,7 @@ Cette vue renvoie le contenu de la *untrustedInput* variable. Cette variable inc
    ```
 
 >[!WARNING]
-> ASP.NET MVC de base fournit un `HtmlString` classe qui n’est pas encodé automatiquement sur les résultats. Cela ne doit jamais être utilisé en association avec une entrée non approuvée comme ceci expose une vulnérabilité XSS.
+> ASP.NET MVC de base fournit un `HtmlString` classe qui n’est pas codé automatiquement sur les résultats. Cela ne doit jamais être utilisé en association avec une entrée non approuvée comme ceci expose une vulnérabilité XSS.
 
 ## <a name="javascript-encoding-using-razor"></a>Encodage de JavaScript à l’aide de Razor
 
@@ -143,11 +141,11 @@ Cela affichera dans le navigateur comme suit :
    ```
 
 >[!WARNING]
-> Ne concaténez pas d’entrée non fiable dans JavaScript pour créer des éléments DOM. Vous devez utiliser `createElement()` et attribuer des valeurs de propriété correctement comme `node.TextContent=`, ou utilisez `element.SetAttribute()` / `element[attribute]=` sinon vous exposez à XSS de basé sur le DOM.
+> Ne concaténez entrée non fiable dans JavaScript pour créer des éléments DOM. Vous devez utiliser `createElement()` et attribuer des valeurs de propriété correctement comme `node.TextContent=`, ou utilisez `element.SetAttribute()` / `element[attribute]=` sinon vous exposez à XSS de basé sur le DOM.
 
 ## <a name="accessing-encoders-in-code"></a>L’accès à des encodeurs dans le code
 
-Les encodeurs HTML, JavaScript et URL sont disponibles pour votre code de deux manières, vous pouvez injecter via [injection de dépendance](../fundamentals/dependency-injection.md#fundamentals-dependency-injection) ou vous pouvez utiliser les encodeurs par défaut contenus dans le `System.Text.Encodings.Web` espace de noms. Si vous utilisez les encodeurs par défaut, puis les que vous avez appliqué aux plages de caractères pour être considérées comme sécurisés ne prendront pas effet - les encodeurs par défaut utilisent les règles de codage plus sûrs possible.
+Les encodeurs HTML, JavaScript et URL sont disponibles pour votre code de deux manières, vous pouvez injecter via [injection de dépendance](../fundamentals/dependency-injection.md#fundamentals-dependency-injection) ou vous pouvez utiliser les encodeurs par défaut contenus dans le `System.Text.Encodings.Web` espace de noms. Si vous utilisez les encodeurs par défaut, puis les que vous avez appliqué aux plages de caractères considérés comme sécurisés ne prendront pas effet - les encodeurs par défaut utilisent les règles de codage plus sûrs possible.
 
 Pour utiliser les encodeurs configurables via DI votre constructeurs doivent prendre un *HtmlEncoder*, *JavaScriptEncoder* et *UrlEncoder* paramètre selon les besoins. Par exemple :
 
@@ -181,7 +179,7 @@ var example = "\"Quoted Value with spaces and &\"";
 Après le codage du encodedValue variable contiendra `%22Quoted%20Value%20with%20spaces%20and%20%26%22`. Des espaces, des guillemets, signes de ponctuation et autres caractères non sécurisés sont pourcentage encodées dans leur valeur hexadécimale, par exemple, un caractère d’espace deviendra % 20.
 
 >[!WARNING]
-> N’utilisez pas d’entrée non fiable dans le cadre d’un chemin d’accès URL. Toujours passer entrée non fiable en tant que valeur de chaîne de requête.
+> N’utilisez pas d’entrée non approuvée dans le cadre d’un chemin d’accès URL. Toujours passer entrée non fiable en tant que valeur de chaîne de requête.
 
 <a name="security-cross-site-scripting-customization"></a>
 
@@ -230,4 +228,4 @@ Général acceptés consiste encodage intervient au point de sortie et les valeu
 
 ## <a name="validation-as-an-xss-prevention-technique"></a>Validation comme une technique de prévention XSS
 
-La validation peut être un outil utile dans limitation des attaques XSS. Par exemple, une chaîne numérique simple contenant uniquement les caractères 0-9 ne déclenche pas d’une attaque XSS. Validation devient plus complexe que vous souhaitez accepter HTML dans l’entrée d’utilisateur - l’analyse d’entrée HTML est difficile, voire impossible. MarkDown et autres formats de texte est une option plus sûre pour l’entrée riche. Vous ne devez jamais vous appuyer sur la validation uniquement. Toujours encoder une entrée non approuvée avant la sortie, quel que soit le quel type de validation que vous avez effectué.
+La validation peut être un outil utile dans limitation des attaques XSS. Par exemple, une chaîne numérique simple contenant uniquement les caractères 0-9 ne sont pas déclencher une attaque XSS. Validation devient plus complexe que vous souhaitez accepter HTML dans l’entrée d’utilisateur - l’analyse d’entrée HTML est difficile, voire impossible. MarkDown et autres formats de texte est une option plus sûre pour l’entrée riche. Vous ne devez jamais vous appuyer sur la validation uniquement. Toujours encoder une entrée non approuvée avant la sortie, quel que soit le quel type de validation que vous avez effectué.

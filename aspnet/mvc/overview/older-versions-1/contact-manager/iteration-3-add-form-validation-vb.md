@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-3-add-form-validation-vb
 msc.type: authoredcontent
-ms.openlocfilehash: ffb502be3037e787d79bbd1e83b93cd0b34dca6a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e9ed182fb58addd8c5dadbe6e3d09c391840ca00
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="iteration-3--add-form-validation-vb"></a>Itération #3 : validation de formulaire Ajouter (VB)
 ====================
@@ -63,13 +63,13 @@ Dans cette itération, nous ajouter la logique de validation directement sur les
 
 Dans cette itération, pour simplifier les choses, nous écrire tout le code de validation à la main. Au lieu d’écrire du code de validation nous-mêmes, nous avons tirer parti d’une infrastructure de validation. Par exemple, vous pouvez utiliser Microsoft Enterprise Library Validation Application bloc (ces) pour implémenter la logique de validation de votre application ASP.NET MVC. Pour en savoir plus sur le bloc d’Application de Validation, consultez :
 
-[*http://msdn.Microsoft.com/en-us/library/dd203099.aspx*](https://msdn.microsoft.com/en-us/library/dd203099.aspx)
+[*http://msdn.microsoft.com/library/dd203099.aspx*](https://msdn.microsoft.com/library/dd203099.aspx)
 
 ## <a name="adding-validation-to-the-create-view"></a>Ajout d’une Validation à la vue de créer
 
 Permettent de s commencez par ajouter la logique de validation à la vue à créer. Heureusement, car nous a généré la vue de créer avec Visual Studio, la vue Create contient déjà toute la logique d’interface utilisateur nécessaires pour afficher les messages de validation. La vue de créer est contenue dans la liste 1.
 
-**La liste 1 - \Views\Contact\Create.aspx**
+**Listing 1 - \Views\Contact\Create.aspx**
 
 [!code-aspx[Main](iteration-3-add-form-validation-vb/samples/sample1.aspx)]
 
@@ -117,11 +117,11 @@ L’action Edit() met à jour un Contact. L’action Edit() doit effectuer exact
 
 La classe de contrôleur Contact modifiée est contenue dans la liste 3. Cette classe possède une nouvelle méthode ValidateContact() qui est appelée dans les Create() Edit() actions et.
 
-**La liste 3 - Controllers\ContactController.vb**
+**Listing 3 - Controllers\ContactController.vb**
 
 [!code-vb[Main](iteration-3-add-form-validation-vb/samples/sample3.vb)]
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Dans cette itération, nous avons ajouté la validation de formulaire de base à notre application Gestionnaire de contacts. Notre logique de validation empêche les utilisateurs de soumettre un nouveau contact ou de la modification d’un contact existant sans fournir des valeurs pour les propriétés FirstName et LastName. En outre, les utilisateurs doivent fournir des adresses de messagerie et les numéros de téléphone valide.
 

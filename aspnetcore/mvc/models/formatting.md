@@ -2,21 +2,19 @@
 title: "Mise en forme des données de réponse dans ASP.NET MVC de base"
 author: ardalis
 description: "Découvrez comment mettre en forme les données de réponse dans ASP.NET MVC de base."
-keywords: "ASP.NET Core, les données de réponse, IOutputFormatter, IActionResult"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: c056df45-d013-4826-91a1-4a092bae1ea5
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/models/formatting
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: abc125a093ff2cd5a38a537ecdfc795ff03e23f7
-ms.sourcegitcommit: d1d8071d4093bf2444b5ae19d6e45c3d187e338b
+ms.openlocfilehash: ddda494e0db22031af9d20325e14e8458756cbfd
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/19/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="introduction-to-formatting-response-data-in-aspnet-core-mvc"></a>Introduction à la mise en forme des données de réponse dans ASP.NET MVC de base
 
@@ -185,7 +183,7 @@ public class ProductsController
 
 Cet itinéraire permettrait le format demandé en tant qu’une extension de fichier facultatif. Le `[FormatFilter]` attribut vérifie l’existence de la valeur de format dans le `RouteData` et mappe le format de réponse au formateur approprié lors de la création de la réponse.
 
-| Itinéraire                      | Formateur                          |
+| Route                      | Formateur                          |
 | -------------------------- | ---------------------------------- |
 | `/products/GetById/5`      | Le formateur de sortie par défaut       |
 | `/products/GetById/5.json` | Le module de formatage JSON (si configuré) |

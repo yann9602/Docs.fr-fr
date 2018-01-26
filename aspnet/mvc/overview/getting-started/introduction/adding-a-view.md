@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: dotnet-mvc
 ms.prod: .net-framework
 uid: mvc/overview/getting-started/introduction/adding-a-view
-ms.openlocfilehash: d273eb5e99da6c6b7678e03b1a8973041113744c
-ms.sourcegitcommit: 2d23ea501e0213bbacf65298acf1c8bd17209540
+ms.openlocfilehash: 86887f0dafa31ff3eb6597284c469c4b3053b6b7
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/09/2018
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-a-view"></a>Ajout d’une vue
 ====================
@@ -29,7 +29,7 @@ Actuellement, la méthode `Index` retourne une chaîne avec un message qui est c
 
 [!code-csharp[Main](adding-a-view/samples/sample1.cs?highlight=1,3)]
 
-Le `Index` méthode ci-dessus utilise un modèle d’affichage pour générer une réponse HTML au navigateur. Les méthodes de contrôleur (également appelé [méthodes d’action](http://rachelappel.com/asp.net-mvc-actionresults-explained)), telles que le `Index` ci-dessus, de méthode retournent généralement une [ActionResult](https://msdn.microsoft.com/en-us/library/system.web.mvc.actionresult.aspx) (ou une classe dérivée de [ActionResult](https://msdn.microsoft.com/en-us/library/system.web.mvc.actionresult.aspx)), types non primitifs, comme chaîne.
+Le `Index` méthode ci-dessus utilise un modèle d’affichage pour générer une réponse HTML au navigateur. Les méthodes de contrôleur (également appelé [méthodes d’action](http://rachelappel.com/asp.net-mvc-actionresults-explained)), telles que le `Index` ci-dessus, de méthode retournent généralement une [ActionResult](https://msdn.microsoft.com/library/system.web.mvc.actionresult.aspx) (ou une classe dérivée de [ActionResult](https://msdn.microsoft.com/library/system.web.mvc.actionresult.aspx)), types non primitifs, comme chaîne.
 
 Bouton droit sur le *Views\HelloWorld* dossier puis cliquez sur **ajouter**, puis cliquez sur **Page de vue MVC 5 avec disposition (Razor)**.
   
@@ -73,7 +73,7 @@ Tout d’abord, vous souhaitez modifier le &quot;nom de l’Application&quot; li
 
 Modèles de disposition permettent de spécifier la disposition du conteneur HTML de votre site dans un seul emplacement, puis l’appliquer sur plusieurs pages de votre site. Recherchez la ligne `@RenderBody()`. `RenderBody` est un espace réservé dans lequel toutes les pages spécifiques aux vues que vous créez s’affichent, &quot;encapsulées&quot; dans la page de disposition. Par exemple, si vous sélectionnez le **sur** lien, le *Views\Home\About.cshtml* vue est restituée à l’intérieur de la `RenderBody` (méthode).
 
-Changez le contenu de l’élément title. Modifier la [ActionLink](https://msdn.microsoft.com/en-us/library/dd504972(v=vs.108).aspx) dans le modèle de disposition à partir de &quot;nom de l’Application&quot; à &quot;MVC film&quot; et le contrôleur de `Home` à `Movies`. Le fichier de disposition complet est indiqué ci-dessous :
+Changez le contenu de l’élément title. Modifier la [ActionLink](https://msdn.microsoft.com/library/dd504972(v=vs.108).aspx) dans le modèle de disposition à partir de &quot;nom de l’Application&quot; à &quot;MVC film&quot; et le contrôleur de `Home` à `Movies`. Le fichier de disposition complet est indiqué ci-dessous :
 
 [!code-cshtml[Main](adding-a-view/samples/sample3.cshtml?highlight=6,20)]
 
@@ -93,7 +93,7 @@ Vous pouvez utiliser la propriété `Layout` pour définir un mode de dispositio
 
 Maintenant, nous allons modifier le titre de la vue de l’Index.
 
-Ouvrez *MvcMovie\Views\HelloWorld\Index.cshtml*. Il existe deux emplacements pour apporter une modification : tout d’abord, le texte qui apparaît dans le titre du navigateur, puis dans l’en-tête secondaire (le `<h2>` élément). Vous allez les modifier légèrement pour voir quel morceau du code modifie quelle partie de l’application.
+Open *MvcMovie\Views\HelloWorld\Index.cshtml*. Il existe deux emplacements pour apporter une modification : tout d’abord, le texte qui apparaît dans le titre du navigateur, puis dans l’en-tête secondaire (le `<h2>` élément). Vous allez les modifier légèrement pour voir quel morceau du code modifie quelle partie de l’application.
 
 [!code-cshtml[Main](adding-a-view/samples/sample6.cshtml?highlight=2,5)]
 

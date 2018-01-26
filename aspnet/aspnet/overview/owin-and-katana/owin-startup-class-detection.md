@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/owin-and-katana/owin-startup-class-detection
 msc.type: authoredcontent
-ms.openlocfilehash: a6ac34307b7558ad13684448f339ca74ade9e997
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 618f8fa23630dcf9821a54415766dc015694e535
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="owin-startup-class-detection"></a>Détection de classe de démarrage OWIN
 ====================
@@ -24,7 +24,7 @@ par [Praburaj Thiagarajan](https://github.com/Praburaj), [Rick Anderson](https:/
 
 > Ce didacticiel montre comment configurer la classe de démarrage OWIN est chargée. Pour plus d’informations sur OWIN, consultez [une vue d’ensemble du projet Katana](an-overview-of-project-katana.md). Ce didacticiel a été rédigé par Rick Anderson ( [ @RickAndMSFT ](https://twitter.com/#!/RickAndMSFT) ), Praburaj Thiagarajan et Howard Dierking ( [ @howard \_dierking](https://twitter.com/howard_dierking) ).
 > 
-> ## <a name="prerequisites"></a>Conditions préalables
+> ## <a name="prerequisites"></a>Prérequis
 > 
 > [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
 
@@ -79,7 +79,7 @@ par [Praburaj Thiagarajan](https://github.com/Praburaj), [Rick Anderson](https:/
 
     [!code-csharp[Main](owin-startup-class-detection/samples/sample8.cs?highlight=5,7,15-28,31-34)]
   
- Le `app.Use` une expression lambda est utilisée pour inscrire le composant d’intergiciel (middleware) spécifié pour le pipeline OWIN. Dans ce cas, nous configurons la journalisation des demandes entrantes avant de répondre à la demande entrante. Le `next` paramètre correspond au délégué ( [Func](https://msdn.microsoft.com/en-us/library/bb534960(v=vs.100).aspx) &lt; [tâche](https://msdn.microsoft.com/en-us/library/dd321424(v=vs.100).aspx) &gt; ) au composant suivant dans le pipeline. Le `app.Run` raccorde le pipeline aux demandes entrantes de l’expression lambda et fournit le mécanisme de réponse.
+ Le `app.Use` une expression lambda est utilisée pour inscrire le composant d’intergiciel (middleware) spécifié pour le pipeline OWIN. Dans ce cas, nous configurons la journalisation des demandes entrantes avant de répondre à la demande entrante. Le `next` paramètre correspond au délégué ( [Func](https://msdn.microsoft.com/library/bb534960(v=vs.100).aspx) &lt; [tâche](https://msdn.microsoft.com/library/dd321424(v=vs.100).aspx) &gt; ) au composant suivant dans le pipeline. Le `app.Run` raccorde le pipeline aux demandes entrantes de l’expression lambda et fournit le mécanisme de réponse.
      > [!NOTE]
      > Dans le code ci-dessus nous avons mis en commentaire la `OwinStartup` attribut et nous mettons actuellement partie de confiance sur la convention de l’exécution de la classe nommée `Startup` .-Press ***F5*** pour exécuter l’application. Cliquez sur Actualiser plusieurs fois.  
   

@@ -2,20 +2,18 @@
 title: "Configuration de Protection des données dans ASP.NET Core"
 author: rick-anderson
 description: "Découvrez comment configurer la Protection des données dans ASP.NET Core."
-keywords: "ASP.NET Core, protection des données, la configuration"
 ms.author: riande
 manager: wpickett
 ms.date: 07/17/2017
 ms.topic: article
-ms.assetid: 0e4881a3-a94d-4e35-9c1c-f025d65dcff0
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/configuration/overview
-ms.openlocfilehash: 20e3d974e7790cd01f78f8db09225b5887f1772a
-ms.sourcegitcommit: 281f0c614543a6c3db565ea4655b70fe49b61d84
+ms.openlocfilehash: b560f360b4962f2d50e0fdc9a99ab389eb113f43
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/03/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="configuring-data-protection-in-aspnet-core"></a>Configuration de Protection des données dans ASP.NET Core
 
@@ -193,7 +191,7 @@ serviceCollection.AddDataProtection()
 En général le \*les propriétés de Type doivent pointer vers concrète, implémentations instanciables (via un constructeur sans paramètre public) de [SymmetricAlgorithm](/dotnet/api/system.security.cryptography.symmetricalgorithm) et [KeyedHashAlgorithm](/dotnet/api/system.security.cryptography.keyedhashalgorithm), même si le système spéciaux-cas des valeurs telles que `typeof(Aes)` pour des raisons pratiques.
 
 > [!NOTE]
-> Le SymmetricAlgorithm doit avoir une longueur de clé de ≥ 128 bits et une taille de bloc de ≥ 64 bits, et il doit prendre en charge le chiffrement en mode CBC avec le remplissage PKCS #7. L’élément KeyedHashAlgorithm impossible doit avoir une taille de condensat de > = 128 bits, et il doit prendre en charge les clés de longueur égale à la longueur de résumé de l’algorithme de hachage. L’élément KeyedHashAlgorithm impossible ne soit pas strictement obligatoire pour être HMAC.
+> Le SymmetricAlgorithm doit avoir une longueur de clé de ≥ 128 bits et une taille de bloc de ≥ 64 bits, et il doit prendre en charge le chiffrement en mode CBC avec le remplissage PKCS #7. L’élément KeyedHashAlgorithm impossible doit avoir une taille de condensat de > = 128 bits, et il doit prendre en charge les clés de longueur égale à la longueur de résumé de l’algorithme de hachage. L’élément KeyedHashAlgorithm impossible n’est pas strictement obligatoire pour être HMAC.
 
 ### <a name="specifying-custom-windows-cng-algorithms"></a>En spécifiant les algorithmes CNG de Windows personnalisés
 

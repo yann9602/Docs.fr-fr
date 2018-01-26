@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs
 msc.type: authoredcontent
-ms.openlocfilehash: badf9da0e9a26d185e7532b02f53a8acea60ea91
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5f0d380ee411116844f42a542c12050513721eb1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="masterdetail-using-a-selectable-master-gridview-with-a-details-detailview-c"></a>Maître/détail à l’aide d’un GridView maître avec un DetailView détail (c#)
 ====================
@@ -39,7 +39,7 @@ Dans le [didacticiel précédent](master-detail-filtering-across-two-pages-cs.md
 
 ## <a name="step-1-creating-a-selectable-gridview"></a>Étape 1 : Création d’un GridView sélectionnable
 
-Souvenez-vous que dans le deux pages maître/détail de rapport que chaque enregistrement principal inclus un lien hypertexte qui, lorsque vous cliquez dessus, envoyé de l’utilisateur à la page de détails en passant de la ligne où vous avez cliquée `SupplierID` valeur dans la chaîne de requête. Cet un lien hypertexte a été ajouté à chaque ligne du contrôle GridView à l’aide d’un HyperLinkField. Pour le rapport maître/détails de la page unique, nous devons un bouton pour chaque contrôle GridView de lignes qui, lorsque vous cliquez dessus, affiche les détails. Le contrôle GridView peut être configuré pour inclure un bouton Sélectionner pour chaque ligne qui provoque une publication (postback) et marque cette ligne en tant que du GridView [SelectedRow](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.selectedrow.aspx).
+Souvenez-vous que dans le deux pages maître/détail de rapport que chaque enregistrement principal inclus un lien hypertexte qui, lorsque vous cliquez dessus, envoyé de l’utilisateur à la page de détails en passant de la ligne où vous avez cliquée `SupplierID` valeur dans la chaîne de requête. Cet un lien hypertexte a été ajouté à chaque ligne du contrôle GridView à l’aide d’un HyperLinkField. Pour le rapport maître/détails de la page unique, nous devons un bouton pour chaque contrôle GridView de lignes qui, lorsque vous cliquez dessus, affiche les détails. Le contrôle GridView peut être configuré pour inclure un bouton Sélectionner pour chaque ligne qui provoque une publication (postback) et marque cette ligne en tant que du GridView [SelectedRow](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.selectedrow.aspx).
 
 Commencez par ajouter un contrôle GridView à la `DetailsBySelecting.aspx` page dans le `Filtering` dossier, ses `ID` propriété `ProductsGrid`. Ensuite, ajoutez un nouveau ObjectDataSource nommé `AllProductsDataSource` qui appelle le `ProductsBLL` la classe `GetProducts()` (méthode).
 
@@ -85,7 +85,7 @@ L’option de sélection de l’activation de la vérification de l’ajoute un 
 
 [!code-aspx[Main](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs/samples/sample2.aspx)]
 
-Lorsque vous cliquez sur le bouton de sélection d’une ligne GridView une publication (postback) s’ensuit et du GridView `SelectedRow` propriété est mise à jour. Outre la `SelectedRow` propriété, le contrôle GridView fournit le [SelectedIndex](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.selectedindex%28VS.80%29.aspx), [SelectedValue](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.selectedvalue%28VS.80%29.aspx), et [SelectedDataKey](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.selecteddatakey%28VS.80%29.aspx) propriétés. Le `SelectedIndex` propriété retourne l’index de la ligne sélectionnée, alors que le `SelectedValue` et `SelectedDataKey` propriétés retournent des valeurs en fonction du GridView [propriété DataKeyNames](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.datakeynames%28VS.80%29.aspx).
+Lorsque vous cliquez sur le bouton de sélection d’une ligne GridView une publication (postback) s’ensuit et du GridView `SelectedRow` propriété est mise à jour. Outre la `SelectedRow` propriété, le contrôle GridView fournit le [SelectedIndex](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.selectedindex%28VS.80%29.aspx), [SelectedValue](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.selectedvalue%28VS.80%29.aspx), et [SelectedDataKey](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.selecteddatakey%28VS.80%29.aspx) propriétés. Le `SelectedIndex` propriété retourne l’index de la ligne sélectionnée, alors que le `SelectedValue` et `SelectedDataKey` propriétés retournent des valeurs en fonction du GridView [propriété DataKeyNames](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.datakeynames%28VS.80%29.aspx).
 
 Le `DataKeyNames` propriété est utilisée pour associer un ou plusieurs champs de données, les valeurs de chaque ligne et est couramment utilisé pour l’attribut des informations d’identification de manière unique à partir des données sous-jacentes avec chaque ligne GridView. Le `SelectedValue` propriété retourne la valeur de la première `DataKeyNames` champ de données pour la ligne sélectionnée alors que le `SelectedDataKey` propriété retourne la ligne sélectionnée `DataKey` objet qui contient toutes les valeurs pour les champs clés de données spécifié pour Cette ligne.
 
@@ -152,7 +152,7 @@ Une fois la `productDetailsDataSource` ObjectDataSource a été correctement con
 **Figure 12**: lors de la sélection d’une ligne, les détails du produit sont affichés ([cliquez pour afficher l’image en taille réelle](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs/_static/image36.png))
 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Dans cette section et les didacticiels de trois précédents, nous avons vu un certain nombre de techniques pour l’affichage de rapports maître/détail. Dans ce didacticiel, que nous avons examiné l’aide d’un GridView sélectionnable pour héberger les enregistrements maîtres et un contrôle DetailsView pour afficher des détails sur l’enregistrement principal sélectionné sur la même page. Les didacticiels précédentes, nous avons étudié comment afficher les rapports maître/détails à l’aide de la compréhension des listes et l’affichage des enregistrements principaux sur une page web et les enregistrements de détail sur une autre.
 

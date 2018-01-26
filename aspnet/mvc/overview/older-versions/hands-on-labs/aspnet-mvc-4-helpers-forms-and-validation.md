@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-helpers-forms-and-validation
 msc.type: authoredcontent
-ms.openlocfilehash: 4dd10430778dc51fef1199315ee02eb2cd4970ba
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 925d659f42496045089ba056e194ac977c37a8de
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-mvc-4-helpers-forms-and-validation"></a>Validation, les formulaires et les programmes d’assistance ASP.NET MVC 4
 ====================
@@ -36,7 +36,7 @@ par [Web Camps équipe](https://twitter.com/webcamps)
 > 
 > Ce laboratoire présente les améliorations et nouvelles fonctionnalités décrites précédemment en appliquant les modifications mineures à un exemple d’application Web dans le dossier Source.
 > 
-> Tous les exemples de code et des extraits de code sont inclus dans le Kit de formation Camps Web, disponible à l’adresse [https://www.microsoft.com/en-us/download/29843](https://www.microsoft.com/en-us/download/29843).
+> Tous les exemples de code et des extraits de code sont inclus dans le Kit de formation Camps Web, disponible à l’adresse [https://www.microsoft.com/download/29843](https://www.microsoft.com/download/29843).
 
 
 <a id="Objectives"></a>
@@ -58,7 +58,7 @@ Dans cet atelier pratique, vous allez apprendre comment :
 <a id="Prerequisites"></a>
 
 <a id="Prerequisites"></a>
-### <a name="prerequisites"></a>Conditions préalables
+### <a name="prerequisites"></a>Prérequis
 
 Vous devez disposer des éléments suivants pour effectuer ce laboratoire :
 
@@ -228,7 +228,7 @@ Dans l’illustration suivante, vous pouvez voir la manière dont le format est 
 Dans cette tâche, vous allez ajouter une nouvelle méthode **Truncate** à la **HTML** objet exposé dans les vues MVC ASP.NET. Pour ce faire, vous allez implémenter une **méthode d’extension** à la fonction intégrée **System.Web.Mvc.HtmlHelper** classe fournie par ASP.NET MVC.
 
 > [!NOTE]
-> Pour en savoir plus sur **les méthodes d’Extension**, consultez cet article msdn. [https://msdn.Microsoft.com/en-us/library/bb383977.aspx](https://msdn.microsoft.com/en-us/library/bb383977.aspx).
+> Pour en savoir plus sur **les méthodes d’Extension**, consultez cet article msdn. [https://msdn.microsoft.com/library/bb383977.aspx](https://msdn.microsoft.com/library/bb383977.aspx).
 
 
 1. Ouvrez le **commencer** solution situé dans **début/AddingAnHTMLHelper-Ex2/Source/** dossier. Dans le cas contraire, vous pouvez continuer à utiliser le **fin** solution obtenue par la fin de l’exercice précédent.
@@ -711,7 +711,7 @@ Dans cette tâche, vous allez activer jQuery **validation client non obstructive
     > [!NOTE]
     > Vous pouvez également activer la validation côté client par le code à Global.asax.cs pour obtenir les mêmes résultats :
     > 
-    > **HtmlHelper.ClientValidationEnabled = true ;**
+    > **HtmlHelper.ClientValidationEnabled = true;**
     > 
     > En outre, vous pouvez affecter ClientValidationEnabled attribut dans n’importe quel contrôleur d’avoir un comportement personnalisé.
 2. Ouvrez **Create.cshtml** à **Views\StoreManager**.
@@ -744,9 +744,9 @@ Dans cette tâche, vous allez tester que le **StoreManager** créer la vue de mo
     > [!NOTE]
     > Pour chaque règle de validation client, jQuery non obstructive ajoute un attribut avec des données-val -*rulename*=&quot;*message*&quot;. Voici une liste de balises qui discrète jQuery insère dans le champ d’entrée html pour effectuer la validation côté client :
     > 
-    > - Val de données
-    > - Numéro de données val
-    > - Plage de données val
+    > - Data-val
+    > - Data-val-number
+    > - Data-val-range
     > - Données val plage min / données-val-range-max
     > - Données val requises
     > - Longueur de données val
@@ -765,7 +765,7 @@ Dans cette tâche, vous allez tester que le **StoreManager** créer la vue de mo
 <a id="Summary"></a>
 
 <a id="Summary"></a>
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 À la fin de cet atelier pratique, vous avez appris comment permettre aux utilisateurs de modifier les données stockées dans la base de données à l’aide des éléments suivants :
 

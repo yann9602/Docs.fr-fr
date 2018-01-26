@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control
 msc.type: authoredcontent
-ms.openlocfilehash: f244e6bd1cd8abd23b64d07ccafcef5c4db1029b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e3ce68b949199db35c18a09771d99d38562b74e9
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="source-control-building-real-world-cloud-apps-with-azure"></a>Contrôle de code source (génération d’applications Cloud du monde réel avec Azure)
 ====================
@@ -137,9 +137,9 @@ Vous pouvez utiliser n’importe quel environnement de contrôle de code source 
 
 [GIT](http://git-scm.com/) est un gérer est devenu très populaire. Lorsque vous utilisez Git pour le contrôle de code source, vous avez une copie complète du référentiel avec l’ensemble de son historique sur votre ordinateur local. De nombreuses personnes préfèrent que car il est plus facile pour poursuivre votre travail lorsque vous n’êtes pas connecté au réseau, vous pouvez continuer à effectuer des validations et restaurations, créer et changer de branches et ainsi de suite. Même si vous êtes connecté au réseau, il est plus facile et plus rapide de créer des branches et de changer de branches lorsque tout est local. Vous pouvez également effectuer des validations locales et les restaurations sans avoir un impact sur d’autres développeurs. Et vous pouvez traiter par lots validations avant de les envoyer au serveur.
 
-[Microsoft Visual Studio Online](https://www.visualstudio.com/)(VSO), anciennement connu en tant que Team Foundation Service, propose les deux Git et [Team Foundation Version Control](https://msdn.microsoft.com/en-us/library/ms181237(v=vs.120).aspx) (TFVC ; centralisée de contrôle de code source). Ici chez Microsoft dans le groupe Azure certaines équipes utilisent centralisée contrôle de code source certains utilisent distribuée, et certains utilisent une combinaison (centralisée pour certains projets et distribuée pour d’autres projets). Le service Visual Studio Online est gratuit pour les utilisateurs jusqu'à 5. Vous pouvez vous inscrire pour un plan gratuit [ici](https://go.microsoft.com/fwlink/?LinkId=307137).
+[Microsoft Visual Studio Online](https://www.visualstudio.com/)(VSO), anciennement connu en tant que Team Foundation Service, propose les deux Git et [Team Foundation Version Control](https://msdn.microsoft.com/library/ms181237(v=vs.120).aspx) (TFVC ; centralisée de contrôle de code source). Ici chez Microsoft dans le groupe Azure certaines équipes utilisent centralisée contrôle de code source certains utilisent distribuée, et certains utilisent une combinaison (centralisée pour certains projets et distribuée pour d’autres projets). Le service Visual Studio Online est gratuit pour les utilisateurs jusqu'à 5. Vous pouvez vous inscrire pour un plan gratuit [ici](https://go.microsoft.com/fwlink/?LinkId=307137).
 
-Visual Studio 2013 inclut intégrées de première classe [prise en charge Git](https://msdn.microsoft.com/en-us/library/hh850437.aspx); Voici une rapide démonstration de comment cela fonctionne.
+Visual Studio 2013 inclut intégrées de première classe [prise en charge Git](https://msdn.microsoft.com/library/hh850437.aspx); Voici une rapide démonstration de comment cela fonctionne.
 
 Dans un projet ouvert dans Visual Studio 2013, cliquez sur la solution dans **l’Explorateur de solutions**, puis choisissez **ajouter la Solution au contrôle de code Source**.
 
@@ -187,11 +187,11 @@ Si vous basculez vers le contrôleur de créer une branche, le contenu de la  *\
 
 Présente un exemple simple de la façon dont vous pouvez rapidement créer une branche et retourner dans les deux sens entre les branches. Cette fonctionnalité permet à un flux de travail hautement agile à l’aide de la structure de branche et des scripts d’automatisation présentés dans le [automatiser tout](automate-everything.md) chapitre. Par exemple, vous pouvez être vous travaillez dans la branche de développement, créer une branche de correctif logiciel sur master, basculer vers la nouvelle branche, apportez vos modifications il et les valider, puis basculez vers la branche de développement et continuer à ce que vous faisiez.
 
-Ce que vous l’avez vu ici est la façon dont vous travaillez avec un référentiel Git local dans Visual Studio. Dans un environnement d’équipe vous généralement également transmettre des modifications à un référentiel commun. Les outils de Visual Studio vous permettent également pointer vers un référentiel Git distant. Vous pouvez utiliser GitHub.com à cette fin, ou vous pouvez utiliser [Git dans Visual Studio Online](https://msdn.microsoft.com/en-us/library/hh850437.aspx) intégré avec toutes les autres fonctionnalités Visual Studio Online telles que l’élément de travail et de suivi des bogues.
+Ce que vous l’avez vu ici est la façon dont vous travaillez avec un référentiel Git local dans Visual Studio. Dans un environnement d’équipe vous généralement également transmettre des modifications à un référentiel commun. Les outils de Visual Studio vous permettent également pointer vers un référentiel Git distant. Vous pouvez utiliser GitHub.com à cette fin, ou vous pouvez utiliser [Git dans Visual Studio Online](https://msdn.microsoft.com/library/hh850437.aspx) intégré avec toutes les autres fonctionnalités Visual Studio Online telles que l’élément de travail et de suivi des bogues.
 
 Cela n’est pas la seule façon, vous pouvez implémenter une stratégie de création de branche agile, bien sûr. Vous pouvez activer le même flux de travail agile à l’aide d’un référentiel de contrôle source centralisée.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Mesurer le succès de votre système de contrôle de source en fonction de la rapidité avec laquelle vous pouvez apporter une modification et obtenir dynamique d’une manière sûre et prévisible. Si vous avez pris peur apporter une modification, car vous devez effectuer une ou deux jours de tests manuels sur celui-ci, vous vous demandez peut-être ce que vous devez faire process-wise ou test-wise afin que vous pouvez effectuer cette modification en quelques minutes ou au pire n’est plus d’une heure. Une stratégie pour y parvenir consiste à implémenter l’intégration continue et livraison continue, que nous examinerons dans le [chapitre suivant](continuous-integration-and-continuous-delivery.md).
 
@@ -202,14 +202,14 @@ Le [Visual Studio Online](https://www.visualstudio.com/) portail fournit des ser
 
 Pour plus d’informations sur TFVC (contrôle de version centralisé) et Git (contrôle de version distribuée), consultez les ressources suivantes :
 
-- [Le système de contrôle de version dois-je utiliser : TFVC ou Git ?](https://msdn.microsoft.com/en-us/library/vstudio/ms181368.aspx#tfvc_or_git_summary) La documentation MSDN, inclut un tableau récapitulant les différences entre TFVC et Git.
+- [Le système de contrôle de version dois-je utiliser : TFVC ou Git ?](https://msdn.microsoft.com/library/vstudio/ms181368.aspx#tfvc_or_git_summary) La documentation MSDN, inclut un tableau récapitulant les différences entre TFVC et Git.
 - [Ainsi, j’aime Team Foundation Server et j’aime Git, mais qui est une meilleure ?](https://blogs.msdn.com/b/visualstudiouk/archive/2013/08/05/well-i-like-team-foundation-server-and-i-like-git-but-which-is-better.aspx) Comparaison de Git et TFVC.
 
 Pour plus d’informations sur les stratégies de création de branche, consultez les ressources suivantes :
 
-- [Création d’un Pipeline de mise en production avec Team Foundation Server 2012](https://msdn.microsoft.com/en-us/library/dn449957.aspx). Documentation Microsoft Patterns and Practices. Consultez le chapitre 6 pour une présentation des stratégies de branchement. La fonctionnalité préconise bascule sur les branches de fonctionnalité et si les branches pour les fonctionnalités sont utilisées, éducateurs gardant éphémères (heures ou jours au maximum).
+- [Création d’un Pipeline de mise en production avec Team Foundation Server 2012](https://msdn.microsoft.com/library/dn449957.aspx). Documentation Microsoft Patterns and Practices. Consultez le chapitre 6 pour une présentation des stratégies de branchement. La fonctionnalité préconise bascule sur les branches de fonctionnalité et si les branches pour les fonctionnalités sont utilisées, éducateurs gardant éphémères (heures ou jours au maximum).
 - [Guide du contrôle de version](https://aka.ms/vsarsolutions). Guide pour les stratégies de branchement par le groupe ALM Rangers. Sous l’onglet téléchargements, consultez Strategies.pdf de création de branche.
-- [Développement de logiciels avec fonctionnalité bascules](https://msdn.microsoft.com/en-us/magazine/dn683796.aspx). Article du MSDN Magazine.
+- [Développement de logiciels avec fonctionnalité bascules](https://msdn.microsoft.com/magazine/dn683796.aspx). Article du MSDN Magazine.
 - [Activer/désactiver des fonctionnalités](http://martinfowler.com/bliki/FeatureToggle.html). Introduction à la fonctionnalité Bascule / fonctionnalité flags sur le blog de Fowler.
 - [Active/désactive vs Branches de la fonctionnalité de fonctionnalité](http://geekswithblogs.net/Optikal/archive/2013/02/10/152069.aspx). Une autre entrée de blog sur la fonctionnalité Active/désactive, par Dylan Smith.
 

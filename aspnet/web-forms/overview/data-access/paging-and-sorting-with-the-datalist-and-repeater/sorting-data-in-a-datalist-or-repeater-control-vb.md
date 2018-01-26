@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-repeater/sorting-data-in-a-datalist-or-repeater-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e3f505e525fd5e701bb40dc3e6467b880bf75447
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 0133a74454a7754f4f7087e2121c7387a1aef8a8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="sorting-data-in-a-datalist-or-repeater-control-vb"></a>Tri des données dans un contrôle DataList ou d’un contrôle de répéteur (VB)
 ====================
@@ -81,7 +81,7 @@ La figure 3 illustre cette page lors de l’affichage via un navigateur.
 
 ## <a name="step-3-instructing-the-objectdatasource-to-sort-the-data"></a>Étape 3 : Demandant ObjectDataSource pour trier les données
 
-Pour trier les données affichées dans le répéteur, nous devons informer ObjectDataSource de l’expression de tri par lequel les données doivent être triées. Avant de ObjectDataSource récupère ses données, il déclenche tout d’abord son [ `Selecting` événement](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.objectdatasource.selecting.aspx), qui fournit une opportunité pour spécifier une expression de tri. Le `Selecting` un objet de type est passé au gestionnaire d’événements [ `ObjectDataSourceSelectingEventArgs` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.objectdatasourceselectingeventargs.aspx), qui a une propriété nommée [ `Arguments` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.objectdatasourceselectingeventargs.arguments.aspx) de type [ `DataSourceSelectArguments` ](https://msdn.microsoft.com/en-us/library/system.web.ui.datasourceselectarguments.aspx). Le `DataSourceSelectArguments` classe est conçu pour transmettre les demandes liées aux données à partir d’un consommateur de données au contrôle de source de données et inclut un [ `SortExpression` propriété](https://msdn.microsoft.com/en-us/library/system.web.ui.datasourceselectarguments.sortexpression.aspx).
+Pour trier les données affichées dans le répéteur, nous devons informer ObjectDataSource de l’expression de tri par lequel les données doivent être triées. Avant de ObjectDataSource récupère ses données, il déclenche tout d’abord son [ `Selecting` événement](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.selecting.aspx), qui fournit une opportunité pour spécifier une expression de tri. Le `Selecting` un objet de type est passé au gestionnaire d’événements [ `ObjectDataSourceSelectingEventArgs` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasourceselectingeventargs.aspx), qui a une propriété nommée [ `Arguments` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasourceselectingeventargs.arguments.aspx) de type [ `DataSourceSelectArguments` ](https://msdn.microsoft.com/library/system.web.ui.datasourceselectarguments.aspx). Le `DataSourceSelectArguments` classe est conçu pour transmettre les demandes liées aux données à partir d’un consommateur de données au contrôle de source de données et inclut un [ `SortExpression` propriété](https://msdn.microsoft.com/library/system.web.ui.datasourceselectarguments.sortexpression.aspx).
 
 Pour passer les informations de tri à partir de la page ASP.NET pour ObjectDataSource, créez un gestionnaire d’événements pour le `Selecting` événement et utilisez le code suivant :
 
@@ -378,7 +378,7 @@ Il est tout s ! Alors qu’il y a un nombre d’étapes de la pagination person
 > Dans les exemples précédents, lors du tri par le fournisseur de que nom a été utilisé en tant que l’expression de tri. Toutefois, pour l’implémentation de la pagination personnalisée, nous devons utiliser CompanyName. C’est parce que la procédure stockée chargée d’implémenter la pagination personnalisée `GetProductsPagedAndSorted` transmet l’expression de tri dans le `ROW_NUMBER()` (mot clé), le `ROW_NUMBER()` (mot clé) nécessite le nom de colonne réel plutôt qu’un alias. Par conséquent, nous devons utiliser `CompanyName` (le nom de la colonne dans la `Suppliers` table) au lieu de l’alias utilisé dans le `SELECT` requête (`SupplierName`) pour l’expression de tri.
 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Ni la DataList ni répéteur offrent la prise en charge du tri intégrée, mais avec un peu de code et une interface de tri personnalisée, ces fonctionnalités peuvent être ajoutées. Lorsque vous implémentez le tri, mais ne pas la pagination, l’expression de tri peut être spécifiée via la `DataSourceSelectArguments` objet passé dans le s ObjectDataSource `Select` (méthode). Cela `DataSourceSelectArguments` objet s `SortExpression` propriété peut être attribuée dans le s ObjectDataSource `Selecting` Gestionnaire d’événements.
 

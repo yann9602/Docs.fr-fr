@@ -2,20 +2,18 @@
 title: "Utilisation du modèle d’Application"
 author: ardalis
 description: 
-keywords: "ASP.NET MVC de base Core,ASP.NET, modèle d’application"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: 4eb7e52f-5665-41a4-a3e3-e348d07337f2
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/application-model
-ms.openlocfilehash: 3c35184921dbe26cde100fd3d5124e38ea0d06cf
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a0913edaab723656c9be484332e02c551a5c88e1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="working-with-the-application-model"></a>Utilisation du modèle d’Application
 
@@ -37,7 +35,7 @@ Le modèle d’Application MVC ASP.NET Core a la structure suivante :
 Chaque niveau du modèle a accès à un commun `Properties` collection et les niveaux inférieurs peuvent accéder et remplacer les valeurs de propriété définies par les niveaux supérieurs de la hiérarchie. Les propriétés sont rendues persistantes dans le `ActionDescriptor.Properties` lorsque les actions sont créées. Puis lorsqu’une demande est traitée, toutes les propriétés une convention ajoutée ou modifiée est accessible via `ActionContext.ActionDescriptor.Properties`. À l’aide de propriétés est un excellent moyen de configurer vos filtres et les classeurs de modèles, à la fois par action.
 
 > [!NOTE]
-> Le `ActionDescriptor.Properties` collection n’est pas thread-safe (pour les écritures) une fois que le démarrage de l’application a terminé. Les conventions sont la meilleure façon d’ajouter en toute sécurité des données à cette collection.
+> Le `ActionDescriptor.Properties` collection n’est pas thread-safe (pour les écritures) une fois que le démarrage de l’application est terminée. Les conventions sont la meilleure façon d’ajouter en toute sécurité des données à cette collection.
 
 ### <a name="iapplicationmodelprovider"></a>IApplicationModelProvider
 
@@ -55,7 +53,7 @@ Puis (`Order=-990`) :
 * [`CorsApplicationModelProvider`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.cors.internal.corsapplicationmodelprovider)
 
 > [!NOTE]
-> L’ordre dans les deux fournisseurs avec la même valeur pour `Order` sont appelés n’est pas défini et par conséquent pas être sur.
+> L’ordre dans les deux fournisseurs avec la même valeur pour `Order` sont appelés n’est pas défini et par conséquent ne doit pas être utilisé.
 
 > [!NOTE]
 > `IApplicationModelProvider`est un concept avancé pour les auteurs d’infrastructure à étendre. En général, les applications doivent utiliser les conventions et infrastructures utilisent des fournisseurs. La principale différence est que les fournisseurs s’exécutent toujours avant les conventions.
@@ -187,7 +185,7 @@ Les conventions fournies par le shim sont appliquées uniquement à des parties 
 
 ### <a name="action-conventions"></a>Conventions d’action
 
-Le `UseWebApiActionConventionsAttribute` est utilisé pour mapper la méthode HTTP à des actions en fonction de leur nom (par exemple, `Get` mappe sur `HttpGet`). Il s’applique uniquement à des actions qui n’utilisent pas de routage d’attributs.
+Le `UseWebApiActionConventionsAttribute` est utilisé pour mapper la méthode HTTP à des actions en fonction de leur nom (par exemple, `Get` mappe sur `HttpGet`). Il s’applique uniquement à des actions qui n’utilisent pas routage d’attributs.
 
 ### <a name="overloading"></a>Surcharge
 
@@ -197,7 +195,7 @@ Le `UseWebApiOverloadingAttribute` est utilisé pour appliquer la `WebApiOverloa
 
 Le `UseWebApiParameterConventionsAttribute` est utilisé pour appliquer la `WebApiParameterConventionsApplicationModelConvention` convention d’action. Cette convention Spécifie que les types simples utilisés comme paramètres d’action sont liés à partir de l’URI par défaut, alors que les types complexes sont liés à partir du corps de la demande.
 
-### <a name="routes"></a>Itinéraires
+### <a name="routes"></a>Routes
 
 Le `UseWebApiRoutesAttribute` contrôles si le `WebApiApplicationModelConvention` convention de contrôleur est appliquée. Lorsque activé, cette convention est utilisée pour ajouter la prise en charge de [zones](xref:mvc/controllers/areas) vers l’itinéraire.
 

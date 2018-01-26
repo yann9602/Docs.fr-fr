@@ -2,20 +2,18 @@
 title: "Création de Services principaux pour les Applications mobiles natives"
 author: ardalis
 description: 
-keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: 3b6a32f2-5af9-4ede-9b7f-17ab300526d0
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mobile/native-mobile-backend
-ms.openlocfilehash: be1cd9f4fe41f1a79669975cb6a89439cdd9e5c7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2edb704ea6875e8aa70e79fe085cc0edbe0c9a55
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="creating-backend-services-for-native-mobile-applications"></a>Création de Services principaux pour les Applications mobiles natives
 

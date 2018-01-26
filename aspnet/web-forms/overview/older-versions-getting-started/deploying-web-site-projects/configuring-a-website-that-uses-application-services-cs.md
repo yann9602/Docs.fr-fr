@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-a-website-that-uses-application-services-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 030b0bb218ca05ec270b8fb0a9321e31d9ab5180
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3f2b8e395505c1d13b914399b8de2196f0ba230a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="configuring-a-website-that-uses-application-services-c"></a>Configuration d’un site Web qui utilise les Services d’Application (c#)
 ====================
@@ -35,7 +35,7 @@ Version d’ASP.NET 2.0 a introduit une série de *les services d’application*
 - **Rôles** : une API pour classer les utilisateurs en groupes.
 - **Profil** : une API de stockage du contenu personnalisé, spécifiques à l’utilisateur.
 - **Plan du site** : une API permettant de définir une structure logique du site s sous la forme d’une hiérarchie, ce qui peut ensuite être affichée par le biais des contrôles de navigation, comme les menus et les vues miniatures.
-- **Personnalisation** : une API de gestion de préférences de personnalisation, le plus souvent utilisées avec [ *WebParts*](https://msdn.microsoft.com/en-us/library/e0s9t4ck.aspx).
+- **Personnalisation** : une API de gestion de préférences de personnalisation, le plus souvent utilisées avec [ *WebParts*](https://msdn.microsoft.com/library/e0s9t4ck.aspx).
 - **Surveillance de l’intégrité** : une API pour l’analyse des performances, la sécurité, les erreurs et autres mesures de contrôle d’intégrité système pour une application web en cours d’exécution.
   
 
@@ -71,7 +71,7 @@ Pour utiliser les services d’application avec une base de données SQL Server,
 
 Il est possible, et conviennent parfaitement créer des objets de base de données dans la même base de données où sont stockées les données spécifiques à l’application du site Web services de l’application. Le .NET Framework est fourni avec un outil nommé `aspnet_regsql.exe` qui installe les objets de base de données sur une base de données spécifiée. J’ai devenu avance et cet outil permet d’ajouter ces objets à la `Reviews.mdf` de la base de données dans le `App_Data` dossier (base de données de développement). Nous allons voir comment utiliser cet outil plus loin dans ce didacticiel lorsque nous ajouter ces objets à la base de données de production.
 
-Si vous ajoutez l’application des services autres que les objets de base de données à une base de données `ASPNETDB` vous devez personnaliser le `SqlMembershipProvider` et `SqlRoleProvider` les classes de fournisseur de configurations afin qu’ils utilisent la base de données approprié. Pour personnaliser le fournisseur d’appartenances ajouter un [  *&lt;l’appartenance&gt; élément* ](https://msdn.microsoft.com/en-us/library/1b9hw62f.aspx) au sein de la `<system.web>` section `Web.config`; utiliser le [  *&lt;roleManager&gt; élément* ](https://msdn.microsoft.com/en-us/library/ms164660.aspx) pour configurer le fournisseur de rôles. L’extrait de code suivant provient de la s d’application critiques `Web.config` et affiche les paramètres de configuration pour l’appartenance et les rôles d’API. Notez que les deux inscrire un nouveau fournisseur - `ReviewMembership` et `ReviewRole` -qui utilisent la `SqlMembershipProvider` et `SqlRoleProvider` fournisseurs, respectivement.
+Si vous ajoutez l’application des services autres que les objets de base de données à une base de données `ASPNETDB` vous devez personnaliser le `SqlMembershipProvider` et `SqlRoleProvider` les classes de fournisseur de configurations afin qu’ils utilisent la base de données approprié. Pour personnaliser le fournisseur d’appartenances ajouter un [  *&lt;l’appartenance&gt; élément* ](https://msdn.microsoft.com/library/1b9hw62f.aspx) au sein de la `<system.web>` section `Web.config`; utiliser le [  *&lt;roleManager&gt; élément* ](https://msdn.microsoft.com/library/ms164660.aspx) pour configurer le fournisseur de rôles. L’extrait de code suivant provient de la s d’application critiques `Web.config` et affiche les paramètres de configuration pour l’appartenance et les rôles d’API. Notez que les deux inscrire un nouveau fournisseur - `ReviewMembership` et `ReviewRole` -qui utilisent la `SqlMembershipProvider` et `SqlRoleProvider` fournisseurs, respectivement.
 
 [!code-xml[Main](configuring-a-website-that-uses-application-services-cs/samples/sample1.xml)]
 
@@ -94,7 +94,7 @@ Lors du déploiement d’un site Web qui utilise les services d’application et
 
 Un autre défi peut se produire lors du déploiement d’un site Web qui utilise les services d’application si vous souhaitez répliquer les comptes d’utilisateur créés dans l’environnement de développement à l’environnement de production. Selon la configuration de l’appartenance et les rôles, il est possible que, même si vous copiez correctement les comptes d’utilisateurs qui ont été créés dans l’environnement de développement à la base de données de production, ces utilisateurs ne peuvent pas se connecter à l’application web en production. Nous examiner la cause de ce problème et expliquent comment l’empêcher de se produire.
 
-ASP.NET est fourni avec une bonne [ *outil d’Administration de Site Web (WSAT)* ](https://msdn.microsoft.com/en-us/library/yy40ytx0.aspx) qui peut être lancé à partir de Visual Studio et permet à l’utilisateur compte, rôles, règles d’autorisation et d’être gérés via sur le web interface. Malheureusement, le WSAT fonctionne uniquement pour les sites Web de locales, c'est-à-dire qu’il ne peut pas être utilisé pour gérer à distance des comptes d’utilisateur, les rôles et les règles d’autorisation pour l’application web dans l’environnement de production. Nous allons examiner les différentes façons d’implémenter un comportement semblable aux WSAT à partir de votre site Web de production.
+ASP.NET est fourni avec une bonne [ *outil d’Administration de Site Web (WSAT)* ](https://msdn.microsoft.com/library/yy40ytx0.aspx) qui peut être lancé à partir de Visual Studio et permet à l’utilisateur compte, rôles, règles d’autorisation et d’être gérés via sur le web interface. Malheureusement, le WSAT fonctionne uniquement pour les sites Web de locales, c'est-à-dire qu’il ne peut pas être utilisé pour gérer à distance des comptes d’utilisateur, les rôles et les règles d’autorisation pour l’application web dans l’environnement de production. Nous allons examiner les différentes façons d’implémenter un comportement semblable aux WSAT à partir de votre site Web de production.
 
 ### <a name="adding-the-database-objects-using-aspnetregsqlexe"></a>Ajouter le compte aspnet à l’aide des objets de base de données\_regsql.exe
 
@@ -182,7 +182,7 @@ Rappelez-vous qu’un didacticiel antérieur mis à jour l’application web cri
 
 Si vous avez besoin de toutes les fonctionnalités de l’extraction WSAT [ *propagée votre propre outil*](http://aspnet.4guysfromrolla.com/articles/052307-1.aspx), dans laquelle l’auteur Dan Clem vous guide tout au long du processus de création d’un outil personnalisé de type WSAT. Dan partage son code source d’applications s (en c#) et fournit des instructions détaillées pour l’ajouter à votre site Web hébergé.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Lorsque vous déployez une application web qui utilise l’implémentation de base de données de services application vous devez vous assurer que la base de données de production dispose les objets de base de données requis. Ces objets peuvent être ajoutés en utilisant les techniques présentées dans les *déploiement d’une base de données* didacticiel ; vous pouvez également utiliser le `aspnet_regsql.exe` outil, comme nous l’avons vu dans ce didacticiel. Autres problèmes nous avons abordé autour de la synchronisation de nom d’application utilisé dans les environnements de développement et de production (ce qui est important si vous souhaitez que les utilisateurs et rôles créés dans l’environnement de développement soit valide sur la production) et les techniques de gestion des utilisateurs et des rôles dans l’environnement de production.
 
@@ -192,13 +192,13 @@ Bonne programmation !
 
 Pour plus d’informations sur les sujets abordés dans ce didacticiel, consultez les ressources suivantes :
 
-- [*Outil d’inscription de serveur SQL d’ASP.NET (aspnet_regsql.exe)*](https://msdn.microsoft.com/en-us/library/ms229862.aspx)
-- [*Création de la base de données de Services d’Application pour SQL Server*](https://msdn.microsoft.com/en-us/library/x28wfk74.aspx)
+- [*Outil d’inscription de serveur SQL d’ASP.NET (aspnet_regsql.exe)*](https://msdn.microsoft.com/library/ms229862.aspx)
+- [*Création de la base de données de Services d’Application pour SQL Server*](https://msdn.microsoft.com/library/x28wfk74.aspx)
 - [*Création du schéma de l’appartenance dans SQL Server*](../../older-versions-security/membership/creating-the-membership-schema-in-sql-server-cs.md)
 - [*Examen de l’appartenance d’ASP.NET s, les rôles et profil*](http://aspnet.4guysfromrolla.com/articles/120705-1.aspx)
 - [*Restauration de votre propre outil d’Administration de Site Web*](http://aspnet.4guysfromrolla.com/articles/052307-1.aspx)
 - [*Didacticiels de sécurité de site Web*](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md)
-- [*Présentation de l’outil Administration Site Web*](https://msdn.microsoft.com/en-us/library/yy40ytx0.aspx)
+- [*Présentation de l’outil Administration Site Web*](https://msdn.microsoft.com/library/yy40ytx0.aspx)
 
 >[!div class="step-by-step"]
 [Précédent](configuring-the-production-web-application-to-use-the-production-database-cs.md)

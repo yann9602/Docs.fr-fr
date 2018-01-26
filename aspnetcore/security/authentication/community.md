@@ -2,7 +2,6 @@
 title: "Options d’authentification Communauté OSS"
 author: rick-anderson
 description: "Listes ouvrir les options d’authentification source pour ASP.NET Core."
-keywords: Authentification ASP.NET Core, open source,
 ms.author: riande
 manager: wpickett
 ms.date: 08/18/2017
@@ -10,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/community
-ms.openlocfilehash: 0d57a91a54dc1c88711804cf2c5c0c6d67ee4b8e
-ms.sourcegitcommit: 677986b3a39817b712e2432cce85ad1685326b75
+ms.openlocfilehash: d081292ee9d0774cf9156d42b44b693fbf46925e
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="community-oss-authentication-options"></a>Options d’authentification Communauté OSS
 

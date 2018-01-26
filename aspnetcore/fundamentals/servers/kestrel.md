@@ -2,21 +2,19 @@
 title: "Implémentation du serveur web kestrel ASP.NET Core"
 author: tdykstra
 description: "Introduit Kestrel, le serveur web d’inter-plateformes pour ASP.NET Core selon libuv."
-keywords: "ASP.NET Core, Kestrel, libuv, préfixes d’url"
 ms.author: tdykstra
 manager: wpickett
 ms.date: 08/02/2017
 ms.topic: article
-ms.assetid: 560bd66f-7dd0-4e68-b5fb-f31477e4b785
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/servers/kestrel
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 451c36fc9095b6e076e5287c992b6163205c523b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3e2b28f15e47789ac89213e57396060ee356ee33
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="introduction-to-kestrel-web-server-implementation-in-aspnet-core"></a>Introduction à l’implémentation du serveur web Kestrel ASP.NET Core
 
@@ -146,7 +144,7 @@ Une exception est levée si vous essayez de configurer la limite sur une demande
 
 **Taux de données de corps de demande minimale**
 
-Kestrel vérifie chaque seconde si les données arrivent à la vitesse spécifiée en octets/seconde. Si le taux est inférieur au minimum, la délai de connexion. La période de grâce est la quantité de temps que Kestrel donne le client à augmenter sa vitesse de transmission jusqu'à la limite minimale ; la vitesse n’est pas vérifiée pendant ce temps. La période de grâce permet d’éviter la suppression des connexions qui initialement envoient des données à une vitesse lente en raison de démarrage lent TCP.
+Kestrel vérifie chaque seconde si les données arrivent à la vitesse spécifiée en octets/seconde. Si le taux est inférieur au minimum, la délai de connexion. La période de grâce est la quantité de temps que Kestrel donne le client à augmenter sa vitesse de transmission jusqu'à la limite minimale ; pendant ce temps, la vitesse n’est pas vérifiée. La période de grâce permet d’éviter la suppression des connexions qui initialement envoient des données à une vitesse lente en raison de démarrage lent TCP.
 
 La fréquence minimale par défaut est 240 octets/seconde, avec une période de grâce de 5 secondes.
 
@@ -225,7 +223,7 @@ Si vous appelez `UseUrls` ou utilisez le `urls` argument de ligne de commande ou
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
-Seuls les préfixes d’URL HTTP sont valides ; Kestrel ne prend pas en charge SSL lorsque vous configurez les liaisons de l’URL à l’aide de `UseUrls`.
+Seuls les préfixes d’URL HTTP sont valides ; Kestrel ne prend en charge SSL lorsque vous configurez les liaisons de l’URL à l’aide de `UseUrls`.
 
 * Adresse IPv4 avec le numéro de port
 

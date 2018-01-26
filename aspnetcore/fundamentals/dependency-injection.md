@@ -2,21 +2,19 @@
 title: "Injection de dépendances dans ASP.NET Core"
 author: ardalis
 description: "Découvrez comment ASP.NET Core implémente injection de dépendance et comment l’utiliser."
-keywords: "ASP.NET Core, injection de dépendance, di"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: fccd69be-7ad1-47fb-b203-b3633b6b9a9b
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/dependency-injection
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 8d12960708f9d9bf2bc7c5997f82096d93087d13
-ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
+ms.openlocfilehash: 7a5a0991694b2c7caa79dbc09f6471d614f67dac
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="introduction-to-dependency-injection-in-aspnet-core"></a>Introduction à l’Injection de dépendances dans ASP.NET Core
 
@@ -32,7 +30,7 @@ ASP.NET Core est conçu de toutes pièces pour prendre en charge et de tirer par
 
 Injection de dépendance (DI) est une technique de couplage lâche entre les objets et leurs collaborateurs et les dépendances. Au lieu d’instancier directement des collaborateurs, ou à l’aide de références statiques, les objets de qu'une classe a besoin pour effectuer ses actions sont fournies à la classe d’une certaine manière. En règle générale, les classes déclarer leurs dépendances via leur constructeur, ce qui leur permet de suivre les [principe de dépendances explicites](http://deviq.com/explicit-dependencies-principle/). Cette approche est appelée « injection de constructeur ».
 
-Lorsque les classes conçues avec DI, n’oubliez pas, ils sont plus faiblement couplés, car ils n’ont pas de dépendances directes, codé en dur sur leurs collaborateurs. Cela suit le [principe d’Inversion de dépendance](http://deviq.com/dependency-inversion-principle/), ce qui indique que *« modules de niveau élevés ne doivent pas dépendre des modules de niveau faibles ; les deux doivent dépendre des abstractions ».* Au lieu de référencer des implémentations spécifiques, classes demande abstractions (généralement `interfaces`) qui sont fourni lors de la construction de classe. Extraction des dépendances dans les interfaces et en fournissant des implémentations de ces interfaces en tant que paramètres sont également un exemple de la [modèle de conception de stratégie](http://deviq.com/strategy-design-pattern/).
+Lorsque les classes conçues avec DI, n’oubliez pas, ils sont plus faiblement couplés, car ils n’ont pas les dépendances directes, codé en dur sur leurs collaborateurs. Cela suit le [principe d’Inversion de dépendance](http://deviq.com/dependency-inversion-principle/), ce qui indique que *« modules de niveau élevés ne pas dépendre de modules niveau faibles ; les deux doivent dépendre des abstractions. »* Au lieu de référencer des implémentations spécifiques, classes demande abstractions (généralement `interfaces`) qui sont fourni lors de la construction de classe. Extraction des dépendances dans les interfaces et en fournissant des implémentations de ces interfaces en tant que paramètres sont également un exemple de la [modèle de conception de stratégie](http://deviq.com/strategy-design-pattern/).
 
 Lorsqu’un système est conçu pour utiliser DI, avec de nombreuses classes demande leurs dépendances via son constructeur (ou propriétés), il est utile de disposer d’une classe dédiée à la création de ces classes avec leurs dépendances associées. Ces classes sont appelés *conteneurs*, ou plus spécifiquement, [Inversion de contrôle (IoC)](http://deviq.com/inversion-of-control/) conteneurs ou conteneurs d’Injection de dépendance (DI). Un conteneur est essentiellement une fabrique qui est chargée de fournir des instances de types qui sont demandées à partir de celui-ci. Si un type donné a déclaré qu’il possède des dépendances et le conteneur a été configuré pour fournir les types de dépendances, il crée les dépendances dans le cadre de la création de l’instance demandée. De cette façon, les graphiques de dépendance complexe peuvent être fournis aux classes sans nécessiter de n’importe quel construction d’objet de codé en dur. En plus de la création d’objets avec leurs dépendances, les conteneurs gèrent généralement durée de vie des objets dans l’application.
 
@@ -48,7 +46,7 @@ ASP.NET Core inclut un simple conteneur intégré (représenté par la `IService
 
 Injection de constructeur requiert que le constructeur en question *public*. Sinon, votre application génère une `InvalidOperationException`:
 
-> Un constructeur approprié pour le type 'YourType' n’a pas pu être localisé. Vérifiez le type est concrète et les services sont inscrits pour tous les paramètres d’un constructeur public.
+> Impossible de trouver un constructeur approprié pour le type 'YourType'. Vérifiez le type est concrète et les services sont inscrits pour tous les paramètres d’un constructeur public.
 
 
 Injection de constructeur requiert ce qu’un seul constructeur applicable existe. Surcharges de constructeur sont pris en charge, mais qu’une surcharge peut exister dont les arguments peuvent tous être satisfaites par injection de dépendances. Si plusieurs existe, votre application lève une `InvalidOperationException`:
@@ -114,7 +112,7 @@ Vous pouvez enregistrer vos propres services d’application comme suit. Le prem
 
 Le `AddTransient` méthode est utilisée pour mapper les types abstraits aux services concrets qui sont instanciés séparément pour chaque objet qui en a besoin. Il s’agit du service *durée de vie*, et les options de durée de vie supplémentaires sont décrites ci-dessous. Il est important de choisir une durée de vie appropriée pour chacun des services que vous inscrivez. Une nouvelle instance du service doit être fournie pour chaque classe qui le demande ? Une instance doit être utilisée dans une requête web donné ? Ou, si une seule instance doit être utilisée pour la durée de vie de l’application ?
 
-Dans l’exemple de cet article, il existe un contrôleur simple qui affiche les noms de caractères, appelées `CharactersController`. Son `Index` la méthode affiche la liste actuelle des caractères qui ont été stockés dans l’application et initialise la collection avec un certain nombre de caractères si aucune n’existe. Notez que bien que cette application utilise Entity Framework Core et `ApplicationDbContext` classe de leur persistance, aucun des qui est visible dans le contrôleur. Au lieu de cela, le mécanisme d’accès de données spécifique a été conçu comme derrière une interface, `ICharacterRepository`, qui suit le [modèle de référentiel](http://deviq.com/repository-pattern/). Une instance de `ICharacterRepository` est demandée via le constructeur et attribué à un champ privé, ce qui est ensuite utilisé pour accéder aux caractères que nécessaire.
+Dans l’exemple de cet article, il existe un contrôleur simple qui affiche les noms de caractères, appelées `CharactersController`. Son `Index` la méthode affiche la liste actuelle des caractères qui ont été stockés dans l’application et initialise la collection avec un certain nombre de caractères si aucune n’existe. Notez que bien que cette application utilise Entity Framework Core et `ApplicationDbContext` classe pour la persistance, aucune des qui est visible dans le contrôleur. Au lieu de cela, le mécanisme d’accès de données spécifique a été conçu comme derrière une interface, `ICharacterRepository`, qui suit le [modèle de référentiel](http://deviq.com/repository-pattern/). Une instance de `ICharacterRepository` est demandée via le constructeur et attribué à un champ privé, ce qui est ensuite utilisé pour accéder aux caractères que nécessaire.
 
 [!code-csharp[Main](../fundamentals/dependency-injection/sample/DependencyInjectionSample/Controllers/CharactersController.cs?highlight=3,5,6,7,8,14,21-27&range=8-36)]
 
@@ -149,17 +147,17 @@ Les services qui ont des dépendances doivent les enregistrer dans le conteneur.
 
 Les services ASP.NET peuvent être configurés avec les durées de vie suivantes :
 
-**Temporaire**
+**Transient**
 
-Les services de durée de vie temporaires sont créés chaque fois qu’ils sont demandés. Cette durée de vie convient le mieux pour les services légers, sans état.
+Les services de durée de vie temporaires sont créés chaque fois qu’ils sont interrogés. Cette durée de vie convient le mieux pour les services légers, sans état.
 
-**Une étendue**
+**Scoped**
 
 Les services de durée de vie étendue sont créés une fois par demande.
 
 **Singleton**
 
-Services de durée de vie singleton sont créés à la première fois qu’ils sont demandés (ou lorsque `ConfigureServices` est exécuté si vous spécifiez une instance il) et ensuite toutes les requêtes suivantes utiliseront la même instance. Si votre application requiert un comportement singleton, ce qui permet le conteneur des services gérer la durée de vie du service est recommandé au lieu d’implémenter le modèle de conception singleton et gestion de durée de vie de votre objet dans la classe.
+Services de durée de vie singleton sont créés à la première fois qu’ils sont interrogés (ou lorsque `ConfigureServices` est exécuté si vous spécifiez une instance il) et ensuite toutes les requêtes suivantes utiliseront la même instance. Si votre application requiert un comportement singleton, ce qui permet le conteneur des services gérer la durée de vie du service est recommandé au lieu d’implémenter le modèle de conception singleton et gestion de durée de vie de votre objet dans la classe.
 
 Les services peuvent être inscrits avec le conteneur de plusieurs façons. Nous avons déjà vu comment inscrire une implémentation de service avec un type donné en spécifiant le type concret à utiliser. En outre, une fabrique peut être spécifiée, qui sera ensuite être utilisé pour créer l’instance à la demande. La troisième méthode consiste à spécifier directement l’instance du type à utiliser, dans laquelle le conteneur de cas ne tentera jamais créer une instance (ni s’il dispose de l’instance).
 
@@ -239,14 +237,14 @@ public void ConfigureServices(IServiceCollection services)
     services.AddSingleton<Service2>();
     services.AddSingleton<ISomeService>(sp => new SomeServiceImplementation());
 
-    // container did not create instance so it will NOT dispose it
+    // container didn't create instance so it will NOT dispose it
     services.AddSingleton<Service3>(new Service3());
     services.AddSingleton(new Service3());
 }
 ```
 
 > [!NOTE]
-> Dans la version 1.0, le conteneur appelé dispose sur *tous les* `IDisposable` objets, y compris ceux qu’il n’a pas créé.
+> Dans la version 1.0, le conteneur appelé dispose sur *tous les* `IDisposable` objets, y compris ceux qu’il n’avez pas créé.
 
 ## <a name="replacing-the-default-services-container"></a>En remplaçant le conteneur de services par défaut
 

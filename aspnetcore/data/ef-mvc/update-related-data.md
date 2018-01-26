@@ -2,20 +2,18 @@
 title: "Données - 7 sur 10 inhérentes à cœur d’ASP.NET MVC avec EF Core - mise à jour"
 author: tdykstra
 description: "Dans ce didacticiel vous allez mettre à jour les données associées en mettant à jour les propriétés de navigation et les champs de clé étrangère."
-keywords: "ASP.NET Core, Entity Framework Core, les données associées, jointures"
 ms.author: tdykstra
 manager: wpickett
 ms.date: 03/15/2017
 ms.topic: get-started-article
-ms.assetid: 67bd162b-bfb7-4750-9e7f-705228b5288c
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/update-related-data
-ms.openlocfilehash: b59782bccce00f3940da4ec8bcff768aff8fa4ef
-ms.sourcegitcommit: ccf08615ad59bc6f654560de33b93396113a2eb0
+ms.openlocfilehash: 3cdd36ae03824645e09f97cae85cc55956679390
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/11/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="updating-related-data---ef-core-with-aspnet-core-mvc-tutorial-7-of-10"></a>Mise à jour des données connexes - Core EF avec le didacticiel d’ASP.NET MVC de base (7 sur 10)
 
@@ -51,7 +49,7 @@ Après le `Edit` HttpPost (méthode), créez une méthode qui charge les informa
 
 Le `PopulateDepartmentsDropDownList` Obtient une liste de tous les départements sont triés par nom de méthode, crée un `SelectList` collection pour obtenir la liste déroulante et passe la collection à la vue dans `ViewBag`. La méthode accepte le paramètre facultatif `selectedDepartment` paramètre qui permet au code appelant spécifier l’élément est sélectionné lors du rendu de la liste déroulante. La vue passe le nom « DepartmentID » pour le `<select>` d’assistance de balise et l’application d’assistance puis sache qu’il peut pour rechercher dans le `ViewBag` de l’objet pour un `SelectList` nommé « DepartmentID ».
 
-Le HttpGet `Create` les appels de méthode le `PopulateDepartmentsDropDownList` méthode sans définir l’élément sélectionné, car de formation le service n’est pas établi encore :
+Le HttpGet `Create` les appels de méthode le `PopulateDepartmentsDropDownList` méthode sans définir l’élément sélectionné, car de formation le service n’est pas encore établi :
 
 [!code-csharp[Main](intro/samples/cu/Controllers/CoursesController.cs?highlight=3&name=snippet_CreateGet)]
 
@@ -131,7 +129,7 @@ Le code effectue les opérations suivantes :
 
 -  Met à jour l’entité Instructor récupérée avec des valeurs dans le classeur de modèles. Le `TryUpdateModel` surcharge vous permet à la liste blanche les propriétés que vous souhaitez inclure. Cela empêche la validation excessive, comme expliqué dans la [deuxième didacticiel](crud.md).
 
-    <!-- Snippets do not play well with <ul> [!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?range=241-244)] -->
+    <!-- Snippets don't play well with <ul> [!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?range=241-244)] -->
 
     ```csharp
     if (await TryUpdateModelAsync<Instructor>(
@@ -142,7 +140,7 @@ Le code effectue les opérations suivantes :
     
 -   Si l’emplacement du bureau est vide, définit la propriété Instructor.OfficeAssignment NULL afin que la ligne correspondante dans la table OfficeAssignment est supprimée.
 
-    <!-- Snippets do not play well with <ul>  "intro/samples/cu/Controllers/InstructorsController.cs"} -->
+    <!-- Snippets don't play well with <ul>  "intro/samples/cu/Controllers/InstructorsController.cs"} -->
 
     ```csharp
     if (String.IsNullOrWhiteSpace(instructorToUpdate.OfficeAssignment?.Location))
@@ -223,7 +221,7 @@ Dans *Views/Instructors/Edit.cshtml*, ajouter un **cours** champ avec un tableau
 
 [!code-html[Main](intro/samples/cu/Views/Instructors/Edit.cshtml?range=35-61)]
 
-Ce code crée une table HTML qui possède trois colonnes. Dans chaque colonne est une case à cocher suivie d’une légende qui est constitué par le numéro et le titre. Toutes les cases à cocher ont le même nom (« selectedCourses »), qui informe le classeur de modèles, ils doivent être traités en tant que groupe. L’attribut de valeur de chaque case à cocher est défini à la valeur de `CourseID`. Lorsque la page est publiée, le classeur de modèles passe un tableau au contrôleur qui se compose de la `CourseID` valeurs pour seulement les cases à cocher qui sont sélectionnées.
+Ce code crée une table HTML qui possède trois colonnes. Dans chaque colonne est une case à cocher suivie d’une légende qui est constitué par le numéro et le titre. Toutes les cases à cocher ont le même nom (« selectedCourses »), qui informe le classeur de modèles qu’ils sont traités comme un groupe. L’attribut de valeur de chaque case à cocher est défini à la valeur de `CourseID`. Lorsque la page est publiée, le classeur de modèles passe un tableau au contrôleur qui se compose de la `CourseID` valeurs pour seulement les cases à cocher qui sont sélectionnées.
 
 Lorsque les cases à cocher sont restitués initialement, ceux qui sont pour les cours affectés pour le formateur archivées attributs, qui sélectionne les (affiche les archivés).
 
@@ -293,7 +291,7 @@ Testez en exécutant l’application et la création d’un formateur.
 
 Comme expliqué dans la [didacticiel CRUD](crud.md), Entity Framework implémente implicitement des transactions. Pour les scénarios où vous avez besoin de plus contrôler--par exemple, si vous souhaitez inclure des opérations effectuées en dehors d’Entity Framework dans une transaction, consultez [Transactions](https://docs.microsoft.com/ef/core/saving/transactions).
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Vous avez maintenant terminé l’introduction à l’utilisation des données associées. Dans l’étape suivante du didacticiel, vous verrez comment gérer les conflits d’accès concurrentiel.
 

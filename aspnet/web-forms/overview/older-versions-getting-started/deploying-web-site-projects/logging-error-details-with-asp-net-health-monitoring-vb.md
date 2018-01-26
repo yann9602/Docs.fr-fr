@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-asp-net-health-monitoring-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 6a1533b80828532b756940d0b08fe4c6dab2d5dd
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 95c0b72e3811dc23f8bdea180be5b20800ab3bd8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="logging-error-details-with-aspnet-health-monitoring-vb"></a>Journalisation des détails de l’erreur avec le contrôle (VB) d’état ASP.NET
 ====================
@@ -43,13 +43,13 @@ Les événements de journaux de l’intégrité système de surveillance, ainsi 
 
 ## <a name="exploring-the-health-monitoring-systems-configuration"></a>Exploration de la Configuration du système de contrôle d’état
 
-Le comportement du système de contrôle d’état est défini par ses informations de configuration, ce qui se trouve dans le [ `<healthMonitoring>` élément](https://msdn.microsoft.com/en-us/library/2fwh2ss9.aspx) dans `Web.config`. Cette section de configuration définit, entre autres choses, les trois éléments importants d’information :
+Le comportement du système de contrôle d’état est défini par ses informations de configuration, ce qui se trouve dans le [ `<healthMonitoring>` élément](https://msdn.microsoft.com/library/2fwh2ss9.aspx) dans `Web.config`. Cette section de configuration définit, entre autres choses, les trois éléments importants d’information :
 
 1. Les événements de contrôle d’état qui, quand elle est déclenchée, doivent être enregistrés,
 2. Les sources de journal, et
 3. Comment chaque contrôle d’intégrité analyse l’événement défini dans (1) est mappée aux sources de journal défini dans (2).
 
-Ces informations sont spécifiées dans les éléments de configuration de trois enfants : [ `<eventMappings>` ](https://msdn.microsoft.com/en-us/library/yc5yk01w.aspx), [ `<providers>` ](https://msdn.microsoft.com/en-us/library/zaa41kz1.aspx), et [ `<rules>` ](https://msdn.microsoft.com/en-us/library/fe5wyxa0.aspx), respectivement.
+Ces informations sont spécifiées dans les éléments de configuration de trois enfants : [ `<eventMappings>` ](https://msdn.microsoft.com/library/yc5yk01w.aspx), [ `<providers>` ](https://msdn.microsoft.com/library/zaa41kz1.aspx), et [ `<rules>` ](https://msdn.microsoft.com/library/fe5wyxa0.aspx), respectivement.
 
 Vous trouverez les informations de configuration système de contrôle d’état par défaut dans le `Web.config` fichier `%WINDIR%\Microsoft.NET\Framework\version\CONFIG` dossier. Ces informations de configuration par défaut, avec certaines balises supprimées par souci de concision, sont indiquées ci-dessous :
 
@@ -114,7 +114,7 @@ Nous allons mettre à jour de la critiques de configuration du site Web afin que
 2. Inscrire le fournisseur de source de journal par courrier électronique dans le `<providers>` élément, et
 3. Ajouter une entrée à la `<rules>` élément qui mappe l’événement « Toutes les erreurs » dans le fournisseur de source de journal ajouté à l’étape (2).
 
-Le contrôle d’intégrité système de surveillance comprend deux classes du fournisseur de source journal par courrier électronique : `SimpleMailWebEventProvider` et `TemplatedMailWebEventProvider`. Le [ `SimpleMailWebEventProvider` classe](https://msdn.microsoft.com/en-us/library/system.web.management.simplemailwebeventprovider.aspx) envoie un message électronique en texte brut qui inclut l’événement détails et permet une personnalisation peu de corps du message électronique. Avec la [ `TemplatedMailWebEventProvider` classe](https://msdn.microsoft.com/en-us/library/system.web.management.templatedmailwebeventprovider.aspx) vous spécifiez une page ASP.NET dont le balisage rendu est utilisé en tant que le corps du message électronique. Le [ `TemplatedMailWebEventProvider` classe](https://msdn.microsoft.com/en-us/library/system.web.management.templatedmailwebeventprovider.aspx) vous donne un contrôle plus le contenu et le format du message électronique, mais nécessite un peu plus de travail initial que vous devez créer la page ASP.NET qui génère le corps du message de courrier électronique. Ce didacticiel se concentre sur l’utilisation de la `SimpleMailWebEventProvider` classe.
+Le contrôle d’intégrité système de surveillance comprend deux classes du fournisseur de source journal par courrier électronique : `SimpleMailWebEventProvider` et `TemplatedMailWebEventProvider`. Le [ `SimpleMailWebEventProvider` classe](https://msdn.microsoft.com/library/system.web.management.simplemailwebeventprovider.aspx) envoie un message électronique en texte brut qui inclut l’événement détails et permet une personnalisation peu de corps du message électronique. Avec la [ `TemplatedMailWebEventProvider` classe](https://msdn.microsoft.com/library/system.web.management.templatedmailwebeventprovider.aspx) vous spécifiez une page ASP.NET dont le balisage rendu est utilisé en tant que le corps du message électronique. Le [ `TemplatedMailWebEventProvider` classe](https://msdn.microsoft.com/library/system.web.management.templatedmailwebeventprovider.aspx) vous donne un contrôle plus le contenu et le format du message électronique, mais nécessite un peu plus de travail initial que vous devez créer la page ASP.NET qui génère le corps du message de courrier électronique. Ce didacticiel se concentre sur l’utilisation de la `SimpleMailWebEventProvider` classe.
 
 Mettre à jour de l’intégrité système de surveillance `<providers>` élément dans le `Web.config` fichier à inclure une source de journal pour la `SimpleMailWebEventProvider` classe :
 
@@ -135,11 +135,11 @@ Le `<rules>` comprend maintenant deux règles. Le, nommé « Toutes les erreurs
 **Figure 2**: les détails de l’erreur sont envoyées dans un Message électronique  
 ([Cliquez pour afficher l’image en taille réelle](logging-error-details-with-asp-net-health-monitoring-vb/_static/image6.png))
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Le système de surveillance de l’intégrité ASP.NET est conçu pour permettre aux administrateurs d’analyser l’intégrité d’une application web déployée. Événements de contrôle d’intégrité sont déclenchés lorsque le déroulement de certaines actions, telles que lorsque l’application s’arrête, quand un utilisateur se connecte au site, ou lorsqu’une exception non gérée se produit. Ces événements peuvent être consignées dans n’importe quel nombre de sources de journal. Ce didacticiel vous a montré comment consigner les détails d’exceptions non gérées à une base de données et un message électronique.
 
-Ce didacticiel consacré à l’aide pour enregistrer les exceptions non gérées, mais n’oubliez pas que le contrôle d’intégrité est conçu pour mesurer l’intégrité globale d’une application ASP.NET déployée et comprend de nombreux événements de contrôle d’intégrité et les journaux sources pas de contrôle d’intégrité Explorer ici. Par ailleurs, vous pouvez créer votre propre contrôle d’intégrité analyse les événements et les sources de journal, en cas de besoin surviennent. Si vous souhaitez en savoir plus sur le contrôle d’intégrité, la première étape est de lire [Erik Reitan](https://blogs.msdn.com/erikreitan/archive/2006/05/22/603586.aspx)de [Forum aux questions de contrôle d’intégrité](https://blogs.msdn.com/erikreitan/archive/2006/05/22/603586.aspx). Après cela, consultez [comment faire : utiliser le contrôle d’état dans ASP.NET 2.0](https://msdn.microsoft.com/en-us/library/ms998306.aspx).
+Ce didacticiel consacré à l’aide pour enregistrer les exceptions non gérées, mais n’oubliez pas que le contrôle d’intégrité est conçu pour mesurer l’intégrité globale d’une application ASP.NET déployée et comprend de nombreux événements de contrôle d’intégrité et les journaux sources pas de contrôle d’intégrité Explorer ici. Par ailleurs, vous pouvez créer votre propre contrôle d’intégrité analyse les événements et les sources de journal, en cas de besoin surviennent. Si vous souhaitez en savoir plus sur le contrôle d’intégrité, la première étape est de lire [Erik Reitan](https://blogs.msdn.com/erikreitan/archive/2006/05/22/603586.aspx)de [Forum aux questions de contrôle d’intégrité](https://blogs.msdn.com/erikreitan/archive/2006/05/22/603586.aspx). Après cela, consultez [comment faire : utiliser le contrôle d’état dans ASP.NET 2.0](https://msdn.microsoft.com/library/ms998306.aspx).
 
 Bonne programmation !
 
@@ -147,11 +147,11 @@ Bonne programmation !
 
 Pour plus d’informations sur les sujets abordés dans ce didacticiel, consultez les ressources suivantes :
 
-- [Vue d’ensemble du contrôle d’état ASP.NET](https://msdn.microsoft.com/en-us/library/bb398933.aspx)
+- [Vue d’ensemble du contrôle d’état ASP.NET](https://msdn.microsoft.com/library/bb398933.aspx)
 - [Configuration et la personnalisation de l’intégrité système de ASP.NET de surveillance](http://dotnetslackers.com/articles/aspnet/ConfiguringAndCustomizingTheHealthMonitoringSystemOfASPNET.aspx)
 - [Forum aux questions - analyse d’intégrité dans ASP.NET 2.0](https://blogs.msdn.com/erikreitan/archive/2006/05/22/603586.aspx)
-- [Comment : Envoyer un courrier électronique pour les Notifications de contrôle d’intégrité](https://msdn.microsoft.com/en-us/library/ms227553.aspx)
-- [Comment : Utiliser l’analyse du fonctionnement dans ASP.NET](https://msdn.microsoft.com/en-us/library/ms998306.aspx)
+- [Comment : Envoyer un courrier électronique pour les Notifications de contrôle d’intégrité](https://msdn.microsoft.com/library/ms227553.aspx)
+- [Comment : Utiliser l’analyse du fonctionnement dans ASP.NET](https://msdn.microsoft.com/library/ms998306.aspx)
 - [Analyse d’intégrité dans ASP.NET](http://aspnet.4guysfromrolla.com/articles/031407-1.aspx)
 
 >[!div class="step-by-step"]

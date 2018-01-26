@@ -2,20 +2,18 @@
 title: "Inférieur, Sass et la police impressionnant dans ASP.NET Core"
 author: ardalis
 description: "Découvrez comment utiliser inférieur, Sass et police impressionnant dans les applications ASP.NET Core."
-keywords: "ASP.NET Core, moins, Sass, police impressionnant, Préprocesseurs"
 ms.author: tdykstra
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: 94c988f9-95fd-425d-b37e-7f846598c6d4
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/less-sass-fa
-ms.openlocfilehash: 159377300d33e98393fd6705d0fec578f8f6b735
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 764b11bbd301c0116488265d32f7d46dfc5bce27
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="introduction-to-styling-applications-with-less-sass-and-font-awesome-in-aspnet-core"></a>Introduction aux applications de style avec moins, Sass et police impressionnant dans ASP.NET Core
 
@@ -248,7 +246,7 @@ nav {
 }
 ```
 
-Notez que dans ce cas, tous les éléments subordonnés de `nav` contenus dans son étendue. Il n’est plus toute répétition des éléments parents (`nav`, `li`, `a`), et le nombre total de la ligne a supprimé ainsi (même si certains des qui est un résultat de l’utilisation de valeurs sur les mêmes lignes dans le deuxième exemple). Il peut être très utile, Oui, pour afficher toutes les règles pour un élément d’interface utilisateur donné au sein d’une portée limitée explicitement, dans ce cas définie du reste du fichier par des accolades.
+Notez que dans ce cas, tous les éléments subordonnés de `nav` contenus dans son étendue. Il n’est plus toute répétition des éléments parents (`nav`, `li`, `a`), et le nombre total de la ligne a été supprimé également (bien que certaines des qui est un résultat de l’utilisation de valeurs sur les mêmes lignes dans le deuxième exemple). Il peut être très utile, Oui, pour afficher toutes les règles pour un élément d’interface utilisateur donné au sein d’une portée limitée explicitement, dans ce cas définie du reste du fichier par des accolades.
 
 Le `&` syntaxe est une fonctionnalité moins sélecteur et qui représente le parent de sélection en cours. Par conséquent, dans l’un {...} bloc, `&` représente un `a` balise et par conséquent `&:link` équivaut à `a:link`.
 
@@ -323,7 +321,7 @@ Inférieur fournit un nombre de fonctionnalités supplémentaires, mais cela doi
 
 ## <a name="sass"></a>Sass
 
-Sass est similaire à une valeur inférieure, en fournissant la prise en charge pour la plupart de ces fonctionnalités, mais avec une syntaxe légèrement différente. Il est construit à l’aide de Ruby, plutôt que JavaScript, ainsi que les exigences de configuration différents. Le langage Sass d’origine n’a pas utilisé des accolades ou des points-virgules, mais au lieu de cela défini étendue à l’aide d’un espace blanc et mise en retrait. Dans la version 3 de Sass, introduite une nouvelle syntaxe, **SCSS** (« CSS Sassy »). SCSS est similaire à CSS dans la mesure où il ignore les espaces blancs et les niveaux de mise en retrait et utilise à la place des points-virgules et des accolades.
+Sass est similaire à une valeur inférieure, en fournissant la prise en charge pour la plupart de ces fonctionnalités, mais avec une syntaxe légèrement différente. Il est construit à l’aide de Ruby, plutôt que JavaScript, ainsi que les exigences de configuration différents. Le langage Sass d’origine n’a pas d’utiliser des accolades ou des points-virgules, mais au lieu de cela défini étendue à l’aide d’un espace blanc et mise en retrait. Dans la version 3 de Sass, introduite une nouvelle syntaxe, **SCSS** (« CSS Sassy »). SCSS est similaire à CSS dans la mesure où il ignore les espaces blancs et les niveaux de mise en retrait et utilise à la place des points-virgules et des accolades.
 
 Pour installer Sass, en général, vous installez d’abord Ruby (préinstallé sur Mac) et puis exécutez :
 
@@ -545,8 +543,8 @@ Cela génère les éléments suivants dans le navigateur, remarquez l’icône e
 
 Vous pouvez afficher la liste complète des icônes disponibles ici :
 
-http://fontawesome.IO/Icons/
+http://fontawesome.io/icons/
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Les applications web modernes exigent plus en plus réactives, fluide conceptions qui sont propres, intuitive et facile à utiliser à partir de différents périphériques. Gérer la complexité des feuilles de style CSS requis pour atteindre ces objectifs est mieux effectuée à l’aide d’un type de préprocesseur inférieur ou Sass. En outre, les kits comme police impressionnant fournissent rapidement des icônes bien connus pour les menus de navigation textuelle et expérience des boutons, l’amélioration de l’utilisateur globale de votre application.

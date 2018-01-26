@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/performance/scaleout-in-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 4f1ad959c45281cdd831c37c2e3ca428f3fae9a0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f1d15250682305f6d0512b72bd2e40cb4a8a18e5
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="introduction-to-scaleout-in-signalr"></a>Introduction à la montée en puissance parallèle dans SignalR
 ====================
@@ -59,17 +59,17 @@ SignalR fournit actuellement les fonds de panier de trois :
 - **Redis**. Redis est un magasin clé-valeur de mémoire. Redis prend en charge un modèle de publication/abonnement (« pub/sub ») pour envoyer des messages.
 - **SQL Server**. L’infrastructure d’intégration SQL Server écrit des messages dans des tables SQL. L’infrastructure d’intégration utilise Service Broker de messagerie efficace. Toutefois, il fonctionne également si Service Broker n’est pas activé.
 
-Si vous déployez votre application sur Azure, envisagez d’utiliser le fond de panier de Redis à l’aide de [Cache Redis Azure](https://azure.microsoft.com/en-us/services/cache/). Si vous déployez sur votre propre batterie de serveurs, envisagez de SQL Server ou les fonds de panier Redis.
+Si vous déployez votre application sur Azure, envisagez d’utiliser le fond de panier de Redis à l’aide de [Cache Redis Azure](https://azure.microsoft.com/services/cache/). Si vous déployez sur votre propre batterie de serveurs, envisagez de SQL Server ou les fonds de panier Redis.
 
 Les rubriques suivantes contiennent des didacticiels pas à pas pour chaque fond de panier :
 
-- [Montée en charge SignalR avec Azure Service Bus](scaleout-with-windows-azure-service-bus.md)
-- [Montée en charge SignalR avec Redis](scaleout-with-redis.md)
-- [Montée en charge SignalR avec SQL Server](scaleout-with-sql-server.md)
+- [Montée en puissance parallèle de SignalR avec Azure Service Bus](scaleout-with-windows-azure-service-bus.md)
+- [Montée en puissance parallèle de SignalR avec Redis](scaleout-with-redis.md)
+- [Montée en puissance parallèle de SignalR avec SQL Server](scaleout-with-sql-server.md)
 
 ## <a name="implementation"></a>Implémentation
 
-Dans SignalR, chaque message est envoyé via un bus de messages. Un bus de messages implémente la [IMessageBus](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.messaging.imessagebus(v=vs.100).aspx) interface, qui fournit une abstraction publication/abonnement. Les fonds de panier de travail en remplaçant la valeur par défaut **IMessageBus** avec un bus conçu pour que fond de panier. Par exemple, le bus de messages pour Redis est [RedisMessageBus](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.redis.redismessagebus(v=vs.100).aspx), et il utilise le Redis [pub/sub](http://redis.io/topics/pubsub) mécanisme pour envoyer et recevoir des messages.
+Dans SignalR, chaque message est envoyé via un bus de messages. Un bus de messages implémente la [IMessageBus](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.messaging.imessagebus(v=vs.100).aspx) interface, qui fournit une abstraction publication/abonnement. Les fonds de panier de travail en remplaçant la valeur par défaut **IMessageBus** avec un bus conçu pour que fond de panier. Par exemple, le bus de messages pour Redis est [RedisMessageBus](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.redis.redismessagebus(v=vs.100).aspx), et il utilise le Redis [pub/sub](http://redis.io/topics/pubsub) mécanisme pour envoyer et recevoir des messages.
 
 Chaque instance de serveur se connecte au fond de panier via le bus. Lorsqu’un message est envoyé, il est placé dans le fond de panier, et le fond de panier envoie à tous les serveurs. Lorsqu’un serveur reçoit un message à partir de l’infrastructure d’intégration, il place le message dans sa mémoire cache locale. Le serveur puis remet les messages aux clients à partir de sa mémoire cache locale.
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/intro-to-aspnet-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: 41efda63026c9d17cb9dceb92b5efc87490a722d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 92d9e583b6c26fa8c928d33e14593d280702a269
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="intro-to-aspnet-mvc-4"></a>Présentation d’ASP.NET MVC 4
 ====================
@@ -24,18 +24,18 @@ Par [Rick Anderson](https://github.com/Rick-Anderson)
 
 > Une version mise à jour si ce didacticiel est disponible [ici](../../getting-started/introduction/getting-started.md) à l’aide de [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads). Le nouveau didacticiel utilise ASP.NET MVC 5, qui fournit de nombreuses améliorations de ce didacticiel.
 > 
-> Ce didacticiel, vous allez apprendre les principes fondamentaux de la création d’une application Web ASP.NET MVC 4 à l’aide de Microsoft [Visual Studio 2012 Express](https://www.microsoft.com/visualstudio/11/en-us/products/express) ou Visual Web Developer 2010 Express Service Pack 1. Visual Studio 2012 est recommandé, vous n’aurez pas à installer quoi que ce soit pour suivre le didacticiel. Si vous utilisez Visual Studio 2010, vous devez installer les composants ci-dessous. Vous pouvez installer tous les en cliquant sur les liens suivants :
+> Ce didacticiel, vous allez apprendre les principes fondamentaux de la création d’une application Web ASP.NET MVC 4 à l’aide de Microsoft [Visual Studio 2012 Express](https://www.microsoft.com/visualstudio/11/products/express) ou Visual Web Developer 2010 Express Service Pack 1. Visual Studio 2012 est recommandé, vous n’aurez pas à installer quoi que ce soit pour suivre le didacticiel. Si vous utilisez Visual Studio 2010, vous devez installer les composants ci-dessous. Vous pouvez installer tous les en cliquant sur les liens suivants :
 > 
 > - [Conditions préalables requises de Visual Studio Web Developer Express SP1](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack)
 > - [Programme d’installation WPI pour ASP.NET MVC 4](https://go.microsoft.com/fwlink/?LinkId=243392)
-> - [Base de données locale](https://www.microsoft.com/web/gallery/install.aspx?appid=SQLLocalDBOnly_11_0)
+> - [LocalDB](https://www.microsoft.com/web/gallery/install.aspx?appid=SQLLocalDBOnly_11_0)
 > - [SSDT](https://blogs.msdn.com/b/rickandy/archive/2012/08/02/installing-and-using-sql-server-data-tools-ssdt-on-visual-studio-2010-and-vwd.aspx)
 > 
 > Si vous utilisez Visual Studio 2010 au lieu de Visual Web Developer 2010, installez le [installer WPI pour ASP.NET MVC 4](https://go.microsoft.com/fwlink/?LinkId=243392) et : [composants requis de Visual Studio 2010](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=VS2010SP1Pack)
 > 
 > Un projet de Visual Web Developer avec code source c# est disponible pour accompagner cette rubrique. [Télécharger la version c#](https://code.msdn.microsoft.com/Intro-to-ASPNET-MVC-4-61d0219d/file/114480/1/MvcMovie.zip).
 > 
-> Dans le didacticiel, vous exécutez l’application dans Visual Studio. Vous pouvez également rendre l’application disponible sur Internet en la déployant sur un fournisseur d’hébergement. Microsoft propose d’hébergement web gratuit pour jusqu'à 10 sites web dans un [libérer le compte d’évaluation de Windows Azure](https://www.windowsazure.com/en-us/pricing/free-trial/?WT.mc_id=A443DD604). Pour plus d’informations sur la façon de déployer un projet web Visual Studio sur un Site Web de Windows Azure, consultez [créer et déployer un site web ASP.NET et la base de données SQL avec Visual Studio](https://docs.microsoft.com/dotnet/azure/). Ce didacticiel montre également comment utiliser les Migrations de Entity Framework Code First pour déployer votre base de données SQL Server à Windows Azure SQL Database (anciennement SQL Azure).
+> Dans le didacticiel, vous exécutez l’application dans Visual Studio. Vous pouvez également rendre l’application disponible sur Internet en la déployant sur un fournisseur d’hébergement. Microsoft propose d’hébergement web gratuit pour jusqu'à 10 sites web dans un [libérer le compte d’évaluation de Windows Azure](https://www.windowsazure.com/pricing/free-trial/?WT.mc_id=A443DD604). Pour plus d’informations sur la façon de déployer un projet web Visual Studio sur un Site Web de Windows Azure, consultez [créer et déployer un site web ASP.NET et la base de données SQL avec Visual Studio](https://docs.microsoft.com/dotnet/azure/). Ce didacticiel montre également comment utiliser les Migrations de Entity Framework Code First pour déployer votre base de données SQL Server à Windows Azure SQL Database (anciennement SQL Azure).
 > 
 > Ce didacticiel a été rédigé par Rick Anderson ( [ @RickAndMSFT ](https://twitter.com/#!/RickAndMSFT) ).
 
@@ -54,7 +54,7 @@ L’application vous permet également à ajouter, modifier et supprimer des fil
 
 ![](intro-to-aspnet-mvc-4/_static/image2.png)
 
-## <a name="getting-started"></a>Commencer
+## <a name="getting-started"></a>Prise en main
 
 Commencer par exécuter Visual Studio Express 2012 ou Visual Web Developer 2010 Express. La plupart des captures d’écran de cette utilisation de la série Visual Studio Express 2012, mais vous pouvez effectuer ce didacticiel avec Visual Studio 2010 SP1, de Visual Studio 2012, de Visual Studio 2012 Express ou de Visual Web Developer 2010 Express. Sélectionnez **nouveau projet** à partir de la **Démarrer** page.
 

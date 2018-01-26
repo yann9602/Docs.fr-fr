@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/maintainable-azure-websites-managing-change-and-scale
 msc.type: authoredcontent
-ms.openlocfilehash: 1d6d9265d93fbd32e2d9c22e2ac3db9b5ffd9776
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3d24c633368abc14efcd9fcf200a4d05c5b182c9
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="hands-on-lab-maintainable-azure-websites-managing-change-and-scale"></a>Laboratoire pratique : sites Web Azure facile à gérer : gestion des modifications et l’échelle
 ====================
@@ -56,7 +56,7 @@ Dans cet atelier pratique, vous allez apprendre comment :
 - Créer et configurer un projet de test de charge dans Visual Studio
 
 <a id="Prerequisites"></a>
-### <a name="prerequisites"></a>Conditions préalables
+### <a name="prerequisites"></a>Prérequis
 
 Les éléments suivants sont nécessaire pour terminer cet atelier pratique :
 
@@ -199,9 +199,9 @@ Dans cette tâche, vous allez utiliser **Migrations Entity Framework Code First*
 
     [!code-powershell[Main](maintainable-azure-websites-managing-change-and-scale/samples/sample5.ps1)]
 
-    ![Migration ajouter](maintainable-azure-websites-managing-change-and-scale/_static/image8.png "Migration ajouter")
+    ![Add-Migration](maintainable-azure-websites-managing-change-and-scale/_static/image8.png "Add-Migration")
 
-    *Ajouter la Migration*
+    *Add-Migration*
 
     > [!NOTE]
     > Un fichier de Migration est composé de deux méthodes, **des** et **vers le bas**.
@@ -251,7 +251,7 @@ Dans cette tâche, vous allez utiliser **Migrations Entity Framework Code First*
 Dans cet exercice, vous allez déployer le **fou questionnaire** application dans l’environnement intermédiaire de votre application web à l’aide du contrôle de code source Git. Pour ce faire, vous allez créer l’application web et configurer les composants requis sur le portail de gestion, configurer un **Git** référentiel et transmettez l’application du code source à partir de votre ordinateur local pour l’emplacement intermédiaire. Vous met également à jour votre base de données de production avec le **Migrations Code First** vous avez créé dans l’exercice précédent. Vous allez ensuite exécuter l’application dans cet environnement de test pour vérifier son fonctionnement. Une fois que vous vous êtes assuré qu’il fonctionne en fonction de vos attentes, vous effectuerez la promotion l’application en production.
 
 > [!NOTE]
-> Pour activer la publication intermédiaire, l’application web doit être dans **mode Standard**. Notez que des frais supplémentaires seront appliquent du fait si vous modifiez votre application web en mode Standard. Pour plus d’informations sur la tarification, consultez [tarification de Service application](https://azure.microsoft.com/en-us/pricing/details/app-service/).
+> Pour activer la publication intermédiaire, l’application web doit être dans **mode Standard**. Notez que des frais supplémentaires seront appliquent du fait si vous modifiez votre application web en mode Standard. Pour plus d’informations sur la tarification, consultez [tarification de Service application](https://azure.microsoft.com/pricing/details/app-service/).
 
 
 <a id="Ex2Task1"></a>
@@ -695,7 +695,7 @@ Dans cette tâche, vous allez configurer le **GeekQuiz** solution pour utiliser 
     [!code-xml[Main](maintainable-azure-websites-managing-change-and-scale/samples/sample17.xml)]
 
     > [!NOTE]
-    > Réécriture d’URL consiste à intercepter une requête Web entrante et la redirection de la demande vers une autre ressource. Le règles de réécriture d’URL indique au moteur de réécriture lorsqu’une demande doit être redirigé, et où doivent leur être redirigés. Une règle de réécriture est composée de deux chaînes : le modèle à rechercher dans l’URL demandée (en règle générale, l’utilisation d’expressions régulières), et la chaîne de remplacement du modèle, si trouvée. Pour plus d’informations, consultez [réécriture d’URL dans ASP.NET](https://msdn.microsoft.com/en-us/library/ms972974.aspx).
+    > Réécriture d’URL consiste à intercepter une requête Web entrante et la redirection de la demande vers une autre ressource. Le règles de réécriture d’URL indique au moteur de réécriture lorsqu’une demande doit être redirigé, et où doivent leur être redirigés. Une règle de réécriture est composée de deux chaînes : le modèle à rechercher dans l’URL demandée (en règle générale, l’utilisation d’expressions régulières), et la chaîne de remplacement du modèle, si trouvée. Pour plus d’informations, consultez [réécriture d’URL dans ASP.NET](https://msdn.microsoft.com/library/ms972974.aspx).
 3. Appuyez sur **CTRL + S** pour enregistrer les modifications.
 4. Ouvrez une nouvelle **interpréteur de commandes Git** console pour déployer l’application de mises à jour pour le Service d’applications Azure.
 5. Exécutez les commandes suivantes pour envoyer les modifications dans Azure. Mise à jour la *[votre-APPLICATION-chemin d’accès]* espace réservé avec le chemin d’accès à la **GeekQuiz** solution. Vous demandera votre mot de passe de déploiement.
@@ -910,11 +910,11 @@ Maintenant vous exécuter le test de charge que vous avez créé dans la tâche 
     > 
     > - Augmentez la durée du test de charge (par exemple, pour **10 minutes**)
     > - Réduire les valeurs minimales et maximales de la **unité centrale cible** plage dans la configuration de mise à l’échelle de votre application web
-    > - Exécuter le test de charge dans le cloud avec **Visual Studio Online**. Plus d’informations [ici](https://www.visualstudio.com/en-us/get-started/load-test-your-app-vs.aspx)
+    > - Exécuter le test de charge dans le cloud avec **Visual Studio Online**. Plus d’informations [ici](https://www.visualstudio.com/get-started/load-test-your-app-vs.aspx)
 
 * * *
 
 <a id="Summary"></a>
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Dans cet atelier, vous avez appris à configurer et déployer votre application dans les applications web de production dans Azure. Vous avez commencé par la détection et la mise à jour de vos bases de données à l’aide de **Migrations Entity Framework Code First**, puis suite en déployant de nouvelles versions de votre site à l’aide de **Git** et effectuer des restaurations à la dernière version stable de votre site. En outre, vous avez appris à l’échelle votre application à l’aide de stockage pour déplacer le contenu statique à un conteneur d’objets Blob.

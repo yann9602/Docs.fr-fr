@@ -2,7 +2,6 @@
 title: Application de SSL dans une application ASP.NET Core
 author: rick-anderson
 description: "Montre comment exiger le protocole SSL dans un cœur d’ASP.NET web app"
-keywords: ASP.NET Core, SSL, HTTPS, RequireHttpsAttribute, IIS Express
 ms.author: riande
 manager: wpickett
 ms.date: 07/19/2017
@@ -10,15 +9,15 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/enforcing-ssl
-ms.openlocfilehash: 6f2755a606000717ca8a57f045b1ef613c7f14f6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f248e9c0463cf4a46a447a9c896b3276a50f5f08
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="enforcing-ssl-in-an-aspnet-core-app"></a>Application de SSL dans une application ASP.NET Core
 
-De [Rick Anderson](https://twitter.com/RickAndMSFT)
+Par [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 Ce document montre comment :
 
@@ -39,4 +38,4 @@ Le code en surbrillance ci-dessus nécessite l’utilisation de toutes les deman
 
 Consultez [intergiciel (middleware) réécriture d’URL](xref:fundamentals/url-rewriting) pour plus d’informations.
 
-Nécessitant HTTPS globalement (`options.Filters.Add(new RequireHttpsAttribute());`) est une meilleure pratique de sécurité. Appliquer le `[RequireHttps]` attribut à tous les contrôleur n’est pas considéré comme autant nécessitant HTTPS globalement. Vous ne pouvez pas garantir la sécurité ajoutées à votre application de nouveaux contrôleurs penser à appliquer le `[RequireHttps]` attribut.
+Nécessitant HTTPS globalement (`options.Filters.Add(new RequireHttpsAttribute());`) est une meilleure pratique de sécurité. Appliquer le `[RequireHttps]` attribut à tous les contrôleur n’est pas aussi sécurisée comme nécessitant HTTPS globalement. Vous ne pouvez pas garantir la sécurité ajoutées à votre application de nouveaux contrôleurs penser à appliquer le `[RequireHttps]` attribut.

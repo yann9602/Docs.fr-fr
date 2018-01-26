@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: fecdd582918a61f3d01519c75d159f9c601c8223
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1a28284e203904cc943e5e46b369e8a58ea5c820
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="connection-resiliency-and-command-interception-with-the-entity-framework-in-an-aspnet-mvc-application"></a>Résilience des connexions et l’Interception de commande avec Entity Framework dans une Application ASP.NET MVC
 ====================
@@ -49,14 +49,14 @@ La fonctionnalité de résilience de connexion doit être configurée de manièr
 
 Vous pouvez configurer ces paramètres manuellement pour n’importe quel environnement de base de données pris en charge par un fournisseur Entity Framework, mais les valeurs par défaut qui fonctionnent généralement bien pour une application en ligne qui utilise la base de données SQL Windows Azure ont déjà été configurées pour vous, et Ce sont les paramètres que vous allez implémenter pour l’application Contoso University.
 
-Il vous suffit pour permettre la résilience des connexions est créer une classe dans l’assembly qui dérive de la [DbConfiguration](https://msdn.microsoft.com/en-us/data/jj680699.aspx) , puis dans cette classe, définissez la base de données SQL *stratégie d’exécution*, soit dans EF un autre terme pour *stratégie de nouvelle tentative*.
+Il vous suffit pour permettre la résilience des connexions est créer une classe dans l’assembly qui dérive de la [DbConfiguration](https://msdn.microsoft.com/data/jj680699.aspx) , puis dans cette classe, définissez la base de données SQL *stratégie d’exécution*, soit dans EF un autre terme pour *stratégie de nouvelle tentative*.
 
 1. Dans le dossier de la couche DAL, ajoutez un fichier de classe nommé *SchoolConfiguration.cs*.
 2. Remplacez le code du modèle par le code suivant :
 
     [!code-csharp[Main](connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample1.cs)]
 
-    Entity Framework exécute automatiquement le code qu’il se trouve dans une classe qui dérive de `DbConfiguration`. Vous pouvez utiliser la `DbConfiguration` classe pour effectuer des tâches de configuration dans le code que vous le feriez dans le cas contraire dans le *Web.config* fichier. Pour plus d’informations, consultez [EntityFramework Configuration basée sur le Code](https://msdn.microsoft.com/en-us/data/jj680699).
+    Entity Framework exécute automatiquement le code qu’il se trouve dans une classe qui dérive de `DbConfiguration`. Vous pouvez utiliser la `DbConfiguration` classe pour effectuer des tâches de configuration dans le code que vous le feriez dans le cas contraire dans le *Web.config* fichier. Pour plus d’informations, consultez [EntityFramework Configuration basée sur le Code](https://msdn.microsoft.com/data/jj680699).
 3. Dans *StudentController.cs*, ajoutez un `using` instruction pour `System.Data.Entity.Infrastructure`.
 
     [!code-csharp[Main](connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample2.cs)]
@@ -66,13 +66,13 @@ Il vous suffit pour permettre la résilience des connexions est créer une class
 
     Vous utilisez `DataException` pour tenter d’identifier les erreurs qui peuvent être temporaires afin d’octroyer à un message convivial « réessayez ». Mais maintenant que vous avez activé la stratégie de nouvelle tentative, seules les erreurs susceptibles d’être temporaire seront déjà ont été en vain plusieurs fois et l’exception réelle retournée à encapsuler dans le `RetryLimitExceededException` exception.
 
-Pour plus d’informations, consultez [résilience des connexions Entity Framework / logique de nouvelle tentative](https://msdn.microsoft.com/en-us/data/dn456835).
+Pour plus d’informations, consultez [résilience des connexions Entity Framework / logique de nouvelle tentative](https://msdn.microsoft.com/data/dn456835).
 
 ## <a name="enable-command-interception"></a>Activez l’Interception de commande
 
 Maintenant que vous avez activé la stratégie de nouvelle tentative, comment tester pour vérifier qu’elle fonctionne comme prévu ? Il n’est pas facile à forcer une erreur temporaire se produire, en particulier lorsque vous exécutez localement, et il serait particulièrement difficile à intégrer des erreurs temporaires réels dans un test unitaire automatisé. Pour tester la fonctionnalité de résilience de connexion, vous avez besoin d’un moyen pour intercepter les requêtes Entity Framework envoie à SQL Server et remplacez la réponse de SQL Server avec un type d’exception qui est généralement temporaire.
 
-Vous pouvez également utiliser l’interception de requête pour implémenter la méthode recommandée pour les applications cloud : [consigne la latence et la réussite ou l’échec de tous les appels aux services externes](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry.md#log) telles que les services de base de données. EF6 fournit un [dédié API de journalisation](https://msdn.microsoft.com/en-us/data/dn469464) qui peuvent faciliter la connexion, mais dans cette section du didacticiel, vous allez apprendre à utiliser Entity Framework [fonctionnalité d’interception](https://msdn.microsoft.com/en-us/data/dn469464) directement, les deux, pour journalisation et de simulation d’erreurs temporaires.
+Vous pouvez également utiliser l’interception de requête pour implémenter la méthode recommandée pour les applications cloud : [consigne la latence et la réussite ou l’échec de tous les appels aux services externes](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry.md#log) telles que les services de base de données. EF6 fournit un [dédié API de journalisation](https://msdn.microsoft.com/data/dn469464) qui peuvent faciliter la connexion, mais dans cette section du didacticiel, vous allez apprendre à utiliser Entity Framework [fonctionnalité d’interception](https://msdn.microsoft.com/data/dn469464) directement, les deux, pour journalisation et de simulation d’erreurs temporaires.
 
 ### <a name="create-a-logging-interface-and-class"></a>Créer une interface de journalisation et de la classe
 
@@ -171,7 +171,7 @@ Ensuite, vous allez créer les classes Entity Framework appelle chaque fois qu�
     ![Exception factice](connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image4.png)
 5. Ne pas commenter le *SetExecutionStrategy* ligne *SchoolConfiguration.cs*.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Dans ce didacticiel, vous avez vu comment activer la résilience des connexions et enregistre les commandes SQL qui Entity Framework compose et envoie à la base de données. Dans l’étape suivante du didacticiel, vous allez déployer l’application à Internet, à l’aide de Migrations Code First pour déployer la base de données.
 

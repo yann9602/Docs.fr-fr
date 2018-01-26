@@ -2,21 +2,19 @@
 title: "Programmes d’assistance de balise dans les formulaires dans ASP.NET Core"
 author: rick-anderson
 description: "Décrit la fonction intégrée programmes d’assistance de balise utilisée avec des formulaires."
-keywords: "ASP.NET Core, d’assistance de balise, TagHelper, formulaire HTML, de formulaires"
 ms.author: riande
 manager: wpickett
 ms.date: 02/14/2017
 ms.topic: article
-ms.assetid: 25595059-4fac-4785-8152-f88590e3169b
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/working-with-forms
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: da36985206521798d3bfe71f6372dc5cc4fca09a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9fd51755e1dc9a1dfb9ab5cc4558f7da9475ce32
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="introduction-to-using-tag-helpers-in-forms-in-aspnet-core"></a>Introduction à l’utilisation de programmes d’assistance de balise dans les formulaires dans ASP.NET Core
 
@@ -24,7 +22,7 @@ Par [Rick Anderson](https://twitter.com/RickAndMSFT), [Dave Paquette](https://tw
 
 Ce document illustre l’utilisation de formulaires et les éléments HTML couramment utilisés dans un formulaire. Le code HTML [formulaire](https://www.w3.org/TR/html401/interact/forms.html) élément fournit l’utilisation d’applications web mécanisme principal pour publier des données sur le serveur. La majeure partie de ce document décrit [programmes d’assistance de balise](tag-helpers/intro.md) et comment ils peuvent vous aider à productive créer des formulaires HTML robustes. Nous vous conseillons de lire [Introduction aux programmes d’assistance de balise](tag-helpers/intro.md) avant de lire ce document.
 
-Dans de nombreux cas, les programmes d’assistance HTML fournissent une approche alternative à une application d’assistance de balise spécifique, mais il est important de reconnaître que les programmes d’assistance de balise ne remplacent pas les programmes d’assistance HTML et n’est pas un programme d’assistance de balise pour chaque programme d’assistance HTML. Lorsqu’un autre programme d’assistance HTML existe, il est indiqué.
+Dans de nombreux cas, les programmes d’assistance HTML fournissent une approche alternative à une application d’assistance de balise spécifique, mais il est important de reconnaître que les programmes d’assistance de balise ne pas remplacer les programmes d’assistance HTML et n’est pas un programme d’assistance de balise pour chaque programme d’assistance HTML. Lorsqu’un autre programme d’assistance HTML existe, il est indiqué.
 
 <a name="my-asp-route-param-ref-label"></a>
 
@@ -88,7 +86,7 @@ L’application d’assistance de balise d’entrée :
 
 * Définit le code HTML `type` en fonction du type de modèle de valeur d’attribut et [annotation de données](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.dataannotations.iattributeadapter) attributs appliqués à la propriété du modèle
 
-* Ne remplace pas le code HTML `type` valeur d’attribut s’il est spécifié
+* Ne sera pas remplacer le code HTML `type` valeur d’attribut s’il est spécifié
 
 * Génère [HTML5](https://developer.mozilla.org/docs/Web/Guide/HTML/HTML5) validation des attributs à partir de [annotation de données](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.dataannotations.iattributeadapter) attributs appliqués aux propriétés de modèle
 
@@ -111,12 +109,12 @@ Le `Input` application d’assistance de balise définit le code HTML `type` att
 
 |Type .NET|Type d’entrée|
 |---|---|
-|Bool|type = « checkbox »|
-|Chaîne|type = « text »|
-|DateTime|type = « datetime »|
-|Byte|type = « number »|
-|Int|type = « number »|
-|Single, Double|type = « number »|
+|Bool|type=”checkbox”|
+|Chaîne|type=”text”|
+|DateTime|type=”datetime”|
+|Byte|type=”number”|
+|Int|type=”number”|
+|Single, Double|type=”number”|
 
 
 Le tableau suivant présente certaines commun [annotations de données](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.dataannotations.iattributeadapter) attributs l’application d’assistance de balise d’entrée est mappés à des types spécifiques d’entrée (pas de chaque attribut de validation est répertorié) :
@@ -124,13 +122,13 @@ Le tableau suivant présente certaines commun [annotations de données](https://
 
 |Attribut|Type d’entrée|
 |---|---|
-|[EmailAddress]|type = « email »|
-|[Url]|type = « url »|
-|[HiddenInput]|type = « hidden »|
-|[Phone]|type = « téléphone »|
-|[DataType(DataType.Password)]| type = « password »|
-|[DataType(DataType.Date)]| type = « date »|
-|[DataType(DataType.Time)]| type = « time »|
+|[EmailAddress]|type=”email”|
+|[Url]|type=”url”|
+|[HiddenInput]|type=”hidden”|
+|[Phone]|type=”tel”|
+|[DataType(DataType.Password)]| type=”password”|
+|[DataType(DataType.Date)]| type=”date”|
+|[DataType(DataType.Time)]| type=”time”|
 
 
 Aperçu :
@@ -161,7 +159,7 @@ Les annotations de données appliquées à la `Email` et `Password` propriétés
 
 ### <a name="html-helper-alternatives-to-input-tag-helper"></a>Alternatives de programme d’assistance HTML à l’application d’assistance de balise d’entrée
 
-`Html.TextBox`, `Html.TextBoxFor`, `Html.Editor` et `Html.EditorFor` se chevauchent de fonctionnalités avec l’application d’assistance de balise d’entrée. L’application d’assistance de balise d’entrée définira automatiquement le `type` attribut ; `Html.TextBox` et `Html.TextBoxFor` ne seront pas. `Html.Editor`et `Html.EditorFor` gérer les collections, les objets complexes et les modèles ; n’est pas le cas de l’application d’assistance de balise d’entrée. L’application d’assistance de balise d’entrée, `Html.EditorFor` et `Html.TextBoxFor` sont fortement typées (elles utilisent les expressions lambda) ; `Html.TextBox` et `Html.Editor` ne sont pas (ils utilisent des noms d’expressions).
+`Html.TextBox`, `Html.TextBoxFor`, `Html.Editor` et `Html.EditorFor` se chevauchent de fonctionnalités avec l’application d’assistance de balise d’entrée. L’application d’assistance de balise d’entrée définira automatiquement le `type` attribut ; `Html.TextBox` et `Html.TextBoxFor` ne sont pas. `Html.Editor`et `Html.EditorFor` gérer les collections, les objets complexes et les modèles ; ne de l’application d’assistance de balise d’entrée. L’application d’assistance de balise d’entrée, `Html.EditorFor` et `Html.TextBoxFor` sont fortement typées (elles utilisent les expressions lambda) ; `Html.TextBox` et `Html.Editor` ne sont pas (ils utilisent des noms d’expressions).
 
 ### <a name="htmlattributes"></a>HtmlAttributes
 
@@ -366,7 +364,7 @@ Le `Validation Summary Tag Helper` est utilisé pour afficher un résumé des me
 |--- |--- |
 |ValidationSummary.All|Niveau de la propriété et le modèle|
 |ValidationSummary.ModelOnly|Modèle|
-|ValidationSummary.None|Aucune|
+|ValidationSummary.None|Aucun.|
 
 ### <a name="sample"></a>Exemple
 
@@ -438,7 +436,7 @@ Qui génère le code HTML suivant (avec « AC » sélectionnée) :
 ```
 
 > [!NOTE]
-> Nous ne recommandons pas à l’aide de `ViewBag` ou `ViewData` avec l’assistance de balise sélectionnez. Un modèle d’affichage est plus fiable en fournissant des métadonnées de MVC et généralement moins problématique.
+> Nous déconseillons d’utiliser `ViewBag` ou `ViewData` avec l’assistance de balise sélectionnez. Un modèle d’affichage est plus fiable en fournissant des métadonnées de MVC et généralement moins problématique.
 
 Le `asp-for` valeur d’attribut est un cas spécial et ne nécessite pas un `Model` de préfixe, les autres ne d’attributs d’assistance de balise (tels que `asp-items`)
 
@@ -551,7 +549,7 @@ Le *Views/Shared/EditorTemplates/CountryViewModel.cshtml* modèle :
 
 [!code-HTML[Main](working-with-forms/sample/final/Views/Shared/EditorTemplates/CountryViewModel.cshtml)]
 
-Ajout de code HTML [ \<option >](https://www.w3.org/wiki/HTML/Elements/option) éléments n’est pas limitée à la *aucune sélection* cas. Par exemple, la méthode d’affichage et l’action suivante sera génèrent du code HTML semblable au code ci-dessus :
+Ajout de code HTML [ \<option >](https://www.w3.org/wiki/HTML/Elements/option) éléments n’est pas limité à la *aucune sélection* cas. Par exemple, la méthode d’affichage et l’action suivante sera génèrent du code HTML semblable au code ci-dessus :
 
 [!code-csharp[Main](working-with-forms/sample/final/Controllers/HomeController.cs?range=114-119)]
 

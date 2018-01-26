@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/ui_and_navigation
 msc.type: authoredcontent
-ms.openlocfilehash: 98c96749781f577d9544c80f58404353d40848b2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7f1d8a1a473820a7c8da4c8086904cc41c86fd2a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="ui-and-navigation"></a>L’interface utilisateur et la Navigation
 ====================
@@ -215,7 +215,7 @@ Ce code affiche toutes les catégories à partir de la base de données. Le **Li
 
 > [!NOTE] 
 > 
-> **Info-bulle**
+> **Tip**
 > 
 > Lorsque vous ajoutez du code en tapant pendant le développement, vous pouvez être certain qu’un membre valide d’un objet est trouvé, car il est fortement typée les contrôles de données affichent les membres disponibles en fonction de IntelliSense. IntelliSense offre des choix de code selon le contexte comme type de code, tels que les objets, méthodes et propriétés.
 
@@ -282,14 +282,14 @@ Maintenant vous pouvez inspecter les données contenues dans le *wingtiptoys.mdf
  En détachant la base de données à partir de Visual Studio, le schéma de base de données pourront être modifiés ultérieurement dans cette série de didacticiels.
 11. Retour à **l’Explorateur de solutions**en sélectionnant le **l’Explorateur de solutions** onglet en bas de la **l’Explorateur de serveurs** fenêtre.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Dans ce didacticiel de la série, vous avez ajouté une interface utilisateur de base, des graphiques, pages et navigation. En outre, vous avez exécuté l’application Web, ce qui a créé la base de données à partir des classes de données que vous avez ajouté dans le didacticiel précédent. Vous avez affiché également le contenu de la *produits* table de la base de données en consultant la base de données directement. Dans l’étape suivante du didacticiel, vous allez afficher les éléments de données et des détails de la base de données.
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-[Introduction à la programmation des Pages Web ASP.NET](https://msdn.microsoft.com/en-us/library/ms178125.aspx)   
-[Vue d’ensemble des contrôles serveur Web ASP.NET](https://msdn.microsoft.com/en-us/library/zsyt68f1.aspx)   
+[Introduction à la programmation des Pages Web ASP.NET](https://msdn.microsoft.com/library/ms178125.aspx)   
+[Vue d’ensemble des contrôles serveur Web ASP.NET](https://msdn.microsoft.com/library/zsyt68f1.aspx)   
 [Didacticiel CSS](http://www.w3schools.com/css/default.asp)
 
 >[!div class="step-by-step"]

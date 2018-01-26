@@ -2,20 +2,18 @@
 title: "Implémentation du serveur web WebListener ASP.NET Core"
 author: rick-anderson
 description: "Introduit WebListener, un serveur web pour ASP.NET Core sur Windows. Basé sur le pilote de mode noyau Http.Sys, WebListener est une alternative à Kestrel qui peut être utilisé pour une connexion directe à Internet sans IIS."
-keywords: "ASP.NET Core, WebListener, HttpListener, préfixes d’url, SSL"
 ms.author: riande
 manager: wpickett
 ms.date: 08/07/2017
 ms.topic: article
-ms.assetid: 0a7286e4-6428-424e-b5c4-5c98815cf61c
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/servers/weblistener
-ms.openlocfilehash: f1abb3558546cd907c78b44d9353d9c9f1f5aff1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5073a1663ec99a1b161092d74ab035ee9782becd
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="weblistener-web-server-implementation-in-aspnet-core"></a>Implémentation du serveur web WebListener ASP.NET Core
 
@@ -133,7 +131,7 @@ using (WebListener listener = new WebListener(settings))
 
 ## <a name="preregister-url-prefixes-and-configure-ssl"></a>Préenregistrer des préfixes d’URL et de configurer le protocole SSL
 
-IIS et WebListener s’appuient sur le pilote sous-jacent de mode noyau Http.Sys pour écouter les demandes et le traitement initiale. Dans IIS, l’interface utilisateur de gestion vous donne un moyen relativement facile à configurer tous les éléments. Toutefois, si vous utilisez WebListener, vous devez configurer Http.Sys vous-même. L’outil intégré correspondant est netsh.exe. 
+IIS et WebListener s’appuient sur le pilote sous-jacent de mode noyau Http.Sys pour écouter les demandes et le traitement initiale. Dans IIS, l’interface utilisateur de gestion vous donne un moyen relativement facile à configurer tous les éléments. Toutefois, si vous utilisez WebListener, vous devez configurer Http.Sys vous-même. L’outil intégré pour cela est netsh.exe. 
 
 Les tâches les plus courantes que vous devez utiliser netsh.exe pour sont réservation des préfixes d’URL et affectation des certificats SSL.
 
@@ -157,7 +155,7 @@ Voici la documentation de référence officiel :
 
 Les ressources suivantes fournissent des instructions détaillées pour plusieurs scénarios. Les articles qui font référence aux `HttpListener` s’appliquent aussi à `WebListener`, comme les deux reposent sur Http.Sys.
 
-* [Comment : configurer un Port avec un certificat SSL](https://docs.microsoft.com/dotnet/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate)
+* [Guide pratique pour configurer un port avec un certificat SSL](https://docs.microsoft.com/dotnet/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate)
 * [Les communications HTTPS - HttpListener basé hébergement et la Certification Client](http://sunshaking.blogspot.com/2012/11/https-communication-httplistener-based.html) blog de tiers et est assez ancien mais dispose toujours des informations utiles.
 * [Comment : HttpListener à l’aide de procédure pas à pas ou le serveur Http du code non managé (C++) comme serveur SSL Simple](https://blogs.msdn.microsoft.com/jpsanders/2009/09/29/how-to-walkthrough-using-httplistener-or-http-server-unmanaged-code-c-as-an-ssl-simple-server/) ce qui est également un blog plus anciens avec des informations utiles.
 * [Comment configurer un WebListener de noyaux .NET avec SSL ?](https://blogs.msdn.microsoft.com/timomta/2016/11/04/how-do-i-set-up-a-net-core-weblistener-with-ssl/)

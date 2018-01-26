@@ -2,20 +2,18 @@
 title: "Immuabilité clée et la modification des paramètres"
 author: rick-anderson
 description: "Ce document décrit les détails d’implémentation de l’ASP.NET Core protection clée immuabilité des données API."
-keywords: "ASP.NET Core, protection des données, la clé que l’immuabilité"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: fc911ae3-feca-4ffe-8b43-362bc632fe04
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/implementation/key-immutability
-ms.openlocfilehash: 96860b44b64f241a1bbff2ac8366e0863b1ac10c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 425b8ba9769c2b5ac635693b045e52c110f25205
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="key-immutability-and-changing-settings"></a>Immuabilité et la modification des paramètres de clé
 
@@ -23,7 +21,7 @@ Une fois qu’un objet est persistant dans le magasin de sauvegarde, sa représe
 
 Une conséquence de ce comportement est qu’une fois qu’une clé est écrite dans le magasin de stockage, il est immuable. Ses dates de création, d’activation et d’expiration ne sont pas modifiables, si elle peut révoquées à l’aide de `IKeyManager`. En outre, ses informations algorithmiques sous-jacentes, support de gestion et le chiffrement sur les propriétés rest sont également immuables.
 
-Si le développeur modifie un paramètre qui affecte la persistance des clés, ces modifications ne prendront effet jusqu'à la prochaine génération d’une clé, soit via un appel explicite à `IKeyManager.CreateNewKey` ou via de la protection système de données propre [clé automatique génération](key-management.md#data-protection-implementation-key-management) comportement. Les paramètres qui affectent la persistance des clés sont les suivantes :
+Si le développeur modifie un paramètre qui affecte la persistance des clés, ces modifications ne sont pas en vigueur jusqu'à la prochaine génération d’une clé, soit via un appel explicite à `IKeyManager.CreateNewKey` ou via de la protection système de données propre [clé automatique génération](key-management.md#data-protection-implementation-key-management) comportement. Les paramètres qui affectent la persistance des clés sont les suivantes :
 
 * [La durée de vie de clé par défaut](key-management.md#data-protection-implementation-key-management)
 

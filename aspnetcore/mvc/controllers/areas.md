@@ -2,20 +2,18 @@
 title: Zones
 author: rick-anderson
 description: Montre comment utiliser des zones.
-keywords: ASP.NET Core, domaines, le routage, vues
 ms.author: riande
 manager: wpickett
 ms.date: 02/14/2017
 ms.topic: article
-ms.assetid: 5e16d5e8-5696-4cb2-8ec7-d36be305c922
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/areas
-ms.openlocfilehash: cd0302fa1668979df9bbd6cb36f82742d325c5e9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 87bf2eaad1c13d21412051be769992411f685e2e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="areas"></a>Zones
 
@@ -101,7 +99,7 @@ services.Configure<RazorViewEngineOptions>(options =>
    });
    ```
 
-Une chose à noter est que la structure de la *vues* dossier est le seul qui est considérée comme important ici et le contenu du reste des dossiers comme *contrôleurs* et *demodèles* est **pas** a d’importance. Par exemple, vous ne devez pas avoir un *contrôleurs* et *modèles* dossier du tout. Cela fonctionne parce que le contenu de *contrôleurs* et *modèles* est simplement du code qui est compilé dans un fichier .dll, alors que le contenu de la *vues* jusqu'à une demande qui n’est pas vue a été effectuée.
+Une chose à noter est que la structure de la *vues* dossier est le seul qui est considérée comme important ici et le contenu du reste des dossiers comme *contrôleurs* et *demodèles* est **pas** a d’importance. Par exemple, vous ne devez pas avoir un *contrôleurs* et *modèles* dossier du tout. Cela fonctionne parce que le contenu de *contrôleurs* et *modèles* est simplement du code qui est compilé dans un fichier .dll, alors que le contenu de la *vues* n’est qu’une demande qui vue a été effectuée.
 
 Une fois que vous avez défini l’arborescence des dossiers, vous devez indiquer MVC que chaque contrôleur est associé à une zone. Pour ce faire, la décoration de nom du contrôleur avec le `[Area]` attribut.
 
@@ -155,7 +153,7 @@ Accédant à `http://<yourApp>/products`, le `Index` méthode d’action de la `
 
   Syntaxe de TagHelper :`<a asp-action="Index">Go to Product's Home Page</a>`
 
-  Remarquez que nous ne devons pas fournir les valeurs « zone » et « controller » ici car ils sont déjà disponibles dans le contexte de la requête actuelle. Ces types de valeurs sont appelées `ambient` valeurs.
+  Remarquez que nous ne devons pas fournir les valeurs « zone » et « controller » ici qu’elles sont déjà disponibles dans le contexte de la requête actuelle. Ces types de valeurs sont appelées `ambient` valeurs.
 
 * Générer des liens à partir d’une action dans une zone en fonction de contrôleur à une autre action sur un autre contrôleur.
 

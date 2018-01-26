@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/displaying-a-custom-error-page-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 92a7e945a6f82e78b848bae8f4f362e16a567b1f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e2fcaa615415b6f61e96e12dc77866d00110a33e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="displaying-a-custom-error-page-c"></a>Affichage d’une Page d’erreur personnalisés (c#)
 ====================
@@ -31,7 +31,7 @@ par [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 Dans un monde idéal ne serait aucune erreur d’exécution. Les programmeurs seraient écrire du code avec n-aires un bogue et la validation d’entrée utilisateur robuste et externes ressources telles que les serveurs de messagerie et les serveurs de base de données va jamais passer en mode hors connexion. Bien sûr, en réalité, les erreurs sont inévitables. Les classes dans le .NET Framework indiquent une erreur en levant une exception. Par exemple, la méthode d’ouverture de l’objet appelant un SqlConnection établit une connexion à la base de données spécifiée par une chaîne de connexion. Toutefois, si la base de données est arrêté, ou si les informations d’identification dans la chaîne de connexion ne sont pas valides la méthode Open lève une `SqlException`. Exceptions peuvent être gérées à l’aide de `try/catch/finally` blocs. Si le code situé dans un `try` bloc lève une exception, le contrôle est transféré au bloc catch approprié sur lequel le développeur peut tenter une récupération à partir de l’erreur. S’il n’existe aucun bloc catch correspondant, ou si le code qui a levé l’exception n’est pas dans un bloc try, l’exception percolates la pile des appels search de `try/catch/finally` blocs.
 
-Si l’exception se propage jusqu'à l’exécution d’ASP.NET sans être géré, le [ `HttpApplication` classe](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.aspx)de [ `Error` événement](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.error.aspx) est déclenché et configuré *page d’erreur*  s’affiche. Par défaut, ASP.NET affiche une page d’erreur affectueusement porte la [jaune écran de décès](http://en.wikipedia.org/wiki/Yellow_Screen_of_Death#Yellow) (YSOD). Il existe deux versions de la YSOD : un élément indique les détails de l’exception, une trace de pile et d’autres informations utiles aux développeurs de débogage de l’application (consultez **Figure 1**) ; l’autre déclare simplement une erreur d’exécution (voir  **Figure 2**).
+Si l’exception se propage jusqu'à l’exécution d’ASP.NET sans être géré, le [ `HttpApplication` classe](https://msdn.microsoft.com/library/system.web.httpapplication.aspx)de [ `Error` événement](https://msdn.microsoft.com/library/system.web.httpapplication.error.aspx) est déclenché et configuré *page d’erreur*  s’affiche. Par défaut, ASP.NET affiche une page d’erreur affectueusement porte la [jaune écran de décès](http://en.wikipedia.org/wiki/Yellow_Screen_of_Death#Yellow) (YSOD). Il existe deux versions de la YSOD : un élément indique les détails de l’exception, une trace de pile et d’autres informations utiles aux développeurs de débogage de l’application (consultez **Figure 1**) ; l’autre déclare simplement une erreur d’exécution (voir  **Figure 2**).
 
 Détails de l’exception YSOD est très utile pour les développeurs de débogage de l’application, mais affichant un YSOD aux utilisateurs finaux est collant et un. Au lieu de cela, les utilisateurs finaux devra être prises pour une page d’erreur qui maintient l’apparence du site avec prose plus conviviale qui décrit la situation. La bonne nouvelle est que la création de ce une page d’erreur personnalisée est très simple. Ce didacticiel commence par examiner ASP. Pages d’erreur différentes du réseau. Il montre ensuite comment configurer l’application web pour afficher les utilisateurs à une page d’erreur personnalisée en dépit d’une erreur.
 
@@ -87,7 +87,7 @@ Parmi les trois pages d’erreur possibles s’affiche est basée sur deux varia
 - Les informations de configuration dans la `<customErrors>` section, et
 - Indique si l’utilisateur visite le site local ou à distance.
 
-Le [ `<customErrors>` section](https://msdn.microsoft.com/en-us/library/h0hfz6fc.aspx) dans `Web.config` a deux attributs qui affectent la page d’erreur est affiché : `defaultRedirect` et `mode`. L'attribut `defaultRedirect` est facultatif. Si fourni, il spécifie l’URL de la page d’erreur personnalisée et indique que la page d’erreurs personnalisées doit être affichée au lieu du YSOD d’erreur de Runtime. Le `mode` attribut est requis et qu’il accepte l’une des trois valeurs : `On`, `Off`, ou `RemoteOnly`. Ces valeurs ont le comportement suivant :
+Le [ `<customErrors>` section](https://msdn.microsoft.com/library/h0hfz6fc.aspx) dans `Web.config` a deux attributs qui affectent la page d’erreur est affiché : `defaultRedirect` et `mode`. L'attribut `defaultRedirect` est facultatif. Si fourni, il spécifie l’URL de la page d’erreur personnalisée et indique que la page d’erreurs personnalisées doit être affichée au lieu du YSOD d’erreur de Runtime. Le `mode` attribut est requis et qu’il accepte l’une des trois valeurs : `On`, `Off`, ou `RemoteOnly`. Ces valeurs ont le comportement suivant :
 
 - `On`-Indique que la page d’erreur personnalisée ou la YSOD d’erreur de Runtime est affichée pour tous les visiteurs, qu’ils soient locaux ou distants.
 - `Off`-Spécifie que le YSOD détails de l’Exception est affichée pour tous les visiteurs, qu’ils soient locaux ou distants.
@@ -153,7 +153,7 @@ Cette modification en place, chaque fois qu’un utilisateur visite à distance 
 > La page d’erreur personnalisée est uniquement affichée lorsqu’une demande est faite à une ressource gérée par le moteur ASP.NET. Comme expliqué dans la [principales différences entre IIS et le serveur de développement ASP.NET](core-differences-between-iis-and-the-asp-net-development-server-cs.md) didacticiel, le serveur web peut-être gérer certaines demandes lui-même. Par défaut, IIS web server traite les requêtes de contenu statique, comme des images et des fichiers HTML sans appeler le moteur ASP.NET. Par conséquent, si l’utilisateur demande un fichier inexistant image qu’ils obtiendront précédent message d’erreur 404 d’IIS par défaut plutôt que ASP. Page d’erreurs configuré du réseau.
 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Lorsqu’une exception non gérée se produit dans une application ASP.NET, l’utilisateur est affiché à un des trois pages d’erreur : Exception détails jaune écran de décès ; Erreur d’exécution jaune écran décès. ou une page d’erreurs personnalisée. Page erreur affichée dépend de l’application `<customErrors>` configuration et indique si l’utilisateur visite localement ou à distance. Le comportement par défaut est d’illustrer le YSOD détails de l’Exception pour les visiteurs locales et le YSOD d’erreur de Runtime pour les visiteurs à distance.
 
@@ -168,9 +168,9 @@ Bonne programmation !
 Pour plus d’informations sur les sujets abordés dans ce didacticiel, consultez les ressources suivantes :
 
 - [Pages d’erreur, une nouvelle fois](http://www.smashingmagazine.com/2009/01/29/404-error-pages-one-more-time/)
-- [Règles de conception pour les Exceptions](https://msdn.microsoft.com/en-us/library/ms229014.aspx)
+- [Instructions de conception pour les exceptions](https://msdn.microsoft.com/library/ms229014.aspx)
 - [Pages d’erreur convivial](http://aspnet.4guysfromrolla.com/articles/090606-1.aspx)
-- [Gestion et levée des Exceptions](https://msdn.microsoft.com/en-us/library/5b2yeyab.aspx)
+- [Gestion et levée des Exceptions](https://msdn.microsoft.com/library/5b2yeyab.aspx)
 - [Correctement à l’aide des Pages d’erreurs personnalisées dans ASP.NET](http://professionalaspnet.com/archive/2007/09/30/Properly-Using-Custom-Error-Pages-in-ASP.NET.aspx)
 
 >[!div class="step-by-step"]

@@ -2,20 +2,18 @@
 title: "Migration à partir de ASP.NET MVC à cœur d’ASP.NET MVC"
 author: ardalis
 description: 
-keywords: ASP.NET Core,MVC,migration
 ms.author: riande
 manager: wpickett
 ms.date: 03/07/2017
 ms.topic: article
-ms.assetid: 3155cc9e-d0c9-424b-886c-35c0ec6f9f4e
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: migration/mvc
-ms.openlocfilehash: 7a4357da4cc97d7c60cc7e309add7583ef096597
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e3220fb32900aac42cf96497964936ad5b375a86
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="migrating-from-aspnet-mvc-to-aspnet-core-mvc"></a>Migration à partir de ASP.NET MVC à cœur d’ASP.NET MVC
 

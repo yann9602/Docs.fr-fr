@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/older-versions/scaleout-in-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: e6230d4d65adb8c9a064545ad761898ca53562bf
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ee3384046bf8a0f363aa6801d7a46f68b2bf125a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="introduction-to-scaleout-in-signalr-1x"></a>Introduction à la montée en puissance parallèle dans SignalR 1.x
 ====================
@@ -45,13 +45,13 @@ Si vous déployez votre application sur Azure, envisagez d’utiliser l’infras
 
 Les rubriques suivantes contiennent des didacticiels pas à pas pour chaque fond de panier :
 
-- [Montée en charge SignalR avec Azure Service Bus](scaleout-with-windows-azure-service-bus.md)
-- [Montée en charge SignalR avec Redis](scaleout-with-redis.md)
-- [Montée en charge SignalR avec SQL Server](scaleout-with-sql-server.md)
+- [Montée en puissance parallèle de SignalR avec Azure Service Bus](scaleout-with-windows-azure-service-bus.md)
+- [Montée en puissance parallèle de SignalR avec Redis](scaleout-with-redis.md)
+- [Montée en puissance parallèle de SignalR avec SQL Server](scaleout-with-sql-server.md)
 
 ## <a name="implementation"></a>Implémentation
 
-Dans SignalR, chaque message est envoyé via un bus de messages. Un bus de messages implémente la [IMessageBus](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.messaging.imessagebus(v=vs.100).aspx) interface, qui fournit une abstraction publication/abonnement. Les fonds de panier de travail en remplaçant la valeur par défaut **IMessageBus** avec un bus conçu pour que fond de panier. Par exemple, le bus de messages pour Redis est [RedisMessageBus](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.redis.redismessagebus(v=vs.100).aspx), et il utilise le Redis [pub/sub](http://redis.io/topics/pubsub) mécanisme pour envoyer et recevoir des messages.
+Dans SignalR, chaque message est envoyé via un bus de messages. Un bus de messages implémente la [IMessageBus](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.messaging.imessagebus(v=vs.100).aspx) interface, qui fournit une abstraction publication/abonnement. Les fonds de panier de travail en remplaçant la valeur par défaut **IMessageBus** avec un bus conçu pour que fond de panier. Par exemple, le bus de messages pour Redis est [RedisMessageBus](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.redis.redismessagebus(v=vs.100).aspx), et il utilise le Redis [pub/sub](http://redis.io/topics/pubsub) mécanisme pour envoyer et recevoir des messages.
 
 Chaque instance de serveur se connecte au fond de panier via le bus. Lorsqu’un message est envoyé, il est placé dans le fond de panier, et le fond de panier envoie à tous les serveurs. Lorsqu’un serveur reçoit un message à partir de l’infrastructure d’intégration, il place le message dans sa mémoire cache locale. Le serveur puis remet les messages aux clients à partir de sa mémoire cache locale.
 

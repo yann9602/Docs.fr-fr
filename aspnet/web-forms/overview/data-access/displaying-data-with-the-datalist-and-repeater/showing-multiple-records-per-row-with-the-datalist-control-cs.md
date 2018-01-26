@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/showing-multiple-records-per-row-with-the-datalist-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: be0b831477e8f68768f1f9a0b52cbe90b3936d3f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e9f04089afdbeb1b13725536c9fe97951ee8ca5c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="showing-multiple-records-per-row-with-the-datalist-control-c"></a>Affichage des enregistrements multiples par ligne avec le contrôle DataList (c#)
 ====================
@@ -67,7 +67,7 @@ Prenez un moment pour consulter votre page dans un navigateur. Comme le montre l
 
 ## <a name="step-2-changing-the-datalist-s-layout-direction"></a>Étape 2 : Modification de la Direction de mise en page de s de DataList
 
-Lors du comportement par défaut pour le contrôle DataList est de présenter ses éléments verticalement dans une table une colonne unique, plusieurs ligne, ce comportement facilement modifiables par le biais du contrôle DataList s [ `RepeatDirection` propriété](https://msdn.microsoft.com/en-us/system.web.ui.webcontrols.datalist.repeatdirection.aspx). Le `RepeatDirection` propriété peut accepter une des deux valeurs possibles : `Horizontal` ou `Vertical` (la valeur par défaut).
+Lors du comportement par défaut pour le contrôle DataList est de présenter ses éléments verticalement dans une table une colonne unique, plusieurs ligne, ce comportement facilement modifiables par le biais du contrôle DataList s [ `RepeatDirection` propriété](https://msdn.microsoft.com/system.web.ui.webcontrols.datalist.repeatdirection.aspx). Le `RepeatDirection` propriété peut accepter une des deux valeurs possibles : `Horizontal` ou `Vertical` (la valeur par défaut).
 
 En modifiant le `RepeatDirection` propriété à partir de `Vertical` à `Horizontal`, DataList restitue ses enregistrements dans une seule ligne, la création d’une colonne par un élément de source de données. Pour illustrer cela, cliquez sur le contrôle DataList dans le concepteur et à partir de la fenêtre Propriétés, modifiez la `RepeatDirection` propriété à partir de `Vertical` à `Horiztonal`. Immédiatement lors de cette opération, le concepteur ajuste la disposition du contrôle DataList s, création d’une interface de ligne unique, plusieurs colonne (voir Figure 3).
 
@@ -87,7 +87,7 @@ Lors de l’affichage de petites quantités de données, une seule ligne, plusie
 
 ## <a name="step-3-displaying-data-in-a-multi-column-multi-row-table"></a>Étape 3 : Affichage de données dans une Table à plusieurs colonne, portant sur plusieurs lignes
 
-Pour créer une DataList à plusieurs colonne, portant sur plusieurs lignes, nous devons définir le [ `RepeatColumns` propriété](https://msdn.microsoft.com/en-us/system.web.ui.webcontrols.datalist.repeatcolumns.aspx) au nombre de colonnes à afficher. Par défaut, le `RepeatColumns` est définie sur 0, ce qui provoque le contrôle DataList afficher l’ensemble de ses éléments dans une seule ligne ou une colonne (selon la valeur de la `RepeatDirection` propriété).
+Pour créer une DataList à plusieurs colonne, portant sur plusieurs lignes, nous devons définir le [ `RepeatColumns` propriété](https://msdn.microsoft.com/system.web.ui.webcontrols.datalist.repeatcolumns.aspx) au nombre de colonnes à afficher. Par défaut, le `RepeatColumns` est définie sur 0, ce qui provoque le contrôle DataList afficher l’ensemble de ses éléments dans une seule ligne ou une colonne (selon la valeur de la `RepeatDirection` propriété).
 
 Dans notre exemple, permettent d’afficher les trois produits par ligne de table s. Par conséquent, définissez la `RepeatColumns` 3 à la propriété. Après avoir apporté cette modification, prenez un moment pour afficher les résultats dans un navigateur. Comme le montre la Figure 5, les produits sont désormais répertoriées dans un tableau de trois colonnes et plusieurs ligne.
 
@@ -107,7 +107,7 @@ Le `RepeatDirection` propriété affecte la disposition des éléments dans le c
 
 Le nombre de lignes affichées dans la table résultante varie selon le nombre total d’enregistrements liée au contrôle DataList. Précisément, elle s le plafond du nombre total d’éléments de source de données divisé par le `RepeatColumns` valeur de propriété. Étant donné que le `Products` table possède actuellement des 84 produits, qui est divisible par 3, il existe des 28 lignes. Si le nombre d’éléments dans la source de données et la `RepeatColumns` valeur de propriété n’est pas divisible, puis la dernière ligne ou la colonne aura des cellules vides. Si le `RepeatDirection` a la valeur `Vertical`, puis la dernière colonne aura des cellules vides ; si `RepeatDirection` est `Horizontal`, puis la dernière ligne aura les cellules vides.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Le contrôle DataList par défaut, affiche ses éléments dans une table contenant la colonne unique, plusieurs ligne, qui reproduit la disposition d’un GridView avec TemplateField unique. Pendant cette mise en page par défaut est acceptable, nous pouvons optimiser écran immobilier en affichant plusieurs éléments de source de données par ligne. Il s’agissait est simplement de la définition du contrôle DataList s `RepeatColumns` propriété au nombre de colonnes à afficher par ligne. En outre, le contrôle DataList s `RepeatDirection` propriété peut être utilisée pour indiquer si le contenu de la table à plusieurs colonne, à plusieurs lignes doit être disposé horizontalement de gauche à droite, de haut en bas ou verticalement, de haut en bas, de gauche à droite.
 

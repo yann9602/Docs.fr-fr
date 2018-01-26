@@ -2,20 +2,18 @@
 title: Vues partielles
 author: ardalis
 description: "À l’aide de vues partielles dans ASP.NET MVC de base"
-keywords: "Partielle d’ASP.NET Core, les vues partielles,"
 ms.author: riande
 manager: wpickett
 ms.date: 03/14/2017
 ms.topic: article
-ms.assetid: 4be1b12c-b74e-44ff-826b-99ce86e8d464
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/partial
-ms.openlocfilehash: 60f5255ca31accbffffec18053b29810977a5ff1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5919c273de2a298c3e407f118ac478e6a6031332
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="partial-views"></a>Vues partielles
 
@@ -39,7 +37,7 @@ Conseil : Suivez le [ne répétez vous-même principe](http://deviq.com/don-t-r
 
 ## <a name="declaring-partial-views"></a>Déclarer des vues partielles
 
-Les vues partielles sont créés comme toute autre vue : vous créez un *.cshtml* fichier inclus dans le *vues* dossier. Il n’existe aucune différence de sémantique entre une vue partielle et un affichage normal : ils sont rendus simplement différemment. Vous pouvez avoir une vue qui est retournée directement à partir d’un contrôleur de `ViewResult`, et la vue peut être utilisée comme une vue partielle. La principale différence entre le mode de rendu une vue et une vue partielle est que les vues partielles n’exécutent pas *_ViewStart.cshtml* (alors que les vues faire - en savoir plus sur *_ViewStart.cshtml* dans [mise en page ](layout.md)).
+Les vues partielles sont créés comme toute autre vue : vous créez un *.cshtml* fichier inclus dans le *vues* dossier. Il n’existe aucune différence de sémantique entre une vue partielle et un affichage normal - simplement les convertir différemment. Vous pouvez avoir une vue qui est retournée directement à partir d’un contrôleur de `ViewResult`, et la vue peut être utilisée comme une vue partielle. La principale différence entre le mode de rendu une vue et une vue partielle est que les vues partielles ne s’exécutent pas *_ViewStart.cshtml* (alors que les vues faire - en savoir plus sur *_ViewStart.cshtml* dans [mise en page ](layout.md)).
 
 ## <a name="referencing-a-partial-view"></a>Faisant référence à une vue partielle
 

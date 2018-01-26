@@ -2,21 +2,19 @@
 title: Lien du navigateur dans ASP.NET Core
 author: ncarandini
 description: "Explique comment le lien du navigateur est une fonctionnalité de Visual Studio qui lie l’environnement de développement avec un ou plusieurs navigateurs web."
-keywords: ASP.NET Core, lien du navigateur, la synchronisation CSS
 ms.author: riande
 manager: wpickett
 ms.date: 09/22/2017
 ms.topic: article
-ms.assetid: 11813d4c-3f8a-445a-b23b-e4a57d001abc
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/using-browserlink
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: b69d085e8bee4cdac2dff08b46a95a8869e263b7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d5db65c268923e96c45b034639437fc3496ccac1
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="browser-link-in-aspnet-core"></a>Lien du navigateur dans ASP.NET Core 
 
@@ -118,11 +116,11 @@ Dans la liste déroulante de lien du navigateur vers le bas du menu pour gérer 
 
 Si aucun navigateur n’est connecté, vous pouvez démarrer une session de débogage non en sélectionnant le *afficher dans le navigateur* lien :
 
-![browserlink-tableau de bord-no-connexions](using-browserlink/_static/browserlink-dashboard-no-connections.png)
+![browserlink-dashboard-no-connections](using-browserlink/_static/browserlink-dashboard-no-connections.png)
 
 Dans le cas contraire, les navigateurs connectés sont affichés avec le chemin d’accès à la page qui affiche chaque navigateur :
 
-![browserlink du tableau de bord deux connexions](using-browserlink/_static/browserlink-dashboard-two-connections.png)
+![browserlink-dashboard-two-connections](using-browserlink/_static/browserlink-dashboard-two-connections.png)
 
 Si vous le souhaitez, vous pouvez cliquer sur un nom de navigateur répertoriés pour actualiser ce seul navigateur.
 

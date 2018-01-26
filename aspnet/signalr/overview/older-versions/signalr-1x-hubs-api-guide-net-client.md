@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/older-versions/signalr-1x-hubs-api-guide-net-client
 msc.type: authoredcontent
-ms.openlocfilehash: 9cf99ba7887e7db847097a63c0a964ef5d461a9d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9a61bd255a217876aa2fdbeb6389539483b9f013
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-signalr-hubs-api-guide---net-client-signalr-1x"></a>Guide d’API ASP.NET SignalR concentrateurs - Client .NET (SignalR 1.x)
 ====================
@@ -68,7 +68,7 @@ Pour plus d’informations sur la façon de programmer le serveur ou les clients
 - [Guide d’API concentrateurs SignalR - serveur](../guide-to-the-api/hubs-api-guide-server.md)
 - [Guide d’API concentrateurs SignalR - Client JavaScript](../guide-to-the-api/hubs-api-guide-javascript-client.md)
 
-Des liens vers des rubriques de référence de l’API sont à la version de .NET 4.5 de l’API. Si vous utilisez le .NET 4, consultez [la version de .NET 4 des rubriques API](https://msdn.microsoft.com/en-us/library/jj891075(v=vs.100).aspx).
+Des liens vers des rubriques de référence de l’API sont à la version de .NET 4.5 de l’API. Si vous utilisez le .NET 4, consultez [la version de .NET 4 des rubriques API](https://msdn.microsoft.com/library/jj891075(v=vs.100).aspx).
 
 <a id="clientsetup"></a>
 
@@ -104,7 +104,7 @@ La classe `HubConnection` est thread-safe.
 
 ### <a name="cross-domain-connections-from-silverlight-clients"></a>Connexions entre les domaines à partir de clients Silverlight
 
-Pour plus d’informations sur la façon d’activer les connexions inter-domaines à partir de clients de Silverlight, consultez [rendre un Service disponible entre les limites de domaine](https://msdn.microsoft.com/en-us/library/cc197955(v=vs.95).aspx).
+Pour plus d’informations sur la façon d’activer les connexions inter-domaines à partir de clients de Silverlight, consultez [rendre un Service disponible entre les limites de domaine](https://msdn.microsoft.com/library/cc197955(v=vs.95).aspx).
 
 <a id="configureconnection"></a>
 
@@ -126,7 +126,7 @@ Clients de WPF, vous devrez peut-être augmenter le nombre maximal de connexions
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-net-client/samples/sample4.cs?highlight=4)]
 
-Pour plus d’informations, consultez [ServicePointManager.DefaultConnectionLimit](https://msdn.microsoft.com/en-us/library/system.net.servicepointmanager.defaultconnectionlimit.aspx).
+Pour plus d’informations, consultez [ServicePointManager.DefaultConnectionLimit](https://msdn.microsoft.com/library/system.net.servicepointmanager.defaultconnectionlimit.aspx).
 
 <a id="querystring"></a>
 
@@ -148,12 +148,12 @@ Dans le cadre du processus de connexion, un client SignalR est normalement négo
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-net-client/samples/sample7.cs?highlight=4)]
 
-Le [Microsoft.AspNet.SignalR.Client.Transports](https://msdn.microsoft.com/en-us/library/jj918090(v=vs.111).aspx) espace de noms inclut les classes suivantes qui vous permet de spécifier le transport.
+Le [Microsoft.AspNet.SignalR.Client.Transports](https://msdn.microsoft.com/library/jj918090(v=vs.111).aspx) espace de noms inclut les classes suivantes qui vous permet de spécifier le transport.
 
-- [LongPollingTransport](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.client.transports.longpollingtransport(v=vs.111).aspx)
-- [ServerSentEventsTransport](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.client.transports.serversenteventstransport(v=vs.111).aspx)
-- [WebSocketTransport](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.client.transports.websockettransport(v=vs.111).aspx) (disponible uniquement lorsque le serveur et le client utilisent .NET 4.5).
-- [AutoTransport](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.client.transports.autotransport(v=vs.111).aspx) (choisit automatiquement le transport meilleure prise en charge par le client et le serveur. Il s’agit du transport par défaut. En la passant dans pour la `Start` méthode a le même effet que passant ne pas quoi que ce soit.)
+- [LongPollingTransport](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.client.transports.longpollingtransport(v=vs.111).aspx)
+- [ServerSentEventsTransport](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.client.transports.serversenteventstransport(v=vs.111).aspx)
+- [WebSocketTransport](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.client.transports.websockettransport(v=vs.111).aspx) (disponible uniquement lorsque le serveur et le client utilisent .NET 4.5).
+- [AutoTransport](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.client.transports.autotransport(v=vs.111).aspx) (choisit automatiquement le transport meilleure prise en charge par le client et le serveur. Il s’agit du transport par défaut. En la passant dans pour la `Start` méthode a le même effet que passant ne pas quoi que ce soit.)
 
 Le transport ForeverFrame n’est pas inclus dans cette liste, car elle est utilisée uniquement par les navigateurs.
 
@@ -321,7 +321,7 @@ SignalR fournit des événements de durée de vie que vous pouvez gérer la conn
 - `ConnectionSlow`: Déclenché lorsque le client détecte une connexion lente ou suppression fréquemment.
 - `Reconnecting`: Déclenché lorsque le transport sous-jacent commence la reconnexion.
 - `Reconnected`: Déclenché lorsque le transport sous-jacent s’est reconnecté.
-- `StateChanged`: Déclenché lorsque l’état de la connexion change. Fournit l’ancien état et le nouvel état. Pour plus d’informations sur la connexion valeurs d’état, consultez [énumération ConnectionState](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.client.connectionstate(v=vs.111).aspx).
+- `StateChanged`: Déclenché lorsque l’état de la connexion change. Fournit l’ancien état et le nouvel état. Pour plus d’informations sur la connexion valeurs d’état, consultez [énumération ConnectionState](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.client.connectionstate(v=vs.111).aspx).
 - `Closed`: Déclenché lors de la connexion s’est déconnecté.
 
 Par exemple, si vous souhaitez afficher les messages d’avertissement pour les erreurs qui ne sont pas irrécupérable mais entraînent des problèmes de connexion intermittents, par exemple que la lenteur ou fréquentes la suppression de la connexion, gèrent les `ConnectionSlow` événement.

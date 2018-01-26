@@ -2,20 +2,18 @@
 title: "En-têtes de contexte"
 author: rick-anderson
 description: "Ce document décrit les détails d’implémentation des en-têtes de contexte de protection de données ASP.NET Core."
-keywords: "ASP.NET Core, protection des données, les en-têtes de contexte"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: d026a58c-67f4-411e-a410-c35f29c2c517
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/implementation/context-headers
-ms.openlocfilehash: eb8e4c9ad67d3046648aea1b45f4a675b41b3ec0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8ff0d867e4d3618524b8da98aafed8878d74581b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="context-headers"></a>En-têtes de contexte
 
@@ -72,11 +70,11 @@ B7 92 3D BF 59 90 00 A9
 
 Ensuite, calcul Enc_CBC (K_E, IV, « ») pour AES-192-CBC donné IV = 0 * et K_E comme indiqué ci-dessus.
 
-résultat : = F474B1872B3B53E4721DE19C0841DB6F
+result := F474B1872B3B53E4721DE19C0841DB6F
 
 Ensuite, calcul MAC (K_H, « ») pour HMACSHA256 donné K_H comme indiqué ci-dessus.
 
-résultat : = D4791184B996092EE1202F36E8608FA8FBD98ABDFF5402F264B1D7211536220C
+result := D4791184B996092EE1202F36E8608FA8FBD98ABDFF5402F264B1D7211536220C
 
 Cela génère l’en-tête de contexte complet ci-dessous :
 
@@ -119,11 +117,11 @@ D1 F7 5A 34 EB 28 3E D7 D4 67 B4 64
 
 Ensuite, calcul Enc_CBC (K_E, IV, « ») pour 3DES-192-CBC donné IV = 0 * et K_E comme indiqué ci-dessus.
 
-résultat : = ABB100F81E53E10E
+result := ABB100F81E53E10E
 
 Ensuite, calcul MAC (K_H, « ») pour HMACSHA1 donné K_H comme indiqué ci-dessus.
 
-résultat : = 76EB189B35CF03461DDF877CD9F4B1B4D63A7555
+result := 76EB189B35CF03461DDF877CD9F4B1B4D63A7555
 
 Cela génère l’en-tête de contexte complet qui est une empreinte numérique de l’authentifié paire d’algorithme de chiffrement (le chiffrement 3DES-192-CBC + HMACSHA1 validation), illustré ci-dessous :
 
@@ -173,11 +171,11 @@ K_E = SP800_108_CTR (prf = HMACSHA512, clé = « », étiquette = « », conte
 
 Commençons K_E = SP800_108_CTR (prf = HMACSHA512, clé = « », étiquette = « », contexte = « »), où | K_E | = 256 bits.
 
-K_E : = 22BC6F1B171C08C4AE2F27444AF8FC8B3087A90006CAEA91FDCFB47C1B8733B8
+K_E := 22BC6F1B171C08C4AE2F27444AF8FC8B3087A90006CAEA91FDCFB47C1B8733B8
 
 Ensuite, la balise d’authentification de Enc_GCM de calcul (K_E, la valeur à usage unique, « ») pour AES-256-GCM donné nonce = 096 et K_E comme indiqué ci-dessus.
 
-résultat : = E7DCCE66DF855A323A6BB7BD7A59BE45
+result := E7DCCE66DF855A323A6BB7BD7A59BE45
 
 Cela génère l’en-tête de contexte complet ci-dessous :
 

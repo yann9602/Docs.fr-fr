@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/working-with-the-dropdownlist-box-and-jquery/examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper
 msc.type: authoredcontent
-ms.openlocfilehash: b5210f9a29f82fbadd0e6dd2d81bd85e7f23ae7e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 737773ab424b3ec3b6139b8c238a60ca23de2e69
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="examining--how--aspnet-mvc-scaffolds-the-dropdownlist-helper"></a>Examiner la façon dont ASP.NET MVC micro-capsules du programme d’assistance DropDownList
 ====================
@@ -60,7 +60,7 @@ Le `Albums` table ne stocke pas le genre de l’album et la description, il stoc
 
 ### <a name="the-html-select-tag"></a>La balise HTML Select
 
-Le code HTML `<select>` élément (créée par le code HTML [DropDownList](https://msdn.microsoft.com/en-us/library/dd492948.aspx) helper) est utilisé pour afficher une liste complète des valeurs (par exemple, la liste des genres). Pour modifier les formulaires, lorsque la valeur actuelle est connue, la liste de sélection peut afficher la valeur actuelle. Nous avons vu ce précédemment lorsque nous devons définir la valeur sélectionnée sur **comédie**. La liste de sélection est idéale pour l’affichage des catégories ou des données de clé étrangère. Le `<select>` , élément pour la clé étrangère Genre affiche la liste des noms de genre possibles, mais lorsque vous enregistrez le formulaire la propriété Genre est mis à jour avec la valeur de clé étrangère Genre, pas le nom du genre affichée. Dans l’image ci-dessous, le genre sélectionné est **Disco** et l’artiste est **Donna Summer**.
+Le code HTML `<select>` élément (créée par le code HTML [DropDownList](https://msdn.microsoft.com/library/dd492948.aspx) helper) est utilisé pour afficher une liste complète des valeurs (par exemple, la liste des genres). Pour modifier les formulaires, lorsque la valeur actuelle est connue, la liste de sélection peut afficher la valeur actuelle. Nous avons vu ce précédemment lorsque nous devons définir la valeur sélectionnée sur **comédie**. La liste de sélection est idéale pour l’affichage des catégories ou des données de clé étrangère. Le `<select>` , élément pour la clé étrangère Genre affiche la liste des noms de genre possibles, mais lorsque vous enregistrez le formulaire la propriété Genre est mis à jour avec la valeur de clé étrangère Genre, pas le nom du genre affichée. Dans l’image ci-dessous, le genre sélectionné est **Disco** et l’artiste est **Donna Summer**.
 
 ![](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/_static/image4.png)
 
@@ -70,11 +70,11 @@ Ouvrez le *Controllers\StoreManagerController.cs* de fichiers et recherchez le `
 
 [!code-csharp[Main](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/samples/sample5.cs)]
 
-Le `Create` méthode ajoute deux [SelectList](https://msdn.microsoft.com/en-us/library/system.web.mvc.selectlist.aspx) des objets sur le `ViewBag`, une pour contenir les informations de genre et une pour contenir les informations artiste. Le [SelectList](https://msdn.microsoft.com/en-us/library/dd505286.aspx) surcharge de constructeur ci-dessus prend trois arguments :
+Le `Create` méthode ajoute deux [SelectList](https://msdn.microsoft.com/library/system.web.mvc.selectlist.aspx) des objets sur le `ViewBag`, une pour contenir les informations de genre et une pour contenir les informations artiste. Le [SelectList](https://msdn.microsoft.com/library/dd505286.aspx) surcharge de constructeur ci-dessus prend trois arguments :
 
 [!code-csharp[Main](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/samples/sample6.cs)]
 
-1. *éléments*: un [IEnumerable](https://msdn.microsoft.com/en-us/library/system.collections.ienumerable.aspx) contenant les éléments dans la liste. Dans l’exemple ci-dessus, la liste des genres retourné par `db.Genres`.
+1. *éléments*: un [IEnumerable](https://msdn.microsoft.com/library/system.collections.ienumerable.aspx) contenant les éléments dans la liste. Dans l’exemple ci-dessus, la liste des genres retourné par `db.Genres`.
 2. *dataValueField*: le nom de la propriété dans le **IEnumerable** liste qui contient la valeur de clé. Dans l’exemple ci-dessus, `GenreId` et `ArtistId`.
 3. *dataTextField*: le nom de la propriété dans le **IEnumerable** liste qui contient les informations à afficher. Dans les artistes et de table de genre, le `name` champ est utilisé.
 
@@ -84,7 +84,7 @@ Ouvrez le *Views\StoreManager\Create.cshtml* de fichiers et d’examiner le `Htm
 
 La première ligne indique que la vue create prend un `Album` modèle. Dans le `Create` méthode illustrée ci-dessus, aucun modèle n’a été passé, afin de la vue obtient un **null** `Album` modèle. À ce stade, nous allons créer un nouvel album afin que nous ne les `Album` données pour lui.
 
-Le [Html.DropDownList](https://msdn.microsoft.com/en-us/library/dd492948.aspx) surcharge ci-dessus prend le nom du champ à lier au modèle. Il utilise également ce nom pour rechercher un **ViewBag** objet contenant un [SelectList](https://msdn.microsoft.com/en-us/library/dd505286.aspx) objet. À l’aide de cette surcharge, vous êtes invité à nom le **ViewBag SelectList** objet `GenreId`. Le deuxième paramètre (`String.Empty`) est le texte à afficher lorsque aucun élément n’est sélectionné. C’est exactement ce que nous voulons lors de la création d’un nouvel album. Si vous supprimée le deuxième paramètre et le code suivant :
+Le [Html.DropDownList](https://msdn.microsoft.com/library/dd492948.aspx) surcharge ci-dessus prend le nom du champ à lier au modèle. Il utilise également ce nom pour rechercher un **ViewBag** objet contenant un [SelectList](https://msdn.microsoft.com/library/dd505286.aspx) objet. À l’aide de cette surcharge, vous êtes invité à nom le **ViewBag SelectList** objet `GenreId`. Le deuxième paramètre (`String.Empty`) est le texte à afficher lorsque aucun élément n’est sélectionné. C’est exactement ce que nous voulons lors de la création d’un nouvel album. Si vous supprimée le deuxième paramètre et le code suivant :
 
 [!code-cshtml[Main](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/samples/sample8.cshtml)]
 

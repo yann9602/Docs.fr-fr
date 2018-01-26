@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/adding-additional-datatable-columns-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 0b1fe8d2e376065aed8d94b1267910bd1f7e5bd0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2982af897b433706889cb4eda79dcb4e76baea62
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-additional-datatable-columns-c"></a>Ajout de colonnes de la table de données supplémentaires (c#)
 ====================
@@ -90,12 +90,12 @@ Ensuite, nous sommes invités pour le `SELECT` requête. Dans l’Assistant, ent
 
 [!code-sql[Main](adding-additional-datatable-columns-cs/samples/sample1.sql)]
 
-La requête ci-dessus utilise SQL Server 2005 s nouveau [ `NTILE` fonction](https://msdn.microsoft.com/en-us/library/ms175126.aspx) pour diviser les résultats en quatre groupes où les groupes sont déterminées par la `UnitPrice` valeurs triées dans l’ordre décroissant.
+La requête ci-dessus utilise SQL Server 2005 s nouveau [ `NTILE` fonction](https://msdn.microsoft.com/library/ms175126.aspx) pour diviser les résultats en quatre groupes où les groupes sont déterminées par la `UnitPrice` valeurs triées dans l’ordre décroissant.
 
 Malheureusement, le Générateur de requêtes ne sait pas comment analyser le `OVER` (mot clé) et affiche une erreur lors de l’analyse de la requête ci-dessus. Par conséquent, entrez la requête ci-dessus directement dans la zone de texte dans l’Assistant sans utiliser le Générateur de requêtes.
 
 > [!NOTE]
-> Pour plus d’informations sur SQL Server 2005 et de NTILE autres fonctions de classement, consultez [retournant les résultats classés avec Microsoft SQL Server 2005](http://www.4guysfromrolla.com/webtech/010406-1.shtml) et [section relative aux fonctions de classement](https://msdn.microsoft.com/en-us/library/ms189798.aspx) à partir de la [SQL Documentation en ligne de Server 2005](https://msdn.microsoft.com/en-us/library/ms189798.aspx).
+> Pour plus d’informations sur SQL Server 2005 et de NTILE autres fonctions de classement, consultez [retournant les résultats classés avec Microsoft SQL Server 2005](http://www.4guysfromrolla.com/webtech/010406-1.shtml) et [section relative aux fonctions de classement](https://msdn.microsoft.com/library/ms189798.aspx) à partir de la [SQL Documentation en ligne de Server 2005](https://msdn.microsoft.com/library/ms189798.aspx).
 
 
 Après avoir entré la `SELECT` requête et cliquez sur Suivant, l’Assistant nous invite à fournir un nom pour la procédure stockée est créé. Nommez la nouvelle procédure stockée `Products_SelectWithPriceQuartile` et cliquez sur Suivant.
@@ -199,7 +199,7 @@ En ajoutant un nouveau TableAdapter, les tables de données restent untarnished 
 
 Le téléchargement de ce didacticiel inclut un `ProductsWithPriceQuartileTableAdapter` classe dans le `NorthwindWithSprocs` DataSet qui illustre cette approche alternative.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Dans la plupart des scénarios, toutes les méthodes dans un TableAdapter retournera le même ensemble de champs de données, mais il existe certains cas, une méthode particulière ou les deux peut-être retourner un champ supplémentaire. Par exemple, dans le [maître/détail à l’aide d’une liste à puces des enregistrements principaux avec DataList détails](../filtering-scenarios-with-the-datalist-and-repeater/master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs.md) didacticiel, nous avons ajouté une méthode à la `CategoriesTableAdapter` qui, en plus des champs de données de la requête principale s, retournés un `NumberOfProducts` champ a signalé le nombre de produits associés à chaque catégorie. Dans ce didacticiel, nous avons étudié Ajout d’une méthode dans le `ProductsTableAdapter` qui a retourné un `PriceQuartile` champ en plus des champs de données de la requête principale s. Pour capturer des données supplémentaires champs retournés par les méthodes du TableAdapter s que nous devons ajouter des colonnes correspondantes dans le DataTable.
 

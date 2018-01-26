@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/choosing-the-right-approach-to-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 5265f9962ca6244b1fe13ca6e37a5217c15b8cdf
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b77aa37160f3822f58908866e44497aea3d3bdc8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="choosing-the-right-approach-to-web-deployment"></a>Choisir l’approche appropriée pour le déploiement Web
 ====================
@@ -38,7 +38,7 @@ Ce tableau présente les principaux avantages et les inconvénients de chaque ap
 
 | Approche | Avantages | Inconvénients | Scénarios typiques |
 | --- | --- | --- | --- |
-| Agent distant | Il est facile à configurer. Il convient pour les mises à jour régulières pour les applications web et le contenu. | L’utilisateur doit être un administrateur sur le serveur cible. l’utilisateur ne peut pas fournir d’autres informations d’identification. | Environnements de développement. Environnements de test. |
+| Agent distant | Il est facile à configurer. Il convient pour les mises à jour régulières pour les applications web et le contenu. | L’utilisateur doit être un administrateur sur le serveur cible. L’utilisateur ne peut pas fournir d’autres informations d’identification. | Environnements de développement. Environnements de test. |
 | Agent temporaire | Il est inutile d’installer Web Deploy sur l’ordinateur cible. La dernière version de Web Deploy est automatiquement utilisée. | L’utilisateur doit être un administrateur sur le serveur cible. L’utilisateur ne peut pas fournir d’autres informations d’identification. | Environnements de développement. Environnements de test. |
 | Gestionnaire de déploiement Web | Les autres utilisateurs peuvent déployer du contenu. Il convient pour les mises à jour régulières pour les applications web et le contenu. | Il est beaucoup plus complexe à configurer. | Environnements de préproduction. Environnements de production intranet. Environnements hébergés. |
 | Déploiement en mode hors connexion | Il est très facile à configurer. Il convient aux environnements isolés. | L’administrateur du serveur doit manuellement copier et importer le package web chaque fois. | Environnements de production sur Internet. Environnements de réseau isolé. |
@@ -69,7 +69,7 @@ En réalité, le fichier exécutable de Web Deploy peut déduire l’adresse de 
 
 
 > [!NOTE]
-> Pour plus d’informations sur la syntaxe de ligne de commande de Web Deploy et *. deploy.cmd* fichiers, voir [Comment : installer un Package de déploiement à l’aide du fichier deploy.cmd](https://msdn.microsoft.com/en-us/library/ff356104.aspx).
+> Pour plus d’informations sur la syntaxe de ligne de commande de Web Deploy et *. deploy.cmd* fichiers, voir [Comment : installer un Package de déploiement à l’aide du fichier deploy.cmd](https://msdn.microsoft.com/library/ff356104.aspx).
 
 
 L’agent distant offre un moyen simple de déployer le contenu d’un emplacement distant, et cette approche peut fonctionner correctement avec un déploiement en un clic ou automatisé. Toutefois, l’utilisateur qui exécute la commande de déploiement doit également être un administrateur de domaine ou d’un membre du groupe Administrateurs local sur le serveur de destination. En outre, l’agent distant ne prend en charge l’authentification de base, vous ne pouvez pas passer des autres informations d’identification sur la ligne de commande.
@@ -94,7 +94,7 @@ Si vous souhaitez utiliser le paramètre du fournisseur temporaire de l’agent,
 
 L’avantage de cette approche est que vous n’avez pas besoin de conserver les installations de Web Deploy sur vos serveurs de destination. En outre, vous n’avez pas besoin de s’assurer que les ordinateurs source et de destination exécutent la même version de Web Deploy. Toutefois, cette approche comporte les mêmes limitations principales en tant que l’approche de l’agent distant, à savoir que vous devez être un administrateur local sur le serveur de destination afin de déployer du contenu, et que l’authentification NTLM est pris en charge. L’approche de l’agent temporaire requiert également la configuration initiale de beaucoup plus de l’environnement de destination.
 
-Pour plus d’informations sur l’utilisation de l’agent temporaire, consultez [Comment : installer un Package de déploiement à l’aide du fichier deploy.cmd](https://msdn.microsoft.com/en-us/library/ff356104.aspx) et [Web déployer à la demande](https://technet.microsoft.com/en-us/library/ee517345(WS.10).aspx).
+Pour plus d’informations sur l’utilisation de l’agent temporaire, consultez [Comment : installer un Package de déploiement à l’aide du fichier deploy.cmd](https://msdn.microsoft.com/library/ff356104.aspx) et [Web déployer à la demande](https://technet.microsoft.com/library/ee517345(WS.10).aspx).
 
 ## <a name="using-the-web-deploy-handler"></a>Utilisation du Web de déployer le Gestionnaire
 
@@ -125,7 +125,7 @@ Par exemple, qu'un processus de build est configuré pour déployer automatiquem
 
 
 > [!NOTE]
-> Pour plus d’informations sur les opérations de ligne de commande de déploiement Web et la syntaxe, consultez [référence de ligne de commande de déploiement Web](https://technet.microsoft.com/en-us/library/dd568991(v=ws.10).aspx). Pour plus d’informations sur l’utilisation de la *. deploy.cmd* de fichiers, consultez [Comment : installer un Package de déploiement à l’aide du fichier deploy.cmd](https://msdn.microsoft.com/en-us/library/ff356104.aspx).
+> Pour plus d’informations sur les opérations de ligne de commande de déploiement Web et la syntaxe, consultez [référence de ligne de commande de déploiement Web](https://technet.microsoft.com/library/dd568991(v=ws.10).aspx). Pour plus d’informations sur l’utilisation de la *. deploy.cmd* de fichiers, consultez [Comment : installer un Package de déploiement à l’aide du fichier deploy.cmd](https://msdn.microsoft.com/library/ff356104.aspx).
 
 
 Le Gestionnaire de déploiement Web fournit une approche très utile pour le déploiement dans les environnements, les environnements hébergés et les environnements de production basée sur l’intranet, où l’accès à distance sur le serveur est disponible mais les informations d’identification d’administrateur ne sont pas de transfert.
@@ -146,9 +146,9 @@ Pour obtenir un exemple de bout en bout d’un scénario qui utilise l’approch
 
 ## <a name="further-reading"></a>informations supplémentaires
 
-Pour plus d’informations sur les opérations de ligne de commande de déploiement Web et la syntaxe, consultez [référence de ligne de commande de déploiement Web](https://technet.microsoft.com/en-us/library/dd568991(v=ws.10).aspx). Pour plus d’informations sur l’utilisation de la *. deploy.cmd* de fichiers, consultez [Comment : installer un Package de déploiement à l’aide du fichier deploy.cmd](https://msdn.microsoft.com/en-us/library/ff356104.aspx).
+Pour plus d’informations sur les opérations de ligne de commande de déploiement Web et la syntaxe, consultez [référence de ligne de commande de déploiement Web](https://technet.microsoft.com/library/dd568991(v=ws.10).aspx). Pour plus d’informations sur l’utilisation de la *. deploy.cmd* de fichiers, consultez [Comment : installer un Package de déploiement à l’aide du fichier deploy.cmd](https://msdn.microsoft.com/library/ff356104.aspx).
 
-Pour obtenir des instructions plus générales sur les différentes façons dans laquelle vous pouvez déployer des packages web à partir d’un ordinateur distant, consultez [à l’aide de Web Deploy Remotely](https://technet.microsoft.com/en-us/library/ee461175(WS.10).aspx). Pour plus d’informations sur l’utilisation de Web déployer à la demande, consultez [Web déployer à la demande](https://technet.microsoft.com/en-us/library/ee517345(WS.10).aspx).
+Pour obtenir des instructions plus générales sur les différentes façons dans laquelle vous pouvez déployer des packages web à partir d’un ordinateur distant, consultez [à l’aide de Web Deploy Remotely](https://technet.microsoft.com/library/ee461175(WS.10).aspx). Pour plus d’informations sur l’utilisation de Web déployer à la demande, consultez [Web déployer à la demande](https://technet.microsoft.com/library/ee517345(WS.10).aspx).
 
 >[!div class="step-by-step"]
 [Précédent](configuring-server-environments-for-web-deployment.md)

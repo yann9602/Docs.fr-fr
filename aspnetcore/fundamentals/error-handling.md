@@ -2,20 +2,19 @@
 title: Gestion des erreurs dans ASP.NET Core
 author: ardalis
 description: "Découvrez comment gérer les erreurs dans les applications ASP.NET Core."
-keywords: ASP.NET Core, gestion des erreurs, la gestion des exceptions
 ms.author: tdykstra
 manager: wpickett
 ms.date: 11/30/2016
 ms.topic: article
-ms.assetid: 4db51023-c8a6-4119-bbbe-3917e272c260
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/error-handling
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: de2ba0ff9ad17c198c06b510ecfb49f808721bdf
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 019e31fa749a950db48575e1f4e8d4d26d1cde75
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
+
 ms.lasthandoff: 11/10/2017
 ---
 # <a name="introduction-to-error-handling-in-aspnet-core"></a>Introduction à la gestion des erreurs dans ASP.NET Core

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-database-server-for-web-deploy-publishing
 msc.type: authoredcontent
-ms.openlocfilehash: b225d9911246b3e2be1679b73a9f31d9f8577ba5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 98fd728f48f6fb64a61686bc58824b9fb3a28b13
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="configuring-a-database-server-for-web-deploy-publishing"></a>Configuration d’un serveur de base de données de publication de déploiement Web
 ====================
@@ -48,7 +48,7 @@ Cette rubrique vous indique comment effectuer chacune de ces procédures. Les t�
 L’instance de SQL Server ne doit inclure le **Services moteur de base de données** rôle, qui est automatiquement incluse dans une installation SQL Server. Toutefois, de facilité de maintenance et de configuration, nous vous conseillons d’inclure le **outils de gestion – de base** et **outils de gestion – complet** rôles de serveur.
 
 > [!NOTE]
-> Pour plus d’informations sur la jonction des ordinateurs à un domaine, consultez [jonction au domaine et ouverture d’une session](https://technet.microsoft.com/en-us/library/cc725618(v=WS.10).aspx). Pour plus d’informations sur la configuration des adresses IP statiques, consultez [configurer une adresse IP statique](https://technet.microsoft.com/en-us/library/cc754203(v=ws.10).aspx). Pour plus d’informations sur l’installation de SQL Server, consultez [l’installation de SQL Server 2008 R2](https://technet.microsoft.com/en-us/library/bb500395.aspx).
+> Pour plus d’informations sur la jonction des ordinateurs à un domaine, consultez [jonction au domaine et ouverture d’une session](https://technet.microsoft.com/library/cc725618(v=WS.10).aspx). Pour plus d’informations sur la configuration des adresses IP statiques, consultez [configurer une adresse IP statique](https://technet.microsoft.com/library/cc754203(v=ws.10).aspx). Pour plus d’informations sur l’installation de SQL Server, consultez [l’installation de SQL Server 2008 R2](https://technet.microsoft.com/library/bb500395.aspx).
 
 
 ## <a name="enable-remote-access-to-sql-server"></a>Activer l’accès à distance à SQL Server
@@ -66,7 +66,7 @@ Pour activer SQL Server de communiquer via TCP/IP, utilisez le Gestionnaire de C
 2. Dans le volet d’arborescence, développez **Configuration du réseau SQL Server**, puis cliquez sur **protocoles pour MSSQLSERVER**.
 
     > [!NOTE]
-    > Si vous avez installé plusieurs instances de SQL Server, vous verrez un **protocoles pour***[nom d’instance]* élément pour chaque instance. Vous devez configurer les paramètres réseau sur une instance par instance de base.
+    > Si vous avez installé plusieurs instances de SQL Server, vous verrez un **protocoles pour *** [nom d’instance]* élément pour chaque instance. Vous devez configurer les paramètres réseau sur une instance par instance de base.
 3. Dans le volet détails, cliquez sur le **TCP/IP** de ligne, puis cliquez sur **activer**.
 
     ![](configuring-a-database-server-for-web-deploy-publishing/_static/image1.png)
@@ -102,7 +102,7 @@ En supposant que vous utilisez une instance par défaut de SQL Server, vous deve
   
 
 > [!NOTE]
-> Techniquement, un ordinateur client utilisera un port TCP attribué de façon aléatoire entre 1024 et 5000 pour communiquer avec SQL Server, et vous pouvez limiter vos règles de pare-feu en conséquence. Pour plus d’informations sur les ports SQL Server et les pare-feu, consultez [les numéros de port TCP/IP requis pour communiquer avec SQL via un pare-feu](https://go.microsoft.com/?linkid=9805125) et [Comment : configurer un serveur pour écouter sur le Port TCP spécifique (Configuration de SQL Server Gestionnaire)](https://msdn.microsoft.com/en-us/library/ms177440.aspx).
+> Techniquement, un ordinateur client utilisera un port TCP attribué de façon aléatoire entre 1024 et 5000 pour communiquer avec SQL Server, et vous pouvez limiter vos règles de pare-feu en conséquence. Pour plus d’informations sur les ports SQL Server et les pare-feu, consultez [les numéros de port TCP/IP requis pour communiquer avec SQL via un pare-feu](https://go.microsoft.com/?linkid=9805125) et [Comment : configurer un serveur pour écouter sur le Port TCP spécifique (Configuration de SQL Server Gestionnaire)](https://msdn.microsoft.com/library/ms177440.aspx).
 
 
 Dans la plupart des environnements Windows Server, vous devrez probablement configurer le pare-feu Windows sur le serveur de base de données. Par défaut, le pare-feu Windows autorise tout le trafic sortant, sauf si une règle interdise spécifiquement. Pour activer votre serveur web atteindre votre base de données, vous devez configurer une règle de trafic entrant qui autorise le trafic TCP sur le numéro de port utilisé par l’instance de SQL Server. Si vous utilisez une instance par défaut de SQL Server, vous pouvez utiliser la procédure suivante pour configurer cette règle.
@@ -126,11 +126,11 @@ Dans la plupart des environnements Windows Server, vous devrez probablement conf
     ![](configuring-a-database-server-for-web-deploy-publishing/_static/image9.png)
 8. Sur le **nom** page, donnez un nom descriptif convenablement à la règle (par exemple, **instance par défaut de SQL Server – accès réseau**), puis cliquez sur **Terminer**.
 
-Pour plus d’informations sur la configuration du pare-feu Windows pour SQL Server, en particulier si vous avez besoin communiquer avec SQL Server via les ports non standard ou dynamiques, voir [Comment : configurer un pare-feu Windows pour accéder au moteur de base de données](https://technet.microsoft.com/en-us/library/ms175043.aspx).
+Pour plus d’informations sur la configuration du pare-feu Windows pour SQL Server, en particulier si vous avez besoin communiquer avec SQL Server via les ports non standard ou dynamiques, voir [Comment : configurer un pare-feu Windows pour accéder au moteur de base de données](https://technet.microsoft.com/library/ms175043.aspx).
 
 ## <a name="configure-logins-and-database-permissions"></a>Configurer des connexions et les autorisations de base de données
 
-Lorsque vous déployez une application web pour Internet Information Services (IIS), l’application s’exécute à l’aide de l’identité du pool d’applications. Dans un environnement de domaine, les identités du pool d’applications utilisent le compte d’ordinateur du serveur sur lequel elles s’exécutent à accéder aux ressources réseau. Comptes d’ordinateur prennent la forme *[nom de domaine]***\***[nom_ordinateur] ***$**& #x 2014 ; par exemple, **FABRIKAM\ TESTWEB1$**. Pour autoriser votre application web pour accéder à une base de données sur le réseau, vous devez :
+Lorsque vous déployez une application web pour Internet Information Services (IIS), l’application s’exécute à l’aide de l’identité du pool d’applications. Dans un environnement de domaine, les identités du pool d’applications utilisent le compte d’ordinateur du serveur sur lequel elles s’exécutent à accéder aux ressources réseau. Comptes d’ordinateur prennent la forme * [nom de domaine]***\*** [nom_ordinateur]***$** & #x 2014 ; par exemple, **FABRIKAM\TESTWEB1$**. Pour autoriser votre application web pour accéder à une base de données sur le réseau, vous devez :
 
 - Ajouter une connexion pour le compte ordinateur du serveur web à l’instance de SQL Server.
 - Mapper la connexion de compte d’ordinateur pour tous les rôles de base de données requis (en général **db\_datareader** et **db\_datawriter**).
@@ -183,7 +183,7 @@ Pour plus d’informations sur l’automatisation de la création des connexions
 Alors qu’il est souvent plus adéquate pour les environnements de test de mappage des rôles de base de données manuellement, il est moins recommandée pour les déploiements automatisées ou un seul clic dans les environnements de production ou intermédiaire. Vous trouverez plus d’informations sur l’automatisation de ce type de tâche à l’aide de scripts de post-déploiement dans [appartenances de rôle de base de données de déploiement pour les environnements de Test](../advanced-enterprise-web-deployment/deploying-database-role-memberships-to-test-environments.md).
 
 > [!NOTE]
-> Pour plus d’informations sur les projets de serveur et aux projets de base de données, consultez [projets de base de données Visual Studio 2010 SQL Server](https://msdn.microsoft.com/en-us/library/ff678491.aspx).
+> Pour plus d’informations sur les projets de serveur et aux projets de base de données, consultez [projets de base de données Visual Studio 2010 SQL Server](https://msdn.microsoft.com/library/ff678491.aspx).
 
 
 ## <a name="configure-permissions-for-the-deployment-account"></a>Configurer des autorisations pour le compte de déploiement

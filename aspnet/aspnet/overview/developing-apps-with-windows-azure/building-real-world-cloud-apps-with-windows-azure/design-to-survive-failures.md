@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/design-to-survive-failures
 msc.type: authoredcontent
-ms.openlocfilehash: a0ee790da07c99cdb1279a6bca637a4ce8076e84
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 62a16e9a99cd1298b0db5f8099092212f9f6850b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="design-to-survive-failures-building-real-world-cloud-apps-with-azure"></a>Concevoir pour faire face aux défaillances (génération d’applications Cloud du monde réel avec Azure)
 ====================
@@ -82,7 +82,7 @@ Important de tenir compte lorsque vous examinez SLA est l’impact de l’utilis
 
 Quelle est la valeur maximale indisponibilité attendue de l’application en fonction de ces contrats de service ? Vous pouvez penser que votre temps d’arrêt serait égal à la pire pourcentage SLA ou 99,9 % dans ce cas. Qui est true si les trois services Échec toujours en même temps, mais qui n’est pas nécessairement que se passe-t-il réellement. Chaque service peut échouer indépendamment à différents moments, donc vous devez calculer le contrat SLA composite en multipliant les numéros de contrat SLA individuels.
 
-![Contrat SLA composite](design-to-survive-failures/_static/image4.png)
+![Composite SLA](design-to-survive-failures/_static/image4.png)
 
 Pour votre application peut être arrêtée 43,2 minutes pas seulement un mois, 3 fois cette quantité, 108 minutes par mois – et continuer à dans les limites de contrat SLA Azure.
 
@@ -102,7 +102,7 @@ Sachez également pas chaque service cloud même qu’un contrat SLA. Si votre a
 
 Certains services de cloud computing peuvent délibérément refus de service si votre application les utilise trop. Il s’agit *limitation*. Si un service dispose d’un contrat SLA, il doit indiquer les conditions dans lesquelles vous pourrez être limitée, et la conception de votre application doit éviter ces conditions et réagir de façon appropriée pour la limitation s’il se produit. Par exemple, si des requêtes à un service commencent à échouer lorsque vous dépassez un certain nombre par seconde, vous souhaitez vous assurer de nouvelles tentatives automatiques ne se produisent pas rapidement qu’ils provoquent la limitation continuer. Nous aurons plus d’informations à propos de la limitation dans les [chapitre de gestion temporaire des erreurs de](transient-fault-handling.md).
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Ce chapitre a essayé de vous permettre de réaliser la raison pour laquelle une application de cloud du monde réel doit être conçu survivre à des échecs en douceur. En commençant par le [chapitre suivant](monitoring-and-telemetry.md), les modèles restants dans cette série aller plus en détail certaines stratégies que vous pouvez utiliser pour ce faire :
 
@@ -117,14 +117,14 @@ Pour plus d’informations, consultez les chapitres suivants de ce livre électr
 
 Documentation :
 
-- [Prévention de défaillance : Aide sur les Architectures de Cloud résilientes](https://msdn.microsoft.com/en-us/library/windowsazure/jj853352.aspx). Livre blanc par Marc Mercuri, Ulrich Homann et Andrew Townhill. Version de la page Web de la série de vidéos de prévention de défaillance.
-- [Meilleures pratiques pour la création de Services à grande échelle sur les Services Cloud Azure](https://msdn.microsoft.com/en-us/library/windowsazure/jj717232.aspx). Livre blanc par Mark Simms et Michael Thomassy.
-- [Aide technique de continuité des activités Azure](https://msdn.microsoft.com/en-us/library/windowsazure/hh873027.aspx). Livre blanc en Patrick Wickline, Jason Roth.
-- [Récupération d’urgence et haute disponibilité pour les Applications Azure](https://msdn.microsoft.com/en-us/library/windowsazure/dn251004.aspx). Livre blanc par Michael McKeown, Hanu Kommalapati et Jason Roth.
-- [Microsoft Patterns and Practices - Guide Azure](https://msdn.microsoft.com/en-us/library/dn568099.aspx). Consultez le Guide de déploiement de centre de données multiples, modèle de disjoncteur.
+- [Prévention de défaillance : Aide sur les Architectures de Cloud résilientes](https://msdn.microsoft.com/library/windowsazure/jj853352.aspx). Livre blanc par Marc Mercuri, Ulrich Homann et Andrew Townhill. Version de la page Web de la série de vidéos de prévention de défaillance.
+- [Meilleures pratiques pour la création de Services à grande échelle sur les Services Cloud Azure](https://msdn.microsoft.com/library/windowsazure/jj717232.aspx). Livre blanc par Mark Simms et Michael Thomassy.
+- [Aide technique de continuité des activités Azure](https://msdn.microsoft.com/library/windowsazure/hh873027.aspx). Livre blanc en Patrick Wickline, Jason Roth.
+- [Récupération d’urgence et haute disponibilité pour les Applications Azure](https://msdn.microsoft.com/library/windowsazure/dn251004.aspx). Livre blanc par Michael McKeown, Hanu Kommalapati et Jason Roth.
+- [Microsoft Patterns and Practices - Guide Azure](https://msdn.microsoft.com/library/dn568099.aspx). Consultez le Guide de déploiement de centre de données multiples, modèle de disjoncteur.
 - [Prise en charge de Azure - les contrats de niveau de Service](https://azure.microsoft.com/support/legal/sla/).
-- [Continuité des activités dans la base de données SQL Azure](https://msdn.microsoft.com/en-us/library/windowsazure/hh852669.aspx). Documentation sur la base de données SQL haute disponibilité et reprise après sinistre fonctionnalités de récupération.
-- [Haute disponibilité et récupération d’urgence pour SQL Server dans des Machines virtuelles](https://msdn.microsoft.com/en-us/library/windowsazure/jj870962.aspx).
+- [Continuité des activités dans la base de données SQL Azure](https://msdn.microsoft.com/library/windowsazure/hh852669.aspx). Documentation sur la base de données SQL haute disponibilité et reprise après sinistre fonctionnalités de récupération.
+- [Haute disponibilité et récupération d’urgence pour SQL Server dans des Machines virtuelles](https://msdn.microsoft.com/library/windowsazure/jj870962.aspx).
 
 Vidéos :
 

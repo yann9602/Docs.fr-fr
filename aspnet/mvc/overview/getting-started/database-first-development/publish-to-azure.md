@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/publish-to-azure
 msc.type: authoredcontent
-ms.openlocfilehash: f75b7192b4d97c88fcbcb4ad7fef88c83157c902
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: eadc0f2b08df29f80fe53d03cf88cd3cdcecfb12
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="publish-mvc-database-first-site-to-azure"></a>Publier un site MVC Database First dans Windows Azure
 ====================
@@ -31,8 +31,8 @@ par [Tom FitzMacken](https://github.com/tfitzmac)
 
 Vous avez besoin d’un compte Azure pour effectuer ce didacticiel :
 
-- Vous pouvez [ouvrir un compte Azure gratuitement](https://azure.microsoft.com/en-us/pricing/free-trial/?WT.mc_id=A261C142F) -vous obtenez des crédits que vous pouvez utiliser pour tester les services Azure payants et même après qu’ils soient utilisés jusqu'à, vous pouvez conserver le compte et libérer de l’utilisation des services Azure.
-- Vous pouvez [activer les abonnés MSDN](https://azure.microsoft.com/en-us/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) -votre abonnement MSDN vous donne des crédits chaque mois que vous pouvez utiliser pour les services Azure payants.
+- Vous pouvez [ouvrir un compte Azure gratuitement](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A261C142F) -vous obtenez des crédits que vous pouvez utiliser pour tester les services Azure payants et même après qu’ils soient utilisés jusqu'à, vous pouvez conserver le compte et libérer de l’utilisation des services Azure.
+- Vous pouvez [activer les abonnés MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) -votre abonnement MSDN vous donne des crédits chaque mois que vous pouvez utiliser pour les services Azure payants.
 
 Pour publier votre application web, cliquez sur le projet et sélectionnez **publier**.
 
@@ -98,7 +98,7 @@ Vous devez configurer votre serveur de base de données pour autoriser les conne
 
 Il est probable que l’adresse IP que vous avez ajouté à l’étape précédente n’est pas la seule adresse IP, que vous devez configurer pour les connexions. Vous pouvez tenter de se connecter à la base de données afin de déterminer si les connexions ont été correctement configurées. Fournir l’utilisateur et le mot de passe que vous avez créé précédemment.
 
-![Connexion](publish-to-azure/_static/image12.png)
+![connexion](publish-to-azure/_static/image12.png)
 
 Si vous recevez un message d’erreur, vous devez ajouter une autre adresse IP. Cliquez sur le message d’erreur pour plus d’informations sur l’erreur. Dans les détails, vous verrez l’adresse IP que vous souhaitez ajouter. Notez cette adresse IP.
 
@@ -134,7 +134,7 @@ Indiquez le nom du serveur de base de données et vos informations d’identific
 
 Cliquez sur OK.
 
-Vous souhaiterez probablement enregistrer ce profil, vous pouvez publier des mises à jour à l’avenir sans entrer à nouveau toutes les informations de connexion. Sélectionnez **créer profil**.
+Vous souhaiterez probablement enregistrer ce profil, vous pouvez publier des mises à jour à l’avenir sans entrer à nouveau toutes les informations de connexion. Sélectionnez **Créer un profil**.
 
 ![enregistrer le profil](publish-to-azure/_static/image19.png)
 

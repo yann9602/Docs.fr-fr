@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/create-a-rest-api-with-attribute-routing
 msc.type: authoredcontent
-ms.openlocfilehash: 9ecc233e595716a167ad800a0a21a6162b051648
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c1d0b3e1644ef7f9ebb4be74c3fdf3df90cf3537
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="create-a-rest-api-with-attribute-routing-in-aspnet-web-api-2"></a>Créer une API REST avec l’attribut de routage dans l’API Web ASP.NET 2
 ====================
@@ -26,12 +26,12 @@ API Web 2 prend en charge un nouveau type de routage, appelé *attribut routage*
 
 | Action | Exemple d’URI |
 | --- | --- |
-| Obtenir une liste de tous les livres. | documentation/api / |
-| Obtenir un livre par ID. | /API/Books/1 |
-| Obtenir les détails d’un livre. | /API/Books/1/Details |
-| Obtenir une liste de livres par genre. | /API/Books/fantasy |
+| Obtenir une liste de tous les livres. | /api/books |
+| Obtenir un livre par ID. | /api/books/1 |
+| Obtenir les détails d’un livre. | /api/books/1/details |
+| Obtenir une liste de livres par genre. | /api/books/fantasy |
 | Obtenir une liste de livres par date de publication. | /API/Books/date/2013-02-16 /api/books/date/2013/02/16 (autre forme) |
-| Obtenir une liste de livres publiés par un auteur particulier. | /API/authors/1/Books |
+| Obtenir une liste de livres publiés par un auteur particulier. | /api/authors/1/books |
 
 Toutes les méthodes sont en lecture seule (demandes HTTP GET).
 
@@ -47,7 +47,7 @@ La couche données, nous allons utiliser Entity Framework. Enregistrements de li
 
 Toutefois, pour la plupart des requêtes, l’API retourne un sous-ensemble de ces données (titre, auteur et genre). Pour obtenir des demandes de l’enregistrement complet, le client `/api/books/{id}/details`.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 [Visual Studio 2017](https://www.visualstudio.com/vs/) Community, Professional ou Enterprise edition.
 
@@ -141,7 +141,7 @@ Ajouter une autre classe nommée `BookDetailDto`.
 
 [!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample8.cs)]
 
-Ensuite, mettez à jour le `BooksController` classe pour retourner `BookDto` instances. Nous allons utiliser la [Queryable.Select](https://msdn.microsoft.com/en-us/library/system.linq.queryable.select.aspx) méthode au projet `Book` instances à `BookDto` instances. Voici le code de mise à jour de la classe de contrôleur.
+Ensuite, mettez à jour le `BooksController` classe pour retourner `BookDto` instances. Nous allons utiliser la [Queryable.Select](https://msdn.microsoft.com/library/system.linq.queryable.select.aspx) méthode au projet `Book` instances à `BookDto` instances. Voici le code de mise à jour de la classe de contrôleur.
 
 [!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample9.cs)]
 
@@ -167,8 +167,8 @@ Le modèle d’itinéraire pour chaque méthode de contrôleur est le préfixe a
 
 | Méthode | Modèle d’itinéraire | Exemple d’URI |
 | --- | --- | --- |
-| `GetBooks` | « api/books » | `http://localhost/api/books` |
-| `GetBook` | « api/la documentation / {id : int} » | `http://localhost/api/books/5` |
+| `GetBooks` | "api/books" | `http://localhost/api/books` |
+| `GetBook` | "api/books/{id:int}" | `http://localhost/api/books/5` |
 
 ## <a name="get-book-details"></a>Obtenir les détails de l’annuaire
 
@@ -254,6 +254,6 @@ Voici le code complet pour la classe BooksController.
 
 [!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample22.cs)]
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Routage d’attributs vous donne davantage de contrôle et une plus grande souplesse lors de la conception de l’URI de votre API.

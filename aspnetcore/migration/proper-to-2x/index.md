@@ -2,20 +2,18 @@
 title: "Migration d’ASP.NET vers ASP.NET Core 2.0"
 author: isaac2004
 description: "Ce document de référence fournit de l’aide sur la migration d’applications ASP.NET MVC ou API web ASP.NET existantes vers ASP.NET Core 2.0."
-keywords: ASP.NET Core,MVC,migration
 ms.author: scaddie
 manager: wpickett
 ms.date: 08/27/2017
 ms.topic: article
-ms.assetid: 3155cc9e-d0c9-424b-886c-35c0ec6f9f4e
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: migration/proper-to-2x/index
-ms.openlocfilehash: 174ce7c99b8b1b65544f931dbb373a4829a64539
-ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
+ms.openlocfilehash: 96e645129fa53b10d352dcfda8f1ebb152c4dbac
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="migrating-from-aspnet-to-aspnet-core-20"></a>Migration d’ASP.NET vers ASP.NET Core 2.0
 
@@ -23,7 +21,7 @@ De [Isaac Levin](https://isaaclevin.com)
 
 Cet article sert de guide de référence pour la migration d’applications ASP.NET vers ASP.NET Core 2.0.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 * [SDK .NET Core 2.0.0](https://dot.net/core) ou version ultérieure
 
@@ -71,7 +69,7 @@ ASP.NET Core utilise une approche similaire mais n’a pas besoin d’OWIN pour 
 * Pages d’erreur
 * Fichiers statiques
 * ASP.NET Core MVC
-* Identité
+* identité
 
 [!code-csharp[Main](../../common/samples/WebApplication1/Startup.cs?highlight=8,9,10,14,17,19,21&start=58&end=84)]
 
@@ -141,7 +139,7 @@ Avec ASP.NET, les fichiers statiques sont stockés dans différents répertoires
 
 Avec ASP.NET Core, les fichiers statiques sont stockés à la « racine web » (*&lt;racine du contenu&gt;/wwwroot*), sauf si la configuration est différente. Les fichiers sont chargés dans le pipeline de requêtes via l’appel de la méthode d’extension `UseStaticFiles` à partir de `Startup.Configure` :
 
-[!code-csharp[Main](../../fundamentals/static-files/sample/StartupStaticFiles.cs?highlight=3&name=snippet1)]
+[!code-csharp[Main](../../fundamentals/static-files/samples/1x/StartupStaticFiles.cs?highlight=3&name=snippet_ConfigureMethod)]
 
 **Remarque :** Si vous ciblez le .NET Framework, installez le package NuGet `Microsoft.AspNetCore.StaticFiles`.
 

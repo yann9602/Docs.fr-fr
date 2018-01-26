@@ -2,20 +2,18 @@
 title: "Fonctionnalités de demande dans ASP.NET Core"
 author: ardalis
 description: "En savoir plus sur les détails d’implémentation de serveur web liés aux requêtes HTTP et les réponses qui sont définies dans les interfaces pour ASP.NET Core."
-keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: d1fbd23c-2ff9-4216-b908-0201ff3afb7c
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/request-features
-ms.openlocfilehash: b689d82d16c6ef55485691b3474a070765c8144b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f0e371f5ea6c6688ef32adcacf667a412e4625e5
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="request-features-in-aspnet-core"></a>Fonctionnalités de demande dans ASP.NET Core
 
@@ -68,7 +66,7 @@ En outre, intergiciel (middleware) peut ajouter à la collection de fonctionnali
 
 En combinant les implémentations de serveur personnalisé et des améliorations de l’intergiciel (middleware) spécifique, le jeu précis d’une application requiert des fonctionnalités peut être construit. Ainsi, manquantes fonctionnalités pour être ajoutés sans nécessiter une modification de serveur et permet de s’assurer que la quantité minimale de fonctionnalités sont exposées, ce qui limite les attaques de surface zone et améliorer les performances.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Fonctionnalité interfaces définissent des fonctionnalités HTTP spécifiques une demande donnée peut prendre en charge. Serveurs définissent des ensembles de fonctionnalités et l’ensemble initial des fonctionnalités prises en charge par ce serveur, mais l’intergiciel (middleware) peut être utilisé pour améliorer ces fonctionnalités.
 

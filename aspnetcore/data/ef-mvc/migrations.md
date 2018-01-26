@@ -2,20 +2,18 @@
 title: "Cœur de ASP.NET MVC avec EF Core - Migrations - 4 10"
 author: tdykstra
 description: "Dans ce didacticiel, vous démarrez à l’aide de la fonctionnalité de migrations EF principales pour la gestion des modifications du modèle de données dans une application ASP.NET MVC de base."
-keywords: ASP.NET Core, Entity Framework Core, migrations
 ms.author: tdykstra
 manager: wpickett
 ms.date: 03/15/2017
 ms.topic: get-started-article
-ms.assetid: 81f6c9c2-a819-4f3a-97a4-4b0503b56c26
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/migrations
-ms.openlocfilehash: 20b05801ac666feef29fd05dd3e4738b1bd50b86
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a2f8b01e16d1be818b4338455a40605fcbdb3400
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="migrations---ef-core-with-aspnet-core-mvc-tutorial-4-of-10"></a>Migrations - Core EF avec le didacticiel d’ASP.NET MVC de base (4 sur 10)
 
@@ -159,13 +157,13 @@ L’outillage EF pour la gestion des migrations ne sont disponible à partir de 
 
 Les commandes EF pour les commandes PMC se trouvent dans le [Microsoft.EntityFrameworkCore.Tools](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tools) package. Ce package est déjà inclus dans le [Microsoft.AspNetCore.All](xref:fundamentals/metapackage) metapackage, sans que vous ayez à installer.
 
-**Important :** ce n’est pas le même package que celui que vous installez pour l’interface CLI en modifiant le *.csproj* fichier. Le nom de celle-ci se termine dans `Tools`, contrairement au nom de package CLI qui se termine par `Tools.DotNet`.
+**Important :** cela n’est pas le même package que celui que vous installez pour l’interface CLI en modifiant le *.csproj* fichier. Le nom de celle-ci se termine dans `Tools`, contrairement au nom de package CLI qui se termine par `Tools.DotNet`.
 
 Pour plus d’informations sur les commandes CLI, consultez [.NET Core CLI](https://docs.microsoft.com/ef/core/miscellaneous/cli/dotnet). 
 
 Pour plus d’informations sur les commandes PMC, consultez [Package Manager Console (Visual Studio)](https://docs.microsoft.com/ef/core/miscellaneous/cli/powershell).
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Dans ce didacticiel, vous avez vu comment créer et appliquer votre première migration. Dans l’étape suivante du didacticiel, vous pourrez commencer examinant rubriques plus avancées en développant le modèle de données. Tout au long du processus, vous allez créer et appliquer des migrations supplémentaires.
 

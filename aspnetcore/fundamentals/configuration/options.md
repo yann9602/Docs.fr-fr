@@ -10,17 +10,17 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/configuration/options
-ms.openlocfilehash: 7d89416626433bf737b63eda4b17e65b089ae142
-ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
+ms.openlocfilehash: aab96b5313a8632950e51f5586612c1d0d3d176e
+ms.sourcegitcommit: 83b5a4715fd25e4eb6f7c8427c0ef03850a7fa07
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="options-pattern-in-aspnet-core"></a>Modèle d’options dans ASP.NET Core
 
 Par [Luke Latham](https://github.com/guardrex)
 
-Le modèle d’options utilise les classes d’options pour représenter les groupes de paramètres associés. Lorsque les paramètres de configuration sont isolées par fonctionnalité dans les classes d’options distinctes, l’application est conforme aux deux principes important de l’ingénierie logicielle :
+Le modèle d’options utilise des classes d’options pour représenter les groupes de paramètres associés. Lorsque les paramètres de configuration sont isolées par fonctionnalité dans les classes d’options distinctes, l’application est conforme aux deux principes important de l’ingénierie logicielle :
 
 * Le [principe de répartition d’Interface (ISP)](http://deviq.com/interface-segregation-principle/): fonctionnalités (classes) qui dépendent des paramètres de configuration varient uniquement sur les paramètres de configuration qu’ils utilisent.
 * [Séparation des préoccupations](http://deviq.com/separation-of-concerns/): paramètres pour les différentes parties de l’application ne sont pas dépendants ou couplée à un autre.
@@ -258,6 +258,12 @@ services.PostConfigureAll<MyOptions>("named_options_1", myOptions =>
 [IOptionsFactory&lt;TOptions&gt; ](/dotnet/api/microsoft.extensions.options.ioptionsfactory-1) (noyaux d’ASP.NET 2.0 ou version ultérieure) est chargé pour la création de nouvelles options d’instances. Il dispose d’un seul [créer](/dotnet/api/microsoft.extensions.options.ioptionsfactory-1.create) (méthode). L’implémentation par défaut est enregistrée toutes les `IConfigureOptions` et `IPostConfigureOptions` et exécute tous les le configure en premier, suivi par le post-traitement configure. Il fait la distinction entre `IConfigureNamedOptions` et `IConfigureOptions` et n’appelle l’interface appropriée.
 
 [IOptionsMonitorCache&lt;TOptions&gt; ](/dotnet/api/microsoft.extensions.options.ioptionsmonitorcache-1) (noyaux d’ASP.NET 2.0 ou version ultérieure) est utilisé par `IOptionsMonitor` au cache `TOptions` instances. Le `IOptionsMonitorCache` invalide les instances des options dans l’analyse afin que la valeur est recalculée ([TryRemove](/dotnet/api/microsoft.extensions.options.ioptionsmonitorcache-1.tryremove)). Les valeurs peuvent être manuellement introduites ainsi par [TryAdd](/dotnet/api/microsoft.extensions.options.ioptionsmonitorcache-1.tryadd). Le [clair](/dotnet/api/microsoft.extensions.options.ioptionsmonitorcache-1.clear) méthode est utilisée lorsque toutes les instances nommées doivent être recréés à la demande.
+
+## <a name="accessing-options-during-startup"></a>Accès aux options lors du démarrage
+
+`IOptions`peut être utilisé dans `Configure`, étant donné que les services sont créés avant le `Configure` méthode s’exécute. Si un fournisseur de services est créé en `ConfigureServices` pour accéder aux options, il ne contient aucun options configurations fournies une fois le fournisseur de services est créé. Par conséquent, un état incohérent options peut-être exister en raison de l’ordre des enregistrements de service.
+
+Étant donné que les options sont généralement chargées à partir de la configuration, la configuration peut être utilisée dans le démarrage à la fois dans `Configure` et `ConfigureServices`. Pour obtenir des exemples d’utilisation de configuration lors du démarrage, consultez le [démarrage de l’Application](xref:fundamentals/startup) rubrique.
 
 ## <a name="see-also"></a>Voir aussi
 

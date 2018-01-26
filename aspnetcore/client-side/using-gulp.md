@@ -2,7 +2,6 @@
 title: Utilisation de Gulp dans ASP.NET Core
 author: rick-anderson
 description: "Découvrez comment utiliser Gulp dans ASP.NET Core."
-keywords: ASP.NET Core, Gulp
 ms.author: riande
 manager: wpickett
 ms.date: 02/28/2017
@@ -11,11 +10,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/using-gulp
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 68f6838889cfb830f2c5a1976b3140ae5d94ac25
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2ccfed42d66ea49c5f2745bc8653d8fb12bf707a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="introduction-to-using-gulp-in-aspnet-core"></a>Introduction à l’utilisation de Gulp dans ASP.NET Core 
 
@@ -249,7 +248,7 @@ Lorsque vous exécutez plusieurs tâches, les tâches exécutées simultanément
     gulp.task("series", ["series:first", "series:second"], function () {});
     ```
  
-    Vous disposez maintenant de trois tâches : `series:first`, `series:second`, et `series`. Le `series:second` tâche inclut un deuxième paramètre qui spécifie un tableau de tâches à exécuter et sont terminés avant du `series:second` tâche exécutera.  Comme indiqué dans le code ci-dessus, seule la `series:first` tâche doit être réalisée avant le `series:second` tâche exécutera.
+    Vous disposez maintenant de trois tâches : `series:first`, `series:second`, et `series`. Le `series:second` tâche inclut un deuxième paramètre qui spécifie un tableau de tâches à exécuter et sont terminés avant du `series:second` tâche exécutera. Comme indiqué dans le code ci-dessus, seule la `series:first` tâche doit être réalisée avant le `series:second` tâche exécutera.
 
 2.  Enregistrer *gulpfile.js*.
 
@@ -328,7 +327,7 @@ Pour plus d’informations sur les environnements dans ASP.NET Core, consultez [
 
 ## <a name="task-and-module-details"></a>Détails des tâches et de module
 
-Une tâche Gulp est inscrit avec un nom de fonction.  Vous pouvez spécifier des dépendances si d’autres tâches doivent être exécutées avant que la tâche actuelle. Les fonctions supplémentaires permettent à exécuter et surveiller les tâches de choses, ainsi que de définir la source (*src*) et de destination (*dest*) des fichiers en cours de modification. Les fonctions API de Gulp principales sont les suivantes :
+Une tâche Gulp est inscrit avec un nom de fonction. Vous pouvez spécifier des dépendances si d’autres tâches doivent être exécutées avant que la tâche actuelle. Les fonctions supplémentaires permettent à exécuter et surveiller les tâches de choses, ainsi que de définir la source (*src*) et de destination (*dest*) des fichiers en cours de modification. Les fonctions API de Gulp principales sont les suivantes :
 
 |Gulp (fonction)|Syntaxe|Description|
 |---   |--- |--- |

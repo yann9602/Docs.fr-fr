@@ -2,20 +2,18 @@
 title: Fournisseurs de fichier dans ASP.NET Core
 author: ardalis
 description: "Découvrez comment ASP.NET Core résume les accès au système de fichiers via l’utilisation de fournisseurs de fichier."
-keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
 ms.date: 02/14/2017
 ms.topic: article
-ms.assetid: 1e35d362-0005-4f84-a187-274ca203a787
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/file-providers
-ms.openlocfilehash: fd847db992b20ab096b54378418d2b9bccff67be
-ms.sourcegitcommit: 2b263e87217658caa42eedc4f9d2d21ef0ab5d59
+ms.openlocfilehash: 10f3276d3e71e8a29b452d4c62865cbb82298513
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/12/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="file-providers-in-aspnet-core"></a>Fournisseurs de fichier dans ASP.NET Core
 
@@ -90,7 +88,7 @@ Mise à jour de l’exemple d’application à utiliser un `EmbeddedFileProvider
 ![Fichier d’application d’exemple de fournisseur qui répertorie les fichiers incorporés](file-providers/_static/embedded-directory-listing.png)
 
 > [!NOTE]
-> Les ressources incorporées n’exposent pas les répertoires. Au lieu de cela, le chemin d’accès à la ressource (par l’intermédiaire de son espace de noms) est incorporé dans sa à l’aide du nom de fichier `.` séparateurs.
+> Les ressources incorporées ne pas exposer les répertoires. Au lieu de cela, le chemin d’accès à la ressource (par l’intermédiaire de son espace de noms) est incorporé dans sa à l’aide du nom de fichier `.` séparateurs.
 
 > [!TIP]
 > Le `EmbeddedFileProvider` constructeur accepte un facultatif `baseNamespace` paramètre. Les appels à la spécification de ce étend sa portée `GetDirectoryContents` à ces ressources sous l’espace de noms fourni.

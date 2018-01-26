@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/creating-a-team-project-in-tfs
 msc.type: authoredcontent
-ms.openlocfilehash: 4cb0d72330086ecb8cd9e6fb70ce0a57698dda5a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ef8cddb7733c1f8cacd24c5cf341a42741d25a95
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-a-team-project-in-tfs"></a>Création d’un projet d’équipe dans TFS
 ====================
@@ -111,12 +111,12 @@ Ensuite, vous devez donner à l’utilisateur l’autorisation de créer de nouv
     > Vous pouvez recevoir un **HTTP 404 introuvable** erreur en raison d’un bogue de codage HTTP double. Si cela se produit, remplacez l’URL par ceci :   
     > [*URL de collection de site*] /\_layouts/permsetup.aspx  
     > Exemple :  
-    > http://TFS/sites/Fabrikam%20Web%20Projects/\_layouts/permsetup.aspx
+    > http://tfs/sites/Fabrikam%20Web%20Projects/\_layouts/permsetup.aspx
 8. Sur le **configurer les groupes pour ce Site** page, ajoutez l’utilisateur qui doivent créer des projets d’équipe pour le **propriétaires** de groupe, puis cliquez sur **OK**.
 
     ![](creating-a-team-project-in-tfs/_static/image10.png)
 
-Pour plus d’informations sur l’activation aux utilisateurs de créer de nouveaux projets d’équipe au sein d’une collection de projets d’équipe, consultez [définition d’autorisations d’administrateur pour les Collections de projets d’équipe](https://msdn.microsoft.com/en-us/library/dd547204.aspx).
+Pour plus d’informations sur l’activation aux utilisateurs de créer de nouveaux projets d’équipe au sein d’une collection de projets d’équipe, consultez [définition d’autorisations d’administrateur pour les Collections de projets d’équipe](https://msdn.microsoft.com/library/dd547204.aspx).
 
 ## <a name="create-a-new-team-project-and-add-users"></a>Créer un nouveau projet d’équipe et ajouter des utilisateurs
 
@@ -162,9 +162,9 @@ La procédure suivante décrit comment créer un nouveau projet d’équipe dans
 11. Sur le **sélectionner un modèle de processus** , sélectionnez le modèle de processus que vous souhaitez utiliser pour gérer le processus de développement, puis cliquez sur **suivant**.
 
     > [!NOTE]
-    > Pour plus d’informations sur les modèles de processus pour TFS, consultez [modèles de processus et outils](https://msdn.microsoft.com/en-us/vstudio/aa718795).
+    > Pour plus d’informations sur les modèles de processus pour TFS, consultez [modèles de processus et outils](https://msdn.microsoft.com/vstudio/aa718795).
 12. Sur le **paramètres du Site d’équipe** page, laissez les paramètres par défaut inchangées, puis cliquez sur **suivant**.
-13. Ce paramètre crée ou identifie, un site d’équipe SharePoint associé au projet d’équipe TFS. Votre équipe de développement peut utiliser ce site pour gérer la documentation, participer aux discussions, créer des pages wiki et effectuer diverses autres tâches qui ne sont pas liés au code. Pour plus d’informations, consultez [Interactions entre les produits SharePoint et Team Foundation Server](https://msdn.microsoft.com/en-us/library/ms253177.aspx).
+13. Ce paramètre crée ou identifie, un site d’équipe SharePoint associé au projet d’équipe TFS. Votre équipe de développement peut utiliser ce site pour gérer la documentation, participer aux discussions, créer des pages wiki et effectuer diverses autres tâches qui ne sont pas liés au code. Pour plus d’informations, consultez [Interactions entre les produits SharePoint et Team Foundation Server](https://msdn.microsoft.com/library/ms253177.aspx).
 14. Sur le **spécifier les paramètres de contrôle Source** page, laissez les paramètres par défaut inchangées, puis cliquez sur **suivant**.
 15. Ce paramètre identifie ou crée l’emplacement dans la hiérarchie de dossiers TFS qui agira en tant qu’un dossier racine pour votre contenu.
 16. Sur le **confirmer les paramètres du projet d’équipe** , cliquez sur **Terminer**.
@@ -200,7 +200,7 @@ La rubrique suivante, [Ajout de contenu pour le contrôle de code Source](adding
 
 ## <a name="further-reading"></a>informations supplémentaires
 
-Pour plus d’informations sur la création de projets d’équipe dans TFS, consultez [créer un projet d’équipe](https://msdn.microsoft.com/en-us/library/ms181477(v=VS.100).aspx). Pour plus d’informations sur l’activation aux utilisateurs de créer de nouveaux projets d’équipe au sein d’une collection de projets d’équipe, consultez [définition d’autorisations d’administrateur pour les Collections de projets d’équipe](https://msdn.microsoft.com/en-us/library/dd547204.aspx). Pour plus d’informations sur l’ajout d’utilisateurs aux projets d’équipe, consultez [ajouter des utilisateurs aux projets d’équipe](https://msdn.microsoft.com/en-us/library/bb558971.aspx).
+Pour plus d’informations sur la création de projets d’équipe dans TFS, consultez [créer un projet d’équipe](https://msdn.microsoft.com/library/ms181477(v=VS.100).aspx). Pour plus d’informations sur l’activation aux utilisateurs de créer de nouveaux projets d’équipe au sein d’une collection de projets d’équipe, consultez [définition d’autorisations d’administrateur pour les Collections de projets d’équipe](https://msdn.microsoft.com/library/dd547204.aspx). Pour plus d’informations sur l’ajout d’utilisateurs aux projets d’équipe, consultez [ajouter des utilisateurs aux projets d’équipe](https://msdn.microsoft.com/library/bb558971.aspx).
 
 >[!div class="step-by-step"]
 [Précédent](configuring-team-foundation-server-for-web-deployment.md)

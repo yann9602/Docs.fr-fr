@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/formats-and-model-binding/media-formatters
 msc.type: authoredcontent
-ms.openlocfilehash: 7d85b995cd577d0ff90fe96bce508c7fbdc6ebbb
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9103574597df126a22e21a2f51815f608e46f47f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="media-formatters-in-aspnet-web-api-2"></a>Formateurs de médias dans ASP.NET Web API 2
 ====================
@@ -28,9 +28,9 @@ Ce didacticiel montre comment prennent en charge que les formats supplémentaire
 
 Un type de média, également appelé un type MIME, identifie le format d’un élément de données. HTTP, les types de médias décrivent le format du corps du message. Un type de média se compose de deux chaînes, un type et un sous-type. Exemple :
 
-- texte/html
+- text/html
 - image/png
-- application/json.
+- application/json
 
 Lorsqu’un message HTTP contienne un corps d’entité, l’en-tête Content-Type spécifie le format du corps du message. Cela indique le récepteur comment analyser le contenu du corps du message.
 
@@ -48,8 +48,8 @@ Le type de média détermine la manière dont les API Web sérialise et déséri
 
 Pour créer un formateur de médias, dérivez de l’une de ces classes :
 
-- [MediaTypeFormatter](https://msdn.microsoft.com/en-us/library/system.net.http.formatting.mediatypeformatter.aspx). Cette classe utilise la lecture asynchrone et les méthodes d’écriture.
-- [BufferedMediaTypeFormatter](https://msdn.microsoft.com/en-us/library/system.net.http.formatting.bufferedmediatypeformatter.aspx). Cette classe dérive **MediaTypeFormatter** , mais utilise des méthodes maintient en lecture/écriture.
+- [MediaTypeFormatter](https://msdn.microsoft.com/library/system.net.http.formatting.mediatypeformatter.aspx). Cette classe utilise la lecture asynchrone et les méthodes d’écriture.
+- [BufferedMediaTypeFormatter](https://msdn.microsoft.com/library/system.net.http.formatting.bufferedmediatypeformatter.aspx). Cette classe dérive **MediaTypeFormatter** , mais utilise des méthodes maintient en lecture/écriture.
 
 Dérivation de **BufferedMediaTypeFormatter** est plus simple, car il n’existe aucun code asynchrone, mais il signifie également que le thread appelant peut bloquer pendant les e/s.
 
@@ -91,10 +91,10 @@ Pour ajouter un support de type module de formatage par le pipeline d’API Web,
 
 Si vous le souhaitez, un formateur de média peut prendre en charge plusieurs codages de caractères, telles que UTF-8 ou ISO 8859-1.
 
-Dans le constructeur, ajoutez un ou plusieurs [System.Text.Encoding](https://msdn.microsoft.com/en-us/library/system.text.encoding.aspx) types à la **SupportedEncodings** collection. Placez le premier de codage par défaut.
+Dans le constructeur, ajoutez un ou plusieurs [System.Text.Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) types à la **SupportedEncodings** collection. Placez le premier de codage par défaut.
 
 [!code-csharp[Main](media-formatters/samples/sample10.cs?highlight=6-7)]
 
-Dans le **WriteToStream** et **ReadFromStream** appeler des méthodes, [MediaTypeFormatter.SelectCharacterEncoding](https://msdn.microsoft.com/en-us/library/hh969054.aspx) pour sélectionner l’encodage de caractères par défaut. Cette méthode met en correspondance les en-têtes de demande par rapport à la liste de codages pris en charge. Utilisez retourné **codage** lorsque vous lire ou écrire dans le flux :
+Dans le **WriteToStream** et **ReadFromStream** appeler des méthodes, [MediaTypeFormatter.SelectCharacterEncoding](https://msdn.microsoft.com/library/hh969054.aspx) pour sélectionner l’encodage de caractères par défaut. Cette méthode met en correspondance les en-têtes de demande par rapport à la liste de codages pris en charge. Utilisez retourné **codage** lorsque vous lire ou écrire dans le flux :
 
 [!code-csharp[Main](media-formatters/samples/sample11.cs?highlight=3,5)]

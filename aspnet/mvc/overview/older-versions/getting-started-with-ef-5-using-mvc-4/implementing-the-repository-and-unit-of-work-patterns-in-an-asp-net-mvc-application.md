@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: c920dc8defe18b6f27d122c2cd1a6c6ffdaad608
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 02b1de31b9513247facc92bc6b72247865d176f9
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="implementing-the-repository-and-unit-of-work-patterns-in-an-aspnet-mvc-application-9-of-10"></a>Implémentation du référentiel et une unité de travail des modèles dans une Application ASP.NET MVC (9 sur 10)
 ====================
@@ -45,15 +45,15 @@ L’illustration suivante montre une façon conceptualiser les relations entre l
 
 ![Repository_pattern_diagram](https://asp.net/media/2578149/Windows-Live-Writer_8c4963ba1fa3_CE3B_Repository_pattern_diagram_1df790d3-bdf2-4c11-9098-946ddd9cd884.png)
 
-Vous ne créez des tests unitaires dans cette série de didacticiels. Pour obtenir une présentation TDD avec une application MVC qui utilise le modèle de référentiel, consultez [procédure pas à pas : utilisation de TDD avec ASP.NET MVC](https://msdn.microsoft.com/en-us/library/ff847525.aspx). Pour plus d’informations sur le modèle de référentiel, consultez les ressources suivantes :
+Vous ne créez des tests unitaires dans cette série de didacticiels. Pour obtenir une présentation TDD avec une application MVC qui utilise le modèle de référentiel, consultez [procédure pas à pas : utilisation de TDD avec ASP.NET MVC](https://msdn.microsoft.com/library/ff847525.aspx). Pour plus d’informations sur le modèle de référentiel, consultez les ressources suivantes :
 
-- [Le modèle de référentiel](https://msdn.microsoft.com/en-us/library/ff649690.aspx) sur MSDN.
+- [Le modèle de référentiel](https://msdn.microsoft.com/library/ff649690.aspx) sur MSDN.
 - [À l’aide de modèles de référentiel et l’unité de travail avec Entity Framework 4.0](https://blogs.msdn.com/b/adonet/archive/2009/06/16/using-repository-and-unit-of-work-patterns-with-entity-framework-4-0.aspx) sur le blog de l’équipe Entity Framework.
 - [Agile Entity Framework 4 référentiel](http://thedatafarm.com/blog/data-access/agile-entity-framework-4-repository-part-1-model-and-poco-classes/) séries de billets sur le blog de Julie Lerman.
 - [Création du compte à une Application de HTML5/jQuery aperçu](https://weblogs.asp.net/dwahlin/archive/2011/08/15/building-the-account-at-a-glance-html5-jquery-application.aspx) sur le blog de Wahlin.
 
 > [!NOTE]
-> Il existe plusieurs façons d’implémenter le référentiel et une unité de travail des modèles. Vous pouvez utiliser les classes de référentiel avec ou sans une classe d’unité de travail. Vous pouvez implémenter un référentiel unique pour tous les types d’entité ou une pour chaque type. Si vous implémentez un pour chaque type, vous pouvez utiliser des classes séparées, une classe de base générique et des classes dérivées, ou une classe de base abstraite et classes dérivées. Vous pouvez inclure une logique métier dans votre référentiel ou limiter à la logique d’accès aux données. Vous pouvez également créer une couche d’abstraction dans votre classe de contexte de base de données à l’aide de [IDbSet](https://msdn.microsoft.com/en-us/library/gg679233(v=vs.103).aspx) interfaces il au lieu de [DbSet](https://msdn.microsoft.com/en-us/library/system.data.entity.dbset(v=vs.103).aspx) types pour vos jeux d’entités. L’approche de mise en œuvre d’une couche d’abstraction dans ce didacticiel est une option vous permettant de prendre en compte, pas une recommandation pour tous les scénarios et les environnements.
+> Il existe plusieurs façons d’implémenter le référentiel et une unité de travail des modèles. Vous pouvez utiliser les classes de référentiel avec ou sans une classe d’unité de travail. Vous pouvez implémenter un référentiel unique pour tous les types d’entité ou une pour chaque type. Si vous implémentez un pour chaque type, vous pouvez utiliser des classes séparées, une classe de base générique et des classes dérivées, ou une classe de base abstraite et classes dérivées. Vous pouvez inclure une logique métier dans votre référentiel ou limiter à la logique d’accès aux données. Vous pouvez également créer une couche d’abstraction dans votre classe de contexte de base de données à l’aide de [IDbSet](https://msdn.microsoft.com/library/gg679233(v=vs.103).aspx) interfaces il au lieu de [DbSet](https://msdn.microsoft.com/library/system.data.entity.dbset(v=vs.103).aspx) types pour vos jeux d’entités. L’approche de mise en œuvre d’une couche d’abstraction dans ce didacticiel est une option vous permettant de prendre en compte, pas une recommandation pour tous les scénarios et les environnements.
 
 
 ## <a name="creating-the-student-repository-class"></a>Création de la classe de référentiel étudiant
@@ -74,7 +74,7 @@ Le contexte de base de données est défini dans une variable de classe, et le c
 
 Vous pouviez instancier un nouveau contexte dans le référentiel, puis si vous avez utilisé plusieurs référentiels dans un seul contrôleur, chacun retrouviez avec un contexte distinct. Ultérieurement, vous allez utiliser plusieurs référentiels dans les `Course` contrôleur et vous verrez comment une classe d’unité de travail peut garantir que tous les référentiels utilisent le même contexte.
 
-Le référentiel implémente [IDisposable](https://msdn.microsoft.com/en-us/library/system.idisposable.aspx) et supprime le contexte de base de données comme vous l’avez vu plus haut dans le contrôleur, et ses méthodes CRUD effectuent des appels dans le contexte de base de données de la même façon que vous avez vu plus haut.
+Le référentiel implémente [IDisposable](https://msdn.microsoft.com/library/system.idisposable.aspx) et supprime le contexte de base de données comme vous l’avez vu plus haut dans le contrôleur, et ses méthodes CRUD effectuent des appels dans le contexte de base de données de la même façon que vous avez vu plus haut.
 
 ## <a name="change-the-student-controller-to-use-the-repository"></a>Modifier le contrôleur de l’étudiant pour utiliser l’espace de stockage
 
@@ -243,9 +243,9 @@ Exécuter le site, puis cliquez sur le **cours** onglet.
 
 La page recherche et fonctionne comme auparavant vos modifications et les autres pages de cours également fonctionnent de la même.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
-Vous avez maintenant implémenté le référentiel et l’unité de travail des modèles. Vous avez utilisé des expressions lambda comme paramètres de méthode dans le référentiel générique. Pour plus d’informations sur l’utilisation de ces expressions avec un `IQueryable` d’objets, consultez [IQueryable(T) Interface (System.Linq)](https://msdn.microsoft.com/en-us/library/bb351562.aspx) dans MSDN Library. Dans la prochaine didacticiel, vous allez apprendre à gérer certains scénarios avancés.
+Vous avez maintenant implémenté le référentiel et l’unité de travail des modèles. Vous avez utilisé des expressions lambda comme paramètres de méthode dans le référentiel générique. Pour plus d’informations sur l’utilisation de ces expressions avec un `IQueryable` d’objets, consultez [IQueryable(T) Interface (System.Linq)](https://msdn.microsoft.com/library/bb351562.aspx) dans MSDN Library. Dans la prochaine didacticiel, vous allez apprendre à gérer certains scénarios avancés.
 
 Vous trouverez des liens vers d’autres ressources Entity Framework dans le [ASP.NET Data Access Content Map](../../../../whitepapers/aspnet-data-access-content-map.md).
 

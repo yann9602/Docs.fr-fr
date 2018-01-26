@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-a-view
 msc.type: authoredcontent
-ms.openlocfilehash: 4309290294b28d4c177e0193719bcff4b3f2a8cf
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 60374ddc6754f7e312ad08b420268308a9935bb4
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-a-view"></a>Ajout d’une vue
 ====================
@@ -34,7 +34,7 @@ Actuellement, la méthode `Index` retourne une chaîne avec un message qui est c
 
 [!code-csharp[Main](adding-a-view/samples/sample1.cs)]
 
-Le `Index` méthode ci-dessus utilise un modèle d’affichage pour générer une réponse HTML au navigateur. Les méthodes de contrôleur (également appelé [méthodes d’action](http://rachelappel.com/asp.net-mvc-actionresults-explained)), telles que le `Index` ci-dessus, de méthode retournent généralement une [ActionResult](https://msdn.microsoft.com/en-us/library/system.web.mvc.actionresult.aspx) (ou une classe dérivée de [ActionResult](https://msdn.microsoft.com/en-us/library/system.web.mvc.actionresult.aspx)), types non primitifs, comme chaîne.
+Le `Index` méthode ci-dessus utilise un modèle d’affichage pour générer une réponse HTML au navigateur. Les méthodes de contrôleur (également appelé [méthodes d’action](http://rachelappel.com/asp.net-mvc-actionresults-explained)), telles que le `Index` ci-dessus, de méthode retournent généralement une [ActionResult](https://msdn.microsoft.com/library/system.web.mvc.actionresult.aspx) (ou une classe dérivée de [ActionResult](https://msdn.microsoft.com/library/system.web.mvc.actionresult.aspx)), types non primitifs, comme chaîne.
 
 Dans le projet, ajoutez un modèle d’affichage que vous pouvez utiliser avec le `Index` (méthode). Pour ce faire, cliquez à l’intérieur de la `Index` (méthode) et cliquez sur **ajouter une vue**.
 
@@ -94,7 +94,7 @@ Exécuter l’application et notez qu’il indique à présent &quot;MVC film &q
 
 Maintenant, nous allons modifier le titre de la vue de l’Index.
 
-Ouvrez *MvcMovie\Views\HelloWorld\Index.cshtml*. Il existe deux emplacements pour apporter une modification : tout d’abord, le texte qui apparaît dans le titre du navigateur, puis dans l’en-tête secondaire (le `<h2>` élément). Vous allez les modifier légèrement pour voir quel morceau du code modifie quelle partie de l’application.
+Open *MvcMovie\Views\HelloWorld\Index.cshtml*. Il existe deux emplacements pour apporter une modification : tout d’abord, le texte qui apparaît dans le titre du navigateur, puis dans l’en-tête secondaire (le `<h2>` élément). Vous allez les modifier légèrement pour voir quel morceau du code modifie quelle partie de l’application.
 
 [!code-cshtml[Main](adding-a-view/samples/sample6.cshtml)]
 

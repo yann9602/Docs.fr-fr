@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery
 msc.type: authoredcontent
-ms.openlocfilehash: 0af5f7e841bb43fa41fa0daa4ad8d59ee0596404
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4a5433a7dd70e27b59163822ba427b026c3f4ce0
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="continuous-integration-and-continuous-delivery-building-real-world-cloud-apps-with-azure"></a>Intégration continue et livraison continue (génération d’applications Cloud du monde réel avec Azure)
 ====================
@@ -37,7 +37,7 @@ En règle générale, nous vous recommandons de procéder de diffusion en contin
 
 Le diagramme suivant tiré [un Microsoft Patterns and Practices livres sur la livraison continue](http://aka.ms/ReleasePipeline) illustre un flux de travail classique. Cliquez sur l’image pour l’afficher de plein écran dans son contexte d’origine.
 
-[![Flux de travail de livraison continue](continuous-integration-and-continuous-delivery/_static/image1.png)](https://msdn.microsoft.com/en-us/library/dn449955.aspx)
+[![Flux de travail de livraison continue](continuous-integration-and-continuous-delivery/_static/image1.png)](https://msdn.microsoft.com/library/dn449955.aspx)
 
 ## <a name="how-the-cloud-enables-cost-effective-ci-and-cd"></a>Comment le cloud permet économique de l’élément de configuration et de CD
 
@@ -59,19 +59,19 @@ Pour plus d’informations sur l’intégration continue et les fonctionnalités
 
 Si vous envisagez d’utiliser pour la gestion de projet de clés en main, collaboration d’équipe et la solution de contrôle de code source, consultez VSTS. Le service est gratuit pour jusqu'à 5 utilisateurs, et vous pouvez souscrire à l’adresse [Visual Studio Team Services](https://www.visualstudio.com/team-services/).
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Les modèles de développement trois cloud première ont été sur la façon d’implémenter un processus de développement reproductibles, fiable et prévisible avec durée de cycle basse. Dans le [chapitre suivant](web-development-best-practices.md) , nous commençons à examiner les modèles de codage et d’architecturales.
 
 ## <a name="resources"></a>Ressources
 
-Pour plus d’informations, consultez [déployer une application web dans Azure App Service](https://azure.microsoft.com/en-us/documentation/articles/web-sites-deploy/).
+Pour plus d’informations, consultez [déployer une application web dans Azure App Service](https://azure.microsoft.com/documentation/articles/web-sites-deploy/).
 
 Consultez également les ressources suivantes :
 
 - [Création d’un Pipeline de mise en production avec Team Foundation Server 2012](http://aka.ms/ReleasePipeline). Livre électronique laboratoires pratiques et exemples de code par Microsoft Patterns and Practices, fournit une présentation approfondie de la livraison continue. Aborde l’utilisation de Visual Studio Lab Management et Visual Studio Release Management.
 - [ALM Rangers DevOps est pour les outils et conseils](https://aka.ms/vsarsolutions/). Le groupe ALM Rangers a introduit le banc d’essai DevOps exemple le Guide de solution et des conseils pratiques en collaboration avec les modèles &amp; livre de pratiques *création d’un Pipeline de mise en production avec TFS 2012*, afin de démarrer apprendre les concepts de DevOps &amp; Release Management pour TFS 2012 et lancer les pneus. Le guide montre comment générer une seule fois et le déployer dans plusieurs environnements.
-- [Test de livraison continue avec Visual Studio 2012](https://msdn.microsoft.com/en-us/library/jj159345.aspx). Livres par Microsoft Patterns and Practices, explique comment intégrer les tests automatisés avec la livraison continue.
+- [Test de livraison continue avec Visual Studio 2012](https://msdn.microsoft.com/library/jj159345.aspx). Livres par Microsoft Patterns and Practices, explique comment intégrer les tests automatisés avec la livraison continue.
 - [WindowsAzureDeploymentTracker](https://github.com/RyanTBerry/WindowsAzureDeploymentTracker). Code source pour un outil conçu pour capturer une build TFS (basée sur une étiquette), générer, empaqueter, permet à un utilisateur dans le rôle DevOps pour configurer des aspects spécifiques de celui-ci et poussez-le dans Azure. L’outil effectue le suivi du processus de déploiement afin de permettre les opérations « Annuler » pour une version précédemment déployée. L’outil n’a aucune dépendance externe et peut fonctionner autonome à l’aide d’API de TFS et le Kit de développement logiciel Azure.
 - [La livraison continue : Mises à jour de logiciels fiables via l’automatisation du déploiement, de Test et de Build](https://www.amazon.com/Continuous-Delivery-Deployment-Automation-Addison-Wesley/dp/0321601912/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1377126361). Livre Jez modeste.
 - [Il Release. Concevoir et déployer des logiciels de l’environnement de production](https://www.amazon.com/Release-It-Production-Ready-Pragmatic-Programmers/dp/0978739213). Livre Michael T. Nygard.

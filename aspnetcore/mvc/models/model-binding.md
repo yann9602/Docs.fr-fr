@@ -1,21 +1,20 @@
 ---
 title: "Liaison de modèle"
-author: rick-anderson
-description: 
-keywords: ASP.NET Core,
-ms.author: riande
+author: rachelappel
+description: "Pour plus d’informations sur la liaison de modèle dans ASP.NET MVC de base"
+ms.author: rachelap
 manager: wpickett
-ms.date: 10/14/2016
+ms.date: 01/22/2018
 ms.topic: article
-ms.assetid: b355a48e-a15c-4d58-b69c-899763613a97
 ms.technology: aspnet
 ms.prod: asp.net-core
+ms.assetid: 0be164aa-1d72-4192-bd6b-192c9c301164
 uid: mvc/models/model-binding
-ms.openlocfilehash: 40aa105dcf06b269025d0c44e5cd7bffef271e9d
-ms.sourcegitcommit: fe880bf4ed1c8116071c0e47c0babf3623b7f44a
+ms.openlocfilehash: 26c4c016548cc3e465991c5ebf16893d4022145d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="model-binding"></a>Liaison de modèle
 
@@ -43,7 +42,7 @@ MVC tente de se lier des données de la demande pour les paramètres d’action 
 
 1. `Form values`: Ce sont des valeurs de formulaire qui vont dans la requête HTTP à l’aide de la méthode POST. (y compris les requêtes POST jQuery).
 
-2. `Route values`: Le jeu de valeurs d’itinéraire fourni par [routage](../../fundamentals/routing.md)
+2. `Route values`: Le jeu de valeurs d’itinéraire fourni par [routage](xref:fundamentals/routing)
 
 3. `Query strings`: La partie de chaîne de requête de l’URI.
 
@@ -57,7 +56,7 @@ Remarque : Écran de valeurs, les données d’itinéraire et toutes les chaîn
 
 Étant donné que la liaison de modèle invité à entrer une clé nommée `id` et aucun élément nommé `id` dans les valeurs de formulaire, il déplacées sur les valeurs d’itinéraire recherchez cette clé. Dans notre exemple, il est une correspondance. Liaison se produit, et la valeur est convertie à l’entier 2. La même demande à l’aide de l’édition (id de chaîne) permet de convertir l’à la chaîne « 2 ».
 
-Jusqu'à présent, l’exemple utilise des types simples. Dans MVC types simples sont tout type de primitive .NET ou avec un convertisseur de type chaîne. Si le paramètre de la méthode d’action agissait une classe comme le `Movie` type, qui contient des types simples et complexes tels que les propriétés, modèle liaison continueront de MVC gérer correctement. Il utilise la réflexion et récurrence pour parcourir les propriétés de recherche de correspondances de types complexes. Liaison de modèle recherche le modèle *parameter_name.property_name* pour lier des valeurs aux propriétés. S’il ne trouve pas les valeurs correspondantes de ce formulaire, il va tenter de lier à l’aide de simplement le nom de propriété. Pour ces types, tels que `Collection` , types de liaison de modèle de recherche des correspondances à *nom_paramètre [index]* ou simplement *[index]*. Traite de la liaison de modèle `Dictionary` les types de la même façon, lui demandant de *nom_paramètre [clé]* ou simplement *[clé]*, à condition que les clés sont des types simples. Clés qui sont prises en charge correspondent aux noms de champ HTML et programmes d’assistance de balise générés pour le même type de modèle. Ainsi, les valeurs aller-retour afin que les champs de formulaire restent remplis avec l’entrée d’utilisateur pour leur faciliter la tâche, par exemple, lorsque les données liées à partir d’une création ou la modification n’a pas réussi la validation.
+Jusqu'à présent, l’exemple utilise des types simples. Dans MVC types simples sont tout type de primitive .NET ou avec un convertisseur de type chaîne. Si le paramètre de la méthode d’action agissait une classe comme le `Movie` type, qui contient des types simples et complexes tels que les propriétés, modèle liaison continueront de MVC gérer correctement. Il utilise la réflexion et récurrence pour parcourir les propriétés de recherche de correspondances de types complexes. Liaison de modèle recherche le modèle *parameter_name.property_name* pour lier des valeurs aux propriétés. S’il ne trouve pas les valeurs correspondantes de ce formulaire, il va tenter de lier à l’aide de simplement le nom de propriété. Pour ces types, tels que `Collection` , types de liaison de modèle de recherche des correspondances à *nom_paramètre [index]* ou simplement *[index]*. Traite de la liaison de modèle `Dictionary` les types de la même façon, lui demandant de *nom_paramètre [clé]* ou simplement *[clé]*, à condition que les clés sont des types simples. Clés qui sont prises en charge correspondent aux noms de champ HTML et programmes d’assistance de balise générés pour le même type de modèle. Ainsi, les valeurs aller-retour afin que les champs de formulaire restent remplis avec l’entrée d’utilisateur pour leur faciliter la tâche, par exemple, lorsque les données liées à partir d’une création ou la modification n’a pas été validées.
 
 Dans l’ordre de liaison doit se produire la classe doit avoir un constructeur public par défaut et les membres d’être lié doivent être publiques propriétés accessibles en écriture. Lors de la liaison de modèle se produit, que la classe sera uniquement être instanciée en utilisant le constructeur public par défaut, les propriétés peuvent être définies.
 
@@ -71,9 +70,9 @@ Lorsqu’un paramètre est lié, liaison de modèle arrête la recherche de vale
 
 * : Les Types de valeur les types valeur Non nullable de type `T` ont la valeur `default(T)`. Par exemple, liaison de modèle définit un paramètre `int id` à 0. Pensez à l’aide de la validation des modèles ou des types nullable au lieu de s’appuyer sur les valeurs par défaut.
 
-Si la liaison échoue, MVC ne lève pas une erreur. Chaque action qui accepte une entrée d’utilisateur doit vérifier le `ModelState.IsValid` propriété.
+Si la liaison échoue, MVC ne provoquent une erreur. Chaque action qui accepte une entrée d’utilisateur doit vérifier le `ModelState.IsValid` propriété.
 
-Remarque : Chaque entrée dans le contrôleur de `ModelState` propriété est un `ModelStateEntry` contenant un `Errors` propriété. Il est rarement nécessaire interroger cette collection vous-même. Utilisez plutôt `ModelState.IsValid` .
+Remarque : Chaque entrée dans le contrôleur de `ModelState` propriété est un `ModelStateEntry` contenant un `Errors` propriété. Il est rarement nécessaire interroger cette collection vous-même. Utilisez plutôt `ModelState.IsValid`.
 
 En outre, il existe de certains types de données spéciaux que MVC doit prendre en compte lors de la liaison de modèle :
 
@@ -103,7 +102,7 @@ MVC contient plusieurs attributs que vous pouvez utiliser pour indiquer son comp
 
 Les attributs sont très utiles lorsque vous devez remplacer le comportement par défaut de la liaison de modèle.
 
-## <a name="binding-formatted-data-from-the-request-body"></a>Liaison de mise en forme des données à partir du corps de demande
+## <a name="bind-formatted-data-from-the-request-body"></a>Lier des données mises en forme à partir du corps de demande
 
 Dans divers formats, notamment JSON, XML et bien d’autres peuvent provenir de données de la demande. Lorsque vous utilisez l’attribut [FromBody] pour indiquer que vous souhaitez lier un paramètre à des données dans le corps de la demande, MVC utilise un jeu de formateurs configuré pour gérer les données de la demande en fonction de son type de contenu. Par défaut, MVC inclut un `JsonInputFormatter` de classe pour la gestion des données JSON, mais vous peuvent ajouter des formateurs supplémentaires pour la gestion de XML et autres formats personnalisés.
 

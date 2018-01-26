@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /single-page-application/overview/introduction/knockoutjs-template
 msc.type: authoredcontent
-ms.openlocfilehash: 6e84dcc16345e33fcd3a3f83c4b35bc993c03ca6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e6c0c45bed098a8a1160ff11e4f77244bf55ffd3
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="single-page-application-knockoutjs-template"></a>Application à Page unique : Modèle de KnockoutJS
 ====================
@@ -117,7 +117,7 @@ Ce fichier contient des modèles de l’appartenance au site. La `UserProfile` c
 
 ## <a name="entity-framework"></a>Entity Framework
 
-Le modèle SPA utilise EF Code First. Dans le développement Code First, vous commencez par définir les modèles dans le code et EF utilise ensuite le modèle pour créer la base de données. Vous pouvez également utiliser EF avec une base de données existante ([Database First](https://msdn.microsoft.com/en-us/data/jj206878.aspx)).
+Le modèle SPA utilise EF Code First. Dans le développement Code First, vous commencez par définir les modèles dans le code et EF utilise ensuite le modèle pour créer la base de données. Vous pouvez également utiliser EF avec une base de données existante ([Database First](https://msdn.microsoft.com/data/jj206878.aspx)).
 
 Le `TodoItemContext` dérive de la classe dans le dossier de modèles **DbContext**. Cette classe fournit le type « glue » entre les modèles et EF. Le `TodoItemContext` contient un `ToDoItem` collection et un `TodoList` collection. Pour interroger la base de données, vous écrivez simplement une requête LINQ sur ces collections. Par exemple, voici comment vous pouvez sélectionner toutes les listes de tâches pour l’utilisateur « Alice » :
 
@@ -145,10 +145,10 @@ Le `TodoItemContext` est utilisé pour communiquer avec EF, comme décrit préc�
 | Requête HTTP | Méthode de contrôleur | Description |
 | --- | --- | --- |
 | GET /api/todo | `GetTodoLists` | Obtient une collection de listes de tâches. |
-| GET/API/tâches/*id* | `GetTodoList` | Obtient une liste de tâches par ID |
-| PUT/API/tâches/*id* | `PutTodoList` | Met à jour une liste de tâches. |
+| GET /api/todo/*id* | `GetTodoList` | Obtient une liste de tâches par ID |
+| PUT /api/todo/*id* | `PutTodoList` | Met à jour une liste de tâches. |
 | POST /api/todo | `PostTodoList` | Crée une liste de tâches. |
-| DELETE/API/tâches/*id* | `DeleteTodoList` | Supprime une liste de tâches. |
+| DELETE /api/todo/*id* | `DeleteTodoList` | Supprime une liste de tâches. |
 
 Notez que les URI pour certaines opérations contiennent des espaces réservés pour la valeur d’ID. Par exemple, pour supprimer une liste à avec un ID de 42, l’URI est `/api/todo/42`.
 
@@ -229,7 +229,7 @@ Falsification de requête intersites (CSRF) est une attaque où un site malveill
 
 Les jetons anti-contrefaçon fonctionnent, car la page malveillante ne peut pas lire les jetons de l’utilisateur, en raison des stratégies de la même origine. (Même origine stratégies empêchent documents hébergés sur deux sites différents d’accéder au contenu de l’autre.)
 
-ASP.NET MVC fournit la prise en charge intégrée pour les jetons anti-contrefaçon, via le [AntiForgery](https://msdn.microsoft.com/en-us/library/system.web.helpers.antiforgery.aspx) classe et le [[ValidateAntiForgeryToken]](https://msdn.microsoft.com/en-us/library/system.web.mvc.validateantiforgerytokenattribute.aspx) attribut. Actuellement, cette fonctionnalité n’est pas intégrée dans l’API Web. Toutefois, le modèle SPA inclut une implémentation personnalisée pour l’API Web. Ce code est défini dans le `ValidateHttpAntiForgeryTokenAttribute` (classe), qui se trouve dans le dossier de filtres de la solution. Pour en savoir plus sur anti-CSRF dans l’API Web, consultez [empêcher Cross-Site demande Forgery (CSRF) attaques](../../../web-api/overview/security/preventing-cross-site-request-forgery-csrf-attacks.md).
+ASP.NET MVC fournit la prise en charge intégrée pour les jetons anti-contrefaçon, via le [AntiForgery](https://msdn.microsoft.com/library/system.web.helpers.antiforgery.aspx) classe et le [[ValidateAntiForgeryToken]](https://msdn.microsoft.com/library/system.web.mvc.validateantiforgerytokenattribute.aspx) attribut. Actuellement, cette fonctionnalité n’est pas intégrée dans l’API Web. Toutefois, le modèle SPA inclut une implémentation personnalisée pour l’API Web. Ce code est défini dans le `ValidateHttpAntiForgeryTokenAttribute` (classe), qui se trouve dans le dossier de filtres de la solution. Pour en savoir plus sur anti-CSRF dans l’API Web, consultez [empêcher Cross-Site demande Forgery (CSRF) attaques](../../../web-api/overview/security/preventing-cross-site-request-forgery-csrf-attacks.md).
 
 ## <a name="conclusion"></a>Conclusion
 

@@ -2,7 +2,6 @@
 title: "Configurer la localisation d’un objet portable"
 author: sebastienros
 description: "Cet article présente les fichiers objets Portable et décrit les étapes permettant de les utiliser dans une application ASP.NET Core avec l’infrastructure de base de Orchard."
-keywords: ASP.NET Core, localisation, culture, langue, objet portable
 ms.author: scaddie
 manager: wpickett
 ms.date: 09/26/2017
@@ -10,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/portable-object-localization
-ms.openlocfilehash: 4fa73ae08b10217de657681a27f6097fc3443737
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ad68c8a7df5a8ea0f7ef42137c29cd3b37657052
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="configure-portable-object-localization-with-orchard-core"></a>Configurer la localisation d’un objet portable avec Orchard de base
 

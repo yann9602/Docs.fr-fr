@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/basic-reporting/displaying-data-with-the-objectdatasource-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8025a4d236d126b939b44fac9114ae3d0e98f6ad
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8bd6534b652735e657aa71cdf07dac48f20a549c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="displaying-data-with-the-objectdatasource-c"></a>Affichage des données avec ObjectDataSource (c#)
 ====================
@@ -31,7 +31,7 @@ par [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 Notre application architecture et le site Web de mise en page terminée, nous sommes prêts à commencer à Explorer les instructions permettant d’effectuer diverses tâches courantes de données et création de rapports liés. Dans les didacticiels précédents, nous avons vu comment lier par programmation les données à partir de la couche DAL et la couche BLL à un contrôle Web dans une page ASP.NET de données. Cette syntaxe attribuant les données contrôle Web `DataSource` propriété aux données à afficher et l’appel du contrôle `DataBind()` méthode était le modèle utilisé dans les applications ASP.NET 1.x et pouvez continuer à utiliser dans vos 2.0 applications. Toutefois, les nouveaux contrôles de source de données d’ASP.NET 2.0 offrent une façon déclarative des données. À l’aide de ces contrôles, vous pouvez lier des données récupérées à partir de la couche BLL créé dans le [didacticiel précédent](../introduction/creating-a-business-logic-layer-cs.md) sans avoir à écrire une ligne de code !
 
-ASP.NET 2.0 est livré avec cinq contrôles de source de données intégrés [SqlDataSource](https://msdn.microsoft.com/en-us/library/dz12d98w(vs.80).aspx), [AccessDataSource](https://msdn.microsoft.com/en-us/library/8e5545e1.aspx), [ObjectDataSource](https://msdn.microsoft.com/en-us/library/9a4kyhcx.aspx), [XmlDataSource](https://msdn.microsoft.com/en-us/library/e8d8587a(en-US,VS.80).aspx), et [SiteMapDataSource](https://msdn.microsoft.com/en-us/library/5ex9t96x(en-US,VS.80).aspx) bien que vous pouvez créer votre propre [contrôles de source de données personnalisé](https://msdn.microsoft.com/library/default.asp?url=/library/en-us/dnvs05/html/DataSourceCon1.asp), si nécessaire. Étant donné que nous avons développé une architecture pour notre application du didacticiel, nous utiliserons ObjectDataSource par rapport aux classes de notre BLL.
+ASP.NET 2.0 est livré avec cinq contrôles de source de données intégrés [SqlDataSource](https://msdn.microsoft.com/library/dz12d98w(vs.80).aspx), [AccessDataSource](https://msdn.microsoft.com/library/8e5545e1.aspx), [ObjectDataSource](https://msdn.microsoft.com/library/9a4kyhcx.aspx), [XmlDataSource](https://msdn.microsoft.com/library/e8d8587a(en-US,VS.80).aspx), et [SiteMapDataSource](https://msdn.microsoft.com/library/5ex9t96x(en-US,VS.80).aspx) bien que vous pouvez créer votre propre [contrôles de source de données personnalisé](https://msdn.microsoft.com/library/default.asp?url=/library/dnvs05/html/DataSourceCon1.asp), si nécessaire. Étant donné que nous avons développé une architecture pour notre application du didacticiel, nous utiliserons ObjectDataSource par rapport aux classes de notre BLL.
 
 
 ![ASP.NET 2.0 comprend cinq contrôles de Source de données intégrés](displaying-data-with-the-objectdatasource-cs/_static/image1.png)
@@ -90,7 +90,7 @@ Assistant Configurer la Source de données de l’ObjectDataSource offre un moye
 
 [!code-aspx[Main](displaying-data-with-the-objectdatasource-cs/samples/sample1.aspx)]
 
-Même si vous préférez l’Assistant Configurer la Source de données il peut arriver lorsque vous devez configurer manuellement l’ObjectDataSource, comme l’Assistant répertorie uniquement les classes créées par le développeur. Si vous souhaitez lier ObjectDataSource à une classe dans le .NET Framework, tels que les [classe d’appartenance](https://msdn.microsoft.com/en-us/library/system.web.security.membership.aspx), pour accéder aux informations de compte d’utilisateur, ou le [classe active](https://msdn.microsoft.com/en-us/library/system.io.directory.aspx) pour travailler avec les informations de système de fichiers Vous devez définir manuellement les propriétés de l’ObjectDataSource.
+Même si vous préférez l’Assistant Configurer la Source de données il peut arriver lorsque vous devez configurer manuellement l’ObjectDataSource, comme l’Assistant répertorie uniquement les classes créées par le développeur. Si vous souhaitez lier ObjectDataSource à une classe dans le .NET Framework, tels que les [classe d’appartenance](https://msdn.microsoft.com/library/system.web.security.membership.aspx), pour accéder aux informations de compte d’utilisateur, ou le [classe active](https://msdn.microsoft.com/library/system.io.directory.aspx) pour travailler avec les informations de système de fichiers Vous devez définir manuellement les propriétés de l’ObjectDataSource.
 
 ## <a name="step-2-adding-a-data-web-control-and-binding-it-to-the-objectdatasource"></a>Étape 2 : Ajout d’un contrôle Web de données et en la liant à ObjectDataSource
 
@@ -172,7 +172,7 @@ Avec nos thème défini, la dernière étape consiste à appliquer le thème à 
 
 [!code-xml[Main](displaying-data-with-the-objectdatasource-cs/samples/sample5.xml)]
 
-C’est tout cela ! Le `styleSheetTheme` paramètre indique que les propriétés spécifiées dans le thème doivent *pas* remplacer les propriétés spécifiées au niveau du contrôle. Pour spécifier que les paramètres de thème doivent choisir un autre contrôle les paramètres, utilisez le `theme` d’attribut à la place de `styleSheetTheme`; Malheureusement, les paramètres de thème spécifiés via la `theme` attribut n’apparaissent pas dans la vue de conception de Visual Studio. Reportez-vous à [thèmes ASP.NET et vue d’ensemble des apparences](https://msdn.microsoft.com/en-us/library/ykzx33wh.aspx) et [côté serveur Styles à l’aide de thèmes](https://quickstarts.asp.net/quickstartv20/aspnet/doc/themes/stylesheettheme.aspx) pour plus d’informations sur les thèmes et les apparences ; consultez [Comment : appliquer des thèmes ASP.NET](https://msdn.microsoft.com/en-us/library/0yy5hxdk(VS.80).aspx) pour plus d’informations sur configuration d’une page pour utiliser un thème.
+C’est tout cela ! Le `styleSheetTheme` paramètre indique que les propriétés spécifiées dans le thème doivent *pas* remplacer les propriétés spécifiées au niveau du contrôle. Pour spécifier que les paramètres de thème doivent choisir un autre contrôle les paramètres, utilisez le `theme` d’attribut à la place de `styleSheetTheme`; Malheureusement, les paramètres de thème spécifiés via la `theme` attribut n’apparaissent pas dans la vue de conception de Visual Studio. Reportez-vous à [thèmes ASP.NET et vue d’ensemble des apparences](https://msdn.microsoft.com/library/ykzx33wh.aspx) et [côté serveur Styles à l’aide de thèmes](https://quickstarts.asp.net/quickstartv20/aspnet/doc/themes/stylesheettheme.aspx) pour plus d’informations sur les thèmes et les apparences ; consultez [Comment : appliquer des thèmes ASP.NET](https://msdn.microsoft.com/library/0yy5hxdk(VS.80).aspx) pour plus d’informations sur configuration d’une page pour utiliser un thème.
 
 
 [![Le contrôle GridView affiche le nom du produit, catégorie, fournisseur, prix et informations supprimées](displaying-data-with-the-objectdatasource-cs/_static/image31.png)](displaying-data-with-the-objectdatasource-cs/_static/image30.png)
@@ -182,7 +182,7 @@ C’est tout cela ! Le `styleSheetTheme` paramètre indique que les propriété
 
 ## <a name="displaying-one-record-at-a-time-in-the-detailsview"></a>Affichage d’un enregistrement à la fois dans le contrôle DetailsView
 
-Le contrôle GridView affiche une ligne pour chaque enregistrement retourné par le contrôle de source de données à laquelle elle est liée. Il n’y a envie, toutefois, nous pouvons être amenés à afficher un enregistrement unique ou qu’un seul enregistrement à la fois. Le [contrôle DetailsView](https://msdn.microsoft.com/en-us/library/s3w1w7t4.aspx) offre cette fonctionnalité, rendu sous la forme d’un élément HTML `<table>` avec deux colonnes et une ligne pour chaque colonne ou propriété liée au contrôle. Vous pouvez considérer le contrôle DetailsView comme un GridView avec un seul enregistrement avec une rotation de 90 degrés.
+Le contrôle GridView affiche une ligne pour chaque enregistrement retourné par le contrôle de source de données à laquelle elle est liée. Il n’y a envie, toutefois, nous pouvons être amenés à afficher un enregistrement unique ou qu’un seul enregistrement à la fois. Le [contrôle DetailsView](https://msdn.microsoft.com/library/s3w1w7t4.aspx) offre cette fonctionnalité, rendu sous la forme d’un élément HTML `<table>` avec deux colonnes et une ligne pour chaque colonne ou propriété liée au contrôle. Vous pouvez considérer le contrôle DetailsView comme un GridView avec un seul enregistrement avec une rotation de 90 degrés.
 
 Commencez par ajouter un contrôle DetailsView *ci-dessus* le contrôle GridView dans `SimpleDisplay.aspx`. Ensuite, le lier au contrôle ObjectDataSource même comme le GridView. Comme avec le GridView, un BoundField sera ajouté au contrôle DetailsView pour chaque propriété de l’objet retourné par l’ObjectDataSource `Select` (méthode). La seule différence est que le contrôle du DetailsView BoundFields sont disposés horizontalement plutôt que verticalement.
 
@@ -219,7 +219,7 @@ Nous y reviendrons plus tard la pagination dans les futures didacticiels.
 
 Le contrôle DetailsView est assez rigid dans comment il s’affiche chaque enregistrement retourné à partir de ObjectDataSource. Nous pouvons adopter une vue plus souple des données. Par exemple, au lieu d’afficher le nom du produit, catégorie, fournisseur, prix et informations supprimées chaque sur une ligne distincte, nous pouvons adopter afficher le nom du produit et de prix dans une `<h4>` titre, avec les informations de catégorie et de fournisseur figurant sous le nom et le prix de la taille de police. Et nous pouvons se soucient pas à afficher les noms de propriété (produit, catégorie et ainsi de suite) en regard de valeurs.
 
-Le [contrôle FormView](https://msdn.microsoft.com/en-US/library/fyf1dk77.aspx) fournit ce niveau de personnalisation. Au lieu d’utiliser des champs (comme le GridView et DetailsView), le FormView utilise des modèles, qui autorisent une combinaison de contrôles Web, HTML statique, et [syntaxe de liaison de données](http://www.15seconds.com/issue/040630.htm). Si vous êtes familiarisé avec le contrôle du répéteur à partir de ASP.NET 1.x, vous pouvez considérer le FormView comme répéteur pour afficher un seul enregistrement.
+Le [contrôle FormView](https://msdn.microsoft.com/library/fyf1dk77.aspx) fournit ce niveau de personnalisation. Au lieu d’utiliser des champs (comme le GridView et DetailsView), le FormView utilise des modèles, qui autorisent une combinaison de contrôles Web, HTML statique, et [syntaxe de liaison de données](http://www.15seconds.com/issue/040630.htm). Si vous êtes familiarisé avec le contrôle du répéteur à partir de ASP.NET 1.x, vous pouvez considérer le FormView comme répéteur pour afficher un seul enregistrement.
 
 Ajouter un contrôle FormView à le `SimpleDisplay.aspx` aire de conception de la page. Le FormView affiche initialement en tant qu’un bloc gris, nous informe que nous devons fournir, au minimum, d' un contrôle `ItemTemplate`.
 
@@ -244,7 +244,7 @@ Le `<%# Eval(propertyName) %>` est la syntaxe de liaison de données. Le `Eval` 
 
 Comme le contrôle DetailsView, le FormView affiche uniquement le premier enregistrement retourné par ObjectDataSource. Vous pouvez activer la pagination dans le FormView pour autoriser les visiteurs parcourir les produits d’un à la fois.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Accès et affichage des données à partir d’une couche de logique métier peuvent être accomplies sans écrire une ligne de code contrôle ObjectDataSource de ASP.NET 2.0. ObjectDataSource appelle une méthode spécifiée d’une classe et retourne les résultats. Ces résultats peuvent être affichés dans un contrôle Web qui est lié à ObjectDataSource de données. Dans ce didacticiel, nous avons au niveau de la liaison des contrôles GridView, DetailsView et FormView de ObjectDataSource.
 
@@ -256,12 +256,12 @@ Bonne programmation !
 
 Pour plus d’informations sur les sujets abordés dans ce didacticiel, consultez les ressources suivantes :
 
-- [Créer vos propres contrôles de Source de données](https://msdn.microsoft.com/en-us/library/ms364049.aspx)
-- [Exemples de GridView pour ASP.NET 2.0](https://msdn.microsoft.com/en-us/library/aa479339.aspx)
+- [Créer vos propres contrôles de Source de données](https://msdn.microsoft.com/library/ms364049.aspx)
+- [Exemples de GridView pour ASP.NET 2.0](https://msdn.microsoft.com/library/aa479339.aspx)
 - [Simplifié et étendues de liaison de données syntaxe dans ASP.NET 2.0](http://www.15seconds.com/issue/040630.htm)
 - [Thèmes dans ASP.NET 2.0](http://www.odetocode.com/Articles/423.aspx)
 - [Styles de côté serveur à l’aide de thèmes](https://quickstarts.asp.net/quickstartv20/aspnet/doc/themes/stylesheettheme.aspx)
-- [Comment : Appliquer des thèmes ASP.NET par programmation](https://msdn.microsoft.com/en-us/library/tx35bd89.aspx)
+- [Comment : Appliquer des thèmes ASP.NET par programmation](https://msdn.microsoft.com/library/tx35bd89.aspx)
 
 ## <a name="about-the-author"></a>À propos de l’auteur
 

@@ -2,7 +2,6 @@
 title: "Pages Razor avec EF Core - lire les données associées - 6 de 8"
 author: rick-anderson
 description: "Dans ce didacticiel vous lire et afficher les données associées, autrement dit, les données Entity Framework charge dans les propriétés de navigation."
-keywords: "ASP.NET Core, Entity Framework Core, les données associées, jointures"
 ms.author: riande
 manager: wpickett
 ms.date: 11/05/2017
@@ -10,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/read-related-data
-ms.openlocfilehash: ba9b17ecdcb605d39117d03230b1db37e8e4d0dd
-ms.sourcegitcommit: 05e798c9bac7b9e9983599afb227ef393905d023
+ms.openlocfilehash: 532020a8fe4c5a0312cbd89278e61f614b1825f8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="reading-related-data---ef-core-with-razor-pages-6-of-8"></a>Lecture liés de données - Core EF avec les Pages Razor (6 de 8)
 
@@ -55,7 +54,7 @@ Il existe plusieurs façons que EF Core chargez des données connexes dans les p
 
  ![Exemple de chargement explicite](read-related-data/_static/explicit-loading.png)
 
-* [Chargement différé](https://docs.microsoft.com/ef/core/querying/related-data#lazy-loading). [EF Core ne prend pas en charge le chargement tardif](https://github.com/aspnet/EntityFrameworkCore/issues/3797). Lors de la lecture de l’entité est tout d’abord, les données associées n’est pas récupérées. La première fois qu’une propriété de navigation est accessible, les données requises pour cette propriété de navigation sont automatiquement récupérées. Une requête est envoyée à la base de données chaque fois qu’une propriété de navigation est accessible pour la première fois.
+* [Chargement différé](https://docs.microsoft.com/ef/core/querying/related-data#lazy-loading). [EF Core ne prend actuellement en charge le chargement différé](https://github.com/aspnet/EntityFrameworkCore/issues/3797). Lors de la lecture de l’entité est tout d’abord, les données associées n’est pas récupérées. La première fois qu’une propriété de navigation est accessible, les données requises pour cette propriété de navigation sont automatiquement récupérées. Une requête est envoyée à la base de données chaque fois qu’une propriété de navigation est accessible pour la première fois.
 
 * Le `Select` opérateur charge uniquement les données connexes nécessaires.
 
@@ -109,7 +108,7 @@ Mise à jour *Views/Courses/Index.cshtml* avec le balisage mis en surbrillance s
 Les modifications suivantes ont été apportées au code de modèle généré automatiquement :
 
 * Modifié le titre de l’Index au cours.
-* Ajouter un **nombre** colonne qui affiche le `CourseID` valeur de propriété. Par défaut, les clés primaires ne sont pas structurés, car ceux-ci ne sont généralement pas de sens pour les utilisateurs finaux. Toutefois, dans ce cas la clé primaire est significative.
+* Ajouter un **nombre** colonne qui affiche le `CourseID` valeur de propriété. Par défaut, les clés primaires ne sont pas structurés, car ils sont normalement pas de sens pour les utilisateurs finaux. Toutefois, dans ce cas la clé primaire est significative.
 * Modifié le **service** colonne pour afficher le nom du service. Le code affiche le `Name` propriété de la `Department` entité qui est chargée dans le `Department` propriété de navigation :
 
   ```html

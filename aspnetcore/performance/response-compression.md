@@ -2,20 +2,18 @@
 title: "Intergiciel (middleware) de réponse Compression pour ASP.NET Core"
 author: guardrex
 description: "En savoir plus sur la compression de la réponse et comment utiliser un intergiciel (middleware) de réponse Compression dans les applications ASP.NET Core."
-keywords: "ASP.NET Core, performances, la compression de la réponse, gzip, encodage, intergiciel (middleware)"
 ms.author: riande
 manager: wpickett
 ms.date: 08/20/2017
 ms.topic: article
-ms.assetid: de621887-c5c9-4ac8-9efd-f5cc0457a134
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: performance/response-compression
-ms.openlocfilehash: 86244179115fe6a7d0f7298495086a96ee9570d9
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: 2b39a5105339beb416490db282d4cd8b83d08660
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="response-compression-middleware-for-aspnet-core"></a>Intergiciel (middleware) de réponse Compression pour ASP.NET Core
 
@@ -33,7 +31,7 @@ Utilisez réponse Compression intergiciel (middleware) lorsque vous êtes :
 * Impossible d’utiliser les technologies de compression basée sur le serveur suivant :
   * [Module de la Compression dynamique IIS](https://www.iis.net/overview/reliability/dynamiccachingandcompression)
   * [Module de mod_deflate Apache](http://httpd.apache.org/docs/current/mod/mod_deflate.html)
-  * [La décompression et NGINX Compression](https://www.nginx.com/resources/admin-guide/compression-and-decompression/)
+  * [La décompression et Nginx Compression](https://www.nginx.com/resources/admin-guide/compression-and-decompression/)
 * Hébergement directement sur :
   * [Serveur HTTP.sys](xref:fundamentals/servers/httpsys) (anciennement appelé [WebListener](xref:fundamentals/servers/weblistener))
   * [Kestrel](xref:fundamentals/servers/kestrel)
@@ -112,7 +110,7 @@ Le fournisseur de la compression gzip par défaut est le niveau de compression p
 
 | Niveau de compression                | Description                                                                                                   |
 | -------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| `CompressionLevel.Fastest`       | La compression doit se terminer aussi rapidement que possible, même si le résultat n’est pas compressé de façon optimale. |
+| `CompressionLevel.Fastest`       | La compression doit se terminer aussi rapidement que possible, même si le résultat n’est pas compressé optimale. |
 | `CompressionLevel.NoCompression` | Aucune compression ne doit être effectuée.                                                                           |
 | `CompressionLevel.Optimal`       | Les réponses doivent être compressées optimale, même si la compression prend plus de temps pour terminer.                |
 
@@ -184,7 +182,7 @@ Si la compression des réponses basée sur la `Accept-Encoding` en-tête, il exi
 [!code-csharp[Main](response-compression/samples/1.x/Startup.cs?name=snippet1)]
 
 ## <a name="middleware-issue-when-behind-an-nginx-reverse-proxy"></a>Problème d’intergiciel (middleware) lorsque derrière un proxy inverse Nginx
-Lorsqu’une demande est transmise par Nginx, le `Accept-Encoding` en-tête est supprimé. Cela empêche l’intergiciel (middleware) de la compression de la réponse. Pour plus d’informations, consultez [NGINX : la Compression et décompression](https://www.nginx.com/resources/admin-guide/compression-and-decompression/). Ce problème est suivi par [Figure exclut la compression de pass-through pour nginx (BasicMiddleware #123)](https://github.com/aspnet/BasicMiddleware/issues/123).
+Lorsqu’une demande est transmise par Nginx, le `Accept-Encoding` en-tête est supprimé. Cela empêche l’intergiciel (middleware) de la compression de la réponse. Pour plus d’informations, consultez [NGINX : la Compression et décompression](https://www.nginx.com/resources/admin-guide/compression-and-decompression/). Ce problème est suivi par [Figure exclut la compression de pass-through pour Nginx (BasicMiddleware #123)](https://github.com/aspnet/BasicMiddleware/issues/123).
 
 ## <a name="working-with-iis-dynamic-compression"></a>Utilisation de la compression dynamique IIS
 Si vous avez un IIS dynamique Compression Module actif configuré au niveau du serveur que vous voulez désactiver pour une application, vous pouvez le faire avec un ajout à votre *web.config* fichier. Pour plus d’informations, consultez [modules IIS de la désactivation de](xref:host-and-deploy/iis/modules#disabling-iis-modules).

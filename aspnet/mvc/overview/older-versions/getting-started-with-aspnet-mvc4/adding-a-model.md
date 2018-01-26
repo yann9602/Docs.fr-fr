@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-a-model
 msc.type: authoredcontent
-ms.openlocfilehash: 1d066e4bab866a2195647f43aa886279fee941db
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 304c428b0d787e902f30c1989471c476f54d3b39
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-a-model"></a>Ajout d’un modèle
 ====================
@@ -28,7 +28,7 @@ Par [Rick Anderson](https://github.com/Rick-Anderson)
 
 Dans cette section, vous allez ajouter des classes pour la gestion des films dans une base de données. Ces classes seront les &quot;modèle&quot; dans le cadre de l’application ASP.NET MVC.
 
-Vous allez utiliser une technologie d’accès aux données .NET Framework appelée le [Entity Framework](https://msdn.microsoft.com/en-us/library/bb399572(VS.110).aspx) pour définir et utiliser ces classes de modèle. Le prend en charge Entity Framework (souvent appelés EF) un paradigme de développement appelé *Code First*. Code permet tout d’abord vous permet de créer des objets de modèle en écrivant des classes simples. (Ils sont également appelés classes POCO, à partir de &quot;objets de brut-old CLR.&quot;) Vous pouvez ensuite configurer la base de données créé à la volée à partir de vos classes, ce qui permet un flux de travail de développement très propre et plus rapide.
+Vous allez utiliser une technologie d’accès aux données .NET Framework appelée le [Entity Framework](https://msdn.microsoft.com/library/bb399572(VS.110).aspx) pour définir et utiliser ces classes de modèle. Le prend en charge Entity Framework (souvent appelés EF) un paradigme de développement appelé *Code First*. Code permet tout d’abord vous permet de créer des objets de modèle en écrivant des classes simples. (Ils sont également appelés classes POCO, à partir de &quot;objets de brut-old CLR.&quot;) Vous pouvez ensuite configurer la base de données créé à la volée à partir de vos classes, ce qui permet un flux de travail de développement très propre et plus rapide.
 
 ## <a name="adding-model-classes"></a>Ajouter des Classes de modèle
 

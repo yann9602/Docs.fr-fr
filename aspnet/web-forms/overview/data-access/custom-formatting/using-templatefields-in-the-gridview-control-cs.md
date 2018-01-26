@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/using-templatefields-in-the-gridview-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 4202f25b241a6ca115c1ffc0a80258ee96563f72
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 004f1450937cc6543cb728e01586e3c3529a57d0
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-templatefields-in-the-gridview-control-c"></a>Utilisation de TemplateField dans le contrôle GridView (c#)
 ====================
@@ -158,7 +158,7 @@ Pour terminer cette première étape, vous devez supprimer la `LastName` BoundFi
 
 ## <a name="step-3-using-the-calendar-control-to-display-thehireddatefield"></a>Étape 3 : Utilisation du contrôle de calendrier pour afficher le`HiredDate`champ
 
-Affichage d’une valeur de champ de données sous forme de texte dans un GridView est aussi simple que d’utiliser un BoundField. Pour certains scénarios, cependant, les données sont mieux exprimées à l’aide d’un contrôle Web spécifique à la place uniquement du texte. Cette personnalisation de l’affichage des données est possible avec TemplateField. Par exemple, plutôt que d’afficher la date d’embauche sous forme de texte, nous pouvons afficher un calendrier (à l’aide de [le contrôle Calendar](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.calendar(VS.80).aspx)) avec leur date d’embauche mis en surbrillance.
+Affichage d’une valeur de champ de données sous forme de texte dans un GridView est aussi simple que d’utiliser un BoundField. Pour certains scénarios, cependant, les données sont mieux exprimées à l’aide d’un contrôle Web spécifique à la place uniquement du texte. Cette personnalisation de l’affichage des données est possible avec TemplateField. Par exemple, plutôt que d’afficher la date d’embauche sous forme de texte, nous pouvons afficher un calendrier (à l’aide de [le contrôle Calendar](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar(VS.80).aspx)) avec leur date d’embauche mis en surbrillance.
 
 Pour ce faire, commencez par convertir le `HiredDate` BoundField en TemplateField. Simplement accéder à la balise active du GridView et cliquez sur le lien Modifier les colonnes, afficher la boîte de dialogue champs. Sélectionnez le `HiredDate` BoundField et cliquez sur « Convertir ce champ en TemplateField. »
 
@@ -178,7 +178,7 @@ Pour remplacer le texte par un contrôle de calendrier, modifiez le modèle en s
 **Figure 12**: ajouter un contrôle de calendrier à la `HireDate` de TemplateField `ItemTemplate` ([cliquez pour afficher l’image en taille réelle](using-templatefields-in-the-gridview-control-cs/_static/image36.png))
 
 
-À ce stade, chaque ligne dans le GridView contiendra un contrôle calendrier dans son `HiredDate` TemplateField. Toutefois, l’employé de réel `HiredDate` valeur n’est pas définie n’importe où dans le contrôle de calendrier, à l’origine de chaque contrôle de calendrier par défaut à l’affichage de la date et le mois en cours. Pour résoudre ce problème, nous devons attribuer de chaque employé `HiredDate` au contrôle de calendrier [SelectedDate](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.calendar.selecteddate(VS.80).aspx) et [VisibleDate](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.calendar.visibledate(VS.80).aspx) propriétés.
+À ce stade, chaque ligne dans le GridView contiendra un contrôle calendrier dans son `HiredDate` TemplateField. Toutefois, l’employé de réel `HiredDate` valeur n’est pas définie n’importe où dans le contrôle de calendrier, à l’origine de chaque contrôle de calendrier par défaut à l’affichage de la date et le mois en cours. Pour résoudre ce problème, nous devons attribuer de chaque employé `HiredDate` au contrôle de calendrier [SelectedDate](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar.selecteddate(VS.80).aspx) et [VisibleDate](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar.visibledate(VS.80).aspx) propriétés.
 
 À partir de la balise du contrôle de calendrier, cliquez sur Modifier les DataBindings. Ensuite, liez les deux `SelectedDate` et `VisibleDate` propriétés pour le `HiredDate` champ de données.
 
@@ -260,7 +260,7 @@ La figure 16 montre le didacticiel terminé, lorsqu’ils sont affichés via un 
 **Figure 16**: le nombre de jours de l’employé a été lors de la tâche s’affiche ([cliquez pour afficher l’image en taille réelle](using-templatefields-in-the-gridview-control-cs/_static/image48.png))
 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Le TemplateField dans le contrôle GridView permet un degré plus élevé de flexibilité dans l’affichage des données qu’il n’est disponible avec les autres contrôles de champ. TemplateField est idéales pour les situations où :
 

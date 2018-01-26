@@ -2,20 +2,18 @@
 title: "Chaînes d’objectif dans ASP.NET Core"
 author: rick-anderson
 description: "Ce document décrit la hiérarchie de chaîne de fin et une architecture mutualisée par rapport à l’API de protection des données ASP.NET Core."
-keywords: "ASP.NET Core, protection des données, les chaînes d’objectif"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: 9d18c287-e0e6-4541-b09c-7fed45c902d9
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/consumer-apis/purpose-strings-multitenancy
-ms.openlocfilehash: ce506710042bfb76015c3af991b17e018b78e970
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e7b08df32069cf1243630accda82eb6250594c53
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="purpose-hierarchy-and-multi-tenancy-in-aspnet-core"></a>Hiérarchie d’objet et une architecture mutualisée dans ASP.NET Core
 

@@ -2,20 +2,18 @@
 title: "Cœur de ASP.NET MVC avec EF Core - héritage - 9, 10"
 author: tdykstra
 description: "Ce didacticiel vous indiquera comment implémenter l’héritage dans le modèle de données, à l’aide d’Entity Framework Core dans une application ASP.NET Core."
-keywords: "Héritage ASP.NET Core, Entity Framework Core,"
 ms.author: tdykstra
 manager: wpickett
 ms.date: 03/15/2017
 ms.topic: get-started-article
-ms.assetid: 41dc0db7-6f17-453e-aba6-633430609c74
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/inheritance
-ms.openlocfilehash: 10bde121dac3bdbbf0e55f2d146d91dea0f0210f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a4ae696bdd114ab9c36d1218f753fa3d515f2300
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="inheritance---ef-core-with-aspnet-core-mvc-tutorial-9-of-10"></a>Héritage - Core EF avec le didacticiel d’ASP.NET MVC de base (9 sur 10)
 
@@ -108,7 +106,7 @@ Ce code prend en charge les tâches de mise à jour de base de données suivante
 
 * Rend HireDate nullable étant donné que les lignes de l’étudiant n’ont des dates d’embauche.
 
-* Ajoute un champ temporaire qui sera utilisé pour mettre à jour les clés étrangères qui pointent vers les étudiants. Lorsque vous copiez des étudiants dans la table Person ils obtenez de nouvelles valeurs de clé primaires.
+* Ajoute un champ temporaire qui sera utilisé pour mettre à jour les clés étrangères qui pointent vers les étudiants. Lorsque vous copiez des étudiants dans la table Person qu’ils obtiendront les nouvelles valeurs de clé primaires.
 
 * Copie des données à partir de la table de l’étudiant dans la table Person. Cela provoque des étudiants obtenir attribué les nouvelles valeurs de clé primaires.
 
@@ -141,7 +139,7 @@ Avec le bouton droit de la table Person, puis cliquez sur **afficher les donnée
 
 ![Table Person dans SSOX - données de la table](inheritance/_static/ssox-person-data.png)
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Vous avez implémenté l’héritage table par hiérarchie pour le `Person`, `Student`, et `Instructor` classes. Pour plus d’informations sur l’héritage dans Entity Framework Core, consultez [héritage](https://docs.microsoft.com/ef/core/modeling/inheritance). Dans l’étape suivante du didacticiel, vous allez apprendre à gérer une variété de scénarios de Entity Framework relativement avancés.
 

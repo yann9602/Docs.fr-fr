@@ -2,20 +2,18 @@
 title: Le routage ASP.NET Core
 author: ardalis
 description: "Découvrez comment les fonctionnalités de routage ASP.NET Core sont responsable de mappage d’une demande entrante à un gestionnaire d’itinéraire."
-keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: bbbcf9e4-3c4c-4f50-b91e-175fe9cae4e2
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/routing
-ms.openlocfilehash: 58388f674ed5d353c1c7208a67fb338e49fdb592
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8f6f4fac89afe14d83d629128fc3e4632ae95510
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="routing-in-aspnet-core"></a>Le routage ASP.NET Core
 
@@ -102,7 +100,7 @@ routes.MapRoute(
 
 Ce modèle correspond à un chemin d’accès de l’URL comme `/Products/Details/17` et extraire les valeurs d’itinéraire `{ controller = Products, action = Details, id = 17 }`. Les valeurs d’itinéraire sont déterminées par le fractionnement le chemin d’accès de l’URL en segments et correspondant à chaque segment avec le *paramètre d’itinéraire* nom dans le modèle d’itinéraire. Paramètres d’itinéraire sont nommés. Ils sont définis en incluant le nom du paramètre entouré d’accolades `{ }`.
 
-Le modèle ci-dessus peut également correspondre le chemin d’accès URL `/` et génère les valeurs `{ controller = Home, action = Index }`. Cela se produit car le `{controller}` et `{action}` paramètres d’itinéraire ont des valeurs par défaut et le `id` paramètre d’itinéraire est facultatif. Égal `=` signe suivi d’une valeur une fois que le nom de paramètre d’itinéraire définit une valeur par défaut pour le paramètre. Un point d’interrogation `?` après le nom de paramètre d’itinéraire définit le paramètre comme facultatif. Paramètres avec une valeur par défaut d’itinéraire *toujours* produisent une valeur de routage lors de l’itinéraire correspond à - paramètres optionnels ne produisent pas une valeur de l’itinéraire s’il y a aucun segment de chemin d’accès d’URL correspondante.
+Le modèle ci-dessus peut également correspondre le chemin d’accès URL `/` et génère les valeurs `{ controller = Home, action = Index }`. Cela se produit car le `{controller}` et `{action}` paramètres d’itinéraire ont des valeurs par défaut et le `id` paramètre d’itinéraire est facultatif. Égal `=` signe suivi d’une valeur une fois que le nom de paramètre d’itinéraire définit une valeur par défaut pour le paramètre. Un point d’interrogation `?` après le nom de paramètre d’itinéraire définit le paramètre comme facultatif. Paramètres avec une valeur par défaut d’itinéraire *toujours* produisent une valeur de routage lors de l’itinéraire correspond à - paramètres facultatifs ne produisent une valeur de routage s’il y a aucun segment de chemin d’accès d’URL correspondante.
 
 Consultez [référence du modèle d’itinéraire](#route-template-reference) pour une description complète des fonctionnalités de modèle d’itinéraire et la syntaxe.
 
@@ -232,11 +230,11 @@ Le tableau ci-dessous montre les réponses avec l’URI donné.
 
 | URI | Réponse  |
 | ------- | -------- |
-| /package/Create/3  | Hello! Valeurs d’itinéraire : [opération, créer], [id, 3] |
-| / package/suivi /-3  | Hello! Valeurs d’itinéraire : [opération, le suivi,] [id -3] |
+| /package/create/3  | Hello! Valeurs d’itinéraire : [opération, créer], [id, 3] |
+| /package/track/-3  | Hello! Valeurs d’itinéraire : [opération, le suivi,] [id -3] |
 | / package/suivi/3 / | Hello! Valeurs d’itinéraire : [opération, le suivi,] [id -3]  |
 | /package/suivi | \<Passage à aucune correspondance > |
-| OBTENIR /hello/Joe | Bonjour, Joe ! |
+| GET /hello/Joe | Bonjour, Joe ! |
 | POST /hello/Joe | \<Passer, correspond à HTTP GET uniquement > |
 | OBTENIR /hello/Joe/Smith | \<Passage à aucune correspondance > |
 
@@ -275,14 +273,14 @@ Paramètres d’itinéraire peuvent également avoir des contraintes, qui doiven
 
 Le tableau suivant illustre certains modèles d’itinéraire et leur comportement.
 
-| Modèle d’itinéraire | Exemple d’URL mise en correspondance | Remarques |
+| Modèle d’itinéraire | Exemple d’URL mise en correspondance | Notes |
 | -------- | -------- | ------- |
-| hello  | / Bonjour  | Correspond uniquement au chemin d’accès unique`/hello` |
-| {Page = Home} | / | Correspond à et définit `Page` à`Home` |
-| {Page = Home}  | / Contact  | Correspond à et définit `Page` à`Contact` |
-| {controller} / {action} / {id} ? | / Produits/liste | Mappe à `Products` contrôleur et `List` action |
-| {controller} / {action} / {id} ? | / Produits/détails/123  |  Mappe à `Products` contrôleur et `Details` action.  `id`la valeur 123 |
-| {contrôleur = Home} / {action = Index} / {id} ? | /  |  Mappe à `Home` contrôleur et `Index` méthode ; `id` est ignoré. |
+| hello  | /hello  | Correspond uniquement au chemin d’accès unique`/hello` |
+| {Page=Home} | / | Correspond à et définit `Page` à`Home` |
+| {Page=Home}  | /Contact  | Correspond à et définit `Page` à`Contact` |
+| {controller}/{action}/{id?} | / Produits/liste | Mappe à `Products` contrôleur et `List` action |
+| {controller}/{action}/{id?} | /Products/Details/123  |  Mappe à `Products` contrôleur et `Details` action.  `id`la valeur 123 |
+| {controller=Home}/{action=Index}/{id?} | /  |  Mappe à `Home` contrôleur et `Index` méthode ; `id` est ignoré. |
 
 À l’aide d’un modèle est généralement l’approche la plus simple pour le routage. Contraintes et des valeurs par défaut peuvent également être spécifiées en dehors du modèle d’itinéraire.
 
@@ -297,7 +295,7 @@ Contraintes d’itinéraire exécutent quand un `Route` a mis en correspondance 
 
 Le tableau suivant illustre certaines contraintes d’itinéraire et leur comportement attendu.
 
-| contrainte | Exemple | Correspondances d’exemple | Remarques |
+| contrainte | Exemple | Correspondances d’exemple | Notes |
 | --------   | ------- | ------------- | ----- |
 | `int` | `{id:int}` | `123456789`, `-123456789`  | Correspond à n’importe quel entier |
 | `bool`  | `{active:bool}` | `true`, `FALSE` | Correspondances `true` ou `false` (non-respect de la casse) |
@@ -340,7 +338,7 @@ Souvent des expressions régulières utilisées dans le routage commence par la 
 | ----------------- | ------------ |  ------------ |  ------------ | 
 | `[a-z]{2}` | hello | oui | correspondances de sous-chaînes |
 | `[a-z]{2}` | 123abc456 | oui | correspondances de sous-chaînes |
-| `[a-z]{2}` | Mz | oui | correspond à l’expression |
+| `[a-z]{2}` | mz | oui | correspond à l’expression |
 | `[a-z]{2}` | MZ | oui | non respect de la casse |
 | `^[a-z]{2}$` |  hello | Non | consultez `^` et `$` ci-dessus |
 | `^[a-z]{2}$` |  123abc456 | Non | consultez `^` et `$` ci-dessus |
@@ -365,10 +363,10 @@ Les valeurs qui sont fournis explicitement, mais qui ne correspond à rien sont 
 
 | Valeurs ambiantes | Valeurs explicites | Résultat |
 | -------------   | -------------- | ------ |
-| contrôleur = « Accueil » | action = « About » | `/Home/About` |
-| contrôleur = « Accueil » | contrôleur = « Order », action = « About » | `/Order/About` |
-| contrôleur = « Home », color = « Red » | action = « About » | `/Home/About` |
-| contrôleur = « Accueil » | action = « About », de couleur = « Red » | `/Home/About?color=Red`
+| controller="Home" | action="About" | `/Home/About` |
+| controller="Home" | controller="Order",action="About" | `/Order/About` |
+| contrôleur = « Home », color = « Red » | action="About" | `/Home/About` |
+| controller="Home" | action = « About », de couleur = « Red » | `/Home/About?color=Red`
 
 Si un itinéraire a la valeur par défaut qui ne correspond pas à un paramètre et cette valeur est explicitement fournie, il doit correspondre à la valeur par défaut. Exemple :
 

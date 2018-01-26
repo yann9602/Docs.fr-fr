@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/owin-and-katana/owin-middleware-in-the-iis-integrated-pipeline
 msc.type: authoredcontent
-ms.openlocfilehash: 42851cb9b8046ca4f70894b9ec5b671b269da04c
-ms.sourcegitcommit: 97432cbf9b8673bc4ad7012d5b6f2ed273420295
+ms.openlocfilehash: 4e1270f9fb58032d22380117f4ec18b00bd725fc
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/17/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="owin-middleware-in-the-iis-integrated-pipeline"></a>Intergiciel OWIN dans le pipeline intégré IIS
 ====================
@@ -36,9 +36,9 @@ Cela signifie que toutes les infrastructures d’application, y compris ceux qui
 
 ## <a name="how-owin-middleware-executes-in-the-iis-integrated-pipeline"></a>Comment intergiciel (middleware) OWIN s’exécute dans le Pipeline intégré IIS
 
-Pour les applications de console OWIN, le pipeline d’application générée à l’aide du [configuration de démarrage](owin-startup-class-detection.md) est définie par l’ordre les composants sont ajoutés à l’aide de la `IAppBuilder.Use` (méthode). Autrement dit, le pipeline OWIN dans le [Katana](an-overview-of-project-katana.md) runtime traitera OMCs dans l’ordre qu’ils ont été inscrits à l’aide de `IAppBuilder.Use`. Dans le pipeline intégré IIS, le pipeline de requête se compose de [HttpModules](https://msdn.microsoft.com/en-us/library/ms178468(v=vs.85).aspx) abonné à un ensemble prédéfini des événements de pipeline, tel que [BeginRequest](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.beginrequest.aspx), [AuthenticateRequest](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.authenticaterequest.aspx), [AuthorizeRequest](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.authorizerequest.aspx), etc.
+Pour les applications de console OWIN, le pipeline d’application générée à l’aide du [configuration de démarrage](owin-startup-class-detection.md) est définie par l’ordre les composants sont ajoutés à l’aide de la `IAppBuilder.Use` (méthode). Autrement dit, le pipeline OWIN dans le [Katana](an-overview-of-project-katana.md) runtime traitera OMCs dans l’ordre qu’ils ont été inscrits à l’aide de `IAppBuilder.Use`. Dans le pipeline intégré IIS, le pipeline de requête se compose de [HttpModules](https://msdn.microsoft.com/library/ms178468(v=vs.85).aspx) abonné à un ensemble prédéfini des événements de pipeline, tel que [BeginRequest](https://msdn.microsoft.com/library/system.web.httpapplication.beginrequest.aspx), [AuthenticateRequest](https://msdn.microsoft.com/library/system.web.httpapplication.authenticaterequest.aspx), [AuthorizeRequest](https://msdn.microsoft.com/library/system.web.httpapplication.authorizerequest.aspx), etc.
 
-Si nous comparer un OMC à celle d’un [HttpModule](https://msdn.microsoft.com/en-us/library/zec9k340(v=vs.85).aspx) dans le monde d’ASP.NET, un OMC doit être inscrit à l’événement correct de pipeline prédéfinies. Par exemple, HttpModule `MyModule` sera invoquée lorsqu’une requête arrive la [AuthenticateRequest](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.authenticaterequest.aspx) étape du pipeline :
+Si nous comparer un OMC à celle d’un [HttpModule](https://msdn.microsoft.com/library/zec9k340(v=vs.85).aspx) dans le monde d’ASP.NET, un OMC doit être inscrit à l’événement correct de pipeline prédéfinies. Par exemple, HttpModule `MyModule` sera invoquée lorsqu’une requête arrive la [AuthenticateRequest](https://msdn.microsoft.com/library/system.web.httpapplication.authenticaterequest.aspx) étape du pipeline :
 
 [!code-csharp[Main](owin-middleware-in-the-iis-integrated-pipeline/samples/sample2.cs?highlight=10)]
 
@@ -57,7 +57,7 @@ La configuration de démarrage définit un pipeline avec les composants d’inte
 
 [!code-console[Main](owin-middleware-in-the-iis-integrated-pipeline/samples/sample5.cmd)]
 
-Le runtime Katana mappés chacun des composants d’intergiciel (middleware) OWIN pour [PreExecuteRequestHandler](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.prerequesthandlerexecute.aspx) par défaut, ce qui correspond à l’événement de pipeline IIS [PreRequestHandlerExecute](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.prerequesthandlerexecute.aspx).
+Le runtime Katana mappés chacun des composants d’intergiciel (middleware) OWIN pour [PreExecuteRequestHandler](https://msdn.microsoft.com/library/system.web.httpapplication.prerequesthandlerexecute.aspx) par défaut, ce qui correspond à l’événement de pipeline IIS [PreRequestHandlerExecute](https://msdn.microsoft.com/library/system.web.httpapplication.prerequesthandlerexecute.aspx).
 
 ## <a name="stage-markers"></a>Marqueurs d’étape
 
@@ -65,7 +65,7 @@ Vous pouvez marquer OMCs à exécuter à plusieurs étapes du pipeline à l’ai
 
 [!code-csharp[Main](owin-middleware-in-the-iis-integrated-pipeline/samples/sample6.cs?highlight=13,19)]
 
-Le `app.UseStageMarker(PipelineStage.Authenticate)` appel configure tous les composants d’intergiciel (middleware) précédemment inscrites (dans ce cas, les deux composants de diagnostic) pour s’exécuter sur l’étape d’authentification du pipeline. Le dernier composant d’intergiciel (middleware) (qui affiche des diagnostics et répond aux demandes) s’exécutera sur le `ResolveCache` stade (le [ResolveRequestCache](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.resolverequestcache.aspx) événement).
+Le `app.UseStageMarker(PipelineStage.Authenticate)` appel configure tous les composants d’intergiciel (middleware) précédemment inscrites (dans ce cas, les deux composants de diagnostic) pour s’exécuter sur l’étape d’authentification du pipeline. Le dernier composant d’intergiciel (middleware) (qui affiche des diagnostics et répond aux demandes) s’exécutera sur le `ResolveCache` stade (le [ResolveRequestCache](https://msdn.microsoft.com/library/system.web.httpapplication.resolverequestcache.aspx) événement).
 
 Appuyez sur F5 pour exécuter l’application. La fenêtre Sortie affiche les informations suivantes :
 

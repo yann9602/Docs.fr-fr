@@ -2,20 +2,18 @@
 title: "Application d’assistance de balise d’image | Documents Microsoft"
 author: pkellner
 description: "Montre comment travailler avec l’Image, balise d’assistance"
-keywords: ASP.NET Core,tag helper
 ms.author: riande
 manager: wpickett
 ms.date: 02/14/2017
 ms.topic: article
-ms.assetid: c045d485-d1dc-4cea-a675-46be83b7a013
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: mvc/views/tag-helpers/builtin-th/image-tag-helper
-ms.openlocfilehash: 0d55514508b963ce05031f89a20af696f5d4a670
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d0857e1926c341b2357bc824fa379c4fc30affbc
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="imagetaghelper"></a>ImageTagHelper
 
@@ -30,7 +28,7 @@ Si la source d’image (`src`) n’est pas un fichier statique (par exemple une 
 ## <a name="image-tag-helper-attributes"></a>Attributs d’assistance balises d’image
 
 
-### <a name="asp-append-version"></a>ASP-ajouter-version
+### <a name="asp-append-version"></a>asp-append-version
 
 Lorsque spécifié avec un `src` attribut, l’assistance de balise d’Image est appelé.
 
@@ -57,7 +55,7 @@ La valeur affectée au paramètre `v` est la valeur de hachage de fichier sur le
 Pour activer l’assistance de balise d’Image, l’attribut src est requis sur le `<img>` élément. 
 
 > [!NOTE]
-> L’assistance de balise d’Image utilise le `Cache` fournisseur sur le serveur web local pour stocker le texte calculé `Sha512` d’un fichier donné. Si le fichier est demandé à nouveau le `Sha512` ne doivent pas être recalculées. Le Cache est invalidé par un observateur de fichier qui est associé au fichier lors du fichier `Sha512` est calculée.
+> L’assistance de balise d’Image utilise le `Cache` fournisseur sur le serveur web local pour stocker le texte calculé `Sha512` d’un fichier donné. Si le fichier est demandé à nouveau le `Sha512` ne doivent être recalculées. Le Cache est invalidé par un observateur de fichier qui est associé au fichier lors du fichier `Sha512` est calculée.
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 

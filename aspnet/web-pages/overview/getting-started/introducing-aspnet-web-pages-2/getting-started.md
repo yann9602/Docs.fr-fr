@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/getting-started
 msc.type: authoredcontent
-ms.openlocfilehash: 615ddc31d0d857e5bf9a7f372b7efcf67d185905
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a6789ee75b4ca6e9443681cc7ec0bd3ab94cedcd
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="introducing-aspnet-web-pages---getting-started"></a>Présentation des Pages Web ASP.NET - mise en route
 ====================
@@ -124,8 +124,8 @@ Vous voulez voir le site terminé en cours d’exécution comme une application 
 
 Vous avez besoin d’un compte Azure pour déployer cette solution sur Azure. Si vous n’avez pas déjà un compte, vous disposez des options suivantes :
 
-- [Ouvrir un compte Azure gratuitement](https://azure.microsoft.com/en-us/pricing/free-trial/?WT.mc_id=A443DD604) -vous obtenez des crédits que vous pouvez utiliser pour tester les services Azure payants et même après qu’ils soient utilisés jusqu'à, vous pouvez conserver le compte et libérer de l’utilisation des services Azure.
-- [Activer les abonnés MSDN](https://azure.microsoft.com/en-us/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A443DD604) -votre abonnement MSDN vous donne des crédits chaque mois que vous pouvez utiliser pour les services Azure payants.
+- [Ouvrir un compte Azure gratuitement](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A443DD604) -vous obtenez des crédits que vous pouvez utiliser pour tester les services Azure payants et même après qu’ils soient utilisés jusqu'à, vous pouvez conserver le compte et libérer de l’utilisation des services Azure.
+- [Activer les abonnés MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A443DD604) -votre abonnement MSDN vous donne des crédits chaque mois que vous pouvez utiliser pour les services Azure payants.
 
 ## <a name="installing-everything"></a>L’installation de tous les éléments
 
@@ -155,7 +155,7 @@ Le processus d’installation détermine qu’il doit installer sur votre ordina
 
 Lorsqu’il est terminé, le processus d’installation peut lancer automatiquement WebMatrix. Si ce n’est pas, dans Windows, à partir de la **Démarrer** menu, lancez **Microsoft WebMatrix**.
 
-Lors du lancement de WebMatrix pour la première fois, vous obtenez la possibilité de se connecter à Microsoft Azure avec votre compte Microsoft. En vous connectant, vous recevrez 10 applications web gratuites via Azure. Ces applications web gratuites fournissent un moyen pratique de tester vos applications. Si vous n’avez pas encore un compte Azure, mais vous disposez d’un abonnement MSDN, vous pouvez [activer votre abonnement MSDN](https://www.windowsazure.com/en-us/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A443DD604). Sinon, vous pouvez créer un compte d’évaluation gratuit en quelques minutes. Pour plus d’informations, consultez [d’évaluation gratuite Azure](https://azure.microsoft.com/free/?WT.mc_id=A443DD604).
+Lors du lancement de WebMatrix pour la première fois, vous obtenez la possibilité de se connecter à Microsoft Azure avec votre compte Microsoft. En vous connectant, vous recevrez 10 applications web gratuites via Azure. Ces applications web gratuites fournissent un moyen pratique de tester vos applications. Si vous n’avez pas encore un compte Azure, mais vous disposez d’un abonnement MSDN, vous pouvez [activer votre abonnement MSDN](https://www.windowsazure.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A443DD604). Sinon, vous pouvez créer un compte d’évaluation gratuit en quelques minutes. Pour plus d’informations, consultez [d’évaluation gratuite Azure](https://azure.microsoft.com/free/?WT.mc_id=A443DD604).
 
 Il est inutile de vous connecter maintenant pour poursuivre ce didacticiel. Si vous ne signez pas maintenant, vous rencontrez l’option pour vous connecter plus tard. La dernière [rubrique](publishing.md) dans ce didacticiel série explique comment déployer votre site Web sur Azure ; par conséquent, vous devez vous connecter à la fin de cette rubrique.
 

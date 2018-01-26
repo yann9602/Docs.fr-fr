@@ -2,20 +2,18 @@
 title: "Razor Pages itinéraire et application convention fonctionnalités dans ASP.NET Core"
 author: guardrex
 description: "Découvrez comment itinéraire et application des fonctionnalités de convention modèle fournisseur vous aident routage de page de contrôle, de découverte et de traitement."
-keywords: ASP.NET Core, les Pages Razor, conventions, AddFolderRouteModelConvention, AddPageRouteModelConvention, AddPageRoute, AddFolderApplicationModelConvention, AddPageApplicationModelConvention, ConfigureFilter, filtres
 ms.author: riande
 manager: wpickett
 ms.date: 10/23/2017
 ms.topic: article
-ms.assetid: 6b60514c-81ad-485b-bb22-9b71416dff08
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/razor-pages/razor-pages-convention-features
-ms.openlocfilehash: 81fe5198e25c4275f5cf0a123536a9130be8c1d9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 69475ca9abd4e732dc704ad6a8a2fffe219984f7
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="razor-pages-route-and-app-convention-features-in-aspnet-core"></a>Razor Pages itinéraire et application convention fonctionnalités dans ASP.NET Core
 
@@ -298,4 +296,4 @@ Demander à l’exemple d’application avec à Page3 `localhost:5000/OtherPages
 
 ## <a name="see-also"></a>Voir aussi
 
-* [Conventions de l’autorisation de Pages Razor](xref:security/authorization/razor-pages-authorization)
+* [Conventions d’autorisation des pages Razor](xref:security/authorization/razor-pages-authorization)

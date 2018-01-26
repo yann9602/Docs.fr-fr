@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/introduction
 msc.type: authoredcontent
-ms.openlocfilehash: e14f3bed001592c85bdbba868f51141bc52a9470
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 51344535e7ff42f1bd6641aeaaf043be6423f1b7
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-introduction"></a>Déploiement de Web ASP.NET à l’aide de Visual Studio : Introduction
 ====================
@@ -53,7 +53,7 @@ Les didacticiels visant les développeurs ASP.NET qui travaillent dans des envir
 Déploiement à partir de [contrôle de code source](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control.md) à l’aide un [livraison continue](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery.md) processus n’est pas couverte dans ces didacticiels à l’exception d’un didacticiel qui montre comment déployer à partir de la ligne de commande. Pour plus d’informations sur la diffusion en continu, consultez les ressources suivantes :
 
 - [Intégration continue et livraison continue (génération d’applications Cloud du monde réel avec Windows Azure)](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery.md)
-- [Déployer une application web dans Azure App Service](https://azure.microsoft.com/en-us/documentation/articles/web-sites-deploy/)
+- [Déployer une application web dans Azure App Service](https://azure.microsoft.com/documentation/articles/web-sites-deploy/)
 - [Déployer des Applications Web dans les scénarios d’entreprise](../deploying-web-applications-in-enterprise-scenarios/deploying-web-applications-in-enterprise-scenarios.md) (un ancien ensemble de didacticiels écrits pour Visual Studio 2010, qui dispose toujours des informations utiles pour les environnements d’entreprise.)
 
 ## <a name="using-a-third-party-hosting-provider"></a>À l’aide d’un fournisseur d’hébergement tiers
@@ -114,7 +114,7 @@ Commentaires sur les didacticiels sont les bienvenus, et lorsque le didacticiel 
 
 <a id="prerequisites"></a>
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 Ce didacticiel a été écrite pour les produits suivants :
 
@@ -130,7 +130,7 @@ Si vous utilisez Visual Studio 2010 SP1, installez les logiciels suivants :
 
 - [Azure SDK pour Visual Studio 2010](https://go.microsoft.com/fwlink/?LinkID=254269)
 - [SQL Server Express LocalDB](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=SQLLocalDBOnly_11_0)
-- [SQL Server Data Tools](https://msdn.microsoft.com/en-us/library/hh500335.aspx).
+- [SQL Server Data Tools](https://msdn.microsoft.com/library/hh500335.aspx).
 
 Selon le nombre des dépendances du Kit de développement logiciel vous disposez déjà sur votre ordinateur, l’installation du SDK Azure peut prendre beaucoup de temps, de plusieurs minutes au moins une demi-heure. Vous devez le SDK Azure même si vous envisagez de les publier sur un fournisseur d’hébergement tiers au lieu de vers Azure, fonctionnalités de publication, car le kit SDK inclut les dernières mises à jour sur le web de Visual Studio.
 
@@ -198,7 +198,7 @@ Les fonctionnalités suivantes de l’application affectent le déploiement ou q
 - L’application inclut certains paramètres qui doivent être modifiées dans déployé *Web.config* selon l’environnement de destination (test, intermédiaire ou production) et d’autres paramètres qui doivent être modifiés en fonction de la build configuration (Debug ou Release).
 - La solution Visual Studio inclut un projet de bibliothèque de classes. Uniquement l’assembly généré par ce projet doit être déployé, pas le projet lui-même.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Dans ce premier didacticiel de la série, vous avez téléchargé l’exemple de projet Visual Studio et passé en revue les fonctionnalités du site qui affectent la façon dont vous déployez l’application. Dans les didacticiels suivants vous préparer pour le déploiement en définissant une partie de ces éléments pour être géré automatiquement. D’autres que vous prenez soin de manuellement.
 

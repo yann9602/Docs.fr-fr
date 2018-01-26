@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/using-oauth-providers-with-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: 965d2e740cc76838b1b4e1c618a2a6d784672fcc
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f0d053cecbf9a59f258470ee370852e3f112908c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-oauth-providers-with-mvc-4"></a>À l’aide des fournisseurs OAuth avec MVC 4
 ====================
@@ -38,7 +38,7 @@ Il existe deux principaux objectifs de ce didacticiel :
 
 Bien que les exemples de ce didacticiel se concentrent sur l’utilisation de Facebook comme fournisseur d’authentification, vous pouvez modifier le code pour utiliser un des fournisseurs. Les étapes pour implémenter n’importe quel fournisseur sont très similaires à celles que vous voyez dans ce didacticiel. Vous remarquez des différences significatives lorsque vous appelez directement les API du fournisseur défini.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 - [Microsoft Visual Studio 2012](https://www.microsoft.com/visualstudio/eng/downloads#vs) ou [Microsoft Visual Studio Express 2012 pour le Web](https://www.microsoft.com/visualstudio/eng/downloads#d-2012-express)
 
@@ -148,7 +148,7 @@ Si vous souhaitez uniquement activer l’authentification externe, vous avez ter
 
 Comme vous le remarquer dans les sections précédentes, il est inutile récupérer des informations supplémentaires pour l’enregistrement de compte intégré fonctionner. Toutefois, la plupart de ces fournisseurs passer dans plus d’informations sur l’utilisateur. Les sections suivantes montrent comment conserver ces informations et l’enregistrer dans une base de données. Plus précisément, vous conserverez les valeurs pour le nom complet de l’utilisateur, l’URI de la page web personnelle de l’utilisateur et une valeur qui indique si le compte a vérifié par Facebook.
 
-Vous allez utiliser [Migrations Code First](https://msdn.microsoft.com/en-us/data/jj591621) pour ajouter une table pour stocker des informations utilisateur supplémentaires. Vous ajoutez la table à une base de données existante, donc vous devez d’abord créer un instantané de la base de données actuelle. En créant un instantané de la base de données en cours, vous pouvez ultérieurement créer une migration qui contient uniquement la nouvelle table. Pour créer un instantané de la base de données actuelle :
+Vous allez utiliser [Migrations Code First](https://msdn.microsoft.com/data/jj591621) pour ajouter une table pour stocker des informations utilisateur supplémentaires. Vous ajoutez la table à une base de données existante, donc vous devez d’abord créer un instantané de la base de données actuelle. En créant un instantané de la base de données en cours, vous pouvez ultérieurement créer une migration qui contient uniquement la nouvelle table. Pour créer un instantané de la base de données actuelle :
 
 1. Ouvrez le **Console du Gestionnaire de Package**
 2. Exécutez la commande **enable-migrations**

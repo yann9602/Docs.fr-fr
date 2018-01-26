@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v4/create-an-odata-v4-client-app
 msc.type: authoredcontent
-ms.openlocfilehash: daa39fbbb4ff17d61f71bf2a642a9c2260b353e4
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 51a3c7b9c5b6525d6d82b9a45910f58b71268b7f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="create-an-odata-v4-client-app-c"></a>Créer une application de Client OData v4 (c#)
 ====================
@@ -50,7 +50,7 @@ Exécutez le projet de ProductService à partir de Visual Studio. Par défaut, V
 
 ## <a name="generate-the-service-proxy"></a>Générer le Proxy de Service
 
-Le proxy de service est une classe .NET qui définit des méthodes pour accéder au service OData. Le proxy traduit les appels de méthode dans les requêtes HTTP. Vous allez créer la classe proxy en exécutant un [modèle T4](https://msdn.microsoft.com/en-us/library/bb126445.aspx).
+Le proxy de service est une classe .NET qui définit des méthodes pour accéder au service OData. Le proxy traduit les appels de méthode dans les requêtes HTTP. Vous allez créer la classe proxy en exécutant un [modèle T4](https://msdn.microsoft.com/library/bb126445.aspx).
 
 Cliquez sur le projet. Sélectionnez **ajouter** &gt; **un nouvel élément**.
 

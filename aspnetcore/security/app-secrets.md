@@ -2,7 +2,6 @@
 title: "Stockage sécurisé des secrets d’application pendant le développement dans ASP.NET Core"
 author: rick-anderson
 description: "Montre comment stocker des clés secrètes en toute sécurité pendant le développement"
-keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
 ms.date: 09/15/2017
@@ -10,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/app-secrets
-ms.openlocfilehash: 897d9b360ceeb5fbb0863ff1c1fcec039e1a8b8f
-ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
+ms.openlocfilehash: 94356cef7a0333f0faac6420b1b5425920b99deb
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="safe-storage-of-app-secrets-during-development-in-aspnet-core"></a>Stockage sécurisé des secrets d’application pendant le développement dans ASP.NET Core
 
@@ -38,7 +37,7 @@ Par exemple, si vous créez une application web ASP.NET Core avec les comptes d�
 L’outil Gestionnaire de secret principal stocke des données sensibles pour les travaux de développement en dehors de l’arborescence de votre projet. L’outil Gestionnaire de la clé secrète est un outil de projet qui peut être utilisé pour stocker des secrets pour un [.NET Core](https://www.microsoft.com/net/core) projet pendant le développement. Avec l’outil Gestionnaire de la clé secrète, vous pouvez associer des secrets de l’application à un projet spécifique et les partager entre plusieurs projets.
 
 >[!WARNING]
-> Le Gestionnaire du Secret ne chiffre pas les clés secrètes stockées et ne doit pas être considérée comme un magasin approuvé. Il est uniquement à des fins de développement. Les clés et valeurs sont stockées dans un fichier de configuration JSON dans le répertoire de profil utilisateur.
+> Le Gestionnaire du Secret ne chiffrer les clés secrètes stockées et ne doit pas être traité comme un magasin approuvé. Il est uniquement à des fins de développement. Les clés et valeurs sont stockées dans un fichier de configuration JSON dans le répertoire de profil utilisateur.
 
 ## <a name="installing-the-secret-manager-tool"></a>Installation de l’outil Gestionnaire de la clé secrète
 
@@ -123,7 +122,7 @@ L’outil Gestionnaire de Secret élimine les détails d’implémentation, tels
 
 La valeur de `userSecretsId` provient de la valeur spécifiée dans *.csproj* fichier.
 
-Vous ne devez pas écrire le code qui dépend de l’emplacement ou le format des données enregistrées avec l’outil Gestionnaire de la clé secrète, car ces détails d’implémentation peuvent changer. Par exemple, les valeurs de clé secrètes sont actuellement *pas* chiffré aujourd'hui, mais peut être un jour.
+Vous ne devez pas écrire du code qui dépend de l’emplacement ou le format des données enregistrées avec l’outil Gestionnaire de la clé secrète, car ces détails d’implémentation peuvent changer. Par exemple, les valeurs de clé secrètes sont actuellement *pas* chiffré aujourd'hui, mais peut être un jour.
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 

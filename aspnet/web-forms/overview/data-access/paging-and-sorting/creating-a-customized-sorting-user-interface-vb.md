@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/creating-a-customized-sorting-user-interface-vb
 msc.type: authoredcontent
-ms.openlocfilehash: c9d6229c88e4fd67f384a5ec459ed661f32f0a50
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 527bfe62a7293d0aa2d6b5b83119bb922906120b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-a-customized-sorting-user-interface-vb"></a>Création d’une Interface d’utilisateur de tri personnalisé (VB)
 ====================
@@ -187,10 +187,10 @@ Avec l’ajout de code ci-dessus, les en-têtes de groupe de tri sont désormais
 
 
 > [!NOTE]
-> Si vous disposez de produits avec `NULL` de base de données des valeurs pour le `CategoryID`, `SupplierID`, ou `UnitPrice` champs, ces valeurs seront affichent comme des chaînes vides dans le GridView par défaut, ce qui signifie le texte de ligne s séparateur pour les produits avec `NULL`valeurs seront lues comme catégorie : (autrement dit, il n’y a s aucun nom de catégorie : comme avec la catégorie : boissons). Si vous souhaitez une valeur affichée ici vous pouvez définir le BoundFields [ `NullDisplayText` propriété](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.boundfield.nulldisplaytext.aspx) au texte que vous souhaitez afficher, ou vous pouvez ajouter une instruction conditionnelle dans la méthode de rendu lors de l’attribution du `currentValue` pour le séparateur ligne s `Text` propriété.
+> Si vous disposez de produits avec `NULL` de base de données des valeurs pour le `CategoryID`, `SupplierID`, ou `UnitPrice` champs, ces valeurs seront affichent comme des chaînes vides dans le GridView par défaut, ce qui signifie le texte de ligne s séparateur pour les produits avec `NULL`valeurs seront lues comme catégorie : (autrement dit, il n’y a s aucun nom de catégorie : comme avec la catégorie : boissons). Si vous souhaitez une valeur affichée ici vous pouvez définir le BoundFields [ `NullDisplayText` propriété](https://msdn.microsoft.com/library/system.web.ui.webcontrols.boundfield.nulldisplaytext.aspx) au texte que vous souhaitez afficher, ou vous pouvez ajouter une instruction conditionnelle dans la méthode de rendu lors de l’attribution du `currentValue` pour le séparateur ligne s `Text` propriété.
 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Le contrôle GridView n’inclut pas de nombreuses options intégrées pour la personnalisation de l’interface de tri. Toutefois, avec un peu de code de bas niveau, il s possible de modifier la hiérarchie de contrôle GridView s pour créer une interface plus personnalisée. Dans ce didacticiel, nous avons vu comment ajouter une ligne de séparateur de groupe de tri pour un GridView pouvant être trié, qui identifie les plus facilement les groupes distincts et ces limites de groupes. Pour obtenir des exemples supplémentaires d’interfaces de tri personnalisés, passez en revue [Scott Guthrie](https://weblogs.asp.net/scottgu/) s [ASP.NET 2.0 GridView tri conseils et astuces](https://weblogs.asp.net/scottgu/archive/2006/02/11/437995.aspx) entrée de blog.
 

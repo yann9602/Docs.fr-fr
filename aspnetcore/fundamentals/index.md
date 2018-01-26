@@ -2,21 +2,19 @@
 title: "Notions de base d’ASP.NET Core"
 author: rick-anderson
 description: "Découvrez les concepts de base permettant de créer des applications ASP.NET Core."
-keywords: "ASP.NET Core,notions de base,vue d’ensemble"
 ms.author: riande
 manager: wpickett
 ms.date: 09/30/2017
 ms.topic: get-started-article
-ms.assetid: a19b7836-63e4-44e8-8250-50d426dd1070
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/index
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 83bed4676be3ca752442da3fe560f1f2a4d728a1
-ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
+ms.openlocfilehash: 0d977c13eb5f4cbe8bac261733bdc747e6c19b2a
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="aspnet-core-fundamentals"></a>Notions de base d’ASP.NET Core
 
@@ -163,7 +161,7 @@ Pour plus d’informations, consultez [État de session et d’application](xref
 
 ## <a name="servers"></a>Serveurs
 
-Le modèle d’hébergement ASP.NET Core n’écoute pas directement les requêtes. Le modèle d’hébergement s’appuie sur une implémentation de serveur HTTP pour transférer la requête à l’application. La requête transférée est enveloppée (wrap) dans un ensemble d’objets de fonctionnalités auxquels vous pouvez accéder via des interfaces. ASP.NET Core inclut un serveur web multiplateforme géré, appelé [Kestrel](xref:fundamentals/servers/kestrel). Kestrel s’exécute souvent derrière un serveur web de production comme [IIS](https://www.iis.net/) ou [nginx](http://nginx.org). Kestrel peut être exécuté comme serveur edge.
+Le modèle d’hébergement ASP.NET Core n’écoute pas directement les requêtes. Le modèle d’hébergement s’appuie sur une implémentation de serveur HTTP pour transférer la requête à l’application. La requête transférée est enveloppée (wrap) dans un ensemble d’objets de fonctionnalités auxquels vous pouvez accéder via des interfaces. ASP.NET Core inclut un serveur web multiplateforme géré, appelé [Kestrel](xref:fundamentals/servers/kestrel). Kestrel s’exécute souvent derrière un serveur web de production comme [IIS](https://www.iis.net/) ou [Nginx](http://nginx.org). Kestrel peut être exécuté comme serveur edge.
 
 Pour plus d’informations, consultez [Serveurs](xref:fundamentals/servers/index) et les rubriques suivantes :
 

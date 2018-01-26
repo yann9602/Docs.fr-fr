@@ -2,7 +2,6 @@
 title: "Vues de base d’ASP.NET MVC"
 author: ardalis
 description: "Découvrez comment gérer les vues de présentation des données de l’application et l’interaction utilisateur dans ASP.NET MVC de base."
-keywords: ASP.NET Core, afficher, MVC, razor, viewmodel, viewdata, viewbag
 ms.author: riande
 manager: wpickett
 ms.date: 12/12/2017
@@ -10,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/overview
-ms.openlocfilehash: 2562d4e5fb85159e6ccb47990f54448ddc188077
-ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
+ms.openlocfilehash: dc36c76dbd7d82a926e39d8a8ab3a2a53b65d954
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="views-in-aspnet-core-mvc"></a>Vues de base d’ASP.NET MVC
 
@@ -93,8 +92,8 @@ Le comportement par défaut de la `View` (méthode) (`return View();`) doit reto
 
 Peu importe si vous retournez implicitement le `ViewResult` avec `return View();` ou explicitement passer le nom d’affichage pour le `View` méthode avec `return View("<ViewName>");`. Dans les deux cas, afficher les recherches de découverte pour un fichier de vue correspondant dans cet ordre :
 
-   1. *Vues /\[ControllerName]\[ViewName] .cshtml*
-   1. *Les vues ouShared/\[ViewName] .cshtml*
+   1. *Views/\[ControllerName]\[ViewName].cshtml*
+   1. *Views/Shared/\[ViewName].cshtml*
 
 Un chemin d’accès du fichier de vue peut être fourni au lieu d’un nom de la vue. Si vous utilisez un chemin d’accès absolu, commençant à la racine de l’application (éventuellement en commençant par « / » ou « ~ / »), le *.cshtml* extension doit être spécifiée :
 
@@ -244,7 +243,7 @@ Utiliser les données dans une vue :
 </address>
 ```
 
-**Élément ViewBag**
+**ViewBag**
 
 Remarque : `ViewBag` n’est pas disponible dans les Pages Razor.
 

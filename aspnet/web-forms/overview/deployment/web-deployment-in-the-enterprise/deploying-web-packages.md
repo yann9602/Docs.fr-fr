@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/deploying-web-packages
 msc.type: authoredcontent
-ms.openlocfilehash: db24fbf4a3486a1349ac47e55cfa495fdf1a166c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cd2bfa07262155b68ac4605fc7e9748d276d3193
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-web-packages"></a>Packages de déploiement Web
 ====================
@@ -69,14 +69,14 @@ Vous devez spécifier un **/T** indicateur ou un **/Y** indicateur pour indiquer
 | **/A** | Spécifie le type d’authentification que MSDeploy.exe doit utiliser pour effectuer le déploiement. Les valeurs possibles sont **NTLM** et **base**. Si vous omettez le **/A** indicateur, le type d’authentification par défaut est **NTLM** pour le déploiement vers le service Web déployer l’Agent à distance et **base** pour le déploiement sur le Web Deploy Gestionnaire. |
 | **/U** | Spécifie le nom d’utilisateur. Cela s’applique uniquement si vous utilisez l’authentification de base. |
 | **/P** | Spécifie le mot de passe. Cela s’applique uniquement si vous utilisez l’authentification de base. |
-| **/ L** | Indique que le package doit être déployé à l’instance locale d’IIS Express. |
-| **/G** | Spécifie que le package est déployé à l’aide de la [paramètre de fournisseur tempAgent](https://technet.microsoft.com/en-us/library/ee517345(WS.10).aspx). Si vous omettez le **/G** indicateur, la valeur par défaut **false**. |
+| **/L** | Indique que le package doit être déployé à l’instance locale d’IIS Express. |
+| **/G** | Spécifie que le package est déployé à l’aide de la [paramètre de fournisseur tempAgent](https://technet.microsoft.com/library/ee517345(WS.10).aspx). Si vous omettez le **/G** indicateur, la valeur par défaut **false**. |
 
 > [!NOTE]
 > Chaque fois que le processus de génération crée un package web, il crée également un fichier nommé *[nom du projet] .deploy-readme.txt* qui présente ces options de déploiement.
 
 
-En plus de ces indicateurs, vous pouvez spécifier des paramètres d’opération Web Deploy comme supplémentaires *. deploy.cmd* paramètres. Tous les autres paramètres que vous spécifiez sont simplement transmises à la commande MSDeploy.exe sous-jacent. Pour plus d’informations sur ces paramètres, consultez [Web Deploy opération Settings](https://technet.microsoft.com/en-us/library/dd569089(WS.10).aspx).
+En plus de ces indicateurs, vous pouvez spécifier des paramètres d’opération Web Deploy comme supplémentaires *. deploy.cmd* paramètres. Tous les autres paramètres que vous spécifiez sont simplement transmises à la commande MSDeploy.exe sous-jacent. Pour plus d’informations sur ces paramètres, consultez [Web Deploy opération Settings](https://technet.microsoft.com/library/dd569089(WS.10).aspx).
 
 Supposons que vous souhaitez déployer le projet d’application web ContactManager.Mvc dans un environnement de test en exécutant le *. deploy.cmd* fichier. Votre environnement de test est configuré pour utiliser le service Web déployer l’Agent distant, comme décrit dans [configurer un serveur Web pour déployer de publication Web (Agent distant)](../configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-remote-agent.md). Pour déployer l’application web, vous devez effectuer les étapes suivantes.
 
@@ -101,7 +101,7 @@ Pour illustrer comment l’utilisation du *. deploy.cmd* fichier simplifie le pr
 [!code-console[Main](deploying-web-packages/samples/sample3.cmd)]
 
 
-Pour plus d’informations sur l’utilisation de la *. deploy.cmd* fichier pour déployer un package web, consultez [Comment : installer un Package de déploiement à l’aide du fichier deploy.cmd](https://msdn.microsoft.com/en-us/library/ff356104.aspx).
+Pour plus d’informations sur l’utilisation de la *. deploy.cmd* fichier pour déployer un package web, consultez [Comment : installer un Package de déploiement à l’aide du fichier deploy.cmd](https://msdn.microsoft.com/library/ff356104.aspx).
 
 ## <a name="using-msdeployexe"></a>À l’aide de MSDeploy.exe
 
@@ -115,21 +115,21 @@ Lorsque vous utilisez MSDeploy.exe, vous devez fournir trois éléments d’info
 
 - A **– source** paramètre qui indique la provenant de vos données.
 - A **– dest** paramètre qui indique où vos données va.
-- A **– verbe** paramètre qui indique la [opération](https://technet.microsoft.com/en-us/library/dd568989(WS.10).aspx) vous souhaitez effectuer.
+- A **– verbe** paramètre qui indique la [opération](https://technet.microsoft.com/library/dd568989(WS.10).aspx) vous souhaitez effectuer.
 
-MSDeploy.exe s’appuie sur [fournisseurs de Web Deploy](https://technet.microsoft.com/en-us/library/dd569040(WS.10).aspx) pour traiter les données source et de destination. Web Deploy comprend un grand nombre de fournisseurs qui représentent la plage d’applications et sources de données peut fonctionner avec & #x 2014 ; par exemple, il existe des fournisseurs pour les bases de données SQL Server, les serveurs web IIS, les certificats, les assemblys global assembly cache (GAC), différents différents fichiers de configuration et un grand nombre d’autres types de données. Les deux le **– source** paramètre et le **– dest** paramètre doit spécifier un fournisseur, sous la forme **– source**: [*providerName*] = [*emplacement*]. Lorsque vous déployez un package web vers un site Web IIS, vous devez utiliser ces valeurs :
+MSDeploy.exe s’appuie sur [fournisseurs de Web Deploy](https://technet.microsoft.com/library/dd569040(WS.10).aspx) pour traiter les données source et de destination. Web Deploy comprend un grand nombre de fournisseurs qui représentent la plage d’applications et sources de données peut fonctionner avec & #x 2014 ; par exemple, il existe des fournisseurs pour les bases de données SQL Server, les serveurs web IIS, les certificats, les assemblys global assembly cache (GAC), différents différents fichiers de configuration et un grand nombre d’autres types de données. Les deux le **– source** paramètre et le **– dest** paramètre doit spécifier un fournisseur, sous la forme **– source**: [*providerName*] = [*emplacement*]. Lorsque vous déployez un package web vers un site Web IIS, vous devez utiliser ces valeurs :
 
-- Le **– source** fournisseur est toujours [package](https://technet.microsoft.com/en-us/library/dd569019(WS.10).aspx). Exemple :
+- Le **– source** fournisseur est toujours [package](https://technet.microsoft.com/library/dd569019(WS.10).aspx). Exemple :
 
     [!code-console[Main](deploying-web-packages/samples/sample4.cmd)]
-- Le **– dest** fournisseur est toujours [automatique](https://technet.microsoft.com/en-us/library/dd569016(WS.10).aspx). Exemple :
+- Le **– dest** fournisseur est toujours [automatique](https://technet.microsoft.com/library/dd569016(WS.10).aspx). Exemple :
 
     [!code-console[Main](deploying-web-packages/samples/sample5.cmd)]
 - Le **– verbe** est toujours **synchronisation**.
 
     [!code-console[Main](deploying-web-packages/samples/sample6.cmd)]
 
-En outre, vous devez spécifier plusieurs autres [paramètres spécifiques au fournisseur](https://technet.microsoft.com/en-us/library/dd569001(WS.10).aspx) et générale [paramètres d’opération](https://technet.microsoft.com/en-us/library/dd569089(WS.10).aspx). Par exemple, supposons que vous souhaitez déployer l’application web ContactManager.Mvc dans un environnement intermédiaire. Le déploiement du Gestionnaire de déploiement Web cible et doit utiliser l’authentification de base. Pour déployer l’application web, vous devez effectuer les étapes suivantes.
+En outre, vous devez spécifier plusieurs autres [paramètres spécifiques au fournisseur](https://technet.microsoft.com/library/dd569001(WS.10).aspx) et générale [paramètres d’opération](https://technet.microsoft.com/library/dd569089(WS.10).aspx). Par exemple, supposons que vous souhaitez déployer l’application web ContactManager.Mvc dans un environnement intermédiaire. Le déploiement du Gestionnaire de déploiement Web cible et doit utiliser l’authentification de base. Pour déployer l’application web, vous devez effectuer les étapes suivantes.
 
 **Pour déployer une application web à l’aide de MSDeploy.exe**
 
@@ -145,7 +145,7 @@ Dans cet exemple :
 - Le **– source** paramètre spécifie le **package** fournisseur et indique l’emplacement du package web.
 - Le **– dest** paramètre spécifie le **automatique** fournisseur. Le **Nom_Ordinateur** paramètre fournit l’URL du service du Gestionnaire de déploiement Web sur le serveur de destination. Le **authtype** paramètre indique que vous souhaitez utiliser l’authentification de base, et par conséquent, vous devez fournir un **nom d’utilisateur** et un **mot de passe**. Enfin, le **includeAcls = « False »** paramètre indique que vous souhaitez copier les listes de contrôle d’accès (ACL) des fichiers dans votre application de web source vers le serveur de destination.
 - Le **– verbe : synchronisation** argument indique que vous souhaitez répliquer le contenu source sur le serveur de destination.
-- Le **– disableLink** arguments indiquent que vous ne souhaitez pas répliquer les pools d’applications, la configuration du répertoire virtuel ou les certificats Secure Sockets Layer (SSL) sur le serveur de destination. Pour plus d’informations, consultez [Web Deploy lien Extensions](https://technet.microsoft.com/en-us/library/dd569028(WS.10).aspx).
+- Le **– disableLink** arguments indiquent que vous ne souhaitez pas répliquer les pools d’applications, la configuration du répertoire virtuel ou les certificats Secure Sockets Layer (SSL) sur le serveur de destination. Pour plus d’informations, consultez [Web Deploy lien Extensions](https://technet.microsoft.com/library/dd569028(WS.10).aspx).
 - Le **– setParamFile** paramètre fournit l’emplacement de la *SetParameters.xml* fichier.
 - Le **– allowUntrusted** commutateur indique que Web Deploy doit accepter les certificats SSL qui n’ont pas été émis par une autorité de certification approuvée. Si vous déployez vers le Gestionnaire de déploiement Web et que vous avez utilisé un certificat auto-signé pour sécuriser l’URL du service, vous devez inclure ce commutateur.
 

@@ -2,7 +2,6 @@
 title: "Créer une application web de pages Razor avec ASP.NET Core"
 author: rick-anderson
 description: "Créez une application web de pages Razor sur Windows avec Visual Studio, ASP.NET Core et EF Core."
-keywords: "ASP.NET Core, pages Razor, génération de modèles automatique, Entity Framework Core, EF, EF Core, base de données"
 ms.author: riande
 manager: wpickett
 ms.date: 09/08/2017
@@ -10,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: tutorials/razor-pages/index
-ms.openlocfilehash: 1902795279e202bcce9361d9be7a12d9e34880c3
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d2448dde22eb09cd6c69854b1b86b379a4a6873c
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="create-a-razor-pages-web-app-with-aspnet-core"></a>Créer une application web de pages Razor avec ASP.NET Core
 

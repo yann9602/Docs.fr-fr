@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: e6ee3f9c055a15b13c27f94675006b9a7e804f1b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 118233338112a71216b909b1dabed2333bfa235e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="implementing-inheritance-with-the-entity-framework-6-in-an-aspnet-mvc-5-application-11-of-12"></a>Implémentation de l’héritage avec Entity Framework 6 dans une Application ASP.NET MVC 5 (11 12)
 ====================
@@ -43,13 +43,13 @@ Supposons que vous souhaitez éliminer le code redondant pour les propriétés q
 
 Il existe plusieurs façons que cette structure d’héritage peut être représentée dans la base de données. Vous pouvez avoir un `Person` table qui consacrée des informations sur les étudiants et instructeurs dans une table unique. Certaines colonnes pourraient s’appliquent uniquement aux instructeurs (`HireDate`), certains uniquement pour les étudiants (`EnrollmentDate`), certaines pour les deux (`LastName`, `FirstName`). En règle générale, vous devriez un *discriminateur* colonne afin d’indiquer le type de chaque ligne représente. Par exemple, la colonne de discriminateur peut-être « Formateur » pour les enseignants et « Étudiant » pour les étudiants.
 
-![Table-par-hierarchy_example](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image3.png)
+![Table-per-hierarchy_example](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image3.png)
 
 Ce modèle de la génération d’une structure d’héritage d’entité à partir d’une table de base de données unique est appelé *table par hiérarchie* l’héritage (TPH).
 
 Une alternative consiste à rendre la base de données ressemble plus à la structure d’héritage. Par exemple, vous pouvez avoir seulement les champs de nom dans la `Person` table et avez distinct `Instructor` et `Student` tables avec des champs de date.
 
-![Table-par-type_inheritance](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image4.png)
+![Table-per-type_inheritance](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image4.png)
 
 Ce modèle de configuration d’une table de base de données pour chaque classe d’entité est appelé *table par type* l’héritage (TPT).
 
@@ -57,7 +57,7 @@ Encore une autre option consiste à mapper tous les types non abstraits à des t
 
 TPC et modèles d’héritage TPH généralement offrent de meilleures performances dans Entity Framework que les modèles d’héritage TPT, étant donné que les modèles TPT peuvent entraîner des requêtes de jointure complexe.
 
-Ce didacticiel montre comment implémenter l’héritage TPH. TPH étant le modèle d’héritage dans Entity Framework, il vous est de créer un `Person` de classe, de modifier le `Instructor` et `Student` comme classes de dérivation `Person`, ajouter la nouvelle classe par le `DbContext`et créer un migration. (Pour plus d’informations sur la façon d’implémenter les autres modèles d’héritage, consultez [mappage de l’héritage Table par Type (TPT)](https://msdn.microsoft.com/en-us/data/jj591617#2.5) et [mappage de l’héritage de classe concrète-par-Table (TPC)](https://msdn.microsoft.com/en-us/data/jj591617#2.6) sur le site MSDN Entity Framework documentation sur.)
+Ce didacticiel montre comment implémenter l’héritage TPH. TPH étant le modèle d’héritage dans Entity Framework, il vous est de créer un `Person` de classe, de modifier le `Instructor` et `Student` comme classes de dérivation `Person`, ajouter la nouvelle classe par le `DbContext`et créer un migration. (Pour plus d’informations sur la façon d’implémenter les autres modèles d’héritage, consultez [mappage de l’héritage Table par Type (TPT)](https://msdn.microsoft.com/data/jj591617#2.5) et [mappage de l’héritage de classe concrète-par-Table (TPC)](https://msdn.microsoft.com/data/jj591617#2.6) sur le site MSDN Entity Framework documentation sur.)
 
 ## <a name="create-the-person-class"></a>Créer la classe de personne
 
@@ -157,9 +157,9 @@ Cette section, vous devez avoir terminé le paramètre facultatif **déploiement
 
     La première fois que vous exécutez une page qui accède à la base de données, Entity Framework exécute toutes les migrations `Up` méthodes nécessaires à la mise à jour avec le modèle de données actuel de la base de données.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
-Vous avez implémenté l’héritage table par hiérarchie pour le `Person`, `Student`, et `Instructor` classes. Pour plus d’informations sur cette modification et autres structures de l’héritage, consultez [modèle d’héritage TPT](https://msdn.microsoft.com/en-us/data/jj618293) et [modèle d’héritage TPH](https://msdn.microsoft.com/en-us/data/jj618292) sur MSDN. Dans l’étape suivante du didacticiel, vous allez apprendre à gérer une variété de scénarios de Entity Framework relativement avancés.
+Vous avez implémenté l’héritage table par hiérarchie pour le `Person`, `Student`, et `Instructor` classes. Pour plus d’informations sur cette modification et autres structures de l’héritage, consultez [modèle d’héritage TPT](https://msdn.microsoft.com/data/jj618293) et [modèle d’héritage TPH](https://msdn.microsoft.com/data/jj618292) sur MSDN. Dans l’étape suivante du didacticiel, vous allez apprendre à gérer une variété de scénarios de Entity Framework relativement avancés.
 
 Vous trouverez des liens vers d’autres ressources Entity Framework dans le [ASP.NET Data Access - ressources recommandées](../../../../whitepapers/aspnet-data-access-content-map.md).
 

@@ -2,20 +2,18 @@
 title: "Chaînes d’objectif"
 author: rick-anderson
 description: "Ce document décrit en détail comment les chaînes de fin sont utilisées dans l’API de protection des données ASP.NET Core."
-keywords: "ASP.NET Core, protection des données, les chaînes d’objectif"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: c96ed361-c382-4980-8933-800e740cfc38
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/consumer-apis/purpose-strings
-ms.openlocfilehash: 0d759937703d2a25604042b5e74e71155d635c1b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 181d2ae85f38051ea12c7b7ac79198ec05f36bec
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="purpose-strings"></a>Chaînes d’objectif
 
@@ -36,12 +34,12 @@ La chaîne de l’objet ne peut être divulgué. Il doit simplement être unique
 >
 >Un composant créé par Contoso qui est responsable de minting des jetons de support peut utiliser Contoso.Security.BearerToken comme chaîne de son objectif. Ou - plus -, il peut utiliser Contoso.Security.BearerToken.v1 en tant que chaîne de son objectif. Ajoutez le numéro de version permet à une version ultérieure utiliser Contoso.Security.BearerToken.v2 comme son objectif et les différentes versions seraient totalement isolées les unes des autres aussi loin que charges utiles.
 
-Depuis le paramètre à des fins de `CreateProtector` est un tableau de chaînes, ci-dessus pourrait ont été plutôt spécifiés en tant que `[ "Contoso.Security.BearerToken", "v1" ]`. Cela permet l’établissement d’une hiérarchie des objectifs et ouvrez la possibilité d’une architecture mutualisées des scénarios avec le système de protection des données.
+Depuis le paramètre à des fins de `CreateProtector` est un tableau de chaînes, ci-dessus pourrait avoir été à la place spécifiée comme `[ "Contoso.Security.BearerToken", "v1" ]`. Cela permet l’établissement d’une hiérarchie des objectifs et ouvrez la possibilité d’une architecture mutualisées des scénarios avec le système de protection des données.
 
 <a name="data-protection-contoso-purpose"></a>
 
 >[!WARNING]
-> Composants ne doivent pas permettre d’entrée d’utilisateur non fiable être la seule source d’entrée pour la chaîne à des fins.
+> Composants ne doit pas autoriser l’entrée utilisateur non fiable être la seule source d’entrée pour la chaîne à des fins.
 >
 >Par exemple, considérez un composant Contoso.Messaging.SecureMessage qui est responsable du stockage des messages sécurisés. Si le composant de messagerie sécurisé devait appeler `CreateProtector([ username ])`, puis un utilisateur malveillant peut créer un compte avec un nom d’utilisateur « Contoso.Security.BearerToken » dans la tentative d’obtention du composant à appeler `CreateProtector([ "Contoso.Security.BearerToken" ])`, donc par inadvertance à l’origine de la messagerie sécurisée système de charges utiles de monnaies qui peut être perçu comme les jetons d’authentification.
 >

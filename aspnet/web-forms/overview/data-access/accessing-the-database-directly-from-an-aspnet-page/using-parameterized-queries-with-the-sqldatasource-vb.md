@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/using-parameterized-queries-with-the-sqldatasource-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 1a56990c87c1faa93612dcca0732ee789078dfe2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b1cda18620a970c45b05039dd380c393e3854889
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-parameterized-queries-with-the-sqldatasource-vb"></a>À l’aide de requêtes paramétrables avec le SqlDataSource (VB)
 ====================
@@ -209,7 +209,7 @@ Permettent d’utiliser cette procédure stockée pour afficher tous les produit
 **Figure 11**: permet de retourner les produits de la catégorie boissons Hard-Coded la valeur 1 ([cliquez pour afficher l’image en taille réelle](using-parameterized-queries-with-the-sqldatasource-vb/_static/image22.png))
 
 
-Comme dans le balisage déclaratif suivant, lors de l’utilisation d’une procédure stockée, le s SqlDataSource `SelectCommand` est définie sur le nom de la procédure stockée et la [ `SelectCommandType` propriété](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.sqldatasource.selectcommandtype.aspx) a la valeur `StoredProcedure`, qui indique qui le `SelectCommand` est le nom d’une procédure stockée plutôt que dans une instruction SQL d’ad-hoc.
+Comme dans le balisage déclaratif suivant, lors de l’utilisation d’une procédure stockée, le s SqlDataSource `SelectCommand` est définie sur le nom de la procédure stockée et la [ `SelectCommandType` propriété](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.selectcommandtype.aspx) a la valeur `StoredProcedure`, qui indique qui le `SelectCommand` est le nom d’une procédure stockée plutôt que dans une instruction SQL d’ad-hoc.
 
 
 [!code-aspx[Main](using-parameterized-queries-with-the-sqldatasource-vb/samples/sample9.aspx)]
@@ -237,9 +237,9 @@ Commencez par ajouter un SqlDataSource pour `ParameterizedQueries.aspx` et défi
 
 `ORDER BY NEWID()`Retourne les enregistrements triés dans un ordre aléatoire (consultez [Using `NEWID()` pour trier les enregistrements de façon aléatoire](http://www.sqlteam.com/item.asp?ItemID=8747)). `SELECT TOP 1`Retourne le premier enregistrement du jeu de résultats. Rassembler, cette requête renvoie le `CategoryID` et `CategoryName` les valeurs de colonne à partir d’une catégorie unique, sélectionnée aléatoirement.
 
-Pour afficher la catégorie s `CategoryName` valeur, ajoutez un contrôle Web Label à la page, définissez son `ID` propriété `CategoryNameLabel`et d’effacer les son `Text` propriété. Pour récupérer par programme les données à partir d’un contrôle SqlDataSource, nous devons appeler son `Select()` (méthode). Le [ `Select()` méthode](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.sqldatasource.select.aspx) attend un seul paramètre d’entrée de type [ `DataSourceSelectArguments` ](https://msdn.microsoft.com/en-us/library/system.web.ui.datasourceselectarguments.aspx), qui spécifie la façon dont les données doivent être sollicitées avant d’être retourné. Cela peut inclure des instructions sur le tri et filtrage des données et est utilisé par les données que lors du tri ou la pagination des données à partir d’un contrôle SqlDataSource de contrôles Web. Dans notre exemple, cependant, nous ne t besoin les données à modifier avant d’être retourné et par conséquent, passez le `DataSourceSelectArguments.Empty` objet.
+Pour afficher la catégorie s `CategoryName` valeur, ajoutez un contrôle Web Label à la page, définissez son `ID` propriété `CategoryNameLabel`et d’effacer les son `Text` propriété. Pour récupérer par programme les données à partir d’un contrôle SqlDataSource, nous devons appeler son `Select()` (méthode). Le [ `Select()` méthode](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.select.aspx) attend un seul paramètre d’entrée de type [ `DataSourceSelectArguments` ](https://msdn.microsoft.com/library/system.web.ui.datasourceselectarguments.aspx), qui spécifie la façon dont les données doivent être sollicitées avant d’être retourné. Cela peut inclure des instructions sur le tri et filtrage des données et est utilisé par les données que lors du tri ou la pagination des données à partir d’un contrôle SqlDataSource de contrôles Web. Dans notre exemple, cependant, nous ne t besoin les données à modifier avant d’être retourné et par conséquent, passez le `DataSourceSelectArguments.Empty` objet.
 
-Le `Select()` méthode retourne un objet qui implémente `IEnumerable`. Le type retourné dépend de la valeur du contrôle SqlDataSource s [ `DataSourceMode` propriété](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.sqldatasource.datasourcemode.aspx). Comme indiqué dans le didacticiel précédent, cette propriété peut être définie à une valeur `DataSet` ou `DataReader`. Si la valeur `DataSet`, le `Select()` méthode retourne un [DataView](https://msdn.microsoft.com/en-us/library/01s96x0z.aspx) objet ; si elle est définie `DataReader`, elle retourne un objet qui implémente [ `IDataReader` ](https://msdn.microsoft.com/en-us/library/system.data.idatareader.aspx). Étant donné que la `RandomCategoryDataSource` SqlDataSource a son `DataSourceMode` propriété `DataSet` (la valeur par défaut), nous travaillerons avec un objet DataView.
+Le `Select()` méthode retourne un objet qui implémente `IEnumerable`. Le type retourné dépend de la valeur du contrôle SqlDataSource s [ `DataSourceMode` propriété](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.datasourcemode.aspx). Comme indiqué dans le didacticiel précédent, cette propriété peut être définie à une valeur `DataSet` ou `DataReader`. Si la valeur `DataSet`, le `Select()` méthode retourne un [DataView](https://msdn.microsoft.com/library/01s96x0z.aspx) objet ; si elle est définie `DataReader`, elle retourne un objet qui implémente [ `IDataReader` ](https://msdn.microsoft.com/library/system.data.idatareader.aspx). Étant donné que la `RandomCategoryDataSource` SqlDataSource a son `DataSourceMode` propriété `DataSet` (la valeur par défaut), nous travaillerons avec un objet DataView.
 
 Le code suivant illustre comment récupérer les enregistrements à partir de la `RandomCategoryDataSource` SqlDataSource comme un DataView, ainsi que comment lire le `CategoryName` valeur de la colonne à partir de la première ligne de DataView :
 
@@ -296,7 +296,7 @@ Avec cet ajout, la page contient un GridView qui affiche les produits de la cat�
 **Figure 15**: ne spécifiez pas une Source de paramètre ou la valeur par défaut ([cliquez pour afficher l’image en taille réelle](using-parameterized-queries-with-the-sqldatasource-vb/_static/image30.png))
 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Le SqlDataSource permet aux développeurs de page définir des requêtes paramétrables, dont les valeurs de paramètre peuvent être codée en dur, extraites de sources de paramètres prédéfinis ou attribués par programme. Dans ce didacticiel, nous avons vu comment créer une requête paramétrable à partir de l’Assistant Configurer la Source de données pour les requêtes SQL ad hoc et procédures stockées. Nous avons également à l’utilisation de sources de paramètre codée en dur, un contrôle Web comme source de paramètre et par programme en spécifiant la valeur du paramètre.
 

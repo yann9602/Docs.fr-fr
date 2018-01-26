@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/security/hub-authorization
 msc.type: authoredcontent
-ms.openlocfilehash: f1538c933ff9e8e680d70ce1e63d24b189be47e5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cb0f06a3ca2b39a4a952c33cea70136c7c5af7a8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="authentication-and-authorization-for-signalr-hubs"></a>Authentification et autorisation pour les concentrateurs SignalR
 ====================
@@ -55,13 +55,13 @@ Cette rubrique contient les sections suivantes :
     - [Cookie d’authentification par formulaires](#cookie)
     - [Authentification Windows](#windows)
     - [En-tête de connexion](#header)
-    - [Certificat](#certificate)
+    - [Certificate](#certificate)
 
 <a id="authorizeattribute"></a>
 
 ## <a name="authorize-attribute"></a>Autoriser l’attribut
 
-SignalR fournit le [Authorize](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.authorizeattribute(v=vs.111).aspx) attribut pour spécifier les utilisateurs ou les rôles ont accès à une méthode ou un concentrateur. Cet attribut se trouve dans le `Microsoft.AspNet.SignalR` espace de noms. Vous appliquez le `Authorize` d’attribut à un concentrateur ou des méthodes dans un concentrateur. Lorsque vous appliquez le `Authorize` attribut à une classe de concentrateur, l’exigence d’autorisation spécifié est appliqué à toutes les méthodes dans le concentrateur. Cette rubrique fournit des exemples des différents types de spécifications d’autorisation que vous pouvez appliquer. Sans le `Authorize` attribut connecté client peut accéder à n’importe quelle méthode publique sur le concentrateur.
+SignalR fournit le [Authorize](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.authorizeattribute(v=vs.111).aspx) attribut pour spécifier les utilisateurs ou les rôles ont accès à une méthode ou un concentrateur. Cet attribut se trouve dans le `Microsoft.AspNet.SignalR` espace de noms. Vous appliquez le `Authorize` d’attribut à un concentrateur ou des méthodes dans un concentrateur. Lorsque vous appliquez le `Authorize` attribut à une classe de concentrateur, l’exigence d’autorisation spécifié est appliqué à toutes les méthodes dans le concentrateur. Cette rubrique fournit des exemples des différents types de spécifications d’autorisation que vous pouvez appliquer. Sans le `Authorize` attribut connecté client peut accéder à n’importe quelle méthode publique sur le concentrateur.
 
 Si vous avez défini un rôle nommé « Admin » dans votre application web, vous pouvez spécifier que seuls les utilisateurs de ce rôle peuvent accéder à un concentrateur avec le code suivant.
 
@@ -82,7 +82,7 @@ Les exemples suivants d’autorisation différents scénarios :
 
 ## <a name="require-authentication-for-all-hubs"></a>Exiger l’authentification pour tous les concentrateurs
 
-Vous pouvez exiger l’authentification pour tous les concentrateurs et méthodes de concentrateur dans votre application en appelant le [RequireAuthentication](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.hubpipelineextensions.requireauthentication(v=vs.111).aspx) méthode lorsque l’application démarre. Vous pouvez utiliser cette méthode lorsque vous avez plusieurs concentrateurs et que vous souhaitez appliquer une exigence d’authentification pour l’ensemble des. Avec cette méthode, vous ne pouvez pas spécifier de configuration requise pour le rôle, un utilisateur ou d’autorisation sortante. Vous ne pouvez spécifier qu’accès aux méthodes de concentrateur l'est limité aux utilisateurs authentifiés. Toutefois, vous pouvez toujours appliquer l’attribut Authorize aux concentrateurs ou des méthodes pour spécifier des exigences supplémentaires. Aucune exigence que vous spécifiez dans un attribut est ajouté à la condition d’authentification de base.
+Vous pouvez exiger l’authentification pour tous les concentrateurs et méthodes de concentrateur dans votre application en appelant le [RequireAuthentication](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubpipelineextensions.requireauthentication(v=vs.111).aspx) méthode lorsque l’application démarre. Vous pouvez utiliser cette méthode lorsque vous avez plusieurs concentrateurs et que vous souhaitez appliquer une exigence d’authentification pour l’ensemble des. Avec cette méthode, vous ne pouvez pas spécifier de configuration requise pour le rôle, un utilisateur ou d’autorisation sortante. Vous ne pouvez spécifier qu’accès aux méthodes de concentrateur l'est limité aux utilisateurs authentifiés. Toutefois, vous pouvez toujours appliquer l’attribut Authorize aux concentrateurs ou des méthodes pour spécifier des exigences supplémentaires. Aucune exigence que vous spécifiez dans un attribut est ajouté à la condition d’authentification de base.
 
 L’exemple suivant montre un fichier de démarrage qui limite toutes les méthodes de concentrateur aux utilisateurs authentifiés.
 
@@ -94,7 +94,7 @@ Si vous appelez le `RequireAuthentication()` méthode après le traitement d’u
 
 ## <a name="customized-authorization"></a>Autorisation personnalisée
 
-Si vous avez besoin personnaliser la façon dont l’autorisation est définie, vous pouvez créer une classe qui dérive de `AuthorizeAttribute` et remplacez le [UserAuthorized](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.authorizeattribute.userauthorized(v=vs.111).aspx) (méthode). Pour chaque demande, SignalR appelle cette méthode pour déterminer si l’utilisateur est autorisé à traiter la demande. Dans la méthode substituée, vous fournir la logique nécessaire pour votre scénario d’autorisation. L’exemple suivant montre comment appliquer l’autorisation via une identité basée sur les revendications.
+Si vous avez besoin personnaliser la façon dont l’autorisation est définie, vous pouvez créer une classe qui dérive de `AuthorizeAttribute` et remplacez le [UserAuthorized](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.authorizeattribute.userauthorized(v=vs.111).aspx) (méthode). Pour chaque demande, SignalR appelle cette méthode pour déterminer si l’utilisateur est autorisé à traiter la demande. Dans la méthode substituée, vous fournir la logique nécessaire pour votre scénario d’autorisation. L’exemple suivant montre comment appliquer l’autorisation via une identité basée sur les revendications.
 
 [!code-csharp[Main](hub-authorization/samples/sample4.cs)]
 
@@ -122,7 +122,7 @@ Lorsque vous disposez d’un client .NET, comme une application console, qui int
 
 ### <a name="cookie"></a>Cookie
 
-Quand votre client .NET interagit avec un concentrateur qui utilise l’authentification par formulaire ASP.NET, vous devez définir manuellement le cookie d’authentification sur la connexion. Vous ajoutez le cookie à la `CookieContainer` propriété sur le [HubConnection](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.client.hubs.hubconnection(v=vs.111).aspx) objet. L’exemple suivant montre une application console qui Récupère un cookie d’authentification à partir d’une page web et ajoute ce cookie à la connexion.
+Quand votre client .NET interagit avec un concentrateur qui utilise l’authentification par formulaire ASP.NET, vous devez définir manuellement le cookie d’authentification sur la connexion. Vous ajoutez le cookie à la `CookieContainer` propriété sur le [HubConnection](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.client.hubs.hubconnection(v=vs.111).aspx) objet. L’exemple suivant montre une application console qui Récupère un cookie d’authentification à partir d’une page web et ajoute ce cookie à la connexion.
 
 [!code-csharp[Main](hub-authorization/samples/sample7.cs)]
 
@@ -134,7 +134,7 @@ L’application console publie les informations d’identification **www.contoso
 
 ### <a name="windows-authentication"></a>Authentification Windows
 
-Lorsque vous utilisez l’authentification Windows, vous pouvez passer des informations d’identification de l’utilisateur actuel à l’aide de la [DefaultCredentials](https://msdn.microsoft.com/en-us/library/system.net.credentialcache.defaultcredentials.aspx) propriété. Vous définissez les informations d’identification pour la connexion à la valeur de DefaultCredentials.
+Lorsque vous utilisez l’authentification Windows, vous pouvez passer des informations d’identification de l’utilisateur actuel à l’aide de la [DefaultCredentials](https://msdn.microsoft.com/library/system.net.credentialcache.defaultcredentials.aspx) propriété. Vous définissez les informations d’identification pour la connexion à la valeur de DefaultCredentials.
 
 [!code-csharp[Main](hub-authorization/samples/sample9.cs?highlight=6)]
 
@@ -152,6 +152,6 @@ Puis, dans le concentrateur, vérifiez que le jeton d’utilisateur.
 
 ### <a name="certificate"></a>Certificat
 
-Vous pouvez passer un certificat client pour vérifier que l’utilisateur. Vous ajoutez le certificat lors de la création de la connexion. L’exemple suivant montre uniquement comment ajouter un certificat client pour la connexion ; Il n’affiche pas l’application console complète. Elle utilise le [X509Certificate](https://msdn.microsoft.com/en-us/library/system.security.cryptography.x509certificates.x509certificate.aspx) classe qui fournit plusieurs façons différentes pour créer le certificat.
+Vous pouvez passer un certificat client pour vérifier que l’utilisateur. Vous ajoutez le certificat lors de la création de la connexion. L’exemple suivant montre uniquement comment ajouter un certificat client pour la connexion ; Il n’affiche pas l’application console complète. Elle utilise le [X509Certificate](https://msdn.microsoft.com/library/system.security.cryptography.x509certificates.x509certificate.aspx) classe qui fournit plusieurs façons différentes pour créer le certificat.
 
 [!code-csharp[Main](hub-authorization/samples/sample11.cs?highlight=6)]

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/updating-and-deleting-existing-binary-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 55128faa3752a43902c17525dde3543a4a8c3997
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f2fca1e91720fba0215e12b1a1894a3a31e86b5c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="updating-and-deleting-existing-binary-data-c"></a>Mise à jour et suppression des données binaires existantes (c#)
 ====================
@@ -150,7 +150,7 @@ Pendant que le flux de travail de supprimer correctement supprimé l’enregistr
 
 Les inconvénients du stockage des données binaires externes à la base de données est que les étapes supplémentaires doivent être prises pour nettoyer ces fichiers lors de l’enregistrement de la base de données associée est supprimée. Le GridView et ObjectDataSource fournissent des événements qui sont déclenchés avant et après que la commande de suppression a été effectuée. En fait, nous devons créer des gestionnaires d’événements pour les événements antérieurs et postérieurs à l’opération. Avant du `Categories` enregistrement est supprimé. nous devons déterminer son chemin d’accès du fichier PDF, mais nous n t que vous souhaitez supprimer le fichier PDF avant la suppression de la catégorie au cas où il existe une exception et la catégorie n’est pas supprimée.
 
-Les s GridView [ `RowDeleting` événement](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.rowdeleting.aspx) se déclenche avant l’appel de la commande de suppression ObjectDataSource s, alors que son [ `RowDeleted` événement](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.rowdeleted.aspx) se déclenche après. Créer des gestionnaires d’événements pour ces deux événements qui utilisent le code suivant :
+Les s GridView [ `RowDeleting` événement](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.rowdeleting.aspx) se déclenche avant l’appel de la commande de suppression ObjectDataSource s, alors que son [ `RowDeleted` événement](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.rowdeleted.aspx) se déclenche après. Créer des gestionnaires d’événements pour ces deux événements qui utilisent le code suivant :
 
 
 [!code-csharp[Main](updating-and-deleting-existing-binary-data-cs/samples/sample5.cs)]
@@ -352,7 +352,7 @@ Après la modification d’une catégorie et le téléchargement de l’image JP
 > Le `UpdatingAndDeleting.aspx` page insertion et la modification des interfaces pourrait utiliser un peu plus de travail. Le `CategoryName` et `Description` BoundFields dans le DetailsView et GridView doit être converti en TemplateField. Étant donné que `CategoryName` n’autorise pas `NULL` valeurs, un contrôle RequiredFieldValidator doit être ajouté. Et le `Description` zone de texte doit probablement être converti en une zone de texte multiligne. J’ai laisser ces touches finales en guise d’exercice pour vous.
 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Ce didacticiel termine notre apparence à travailler avec des données binaires. Dans ce didacticiel et les trois précédentes, nous avons vu comment binaires données peuvent être stockées sur le système de fichiers ou directement dans la base de données. Un utilisateur fournit des données binaires au système par sélection d’un fichier à partir de leur disque dur et les télécharger vers le serveur web, où il peut être stocké sur le système de fichiers ou insérée dans la base de données. ASP.NET 2.0 comprend un contrôle FileUpload qui permet de fournir une telle interface aussi simple que le glisser -déplacer. Toutefois, comme indiqué dans le [téléchargement de fichiers](uploading-files-cs.md) (didacticiel), le contrôle FileUpload est uniquement convient parfaitement pour les téléchargements relativement petit fichier, dans l’idéal, n’excédant ne pas un mégaoctet (Mo). Nous avons exploré également comment associer les données transmises avec le modèle de données sous-jacent, ainsi que comment modifier et supprimer les données binaires à partir des enregistrements existants.
 

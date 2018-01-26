@@ -9,13 +9,12 @@ ms.prod: asp.net-core
 uid: tutorials/first-web-api-mac
 helpviewer_heywords: ASP.NET Core, WebAPI, Web API, REST, mac, macOS, HTTP, Service, HTTP Service
 ms.technology: aspnet
-keywords: ASP.NET Core, APIweb, API web, REST, mac, macOS, HTTP, Service, Service HTTP
 manager: wpickett
-ms.openlocfilehash: 3f84fa55baf6d808185a28db290d9e6d3c46bdac
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: 4f2643a91e1523008b68df670a9734e3d4dea5a8
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="create-a-web-api-with-aspnet-core-mvc-and-visual-studio-for-mac"></a>Créer une API web avec ASP.NET Core MVC et Visual Studio pour Mac
 

@@ -2,21 +2,19 @@
 title: "À l’aide de Bower dans ASP.NET Core"
 author: rick-anderson
 description: "Gestion des packages Bower côté client."
-keywords: ASP.NET Core, Bower
 ms.author: riande
 manager: wpickett
 ms.date: 02/14/2017
 ms.topic: article
-ms.assetid: df7c43da-280e-4df6-86cb-eecec8f12bfc
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/bower
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: aa329002f78ea48755d65a662f54425013b9a30e
-ms.sourcegitcommit: f273cc3b7409cde063140aa0bd7a81aa50f00571
+ms.openlocfilehash: 7e3e936c81126b7ed01332565f997910a2886993
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="manage-client-side-packages-with-bower-in-aspnet-core"></a>Gérer les packages côté client avec Bower dans ASP.NET Core
 
@@ -47,7 +45,7 @@ Dans ce didacticiel, nous allons ajouter la prise en charge de [police impressio
 
 ### <a name="manual-installation-in-bowerjson"></a>Installation manuelle de bower.json
 
-Ouvrez le *bower.json* et ajoutez « police impressionnant » aux dépendances. IntelliSense affiche les packages disponibles. Lorsqu’un package est sélectionné, les versions disponibles sont affichées. Les images ci-dessous sont plus anciennes et ne correspondra pas à ce que vous voyez.
+Ouvrez le *bower.json* et ajoutez « police impressionnant » aux dépendances. IntelliSense affiche les packages disponibles. Lorsqu’un package est sélectionné, les versions disponibles sont affichées. Les images ci-dessous sont plus anciennes et ne correspond pas à ce que vous voyez.
 
 ![IntelliSense de l’Explorateur de package bower](bower/_static/add-package.png)
 

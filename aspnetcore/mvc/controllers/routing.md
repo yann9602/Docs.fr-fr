@@ -2,20 +2,18 @@
 title: "Routage vers les Actions de contrôleur"
 author: rick-anderson
 description: 
-keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
 ms.date: 03/14/2017
 ms.topic: article
-ms.assetid: 26250a4d-bf62-4d45-8549-26801cf956e9
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/routing
-ms.openlocfilehash: d6e230351eb2f4c8549b54d75fd8e345718e6109
-ms.sourcegitcommit: 9ecd4e9fb0c40c3693dab079eab1ff94b461c922
+ms.openlocfilehash: 497ce47fa567f163cb7b1eb891408f0100d15b8a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/28/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="routing-to-controller-actions"></a>Routage vers les Actions de contrôleur
 
@@ -67,7 +65,7 @@ Le modèle d’itinéraire :
 
 Valeur par défaut et les paramètres de routage facultatif n’avez pas besoin d’être présents dans le chemin d’accès d’URL pour une correspondance. Consultez [référence de modèle d’itinéraire](../../fundamentals/routing.md#route-template-reference) pour une description détaillée de la syntaxe de modèle d’itinéraire.
 
-`"{controller=Home}/{action=Index}/{id?}"`peut faire correspondre le chemin d’accès URL `/` et produit les valeurs d’itinéraire `{ controller = Home, action = Index }`. Les valeurs de `controller` et `action` rendre utilisent des valeurs par défaut, `id` ne produisent pas de valeur, car il n’existe aucun segment correspondant dans le chemin d’accès d’URL. MVC Utilisez ces valeurs d’itinéraire pour sélectionner le `HomeController` et `Index` action :
+`"{controller=Home}/{action=Index}/{id?}"`peut faire correspondre le chemin d’accès URL `/` et produit les valeurs d’itinéraire `{ controller = Home, action = Index }`. Les valeurs de `controller` et `action` rendre utilisent des valeurs par défaut, `id` ne produit pas une valeur dans la mesure où il n’existe aucun segment correspondant dans le chemin d’accès d’URL. MVC Utilisez ces valeurs d’itinéraire pour sélectionner le `HomeController` et `Index` action :
 
 ```csharp
 public class HomeController : Controller
@@ -159,14 +157,14 @@ app.UseMvc(routes =>
 
 Le `blog` itinéraire ici est un *dédié itinéraire conventionnelle*, ce qui signifie qu’il utilise le système de routage classique, mais est dédié à une action spécifique. Étant donné que `controller` et `action` n’apparaissent pas dans le modèle d’itinéraire en tant que paramètres, ils peuvent avoir uniquement les valeurs par défaut et par conséquent, cet itinéraire correspondra toujours à l’action `BlogController.Article`.
 
-Itinéraires dans la collection d’itinéraires sont ordonnées et sont traités dans l’ordre qu’ils sont ajoutés. Ainsi, dans cet exemple, le `blog` itinéraire sera tenté avant le `default` itinéraire.
+Itinéraires dans la collection d’itinéraires sont ordonnées et sont traités dans l’ordre, qu'elles sont ajoutées. Ainsi, dans cet exemple, le `blog` itinéraire sera tenté avant le `default` itinéraire.
 
 > [!NOTE]
 > *Dédié itinéraires conventionnelles* utilisent souvent des paramètres d’itinéraire de fourre-tout comme `{*article}` pour capturer la partie restante du chemin d’accès d’URL. Cela peut rendre un itinéraire 'trop gourmande' ce qui signifie que qu’elle correspond à l’URL que vous souhaitez mettre en correspondance par d’autres itinéraires. Placez les itinéraires « gourmandes » plus loin dans la table d’itinéraires pour résoudre ce problème.
 
 ### <a name="fallback"></a>Secours
 
-Dans le cadre du traitement de requête, MVC vérifie que les valeurs d’itinéraire peuvent être utilisés pour rechercher un contrôleur et une action dans votre application. Si les valeurs d’itinéraire ne correspond à une action alors l’itinéraire n’est pas considéré comme une correspondance, et l’itinéraire suivant sera tentée. Il s’agit *secours*, et il a conçu simplifier les cas où les itinéraires classiques se chevauchent.
+Dans le cadre du traitement de requête, MVC vérifie que les valeurs d’itinéraire peuvent être utilisés pour rechercher un contrôleur et une action dans votre application. Si les valeurs d’itinéraire ne correspond à une action d’alors l’itinéraire n’est pas considéré comme une correspondance, et l’itinéraire suivant sera tentée. Il s’agit *secours*, et il a conçu simplifier les cas où les itinéraires classiques se chevauchent.
 
 ### <a name="disambiguating-actions"></a>Actions désambiguïser
 
@@ -186,7 +184,7 @@ Ce contrôleur définit deux actions qui correspondrait au chemin d’accès URL
 
 Le `HttpPostAttribute` ( `[HttpPost]` ) est une implémentation de `IActionConstraint` qui autorise uniquement l’action à être sélectionné lorsque le verbe HTTP est `POST`. La présence d’un `IActionConstraint` rend le `Edit(int, Product)` 'mieux' correspond à `Edit(int)`, de sorte que `Edit(int, Product)` sont essayés en premier.
 
-Vous devrez écrire personnalisée `IActionConstraint` implémentations dans des scénarios spécifiques, mais il. il est important de comprendre le rôle d’attributs comme `HttpPostAttribute` -des attributs similaires sont définies pour les autres verbes HTTP. Dans le routage classique, il est courant pour les actions à utiliser le même nom d’action lorsqu’elles font partie d’un `show form -> submit form` flux de travail. L’avantage de ce modèle est deviennent plus évident après avoir examiné les [IActionConstraint de présentation](#understanding-iactionconstraint) section.
+Vous devrez écrire personnalisée `IActionConstraint` implémentations dans des scénarios spécifiques, mais il. il est important de comprendre le rôle d’attributs comme `HttpPostAttribute` -des attributs similaires sont définies pour les autres verbes HTTP. Dans le routage classique, il est courant pour les actions à utiliser le même nom d’action lorsqu’ils font partie d’un `show form -> submit form` flux de travail. L’avantage de ce modèle est deviennent plus évident après avoir examiné les [IActionConstraint de présentation](#understanding-iactionconstraint) section.
 
 Si plusieurs itinéraires correspondent et MVC ne peut pas trouver un itinéraire « meilleur », elle lève une `AmbiguousActionException`.
 
@@ -208,7 +206,7 @@ app.UseMvc(routes =>
 
 Les noms d’itinéraires nommez l’itinéraire logique afin que l’itinéraire nommé peut être utilisé pour la génération d’URL. Cela simplifie considérablement la création d’URL lorsque le classement des itinéraires peut rendre génération d’URL compliquée. Les noms d’itinéraires doivent être unique à l’échelle de l’application.
 
-Les noms d’itinéraires n’ont aucun impact sur l’URL correspondant ou le traitement des requêtes ; ils sont utilisés uniquement pour la génération d’URL. [Routage](xref:fundamentals/routing) contient plus d’informations sur la génération d’URL, y compris la génération d’URL dans les programmes d’assistance MVC spécifiques.
+Les noms d’itinéraires n’ont aucun impact sur l’URL correspondant ou le traitement des requêtes ; elles sont utilisées uniquement pour la génération d’URL. [Routage](xref:fundamentals/routing) contient plus d’informations sur la génération d’URL, y compris la génération d’URL dans les programmes d’assistance MVC spécifiques.
 
 <a name="attribute-routing-ref-label"></a>
 
@@ -344,7 +342,7 @@ public class ProductsApiController : Controller
 
 Dans cet exemple, le chemin d’accès URL `/products` peut correspondre à `ProductsApi.ListProducts`et le chemin d’accès URL `/products/5` peut correspondre à `ProductsApi.GetProduct(int)`. Ces deux actions uniquement en correspondance HTTP `GET` , car elles sont décorées avec le `HttpGetAttribute`.
 
-Acheminer les modèles appliqués à une action qui commencent par un `/` ne pas combiner avec les modèles d’itinéraire appliqués au contrôleur. Cet exemple correspond à un ensemble de chemins d’accès de URL semblables à la *l’itinéraire par défaut*.
+Acheminer les modèles appliqués à une action qui commencent par un `/` ne combiner avec les modèles d’itinéraire appliqués au contrôleur. Cet exemple correspond à un ensemble de chemins d’accès de URL semblables à la *l’itinéraire par défaut*.
 
 ```csharp
 [Route("Home")]
@@ -352,7 +350,7 @@ public class HomeController : Controller
 {
     [Route("")]      // Combines to define the route template "Home"
     [Route("Index")] // Combines to define the route template "Home/Index"
-    [Route("/")]     // Does not combine, defines the route template ""
+    [Route("/")]     // Doesn't combine, defines the route template ""
     public IActionResult Index()
     {
         ViewData["Message"] = "Home index";
@@ -536,7 +534,7 @@ route template: {controller}/{action}/{id?}
 result: /UrlGeneration/Destination
 ```
 
-Chaque paramètre d’itinéraire dans le modèle d’itinéraire a sa valeur remplacée par la correspondance des noms avec les valeurs et ambiante. Un paramètre d’itinéraire qui n’a pas de valeur peut utiliser une valeur par défaut si elle existe, ou être ignorée si elle est facultative (comme dans le cas de `id` dans cet exemple). Génération d’URL échoue si n’importe quel paramètre d’itinéraire requis n’a pas une valeur correspondante. En cas de génération d’URL d’un itinéraire, l’itinéraire suivant est tentée jusqu'à ce que tous les itinéraires ont été essayées ou une correspondance est trouvée.
+Chaque paramètre d’itinéraire dans le modèle d’itinéraire a sa valeur remplacée par la correspondance des noms avec les valeurs et ambiante. Un paramètre d’itinéraire qui n’a pas une valeur peut utiliser une valeur par défaut si elle existe, ou être ignorée si elle est facultative (comme dans le cas de `id` dans cet exemple). Génération d’URL échoue si n’importe quel paramètre d’itinéraire requis n’a pas une valeur correspondante. En cas de génération d’URL d’un itinéraire, l’itinéraire suivant est tentée jusqu'à ce que tous les itinéraires ont été essayées ou une correspondance est trouvée.
 
 L’exemple de `Url.Action` ci-dessus suppose que le routage classique, mais fonctionne de génération d’URL de la même façon avec le routage de l’attribut, bien que les concepts sont différents. Avec le routage classique, les valeurs d’itinéraire sont utilisés pour développer un modèle et les valeurs d’itinéraire pour `controller` et `action` apparaissent généralement dans ce modèle - cela fonctionne parce que les URL mises en correspondance par le routage adhèrent à un *convention*. Dans le routage de l’attribut, les valeurs de l’itinéraire pour `controller` et `action` ne sont pas autorisés à afficher dans le modèle - ils sont utilisés à la place pour rechercher le modèle à utiliser.
 
@@ -571,7 +569,7 @@ Les surcharges plus de `Url.Action` prennent également un autre *valeurs d’it
 
 ### <a name="generating-urls-by-route"></a>Génération des URL par itinéraire
 
-Le code ci-dessus démontré la génération d’une URL en passant le nom d’action et de contrôleur. `IUrlHelper`fournit également le `Url.RouteUrl` famille de méthodes. Ces méthodes sont similaires aux `Url.Action`, mais ils ne copient pas les valeurs actuelles des `action` et `controller` pour les valeurs d’itinéraire. L’utilisation la plus courante consiste à spécifier un nom d’itinéraire à utiliser un itinéraire spécifique pour générer l’URL, généralement *sans* spécifiant un nom de contrôleur ou d’action.
+Le code ci-dessus démontré la génération d’une URL en passant le nom d’action et de contrôleur. `IUrlHelper`fournit également le `Url.RouteUrl` famille de méthodes. Ces méthodes sont similaires aux `Url.Action`, mais ils ne pas copier les valeurs actuelles des `action` et `controller` pour les valeurs d’itinéraire. L’utilisation la plus courante consiste à spécifier un nom d’itinéraire à utiliser un itinéraire spécifique pour générer l’URL, généralement *sans* spécifiant un nom de contrôleur ou d’action.
 
 [!code-csharp[Main](routing/sample/main/Controllers/UrlGenerationControllerRouting.cs?name=snippet_1)]
 
@@ -642,7 +640,7 @@ Pour mettre en correspondance un chemin d’accès de l’URL comme `/Manage/Use
 `MapAreaRoute`Crée un itinéraire à l’aide d’une valeur par défaut et la contrainte pour `area` en utilisant le nom de la zone fournie, dans ce cas `Blog`. La valeur par défaut garantit que l’itinéraire génère toujours `{ area = Blog, ... }`, la contrainte requiert la valeur `{ area = Blog, ... }` pour la génération d’URL.
 
 > [!TIP]
-> Le routage classique est dépendant de l’ordre. En général, les itinéraires avec des zones doivent être placés plus haut dans la table d’itinéraires lorsqu’ils sont plus spécifiques que les itinéraires sans une zone.
+> Le routage classique est dépendant de l’ordre. En général, les itinéraires avec des zones doivent être placés plus haut dans la table d’itinéraires qu’elles sont plus spécifiques que les itinéraires sans une zone.
 
 À l’aide de l’exemple ci-dessus, les valeurs d’itinéraire correspondrait à l’action suivante :
 
@@ -659,7 +657,7 @@ Le `AreaAttribute` est ce qui indique un contrôleur dans le cadre d’une zone,
 > [!NOTE]
 > L’espace de noms de chaque contrôleur est illustrée ici par souci d’exhaustivité, sinon les contrôleurs aurait d’une affectation de noms en conflit et génèrent une erreur du compilateur. Espaces de noms de classe ont aucun effet sur le routage de MVC.
 
-Tout d’abord deux contrôleurs sont membres de domaines et uniquement en correspondance lorsque leur nom de la zone correspondante est fournie par le `area` acheminer de valeur. Le contrôleur tiers n’est pas un membre de zone et peut seule correspondance lorsqu’aucune valeur de `area` est fourni par le routage.
+Tout d’abord deux contrôleurs sont membres de domaines et uniquement en correspondance lorsque leur nom de la zone correspondante est fournie par le `area` acheminer de valeur. Le troisième contrôleur n’est pas un membre de zone et peut seule correspondance lorsqu’aucune valeur de `area` est fourni par le routage.
 
 > [!NOTE]
 > En termes de mise en correspondance *aucune valeur*, l’absence de la `area` la valeur est identique comme si la valeur de `area` est null ou une chaîne vide.
@@ -699,7 +697,7 @@ Point de vue conceptuel, `IActionConstraint` est une forme de *surcharge*, mais 
 
 ### <a name="implementing-iactionconstraint"></a>Implémentation de IActionConstraint
 
-La façon la plus simple d’implémenter un `IActionConstraint` consiste à créer une classe dérivée de `System.Attribute` et placez-le sur vos actions et les contrôleurs. MVC détecte automatiquement les `IActionConstraint` qui sont appliquées en tant qu’attributs. Vous pouvez utiliser le modèle d’application pour appliquer des contraintes, et c’est probablement l’approche la plus souple car elle vous permet d’accéder à metaprogram comment ils sont appliqués.
+La façon la plus simple d’implémenter un `IActionConstraint` consiste à créer une classe dérivée de `System.Attribute` et placez-le sur vos actions et les contrôleurs. MVC détecte automatiquement les `IActionConstraint` qui sont appliquées en tant qu’attributs. Vous pouvez utiliser le modèle d’application pour appliquer des contraintes, et il s’agit probablement l’approche la plus souple car elle vous permet d’accéder à metaprogram comment elles sont appliquées.
 
 Dans l’exemple suivant, une contrainte choisit une action basée sur un *code pays* à partir des données d’itinéraire. Le [exemple complet sur GitHub](https://github.com/aspnet/Entropy/blob/dev/samples/Mvc.ActionConstraintSample.Web/CountrySpecificAttribute.cs).
 

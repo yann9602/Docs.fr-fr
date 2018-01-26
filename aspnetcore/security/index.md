@@ -6,15 +6,14 @@ ms.author: rachelap
 manager: wpickett
 ms.date: 11/01/2017
 ms.topic: article
-ms.assetid: a8fb7eb7-e0e5-4394-84f3-1f1dbe012345
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/index
-ms.openlocfilehash: f6a1f32c1edd098b0782fd066d8e32f09952a9b7
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: 3f0f1c402aeac388c2fcabb509aa8aa3a46e95f5
+ms.sourcegitcommit: 3f491f887074310fc0f145cd01a670aa63b969e3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/22/2018
 ---
 # <a name="aspnet-core-security-overview"></a>Vue d’ensemble de la sécurité ASP.NET Core
 
@@ -97,7 +96,7 @@ Il existe d’autres failles de sécurité que vous devez connaître. Pour plus 
         *   [Format de stockage des clés](data-protection/implementation/key-storage-format.md)
         *   [Fournisseurs de protection des données éphémères](data-protection/implementation/key-storage-ephemeral.md)
     *   [Compatibilité](data-protection/compatibility/index.md)
-        *   [Partager les cookies entre les applications](data-protection/compatibility/cookie-sharing.md)
+        *   [Partager des cookies entre applications](data-protection/compatibility/cookie-sharing.md)
         *   [Remplacer <machineKey> dans ASP.NET](data-protection/compatibility/replacing-machinekey.md)
 *   [Créer une application avec des données utilisateur protégées par une autorisation](xref:security/authorization/secure-data)
 *   [Stockage sécurisé des secrets de l’application durant le développement](app-secrets.md)

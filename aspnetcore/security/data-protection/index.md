@@ -2,20 +2,18 @@
 title: "Protection des données dans ASP.NET Core"
 author: rick-anderson
 description: "Ce document constitue la table des matières des différentes rubriques relatives à la protection des données ASP.NET Core."
-keywords: "ASP.NET Core,protection des données"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: 1f402da8-1052-4970-9835-9f9f16a02dbc
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/index
-ms.openlocfilehash: cbf18c6ec867fefec22980f3e3493562594ef72d
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: 151385964d877fc9eadaa219320e5f5a195164e4
+ms.sourcegitcommit: 3f491f887074310fc0f145cd01a670aa63b969e3
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/22/2018
 ---
 # <a name="data-protection-in-aspnet-core-consumer-apis-configuration-extensibility-apis-and-implementation"></a>Protection des données dans ASP.NET Core : API de contrôle serveur consommateur, configuration, API d’extensibilité et implémentation
 
@@ -77,6 +75,6 @@ ms.lasthandoff: 01/11/2018
 
 * [Compatibilité](compatibility/index.md)
 
-  * [Partage des cookies entre les applications](compatibility/cookie-sharing.md)
+  * [Partage de cookies entre applications](xref:security/data-protection/compatibility/cookie-sharing)
 
-  * [Remplacement de <machineKey> dans ASP.NET](compatibility/replacing-machinekey.md)
+  * [Remplacement de <machineKey> dans ASP.NET](xref:security/data-protection/compatibility/replacing-machinekey)

@@ -2,7 +2,6 @@
 title: "Pages Razor avec EF Core - modèle de données - 5 de 8"
 author: rick-anderson
 description: "Dans ce didacticiel, vous ajoutez des entités et relations et personnalisez le modèle de données en spécifiant la mise en forme, la validation et les règles de mappage de base de données."
-keywords: "Annotations de données ASP.NET Core, Entity Framework Core,"
 ms.author: riande
 manager: wpickett
 ms.date: 10/25/2017
@@ -10,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/complex-data-model
-ms.openlocfilehash: c2761f79fa4836d29541526782969bb0fd47778b
-ms.sourcegitcommit: 6e46abd65973dea796d364a514de9ec2e3e1c1ed
+ms.openlocfilehash: 2446f4734e9bb1ab6829001f6e7888c4c14ee1b7
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="creating-a-complex-data-model---ef-core-with-razor-pages-tutorial-5-of-8"></a>Création d’un modèle de données complexes - Core EF avec le didacticiel de Pages Razor (5 de 8)
 
@@ -50,9 +49,9 @@ Le [DataType](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataan
 * Le `mailto:` lien est automatiquement créé pour `DataType.EmailAddress`.
 * Le sélecteur de date est fourni pour `DataType.Date` dans la plupart des navigateurs.
 
-Le `DataType` émet un attribut HTML 5 `data-` attributs (données prononcé tiret) qui utilisent des navigateurs de HTML 5. Le `DataType` attributs ne fournissent pas de validation.
+Le `DataType` émet un attribut HTML 5 `data-` attributs (données prononcé tiret) qui utilisent des navigateurs de HTML 5. Le `DataType` attributs ne fournissent pas la validation.
 
-`DataType.Date` ne spécifie pas le format de la date qui s’affiche. Par défaut, le champ de date est affiché selon les formats par défaut basés sur le serveur [CultureInfo](https://docs.microsoft.com/aspnet/core/fundamentals/localization#provide-localized-resources-for-the-languages-and-cultures-you-support).
+`DataType.Date`ne spécifie pas le format de la date qui s’affiche. Par défaut, le champ de date est affiché selon les formats par défaut basés sur le serveur [CultureInfo](https://docs.microsoft.com/aspnet/core/fundamentals/localization#provide-localized-resources-for-the-languages-and-cultures-you-support).
 
 L’attribut `DisplayFormat` est utilisé pour spécifier explicitement le format de date :
 
@@ -84,7 +83,7 @@ Mise à jour le `Student` modèle avec le code suivant :
 Le code précédent limite les noms et pas plus de 50 caractères. Le `StringLength` attribut n’empêche pas un utilisateur d’entrer un espace blanc pour un nom. Le [RegularExpression](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.regularexpressionattribute?view=netframework-4.7.1) attribut est utilisé pour appliquer des restrictions à l’entrée. Par exemple, le code suivant requiert le premier caractère en majuscules et les autres caractères alphabétique :
 
 ```csharp
-[RegularExpression(@"^[A-Z]+[a-zA-Z''-'\s]*$")]
+[RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]
 ```
 
 Exécutez l’application :
@@ -285,7 +284,7 @@ Le `Course` entité a une propriété de clé étrangère (FK) `DepartmentID`. `
 
 EF Core ne nécessite pas une propriété FK pour un modèle de données lorsque le modèle a une propriété de navigation pour une entité associée.
 
-EF Core crée automatiquement les clés étrangères dans la base de données là où elles sont requises. EF Core crée [occulter les propriétés](https://docs.microsoft.com/ef/core/modeling/shadow-properties) pour les clés étrangères du créés automatiquement. La présence de la clé étrangère dans le modèle de données peut simplifier les mises à jour et plus efficace. Par exemple, considérez un modèle où la propriété FK `DepartmentID` est *pas* inclus. Lorsqu’une entité de cours est extraite à modifier :
+EF Core crée automatiquement des clés étrangères dans la base de données partout où ils sont nécessaires. EF Core crée [occulter les propriétés](https://docs.microsoft.com/ef/core/modeling/shadow-properties) pour les clés étrangères du créés automatiquement. La présence de la clé étrangère dans le modèle de données peut simplifier les mises à jour et plus efficace. Par exemple, considérez un modèle où la propriété FK `DepartmentID` est *pas* inclus. Lorsqu’une entité de cours est extraite à modifier :
 
 * Le `Department` entité a la valeur null s’il n’est pas explicitement chargé.
 * Pour mettre à jour de l’entité de cours, le `Department` entité doit tout d’abord être extraites.
@@ -374,10 +373,10 @@ public ICollection<Course> Courses { get; set; }
 
 Remarque : Par convention, EF Core permet de suppression en cascade pour les clés étrangères du non nullable et pour les relations plusieurs-à-plusieurs. Les règles de suppression en cascade circulaire peut entraîner une suppression en cascade. Circulaire suppression en cascade entraîne des règles d’exception lors de l’ajout d’une migration.
 
-Par exemple, si le `Department.InstructorID` propriété n’a pas a été définie comme nullable :
+Par exemple, si le `Department.InstructorID` propriété n’a pas été définie comme nullable :
 
 * EF Core configure une règle de suppression en cascade pour supprimer le formateur lorsque le service est supprimé.
-* La suppression du formateur lorsque le service est supprimé n’est pas du comportement souhaité.
+* Supprimer le formateur lorsque le service est supprimé n’est pas du comportement souhaité.
 
 Si les règles d’entreprise nécessaire le `InstructorID` propriété être non nullable, utilisez l’instruction d’API fluent suivante :
 
@@ -432,7 +431,7 @@ Si le `Enrollment` table n’a pas inclure les informations de catégorie, il do
 
 Le `Instructor` et `Course` les entités ont une relation plusieurs-à-plusieurs à l’aide d’une table de jonction pure.
 
-Remarque : EF 6.x prend en charge n’est pas le cas de tables de jointure implicite pour les relations plusieurs-à-plusieurs, mais EF Core. Pour plus d’informations, consultez [plusieurs-à-plusieurs relations dans EF Core 2.0](https://blog.oneunicorn.com/2017/09/25/many-to-many-relationships-in-ef-core-2-0-part-1-the-basics/).
+Remarque : EF 6.x prend en charge les tables de jointure implicite pour les relations plusieurs-à-plusieurs, mais EF Core ne. Pour plus d’informations, consultez [plusieurs-à-plusieurs relations dans EF Core 2.0](https://blog.oneunicorn.com/2017/09/25/many-to-many-relationships-in-ef-core-2-0-part-1-the-basics/).
 
 ## <a name="the-courseassignment-entity"></a>L’entité CourseAssignment
 
@@ -639,7 +638,7 @@ Avec les modifications précédentes, existant `Course` lignes sont liées au se
 Une application de production serait :
 
 * Inclure le code ou des scripts pour ajouter `Department` lignes et liées `Course` lignes à la nouvelle `Department` lignes.
-* N’utilisez pas le service « Temp » ou la valeur par défaut `Course.DepartmentID `.
+* Utilisez pas le service « Temp » ou la valeur par défaut `Course.DepartmentID`.
 
 Le didacticiel suivant traite les données associées.
 

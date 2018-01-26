@@ -2,7 +2,6 @@
 title: Utilisation de plusieurs environnements dans ASP.NET Core
 author: rick-anderson
 description: "Découvrez comment ASP.NET Core fournit la prise en charge pour contrôler le comportement de l’application dans différents environnements."
-keywords: "ASP.NET Core, les paramètres d’environnement, ASPNETCORE_ENVIRONMENT"
 ms.author: riande
 manager: wpickett
 ms.date: 12/25/2017
@@ -10,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/environments
-ms.openlocfilehash: 784d176145c3e4e44ddc0ea06b6702f70cd4b08c
-ms.sourcegitcommit: 87168cdc409e7a7257f92a0f48f9c5ab320b5b28
+ms.openlocfilehash: 60a1543ce11d08490e6df0eb84f980672ecfe672
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="working-with-multiple-environments"></a>Utilisation de plusieurs environnements
 
@@ -47,7 +46,7 @@ Remarque : Sur Windows et macOS, valeurs et variables d’environnement ne resp
 
 ### <a name="development"></a>Développement
 
-L’environnement de développement peut activer les fonctionnalités qui ne doivent pas être exposées en production. Par exemple, les modèles ASP.NET Core activer la [page d’exception developer](xref:fundamentals/error-handling#the-developer-exception-page) dans l’environnement de développement.
+L’environnement de développement peut activer des fonctionnalités qui ne doivent pas être exposées dans la production. Par exemple, les modèles ASP.NET Core activer la [page d’exception developer](xref:fundamentals/error-handling#the-developer-exception-page) dans l’environnement de développement.
 
 L’environnement de développement de l’ordinateur local peut être définie dans le *Properties\launchSettings.json* fichier du projet. Définir des valeurs d’environnement dans *launchSettings.json* remplacent les valeurs définies dans l’environnement du système.
 
@@ -84,7 +83,7 @@ Visual Studio **déboguer** onglet fournit une interface graphique utilisateur p
 Modifications apportées aux profils de projet peuvent prendront effet qu’après le redémarrage du serveur web. Kestrel doit être redémarré avant qu’il détecte les modifications apportées à son environnement.
 
 >[!WARNING]
-> *launchSettings.json* ne pas stocker les clés secrètes. Le [Secret gestionnaire](xref:security/app-secrets) peut être utilisé pour stocker des clés secrètes de développement local.
+> *launchSettings.json* ne doit pas stocker des clés secrètes. Le [Secret gestionnaire](xref:security/app-secrets) peut être utilisé pour stocker des clés secrètes de développement local.
 
 ### <a name="production"></a>Production
 
@@ -157,7 +156,7 @@ export ASPNETCORE_ENVIRONMENT=Development
 ### <a name="linux"></a>Linux
 Pour les versions de Linux, utilisez le `export` commande à la ligne de commande pour la session en fonction des paramètres de variable et *bash_profile* fichier pour les paramètres d’environnement au niveau ordinateur.
 
-### <a name="configuration-by-environment"></a>Configuration de l’environnement
+### <a name="configuration-by-environment"></a>Configuration par environnement
 
 Consultez [Configuration par environnement](xref:fundamentals/configuration/index#configuration-by-environment) pour plus d’informations.
 

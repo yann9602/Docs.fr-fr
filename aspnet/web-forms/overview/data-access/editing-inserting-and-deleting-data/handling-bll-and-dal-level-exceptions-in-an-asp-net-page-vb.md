@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/handling-bll-and-dal-level-exceptions-in-an-asp-net-page-vb
 msc.type: authoredcontent
-ms.openlocfilehash: f5ebdf168610b715dc918ff6addf88d3c2a67097
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2269458cbc41fd3a483aaade0f07288ee805bdd1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="handling-bll--and-dal-level-exceptions-in-an-aspnet-page-vb"></a>La gestion des Exceptions au niveau de la couche BLL et de la couche DAL dans une Page ASP.NET (VB)
 ====================
@@ -101,9 +101,9 @@ Enfin, vérifiez la case à cocher Activer la modification de la balise active d
 
 ## <a name="step-2-gracefully-handling-dal-level-exceptions"></a>Étape 2 : Gestion normalement des Exceptions au niveau de la couche DAL
 
-Bien que notre GridView modifiable fonctionne très lorsque les utilisateurs entrent des valeurs autorisées pour le nom du produit modifié, les prix et les unités en stock, entrer des valeurs illégales entraîne une exception. Par exemple, si vous omettez le `ProductName` valeur entraîne une [NoNullAllowedException](https://msdn.microsoft.com/library/default.asp?url=/library/en-us/cpref/html/frlrfsystemdatanonullallowedexceptionclasstopic.asp) levée depuis le `ProductName` propriété dans le `ProdcutsRow` classe a son `AllowDBNull` propriété la valeur `false`; si la base de données est arrêté, un `SqlException` seront levées par le TableAdapter lorsque vous tentez de vous connecter à la base de données. Sans effectuer aucune action, ces exceptions se propagent de la couche d’accès aux données à la couche de logique métier, puis dans la page ASP.NET et enfin à l’exécution d’ASP.NET.
+Bien que notre GridView modifiable fonctionne très lorsque les utilisateurs entrent des valeurs autorisées pour le nom du produit modifié, les prix et les unités en stock, entrer des valeurs illégales entraîne une exception. Par exemple, si vous omettez le `ProductName` valeur entraîne une [NoNullAllowedException](https://msdn.microsoft.com/library/default.asp?url=/library/cpref/html/frlrfsystemdatanonullallowedexceptionclasstopic.asp) levée depuis le `ProductName` propriété dans le `ProdcutsRow` classe a son `AllowDBNull` propriété la valeur `false`; si la base de données est arrêté, un `SqlException` seront levées par le TableAdapter lorsque vous tentez de vous connecter à la base de données. Sans effectuer aucune action, ces exceptions se propagent de la couche d’accès aux données à la couche de logique métier, puis dans la page ASP.NET et enfin à l’exécution d’ASP.NET.
 
-En fonction de la configuration de votre application web et ou non que vous visitez l’application à partir de `localhost`, une exception non gérée peut entraîner une page d’erreur de serveur générique, un rapport d’erreur détaillé ou une page web conviviale. Consultez [Web Application une gestion d’erreurs dans ASP.NET](http://www.15seconds.com/issue/030102.htm) et [customErrors, élément](https://msdn.microsoft.com/en-US/library/h0hfz6fc(VS.80).aspx) pour plus d’informations sur la façon dont le runtime ASP.NET répond à une exception non interceptée.
+En fonction de la configuration de votre application web et ou non que vous visitez l’application à partir de `localhost`, une exception non gérée peut entraîner une page d’erreur de serveur générique, un rapport d’erreur détaillé ou une page web conviviale. Consultez [Web Application une gestion d’erreurs dans ASP.NET](http://www.15seconds.com/issue/030102.htm) et [customErrors, élément](https://msdn.microsoft.com/library/h0hfz6fc(VS.80).aspx) pour plus d’informations sur la façon dont le runtime ASP.NET répond à une exception non interceptée.
 
 La figure 6 illustre l’écran rencontré lors de la tentative de mise à jour d’un produit sans spécifier le `ProductName` valeur. Ceci est la valeur par défaut, le rapport d’erreurs détaillées affiché lorsque provenant de `localhost`.
 
@@ -153,7 +153,7 @@ Création de ce gestionnaire d’événements ajoute le code suivant à la class
 
 [!code-vb[Main](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-vb/samples/sample4.vb)]
 
-Second paramètre de ce gestionnaire d’événements est un objet de type [GridViewUpdatedEventArgs](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.gridviewupdatedeventargs.aspx), qui a trois propriétés dignes d’intérêt pour la gestion des exceptions :
+Second paramètre de ce gestionnaire d’événements est un objet de type [GridViewUpdatedEventArgs](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridviewupdatedeventargs.aspx), qui a trois propriétés dignes d’intérêt pour la gestion des exceptions :
 
 - `Exception`une référence à l’exception levée ; Si aucune exception n’a été levée, cette propriété a une valeur`null`
 - `ExceptionHandled`valeur booléenne qui indique si l’exception a été gérée dans le `RowUpdated` Gestionnaire d’événements ; si `false` (la valeur par défaut), l’exception est à nouveau levée, percolation jusqu'à l’exécution d’ASP.NET
@@ -212,7 +212,7 @@ Avec cette modification, toute mise à jour de prix est supérieur à deux fois 
 > Dans l’idéal seraient de refactoriser nos règles de logique métier de le `UpdateProduct` surcharges de méthode dans une méthode courante. Cela est considérée comme un exercice pour le lecteur.
 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Pendant l’insertion, mise à jour et la suppression des opérations, à la fois le données Web et le contrôle ObjectDataSource impliqués déclenchent les événements antérieurs et postérieurs au niveau que l’opération réelle serre-livres. Comme nous l’avons vu dans ce didacticiel et le précédent, lorsque vous travaillez avec un GridView modifiable du GridView `RowUpdating` événement se déclenche, suivie de l’ObjectDataSource `Updating` événement, à partir de laquelle la commande de mise à jour est effectuée à l’ObjectDataSource objet sous-jacent. Une fois l’opération terminée, l’ObjectDataSource `Updated` se déclenche l’événement, suivi du GridView `RowUpdated` événement.
 

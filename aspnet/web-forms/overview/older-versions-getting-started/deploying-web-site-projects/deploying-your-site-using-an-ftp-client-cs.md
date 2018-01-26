@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-your-site-using-an-ftp-client-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 4e4af20fa1fecd1f363e979023b41203096d64ef
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1edd53b1005449c060ff92fc7ebd02dbe7fa6ac2
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-your-site-using-an-ftp-client-c"></a>Déploiement de votre Site à l’aide d’un Client FTP (c#)
 ====================
@@ -144,11 +144,11 @@ Comme prévu, lors du redéploiement sur une application web que vous devez seul
 > Une chose à prendre en compte lors de l’utilisation de compilation explicite est que chaque fois que vous ajoutez une nouvelle page ASP.NET pour le projet ou apportez des modifications associées à du code, vous devez régénérer votre projet, qui met à jour de l’assembly dans le `Bin` dossier. Par conséquent, vous devez copier cet assembly mis à jour vers la production lors de la mise à jour d’une application web sur la production (ainsi que d’autres contenu nouveau et mis à jour).
 
 
-Également comprendre que les modifications de la `Web.config` ou les fichiers dans le `Bin` active s’arrête et redémarre le Pool d’applications du site Web. Si votre état de session est stocké à l’aide de la `InProc` mode (par défaut), puis les visiteurs de votre site perdent leur état de session chaque fois que les fichiers de ces clés sont modifiées. Pour éviter cet inconvénient, envisagez de stocker la session à l’aide du `StateServer` ou `SQLServer` modes. Pour plus d’informations sur cette rubrique lire [Modes d’état de Session](https://msdn.microsoft.com/en-us/library/ms178586.aspx).
+Également comprendre que les modifications de la `Web.config` ou les fichiers dans le `Bin` active s’arrête et redémarre le Pool d’applications du site Web. Si votre état de session est stocké à l’aide de la `InProc` mode (par défaut), puis les visiteurs de votre site perdent leur état de session chaque fois que les fichiers de ces clés sont modifiées. Pour éviter cet inconvénient, envisagez de stocker la session à l’aide du `StateServer` ou `SQLServer` modes. Pour plus d’informations sur cette rubrique lire [Modes d’état de Session](https://msdn.microsoft.com/library/ms178586.aspx).
 
 Enfin, gardez à l’esprit que le nouveau déploiement d’une application peut prendre de quelques secondes à quelques minutes, selon le nombre et la taille des fichiers qui doivent être copiés dans l’environnement de production. Pendant ce temps aux utilisateurs visitant votre site peuvent rencontrer des erreurs ou un comportement étrange. Vous pouvez « désactiver » toute votre application en ajoutant une page nommée `App_Offline.htm` au répertoire racine de votre application qui explique à vos utilisateurs que le site est arrêté pour maintenance (ou tout autre) et qu’il va être sauvegarder sous peu. Lorsque le `App_Offline.htm` fichier est présent, le runtime ASP.NET redirige toutes les demandes entrantes vers cette page.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Déploiement d’une application web implique la copie des fichiers nécessaires à partir de l’environnement de développement à l’environnement de production. L’approche la plus courante à laquelle les fichiers sont transférés via un réseau est le fichier FTP (Transfer Protocol), et la plupart des fournisseurs d’hébergement web prennent en charge l’accès à leurs serveurs web FTP. Dans ce didacticiel, nous avons vu comment utiliser un client FTP pour déployer les fichiers nécessaires sur le serveur web. Une fois déployé, le site Web peut être consulté par toute personne avec une connexion à Internet.
 
@@ -159,7 +159,7 @@ Bonne programmation !
 Pour plus d’informations sur les sujets abordés dans ce didacticiel, consultez les ressources suivantes :
 
 - [Application\_Offline.htm et contourner la fonctionnalité « Erreurs conviviale d’Internet Explorer »](https://weblogs.asp.net/scottgu/App_5F00_Offline.htm-and-working-around-the-_2200_IE-Friendly-Errors_2200_-feature)
-- [Modes d’état de session](https://msdn.microsoft.com/en-us/library/ms178586.aspx)
+- [Modes d’état de session](https://msdn.microsoft.com/library/ms178586.aspx)
 
 >[!div class="step-by-step"]
 [Précédent](determining-what-files-need-to-be-deployed-cs.md)

@@ -2,20 +2,18 @@
 title: "Migration à partir de l’API Web ASP.NET"
 author: ardalis
 description: 
-keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: 4f0564b4-ed4e-4e1e-9755-c1144d21a0ef
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: migration/webapi
-ms.openlocfilehash: 4acb7ccf7f944df5d08ac7faa342f0c72cf9d1a7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 39224d1b2b0a54b043aa279659ff38134c5af7b7
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="migrating-from-aspnet-web-api"></a>Migration à partir de l’API Web ASP.NET
 
@@ -119,6 +117,6 @@ Une fois ces modifications ont été apportées et inutilisés à l’aide d’i
 
 Vous devez maintenant être en mesure d’exécuter le projet migré et accédez à */api/produits*; et, vous devez voir la liste complète des 3 produits. Accédez à */api/products/1* et vous devez voir le premier produit.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Migration d’un projet d’API Web ASP.NET simple vers ASP.NET MVC de base est assez simple, grâce à la prise en charge intégrée pour les API Web dans ASP.NET MVC de base. Le principal que doivent faire migrer tous les projets API Web ASP.NET sont itinéraires, les contrôleurs et les modèles, ainsi que des mises à jour pour les types utilisés par les contrôleurs et les actions.

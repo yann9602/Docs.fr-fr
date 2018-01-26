@@ -2,20 +2,18 @@
 title: "Identité et authentification de migration"
 author: ardalis
 description: 
-keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: 0db145cb-41a5-448a-b889-72e2d789ad7f
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: migration/identity
-ms.openlocfilehash: 6972329e3d434e1b67131843118f2f18229807b9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a3aa976578d8db089c69bf888f492f9cd7df824b
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="migrating-authentication-and-identity"></a>Identité et authentification de migration
 
@@ -51,7 +49,7 @@ public void ConfigureServices(IServiceCollection services)
 
 À ce stade, il existe des deux types référencés dans le code ci-dessus, nous n’avons pas encore été migrés à partir du projet ASP.NET MVC : `ApplicationDbContext` et `ApplicationUser`. Créer un nouveau *modèles* dossier dans le noyau ASP.NET le projet, puis ajoutez les deux classes lui correspondant à ces types. Vous trouverez le ASP.NET MVC versions de ces classes dans `/Models/IdentityModels.cs`, mais nous allons utiliser un fichier par la classe dans le projet migré car il s’agit plus claire.
 
-ApplicationUser.cs :
+ApplicationUser.cs:
 
 ```csharp
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -64,7 +62,7 @@ namespace NewMvc6Project.Models
 }
 ```
 
-ApplicationDbContext.cs :
+ApplicationDbContext.cs:
 
 ```csharp
 using Microsoft.AspNetCore.Identity.EntityFramework;
@@ -146,6 +144,6 @@ else
 
 À ce stade, vous devez être en mesure d’actualiser le site dans votre navigateur.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 ASP.NET Core introduit des modifications pour les fonctionnalités d’identité ASP.NET. Dans cet article, vous avez vu comment migrer les fonctionnalités de gestion de l’authentification et l’utilisateur d’une identité ASP.NET vers ASP.NET Core.

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/adding-content-to-source-control
 msc.type: authoredcontent
-ms.openlocfilehash: a6a90a03674cfe7565da0ed56148186ee9525707
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d46e2697d10ca27f8e08533350a6e7f2354b4a43
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-content-to-source-control"></a>Ajout de contenu au contrôle de code Source
 ====================
@@ -90,7 +90,7 @@ Pour ajouter des projets et solutions au contrôle de code source, vous devez d�
 1. Sur votre station de travail du développeur, déplacez vos projets et solutions à un emplacement approprié dans la structure de dossier mappé pour le projet d’équipe.
 
     > [!NOTE]
-    > De nombreuses organisations ont une meilleure approche à la façon dont les projets et solutions doivent être organisées dans le contrôle de code source. Pour obtenir des conseils sur la façon de structurer les dossiers, consultez [How To : Structure de dossiers du contrôle de Source de votre dans Team Foundation Server](https://msdn.microsoft.com/en-us/library/bb668992.aspx).
+    > De nombreuses organisations ont une meilleure approche à la façon dont les projets et solutions doivent être organisées dans le contrôle de code source. Pour obtenir des conseils sur la façon de structurer les dossiers, consultez [How To : Structure de dossiers du contrôle de Source de votre dans Team Foundation Server](https://msdn.microsoft.com/library/bb668992.aspx).
 2. Ouvrez la solution dans Visual Studio 2010.
 3. Dans le **l’Explorateur de solutions** fenêtre, avec le bouton droit de la solution, puis cliquez sur **ajouter la Solution au contrôle de code Source**.
 
@@ -149,13 +149,13 @@ Par exemple, la structure de dossiers pour l’exemple de gestionnaire de contac
 
 ## <a name="conclusion"></a>Conclusion
 
-Cette rubrique décrit comment se connecter à un projet d’équipe, mapper une structure de dossiers et ajouter du contenu à un contrôle de code source. Pour plus d’informations sur la façon de travailler avec les éléments sous contrôle de code source, consultez [à l’aide de la gestion de Version](https://msdn.microsoft.com/en-us/library/ms181368.aspx).
+Cette rubrique décrit comment se connecter à un projet d’équipe, mapper une structure de dossiers et ajouter du contenu à un contrôle de code source. Pour plus d’informations sur la façon de travailler avec les éléments sous contrôle de code source, consultez [à l’aide de la gestion de Version](https://msdn.microsoft.com/library/ms181368.aspx).
 
 La rubrique suivante, [configuration d’un serveur de Build TFS pour le déploiement Web](configuring-a-tfs-build-server-for-web-deployment.md), explique comment préparer un serveur TFS Team Build pour générer et déployer votre solution.
 
 ## <a name="further-reading"></a>informations supplémentaires
 
-Pour plus d’informations sur l’utilisation de contrôle de code source TFS, consultez [à l’aide de la gestion de Version](https://msdn.microsoft.com/en-us/library/ms181368.aspx).
+Pour plus d’informations sur l’utilisation de contrôle de code source TFS, consultez [à l’aide de la gestion de Version](https://msdn.microsoft.com/library/ms181368.aspx).
 
 >[!div class="step-by-step"]
 [Précédent](creating-a-team-project-in-tfs.md)

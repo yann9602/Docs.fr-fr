@@ -2,20 +2,18 @@
 title: Disposition
 author: ardalis
 description: 
-keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: 29f12d1f-9734-48bd-bf1a-cee53a8ab700
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/layout
-ms.openlocfilehash: 064621d8756b007c5b8859111bf3a03a0d7dda81
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e268f045e39188e9cc1e759ff7e6c553662dd669
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="layout"></a>Disposition
 
@@ -35,7 +33,7 @@ Par convention, la disposition par défaut pour une application ASP.NET est nomm
 
 ![dossier d’affichages dans l’Explorateur de solutions](layout/_static/web-project-views.png)
 
-Cette disposition définit un modèle de niveau supérieur pour les vues dans l’application. Les applications ne nécessitent pas une mise en page et applications peuvent définir plusieurs dispositions, avec des vues différentes en spécifiant des dispositions différentes.
+Cette disposition définit un modèle de niveau supérieur pour les vues dans l’application. Applications ne nécessitent pas une mise en page et applications peuvent définir plusieurs dispositions, avec des vues différentes en spécifiant des dispositions différentes.
 
 Un exemple `_Layout.cshtml`:
 

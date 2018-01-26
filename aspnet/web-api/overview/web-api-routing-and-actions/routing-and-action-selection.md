@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/routing-and-action-selection
 msc.type: authoredcontent
-ms.openlocfilehash: 02c2a01ef8ec2b5a49f2c303ee61f02702a3ba54
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 997582263bd48590b74434ee0ffc6be928fa1e08
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="routing-and-action-selection-in-aspnet-web-api"></a>Routage et sélection d’Action dans l’API Web ASP.NET
 ====================
@@ -121,7 +121,7 @@ L’implémentation par défaut est fournie par le **ApiControllerActionSelector
 
 Avant d’examiner l’algorithme de sélection, nous devons comprendre certains éléments concernant les actions de contrôleur.
 
-**Les méthodes sur le contrôleur sont considérées comme « actions » ?** Lorsque vous sélectionnez une action, le framework examine uniquement les méthodes d’instance publique sur le contrôleur. En outre, il exclut [« nom spécial »](https://msdn.microsoft.com/en-us/library/system.reflection.methodbase.isspecialname) méthodes (constructeurs, événements, les surcharges d’opérateur et ainsi de suite) et les méthodes héritées de la **ApiController** classe.
+**Les méthodes sur le contrôleur sont considérées comme « actions » ?** Lorsque vous sélectionnez une action, le framework examine uniquement les méthodes d’instance publique sur le contrôleur. En outre, il exclut [« nom spécial »](https://msdn.microsoft.com/library/system.reflection.methodbase.isspecialname) méthodes (constructeurs, événements, les surcharges d’opérateur et ainsi de suite) et les méthodes héritées de la **ApiController** classe.
 
 **Méthodes HTTP.** Le framework choisit uniquement les actions qui correspondent à la méthode HTTP de la demande, déterminée comme suit :
 
@@ -134,7 +134,7 @@ Avant d’examiner l’algorithme de sélection, nous devons comprendre certains
 - Types simples sont tirées de l’URI.
 - Les types complexes sont effectuées à partir du corps de la demande.
 
-Tous les exemples de types simples le [types primitifs .NET Framework](https://msdn.microsoft.com/en-us/library/system.type.isprimitive), ainsi que **DateTime**, **décimal**, **Guid**, **chaîne** , et **TimeSpan**. Pour chaque action, au moins un paramètre peut lire le corps de la demande.
+Tous les exemples de types simples le [types primitifs .NET Framework](https://msdn.microsoft.com/library/system.type.isprimitive), ainsi que **DateTime**, **décimal**, **Guid**, **chaîne** , et **TimeSpan**. Pour chaque action, au moins un paramètre peut lire le corps de la demande.
 
 > [!NOTE]
 > Il est possible de remplacer les règles de liaison par défaut. Consultez [liaison WebAPI paramètre sous le capot](https://blogs.msdn.com/b/jmstall/archive/2012/05/11/webapi-parameter-binding-under-the-hood.aspx).
@@ -218,7 +218,7 @@ Le `GetAll` méthodes correspondent aux plus simplement. Le `GetById` méthode c
 
 Le `GetById` méthode wins, car elle correspond à un paramètre, et aucun paramètre pour `GetAll`. La méthode est appelée avec les valeurs de paramètre suivantes :
 
-- *ID* = 1
+- *id* = 1
 - *version* = 1.5
 
 Notez que même si *version* n’a été utilisé dans l’algorithme de sélection, la valeur du paramètre provient de la chaîne de requête URI.

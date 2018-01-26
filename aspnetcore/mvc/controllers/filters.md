@@ -1,21 +1,19 @@
 ---
 title: Filtres
 author: ardalis
-description: "Découvrez comment * filtres * travail et comment les utiliser dans ASP.NET MVC de base."
-keywords: "ASP.NET Core, filtres, filtres mvc, filtres d’action, les filtres d’autorisation, les filtres de ressource, filtres de résultat, les filtres d’exception"
+description: "Découvrez comment *filtres* travail et comment les utiliser dans ASP.NET MVC de base."
 ms.author: tdykstra
 manager: wpickett
 ms.date: 12/12/2016
 ms.topic: article
-ms.assetid: 531bda08-aa5b-4471-8f08-96add22c8683
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/filters
-ms.openlocfilehash: 0a2a374ac77b9fd7c626aa6749cffbd3fb0f08d5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 32bfddde48f5e5de9c06cb159493eb9ba6ede8be
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="filters"></a>Filtres
 
@@ -72,7 +70,7 @@ Vous pouvez implémenter des interfaces pour plusieurs étapes de filtre dans un
 
 ### <a name="ifilterfactory"></a>IFilterFactory
 
-L'objet `IFilterFactory` implémente l'objet `IFilter`. Par conséquent, un `IFilterFactory` instance peut être utilisée comme un `IFilter` instance n’importe où dans le pipeline de filtre. Lorsque le framework prépare appeler le filtre, il tente d’effectuer un cast en un `IFilterFactory`. Si cette conversion réussit, le `CreateInstance` méthode est appelée pour créer le `IFilter` instance qui sera appelé. Cela fournit une conception très flexible, étant donné que le pipeline de filtre précis n’a pas besoin d’être défini explicitement, lorsque l’application démarre.
+L'objet `IFilterFactory` implémente l'objet `IFilter`. Par conséquent, un `IFilterFactory` instance peut être utilisée comme un `IFilter` instance n’importe où dans le pipeline de filtre. Lorsque le framework prépare appeler le filtre, il tente d’effectuer un cast en un `IFilterFactory`. Si cette conversion réussit, le `CreateInstance` méthode est appelée pour créer le `IFilter` instance qui sera appelé. Cela fournit une conception très flexible, étant donné que le pipeline de filtre précis n’a pas besoin de définir explicitement lorsque l’application démarre.
 
 Vous pouvez implémenter `IFilterFactory` sur vos propres implémentations d’attribut en tant qu’une autre approche pour la création de filtres :
 
@@ -225,7 +223,7 @@ Ce filtre peut être appliqué aux classes ou méthodes à l’aide de la `[Samp
 
 *Filtres d’autorisation* contrôler l’accès aux méthodes d’action et le premier filtre à exécuter dans le pipeline de filtre. Ils ont uniquement un avant de méthode, contrairement à la plupart des filtres qui prennent en charge avant et après les méthodes. Vous devez uniquement écrire un filtre d’autorisation personnalisée si vous écrivez votre propre infrastructure d’autorisation. Préférez la configuration de vos stratégies d’autorisation ou de l’écriture d’une stratégie d’autorisation personnalisée sur l’écriture d’un filtre personnalisé. L’implémentation de filtre intégré est simplement chargée d’appeler le système d’autorisation.
 
-Notez que vous ne devez pas lever d’exceptions dans les filtres d’autorisation, étant donné que rien ne gère l’exception (filtres d’exception ne sont pas les gérer). Au lieu de cela, émettre une demande d’accès ou d’autre moyen.
+Notez que vous ne doivent pas lever d’exceptions dans les filtres d’autorisation, étant donné que rien ne gère l’exception (filtres d’exception ne sont pas les gérer). Au lieu de cela, émettre une demande d’accès ou d’autre moyen.
 
 En savoir plus sur [autorisation](../../security/authorization/index.md).
 
@@ -272,14 +270,14 @@ L’exemple de filtre d’exception suivant utilise une erreur développeur pers
 
 [!code-csharp[Main](./filters/sample/src/FiltersSample/Filters/CustomExceptionFilterAttribute.cs?name=snippet_ExceptionFilter&highlight=1,14)]
 
-Filtres d’exception n’ont pas de deux événements (avant ou après) : ils implémentent uniquement `OnException` (ou `OnExceptionAsync`). 
+Filtres d’exception n’ont pas deux événements (avant ou après) : ils implémentent uniquement `OnException` (ou `OnExceptionAsync`). 
 
 Gérer les filtres d’exception des exceptions non gérées qui se produisent dans la création du contrôleur, [liaison de modèle](../models/model-binding.md), filtres d’action ou des méthodes d’action. Ils ne sont pas intercepter des exceptions qui se produisent dans les filtres de ressources, les filtres de résultat ou l’exécution du résultat de MVC.
 
 Pour gérer une exception, définissez la `ExceptionContext.ExceptionHandled` la propriété ou écrire une réponse. Cela arrête la propagation de l’exception. Notez qu’un filtre d’Exception ne peut pas activer une exception dans un « succès ». Un filtre d’Action peut le faire.
 
 > [!NOTE]
-> Dans la version 1.1 d’ASP.NET, la réponse n’est pas envoyée si vous définissez `ExceptionHandled` true **et** écrire une réponse. Dans ce scénario, ASP.NET Core 1.0 envoie la réponse et ASP.NET Core 1.1.2 retournera le comportement de 1.0. Pour plus d’informations, consultez [émettre #5594](https://github.com/aspnet/Mvc/issues/5594) dans le référentiel GitHub. 
+> Dans la version 1.1 d’ASP.NET, la réponse n’est pas renvoyée si vous définissez `ExceptionHandled` true **et** écrire une réponse. Dans ce scénario, ASP.NET Core 1.0 envoie la réponse et ASP.NET Core 1.1.2 retournera le comportement de 1.0. Pour plus d’informations, consultez [émettre #5594](https://github.com/aspnet/Mvc/issues/5594) dans le référentiel GitHub. 
 
 Filtres d’exception sont adaptés pour intercepter les exceptions qui se produisent dans les actions de MVC, mais ils ne sont pas aussi flexibles que l’intergiciel (middleware) de gestion des erreurs. Préférez l’intergiciel (middleware) pour le cas général et utiliser des filtres uniquement où vous avez besoin pour gérer les erreurs *différemment* en fonction de l’action MVC a été choisie. Par exemple, votre application peut comporter des méthodes d’action pour les deux points de terminaison d’API et de vues/HTML. Les points de terminaison API peut retourner des informations d’erreur au format JSON, tandis que les actions basée sur une vue peut retourner une page d’erreur au format HTML.
 

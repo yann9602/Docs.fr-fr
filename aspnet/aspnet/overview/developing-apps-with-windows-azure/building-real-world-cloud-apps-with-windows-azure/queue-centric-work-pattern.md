@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern
 msc.type: authoredcontent
-ms.openlocfilehash: 125d555a9e170ef35dd99e0409a2442d5f9ae34a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ccfbaa26cbf610f847811e6f3c612458277046ed
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="queue-centric-work-pattern-building-real-world-cloud-apps-with-azure"></a>Modèle de travail centré sur la file d’attente (génération d’applications Cloud du monde réel avec Azure)
 ====================
@@ -91,7 +91,7 @@ Pour implémenter le modèle de file d’attente, nous devons effectuer deux mod
 - Lorsqu’un utilisateur soumet une nouvelle tâche corriger, placez la tâche dans la file d’attente, au lieu d’écrire dans la base de données.
 - Créer un service principal qui traite les messages dans la file d’attente.
 
-La file d’attente, nous allons utiliser la [Service de stockage de file d’attente Azure](https://www.windowsazure.com/en-us/develop/net/how-to-guides/queue-service/). Une autre option consiste à utiliser [Azure Service Bus](https://docs.microsoft.com/azure/service-bus/).
+La file d’attente, nous allons utiliser la [Service de stockage de file d’attente Azure](https://www.windowsazure.com/develop/net/how-to-guides/queue-service/). Une autre option consiste à utiliser [Azure Service Bus](https://docs.microsoft.com/azure/service-bus/).
 
 Pour déterminer le service de file d’attente à utiliser, tenez compte des comment votre application a besoin pour envoyer et recevoir les messages dans la file d’attente :
 
@@ -106,10 +106,10 @@ Une autre considération est la disponibilité des applications. Le Service de s
 
 Pour placer une tâche corriger sur la file d’attente, le serveur web frontal effectue les étapes suivantes :
 
-1. Créer un [CloudQueueClient](https://msdn.microsoft.com/en-us/library/microsoft.windowsazure.storage.queue.cloudqueueclient.aspx) instance. Le `CloudQueueClient` instance est utilisée pour exécuter des demandes sur le Service de file d’attente.
+1. Créer un [CloudQueueClient](https://msdn.microsoft.com/library/microsoft.windowsazure.storage.queue.cloudqueueclient.aspx) instance. Le `CloudQueueClient` instance est utilisée pour exécuter des demandes sur le Service de file d’attente.
 2. Créer la file d’attente, s’il n’existe pas encore.
 3. La tâche corriger la sérialisation.
-4. Appelez [CloudQueue.AddMessageAsync](https://msdn.microsoft.com/en-us/library/microsoft.windowsazure.storage.queue.cloudqueue.addmessageasync.aspx) pour placer le message dans la file d’attente.
+4. Appelez [CloudQueue.AddMessageAsync](https://msdn.microsoft.com/library/microsoft.windowsazure.storage.queue.cloudqueue.addmessageasync.aspx) pour placer le message dans la file d’attente.
 
 Nous allons effectuer ce travail dans le constructeur et `SendMessageAsync` (méthode) d’un nouveau `FixItQueueManager` classe.
 
@@ -117,7 +117,7 @@ Nous allons effectuer ce travail dans le constructeur et `SendMessageAsync` (mé
 
 Ici, nous utilisons le [Json.NET](https://github.com/JamesNK/Newtonsoft.Json) library pour sérialiser le correctif au format JSON. Vous pouvez utiliser n’importe quelle approche de sérialisation que vous préférez. JSON a l’avantage d’être contrôlable de visu, tout en étant moins détaillés que XML.
 
-Code de qualité production serait ajouter la logique de gestion des erreurs, interrompre si la base de données n’est plus disponible, gérer plus facilement de récupération, créez la file d’attente au démarrage de l’application et gérer «[poison » messages](https://msdn.microsoft.com/en-us/library/ms789028(v=vs.110).aspx). (Un message incohérent est un message qui ne peut pas être traité pour une raison quelconque. Vous ne souhaitez pas les messages incohérents dans cet état dans la file d’attente, où le rôle de travail essaiera en permanence les traiter, échec, essayez à nouveau, échouer, et ainsi de suite.)
+Code de qualité production serait ajouter la logique de gestion des erreurs, interrompre si la base de données n’est plus disponible, gérer plus facilement de récupération, créez la file d’attente au démarrage de l’application et gérer «[poison » messages](https://msdn.microsoft.com/library/ms789028(v=vs.110).aspx). (Un message incohérent est un message qui ne peut pas être traité pour une raison quelconque. Vous ne souhaitez pas les messages incohérents dans cet état dans la file d’attente, où le rôle de travail essaiera en permanence les traiter, échec, essayez à nouveau, échouer, et ainsi de suite.)
 
 Dans l’application frontale de MVC, nous devons mettre à jour le code qui crée une nouvelle tâche. Au lieu de mettre la tâche dans le référentiel, appelez le `SendMessageAsync` méthode illustrée ci-dessus.
 
@@ -156,7 +156,7 @@ Cliquez sur **OK** pour terminer la boîte de dialogue. Cette opération ajoute 
 
 ![](queue-centric-work-pattern/_static/image8.png)
 
-Pour plus d’informations, consultez [création d’un projet Azure avec Visual Studio.](https://msdn.microsoft.com/en-us/library/windowsazure/ee405487.aspx)
+Pour plus d’informations, consultez [création d’un projet Azure avec Visual Studio.](https://msdn.microsoft.com/library/windowsazure/ee405487.aspx)
 
 Dans le rôle de travail, nous interroger pour les messages en appelant le `ProcessMessageAsync` méthode de la `FixItQueueManager` classe que nous avons vu plus haut.
 
@@ -168,9 +168,9 @@ Le `ProcessMessagesAsync` méthode vérifie s’il existe un message en attente.
 
 Charge l’interrogation pour les messages de la file d’attente entraîne une petite transaction, par conséquent, si aucun message n’est en attente d’être traité, le rôle de travail `RunAsync` méthode seconde avant d’interrogation à attendre en appelant `Task.Delay(1000)`.
 
-Dans un projet web, ajouter du code asynchrone automatiquement améliorent les performances, car IIS gère un pool de threads limité. Qui n’est pas le cas dans un projet de rôle de travail. Pour améliorer l’évolutivité du rôle de travail, vous pouvez écrire du code multithread ou utiliser du code asynchrone pour implémenter [programmation parallèle](https://msdn.microsoft.com/en-us/library/ff963553.aspx). L’exemple n’implémente pas la programmation parallèle, mais montre comment rendre le code asynchrone afin de pouvoir implémenter la programmation parallèle.
+Dans un projet web, ajouter du code asynchrone automatiquement améliorent les performances, car IIS gère un pool de threads limité. Qui n’est pas le cas dans un projet de rôle de travail. Pour améliorer l’évolutivité du rôle de travail, vous pouvez écrire du code multithread ou utiliser du code asynchrone pour implémenter [programmation parallèle](https://msdn.microsoft.com/library/ff963553.aspx). L’exemple n’implémente pas la programmation parallèle, mais montre comment rendre le code asynchrone afin de pouvoir implémenter la programmation parallèle.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Dans ce chapitre, vous avez vu comment améliorer la réactivité des applications, la fiabilité et l’évolutivité en implémentant le modèle de travail centré sur la file d’attente.
 
@@ -184,11 +184,11 @@ Pour plus d’informations sur les files d’attente, consultez les ressources s
 Documentation :
 
 - [Partie de files d’attente de stockage Microsoft Azure 1 : Prise en main](http://justazure.com/microsoft-azure-storage-queues-part-1-getting-started/). Article de Roman Schacherl.
-- [L’exécution de tâches en arrière-plan](https://msdn.microsoft.com/en-us/library/ff803365.aspx), chapitre 5 du [déplacement des Applications dans le Cloud, 3e édition](https://msdn.microsoft.com/en-us/library/ff728592.aspx) à partir de Microsoft Patterns and Practices. (En particulier, la section [« À l’aide de stockage files d’attente Azure »](https://msdn.microsoft.com/en-us/library/ff803365.aspx#sec7).)
-- [Meilleures pratiques pour optimiser la rentabilité des Solutions de messagerie basée sur la file d’attente sur Azure et l’extensibilité](https://msdn.microsoft.com/en-us/library/windowsazure/hh697709.aspx). Livre blanc par Valery Mizonov.
-- [Comparaison des files d’attente Azure et files d’attente du Bus de Service](https://msdn.microsoft.com/en-us/magazine/jj159884.aspx). L’article MSDN Magazine, fournit des informations supplémentaires qui peuvent vous aider à choisir le service de file d’attente à utiliser. L’article mentionne que Service Bus dépend des services ACS pour l’authentification, ce qui signifie que les files d’attente service bus seraient indisponibles lorsque des services ACS n’est pas disponible. Toutefois, étant donné que l’article a été écrit, service bus a été modifiée pour pouvoir utiliser [jetons SAP](https://msdn.microsoft.com/en-us/library/windowsazure/dn170477.aspx) comme alternative à des services ACS.
-- [Microsoft Patterns and Practices - Guide Azure](https://msdn.microsoft.com/en-us/library/dn568099.aspx). Consultez le manuel de la messagerie asynchrone, les canaux et les filtres de modèle, modèle de compensation des transactions, modèle de consommateurs concurrents, modèle CQRS.
-- [CQRS voyage](https://msdn.microsoft.com/en-us/library/jj554200). Livres sur CQRS par Microsoft Patterns and Practices.
+- [L’exécution de tâches en arrière-plan](https://msdn.microsoft.com/library/ff803365.aspx), chapitre 5 du [déplacement des Applications dans le Cloud, 3e édition](https://msdn.microsoft.com/library/ff728592.aspx) à partir de Microsoft Patterns and Practices. (En particulier, la section [« À l’aide de stockage files d’attente Azure »](https://msdn.microsoft.com/library/ff803365.aspx#sec7).)
+- [Meilleures pratiques pour optimiser la rentabilité des Solutions de messagerie basée sur la file d’attente sur Azure et l’extensibilité](https://msdn.microsoft.com/library/windowsazure/hh697709.aspx). Livre blanc par Valery Mizonov.
+- [Comparaison des files d’attente Azure et files d’attente du Bus de Service](https://msdn.microsoft.com/magazine/jj159884.aspx). L’article MSDN Magazine, fournit des informations supplémentaires qui peuvent vous aider à choisir le service de file d’attente à utiliser. L’article mentionne que Service Bus dépend des services ACS pour l’authentification, ce qui signifie que les files d’attente service bus seraient indisponibles lorsque des services ACS n’est pas disponible. Toutefois, étant donné que l’article a été écrit, service bus a été modifiée pour pouvoir utiliser [jetons SAP](https://msdn.microsoft.com/library/windowsazure/dn170477.aspx) comme alternative à des services ACS.
+- [Microsoft Patterns and Practices - Guide Azure](https://msdn.microsoft.com/library/dn568099.aspx). Consultez le manuel de la messagerie asynchrone, les canaux et les filtres de modèle, modèle de compensation des transactions, modèle de consommateurs concurrents, modèle CQRS.
+- [CQRS voyage](https://msdn.microsoft.com/library/jj554200). Livres sur CQRS par Microsoft Patterns and Practices.
 
 Vidéo :
 

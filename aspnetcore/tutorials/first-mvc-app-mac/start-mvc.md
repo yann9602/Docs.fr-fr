@@ -2,7 +2,6 @@
 title: "Bien démarrer avec ASP.NET Core MVC et Visual Studio pour Mac"
 author: rick-anderson
 description: "Bien démarrer avec ASP.NET Core MVC et Visual Studio"
-keywords: ASP.NET Core, MVC, Visual Studio pour Mac, Entity Framework
 ms.author: riande
 manager: wpickett
 ms.date: 8/23/2017
@@ -10,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/first-mvc-app-mac/start-mvc
-ms.openlocfilehash: 21f115eec924d5e4b21ad78398c8cbd99e02a0a8
-ms.sourcegitcommit: 216dfac27542f10a79274a9ce60dc449e888ed20
+ms.openlocfilehash: 51c0477c40885d3aaaa7562f8baba0a94cb4f920
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="getting-started-with-aspnet-core-mvc-and-visual-studio-for-mac"></a>Bien démarrer avec ASP.NET Core MVC et Visual Studio pour Mac
 
@@ -30,7 +29,7 @@ Il existe trois versions de ce didacticiel :
 * Windows : [Créer une application ASP.NET Core MVC avec Visual Studio](xref:tutorials/first-mvc-app/start-mvc)
 * Linux, macOS et Windows : [Créer une application ASP.NET Core MVC avec Visual Studio Code](xref:tutorials/first-mvc-app-xplat/start-mvc)
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 Ce didacticiel nécessite le [SDK .NET Core 2.0.0](https://www.microsoft.com/net/core) ou version ultérieure.
 

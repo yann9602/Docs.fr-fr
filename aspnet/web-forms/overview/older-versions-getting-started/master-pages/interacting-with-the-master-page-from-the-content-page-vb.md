@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/interacting-with-the-master-page-from-the-content-page-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 2f5cb1712922c355c99bde9f8252dc84f1f590ec
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a9020115e6348d30350f8fff493efe88bd0d4c37
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="interacting-with-the-master-page-from-the-content-page-vb"></a>Interagir avec la Page maître à partir de la Page de contenu (VB)
 ====================
@@ -192,9 +192,9 @@ Examinons les deux approches.
 
 ### <a name="using-the-loosely-typedpagemasterproperty"></a>À l’aide de la faiblement typée`Page.Master`propriété
 
-Toutes les pages de web ASP.NET doit dériver de la `Page` (classe), qui se trouve dans le `System.Web.UI` espace de noms. Le `Page` classe inclut un [ `Master` propriété](https://msdn.microsoft.com/en-us/library/system.web.ui.page.master.aspx) qui retourne une référence à la page la page maître. Si la page n’a pas d’une page maître `Master` retourne `Nothing`.
+Toutes les pages de web ASP.NET doit dériver de la `Page` (classe), qui se trouve dans le `System.Web.UI` espace de noms. Le `Page` classe inclut un [ `Master` propriété](https://msdn.microsoft.com/library/system.web.ui.page.master.aspx) qui retourne une référence à la page la page maître. Si la page n’a pas d’une page maître `Master` retourne `Nothing`.
 
-Le `Master` propriété retourne un objet de type [ `MasterPage` ](https://msdn.microsoft.com/en-us/library/system.web.ui.masterpage.aspx) (également située dans le `System.Web.UI` espace de noms) qui est le type de base dont dérivent toutes les pages maîtres. Par conséquent, pour utiliser les propriétés publiques ou les méthodes définies dans la page maître de notre site Web que nous devons convertir les `MasterPage` objet retourné à partir de la `Master` propriété vers le type approprié. Étant donné que nous avons nommé notre fichier de page maître `Site.master`, la classe code-behind s’appelait `Site`. Par conséquent, le code suivant convertit le `Page.Master` propriété à une instance de la `Site` classe.
+Le `Master` propriété retourne un objet de type [ `MasterPage` ](https://msdn.microsoft.com/library/system.web.ui.masterpage.aspx) (également située dans le `System.Web.UI` espace de noms) qui est le type de base dont dérivent toutes les pages maîtres. Par conséquent, pour utiliser les propriétés publiques ou les méthodes définies dans la page maître de notre site Web que nous devons convertir les `MasterPage` objet retourné à partir de la `Master` propriété vers le type approprié. Étant donné que nous avons nommé notre fichier de page maître `Site.master`, la classe code-behind s’appelait `Site`. Par conséquent, le code suivant convertit le `Page.Master` propriété à une instance de la `Site` classe.
 
 
 [!code-vb[Main](interacting-with-the-master-page-from-the-content-page-vb/samples/sample8.vb)]
@@ -217,7 +217,7 @@ Si vous examinez attentivement, vous pouvez voir que classe de code-behind d’u
 
 La génération de code automatique qui se produit chaque fois qu’une page ASP.NET est visitée prépare des possibilités plutôt intéressantes et utiles. Dans le cas des pages maîtres, si nous dire le moteur ASP.NET page maître est utilisé par notre page de contenu, cela génère un fortement typée `Master` propriété pour nous.
 
-Utilisez le [ `@MasterType` directive](https://msdn.microsoft.com/en-us/library/ms228274.aspx) pour informer le moteur ASP.NET de type de page maître de la page de contenu. Le `@MasterType` directive peut accepter le nom de type de la page maître ou son chemin d’accès de fichier. Pour spécifier que le `AddProduct.aspx` page utilise `Site.master` comme sa page maître, ajoutez la directive suivante en haut du `AddProduct.aspx`:
+Utilisez le [ `@MasterType` directive](https://msdn.microsoft.com/library/ms228274.aspx) pour informer le moteur ASP.NET de type de page maître de la page de contenu. Le `@MasterType` directive peut accepter le nom de type de la page maître ou son chemin d’accès de fichier. Pour spécifier que le `AddProduct.aspx` page utilise `Site.master` comme sa page maître, ajoutez la directive suivante en haut du `AddProduct.aspx`:
 
 
 [!code-aspx[Main](interacting-with-the-master-page-from-the-content-page-vb/samples/sample9.aspx)]
@@ -245,7 +245,7 @@ La figure 8 illustre le `AddProduct.aspx` page immédiatement après un nouveau 
 **Figure 08**: la Page maître étiquette et GridView affichent le produit Just-Added ([cliquez pour afficher l’image en taille réelle](interacting-with-the-master-page-from-the-content-page-vb/_static/image24.png))
 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Dans l’idéal, une page maître et ses pages de contenu sont complètement séparées les unes des autres et ne nécessitent aucun niveau d’interaction. Alors que les pages maîtres et les pages de contenu doivent être conçues avec cet objectif, il existe un nombre de scénarios courants dans lesquels une page de contenu doit interagir avec sa page maître. Une des raisons plus courantes tourne autour de la mise à jour d’une partie spécifique de l’affichage de page maître basé sur une action qui a été dépassé dans la page de contenu.
 

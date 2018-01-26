@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-elmah-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 3aef1c2c2357d948a49787c9dd039d4529479357
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: eeb1210038f4982d80352322842733c0e96300a7
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="logging-error-details-with-elmah-c"></a>Journalisation des détails de l’erreur avec ELMAH (c#)
 ====================
@@ -238,7 +238,7 @@ Le `<equal>` élément à l’intérieur du `<test>` section est appelée une as
 
 Pour plus d’informations sur l’erreur de ELMAH fonctionnalités de filtrage, reportez-vous à la [section erreur filtrage](https://code.google.com/p/elmah/wiki/ErrorFiltering) dans les [ELMAH wiki](https://code.google.com/p/elmah/w/list).
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 ELMAH fournit un mécanisme simple et puissant pour la journalisation des erreurs dans une application web ASP.NET. Comme le système de surveillance de l’intégrité de Microsoft, ELMAH peut enregistrer les erreurs dans une base de données et envoyer des détails de l’erreur à un développeur par courrier électronique. Contrairement à l’intégrité du système de surveillance, ELMAH inclut la prise en charge pour un large éventail de magasins de données de journal erreur, y compris : Microsoft SQL Server, Microsoft Access, Oracle, les fichiers XML et plusieurs autres. En outre, ELMAH offre un mécanisme intégré pour afficher le journal des erreurs et les détails sur une erreur spécifique à partir d’une page web, `elmah.axd`. Le `elmah.axd` page peut également rendre les informations d’erreur comme un flux RSS ou comme un fichier de valeurs séparées par des virgules (CSV), que vous pouvez consulter à l’aide de Microsoft Excel. Vous pouvez également demander à ELMAH pour filtrer les erreurs dans le journal à l’aide d’assertions déclaratives ou par programme. Et ELMAH peut être utilisé avec les applications ASP.NET version 1.x.
 
@@ -254,7 +254,7 @@ Pour plus d’informations sur les sujets abordés dans ce didacticiel, consulte
 - [Page de projet ELMAH](https://code.google.com/p/elmah/) (source de code, des exemples, wiki)
 - [Brancher ELMAH dans une Application Web pour intercepter les Exceptions non gérées](http://screencastaday.com/ScreenCasts/43_Plugging_Elmah_into_Web_Application_to_Catch_Unhandled_Exceptions.aspx) (vidéo)
 - [Pages du journal de sécurité erreur](https://code.google.com/p/elmah/wiki/SecuringErrorLogPages)
-- [À l’aide des Modules HTTP et des gestionnaires pour créer des composants enfichables ASP.NET](https://msdn.microsoft.com/en-us/library/aa479332.aspx)
+- [À l’aide des Modules HTTP et des gestionnaires pour créer des composants enfichables ASP.NET](https://msdn.microsoft.com/library/aa479332.aspx)
 - [Didacticiels de sécurité de site Web](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md)
 
 >[!div class="step-by-step"]

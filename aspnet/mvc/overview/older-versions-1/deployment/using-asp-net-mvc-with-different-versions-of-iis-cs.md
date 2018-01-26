@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/deployment/using-asp-net-mvc-with-different-versions-of-iis-cs
 msc.type: authoredcontent
-ms.openlocfilehash: fdd024aba399f26e9ef7d01a00078cd3d5750d94
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8f2b98d5e5ae677fdac32336d542202a40290e21
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-aspnet-mvc-with-different-versions-of-iis-c"></a>À l’aide d’ASP.NET MVC avec différentes Versions d’IIS (c#)
 ====================
@@ -33,7 +33,7 @@ Voici un résumé des différentes versions d’IIS :
 - IIS 7.0 (mode classique) - vous devez effectuer une configuration spéciale pour utiliser le routage ASP.NET.
 - IIS 6.0 ou ci-dessous - vous devez effectuer une configuration spéciale pour utiliser le routage ASP.NET.
 
-La dernière version d’IIS est la version 7.5 (sur Win7). IIS 7 d’IIS est inclus avec Windows Server 2008 et VISTA SP1 et versions ultérieures. Vous pouvez également installer IIS 7.0 sur n’importe quelle version du système d’exploitation Vista sauf Édition Familiale Basique (consultez [https://technet.microsoft.com/en-us/library/cc731179%28WS.10%29.aspx](https://technet.microsoft.com/en-us/library/cc731179%28WS.10%29.aspx)).
+La dernière version d’IIS est la version 7.5 (sur Win7). IIS 7 d’IIS est inclus avec Windows Server 2008 et VISTA SP1 et versions ultérieures. Vous pouvez également installer IIS 7.0 sur n’importe quelle version du système d’exploitation Vista sauf Édition Familiale Basique (consultez [https://technet.microsoft.com/library/cc731179%28WS.10%29.aspx](https://technet.microsoft.com/library/cc731179%28WS.10%29.aspx)).
 
 IIS 7.0 prend en charge deux modes de traitement des demandes. Vous pouvez utiliser le mode intégré ou en mode classique. Vous n’avez pas besoin effectuer les étapes de configuration spéciales lors de l’utilisation d’IIS 7.0 en mode intégré. Toutefois, vous n’avez pas besoin effectuer une configuration supplémentaire lors de l’utilisation d’IIS 7.0 en mode classique.
 
@@ -121,11 +121,11 @@ Il existe deux modifications importantes apportées au fichier Global.asax dans 
 
 L’ajout de l’extension .mvc modifie le type de fichiers que le module de routage ASP.NET intercepte. Avec cette modification, l’application ASP.NET MVC maintenant achemine les demandes à ce qui suit :
 
-/Home.Mvc/index/
+/Home.mvc/Index/
 
-/Product.Mvc/Details/3
+/Product.mvc/Details/3
 
-/Product.Mvc/
+/Product.mvc/
 
 La deuxième route, l’itinéraire racine, est une nouveauté. Ce modèle d’URL pour l’itinéraire racine est une chaîne vide. Cet itinéraire est nécessaire pour la correspondance des demandes effectuées par rapport à la racine de votre application. Par exemple, l’itinéraire racine correspondra à une requête qui ressemble à ceci :
 
@@ -204,7 +204,7 @@ Après avoir activé un mappage de script générique pour IIS 7.0 ou IIS 6.0, v
 
 / Produit
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 L’objectif de ce didacticiel est d’expliquer comment vous pouvez utiliser ASP.NET MVC lors de l’utilisation d’une version antérieure de IIS (ou IIS 7.0 en mode classique). Nous avons parlé des deux méthodes de mise en route du routage ASP.NET pour travailler avec les versions antérieures d’IIS : modifier la table d’itinéraires par défaut ou créer un mappage de script générique.
 

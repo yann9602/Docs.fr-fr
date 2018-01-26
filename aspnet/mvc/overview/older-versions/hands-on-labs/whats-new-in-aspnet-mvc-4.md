@@ -12,17 +12,17 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/whats-new-in-aspnet-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: 3de952224e23eed29f90ed0e8c662e4ee3f531ce
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8b1bdae048afc78399ccc7b0eac7125d9b983c13
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="whats-new-in-aspnet-mvc-4"></a>Quelles sont les nouveautés dans ASP.NET MVC 4
 ====================
 par [Web Camps équipe](https://twitter.com/webcamps)
 
-[Télécharger Camps Web Kit de formation](http://www.microsoft.com/en-us/download/29843)
+[Télécharger Camps Web Kit de formation](http://www.microsoft.com/download/29843)
 
 > ASP.NET MVC 4 est une infrastructure pour générer des applications web évolutive basée sur des normes, à l’aide de modèles de conception bien établis et la puissance d’ASP.NET et le .NET framework. Cette nouvelle, quatrième version du framework se concentre sur la simplification du développement d’applications web mobiles.
 > 
@@ -30,7 +30,7 @@ par [Web Camps équipe](https://twitter.com/webcamps)
 > 
 > Dans cet atelier pratique, vous allez démarrer avec ASP.NET MVC 4 &quot;Application Internet&quot; modèle de projet pour créer une application de la galerie de photos. Vous allez améliorer progressivement de l’application à l’aide de jQuery Mobile et les nouveautés de ASP.NET MVC 4 pour le rendre compatible avec les différents appareils mobiles et les navigateurs web de bureau. Vous allez également découvrir associez-y de code pour la génération de code et comment ASP.NET MVC 4 rend plus facile d’écrire des méthodes d’action asynchrones en prenant en charge de la tâche&lt;ActionResult&gt; types de retour.
 > 
-> Tous les exemples de code et des extraits de code sont inclus dans le Kit de formation Camps Web, disponible à l’adresse [https://www.microsoft.com/en-us/download/29843](https://www.microsoft.com/en-us/download/29843).
+> Tous les exemples de code et des extraits de code sont inclus dans le Kit de formation Camps Web, disponible à l’adresse [https://www.microsoft.com/download/29843](https://www.microsoft.com/download/29843).
 
 
 <a id="Objectives"></a>
@@ -50,13 +50,13 @@ Dans cet atelier pratique, vous allez apprendre comment :
 <a id="Prerequisites"></a>
 
 <a id="Prerequisites"></a>
-### <a name="prerequisites"></a>Conditions préalables
+### <a name="prerequisites"></a>Prérequis
 
 Vous devez disposer des éléments suivants pour effectuer ce laboratoire :
 
 - [Microsoft Visual Studio Express 2012 pour Web](https://www.microsoft.com/visualstudio/eng/products/visual-studio-express-for-web) ou supérieure (lecture [annexe B](#AppendixB) pour obtenir des instructions sur l’installation).
 - [ASP.NET MVC 4](../../../mvc4.md) (inclus dans l’installation de Microsoft Visual Studio 2012)
-- Émulateur de Windows Phone (inclus dans le [Windows Phone 7.1.1 SDK](https://www.microsoft.com/en-us/download/details.aspx?id=29233))
+- Émulateur de Windows Phone (inclus dans le [Windows Phone 7.1.1 SDK](https://www.microsoft.com/download/details.aspx?id=29233))
 - Facultatif : [WebMatrix 2](https://www.microsoft.com/web/webmatrix/) avec **Electric Plum iPhone simulateur** extension (uniquement pour l’exercice 3 est utilisé pour parcourir l’application web avec un simulateur iPhone)
 
 <a id="Setup"></a>
@@ -345,7 +345,7 @@ Dans cette tâche, vous mettrez à jour la page d’accueil pour afficher la gal
 
 
     [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample5.cs)]
-4. Ouvrir le **HomeController.cs** de fichiers à partir de la **contrôleurs** dossier.
+4. Ouvrez le fichier **HomeController.cs** dans le dossier **Controllers**.
 5. Ajoutez les instructions using suivantes.
 
     (Code d’extrait de code - *ASP.NET MVC 4 les instructions Using HomeController Lab - Ex02 -*)
@@ -611,7 +611,7 @@ Dans cette tâche, vous allez créer une disposition personnalisée pour les app
 7. Appuyez sur **F5** pour exécuter l’application et de parcourir le site dans le **Windows Phone Emulator**.
 8. Ouvrir un **simulateur iPhone** (consultez [annexe C](#AppendixC) pour obtenir des instructions sur la façon d’installer et configurer un simulateur iPhone), puis accédez au site trop. Notez que chaque téléphone utilise le modèle spécifique.
 
-    ![Using-different-Views-for-each-mobile-device2](whats-new-in-aspnet-mvc-4/_static/image35.png)
+    ![Using-different-views-for-each-mobile-device2](whats-new-in-aspnet-mvc-4/_static/image35.png)
 
     *À l’aide des vues différentes pour chaque périphérique mobile*
 
@@ -622,7 +622,7 @@ Dans cette tâche, vous allez créer une disposition personnalisée pour les app
 
 Microsoft .NET Framework 4.5 introduit de nouvelles fonctionnalités de langage dans c# et Visual Basic pour fournir une nouvelle base pour le comportement asynchrone dans la programmation .NET. Cette nouvelle foundation rend la programmation asynchrone similaire à - et aussi simple que la programmation synchrone. Vous pouvez désormais écrire des méthodes d’action asynchrones dans ASP.NET MVC 4 à l’aide du **AsyncController** classe. Vous pouvez utiliser les méthodes d’action asynchrones pour la durée d’exécution longue, demandes de liaison de pas le processeur. Cela évite de bloquer le serveur Web de réaliser un travail pendant le traitement de la demande. La classe AsyncController est généralement utilisée pour les appels de service Web long terme.
 
-Cet exercice explique les principes fondamentaux de l’opération asynchrone dans ASP.NET MVC 4. Si vous souhaitez un approfondissement, vous pouvez consulter l’article suivant : [ [https://msdn.microsoft.com/en-us/library/ee728598%28v=vs.100%29.aspx](https://msdn.microsoft.com/en-us/library/ee728598%28v=vs.100%29.aspx)](https://msdn.microsoft.com/en-us/library/ee728598%28v=vs.100%29.aspx)
+Cet exercice explique les principes fondamentaux de l’opération asynchrone dans ASP.NET MVC 4. Si vous souhaitez un approfondissement, vous pouvez consulter l’article suivant : [ [https://msdn.microsoft.com/library/ee728598%28v=vs.100%29.aspx](https://msdn.microsoft.com/library/ee728598%28v=vs.100%29.aspx)](https://msdn.microsoft.com/library/ee728598%28v=vs.100%29.aspx)
 
 <a id="Task_1_-_Implementing_an_Asynchronous_Controller"></a>
 #### <a name="task-1---implementing-an-asynchronous-controller"></a>Tâche 1 : implémentation d’un contrôleur asynchrone
@@ -729,7 +729,7 @@ Méthodes d’action asynchrones qui retournent des instances de tâche peuvent 
 <a id="Summary"></a>
 
 <a id="Summary"></a>
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cette exercices laboratoire, vous avez observé certaines des nouvelles fonctionnalités qui se trouvent dans ASP.NET MVC 4. Les concepts suivants ont été présentées :
 
@@ -837,9 +837,9 @@ Pour exécuter votre site sur un appareil simulé iPhone, vous pouvez utiliser l
 2. Cliquez sur **installer maintenant**. Si vous n’avez pas **Web Platform Installer** vous allez être redirigé pour télécharger et installer tout d’abord.
 3. Une fois **Web Platform Installer** est ouvert, cliquez sur **installer** pour démarrer le programme d’installation.
 
-    ![Installer WebMatrix 2](whats-new-in-aspnet-mvc-4/_static/image49.png "installer WebMatrix 2")
+    ![Install WebMatrix 2](whats-new-in-aspnet-mvc-4/_static/image49.png "Install WebMatrix 2")
 
-    *Installer WebMatrix 2*
+    *Install WebMatrix 2*
 4. Lisez les termes et les licences de tous les produits et cliquez sur **J’accepte** pour continuer.
 
     ![Accepter les termes du contrat de licence](whats-new-in-aspnet-mvc-4/_static/image50.png "acceptant les termes du contrat de licence")

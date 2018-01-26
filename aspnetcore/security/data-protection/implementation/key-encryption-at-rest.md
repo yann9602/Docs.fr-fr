@@ -2,20 +2,18 @@
 title: "Chiffrement à clé au repos"
 author: rick-anderson
 description: "Ce document décrit les détails d’implémentation ASP.NET Core protection des clés de cryptage des données au repos."
-keywords: "ASP.NET Core, protection des données, le chiffrement à clé"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: f2bbbf4e-0945-43ce-be59-8bf19e448798
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/implementation/key-encryption-at-rest
-ms.openlocfilehash: b56dc56ed94662dbedeea49022aa73941bc833c5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 0a62a1a10e578e59e1d80579d80779d4dcf1658a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="key-encryption-at-rest"></a>Chiffrement à clé au repos
 

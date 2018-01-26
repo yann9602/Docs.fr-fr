@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/introduction/creating-a-data-access-layer-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 556b90f5e29f30756a4bd3b16be9608011558c4d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ad578d5d5fb1ef0ac63d3cbde3f307535ea3d98c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-a-data-access-layer-vb"></a>Création d’une couche d’accès aux données (Visual Basic)
 ====================
@@ -89,7 +89,7 @@ Par exemple, le DataReader et le jeu de données (par défaut) sont des objets d
 Pour retourner des objets fortement typés, les développeurs peuvent créer leurs propres objets métier personnalisée ou utiliser des DataSets typés. Un objet métier est implémenté par le développeur comme une classe dont les propriétés reflètent généralement les colonnes de la table sous-jacente de la base de données l’objet métier représente. Un DataSet typé est une classe générée automatiquement par Visual Studio basé sur un schéma de base de données et dont les membres sont fortement typées en fonction de ce schéma. Le DataSet typé elle-même se compose de classes qui étendent les classes DataRow, DataTable et DataSet ADO.NET. En plus des tables de données fortement typées, typés désormais également inclure des TableAdapters, qui sont des classes avec des méthodes pour remplir les tables de données du jeu de données et la propagation des modifications dans les tables de données à la base de données.
 
 > [!NOTE]
-> Pour plus d’informations sur les avantages et inconvénients de l’utilisation de DataSets typés par rapport à des objets métier personnalisées, reportez-vous à [composants de conception de la couche données et passer des données via](https://msdn.microsoft.com/en-us/library/ms978496.aspx).
+> Pour plus d’informations sur les avantages et inconvénients de l’utilisation de DataSets typés par rapport à des objets métier personnalisées, reportez-vous à [composants de conception de la couche données et passer des données via](https://msdn.microsoft.com/library/ms978496.aspx).
 
 
 Nous allons utiliser des DataSets fortement typés d’architecture des ces didacticiels. La figure 3 illustre le flux de travail entre les différentes couches d’une application qui utilise des DataSets typés.
@@ -293,7 +293,7 @@ Il existe deux modèles couramment utilisés pour l’insertion, mise à jour et
 **Figure 21**: insérer chaque mise à jour et supprimer la demande est envoyée à la base de données immédiatement ([cliquez pour afficher l’image en taille réelle](creating-a-data-access-layer-vb/_static/image57.png))
 
 
-Autres modèles, désignées en tant que le lot de mise à jour de modèle, est mise à jour d’un DataSet, DataTable ou collection de DataRows dans un appel de méthode ensemble. Avec ce modèle un développeur supprime, insère, modifie la DataRows dans un DataTable et transmet ensuite ces DataRows ou un DataTable dans une méthode de mise à jour. Puis cette méthode énumère les DataRows passé, détermine si elles avez été modifiés, ajoutés ou supprimés (par le biais de DataRow [propriété RowState](https://msdn.microsoft.com/en-us/library/system.data.datarow.rowstate.aspx) valeur) et émet la demande de base de données appropriée pour chaque enregistrement.
+Autres modèles, désignées en tant que le lot de mise à jour de modèle, est mise à jour d’un DataSet, DataTable ou collection de DataRows dans un appel de méthode ensemble. Avec ce modèle un développeur supprime, insère, modifie la DataRows dans un DataTable et transmet ensuite ces DataRows ou un DataTable dans une méthode de mise à jour. Puis cette méthode énumère les DataRows passé, détermine si elles avez été modifiés, ajoutés ou supprimés (par le biais de DataRow [propriété RowState](https://msdn.microsoft.com/library/system.data.datarow.rowstate.aspx) valeur) et émet la demande de base de données appropriée pour chaque enregistrement.
 
 
 [![Toutes les modifications sont synchronisées avec la base de données lorsque la méthode de mise à jour est appelée.](creating-a-data-access-layer-vb/_static/image59.png)](creating-a-data-access-layer-vb/_static/image58.png)
@@ -339,7 +339,7 @@ Pour créer une telle méthode personnalisée, revenez dans le Concepteur de Dat
 **Figure 25**: créer une méthode pour ajouter une nouvelle ligne à la `Products` Table ([cliquez pour afficher l’image en taille réelle](creating-a-data-access-layer-vb/_static/image69.png))
 
 
-Dans l’écran suivant le `InsertCommand`de `CommandText` s’affiche. Augmenter cette requête en ajoutant des `SELECT SCOPE_IDENTITY()` à la fin de la requête, qui retourne la dernière valeur identity insérée dans une `IDENTITY` colonne dans la même portée. (Consultez la [documentation technique](https://msdn.microsoft.com/en-us/library/ms190315.aspx) pour plus d’informations sur `SCOPE_IDENTITY()` et la raison pour laquelle vous souhaitez probablement [utiliser étendue\_Identity() n’à la place de @@IDENTITY](http://weblogs.sqlteam.com/travisl/archive/2003/10/29/405.aspx).) Assurez-vous que vous mettez fin à la `INSERT` instruction par un point-virgule avant d’ajouter le `SELECT` instruction.
+Dans l’écran suivant le `InsertCommand`de `CommandText` s’affiche. Augmenter cette requête en ajoutant des `SELECT SCOPE_IDENTITY()` à la fin de la requête, qui retourne la dernière valeur identity insérée dans une `IDENTITY` colonne dans la même portée. (Consultez la [documentation technique](https://msdn.microsoft.com/library/ms190315.aspx) pour plus d’informations sur `SCOPE_IDENTITY()` et la raison pour laquelle vous souhaitez probablement [utiliser étendue\_Identity() n’à la place de @@IDENTITY](http://weblogs.sqlteam.com/travisl/archive/2003/10/29/405.aspx).) Assurez-vous que vous mettez fin à la `INSERT` instruction par un point-virgule avant d’ajouter le `SELECT` instruction.
 
 
 [![Augmenter la requête pour retourner la valeur SCOPE_IDENTITY()](creating-a-data-access-layer-vb/_static/image71.png)](creating-a-data-access-layer-vb/_static/image70.png)
@@ -509,7 +509,7 @@ SuppliersAndProducts.aspx.vb
 **Figure 35**: nom de la société du fournisseur est répertorié dans la colonne de gauche, leurs produits dans la droite ([cliquez pour afficher l’image en taille réelle](creating-a-data-access-layer-vb/_static/image93.png))
 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Lorsque la création d’une application web de création de la couche DAL doit être une de vos premières étapes à suivre avant de commencer la création de la couche de présentation. Avec Visual Studio, la création d’une DAL basée sur les DataSets typés est une tâche qui peut être accomplie en 10 à 15 minutes sans écrire une ligne de code. Les didacticiels progresser seront appuiera sur cette couche DAL. Dans le [didacticiel suivant](creating-a-business-logic-layer-vb.md) nous allons définir un certain nombre de règles d’entreprise et voir comment les implémenter dans une couche de logique métier distincts.
 
@@ -520,18 +520,18 @@ Bonne programmation !
 Pour plus d’informations sur les sujets abordés dans ce didacticiel, consultez les ressources suivantes :
 
 - [Création de la couche DAL à l’aide de fortement typée des TableAdapters et les tables de données dans Visual Studio 2005 et ASP.NET 2.0](https://weblogs.asp.net/scottgu/435498)
-- [Conception des composants de la couche données et passer des données via les couches](https://msdn.microsoft.com/en-us/library/ms978496.aspx)
+- [Conception des composants de la couche données et passer des données via les couches](https://msdn.microsoft.com/library/ms978496.aspx)
 - [Créer une couche d’accès aux données avec le Concepteur de DataSet de Visual Studio 2005](http://www.theserverside.net/articles/showarticle.tss?id=DataSetDesigner)
 - [Chiffrement des informations de Configuration dans ASP.NET 2.0 Applications](http://aspnet.4guysfromrolla.com/articles/021506-1.aspx)
-- [Vue d’ensemble de TableAdapter](https://msdn.microsoft.com/en-us/library/bz9tthwx.aspx)
-- [Utilisation d’un DataSet typé](https://msdn.microsoft.com/en-us/library/esbykkzb.aspx)
+- [Vue d’ensemble de TableAdapter](https://msdn.microsoft.com/library/bz9tthwx.aspx)
+- [Utilisation d’un DataSet typé](https://msdn.microsoft.com/library/esbykkzb.aspx)
 - [L’accès des données fortement typées dans Visual Studio 2005 et ASP.NET 2.0](http://aspnet.4guysfromrolla.com/articles/020806-1.aspx)
 - [Comment étendre les méthodes TableAdapter](https://blogs.msdn.com/vbteam/archive/2005/05/04/ExtendingTableAdapters.aspx)
 - [La récupération des données scalaires à partir d’une procédure stockée](http://aspnet.4guysfromrolla.com/articles/062905-1.aspx)
 
 ### <a name="video-training-on-topics-contained-in-this-tutorial"></a>Formations vidéo sur les rubriques contenues dans ce didacticiel
 
-- [Couches d’accès aux données dans les Applications ASP.NET](../../../videos/data-access/adonet-data-services/data-access-layers-in-aspnet-applications.md)
+- [Couches d’accès aux données dans les applications ASP.NET](../../../videos/data-access/adonet-data-services/data-access-layers-in-aspnet-applications.md)
 - [Comment lier manuellement un groupe de données à un contrôle Datagrid](../../../videos/data-access/adonet-data-services/how-to-manually-bind-a-dataset-to-a-datagrid.md)
 - [Procédure : utiliser des jeux de données et les filtres à partir d’une Application ASP](../../../videos/data-access/adonet-data-services/how-to-work-with-datasets-and-filters-from-an-asp-application.md)
 

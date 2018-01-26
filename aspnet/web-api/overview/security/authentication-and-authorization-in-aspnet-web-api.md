@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/security/authentication-and-authorization-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 137ac45166be03ae3c4864f41666d2acd1a37dc2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2a4b5ed8a712b061b4afdf5a3adc9378dd72b37f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="authentication-and-authorization-in-aspnet-web-api"></a>Authentification et autorisation dans l’API Web ASP.NET
 ====================
@@ -37,7 +37,7 @@ Le premier article de la série donne une vue d’ensemble de l’authentificati
 
 API Web part du principe que l’authentification se produit dans l’hôte. Pour l’hébergement web, IIS utilise des modules HTTP pour l’authentification est l’ordinateur hôte. Vous pouvez configurer votre projet pour utiliser un des modules d’authentification intégrées à IIS ou ASP.NET, ou écrire votre propre module HTTP pour effectuer une authentification personnalisée.
 
-Lorsque l’hôte authentifie l’utilisateur, il crée un *principal*, qui est un [IPrincipal](https://msdn.microsoft.com/en-us/library/System.Security.Principal.IPrincipal.aspx) objet qui représente le contexte de sécurité sous lequel le code est en cours d’exécution. L’hôte attache le principal pour le thread actuel en définissant **Thread.CurrentPrincipal**. Le principal contient associé à un **identité** objet qui contient des informations sur l’utilisateur. Si l’utilisateur est authentifié, le **Identity.IsAuthenticated** propriété renvoie **true**. Pour les demandes anonymes, **IsAuthenticated** retourne **false**. Pour plus d’informations sur les principaux, consultez [en fonction du rôle de sécurité](https://msdn.microsoft.com/en-us/library/shz8h065.aspx).
+Lorsque l’hôte authentifie l’utilisateur, il crée un *principal*, qui est un [IPrincipal](https://msdn.microsoft.com/library/System.Security.Principal.IPrincipal.aspx) objet qui représente le contexte de sécurité sous lequel le code est en cours d’exécution. L’hôte attache le principal pour le thread actuel en définissant **Thread.CurrentPrincipal**. Le principal contient associé à un **identité** objet qui contient des informations sur l’utilisateur. Si l’utilisateur est authentifié, le **Identity.IsAuthenticated** propriété renvoie **true**. Pour les demandes anonymes, **IsAuthenticated** retourne **false**. Pour plus d’informations sur les principaux, consultez [en fonction du rôle de sécurité](https://msdn.microsoft.com/library/shz8h065.aspx).
 
 ### <a name="http-message-handlers-for-authentication"></a>Gestionnaires de messages HTTP pour l’authentification
 
@@ -78,7 +78,7 @@ L’autorisation se produit ultérieurement dans le pipeline, vers le contrôleu
 <a id="auth3"></a>
 ### <a name="using-the-authorize-attribute"></a>À l’aide de la [autoriser] attribut
 
-API Web fournit un filtre d’autorisation intégré, [AuthorizeAttribute](https://msdn.microsoft.com/en-us/library/system.web.http.authorizeattribute.aspx). Ce filtre vérifie si l’utilisateur est authentifié. Si ce n’est pas le cas, elle retourne le code d’état HTTP 401 (non autorisé), sans appeler l’action.
+API Web fournit un filtre d’autorisation intégré, [AuthorizeAttribute](https://msdn.microsoft.com/library/system.web.http.authorizeattribute.aspx). Ce filtre vérifie si l’utilisateur est authentifié. Si ce n’est pas le cas, elle retourne le code d’état HTTP 401 (non autorisé), sans appeler l’action.
 
 Vous pouvez appliquer le filtre globalement, au niveau du contrôleur ou au niveau des actions d’inidivual.
 

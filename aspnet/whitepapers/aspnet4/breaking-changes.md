@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/aspnet4/breaking-changes
 msc.type: content
-ms.openlocfilehash: a0f25ed3c996b73e362177b196539c6f2b143739
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 98647830125670ee2ed43538d65fb3ce6ac40d0d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-4-breaking-changes"></a>Modifications avec rupture 4 de ASP.NET
 ====================
@@ -49,7 +49,7 @@ ms.lasthandoff: 11/10/2017
 [Types System.Web.Security pour Passport sont obsolètes](#0.1__Toc256770158 "_Toc256770158")  
 [La propriété MenuItem.PopOutImageUrl ne fournit pas une Image dans ASP.NET 4](#0.1__Toc256770159 "_Toc256770159")  
 [Menu.StaticPopOutImageUrl et échouent Menu.DynamicPopOutImageUrl pour restituer des Images lorsque les chemins d’accès contiennent des barres obliques inverses](#0.1__Toc256770160 "_Toc256770160")  
-[Exclusion de responsabilité](#0.1__Toc256770161 "_Toc256770161")
+[Disclaimer](#0.1__Toc256770161 "_Toc256770161")
 
 <a id="0.1__ControlRenderingCompatibilityVersio"></a><a id="0.1__Toc245724853"></a><a id="0.1__Toc255587630"></a><a id="0.1__Toc256770141"></a>
 
@@ -294,7 +294,7 @@ Cette erreur se produit lorsque ASP.NET détecte qu’un site Web est configuré
 
 Vous pouvez contourner ce problème en utilisant l’une des options suivantes.
 
-### <a name="option-1"></a>option 1
+### <a name="option-1"></a>Option 1
 
 Si ASP.NET 4 n’est pas nécessaire pour exécuter le site Web, remappez le site pour utiliser ASP.NET 2.0 à la place.
 
@@ -385,7 +385,7 @@ Voici un résumé succinct des modifications à l’implémentation d’autorit�
 - Compilée dynamiquement les assemblys qui sont créés par les fournisseurs de générations ASP.NET ont été mis à jour pour marquer explicitement les assemblys comme étant transparent.
 - Tous les assemblys ASP.NET sont désormais marqués de sorte que l’attribut APTCA est honorée uniquement dans les environnements d’hébergement Web. Environnements d’hébergement Web non niveau de confiance partielle tels que ClickOnce ne sera pas en mesure d’appeler des assemblys ASP.NET.
 
-Pour plus d’informations sur le nouveau modèle de sécurité de l’accès de code ASP.NET 4, consultez [sécurité d’accès du Code à l’aide dans les Applications ASP.NET](https://msdn.microsoft.com/en-us/library/dd984947%28VS.100%29.aspx) sur le site Web MSDN.
+Pour plus d’informations sur le nouveau modèle de sécurité de l’accès de code ASP.NET 4, consultez [sécurité d’accès du Code à l’aide dans les Applications ASP.NET](https://msdn.microsoft.com/library/dd984947%28VS.100%29.aspx) sur le site Web MSDN.
 
 <a id="0.1__Toc256770156"></a><a id="0.1__Toc245724863"></a><a id="0.1__Toc252995496"></a><a id="0.1__Toc255587645"></a><a id="0.1__Toc245724864"></a>
 
@@ -491,15 +491,15 @@ Notez que les applications qui ont été migrées à partir de versions antérie
 
 ## <a name="disclaimer"></a>Exclusion de responsabilité
 
-Ce document est une version préliminaire et peut être modifié substantiellement avant le lancement de la version commerciale finale du logiciel qu'il décrit.
+Ce document est une version préliminaire et peut être modifié substantiellement avant le lancement de la mise en production commerciale finale du logiciel qu’il décrit.
 
-Les informations contenues dans ce document correspondent à la connaissance que Microsoft Corporation possède des problèmes abordés à la date de la publication. Microsoft devant répondre à des conditions de marché qui évoluent, ce document ne doit pas être considéré comme un engagement de sa part, et Microsoft ne peut pas garantir l'exactitude des informations présentées à la date de la publication.
+Les informations contenues dans ce document correspondent à la connaissance que Microsoft Corporation possède des problèmes abordés à la date de la publication. Microsoft devant répondre à des conditions de marché qui évoluent, ce document ne doit pas être considéré comme un engagement de sa part, et Microsoft ne peut pas garantir l’exactitude des informations présentées à la date de la publication.
 
 Ce livre blanc est fourni à titre d'information uniquement. MICROSOFT NE FOURNIT AUCUNE GARANTIE, EXPRESSE, IMPLICITE OU LÉGALE, QUANT AUX INFORMATIONS CONTENUES DANS CE DOCUMENT.
 
 L'utilisateur est tenu d'observer la réglementation relative aux droits d'auteur applicable dans son pays. Aucune partie de ce document ne peut être reproduite, stockée ou introduite dans un système de restitution, ou transmise à quelque fin ou par quelque moyen que ce soit (électronique, mécanique, photocopie, enregistrement ou autre) sans la permission expresse et écrite de Microsoft Corporation.
 
-Microsoft peut détenir des brevets, avoir déposé des demandes d'enregistrement de brevets ou être titulaire de marques, droits d'auteur ou autres droits de propriété intellectuelle portant sur tout ou partie des éléments qui font l'objet du présent document. Sauf stipulation expresse contraire d'un contrat de licence écrit de Microsoft, la fourniture de ce document n'a pas pour effet de vous concéder une licence sur ces brevets, marques, droits d'auteur ou autres droits de propriété intellectuelle.
+Microsoft peut détenir des brevets, avoir déposé des demandes d’enregistrement de brevets ou être titulaire de marques, droits d’auteur ou autres droits de propriété intellectuelle portant sur tout ou partie des éléments qui font l’objet du présent document. Sauf stipulation expresse contraire d’un contrat de licence écrit de Microsoft, la fourniture de ce document n’a pas pour effet de vous concéder une licence sur ces brevets, marques, droits d’auteur ou autres droits de propriété intellectuelle.
 
 Sauf mention contraire, les noms de sociétés, d'organisations, de produits et de domaines, les adresses de messagerie, les logos, et les noms de personnes et de lieux, ou les événements utilisés dans les exemples, sont fictifs et toute ressemblance avec des noms ou des événements réels est purement fortuite et involontaire.
 

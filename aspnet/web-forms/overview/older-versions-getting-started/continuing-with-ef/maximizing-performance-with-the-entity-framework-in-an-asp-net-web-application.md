@@ -2,7 +2,7 @@
 uid: web-forms/overview/older-versions-getting-started/continuing-with-ef/maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application
 title: Optimisation des performances avec Entity Framework 4.0 dans une Application ASP.NET 4 | Documents Microsoft
 author: tdykstra
-description: "Cette série de didacticiels s’appuie sur l’application web de l’université Contoso qui est créée par la prise en main de la série de didacticiels Entity Framework 4.0. JE..."
+description: "Cette série de didacticiels s’appuie sur l’application web de l’université Contoso qui est créée par la prise en main de la série de didacticiels Entity Framework 4.0. I..."
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/26/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: 9e257f5061f6bdf14ad0776ff6385fb526d6dcb1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 40a53a110115e5f6342d2a97d21b64470450fd3c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="maximizing-performance-with-the-entity-framework-40-in-an-aspnet-4-web-application"></a>Optimisation des performances avec Entity Framework 4.0 dans une Application ASP.NET 4
 ====================
@@ -251,17 +251,17 @@ Vous pouvez maintenant exécuter l’application et vérifier qu’elle fonction
 
 Pour plus d’informations sur les vues prégénérées, consultez les ressources suivantes :
 
-- [Comment : générer des vues pour améliorer les performances de requête](https://msdn.microsoft.com/en-us/library/bb896240.aspx) sur le site web MSDN. Explique comment utiliser le `EdmGen.exe` outil de ligne de commande pour prégénérer des affichages.
+- [Comment : générer des vues pour améliorer les performances de requête](https://msdn.microsoft.com/library/bb896240.aspx) sur le site web MSDN. Explique comment utiliser le `EdmGen.exe` outil de ligne de commande pour prégénérer des affichages.
 - [Isolation des performances avec les vues de pré/précompilé-generated dans Entity Framework 4](https://blogs.msdn.com/b/appfabriccat/archive/2010/08/06/isolating-performance-with-precompiled-pre-generated-views-in-the-entity-framework-4.aspx) sur le blog de l’équipe de consultants de client de Windows Server AppFabric.
 
 Cette étape termine l’introduction d’améliorer les performances dans une application web ASP.NET qui utilise Entity Framework. Pour plus d'informations, reportez-vous aux ressources suivantes :
 
-- [Considérations sur les performances (Entity Framework)](https://msdn.microsoft.com/en-us/library/cc853327.aspx) sur le site web MSDN.
+- [Considérations sur les performances (Entity Framework)](https://msdn.microsoft.com/library/cc853327.aspx) sur le site web MSDN.
 - [Les publications relatives aux performances sur le blog de l’équipe de Entity Framework](https://blogs.msdn.com/b/adonet/archive/tags/performance/).
 - [EF Options de fusion et les requêtes compilées](https://blogs.msdn.com/b/dsimmons/archive/2010/01/12/ef-merge-options-and-compiled-queries.aspx). Billet de blog qui explique des comportements inattendus de requêtes compilées et de fusion options telles que `NoTracking`. Si vous envisagez d’utiliser des requêtes compilées et de manipuler les paramètres d’option de fusion dans votre application, lisez d’abord ceci.
 - [Entité liée de Framework valide dans le blog de l’équipe de consultants clients de modélisation et les données](https://blogs.msdn.com/b/dmcat/archive/tags/entity+framework/). Inclut les billets sur les requêtes compilées et à l’aide du profileur 2010 de Visual Studio pour détecter les problèmes de performances.
-- [Thread de forum Entity Framework avec des conseils sur l’amélioration des performances des requêtes très complexes](https://social.msdn.microsoft.com/Forums/en-US/adodotnetentityframework/thread/ffe8b2ab-c5b5-4331-8988-33a872d0b5f6).
-- [Recommandations de gestion d’état ASP.NET](https://msdn.microsoft.com/en-us/library/z1hkazw7.aspx).
+- [Thread de forum Entity Framework avec des conseils sur l’amélioration des performances des requêtes très complexes](https://social.msdn.microsoft.com/Forums/adodotnetentityframework/thread/ffe8b2ab-c5b5-4331-8988-33a872d0b5f6).
+- [Recommandations de gestion d’état ASP.NET](https://msdn.microsoft.com/library/z1hkazw7.aspx).
 - [À l’aide d’Entity Framework et ObjectDataSource : la pagination personnalisée](http://geekswithblogs.net/Frez/articles/using-the-entity-framework-and-the-objectdatasource-custom-paging.aspx). Billet de blog qui s’appuie sur l’application ContosoUniversity créée dans ces didacticiels pour expliquer comment implémenter la pagination dans le *Departments.aspx* page.
 
 Le didacticiel suivant passe en revue les améliorations importantes à Entity Framework qui sont nouvelles dans la version 4.

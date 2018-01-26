@@ -2,20 +2,18 @@
 title: "Extensibilité de la gestion de clés"
 author: rick-anderson
 description: "Ce document décrit l’extensibilité de la gestion de clés de protection de données ASP.NET Core."
-keywords: "ASP.NET Core, protection des données, la gestion de clés"
 ms.author: riande
 manager: wpickett
 ms.date: 11/22/2017
 ms.topic: article
-ms.assetid: 3606b251-8324-4485-8d52-582a2cd5cffb
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/extensibility/key-management
-ms.openlocfilehash: 0702e13163c0208e9d2863e711b02ffb257f6260
-ms.sourcegitcommit: e641c5794525f983485621860926d8ab4e7360c8
+ms.openlocfilehash: d748ee9d3edf9eed4285fab447d5b379dfcd937c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="key-management-extensibility"></a>Extensibilité de la gestion de clés
 
@@ -61,7 +59,7 @@ Le `IKeyManager` interface représente un objet chargé de stockage général de
 * Révoquer une ou plusieurs clés et rendre persistantes les informations de révocation pour le stockage.
 
 >[!WARNING]
-> L’écriture d’un `IKeyManager` est une tâche très avancée, et la plupart des développeurs ne doit pas essayer il. Au lieu de cela, la plupart des développeurs doit bénéficier des installations offertes par le [XmlKeyManager](xref:security/data-protection/extensibility/key-management#data-protection-extensibility-key-management-xmlkeymanager) classe.
+> L’écriture d’un `IKeyManager` est une tâche très avancée, et il ne doit pas tenter de la majorité des développeurs. Au lieu de cela, la plupart des développeurs doit bénéficier des installations offertes par le [XmlKeyManager](xref:security/data-protection/extensibility/key-management#data-protection-extensibility-key-management-xmlkeymanager) classe.
 
 <a name="data-protection-extensibility-key-management-xmlkeymanager"></a>
 

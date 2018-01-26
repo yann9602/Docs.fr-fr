@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/getting-started/introduction-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: a66e2a80668dbf291b9cc34f205b546b72d92bcc
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7c7dcb7903b0d0772acc560161ff39c6869c599a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="introduction-to-aspnet-identity"></a>Introduction à l’identité ASP.NET
 ====================
@@ -31,7 +31,7 @@ par [Jon Galloway](https://github.com/jongalloway), [Pranav Rastogi](https://git
 
 ### <a name="aspnet-membership"></a>Appartenance d’ASP.NET
 
-[L’appartenance ASP.NET](https://msdn.microsoft.com/en-us/library/yh26yfzy(v=VS.100).aspx) a été conçu pour répondre aux exigences l’appartenance au site qui étaient courantes dans 2005, impliquant l’authentification par formulaire et une base de données SQL Server pour les noms d’utilisateur, les mots de passe et les données de profil. Aujourd'hui, il est un tableau de beaucoup plus large d’options de stockage de données pour les applications web, la plupart des développeurs et activer ou leurs sites pour utiliser des fournisseurs d’identité sociaux pour la fonctionnalité d’authentification et d’autorisation. Les limitations de conception de l’appartenance d’ASP.NET compliquer cette transition :
+[L’appartenance ASP.NET](https://msdn.microsoft.com/library/yh26yfzy(v=VS.100).aspx) a été conçu pour répondre aux exigences l’appartenance au site qui étaient courantes dans 2005, impliquant l’authentification par formulaire et une base de données SQL Server pour les noms d’utilisateur, les mots de passe et les données de profil. Aujourd'hui, il est un tableau de beaucoup plus large d’options de stockage de données pour les applications web, la plupart des développeurs et activer ou leurs sites pour utiliser des fournisseurs d’identité sociaux pour la fonctionnalité d’authentification et d’autorisation. Les limitations de conception de l’appartenance d’ASP.NET compliquer cette transition :
 
 - Le schéma de base de données a été conçu pour SQL Server et vous ne pouvez pas le modifier. Vous pouvez ajouter des informations de profil, mais les données supplémentaires sont placées dans une autre table, ce qui rend difficile pour l’accès par quelque moyen que sauf via l’API du fournisseur de profil.
 - Le système du fournisseur permet de modifier le magasin de données de sauvegarde, mais le système est conçu autour des hypothèses appropriés pour une base de données relationnelle. Vous pouvez écrire un fournisseur pour stocker les informations d’appartenance dans un mécanisme de stockage non relationnelles, telles que les Tables de stockage Azure, mais vous devrez contourner la structure relationnelle en écrivant une grande quantité de code et un grand nombre de `System.NotImplementedException` exceptions pour les méthodes qui ne s’applique aux bases de données NoSQL.
@@ -132,7 +132,7 @@ ASP.NET Identity est implémentée à l’aide de la procédure suivante. Cet ar
 
     [!code-csharp[Main](introduction-to-aspnet-identity/samples/sample3.cs?highlight=5-6)]
 
- Le code en surbrillance ci-dessus dans le `SignInAsync` méthode génère une [ClaimsIdentity](https://msdn.microsoft.com/en-us/library/system.security.claims.claimsidentity.aspx). Identité ASP.NET et authentification de Cookie OWIN étant système basé sur les revendications, le framework requiert l’application pour générer un ClaimsIdentity pour l’utilisateur. ClaimsIdentity fournit des informations sur toutes les revendications pour l’utilisateur, telles que les rôles de l’utilisateur appartient. Vous pouvez également ajouter plusieurs revendications de l’utilisateur à ce stade.  
+ Le code en surbrillance ci-dessus dans le `SignInAsync` méthode génère une [ClaimsIdentity](https://msdn.microsoft.com/library/system.security.claims.claimsidentity.aspx). Identité ASP.NET et authentification de Cookie OWIN étant système basé sur les revendications, le framework requiert l’application pour générer un ClaimsIdentity pour l’utilisateur. ClaimsIdentity fournit des informations sur toutes les revendications pour l’utilisateur, telles que les rôles de l’utilisateur appartient. Vous pouvez également ajouter plusieurs revendications de l’utilisateur à ce stade.  
   
  Le code en surbrillance ci-dessous dans le `SignInAsync` méthode se connecte l’utilisateur à l’aide de la classe AuthenticationManager de OWIN et en appelant `SignIn` et en passant le ClaimsIdentity.  
 
@@ -142,7 +142,7 @@ ASP.NET Identity est implémentée à l’aide de la procédure suivante. Cet ar
 
     [!code-csharp[Main](introduction-to-aspnet-identity/samples/sample5.cs?highlight=6)]
 
- La mise en surbrillance le code ci-dessus OWIN `AuthenticationManager.SignOut` (méthode). Cela est analogue à [FormsAuthentication.SignOut](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthentication.signout.aspx) méthode utilisée par le [FormsAuthentication](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthenticationmodule.aspx) module dans les formulaires Web.
+ La mise en surbrillance le code ci-dessus OWIN `AuthenticationManager.SignOut` (méthode). Cela est analogue à [FormsAuthentication.SignOut](https://msdn.microsoft.com/library/system.web.security.formsauthentication.signout.aspx) méthode utilisée par le [FormsAuthentication](https://msdn.microsoft.com/library/system.web.security.formsauthenticationmodule.aspx) module dans les formulaires Web.
 
 ## <a name="components-of-aspnet-identity"></a>Composants d’identité ASP.NET
 

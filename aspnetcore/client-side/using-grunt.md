@@ -2,20 +2,18 @@
 title: "À l’aide de Grunt dans ASP.NET Core"
 author: rick-anderson
 description: 
-keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: 471112e9-2c33-454b-96fc-32916102ce73
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/using-grunt
-ms.openlocfilehash: 8ae50514ce24c7f9e3bb1e347d5d860e1de43c5f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 527373829754757e52ab84b64e04702d649e9062
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="using-grunt-in-aspnet-core"></a>À l’aide de Grunt dans ASP.NET Core 
 
@@ -96,14 +94,14 @@ Ensuite, configurez NPM pour télécharger grunt et les tâches de grunt.
 
 1. Dans l’Explorateur de solutions, cliquez sur le projet et sélectionnez **Ajouter > nouvel élément** dans le menu contextuel. Sélectionnez le **fichier de configuration NPM** d’élément, laissez le nom par défaut, *package.json*, puis cliquez sur le **ajouter** bouton.
 
-2. Dans le *package.json* de fichiers, dans le `devDependencies` accolades de l’objet, entrez « des grunt ». Sélectionnez `grunt` dans Intellisense liste et appuyez sur ENTRÉE. Visual Studio le nom du package grunt de placer entre guillemets et ajouter un signe deux-points. À droite du signe deux-points, sélectionnez la dernière version stable du package à partir du haut de la liste Intellisense (appuyez sur `Ctrl-Space` si Intellisense n’apparaît pas).
+2. Dans le *package.json* de fichiers, dans le `devDependencies` accolades de l’objet, entrez « des grunt ». Sélectionnez `grunt` dans Intellisense liste et appuyez sur ENTRÉE. Visual Studio le nom du package grunt de placer entre guillemets et ajouter un signe deux-points. À droite du signe deux-points, sélectionnez la dernière version stable du package à partir du haut de la liste Intellisense (appuyez sur `Ctrl-Space` si Intellisense ne s’affiche).
 
     ![grun Intellisense](using-grunt/_static/devdependencies-grunt.png)
     
     > [!NOTE]
     > NPM utilise [contrôle de version sémantique](http://semver.org/) pour organiser les dépendances. Contrôle de version sémantique, également appelé SemVer, identifie les packages avec le modèle de numérotation <major>.<minor>. <patch>. IntelliSense simplifie le contrôle de version sémantique en affichant uniquement quelques choix courants. Le premier élément dans la liste Intellisense (0.4.5 dans l’exemple ci-dessus) est considéré comme la dernière version stable du package. Le symbole du signe insertion (^) correspond à la version majeure la plus récente et le tilde (~) correspond à la version mineure la plus récente. Consultez le [référence d’analyseur NPM semver version](https://www.npmjs.com/package/semver) comme guide pour l’expressivité complète qui fournit des SemVer.
 
-3. Ajouter plus de dépendances pour charger des grunt-cotisation -\* packages pour *propre*, *jshint*, *concat*, *uglify*et *espion* comme indiqué dans l’exemple ci-dessous. Les versions n’avez pas besoin de faire correspondre l’exemple.
+3. Ajouter plus de dépendances pour charger des grunt-cotisation -\* packages pour *propre*, *jshint*, *concat*, *uglify*et *espion* comme indiqué dans l’exemple ci-dessous. Les versions n’avez pas besoin de correspondre à l’exemple.
 
     ```json
     "devDependencies": {
@@ -288,7 +286,7 @@ Nous allons lier `watch` afin qu’elle s’exécute chaque fois que Visual Stud
 
 Décharger et recharger le projet. Lorsque le projet a été chargé à nouveau, la tâche espion commence à s’exécuter automatiquement.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Grunt est un exécuteur de tâches puissant qui peut être utilisé pour automatiser la plupart des tâches de génération de client. Grunt tire parti de NPM pour fournir ses packages, fonctionnalités et outils d’intégration avec Visual Studio. Explorateur d’exécuteur de tâche de Visual Studio détecte les modifications apportées aux fichiers de configuration et fournit une interface pratique pour exécuter des tâches, afficher les tâches en cours d’exécution et lier des tâches à des événements de Visual Studio.
 

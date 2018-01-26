@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: e7b79503a1d297d40c6824f8b2b7bbc1f42b9fca
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9df5b9c7e955b784bca7a4195b7c9cf3d2bca7a7
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="handling-concurrency-with-the-entity-framework-6-in-an-aspnet-mvc-5-application-10-of-12"></a>Gestion d’accès concurrentiel avec Entity Framework 6 dans une Application ASP.NET MVC 5 (10 12)
 ====================
@@ -65,18 +65,18 @@ John clique sur **enregistrer** premier et voit sa modification lorsque le navig
 
 ### <a name="detecting-concurrency-conflicts"></a>Détection des conflits d’accès concurrentiel
 
-Vous pouvez résoudre les conflits en gérant [OptimisticConcurrencyException](https://msdn.microsoft.com/en-us/library/system.data.optimisticconcurrencyexception.aspx) Entity Framework lève les exceptions. Pour savoir quand ces exceptions de lever, Entity Framework doit être en mesure de détecter les conflits. Par conséquent, vous devez configurer la base de données et le modèle de données en conséquence. Certaines options pour l’activation de la détection de conflit sont les suivantes :
+Vous pouvez résoudre les conflits en gérant [OptimisticConcurrencyException](https://msdn.microsoft.com/library/system.data.optimisticconcurrencyexception.aspx) Entity Framework lève les exceptions. Pour savoir quand ces exceptions de lever, Entity Framework doit être en mesure de détecter les conflits. Par conséquent, vous devez configurer la base de données et le modèle de données en conséquence. Certaines options pour l’activation de la détection de conflit sont les suivantes :
 
 - Dans la table de base de données, incluez une colonne de suivi qui peut être utilisée pour déterminer quand une ligne a été modifiée. Vous pouvez ensuite configurer l’Entity Framework pour inclure cette colonne dans la `Where` clause SQL `Update` ou `Delete` commandes.
 
-    Le type de données de la colonne de suivi est généralement [rowversion](https://msdn.microsoft.com/en-us/library/ms182776(v=sql.110).aspx). Le [rowversion](https://msdn.microsoft.com/en-us/library/ms182776(v=sql.110).aspx) valeur est un numéro séquentiel qui est incrémentée chaque fois que la ligne est mise à jour. Dans un `Update` ou `Delete` commande, le `Where` clause inclut la valeur d’origine de la colonne de suivi (la version de ligne d’origine). Si la ligne mise à jour a été modifiée par un autre utilisateur, la valeur de la `rowversion` colonne est différente de la valeur d’origine, afin que la `Update` ou `Delete` instruction ne peut pas trouver la ligne mise à jour en raison de le `Where` clause. Lorsque l’Entity Framework détecte qu’aucune ligne n’a été mis à jour par le `Update` ou `Delete` de commandes (autrement dit, lorsque le nombre de lignes affectées est égal à zéro), il qui interprète comme un conflit d’accès concurrentiel.
+    Le type de données de la colonne de suivi est généralement [rowversion](https://msdn.microsoft.com/library/ms182776(v=sql.110).aspx). Le [rowversion](https://msdn.microsoft.com/library/ms182776(v=sql.110).aspx) valeur est un numéro séquentiel qui est incrémentée chaque fois que la ligne est mise à jour. Dans un `Update` ou `Delete` commande, le `Where` clause inclut la valeur d’origine de la colonne de suivi (la version de ligne d’origine). Si la ligne mise à jour a été modifiée par un autre utilisateur, la valeur de la `rowversion` colonne est différente de la valeur d’origine, afin que la `Update` ou `Delete` instruction ne peut pas trouver la ligne mise à jour en raison de le `Where` clause. Lorsque l’Entity Framework détecte qu’aucune ligne n’a été mis à jour par le `Update` ou `Delete` de commandes (autrement dit, lorsque le nombre de lignes affectées est égal à zéro), il qui interprète comme un conflit d’accès concurrentiel.
 - Configurer l’Entity Framework pour inclure les valeurs d’origine de chaque colonne dans la table dans le `Where` clause de `Update` et `Delete` commandes.
 
     Comme dans la première option, si n’importe où dans la ligne a changé depuis la ligne a été lu tout d’abord, le `Where` clause ne retourne pas une ligne à mettre à jour, lequel Entity Framework interprète comme un conflit d’accès concurrentiel. Pour les tables de base de données qui ont beaucoup de colonnes, cette approche peut entraîner de très grande `Where` clauses et peut nécessiter que vous avez de grandes quantités d’état. Comme indiqué précédemment, en conservant de grandes quantités d’état peut affecter les performances de l’application. Par conséquent, cette approche n’est généralement pas recommandée, et il n’est pas la méthode utilisée dans ce didacticiel.
 
-    Si vous ne souhaitez pas implémenter cette approche en matière d’accès concurrentiel, vous devez marquer toutes les propriétés de clé non primaire de l’entité que vous souhaitez effectuer le suivi de la concurrence d’accès en ajoutant le [ConcurrencyCheck](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.concurrencycheckattribute.aspx) leur attribut. Que modification permet à Entity Framework inclure toutes les colonnes dans l’instruction SQL `WHERE` clause de `UPDATE` instructions.
+    Si vous ne souhaitez pas implémenter cette approche en matière d’accès concurrentiel, vous devez marquer toutes les propriétés de clé non primaire de l’entité que vous souhaitez effectuer le suivi de la concurrence d’accès en ajoutant le [ConcurrencyCheck](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.concurrencycheckattribute.aspx) leur attribut. Que modification permet à Entity Framework inclure toutes les colonnes dans l’instruction SQL `WHERE` clause de `UPDATE` instructions.
 
-Dans le reste de ce didacticiel, vous ajouterez un [rowversion](https://msdn.microsoft.com/en-us/library/ms182776(v=sql.110).aspx) le suivi des propriétés pour le `Department` entité, créer un contrôleur et des vues et de test pour vérifier que tout fonctionne correctement.
+Dans le reste de ce didacticiel, vous ajouterez un [rowversion](https://msdn.microsoft.com/library/ms182776(v=sql.110).aspx) le suivi des propriétés pour le `Department` entité, créer un contrôleur et des vues et de test pour vérifier que tout fonctionne correctement.
 
 ## <a name="add-an-optimistic-concurrency-property-to-the-department-entity"></a>Ajouter une propriété de l’accès concurrentiel optimiste à l’entité du service
 
@@ -84,9 +84,9 @@ Dans *Models\Department.cs*, ajouter une propriété de suivi nommée `RowVersio
 
 [!code-csharp[Main](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample1.cs?highlight=20-22)]
 
-Le [Timestamp](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.timestampattribute.aspx) attribut spécifie que cette colonne est incluse dans le `Where` clause de `Update` et `Delete` commandes envoyées à la base de données. L’attribut est appelé [Timestamp](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.timestampattribute.aspx) , car les versions précédentes de SQL Server utilisaient SQL [timestamp](https://msdn.microsoft.com/en-us/library/ms182776(v=SQL.90).aspx) type de données avant l’instruction SQL [rowversion](https://msdn.microsoft.com/en-us/library/ms182776(v=sql.110).aspx) remplacé. Le type .net de [rowversion](https://msdn.microsoft.com/en-us/library/ms182776(v=sql.110).aspx) est un tableau d’octets.
+Le [Timestamp](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.timestampattribute.aspx) attribut spécifie que cette colonne est incluse dans le `Where` clause de `Update` et `Delete` commandes envoyées à la base de données. L’attribut est appelé [Timestamp](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.timestampattribute.aspx) , car les versions précédentes de SQL Server utilisaient SQL [timestamp](https://msdn.microsoft.com/library/ms182776(v=SQL.90).aspx) type de données avant l’instruction SQL [rowversion](https://msdn.microsoft.com/library/ms182776(v=sql.110).aspx) remplacé. Le type .net de [rowversion](https://msdn.microsoft.com/library/ms182776(v=sql.110).aspx) est un tableau d’octets.
 
-Si vous préférez utiliser l’API fluent, vous pouvez utiliser la [IsConcurrencyToken](https://msdn.microsoft.com/en-us/library/gg679501(v=VS.103).aspx) méthode pour spécifier la propriété de suivi, comme indiqué dans l’exemple suivant :
+Si vous préférez utiliser l’API fluent, vous pouvez utiliser la [IsConcurrencyToken](https://msdn.microsoft.com/library/gg679501(v=VS.103).aspx) méthode pour spécifier la propriété de suivi, comme indiqué dans l’exemple suivant :
 
 [!code-csharp[Main](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample2.cs)]
 
@@ -230,9 +230,9 @@ Vous voyez le message d’erreur d’accès concurrentiel et les valeurs de serv
 
 Si vous cliquez sur **supprimer** là encore, vous êtes redirigé vers la page d’Index, ce qui indique que le service a été supprimé.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
-Cette étape termine l’introduction à la gestion des conflits d’accès concurrentiel. Pour plus d’informations sur les autres méthodes pour gérer les différents scénarios de concurrence, consultez [des modèles d’accès concurrentiel optimiste](https://msdn.microsoft.com/en-us/data/jj592904) et [utilisation des valeurs de propriété](https://msdn.microsoft.com/en-us/data/jj592677) sur MSDN. Le didacticiel suivant montre comment implémenter l’héritage table par hiérarchie pour le `Instructor` et `Student` entités.
+Cette étape termine l’introduction à la gestion des conflits d’accès concurrentiel. Pour plus d’informations sur les autres méthodes pour gérer les différents scénarios de concurrence, consultez [des modèles d’accès concurrentiel optimiste](https://msdn.microsoft.com/data/jj592904) et [utilisation des valeurs de propriété](https://msdn.microsoft.com/data/jj592677) sur MSDN. Le didacticiel suivant montre comment implémenter l’héritage table par hiérarchie pour le `Instructor` et `Student` entités.
 
 Vous trouverez des liens vers d’autres ressources Entity Framework dans le [ASP.NET Data Access - ressources recommandées](../../../../whitepapers/aspnet-data-access-content-map.md).
 

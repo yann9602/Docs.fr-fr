@@ -2,20 +2,18 @@
 title: "Distributed d’assistance de balise de Cache | Documents Microsoft"
 author: pkellner
 description: "Montre comment travailler avec l’application d’assistance de balise de Cache"
-keywords: ASP.NET Core,tag helper
 ms.author: riande
 manager: wpickett
 ms.date: 02/14/2017
 ms.topic: article
-ms.assetid: c045d485-d1dc-4cea-a675-46be83b7a022
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper
-ms.openlocfilehash: 462c3775677924fc7b9b715cd6de75fe53ada89e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f5844dade218fdba1169a55fe3ce251a9cc03db2
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="distributed-cache-tag-helper"></a>Application d’assistance de balise de Cache distribué
 
@@ -43,7 +41,7 @@ Consultez d’assistance de balise de Cache pour les définitions. Application d
 
 | Type d’attribut    | Exemple de valeur     |
 |----------------   |----------------   |
-| chaîne    | « my-distributed-cache-unique-key-101 »     |
+| chaîne    | "my-distributed-cache-unique-key-101"     |
 
 Requis `name` attribut est utilisé comme une clé pour que le cache stocké pour chaque instance d’une assistance de balise de Cache distribué.  Contrairement à la base du Cache balise d’assistance qui affecte une clé à chaque instance d’assistance de balise de Cache basée sur le nom de la page Razor et l’emplacement de l’application d’assistance de balise dans la page razor, l’assistance de balise de Cache distribué base uniquement sa clé sur l’attribut`name`
 

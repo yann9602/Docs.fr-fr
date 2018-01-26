@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage
 msc.type: authoredcontent
-ms.openlocfilehash: 6cb77e8ef301c2eeef7df3e391e14f4e2c0364e9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 489769533a26c99404c6a5186d66f560385dcffd
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="unstructured-blob-storage-building-real-world-cloud-apps-with-azure"></a>Stockage d’objets Blob non structurées (génération d’applications Cloud du monde réel avec Azure)
 ====================
@@ -33,7 +33,7 @@ Dans le chapitre précédent, nous étudié les schémas de partitionnement et e
 
 Le service Blob de stockage Azure fournit un moyen de stocker des fichiers dans le cloud. Le service Blob a un nombre d’avantages par rapport à stocker des fichiers dans un système de fichiers réseau local :
 
-- Il est hautement évolutive. Un seul compte de stockage peut stocker [des centaines de téraoctets](https://msdn.microsoft.com/en-us/library/windowsazure/dn249410.aspx), et vous pouvez avoir plusieurs comptes de stockage. Certains des plus grands clients Azure stockent des centaines de pétaoctets. Microsoft SkyDrive utilise le stockage d’objets blob.
+- Il est hautement évolutive. Un seul compte de stockage peut stocker [des centaines de téraoctets](https://msdn.microsoft.com/library/windowsazure/dn249410.aspx), et vous pouvez avoir plusieurs comptes de stockage. Certains des plus grands clients Azure stockent des centaines de pétaoctets. Microsoft SkyDrive utilise le stockage d’objets blob.
 - Il est durable. Chaque fichier que vous stockez dans le service Blob est automatiquement sauvegardée.
 - Il offre une haute disponibilité. Le [SLA pour le stockage](https://go.microsoft.com/fwlink/p/?linkid=159705&amp;clcid=0x409) promesses 99,9 % ou 99,99 % temps de fonctionnement, selon l’option géo-redondance que vous choisissez.
 - Elle fonctionnalité platform-as-a-service (PaaS) de Azure, ce qui signifie que vous venez de stockez et récupérer des fichiers, de payer uniquement pour la quantité réelle de stockage que vous utilisez, et Azure se charge automatiquement de la configuration et la gestion de tous les ordinateurs virtuels et les disques requis pour le service.
@@ -131,7 +131,7 @@ Si vous examinez le code HTML de la page qui affiche, vous consultez l’URL qui
 
 [!code-cshtml[Main](unstructured-blob-storage/samples/sample13.cshtml?highlight=11)]
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Vous avez vu comment l’application corriger stocke les images dans le service d’objets Blob et les URL des images uniquement dans la base de données SQL. À l’aide du service Blob conserve la base de données SQL est beaucoup plus petite que dans le cas contraire serait, permet de monter presque autant de tâches et peut être effectuée sans écrire beaucoup de code.
 
@@ -146,7 +146,7 @@ Pour plus d’informations, consultez les ressources suivantes :
 - [Une Introduction au stockage d’objets BLOB Azure](https://www.simple-talk.com/cloud/cloud-data/an-introduction-to-windows-azure-blob-storage-/). Blog de Mike bois.
 - [Comment utiliser le Service de stockage d’objets Blob Azure dans .NET](https://docs.microsoft.com/azure/storage/blobs/storage-dotnet-how-to-use-blobs). Documentation officielle sur le site MicrosoftAzure.com. Une brève introduction aux suivi d’exemples de code montrant comment se connecter au stockage d’objets blob, de stockage d’objets blob de créer des conteneurs, charger et télécharger des objets BLOB, etc.
 - [Prévention de défaillance : Création de Services de cloud computing évolutive et robuste](https://channel9.msdn.com/Series/FailSafe). Série de vidéos de neuf parties par Ulrich Homann, Marc Mercuri et Mark Simms. Présente les principaux concepts et les principes d’architecture de manière très accessible et intéressante, avec récits tirés de l’expérience de Microsoft Customer Advisory Team (CAT) avec des clients réels. Pour en savoir plus sur le service Azure Storage et les objets BLOB, consultez épisode 5 en commençant à 35:13.
-- [Microsoft Patterns and Practices - Guide Azure](https://msdn.microsoft.com/en-us/library/dn568099.aspx). Voir Valet Key pattern.
+- [Microsoft Patterns and Practices - Guide Azure](https://msdn.microsoft.com/library/dn568099.aspx). Voir Valet Key pattern.
 
 >[!div class="step-by-step"]
 [Précédent](data-partitioning-strategies.md)

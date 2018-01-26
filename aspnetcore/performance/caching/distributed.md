@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: performance/caching/distributed
-ms.openlocfilehash: a00937e8c47e73fa8e29af883f44f6e1f4d4b1b4
-ms.sourcegitcommit: 216dfac27542f10a79274a9ce60dc449e888ed20
+ms.openlocfilehash: a0af4887143f6ed37a1af982ec21a2ad5eae9515
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="working-with-a-distributed-cache-in-aspnet-core"></a>Utilisation avec un cache distribué dans ASP.NET Core
 
@@ -25,7 +25,7 @@ Les caches distribués peuvent améliorer les performances et l’évolutivité 
 
 ## <a name="what-is-a-distributed-cache"></a>Qu’est un cache distribué
 
-Un cache distribué est partagé par plusieurs serveurs d’application (consultez [principes fondamentaux de la mise en cache](memory.md#caching-basics)). Les informations contenues dans le cache ne sont pas stockés dans la mémoire des serveurs de site web individuel, et les données mises en cache sont disponibles pour tous les serveurs de l’application. Cela présente plusieurs avantages :
+Un cache distribué est partagé par plusieurs serveurs d’application (consultez [principes fondamentaux de la mise en cache](memory.md#caching-basics)). Les informations contenues dans le cache ne sont pas stockées dans la mémoire des serveurs de site web individuel, et les données mises en cache sont disponibles pour tous les serveurs de l’application. Cela présente plusieurs avantages :
 
 1. Données mises en cache sont cohérentes sur tous les serveurs web. Les utilisateurs ne voient des résultats différents selon le web server gère leur demande
 
@@ -48,15 +48,15 @@ Le `IDistributedCache` interface inclut des méthodes synchrones et asynchrones.
 
 Prend une clé de chaîne et récupère un élément mis en cache comme un `byte[]` si trouvée dans le cache.
 
-**Ensemble, SetAsync**
+**Set, SetAsync**
 
 Ajoute un élément (comme `byte[]`) dans le cache à l’aide d’une clé de chaîne.
 
-**Actualisation, RefreshAsync**
+**Refresh, RefreshAsync**
 
 Actualise un élément dans le cache en fonction de sa clé, la réinitialisation de son délai d’expiration décalée (le cas échéant).
 
-**Supprimer, RemoveAsync**
+**Remove, RemoveAsync**
 
 Supprime une entrée de cache en fonction de sa clé.
 
@@ -138,9 +138,9 @@ Lorsque vous décidez quelle implémentation de `IDistributedCache` est adaptée
 
 * [Cache dans Azure redis](https://azure.microsoft.com/documentation/services/redis-cache/)
 * [Base de données SQL Azure](https://azure.microsoft.com/documentation/services/sql-database/)
-* [La mise en cache en mémoire](xref:performance/caching/memory)
-* [Détection des modifications avec modification de jetons](xref:fundamentals/primitives/change-tokens)
+* [Mise en cache en mémoire](xref:performance/caching/memory)
+* [Détecter les modifications à l’aide de jetons de modification](xref:fundamentals/primitives/change-tokens)
 * [Mise en cache des réponses](xref:performance/caching/response)
 * [Intergiciel de mise en cache des réponses](xref:performance/caching/middleware)
-* [Application d’assistance de balise de cache](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
-* [Application d’assistance de balise de Cache distribué](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)
+* [Tag Helper de cache](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
+* [Tag Helper de cache distribué](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)

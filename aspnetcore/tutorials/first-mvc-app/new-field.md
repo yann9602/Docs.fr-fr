@@ -2,20 +2,18 @@
 title: "Ajout d’un nouveau champ"
 author: rick-anderson
 description: 
-keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: get-started-article
-ms.assetid: 16efbacf-fe7b-4b41-84b0-06a1574b95c2
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/first-mvc-app/new-field
-ms.openlocfilehash: 9c872a48aba4974ddac2e49ca40c944da356f0e0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 046e16b1a9581edb2be9a2315cf7f2677684747b
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="adding-a-new-field"></a>Ajout d’un nouveau champ
 
@@ -71,7 +69,7 @@ Mettez à jour la classe `SeedData` pour qu’elle fournisse une valeur pour la 
 
 Générez la solution.
 
-Dans le menu **Outils**, sélectionnez **Gestionnaire de package NuGet > Console du gestionnaire de package**.
+Dans le menu **Outils**, sélectionnez **Gestionnaire de package NuGet > Console du Gestionnaire de package**.
 
   ![Menu Console du Gestionnaire de package](adding-model/_static/pmc.png)
 

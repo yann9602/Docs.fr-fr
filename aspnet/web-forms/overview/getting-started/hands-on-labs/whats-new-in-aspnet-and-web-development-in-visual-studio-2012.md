@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/hands-on-labs/whats-new-in-aspnet-and-web-development-in-visual-studio-2012
 msc.type: authoredcontent
-ms.openlocfilehash: e57f1200aaa207c9109f2832cbf88629ed385bb5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f0818cce2a82ede80556b3471cec9d965c3e987f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="whats-new-in-aspnet-and-web-development-in-visual-studio-2012"></a>Nouveautés de développement ASP.NET et Web dans Visual Studio 2012
 ====================
@@ -50,11 +50,11 @@ Dans ce laboratoire pratique, vous allez apprendre comment :
 <a id="Prerequisites"></a>
 
 <a id="Prerequisites"></a>
-### <a name="prerequisites"></a>Conditions préalables
+### <a name="prerequisites"></a>Prérequis
 
 - [Microsoft Visual Studio Express 2012 pour Web](https://www.microsoft.com/visualstudio/eng/products/visual-studio-express-for-web) ou supérieure (lecture [annexe A](#AppendixA) pour obtenir des instructions sur l’installation).
 - [Windows PowerShell](https://support.microsoft.com/kb/968930/) (pour les scripts de configuration - déjà installés sur Windows 8 et Windows Server 2008 R2)
-- [Internet Explorer 10](https://windows.microsoft.com/en-US/internet-explorer/products/ie/home) - ou un navigateur compatible HTML5
+- [Internet Explorer 10](https://windows.microsoft.com/internet-explorer/products/ie/home) - ou un navigateur compatible HTML5
 
 <a id="Exercises"></a>
 
@@ -202,7 +202,7 @@ Dans cette tâche, vous allez apprendre comment utiliser des extraits de code de
     > [!NOTE]
     > Si vous utilisez Internet Explorer 10 et que vous ne pouvez pas voir les ombres, assurez-vous que le mode de document est défini sur les normes Internet Explorer 10. Appuyez sur **F12** pour ouvrir les outils de développement Internet Explorer sur **Mode Document** pour convertir des normes Internet Explorer 10.
 
-    ![sur-nous](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/_static/image21.png)
+    ![about-us](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/_static/image21.png)
 
 <a id="Exercise2"></a>
 
@@ -692,7 +692,7 @@ Dans cet exemple, vous allez apprendre à utiliser le **DynamicFolderBundle** cl
 
 
 <a id="Summary"></a>
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet atelier vous aide à comprendre ce qui sont nouveau dans ASP.NET et le développement Web dans Visual Studio 2012 et comment tirer parti de la diversité des améliorations dans Visual Studio 2012.
 

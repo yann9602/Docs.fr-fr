@@ -10,11 +10,11 @@ ms.topic: article
 ms.assetid: a55b0d20-9c90-4bd3-a471-20da6f569f0c
 ms.technology: 
 ms.prod: .net-framework
-ms.openlocfilehash: 3aaef756ee00d7e44aa757062e1ef297312ecf22
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 12acae0883c12698a8f9c2150623ba792303e7ef
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="aspnet-webhooks-handlers"></a>Gestionnaires d’ASP.NET WebHooks
 
@@ -62,7 +62,7 @@ public class MyWebHookHandler : WebHookHandler
 
 La plupart des expéditeurs de WebHook renverra un WebHook si une réponse n’est pas générée dans un certain nombre de secondes. Cela signifie que votre gestionnaire doit effectuer le traitement dans ce laps de temps dans l’ordre, pas pour pouvoir être appelée à nouveau.
 
-Si le traitement prend plus de temps, ou il est mieux géré séparément le [WebHookQueueHandler](https://github.com/aspnet/WebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Receivers/WebHooks/WebHookQueueHandler.cs) peut être utilisé pour envoyer la demande de WebHook dans une file d’attente, par exemple [file d’attente de stockage Azure](https://msdn.microsoft.com/en-us/library/azure/dd179353.aspx).
+Si le traitement prend plus de temps, ou il est mieux géré séparément le [WebHookQueueHandler](https://github.com/aspnet/WebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Receivers/WebHooks/WebHookQueueHandler.cs) peut être utilisé pour envoyer la demande de WebHook dans une file d’attente, par exemple [file d’attente de stockage Azure](https://msdn.microsoft.com/library/azure/dd179353.aspx).
 
 Un plan d’un [WebHookQueueHandler](https://github.com/aspnet/WebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Receivers/WebHooks/WebHookQueueHandler.cs) implémentation est fournie ici :
 

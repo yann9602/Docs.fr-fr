@@ -2,7 +2,6 @@
 title: "Présentation d’ASP.NET Core"
 author: rick-anderson
 description: "Offre une présentation d’ASP.NET Core."
-keywords: ASP.NET Core
 ms.author: riande
 manager: wpickett
 ms.date: 12/12/2017
@@ -10,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: index
-ms.openlocfilehash: 5d8e9a72a3b69866f5a4f725076e44575d20d64f
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: 7d5afd5871316509a385d14bbfe886bfe55d1ff4
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="introduction-to-aspnet-core"></a>Présentation d’ASP.NET Core
 
@@ -29,7 +28,7 @@ ASP.NET Core est un framework multiplateforme à hautes performances et [open so
 
 ## <a name="why-use-aspnet-core"></a>Pourquoi utiliser ASP.NET Core ?
 
-Des millions de développeurs ont utilisé (et continuent d’utiliser) [ASP.NET 4.x](https://docs.microsoft.com/en-us/aspnet/overview) pour créer des applications web. ASP.NET Core est une reconception d’ASP.NET 4.x, avec des modifications d’architecture qui aboutissent à un framework plus léger et modulaire.
+Des millions de développeurs ont utilisé (et continuent d’utiliser) [ASP.NET 4.x](https://docs.microsoft.com/aspnet/overview) pour créer des applications web. ASP.NET Core est une reconception d’ASP.NET 4.x, avec des modifications d’architecture qui aboutissent à un framework plus léger et modulaire.
 
 ASP.NET Core offre les avantages suivants :
 

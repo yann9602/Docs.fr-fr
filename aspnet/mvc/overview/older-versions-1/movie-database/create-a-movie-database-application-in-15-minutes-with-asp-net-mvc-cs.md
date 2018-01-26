@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/movie-database/create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8294b5a8824c6a27e958e1ea78b7909a134447d2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a67ca5422d4353b8c23b3fd804246906b8b6d717
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="create-a-movie-database-application-in-15-minutes-with-aspnet-mvc-c"></a>Créer une Application de base de données de film des 15 dernières minutes avec ASP.NET MVC (c#)
 ====================
@@ -59,21 +59,21 @@ Vous aurez besoin de Visual Studio 2008 ou Visual Web Developer 2008 Express pou
 
 Si vous ne possédez pas Visual Studio 2008, vous pouvez télécharger une version d’évaluation de 90 jours de Visual Studio 2008 à partir de ce site Web :
 
-[https://msdn.Microsoft.com/en-us/VS2008/Products/cc268305.aspx](https://msdn.microsoft.com/en-us/vs2008/products/cc268305.aspx)
+[https://msdn.microsoft.com/vs2008/products/cc268305.aspx](https://msdn.microsoft.com/vs2008/products/cc268305.aspx)
 
 Vous pouvez également créer ASP.NET MVC applications avec Visual Web Developer Express 2008. Si vous décidez d’utiliser Visual Web Developer Express vous devez avoir installé Service Pack 1. Vous pouvez télécharger Visual Web Developer 2008 Express avec Service Pack 1 à partir de ce site Web :
 
-[https://www.Microsoft.com/downloads/details.aspx?FamilyId=BDB6391C-05CA-4036-9154-6DF4F6DEBD14&amp;displaylang = fr](https://www.microsoft.com/downloads/details.aspx?FamilyId=BDB6391C-05CA-4036-9154-6DF4F6DEBD14&amp;displaylang=en)
+[https://www.microsoft.com/downloads/details.aspx?FamilyId=BDB6391C-05CA-4036-9154-6DF4F6DEBD14&amp;displaylang=en](https://www.microsoft.com/downloads/details.aspx?FamilyId=BDB6391C-05CA-4036-9154-6DF4F6DEBD14&amp;displaylang=en)
 
 Après avoir installé Visual Studio 2008 ou Visual Web Developer 2008, vous devez installer l’infrastructure ASP.NET MVC. Vous pouvez télécharger l’infrastructure ASP.NET MVC à partir du site Web suivant :
 
-[https://www.ASP.NET/MVC/](../../../index.md)
+[https://www.asp.net/mvc/](../../../index.md)
 
 > [!NOTE] 
 > 
 > Au lieu de télécharger l’infrastructure ASP.NET et l’infrastructure ASP.NET MVC individuellement, vous pouvez tirer parti de Web Platform Installer. Le programme d’installation de la plateforme Web est une application qui vous permet de gérer facilement les applications installées sont installés sur votre ordinateur :
 > 
-> [https://www.Microsoft.com/Web/Gallery/Install.aspx](https://www.microsoft.com/web/gallery/Install.aspx)
+> [https://www.microsoft.com/web/gallery/Install.aspx](https://www.microsoft.com/web/gallery/Install.aspx)
 
 
 ## <a name="creating-an-aspnet-mvc-web-application-project"></a>Création d’un projet d’Application Web ASP.NET MVC
@@ -136,8 +136,8 @@ Ensuite, nous avons besoin créer une nouvelle table de base de données. Dans l
 | **Nom de la colonne** | **Type de données** | **Autoriser les valeurs null** |
 | --- | --- | --- |
 | Id | Int | False |
-| Titre | Nvarchar (100) | False |
-| Directeur | Nvarchar (100) | False |
+| Titre | Nvarchar(100) | False |
+| Directeur | Nvarchar(100) | False |
 | DateReleased | DateTime | False |
 
 
@@ -261,7 +261,7 @@ Après avoir effectué ces étapes, une nouvelle vue nommée Index.aspx est ajou
 **La figure 10**: création d’une nouvelle vue de la boîte de dialogue Ajouter une vue ([cliquez pour afficher l’image en taille réelle](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/_static/image20.png))
 
 
-**La liste 3 – Views\Home\Index.aspx**
+**Listing 3 – Views\Home\Index.aspx**
 
 [!code-aspx[Main](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/samples/sample3.aspx)]
 
@@ -308,7 +308,7 @@ Visual Studio vous permet de créer le formulaire de création d’une nouvelle 
 
 Visual Studio génère la vue dans la liste 5 automatiquement. Cette vue contient un formulaire HTML qui inclut des champs qui correspondent à chacune des propriétés de la classe de film.
 
-**La liste 5 – Views\Home\Create.aspx**
+**Listing 5 – Views\Home\Create.aspx**
 
 [!code-aspx[Main](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs/samples/sample5.aspx)]
 
@@ -362,7 +362,7 @@ Dans la liste 6, j’ai ajouté une logique supplémentaire pour les deux surcha
 
 Notez que vous devez récupérer la séquence d’origine et ensuite appeler ApplyPropertyChanges(), pour mettre à jour la séquence existante dans la base de données.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 L’objectif de ce didacticiel a pour vous donner une idée de l’expérience de création d’une application ASP.NET MVC. J’espère que vous avez découvert que la génération d’un ASP.NET MVC application web est très similaire à celle de la création d’une application ASP ou ASP.NET.
 

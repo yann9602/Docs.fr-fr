@@ -2,7 +2,6 @@
 title: Pages Razor avec EF Core - CRUD - 2 de 8
 author: rick-anderson
 description: "Montre comment créer, lire, mettre à jour, supprimer avec EF de base"
-keywords: "ASP.NET Core, Entity Framework Core, CRUD, créer, lire, mettre à jour, supprimer"
 ms.author: riande
 manager: wpickett
 ms.date: 10/15/2017
@@ -10,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/crud
-ms.openlocfilehash: 246e6307989f2660d84288ceac6793c422875f93
-ms.sourcegitcommit: 87168cdc409e7a7257f92a0f48f9c5ab320b5b28
+ms.openlocfilehash: d9b34c141401fbeaafe439fae1a7a75f2fe7b4ae
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="create-read-update-and-delete---ef-core-with-razor-pages-2-of-8"></a>Créer, lire, mettre à jour et supprimer - Core EF avec les Pages Razor (2 de 8)
 
@@ -133,7 +132,7 @@ Dans l’exemple précédent :
 <a id="overpost"></a>
 ### <a name="overposting"></a>Sur-validation
 
-À l’aide de `TryUpdateModel` pour mettre à jour les champs avec les valeurs publiées est une meilleure pratique de sécurité, car elle empêche overposting. Par exemple, supposons que l’entité Student inclut un `Secret` propriété que cette page web ne doit pas mettre à jour ou ajouter :
+À l’aide de `TryUpdateModel` pour mettre à jour les champs avec les valeurs publiées est une meilleure pratique de sécurité, car elle empêche overposting. Par exemple, supposons que l’entité Student inclut un `Secret` propriété cette page web ne doivent pas mettre à jour ou ajouter :
 
 [!code-csharp[Main](intro/samples/cu/Models/StudentZsecret.cs?name=snippet_Intro&highlight=7)]
 

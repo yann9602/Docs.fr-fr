@@ -2,20 +2,18 @@
 title: "Les fournisseurs de stockage personnalisés pour ASP.NET Core Identity | Documents Microsoft"
 author: ardalis
 description: "Comment configurer les fournisseurs de stockage personnalisés pour ASP.NET Core Identity."
-keywords: "Fournisseurs de stockage personnalisés ASP.NET Core, identité,"
 ms.author: riande
 manager: wpickett
 ms.date: 05/24/2017
 ms.topic: article
-ms.assetid: b2ace545-ecf6-4664-b31e-b65bd4a6b025
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/identity-custom-storage-providers
-ms.openlocfilehash: 687ca96be5121502e816bdc856e17dcd5923fe05
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f0953ad5d9f1bfa92ecc5169d9a211ce6b8cda8f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="custom-storage-providers-for-aspnet-core-identity"></a>Fournisseurs de stockage personnalisés pour ASP.NET Core Identity
 
@@ -80,9 +78,9 @@ Groupes d’autorisation pour votre site. Inclut le nom de rôle Id et le rôle 
 
 ## <a name="the-data-access-layer"></a>La couche d’accès aux données
 
-Cette rubrique suppose que vous êtes familiarisé avec le mécanisme de persistance que vous vous apprêtez à utiliser et comment créer des entités pour ce mécanisme. Cette rubrique ne fournit pas de détails sur la façon de créer des référentiels ou classes d’accès aux données ; Il fournit des suggestions sur les décisions de conception lorsque vous travaillez avec ASP.NET Core Identity.
+Cette rubrique suppose que vous êtes familiarisé avec le mécanisme de persistance que vous vous apprêtez à utiliser et comment créer des entités pour ce mécanisme. Cette rubrique ne fournit plus d’informations sur la façon de créer des référentiels ou classes d’accès aux données ; Il fournit des suggestions sur les décisions de conception lorsque vous travaillez avec ASP.NET Core Identity.
 
-Vous avez beaucoup de liberté lors de la conception de la couche d’accès aux données pour un fournisseur de magasin personnalisé. Vous devez uniquement créer des mécanismes de persistance pour les fonctionnalités que vous souhaitez utiliser dans votre application. Par exemple, si vous n’utilisez pas les rôles dans votre application, il est inutile créer le stockage pour les rôles ou les associations de rôle d’utilisateur. Votre infrastructure existante et des technologies peuvent nécessiter une structure est très différente de l’implémentation par défaut de l’identité de ASP.NET Core. Dans votre couche d’accès aux données, vous fournir la logique permettant de travailler sur la structure de votre implémentation de stockage.
+Vous avez beaucoup de liberté lors de la conception de la couche d’accès aux données pour un fournisseur de magasin personnalisé. Vous devez uniquement créer des mécanismes de persistance pour les fonctionnalités que vous souhaitez utiliser dans votre application. Par exemple, si vous n’utilisez pas les rôles dans votre application, vous n’avez pas besoin de créer un emplacement pour les rôles ou les associations de rôle d’utilisateur. Votre infrastructure existante et des technologies peuvent nécessiter une structure est très différente de l’implémentation par défaut de l’identité de ASP.NET Core. Dans votre couche d’accès aux données, vous fournir la logique permettant de travailler sur la structure de votre implémentation de stockage.
 
 La couche d’accès aux données fournit la logique pour enregistrer les données d’identité de ASP.NET Core pour une source de données. La couche d’accès aux données pour votre fournisseur de stockage personnalisé peut inclure les classes suivantes pour stocker les informations utilisateur et le rôle.
 
@@ -135,7 +133,7 @@ Créer un `UserStore` classe qui fournit les méthodes pour toutes les opératio
 - IUserRoleStore https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.iuserrolestore-1
 - IUserClaimStore https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.iuserclaimstore-1
 - IUserPasswordStore https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.iuserpasswordstore-1
-- IUserSecurityStampStore<!-- make these all links and remove / -->
+- IUserSecurityStampStore <!-- make these all links and remove / -->
 - IUserEmailStore
 - IPhoneNumberStore
 - IQueryableUserStore

@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/transient-fault-handling
 msc.type: authoredcontent
-ms.openlocfilehash: 3caeeb83e4c074ae0ffc30f035d793a821eb6be2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b743b04789c5e5ebf5ab922cf34a516a16a6d356
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="transient-fault-handling-building-real-world-cloud-apps-with-azure"></a>Gestion (création d’applications de Cloud du monde réel avec Azure) d’erreurs transitoires
 ====================
@@ -39,11 +39,11 @@ Au lieu de lever une exception et afficher une page non disponible ou une erreur
 
 Il existe plusieurs méthodes que vous pouvez implémenter la logique de nouvelle tentative actives.
 
-- Le Microsoft Patterns &amp; pratiques groupe a un [bloc applicatif de pannes gestion](https://msdn.microsoft.com/en-us/library/dn440719(v=pandp.60).aspx) qui fait tout pour vous si vous utilisez ADO.NET pour l’accès de base de données SQL (et non via Entity Framework). Vous venez de définir une stratégie pour les nouvelles tentatives : nombre de tentatives pour retenter une requête ou commande délai d’attente entre les tentatives – et de type wrap SQL du code dans un *à l’aide de* bloc.
+- Le Microsoft Patterns &amp; pratiques groupe a un [bloc applicatif de pannes gestion](https://msdn.microsoft.com/library/dn440719(v=pandp.60).aspx) qui fait tout pour vous si vous utilisez ADO.NET pour l’accès de base de données SQL (et non via Entity Framework). Vous venez de définir une stratégie pour les nouvelles tentatives : nombre de tentatives pour retenter une requête ou commande délai d’attente entre les tentatives – et de type wrap SQL du code dans un *à l’aide de* bloc.
 
     [!code-csharp[Main](transient-fault-handling/samples/sample1.cs)]
 
-    TFH prend également en charge [Azure In-Role Cache](https://msdn.microsoft.com/en-us/library/windowsazure/dn386103.aspx) et [Service Bus](https://azure.microsoft.com/services/service-bus/).
+    TFH prend également en charge [Azure In-Role Cache](https://msdn.microsoft.com/library/windowsazure/dn386103.aspx) et [Service Bus](https://azure.microsoft.com/services/service-bus/).
 - Lorsque vous utilisez Entity Framework vous généralement ne fonctionnent pas directement avec les connexions SQL, vous ne pouvez pas utiliser ce package de modèles et pratiques, mais Entity Framework 6 génère ce genre de logique de nouvelle tentative dans le framework. De la même façon, vous spécifiez la stratégie de nouvelle tentative, et puis EF utilise cette stratégie lorsqu’il accède à la base de données.
 
     Pour utiliser cette fonctionnalité dans l’application corriger, tout ce que nous devons faire est ajouter une classe qui dérive de *DbConfiguration* et activer la logique de nouvelle tentative.
@@ -76,7 +76,7 @@ Il n’existe aucune stratégie de nouvelle tentative conséquente. Vous pouvez 
 
 Pour obtenir des conseils de stratégie de base de données SQL nouvelle tentative, consultez [résoudre les erreurs temporaires et les erreurs de connexion à la base de données SQL](https://azure.microsoft.com/documentation/articles/sql-database-connectivity-issues/).
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Une stratégie de nouvelle tentative/temporisation peut contribuer à rendre des erreurs temporaires invisibles au client la plupart du temps, et Microsoft fournit les infrastructures que vous pouvez utiliser afin de réduire votre travail d’implémentation d’une stratégie si vous utilisez ADO.NET, Entity Framework ou Azure Service de stockage.
 
@@ -88,11 +88,11 @@ Pour plus d'informations, reportez-vous aux ressources suivantes :
 
 Documentation
 
-- [Meilleures pratiques pour la création de Services à grande échelle sur les Services Cloud Azure](https://msdn.microsoft.com/en-us/library/windowsazure/jj717232.aspx). Livre blanc par Mark Simms et Michael Thomassy. Similaire à la série de prévention de défaillance mais le passage en plus de détails sur les procédures. Consultez la section télémesure et Diagnostics.
-- [Prévention de défaillance : Aide sur les Architectures de Cloud résilientes](https://msdn.microsoft.com/en-us/library/windowsazure/jj853352.aspx). Livre blanc par Marc Mercuri, Ulrich Homann et Andrew Townhill. Version de la page Web de la série de vidéos de prévention de défaillance.
-- [Microsoft Patterns and Practices - Guide Azure](https://msdn.microsoft.com/en-us/library/dn568099.aspx). Consultez la nouvelle tentative modèle, le modèle de contrôleur de l’Agent du planificateur.
+- [Meilleures pratiques pour la création de Services à grande échelle sur les Services Cloud Azure](https://msdn.microsoft.com/library/windowsazure/jj717232.aspx). Livre blanc par Mark Simms et Michael Thomassy. Similaire à la série de prévention de défaillance mais le passage en plus de détails sur les procédures. Consultez la section télémesure et Diagnostics.
+- [Prévention de défaillance : Aide sur les Architectures de Cloud résilientes](https://msdn.microsoft.com/library/windowsazure/jj853352.aspx). Livre blanc par Marc Mercuri, Ulrich Homann et Andrew Townhill. Version de la page Web de la série de vidéos de prévention de défaillance.
+- [Microsoft Patterns and Practices - Guide Azure](https://msdn.microsoft.com/library/dn568099.aspx). Consultez la nouvelle tentative modèle, le modèle de contrôleur de l’Agent du planificateur.
 - [Tolérance de pannes dans la base de données SQL Azure](https://blogs.msdn.com/b/windowsazure/archive/2012/07/30/fault-tolerance-in-windows-azure-sql-database.aspx). Billet de blog de Tony Petrossian.
-- [Entity Framework - résilience de connexion / de la logique de nouvelle tentative](https://msdn.microsoft.com/en-us/data/dn456835). Comment utiliser et personnaliser la gestion des fonctionnalités d’Entity Framework 6 d’erreurs transitoires.
+- [Entity Framework - résilience de connexion / de la logique de nouvelle tentative](https://msdn.microsoft.com/data/dn456835). Comment utiliser et personnaliser la gestion des fonctionnalités d’Entity Framework 6 d’erreurs transitoires.
 - [Résilience des connexions et l’Interception de commande avec Entity Framework dans une Application ASP.NET MVC](../../../../mvc/overview/getting-started/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application.md). Quatrième dans une série de didacticiels neuf parties, montre comment configurer la fonctionnalité de résilience de connexion EF 6 pour la base de données SQL.
 
 Vidéos

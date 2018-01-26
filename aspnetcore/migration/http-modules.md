@@ -2,20 +2,18 @@
 title: Migration des gestionnaires HTTP et des modules pour ASP.NET Core intergiciel (middleware)
 author: rick-anderson
 description: 
-keywords: ASP.NET Core,
 ms.author: tdykstra
 manager: wpickett
 ms.date: 12/07/2016
 ms.topic: article
-ms.assetid: 9c826a76-fbd2-46b5-978d-6ca6df53531a
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: migration/http-modules
-ms.openlocfilehash: f217e5264742826f285444dcbaea4b28b97c4d7e
-ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
+ms.openlocfilehash: a38ddc64583de05b4088cd31d48fbd7ee949d4e5
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="migrating-http-handlers-and-modules-to-aspnet-core-middleware"></a>Migration des gestionnaires HTTP et des modules pour ASP.NET Core intergiciel (middleware) 
 
@@ -107,11 +105,11 @@ Le *MyMiddlewareExtensions* classe d’assistance rend plus facile à configurer
 
 <a name="http-modules-shortcircuiting-middleware"></a>
 
-Votre module peut mettre fin à une demande, par exemple, si l’utilisateur n’est pas autorisé :
+Le module peut mettre fin à une demande, par exemple, si l’utilisateur n’est pas autorisé :
 
 [!code-csharp[Main](../migration/http-modules/sample/Asp.Net4/Asp.Net4/Modules/MyTerminatingModule.cs?highlight=9,10,11,12,13&name=snippet_Terminate)]
 
-Un intergiciel (middleware) gère cela en appelant ne pas `Invoke` sur l’intergiciel (middleware) suivant dans le pipeline. Gardez à l’esprit que cela ne termine pas entièrement la demande, car middlewares précédente est toujours appelé lorsque la réponse effectue sa manière via le pipeline.
+Un intergiciel (middleware) gère cela en appelant ne pas `Invoke` sur l’intergiciel (middleware) suivant dans le pipeline. Gardez à l’esprit que cela n’entièrement mettre fin à la demande, car middlewares précédente est toujours appelé lorsque la réponse effectue sa manière via le pipeline.
 
 [!code-csharp[Main](../migration/http-modules/sample/Asp.Net.Core/Middleware/MyTerminatingMiddleware.cs?highlight=7,8&name=snippet_Terminate)]
 
@@ -211,7 +209,7 @@ La nouvelle [système de configuration](xref:fundamentals/configuration/index) v
 
   Le [UseMiddleware](#http-modules-usemiddleware) méthode d’extension qui ajoute votre intergiciel (middleware) pour le `IApplicationBuilder` prend en charge l’injection de dépendances.
 
-  Cela n’est pas limitée à `IOptions` objets. De cette manière peut être ajoutée à n’importe quel autre objet nécessitant votre intergiciel (middleware).
+  Ce n’est pas limité à `IOptions` objets. De cette manière peut être ajoutée à n’importe quel autre objet nécessitant votre intergiciel (middleware).
 
 ## <a name="loading-middleware-options-through-direct-injection"></a>Chargement des options d’intergiciel (middleware) par le biais d’injection directe
 

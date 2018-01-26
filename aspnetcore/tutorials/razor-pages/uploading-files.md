@@ -2,7 +2,6 @@
 title: Chargement de fichiers sur une page Razor dans ASP.NET Core
 author: guardrex
 description: "Découvrez comment charger des fichiers sur une page Razor."
-keywords: ASP.NET Core,Razor,pages Razor,IFormFile,chargement de fichiers,chargementfichier
 ms.author: riande
 manager: wpickett
 ms.date: 09/12/2017
@@ -10,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: tutorials/razor-pages/uploading-files
-ms.openlocfilehash: 3b54bf0b40c396c8c141966219f65231fb362ca4
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a29043ac5d28ae8efcbbd6919e73e3774ba22699
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="uploading-files-to-a-razor-page-in-aspnet-core"></a>Chargement de fichiers sur une page Razor dans ASP.NET Core
 

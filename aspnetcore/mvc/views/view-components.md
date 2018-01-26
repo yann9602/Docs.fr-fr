@@ -2,24 +2,22 @@
 title: Affichage des composants
 author: rick-anderson
 description: "Affichage des composants visent n’importe où que la logique de rendu réutilisables."
-keywords: ASP.NET Core, affichage des composants, vue partielle
 ms.author: riande
 manager: wpickett
 ms.date: 02/14/2017
 ms.topic: article
-ms.assetid: ab4705b7-59d7-4f31-bc97-ea7f292fe926
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/view-components
-ms.openlocfilehash: 2cf82df78c250cdfdd808d49acfc06dc2ea82f5f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 65074ca02a1365db278d348d4e024121a6eb4634
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="view-components"></a>Affichage des composants
 
-De [Rick Anderson](https://twitter.com/RickAndMSFT)
+Par [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 [Affichez ou téléchargez l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/view-components/sample) ([procédure de téléchargement](xref:tutorials/index#how-to-download-a-sample))
 
@@ -62,7 +60,7 @@ Une classe de composant de vue :
 
 * Prend entièrement en charge le constructeur [injection de dépendance](../../fundamentals/dependency-injection.md)
 
-* Ne font pas partie du cycle de vie du contrôleur, ce qui signifie que vous ne pouvez pas utiliser [filtres](../controllers/filters.md) dans un composant de vue
+* Ne font partie du cycle de vie du contrôleur, ce qui signifie que vous ne pouvez pas utiliser [filtres](../controllers/filters.md) dans un composant de vue
 
 ### <a name="view-component-methods"></a>Afficher les méthodes de composant
 
@@ -78,8 +76,8 @@ Un composant de vue définit sa logique dans un `InvokeAsync` méthode qui retou
 
 Le runtime recherche dans la vue dans les chemins d’accès suivants :
 
-   * Vues /\<controller_name > /Components/\<view_component_name > /\<view_name >
-   * Vues/Shared/Components/\<view_component_name > /\<view_name >
+   * Views/\<controller_name>/Components/\<view_component_name>/\<view_name>
+   * Views/Shared/Components/\<view_component_name>/\<view_name>
 
 Le nom de la vue par défaut pour un composant de vue est *par défaut*, ce qui signifie que votre fichier d’affichage est généralement appelé *Default.cshtml*. Vous pouvez spécifier un nom d’affichage différent lors de la création du résultat de composant de vue ou lorsque vous appelez le `View` (méthode).
 
@@ -132,7 +130,7 @@ Dans l’exemple ci-dessus, le `PriorityList` composant de vue devient `priority
 
 ### <a name="invoking-a-view-component-directly-from-a-controller"></a>Appel d’un composant de vue directement à partir d’un contrôleur
 
-Affichage des composants sont généralement appelées à partir d’une vue, mais vous pouvez les appeler directement à partir d’une méthode de contrôleur. Lors de l’affichage des composants ne définissent pas de points de terminaison tels que les contrôleurs, vous pouvez facilement implémenter une action du contrôleur qui retourne le contenu d’un `ViewComponentResult`.
+Affichage des composants sont généralement appelées à partir d’une vue, mais vous pouvez les appeler directement à partir d’une méthode de contrôleur. Alors que les composants de la vue ne définissent les points de terminaison tels que les contrôleurs, vous pouvez facilement implémenter une action du contrôleur qui retourne le contenu d’un `ViewComponentResult`.
 
 Dans cet exemple, le composant de vue est appelé directement à partir du contrôleur :
 
@@ -214,17 +212,17 @@ Exécutez l’application et vérifier l’affichage de PVC.
 
 ![Composant de vue de priorité](view-components/_static/pvc.png)
 
-Si la vue PVC n’est pas affichée, vérifiez que vous appelez le composant de vue avec une priorité de 4 ou version ultérieure.
+Si la vue de PVC n’est pas affichée, vérifiez que vous appelez le composant de vue avec une priorité de 4 ou version ultérieure.
 
 ### <a name="examine-the-view-path"></a>Examinez le chemin d’accès de la vue
 
-* Modifiez le paramètre de priorité inférieure ou égale à trois afin de la vue priority n’est pas renvoyée.
+* Modifiez le paramètre de priorité inférieure ou égale à trois afin de la vue priority n’est pas retournée.
 * Renommez temporairement le *Views/Todo/Components/PriorityList/Default.cshtml* à *1Default.cshtml*.
 * Tester l’application, vous obtiendrez l’erreur suivante :
 
    ```
    An unhandled exception occurred while processing the request.
-   InvalidOperationException: The view 'Components/PriorityList/Default' was not found. The following locations were searched:
+   InvalidOperationException: The view 'Components/PriorityList/Default' wasn't found. The following locations were searched:
    /Views/ToDo/Components/PriorityList/Default.cshtml
    /Views/Shared/Components/PriorityList/Default.cshtml
    EnsureSuccessful

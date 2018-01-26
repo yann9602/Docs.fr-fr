@@ -2,20 +2,18 @@
 title: "Nouveautés d’ASP.NET Core 2.0"
 author: rick-anderson
 description: "Nouveautés d’ASP.NET Core 2.0"
-keywords: "ASP.NET Core, notes de publication, nouveautés"
 ms.author: riande
 manager: wpickett
 ms.date: 07/10/2017
 ms.topic: article
-ms.assetid: 08c9f457-9c24-40f9-a08b-47dc251e4cec
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: aspnetcore-2.0
-ms.openlocfilehash: f01f047f809e4eaa055a4204611b152c5db87f74
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: 992afc2766e817ef007e20ade44e3ddd1d404f90
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="whats-new-in-aspnet-core-20"></a>Nouveautés d’ASP.NET Core 2.0
 
@@ -76,7 +74,7 @@ Pour plus d’informations sur les modifications apportées à l’authentificat
 
 * [Account confirmation and password recovery in ASP.NET Core (Confirmation de compte et récupération de mot de passe dans ASP.NET Core)](xref:security/authentication/accconfirm)
 * [Enabling QR Code generation for authenticator apps in ASP.NET Core (Activation de la génération de code QR pour les applications d’authentification dans ASP.NET Core)](xref:security/authentication/identity-enable-qrcodes)
-* [Migration de l’authentification et de l’identité vers ASP.NET Core 2.0](xref:migration/1x-to-2x/identity-2x)
+* [Migrating Authentication and Identity to ASP.NET Core 2.0 (Migration de l’authentification et de l’identité vers ASP.NET Core 2.0)](xref:migration/1x-to-2x/identity-2x)
 
 ## <a name="spa-templates"></a>Modèles SPA
 

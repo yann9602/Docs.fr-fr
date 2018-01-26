@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/scenario-configuring-a-test-environment-for-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 008b9cd081152e6a378d0fa2e08497a6771fd9b5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 23e317c6e0b6daf2d7937b73738e5cb6fa32cde2
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="scenario-configuring-a-test-environment-for-web-deployment"></a>Scénario : Configuration d’un environnement de Test pour le déploiement Web
 ====================
@@ -49,7 +49,7 @@ L’environnement de test doit prendre en charge de la seule étape ou automatis
 - Configurer le serveur web de test pour prendre en charge le déploiement à l’aide du Gestionnaire de déploiement Web.
 
 > [!NOTE]
-> Vous pouvez également utiliser [Web déployer à la demande](https://technet.microsoft.com/en-us/library/ee517345(WS.10).aspx) (le « agent temporaire »). Cela est similaire à l’approche de l’agent distant en termes d’exigences et des contraintes.
+> Vous pouvez également utiliser [Web déployer à la demande](https://technet.microsoft.com/library/ee517345(WS.10).aspx) (le « agent temporaire »). Cela est similaire à l’approche de l’agent distant en termes d’exigences et des contraintes.
 
 
 Dans ce cas, les développeurs ont des privilèges d’administrateur sur les serveurs de destination, et l’environnement de test n’est pas soumis aux contraintes de sécurité strictes, le choix logique pour configurer le serveur web de test pour prendre en charge le déploiement à l’aide de l’agent distant. Cela est moins complexe et requiert une configuration initiale moins que l’approche du Gestionnaire de déploiement Web. Vous devez également configurer votre serveur de base de données pour prendre en charge le déploiement et accès à distance.

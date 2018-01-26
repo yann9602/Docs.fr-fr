@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/creating-a-connection-string
 msc.type: authoredcontent
-ms.openlocfilehash: 41f1f30d86406580ab9fc7278a94d9c291913f9a
-ms.sourcegitcommit: d1d8071d4093bf2444b5ae19d6e45c3d187e338b
+ms.openlocfilehash: 25d1c1c9954baaca9ef91eff3dd3c853930a5893
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/19/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-a-connection-string-and-working-with-sql-server-localdb"></a>Création d’une chaîne de connexion et l’utilisation de base de données SQL Server locale
 ====================
@@ -36,7 +36,7 @@ SQL Server Express n’est pas recommandée pour une utilisation dans les applic
 
 Dans Visual Studio 2017, base de données locale est installé par défaut avec Visual Studio.
 
-Par défaut, Entity Framework recherche une chaîne de connexion que le même nom que la classe de contexte d’objet (`MovieDBContext` pour ce projet). Pour plus d’informations, consultez [chaînes de connexion SQL Server pour les Applications Web ASP.NET](https://msdn.microsoft.com/en-us/library/jj653752.aspx).
+Par défaut, Entity Framework recherche une chaîne de connexion que le même nom que la classe de contexte d’objet (`MovieDBContext` pour ce projet). Pour plus d’informations, consultez [chaînes de connexion SQL Server pour les Applications Web ASP.NET](https://msdn.microsoft.com/library/jj653752.aspx).
 
 Ouvrez la racine de l’application *Web.config* fichier ci-dessous. (Pas le *Web.config* de fichiers dans le *vues* dossier.)
 
@@ -56,11 +56,11 @@ L’exemple suivant montre une partie de la *Web.config* fichier avec la nouvell
 
 Les deux chaînes de connexion sont très similaires. La première chaîne de connexion est nommée `DefaultConnection` et est utilisé pour la base de données d’appartenance pour contrôler qui peut accéder à l’application. Vous avez ajouté la chaîne de connexion spécifie une base de données de la base de données locale nommée *Movie.mdf* situé dans le *application\_données* dossier. Nous ne sera pas utiliser la base de données d’appartenance dans ce didacticiel, pour plus d’informations sur l’appartenance, l’authentification et la sécurité, consultez mon didacticiel [créer une application ASP.NET MVC avec l’authentification et de la base de données SQL et le déployer vers Azure App Service](https://docs.microsoft.com/aspnet/core/security/authorization/secure-data).
 
-Le nom de la chaîne de connexion doit correspondre au nom de la [DbContext](https://msdn.microsoft.com/en-us/library/system.data.entity.dbcontext(v=vs.103).aspx) classe.
+Le nom de la chaîne de connexion doit correspondre au nom de la [DbContext](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=vs.103).aspx) classe.
 
 [!code-csharp[Main](creating-a-connection-string/samples/sample3.cs?highlight=15)]
 
-Vous n’avez pas réellement besoin ajouter le `MovieDBContext` chaîne de connexion. Si vous ne spécifiez pas une chaîne de connexion, Entity Framework crée une base de données de la base de données locale dans le répertoire des utilisateurs avec le nom qualifié complet de le [DbContext](https://msdn.microsoft.com/en-us/library/system.data.entity.dbcontext(v=vs.103).aspx) classe (dans ce cas `MvcMovie.Models.MovieDBContext`). Vous pouvez nommer la base de données comme vous le souhaitez, tant qu’il a le *. MDF* suffixe. Par exemple, nous avons nom de la base de données *MyFilms.mdf*.
+Vous n’avez pas réellement besoin ajouter le `MovieDBContext` chaîne de connexion. Si vous ne spécifiez pas une chaîne de connexion, Entity Framework crée une base de données de la base de données locale dans le répertoire des utilisateurs avec le nom qualifié complet de le [DbContext](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=vs.103).aspx) classe (dans ce cas `MvcMovie.Models.MovieDBContext`). Vous pouvez nommer la base de données comme vous le souhaitez, tant qu’il a le *. MDF* suffixe. Par exemple, nous avons nom de la base de données *MyFilms.mdf*.
 
 Ensuite, vous allez générer un nouveau `MoviesController` classe que vous pouvez utiliser pour afficher les données de film et permettre aux utilisateurs de créer de nouvelles listes de film.
 

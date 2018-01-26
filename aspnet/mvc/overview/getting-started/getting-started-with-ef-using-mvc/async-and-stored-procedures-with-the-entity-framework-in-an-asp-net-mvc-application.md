@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 5b4904037838441942ea266ce71d735642d0a717
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7412b32ac29179dfa319544781d4c7165c58196b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="async-and-stored-procedures-with-the-entity-framework-in-an-aspnet-mvc-application"></a>Async et les procédures stockées avec Entity Framework dans une Application ASP.NET MVC
 ====================
@@ -128,11 +128,11 @@ Certains développeurs et les administrateurs préfèrent utiliser des procédur
 
     ![Service Insert SP](async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image6.png)
 
-Code crée d’abord les noms de procédure stockée de par défaut. Si vous utilisez une base de données existante, vous devrez peut-être personnaliser les noms des procédures stockées afin d’utiliser des procédures stockées déjà définies dans la base de données. Pour plus d’informations sur la procédure à suivre, consultez [Entity Framework Code premier Insert/Update/Delete Stored Procedures](https://msdn.microsoft.com/en-us/data/dn468673).
+Code crée d’abord les noms de procédure stockée de par défaut. Si vous utilisez une base de données existante, vous devrez peut-être personnaliser les noms des procédures stockées afin d’utiliser des procédures stockées déjà définies dans la base de données. Pour plus d’informations sur la procédure à suivre, consultez [Entity Framework Code premier Insert/Update/Delete Stored Procedures](https://msdn.microsoft.com/data/dn468673).
 
 Si vous souhaitez personnaliser ce qui a généré do de procédures stockées, vous pouvez modifier le code de modèle généré automatiquement pour les migrations `Up` méthode qui crée la procédure stockée. De cette façon vos modifications sont répercutées chaque fois que que la migration est exécutée et est appliquée à votre base de données de production lors de la migration s’exécute automatiquement en production après le déploiement.
 
-Si vous souhaitez modifier une procédure stockée existante qui a été créée dans une migration précédente, vous pouvez utiliser la commande Add-Migration pour générer une migration vide et écrivez ensuite manuellement le code qui appelle le [AlterStoredProcedure](https://msdn.microsoft.com/en-us/library/system.data.entity.migrations.dbmigration.alterstoredprocedure.aspx) (méthode) .
+Si vous souhaitez modifier une procédure stockée existante qui a été créée dans une migration précédente, vous pouvez utiliser la commande Add-Migration pour générer une migration vide et écrivez ensuite manuellement le code qui appelle le [AlterStoredProcedure](https://msdn.microsoft.com/library/system.data.entity.migrations.dbmigration.alterstoredprocedure.aspx) (méthode) .
 
 ## <a name="deploy-to-azure"></a>Déployer vers Azure
 
@@ -146,7 +146,7 @@ Cette section, vous devez avoir terminé le paramètre facultatif **déploiement
 
     La première fois que vous exécutez une page qui accède à la base de données, Entity Framework exécute toutes les migrations `Up` méthodes nécessaires à la mise à jour avec le modèle de données actuel de la base de données. Vous pouvez désormais utiliser toutes les pages web que vous avez ajoutés depuis la dernière fois que vous avez déployé, y compris les pages de service que vous avez ajouté dans ce didacticiel.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Dans ce didacticiel vous a appris comment améliorer l’efficacité du serveur en écrivant du code qui s’exécute de façon asynchrone et comment utiliser des procédures stockées pour insérer, mettre à jour et les opérations de suppression. Dans l’étape suivante du didacticiel, vous allez apprendre à éviter la perte de données lorsque plusieurs utilisateurs essaient de modifier le même enregistrement en même temps.
 

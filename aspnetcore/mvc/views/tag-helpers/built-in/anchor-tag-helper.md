@@ -2,20 +2,18 @@
 title: "L’ancrage d’assistance de balise | Documents Microsoft"
 author: pkellner
 description: "Montre comment travailler avec l’application d’assistance de balise d’ancrage"
-keywords: ASP.NET Core,tag helper
 ms.author: riande
 manager: wpickett
 ms.date: 12/20/2017
 ms.topic: article
-ms.assetid: c045d485-d1dc-4cea-a675-46be83b7a011
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: mvc/views/tag-helpers/builtin-th/anchor-tag-helper
-ms.openlocfilehash: 86756a1d09e6e55ca79aed6e5b718088b82b782c
-ms.sourcegitcommit: 2b263e87217658caa42eedc4f9d2d21ef0ab5d59
+ms.openlocfilehash: 74609b515936ec7da8bfc133c27cb69f51311924
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/12/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="anchor-tag-helper"></a>Application d’assistance de balise d’ancrage
 
@@ -46,13 +44,13 @@ Le balisage généré sera :
 <a href="/Speaker">All Speakers</a>
 ```
 
-Si le `asp-controller` est spécifié et `asp-action` n’est pas le cas, la valeur par défaut `asp-action` correspondra à la méthode de contrôleur par défaut de la vue en cours d’exécution. Qu’est, dans l’exemple ci-dessus, si `asp-action` est omis, et ce programme d’assistance de balise d’ancrage est généré à partir de *HomeController*de `Index` vue (**/Home**), le balisage généré sera :
+Si le `asp-controller` est spécifié et `asp-action` n’est pas, la valeur par défaut `asp-action` correspondra à la méthode de contrôleur par défaut de la vue en cours d’exécution. Qu’est, dans l’exemple ci-dessus, si `asp-action` est omis, et ce programme d’assistance de balise d’ancrage est généré à partir de *HomeController*de `Index` vue (**/Home**), le balisage généré sera :
 
 ```html
 <a href="/Home">All Speakers</a>
 ```
 
-### <a name="asp-action"></a>action d’ASP
+### <a name="asp-action"></a>asp-action
 
 `asp-action`nom de la méthode d’action dans le contrôleur qui est inclus dans le texte généré `href`. Par exemple, le code suivant défini généré `href` pour pointer vers la page de détails du présentateur :
 
@@ -70,7 +68,7 @@ Si aucun `asp-controller` attribut est spécifié, le contrôleur par défaut de
  
 Si l’attribut `asp-action` est `Index`, aucune action n’est ajoutée à l’URL menant à la valeur par défaut `Index` méthode appelée. L’action spécifiée (ou par défaut), doivent exister dans le contrôleur référencé dans `asp-controller`.
 
-### <a name="asp-page"></a>page ASP
+### <a name="asp-page"></a>asp-page
 
 Utilisez le `asp-page` attribut dans une balise d’ancrage pour définir son URL pointe vers une page spécifique. En ajoutant le préfixe du nom de la page avec une barre oblique « / » crée l’URL. L’URL dans l’exemple ci-dessous indique la page « Haut-parleur » dans le répertoire actif.
 
@@ -99,7 +97,7 @@ https://localhost:44399/Speakers/Index/2?page=%2FSpeaker
 > [!NOTE]
 > Pour utiliser le `asp-page` attribut dans les Pages Razor, l’URL doit être un chemin d’accès relatif, par exemple `"./Speaker"`. Chemins d’accès relatifs dans le `asp-page` attribut ne sont pas disponibles dans les vues MVC. Utilisez la syntaxe « / » pour les vues MVC à la place.
 
-### <a name="asp-route-value"></a>ASP - route-{value}
+### <a name="asp-route-value"></a>asp-route-{value}
 
 `asp-route-`est un préfixe d’itinéraire avec des caractères génériques. Toute valeur que vous placez une fois que le tiret fin sera interprété comme un paramètre d’itinéraire potentiels. Si un itinéraire par défaut n’est trouvé, ce préfixe d’itinéraire est adjointe à href généré comme une valeur et le paramètre de demande. Dans le cas contraire, elle sera remplacée dans le modèle d’itinéraire.
 
@@ -144,7 +142,7 @@ Le code HTML généré sera ensuite comme suit, car **id** a été trouvé dans 
 <a href='/Speaker/Detail/12'>SpeakerId: 12</a>
 ```
 
-Si le préfixe d’itinéraire n’est pas partie du modèle de routage trouvé, qui est le cas avec les éléments suivants **cshtml** fichier :
+Si le préfixe d’itinéraire ne fait pas partie du modèle de routage trouvé, qui est le cas avec les éléments suivants **cshtml** fichier :
 
 ```cshtml
 @model SpeakerData
@@ -154,7 +152,7 @@ Si le préfixe d’itinéraire n’est pas partie du modèle de routage trouvé,
 <body></html>
 ```
 
-Le code HTML généré sera ensuite comme suit, car **speakerid** est introuvable dans l’itinéraire mis en correspondance :
+Le code HTML généré sera ensuite comme suit, car **speakerid** n’a pas été trouvé dans l’itinéraire mis en correspondance :
 
 ```html
 <a href='/Speaker/Detail?speakerid=12'>SpeakerId: 12</a>
@@ -166,9 +164,9 @@ Si le paramètre `asp-controller` ou `asp-action` ne sont pas spécifiés, le m�
 
 `asp-route`fournit un moyen de créer une URL qui accède directement à un itinéraire nommé. À l’aide des attributs de routage, un itinéraire peut être nommé comme indiqué dans le `SpeakerController` et utilisé dans son `Evaluations` (méthode).
 
-`Name = "speakerevals"`Indique à l’application d’assistance de balise d’ancrage pour générer un itinéraire directement à cette méthode de contrôleur à l’aide de l’URL `/Speaker/Evaluations`. Si `asp-controller` ou `asp-action` est spécifié en plus de `asp-route`, l’itinéraire généré est peut-être pas ce que vous attendez. `asp-route`ne doit pas être utilisé avec un des attributs `asp-controller` ou `asp-action` afin d’éviter un conflit d’itinéraire.
+`Name = "speakerevals"`Indique à l’application d’assistance de balise d’ancrage pour générer un itinéraire directement à cette méthode de contrôleur à l’aide de l’URL `/Speaker/Evaluations`. Si `asp-controller` ou `asp-action` est spécifié en plus de `asp-route`, l’itinéraire généré est peut-être pas ce que vous attendez. `asp-route`ne doit pas être utilisée avec des attributs `asp-controller` ou `asp-action` afin d’éviter un conflit d’itinéraire.
 
-### <a name="asp-all-route-data"></a>ASP-all-données d’itinéraire
+### <a name="asp-all-route-data"></a>asp-all-route-data
 
 `asp-all-route-data`permet de créer un dictionnaire de paires clé / valeur où la clé est le nom du paramètre et la valeur est la valeur associée à cette clé.
 
@@ -237,7 +235,7 @@ Le code HTML généré inclut le segment de zones et est comme suit :
 > [!TIP]
 > Pour les zones MVC travailler dans une application web, le modèle d’itinéraire doit inclure une référence à la zone si elle existe. Ce modèle, qui est le deuxième paramètre de la `routes.MapRoute` l’appel de méthode, apparaît sous la forme :`template: '"{area:exists}/{controller=Home}/{action=Index}"'`
 
-### <a name="asp-protocol"></a>protocole d’ASP
+### <a name="asp-protocol"></a>asp-protocol
 
 Le `asp-protocol` de spécifier un protocole (tel que `https`) dans l’URL. Un exemple d’assistance à la balise d’ancrage qui inclut le protocole se présentera comme suit :
 

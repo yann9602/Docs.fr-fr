@@ -2,20 +2,18 @@
 title: "Téléchargements de fichiers dans ASP.NET Core"
 author: ardalis
 description: "Comment utiliser la liaison de modèle et de diffusion en continu pour télécharger des fichiers dans ASP.NET MVC de base."
-keywords: "ASP.NET Core, le téléchargement du fichier de modèle de liaison, IFormFile, diffusion en continu"
 ms.author: riande
 manager: wpickett
 ms.date: 07/05/2017
 ms.topic: article
-ms.assetid: ebc98159-a028-4a94-b06c-43981c79c6be
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/models/file-uploads
-ms.openlocfilehash: e8608a46d6688df8da6c665a25b6f4db5f480461
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: bc1cfe0d6ee88a0af49cdff9ce77ad42f57b95f7
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="file-uploads-in-aspnet-core"></a>Téléchargements de fichiers dans ASP.NET Core
 
@@ -201,4 +199,4 @@ Ce paramètre s’applique uniquement à IIS. Le comportement ne se produit par 
 
 ### <a name="null-reference-exception-with-iformfile"></a>Exception de référence null avec IFormFile
 
-Si votre contrôleur est acceptant téléchargé à l’aide de fichiers `IFormFile` , mais vous découvrirez que la valeur est toujours null, vérifiez la spécification de votre formulaire HTML un `enctype` valeur `multipart/form-data`. Si cet attribut n’est pas défini sur le `<form>` élément, le téléchargement du fichier ne se produira pas et n’importe quelle limite `IFormFile` arguments est null.
+Si votre contrôleur est acceptant téléchargé à l’aide de fichiers `IFormFile` , mais vous découvrirez que la valeur est toujours null, vérifiez la spécification de votre formulaire HTML un `enctype` valeur `multipart/form-data`. Si cet attribut n’est pas défini sur le `<form>` élément, le téléchargement du fichier ne se produit et n’importe quelle limite `IFormFile` arguments est null.

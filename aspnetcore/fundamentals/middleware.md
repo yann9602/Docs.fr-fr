@@ -2,20 +2,18 @@
 title: Intergiciel (middleware) ASP.NET Core
 author: rick-anderson
 description: "En savoir plus sur ASP.NET Core intergiciel (middleware) et le pipeline de requête."
-keywords: "ASP.NET Core, intergiciel (middleware), pipeline, délégué"
 ms.author: riande
 manager: wpickett
-ms.date: 10/14/2017
+ms.date: 01/22/2018
 ms.topic: article
-ms.assetid: db9a86ab-46c2-40e0-baed-86e38c16af1f
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/middleware
-ms.openlocfilehash: ad8d207b1e6de396f16d098fb07ddc89bea2c520
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 84f386db4ab96a82011ee2fc0b6c20a1a05b5e4b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="aspnet-core-middleware-fundamentals"></a>Notions de base ASP.NET Core intergiciel (middleware)
 
@@ -25,7 +23,7 @@ Par [Rick Anderson](https://twitter.com/RickAndMSFT) et [Steve Smith](https://ar
 
 [Affichez ou téléchargez l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/middleware/sample) ([procédure de téléchargement](xref:tutorials/index#how-to-download-a-sample))
 
-## <a name="what-is-middleware"></a>Nouveautés d’intergiciel (middleware)
+## <a name="what-is-middleware"></a>Nouveautés d’intergiciel (middleware) ?
 
 Intergiciel (middleware) est un logiciel qui est intégré à un pipeline d’application pour gérer les demandes et réponses. Chaque composant :
 
@@ -118,11 +116,11 @@ L’intergiciel (middleware) fichier statique est appelée très tôt dans le pi
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 
-Si la demande n’est pas gérée par l’intergiciel (middleware) fichier statique, il est transmis à l’intergiciel (middleware) identité (`app.UseAuthentication`), qui effectue l’authentification. Identité n’effectue pas de court-circuit les demandes non authentifiées. Bien que l’identité authentifie les requêtes, d’autorisation (et rejet) se produit uniquement après que MVC sélectionne une Page Razor ou un contrôleur et une action spécifique.
+Si la demande n’est pas gérée par l’intergiciel (middleware) fichier statique, il est transmis à l’intergiciel (middleware) identité (`app.UseAuthentication`), qui effectue l’authentification. Identité ne court-circuit les demandes non authentifiées. Bien que l’identité authentifie les requêtes, d’autorisation (et rejet) se produit uniquement après que MVC sélectionne une Page Razor ou un contrôleur et une action spécifique.
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
-Si la demande n’est pas gérée par l’intergiciel (middleware) fichier statique, il est transmis à l’intergiciel (middleware) identité (`app.UseIdentity`), qui effectue l’authentification. Identité n’effectue pas de court-circuit les demandes non authentifiées. Bien que l’identité authentifie les requêtes, d’autorisation (et rejet) se produit uniquement après que MVC sélectionne un contrôleur spécifique et une action.
+Si la demande n’est pas gérée par l’intergiciel (middleware) fichier statique, il est transmis à l’intergiciel (middleware) identité (`app.UseIdentity`), qui effectue l’authentification. Identité ne court-circuit les demandes non authentifiées. Bien que l’identité authentifie les requêtes, d’autorisation (et rejet) se produit uniquement après que MVC sélectionne un contrôleur spécifique et une action.
 
 -----------
 
@@ -150,12 +148,12 @@ Vous configurez le pipeline HTTP à l’aide `Use`, `Run`, et `Map`. Le `Use` m�
 
 Le tableau suivant présente les demandes et réponses de `http://localhost:1234` en utilisant le code précédent :
 
-| Requête | Réponse |
+| Demande | Réponse |
 | --- | --- |
 | localhost:1234 | Bonjour à partir de la table non délégué.  |
-| localhost:1234 / map1 | Test de mappage 1 |
-| localhost:1234 / map2 | Test de mappage 2 |
-| localhost:1234 / map3 | Bonjour à partir de la table non délégué.  |
+| localhost:1234/map1 | Test de mappage 1 |
+| localhost:1234/map2 | Test de mappage 2 |
+| localhost:1234/map3 | Bonjour à partir de la table non délégué.  |
 
 Lorsque `Map` est utilisé, les segments de chemin d’accès de mise en correspondance sont supprimés de `HttpRequest.Path` et ajouté à `HttpRequest.PathBase` pour chaque demande.
 
@@ -165,10 +163,10 @@ Lorsque `Map` est utilisé, les segments de chemin d’accès de mise en corresp
 
 Le tableau suivant présente les demandes et réponses de `http://localhost:1234` en utilisant le code précédent :
 
-| Requête | Réponse |
+| Demande | Réponse |
 | --- | --- |
 | localhost:1234 | Bonjour à partir de la table non délégué.  |
-| localhost:1234 / ? branche = principale | Branche utilisé = principale|
+| localhost:1234/?branch=master | Branche utilisé = principale|
 
 `Map`prend en charge l’imbrication, par exemple :
 
@@ -193,18 +191,22 @@ app.Map("/level1/level2", HandleMultiSeg);
 
 ## <a name="built-in-middleware"></a>Intergiciel (middleware) intégré
 
-ASP.NET Core est fourni avec les composants d’intergiciel (middleware) suivant :
+ASP.NET Core est fourni avec les composants d’intergiciel (middleware) suivant, ainsi qu’une description de l’ordre dans lequel ils doivent être ajoutés :
 
-| Intergiciel (middleware) | Description |
-| ----- | ------- |
-| [Authentification](xref:security/authentication/identity) | Fournit la prise en charge de l’authentification. |
-| [CORS](xref:security/cors) | Configure le partage de ressources Cross-Origin. |
-| [Mise en cache des réponses](xref:performance/caching/middleware) | Prend en charge la mise en cache des réponses. |
-| [Compression de la réponse](xref:performance/response-compression) | Prend en charge la compression des réponses. |
-| [Routage](xref:fundamentals/routing) | Définit et contraint les itinéraires de la demande. |
-| [Session](xref:fundamentals/app-state) | Prend en charge la gestion des sessions utilisateur. |
-| [Fichiers statiques](xref:fundamentals/static-files) | Fournit la prise en charge pour traiter les fichiers statiques et l’exploration des répertoires. |
-| [Intergiciel de réécriture d’URL](xref:fundamentals/url-rewriting) | Prend en charge la réécriture d’URL et la redirection des demandes. |
+| Intergiciel (middleware) | Description | Trier |
+| ---------- | ----------- | ----- |
+| [Authentification](xref:security/authentication/identity) | Fournit la prise en charge de l’authentification. | Avant de `HttpContext.User` est nécessaire. Terminal Server pour les rappels d’OAuth. |
+| [CORS](xref:security/cors) | Configure le partage de ressources Cross-Origin. | Avant les composants qui utilisent les CORS. |
+| [Diagnostics](xref:fundamentals/error-handling) | Configure les diagnostics. | Avant les composants qui génèrent des erreurs. |
+| [ForwardedHeaders/HttpOverrides](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions) | Transfère les en-têtes traitées sur la requête actuelle. | Avant des composants qui consomment les champs mis à jour (exemples : schéma, hôte, Ipclient, méthode). |
+| [Mise en cache des réponses](xref:performance/caching/middleware) | Prend en charge la mise en cache des réponses. | Avant les composants qui nécessitent la mise en cache. |
+| [Compression de la réponse](xref:performance/response-compression) | Prend en charge la compression des réponses. | Avant les composants qui requièrent la compression. |
+| [RequestLocalization](xref:fundamentals/localization) | Prend en charge la localisation. | Avant de composants sensibles de la localisation. |
+| [Routage](xref:fundamentals/routing) | Définit et contraint les itinéraires de la demande. | Terminal Server pour les itinéraires correspondants. |
+| [Session](xref:fundamentals/app-state) | Prend en charge la gestion des sessions utilisateur. | Avant les composants qui nécessitent la Session. |
+| [Fichiers statiques](xref:fundamentals/static-files) | Fournit la prise en charge pour traiter les fichiers statiques et l’exploration des répertoires. | Terminal Server, si une demande correspond aux fichiers. |
+| [Réécriture d’URL](xref:fundamentals/url-rewriting) | Prend en charge la réécriture d’URL et la redirection des demandes. | Avant des composants qui consomment l’URL. |
+| [WebSockets](xref:fundamentals/websockets) | Active le protocole WebSocket. | Avant des composants qui sont requis pour accepter les demandes WebSocket. |
 
 <a name="middleware-writing-middleware"></a>
 

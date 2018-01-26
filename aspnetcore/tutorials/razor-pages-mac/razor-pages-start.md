@@ -2,7 +2,6 @@
 title: "Bien démarrer avec des pages Razor dans ASP.NET Core sur Mac"
 author: rick-anderson
 description: "Bien démarrer avec des pages Razor dans ASP.NET Core à l’aide de Visual Studio pour Mac"
-keywords: "ASP.NET Core, pages Razor, génération de modèles automatique, Entity Framework Core, EF, EF Core, base de données, mac, macOS, Visual Studio pour Mac"
 ms.author: riande
 manager: wpickett
 ms.date: 07/27/2017
@@ -10,19 +9,19 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: tutorials/razor-pages-mac/razor-pages-start
-ms.openlocfilehash: 9431e8160011d1485925db5cc4f9f83bf7381e97
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ca9fca507096f3f09f19fe0a7f1dc023003649d7
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="getting-started-with-razor-pages-in-aspnet-core-with-visual-studio-for-mac"></a>Bien démarrer avec des pages Razor dans ASP.NET Core avec Visual Studio pour Mac
 
-De [Rick Anderson](https://twitter.com/RickAndMSFT)
+Par [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 Ce didacticiel décrit les principes fondamentaux liés à la génération d’une application web de pages Razor dans ASP.NET Core. Nous vous recommandons d’effectuer l’étape [Présentation des pages Razor](xref:mvc/razor-pages/index) avant de commencer ce didacticiel. L’utilisation de pages Razor est la méthode recommandée pour générer l’IU d’applications web dans ASP.NET Core.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 Installez les éléments suivants :
 

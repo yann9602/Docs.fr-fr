@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: f2d480793d02c8bfa25c05fd11fa2e6ef9e54a60
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2ca76364a2e9a71dc92644bd579345ae3c304a69
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="updating-related-data-with-the-entity-framework-in-an-aspnet-mvc-application-6-of-10"></a>Mise à jour des données associées avec Entity Framework dans une Application ASP.NET MVC (partie 6 sur 10)
 ====================
@@ -110,7 +110,7 @@ Remplacez le `HttpPost` `Edit` méthode avec le code suivant. qui gère les mise
 Le code effectue les opérations suivantes :
 
 - Obtient les valeurs combinées `Instructor` entité à partir de la base de données à l’aide d’un chargement hâtif pour le `OfficeAssignment` propriété de navigation. Il est identique à ce que vous avez fait le `HttpGet` `Edit` (méthode).
-- Met à jour récupérées `Instructor` entité avec les valeurs de classeur de modèles. Le [TryUpdateModel](https://msdn.microsoft.com/en-us/library/dd470908(v=vs.108).aspx) vous permet de surcharge utilisée *liste blanche* les propriétés que vous souhaitez inclure. Cela empêche la validation excessive, comme expliqué dans [le deuxième didacticiel](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application.md).
+- Met à jour récupérées `Instructor` entité avec les valeurs de classeur de modèles. Le [TryUpdateModel](https://msdn.microsoft.com/library/dd470908(v=vs.108).aspx) vous permet de surcharge utilisée *liste blanche* les propriétés que vous souhaitez inclure. Cela empêche la validation excessive, comme expliqué dans [le deuxième didacticiel](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application.md).
 
     [!code-csharp[Main](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample10.cs)]
 - Si l’emplacement du bureau est vide, définit le `Instructor.OfficeAssignment` propriété NULL afin que la ligne correspondante dans la `OfficeAssignment` table va être supprimée.
@@ -146,13 +146,13 @@ Dans *InstructorController.cs*, remplacez le `HttpGet` `Edit` méthode avec le c
 
 Le code ajoute un chargement hâtif pour le `Courses` propriété de navigation et appelle la nouvelle `PopulateAssignedCourseData` méthode pour fournir des informations du tableau de case à cocher à l’aide de la `AssignedCourseData` afficher la classe de modèle.
 
-Le code dans le `PopulateAssignedCourseData` méthode lit à travers toutes les `Course` entités pour charger une liste de cours à l’aide de l’affichage de classe de modèle. Pour chaque cours, le code vérifie l’existence de cours dans le formateur `Courses` propriété de navigation. Pour créer l’efficacité des recherches lors de la vérification si un cours est affecté pour le formateur, les cours affectés pour le formateur sont placés dans un [HashSet](https://msdn.microsoft.com/en-us/library/bb359438.aspx) collection. Le `Assigned` est définie sur `true` pour les cours le formateur est affecté. La vue utilise cette propriété pour déterminer les zones doivent être affichées en tant que vérification sélectionné. Enfin, la liste est passée à l’affichage dans un `ViewBag` propriété.
+Le code dans le `PopulateAssignedCourseData` méthode lit à travers toutes les `Course` entités pour charger une liste de cours à l’aide de l’affichage de classe de modèle. Pour chaque cours, le code vérifie l’existence de cours dans le formateur `Courses` propriété de navigation. Pour créer l’efficacité des recherches lors de la vérification si un cours est affecté pour le formateur, les cours affectés pour le formateur sont placés dans un [HashSet](https://msdn.microsoft.com/library/bb359438.aspx) collection. Le `Assigned` est définie sur `true` pour les cours le formateur est affecté. La vue utilise cette propriété pour déterminer les zones doivent être affichées en tant que vérification sélectionné. Enfin, la liste est passée à l’affichage dans un `ViewBag` propriété.
 
 Ensuite, ajoutez le code qui est exécuté lorsque l’utilisateur clique sur **enregistrer**. Remplacez le `HttpPost` `Edit` méthode avec le code suivant, qui appelle une méthode qui met à jour la `Courses` propriété de navigation de la `Instructor` entité. Les modifications sont mises en surbrillance.
 
 [!code-csharp[Main](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample15.cs?highlight=3,7,20,33,37-65)]
 
-Puisque la vue n’a pas une collection de `Course` entités, le binder de modèle ne peut pas mettre à jour automatiquement le `Courses` propriété de navigation. Au lieu d’utiliser le classeur de modèles pour mettre à jour la propriété de navigation du cours, vous allez faire dans la nouvelle `UpdateInstructorCourses` (méthode). Par conséquent, vous devez exclure le `Courses` propriété à partir de la liaison de modèle. Cela ne nécessite aucune modification pour le code qui appelle [TryUpdateModel](https://msdn.microsoft.com/en-us/library/dd470908(v=vs.98).aspx) , car vous utilisez le *liste approuvées* de surcharge et `Courses` n’est pas dans la liste d’inclusion.
+Puisque la vue n’a pas une collection de `Course` entités, le binder de modèle ne peut pas mettre à jour automatiquement le `Courses` propriété de navigation. Au lieu d’utiliser le classeur de modèles pour mettre à jour la propriété de navigation du cours, vous allez faire dans la nouvelle `UpdateInstructorCourses` (méthode). Par conséquent, vous devez exclure le `Courses` propriété à partir de la liaison de modèle. Cela ne nécessite aucune modification pour le code qui appelle [TryUpdateModel](https://msdn.microsoft.com/library/dd470908(v=vs.98).aspx) , car vous utilisez le *liste approuvées* de surcharge et `Courses` n’est pas dans la liste d’inclusion.
 
 Si aucune vérification de zones ont été sélectionnés, le code dans `UpdateInstructorCourses` initialise le `Courses` propriété de navigation avec une collection vide :
 
@@ -208,7 +208,7 @@ Modifiez le code dans la méthode HttpPost Delete afin de l’enregistrement de 
 
 Si vous essayez de supprimer un formateur qui est attribué à un service en tant qu’administrateur, vous obtenez une erreur d’intégrité référentielle. Consultez [la version actuelle de ce didacticiel](../../getting-started/getting-started-with-ef-using-mvc/updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md) pour du code supplémentaire qui va supprimer automatiquement le formateur à partir de n’importe quel service où le formateur est affecté en tant qu’administrateur.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Vous avez maintenant terminé cette introduction à l’utilisation des données associées. Jusqu'à présent dans ces didacticiels, vous avez effectué une plage complète des opérations, mais vous n’avez pas encore traitées avec des problèmes d’accès concurrentiel. Le didacticiel suivant sera Présentez le sujet de l’accès concurrentiel, expliquent les options pour la traiter et ajouter la gestion au code CRUD que vous avez déjà écrit pour un type d’entité concurrentielle.
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/formatting-the-datalist-and-repeater-based-upon-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 48e0f2bad8c048e943ec2a3ce72cc0f7ca4d34d9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 460fc36062f3338ffd178aceda2b3b224752a089
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="formatting-the-datalist-and-repeater-based-upon-data-vb"></a>Mise en forme le contrôle DataList et répéteur en fonction des données (VB)
 ====================
@@ -40,25 +40,25 @@ Les deux de ces techniques de mise en forme sont disponibles avec les contrôles
 
 ## <a name="using-theitemdataboundevent-handler"></a>À l’aide de la`ItemDataBound`Gestionnaire d’événements
 
-Lorsque les données sont liées à un contrôle DataList, à partir d’un contrôle de source de données ou par le biais de par programmation les données au contrôle s `DataSource` propriété et en appelant sa `DataBind()` (méthode), du contrôle DataList s `DataBinding` événement est déclenché, la source de données énumérée, et chaque enregistrement de données est lié au contrôle DataList. Pour chaque enregistrement dans la source de données, le contrôle DataList crée un [ `DataListItem` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalistitem.aspx) de l’objet qui est ensuite lié à l’enregistrement actif. Pendant ce processus, le contrôle DataList déclenche deux événements :
+Lorsque les données sont liées à un contrôle DataList, à partir d’un contrôle de source de données ou par le biais de par programmation les données au contrôle s `DataSource` propriété et en appelant sa `DataBind()` (méthode), du contrôle DataList s `DataBinding` événement est déclenché, la source de données énumérée, et chaque enregistrement de données est lié au contrôle DataList. Pour chaque enregistrement dans la source de données, le contrôle DataList crée un [ `DataListItem` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalistitem.aspx) de l’objet qui est ensuite lié à l’enregistrement actif. Pendant ce processus, le contrôle DataList déclenche deux événements :
 
 - **`ItemCreated`**se déclenche après la `DataListItem` a été créé.
 - **`ItemDataBound`**se déclenche lorsque l’enregistrement actif a été liée à la`DataListItem`
 
 Les étapes suivantes décrivent le processus de liaison de données pour le contrôle DataList.
 
-1. DataList s [ `DataBinding` événement](https://msdn.microsoft.com/en-us/library/system.web.ui.control.databinding.aspx) se déclenche
+1. DataList s [ `DataBinding` événement](https://msdn.microsoft.com/library/system.web.ui.control.databinding.aspx) se déclenche
 2. Les données sont liées au contrôle DataList  
   
  Pour chaque enregistrement dans la source de données 
 
     1. Créer un `DataListItem` objet
-    2. Déclencher la [ `ItemCreated` événement](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalist.itemcreated.aspx)
+    2. Déclencher la [ `ItemCreated` événement](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.itemcreated.aspx)
     3. Lier l’enregistrement à la`DataListItem`
-    4. Déclencher la [ `ItemDataBound` événement](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalist.itemdatabound.aspx)
+    4. Déclencher la [ `ItemDataBound` événement](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.itemdatabound.aspx)
     5. Ajouter le `DataListItem` à la `Items` collection
 
-Lors de la liaison de données pour le contrôle du répéteur, il passe via exactement la même séquence d’étapes. La seule différence est qu’au lieu de `DataListItem` utilise des instances en cours de création, le répéteur [ `RepeaterItem` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.repeateritem(VS.80).aspx)s.
+Lors de la liaison de données pour le contrôle du répéteur, il passe via exactement la même séquence d’étapes. La seule différence est qu’au lieu de `DataListItem` utilise des instances en cours de création, le répéteur [ `RepeaterItem` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.repeateritem(VS.80).aspx)s.
 
 > [!NOTE]
 > Le lecteur perspicace avez peut-être remarqué une légère anomalie entre la séquence d’étapes passer lorsque la DataList et répéteur liés aux données et lorsque le contrôle GridView est lié aux données. À la fin du processus de liaison de données, le contrôle GridView déclenche le `DataBound` événement ; Toutefois, le contrôle du répéteur ni DataList ont un tel événement. Il s’agit, car les contrôles DataList et répéteur ont été créés dans le délai d’exécution ASP.NET 1.x, avant que le modèle de gestionnaire d’événements antérieurs et postérieurs au niveau était devenu commun.
@@ -93,7 +93,7 @@ Créer un `ItemDataBound` événement du contrôle DataList et ajoutez le code s
 
 [!code-vb[Main](formatting-the-datalist-and-repeater-based-upon-data-vb/samples/sample1.vb)]
 
-Alors que le concept et la sémantique derrière du contrôle DataList s `ItemDataBound` Gestionnaire d’événements sont les mêmes que celles utilisées par les s GridView `RowDataBound` Gestionnaire d’événements dans le *personnalisé de mise en forme lors de données* didacticiel, la syntaxe est différente. légèrement. Lorsque le `ItemDataBound` se déclenche des événements, le `DataListItem` simplement lié aux données a été passée dans le Gestionnaire d’événements correspondant via `e.Item` (au lieu de `e.Row`, comme avec le contrôle GridView s `RowDataBound` Gestionnaire d’événements). DataList s `ItemDataBound` Gestionnaire d’événements se déclenche pour *chaque* ligne ajoutée au contrôle DataList, y compris les lignes d’en-tête, des lignes de pied de page et des lignes de séparation. Toutefois, les informations de produit sont uniquement liées aux lignes de données. Par conséquent, lorsque vous utilisez le `ItemDataBound` pour inspecter les données d’événement lié à du contrôle DataList, nous devons d’abord vous assurer que nous re fonctionne avec un élément de données. Cela peut être accompli en vérifiant la `DataListItem` s [ `ItemType` propriété](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalistitem.itemtype.aspx), qui peut avoir une des [huit valeurs suivantes](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.listitemtype.aspx):
+Alors que le concept et la sémantique derrière du contrôle DataList s `ItemDataBound` Gestionnaire d’événements sont les mêmes que celles utilisées par les s GridView `RowDataBound` Gestionnaire d’événements dans le *personnalisé de mise en forme lors de données* didacticiel, la syntaxe est différente. légèrement. Lorsque le `ItemDataBound` se déclenche des événements, le `DataListItem` simplement lié aux données a été passée dans le Gestionnaire d’événements correspondant via `e.Item` (au lieu de `e.Row`, comme avec le contrôle GridView s `RowDataBound` Gestionnaire d’événements). DataList s `ItemDataBound` Gestionnaire d’événements se déclenche pour *chaque* ligne ajoutée au contrôle DataList, y compris les lignes d’en-tête, des lignes de pied de page et des lignes de séparation. Toutefois, les informations de produit sont uniquement liées aux lignes de données. Par conséquent, lorsque vous utilisez le `ItemDataBound` pour inspecter les données d’événement lié à du contrôle DataList, nous devons d’abord vous assurer que nous re fonctionne avec un élément de données. Cela peut être accompli en vérifiant la `DataListItem` s [ `ItemType` propriété](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalistitem.itemtype.aspx), qui peut avoir une des [huit valeurs suivantes](https://msdn.microsoft.com/library/system.web.ui.webcontrols.listitemtype.aspx):
 
 - `AlternatingItem`
 - `EditItem`
@@ -104,7 +104,7 @@ Alors que le concept et la sémantique derrière du contrôle DataList s `ItemDa
 - `SelectedItem`
 - `Separator`
 
-Les deux `Item` et `AlternatingItem``DataListItem` les éléments de données de composition s DataList s. En supposant que nous re fonctionne avec un `Item` ou `AlternatingItem`, nous avons accès réel `ProductsRow` instance qui a été liée à actuel `DataListItem`. Le `DataListItem` s [ `DataItem` propriété](https://msdn.microsoft.com/en-us/system.web.ui.webcontrols.datalistitem.dataitem.aspx) contient une référence à la `DataRowView` objet, dont `Row` propriété fournit une référence au véritable `ProductsRow` objet.
+Les deux `Item` et `AlternatingItem``DataListItem` les éléments de données de composition s DataList s. En supposant que nous re fonctionne avec un `Item` ou `AlternatingItem`, nous avons accès réel `ProductsRow` instance qui a été liée à actuel `DataListItem`. Le `DataListItem` s [ `DataItem` propriété](https://msdn.microsoft.com/system.web.ui.webcontrols.datalistitem.dataitem.aspx) contient une référence à la `DataRowView` objet, dont `Row` propriété fournit une référence au véritable `ProductsRow` objet.
 
 Ensuite, nous vérifions le `ProductsRow` instance s `UnitPrice` propriété. Depuis la table Products s `UnitPrice` champ permet de `NULL` valeurs, avant d’accéder à la `UnitPrice` propriété nous devons Vérifiez tout d’abord pour voir s’il possède un `NULL` valeur à l’aide de la `IsUnitPriceNull()` (méthode). Si le `UnitPrice` valeur n’est pas `NULL`, nous devez vérifier si elle s $20,00 inférieure. S’il s’agit effectivement sous $20,00, nous devons ensuite appliquer la mise en forme personnalisée.
 
@@ -190,7 +190,7 @@ Avec les appels aux fonctions de mise en forme en place, prenez un moment pour a
 **Figure 5**: pour les produits coûteuses, le prix est remplacé par le texte, appelez de devis ([cliquez pour afficher l’image en taille réelle](formatting-the-datalist-and-repeater-based-upon-data-vb/_static/image15.png))
 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Mise en forme le contenu d’un contrôle DataList ou répéteur basées sur les données peut être accomplie à l’aide de deux techniques. La première technique consiste à créer un gestionnaire d’événements pour le `ItemDataBound` événement qui se déclenche que chaque enregistrement dans la source de données est lié à un nouveau `DataListItem` ou `RepeaterItem`. Dans le `ItemDataBound` Gestionnaire d’événements, les données actuelles de l’élément s peuvent être examinées et mise en forme peut être appliqué au contenu du modèle ou, pour `DataListItem` s, à l’élément lui-même.
 

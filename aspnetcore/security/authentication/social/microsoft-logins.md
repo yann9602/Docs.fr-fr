@@ -2,20 +2,18 @@
 title: "Programme d’installation de Microsoft Account connexion externe"
 author: rick-anderson
 description: "Ce didacticiel illustre l’intégration de l’authentification d’utilisateur de compte Microsoft dans une application ASP.NET Core existante."
-keywords: "ASP.NET Core, compte Microsoft, connexion, l’authentification"
 ms.author: riande
 manager: wpickett
 ms.date: 08/24/2017
 ms.topic: article
-ms.assetid: 66DB4B94-C78C-4005-BA03-3D982B87C268
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/microsoft-logins
-ms.openlocfilehash: 77c16e3ae93c9bfe1f569d0a5888c5b765d04241
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 330398dc945fc61e5fc94d55bf651e62e0963072
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="configuring-microsoft-account-authentication"></a>Configuration de l’authentification Microsoft Account
 
@@ -108,7 +106,7 @@ app.UseMicrosoftAccountAuthentication(new MicrosoftAccountOptions()
 
 ---
 
-Bien que les noms de la terminologie utilisée sur le portail des développeurs Microsoft ces jetons `ApplicationId` et `Password`, ils sont exposés en tant que `ClientId` et `ClientSecret` à l’API de configuration.
+Bien que les noms de la terminologie utilisée sur le portail des développeurs Microsoft ces jetons `ApplicationId` et `Password`, elles sont exposées en tant que `ClientId` et `ClientSecret` à l’API de configuration.
 
 Consultez le [MicrosoftAccountOptions](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.microsoftaccountoptions) référence des API pour plus d’informations sur les options de configuration prises en charge par l’authentification de Microsoft Account. Cela peut être utilisé pour demander des différentes informations relatives à l’utilisateur.
 

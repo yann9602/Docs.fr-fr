@@ -1,20 +1,18 @@
 ---
 title: "Créer une application ASP.NET Core et de données utilisateur protégées par l’autorisation"
 author: rick-anderson
-keywords: "ASP.NET Core, MVC, l’autorisation, rôles, sécurité, administrateur"
 ms.author: riande
 manager: wpickett
 ms.date: 05/22/2017
 ms.topic: article
-ms.assetid: abeb2f8e-dfbf-4398-a04c-338a613a65bc
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: security/authorization/secure-data
-ms.openlocfilehash: db95d46dafdd300d4ec13e8cc31a3d995016ab92
-ms.sourcegitcommit: f1436107b4c022b26f5235dddef103cec5aa6bff
+ms.openlocfilehash: 7404b8ec20ed6a00554c8a7ade9a282362b9a186
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/15/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="create-an-aspnet-core-app-with-user-data-protected-by-authorization"></a>Créer une application ASP.NET Core et de données utilisateur protégées par l’autorisation
 
@@ -53,9 +51,9 @@ L’application a été créée par [la structure](xref:tutorials/first-mvc-app-
 
 A `ContactIsOwnerAuthorizationHandler` Gestionnaire d’autorisation garantit qu’un utilisateur peut modifier uniquement leurs données. A `ContactManagerAuthorizationHandler` Gestionnaire d’autorisation permet aux gestionnaires d’approuver ou rejeter des contacts.  A `ContactAdministratorsAuthorizationHandler` Gestionnaire d’autorisation permet aux administrateurs pour approuver ou rejeter des contacts et à modifier/supprimer des contacts. 
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
-Ce n’est pas un didacticiel de début. Vous devez être familiarisé avec :
+Cela n’est pas un didacticiel de début. Vous devez être familiarisé avec :
 
 * [Base d’ASP.NET MVC](xref:tutorials/first-mvc-app/start-mvc)
 * [Entity Framework Core](xref:data/ef-mvc/intro)
@@ -165,7 +163,7 @@ Services à l’aide d’Entity Framework Core doivent être inscrit pour [injec
 
 [!code-csharp[Main](secure-data/samples/final/Startup.cs?name=AuthorizationHandlers)]
 
-`ContactAdministratorsAuthorizationHandler`et `ContactManagerAuthorizationHandler` sont ajoutés en tant que singletons. Elles sont singletons, car ils n’utilisent pas EF et toutes les informations nécessitées sont dans le `Context` paramètre de la `HandleRequirementAsync` (méthode).
+`ContactAdministratorsAuthorizationHandler`et `ContactManagerAuthorizationHandler` sont ajoutés en tant que singletons. Ils sont singletons, car ils n’utilisent pas EF et toutes les informations nécessitées sont dans le `Context` paramètre de la `HandleRequirementAsync` (méthode).
 
 Le texte complet `ConfigureServices`:
 
@@ -227,7 +225,7 @@ Mise à jour la `Edit` et `Delete` liens afin qu’ils sont rendus uniquement po
 
 [!code-html[Main](secure-data/samples/final/Views/Contacts/Index.cshtml?range=63-84)]
 
-Avertissement : Le masquage des liens à partir des utilisateurs qui ne disposent pas d’autorisation pour modifier ou supprimer des données ne sécurise pas l’application. Le masquage des liens rend l’application utilisateur plus convivial en affichant des liens n’est valides. Les utilisateurs peuvent hack les URL générées pour appeler modifier et supprimer des opérations sur les données qu’ils ne possèdent pas.  Le contrôleur doit répéter vérifie l’accès sécurisé.
+Avertissement : Le masquage des liens à partir des utilisateurs qui ne sont pas autorisés à modifier ou supprimer des données ne sécuriser l’application. Le masquage des liens rend l’application utilisateur plus convivial en affichant des liens n’est valides. Les utilisateurs peuvent hack les URL générées pour appeler modifier et supprimer des opérations sur les données qu’ils ne possèdent pas.  Le contrôleur doit répéter vérifie l’accès sécurisé.
 
 ### <a name="update-the-details-view"></a>Mettre à jour l’affichage des détails
 
@@ -306,7 +304,7 @@ Ajoutez le code en surbrillance à la fin de la `Configure` méthode dans le *St
 
 [!code-csharp[Main](secure-data/samples/starter/Startup.cs?name=Configure&highlight=28-)]
 
-Test de l’application d’amorçage la base de données. La méthode de la valeur de départ n’est pas exécuté s’il existe des lignes dans la base de données de contact.
+Test de l’application d’amorçage la base de données. La méthode de valeur initiale ne s’exécute pas s’il existe des lignes dans la base de données de contact.
 
 ### <a name="create-a-class-used-in-the-tutorial"></a>Créer une classe utilisée dans le didacticiel
 
@@ -321,4 +319,4 @@ Test de l’application d’amorçage la base de données. La méthode de la val
 
 * [ASP.NET Core d’autorisation Lab](https://github.com/blowdart/AspNetAuthorizationWorkshop). Ce laboratoire présente en détail sur les fonctionnalités de sécurité présentées dans ce didacticiel.
 * [Autorisation dans ASP.NET Core : Simple, des rôles, basée sur les revendications et personnalisées](index.md)
-* [D’autorisation personnalisée basée sur des stratégies](policies.md)
+* [Autorisation basée sur une stratégie personnalisée](policies.md)

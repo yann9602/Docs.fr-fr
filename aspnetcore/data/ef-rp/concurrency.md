@@ -2,7 +2,6 @@
 title: "Pages Razor avec EF Core - d’accès concurrentiel - 8 de 8"
 author: rick-anderson
 description: "Ce didacticiel montre comment gérer les conflits lorsque plusieurs utilisateurs mettre à jour la même entité en même temps."
-keywords: "Concurrence d’accès ASP.NET Core, Entity Framework Core,"
 ms.author: riande
 manager: wpickett
 ms.date: 11/15/2017
@@ -10,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/concurrency
-ms.openlocfilehash: 841c638b2cacaab7970f2b173fee488972957b63
-ms.sourcegitcommit: 2d23ea501e0213bbacf65298acf1c8bd17209540
+ms.openlocfilehash: b36fb71cba058a3409b30a1d9469159fcd027375
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/09/2018
+ms.lasthandoff: 01/24/2018
 ---
 en-us /
 
@@ -58,13 +57,13 @@ L’accès concurrentiel optimiste inclut les options suivantes :
 
 * Vous pouvez effectuer le suivi des dont un utilisateur a modifié la propriété et mettre à jour uniquement les colonnes correspondantes dans la base de données.
 
- Dans le scénario, aucune donnée n’a été perdue. Des propriétés différentes ont été mis à jour par les deux utilisateurs. La prochaine fois qu’un utilisateur parcourt le service en anglais, il voit les modifications à la fois de John et Jane. Cette méthode de mise à jour peut réduire le nombre de conflits qui peuvent entraîner une perte de données. Cette approche : * ne peut pas éviter une perte de données si des modifications concurrentes sont apportées à la même propriété.
+ Dans le scénario, aucune donnée n’a été perdue. Des propriétés différentes ont été mis à jour par les deux utilisateurs. La prochaine fois qu’un utilisateur parcourt le service en anglais, ils verront les modifications apportées à la fois de John et Jane. Cette méthode de mise à jour peut réduire le nombre de conflits qui peuvent entraîner une perte de données. Cette approche : * ne peut pas éviter une perte de données si des modifications concurrentes sont apportées à la même propriété.
         * N’est généralement pas pratique dans une application web. Elle nécessite la gestion de l’état significatif pour effectuer le suivi d’extraites de toutes les valeurs et les nouvelles valeurs. Maintenance de grandes quantités d’état peut affecter les performances de l’application.
         * Peut augmenter la complexité des applications par rapport à la détection de concurrence sur une entité.
 
 * Vous pouvez laisser les modifications de John écrase les modifications de Jeanne.
 
- La prochaine fois que quelqu'un accède le service en anglais, il voit le 1/9/2013 et la valeur de $350,000.00 extraite. Cette approche est appelée un *Client Wins* ou *dernier dans Wins* scénario. (Toutes les valeurs à partir du client sont prioritaires sur les nouveautés dans le magasin de données). Si vous ne le faites pas de codage pour la gestion d’accès concurrentiel, priorité au Client se produit automatiquement.
+ La prochaine fois que quelqu'un accède le service en anglais, ils verront le 1/9/2013 et la valeur de $350,000.00 extraite. Cette approche est appelée un *Client Wins* ou *dernier dans Wins* scénario. (Toutes les valeurs à partir du client sont prioritaires sur les nouveautés dans le magasin de données). Si vous ne le faites pas de codage pour la gestion d’accès concurrentiel, priorité au Client se produit automatiquement.
 
 * Vous pouvez empêcher la modification de Jean à partir de la mise à jour dans la base de données. En règle générale, l’application serait : * affiche un message d’erreur.
         * Afficher l’état actuel des données.
@@ -74,16 +73,16 @@ L’accès concurrentiel optimiste inclut les options suivantes :
 
 ## <a name="handling-concurrency"></a>Gestion d’accès concurrentiel 
 
-Quand une propriété est configurée comme un [jeton d’accès concurrentiel](https://docs.microsoft.com/en-us/ef/core/modeling/concurrency):
+Quand une propriété est configurée comme un [jeton d’accès concurrentiel](https://docs.microsoft.com/ef/core/modeling/concurrency):
 
-* EF Core vérifie que propriété n’a pas été modifiée après que qu’elle a été extraite. La vérification se produit lorsque [SaveChanges](https://docs.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.dbcontext.savechanges?view=efcore-2.0#Microsoft_EntityFrameworkCore_DbContext_SaveChanges) ou [SaveChangesAsync](https://docs.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.dbcontext.savechangesasync?view=efcore-2.0#Microsoft_EntityFrameworkCore_DbContext_SaveChangesAsync_System_Threading_CancellationToken_) est appelée.
+* EF Core vérifie que propriété n’a pas été modifiée après que qu’elle a été extraite. La vérification se produit lorsque [SaveChanges](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.savechanges?view=efcore-2.0#Microsoft_EntityFrameworkCore_DbContext_SaveChanges) ou [SaveChangesAsync](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.savechangesasync?view=efcore-2.0#Microsoft_EntityFrameworkCore_DbContext_SaveChangesAsync_System_Threading_CancellationToken_) est appelée.
 * Si la propriété a été modifiée après qu’elle a été extraite, un [DbUpdateConcurrencyException](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbupdateconcurrencyexception?view=efcore-2.0) est levée. 
 
 Le modèle de données et de la base de données doit être configuré pour prendre en charge de lever `DbUpdateConcurrencyException`.
 
 ### <a name="detecting-concurrency-conflicts-on-a-property"></a>Détection des conflits d’accès concurrentiel sur une propriété
 
-Conflits d’accès concurrentiel peuvent être détectées au niveau de la propriété avec le [ConcurrencyCheck](https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.dataannotations.concurrencycheckattribute?view=netcore-2.0) attribut. L’attribut peut être appliqué à plusieurs propriétés sur le modèle. Pour plus d’informations, consultez [Annotations de données-ConcurrencyCheck](https://docs.microsoft.com/en-us/ef/core/modeling/concurrency#data-annotations).
+Conflits d’accès concurrentiel peuvent être détectées au niveau de la propriété avec le [ConcurrencyCheck](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.concurrencycheckattribute?view=netcore-2.0) attribut. L’attribut peut être appliqué à plusieurs propriétés sur le modèle. Pour plus d’informations, consultez [Annotations de données-ConcurrencyCheck](https://docs.microsoft.com/ef/core/modeling/concurrency#data-annotations).
 
 Le `[ConcurrencyCheck]` attribut n’est pas utilisé dans ce didacticiel.
 
@@ -128,7 +127,7 @@ Le code en surbrillance suivant montre le code T-SQL qui vérifie qu’une seule
 
 [!code-sql[](intro/samples/sql.txt?highlight=4-6)]
 
-[@@ROWCOUNT ](https://docs.microsoft.com/en-us/sql/t-sql/functions/rowcount-transact-sql) retourne le nombre de lignes affectées par la dernière instruction. Absence lignes sont mises à jour, EF Core lève une `DbUpdateConcurrencyException`.
+[@@ROWCOUNT ](https://docs.microsoft.com/sql/t-sql/functions/rowcount-transact-sql) retourne le nombre de lignes affectées par la dernière instruction. Absence lignes sont mises à jour, EF Core lève une `DbUpdateConcurrencyException`.
 
 Vous pouvez voir que le cœur de EF T-SQL génère dans la fenêtre Sortie de Visual Studio.
 
@@ -251,7 +250,7 @@ Cliquez sur **Enregistrer**. Vous consultez les messages d’erreur pour tous le
 
 ![Message d’erreur service modifier page](concurrency/_static/edit-error.png)
 
-Cette fenêtre de navigateur ne souhaitez pas modifier le champ nom. Copiez et collez la valeur actuelle (langues) dans le champ nom. Appuyez sur TAB. La validation côté client supprime le message d’erreur.
+Cette fenêtre de navigateur ne le vouliez modifier le champ nom. Copiez et collez la valeur actuelle (langues) dans le champ nom. Appuyez sur TAB. La validation côté client supprime le message d’erreur.
 
 ![Message d’erreur service modifier page](concurrency/_static/cv.png)
 
@@ -306,8 +305,8 @@ Consultez [héritage](xref:data/ef-mvc/inheritance) comment hériter d’un mod�
 
 ### <a name="additional-resources"></a>Ressources supplémentaires
 
-* [Jetons d’accès concurrentiel dans EF Core](https://docs.microsoft.com/en-us/ef/core/modeling/concurrency)
-* [Gestion d’accès concurrentiel dans EF Core](https://docs.microsoft.com/en-us/ef/core/saving/concurrency)
+* [Jetons d’accès concurrentiel dans EF Core](https://docs.microsoft.com/ef/core/modeling/concurrency)
+* [Gestion d’accès concurrentiel dans EF Core](https://docs.microsoft.com/ef/core/saving/concurrency)
 
 >[!div class="step-by-step"]
 [Précédent](xref:data/ef-rp/update-related-data)

@@ -2,7 +2,7 @@
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/strategies-for-database-development-and-deployment-vb
 title: "Stratégies de développement de base de données et de déploiement (VB) | Documents Microsoft"
 author: rick-anderson
-description: "Lorsque vous déployez une application piloté par les données pour la première fois que vous pouvez aveugle copier la base de données dans l’environnement de développement à l’environnement de production. B...."
+description: "Lorsque vous déployez une application piloté par les données pour la première fois que vous pouvez aveugle copier la base de données dans l’environnement de développement à l’environnement de production. B..."
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/23/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/strategies-for-database-development-and-deployment-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 8632ed2fe5c1a296747a0206de1c6f5c5bb59dd1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 877056dc74e0b5a64d6e0f11d63ed9f642b0a2cd
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="strategies-for-database-development-and-deployment-vb"></a>Stratégies de développement de base de données et de déploiement (VB)
 ====================
@@ -79,7 +79,7 @@ En conservant votre journal des modifications dans le texte principal n’est pa
 
 L’inconvénient principal de la maintenance du journal des modifications dans prose indique l’absence d’automation. Dans l’idéal, l’application des modifications de base de données à la base de données de production au moment de déployer serait aussi simple que de cliquer sur un bouton pour exécuter un script au lieu de devoir effectuer manuellement une liste d’instructions. Cette automatisation est possible en conservant un journal des modifications qui contient les commandes SQL utilisés pour modifier le modèle de données.
 
-La syntaxe SQL comprend des instructions pour créer et modifier les divers objets de base de données. Par exemple, le [ *l’instruction CREATE TABLE*](https://msdn.microsoft.com/en-us/library/ms174979.aspx), lors de l’exécution, crée une table avec les colonnes spécifiées et les contraintes. Le [ *instruction ALTER TABLE* ](https://msdn.microsoft.com/en-us/library/ms190273.aspx) modifie une table existante, l’ajout, la suppression ou la modification des colonnes ou des contraintes. Il existe également des instructions pour créer, modifier et supprimer des index, vues, fonctions définies par l’utilisateur, procédures stockées, déclencheurs et autres objets de base de données.
+La syntaxe SQL comprend des instructions pour créer et modifier les divers objets de base de données. Par exemple, le [ *l’instruction CREATE TABLE*](https://msdn.microsoft.com/library/ms174979.aspx), lors de l’exécution, crée une table avec les colonnes spécifiées et les contraintes. Le [ *instruction ALTER TABLE* ](https://msdn.microsoft.com/library/ms190273.aspx) modifie une table existante, l’ajout, la suppression ou la modification des colonnes ou des contraintes. Il existe également des instructions pour créer, modifier et supprimer des index, vues, fonctions définies par l’utilisateur, procédures stockées, déclencheurs et autres objets de base de données.
 
 Revenir à notre précédent exemple, l’image que pendant le développement d’une application déjà déployée, vous ajoutez une nouvelle colonne à la `Employees` table, de supprimer une colonne de la `Orders` de table et ajouter une nouvelle table (`ProductCategories`). Ces actions entraînerait un fichier journal des modifications avec les commandes SQL suivantes :
 
@@ -150,7 +150,7 @@ Lors du déploiement d’un site Web, il est préférable d’adopter l’applic
 
 Prendre une application en mode hors connexion pendant le déploiement, puis, est aussi simple que de télécharger un `app_offline.htm` fichier à l’environnement de production s racine active avant de commencer le processus de déploiement et puis en le supprimant (ou en le renommant à quelque chose d’autre) une fois du déploiement est terminée. Pour plus d’informations sur cette technique, consultez l’article de s John Peterson, en prenant un [ *ASP.NET Application en mode hors connexion*](http://www.15seconds.com/issue/061207.htm).
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Le principal défi de déploiement d’une application orientée données tourne autour de déploiement de la base de données. Car il existe deux versions de la base de données - un dans l’environnement de développement et l’autre dans l’environnement de production ces schémas de deux bases de données peuvent devenir désynchronisés que des nouvelles fonctionnalités sont ajoutées dans le développement. Nouveautés plus, étant donné que la base de données de production comme rempli avec les données réelles provenant d’utilisateurs réels, Impossible de remplacer la base de données de production avec la base de données de développement modifié comme vous pouvez le faire lorsque vous déployez les fichiers qui composent l’application (les pages ASP.NET, fichiers image et ainsi de suite). Au lieu de cela, déploiement d’une base de données implique la mise en œuvre de l’ensemble précis des modifications apportées à la base de données de développement sur la base de données de production depuis le dernier déploiement.
 

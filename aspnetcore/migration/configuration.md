@@ -2,20 +2,18 @@
 title: Migration de la Configuration
 author: ardalis
 description: 
-keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: 8468d859-ff32-4a92-9e62-08c4a9e36594
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: migration/configuration
-ms.openlocfilehash: d20235feec9d66c371b8ce0b7c66fb424fb261d5
-ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
+ms.openlocfilehash: 51665059d1d803cbe57bc9a884a0e91eac9e7cb4
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="migrating-configuration"></a>Migration de la Configuration
 
@@ -35,7 +33,7 @@ Pour cet article, nous avons commencé avec le projet ASP.NET Core partiellement
 
 [!code-csharp[Main](configuration/samples/WebApp1/src/WebApp1/Startup.cs?range=11-21)]
 
-Notez qu’à ce stade, le *Startup.cs* fichier n’est pas compilé, car il faut toujours ajouter les éléments suivants `using` instruction :
+Notez qu’à ce stade, le *Startup.cs* fichier ne sera pas compilé, qu’il faut toujours ajouter les éléments suivants `using` instruction :
 
 ```csharp
 using Microsoft.Extensions.Configuration;
@@ -54,6 +52,6 @@ Notre projet ASP.NET MVC incluse de la chaîne de connexion de base de données 
 
 Dans la ligne en surbrillance mentionnée ci-dessus, remplacez le nom de la base de données à partir de **_CHANGE_ME** au nom de votre base de données.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 ASP.NET Core place toute logique de démarrage de l’application dans un seul fichier dans lequel les services nécessaires et les dépendances peuvent être définis et configurés. Il remplace le *web.config* fichier avec une fonctionnalité de configuration souples qui peut tirer parti des divers formats de fichier, tels que JSON, ainsi que les variables d’environnement.

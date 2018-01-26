@@ -2,20 +2,18 @@
 title: Globalisation et localisation dans ASP.NET Core
 author: rick-anderson
 description: "Découvrez comment ASP.NET Core fournit des services et intergiciel (middleware) pour la localisation de contenu dans différentes langues et cultures."
-keywords: "ASP.NET Core, localisation, culture, langue, fichier de ressources, la globalisation, internationalisation, paramètres régionaux"
 ms.author: riande
 manager: wpickett
 ms.date: 01/14/2017
 ms.topic: article
-ms.assetid: 7f275a09-f118-41c9-88d1-8de52d6a5aa1
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/localization
-ms.openlocfilehash: d1f8cf5607fdd08bf0dadc224ae0fdba7ec696bc
-ms.sourcegitcommit: 677986b3a39817b712e2432cce85ad1685326b75
+ms.openlocfilehash: 5f1579b5682b2f0b3f8227f0cf6b4c0361eb1e67
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="globalization-and-localization-in-aspnet-core"></a>Globalisation et localisation dans ASP.NET Core
 
@@ -41,9 +39,9 @@ Introduit dans ASP.NET Core, `IStringLocalizer` et `IStringLocalizer<T>` ont ét
 
 [!code-csharp[Main](localization/sample/Localization/Controllers/AboutController.cs)]
 
-Dans le code ci-dessus, le `IStringLocalizer<T>` provient de l’implémentation [Injection de dépendance](dependency-injection.md). Si la valeur localisée de « Sur titre » n’est pas trouvée, la clé de l’indexeur est retournée, autrement dit, la chaîne « Sur titre ». Vous pouvez laisser des chaînes littérales de langage la valeur par défaut dans l’application et les encapsuler dans le localisateur, afin de pouvoir vous concentrer sur le développement d’applications. Vous développez votre application avec la langue par défaut et le préparez pour l’étape de localisation sans d’abord créer un fichier de ressources par défaut. Vous pouvez également utiliser l’approche traditionnelle et fournir une clé pour récupérer la chaîne de langue par défaut. Pour de nombreux développeurs le nouveau flux de travail de ne pas avoir une langue par défaut *.resx* encapsulant simplement les littéraux de chaîne et fichier peuvent réduire la charge de la localisation d’une application. Autres développeurs préfèreront le flux de travail classiques, comme il peut être plus facile de travailler avec des littéraux de chaîne plus longs et le rendre plus facile à mettre à jour les chaînes localisées.
+Dans le code ci-dessus, le `IStringLocalizer<T>` provient de l’implémentation [Injection de dépendance](dependency-injection.md). Si la valeur localisée de « Sur titre » n’est trouvée, la clé de l’indexeur est retournée, autrement dit, la chaîne « Sur titre ». Vous pouvez laisser des chaînes littérales de langage la valeur par défaut dans l’application et les encapsuler dans le localisateur, afin de pouvoir vous concentrer sur le développement d’applications. Vous développez votre application avec la langue par défaut et le préparez pour l’étape de localisation sans d’abord créer un fichier de ressources par défaut. Vous pouvez également utiliser l’approche traditionnelle et fournir une clé pour récupérer la chaîne de langue par défaut. Pour de nombreux développeurs le nouveau flux de travail de ne pas avoir une langue par défaut *.resx* encapsulant simplement les littéraux de chaîne et fichier peuvent réduire la charge de la localisation d’une application. Autres développeurs préfèreront le flux de travail classiques, comme il peut être plus facile de travailler avec des littéraux de chaîne plus longs et le rendre plus facile à mettre à jour les chaînes localisées.
 
-Utilisez le `IHtmlLocalizer<T>` implémentation pour les ressources contenant du HTML. `IHtmlLocalizer`Encode les arguments qui sont mis en forme dans la chaîne de ressource HTML, mais ne pas HTML encode la chaîne de ressource elle-même. Dans l’exemple de mise en surbrillance ci-dessous, seule la valeur de `name` paramètre est encodé au format HTML.
+Utilisez le `IHtmlLocalizer<T>` implémentation pour les ressources contenant du HTML. `IHtmlLocalizer`Encode les arguments qui sont mis en forme dans la chaîne de ressource HTML, mais ne HTML encode la chaîne de ressource elle-même. Dans l’exemple de mise en surbrillance ci-dessous, seule la valeur de `name` paramètre est encodé au format HTML.
 
 [!code-csharp[Main](../fundamentals/localization/sample/Localization/Controllers/BookController.cs?highlight=3,5,20&start=1&end=24)]
 

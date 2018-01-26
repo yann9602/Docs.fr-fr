@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/formats-and-model-binding/parameter-binding-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: ad052570fb2f168da657cd1263d8342a59d4cab0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5aa532137436922519c86246ebfa834910ac0d86
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="parameter-binding-in-aspnet-web-api"></a>Paramètre de liaison dans l’API Web ASP.NET
 ====================
@@ -26,7 +26,7 @@ Lors de l’API Web appelle une méthode sur un contrôleur, il doit définir de
 
 Par défaut, les API Web utilise les règles suivantes pour lier les paramètres :
 
-- Si le paramètre est un type « simple », API Web essaie d’obtenir la valeur de l’URI. Exemples de types simples .NET [les types primitifs](https://msdn.microsoft.com/en-us/library/system.type.isprimitive.aspx) (**int**, **bool**, **double**, et ainsi de suite), ainsi que **TimeSpan**, **DateTime**, **Guid**, **décimal**, et **chaîne**, *plus* tout type avec un convertisseur de type qui peut être converti à partir d’une chaîne. (Plus d’informations sur les convertisseurs de type plus tard.)
+- Si le paramètre est un type « simple », API Web essaie d’obtenir la valeur de l’URI. Exemples de types simples .NET [les types primitifs](https://msdn.microsoft.com/library/system.type.isprimitive.aspx) (**int**, **bool**, **double**, et ainsi de suite), ainsi que **TimeSpan**, **DateTime**, **Guid**, **décimal**, et **chaîne**, *plus* tout type avec un convertisseur de type qui peut être converti à partir d’une chaîne. (Plus d’informations sur les convertisseurs de type plus tard.)
 - Pour les types complexes, API Web tente de lire la valeur du corps du message, à l’aide un [formateur de type de média](media-formatters.md).
 
 Par exemple, voici une méthode de contrôleur d’API Web classique :
@@ -102,7 +102,7 @@ Un classeur de modèles Obtient les valeurs d’entrée brutes à partir d’un 
 
 Le fournisseur de valeur par défaut dans l’API Web obtient les valeurs de données d’itinéraire et de la chaîne de requête. Par exemple, si l’URI est `http://localhost/api/values/1?location=48,-122`, le fournisseur de valeur crée les paires clé-valeur suivantes :
 
-- ID = &quot;1&quot;
+- id = &quot;1&quot;
 - emplacement = &quot;48,122&quot;
 
 (Je suis en supposant que le modèle d’itinéraire par défaut, qui est &quot;api / {controller} / {id}&quot;.)
@@ -121,7 +121,7 @@ Vous pouvez également ajouter un **[ModelBinder]** pour le type d’attribut. A
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample11.cs)]
 
-Enfin, vous pouvez ajouter un fournisseur de classeur de modèles à la **HttpConfiguration**. Un fournisseur de classeur de modèles est simplement une classe de fabrique qui crée un classeur de modèles. Vous pouvez créer un fournisseur en dérivant de la [ModelBinderProvider](https://msdn.microsoft.com/en-us/library/system.web.http.modelbinding.modelbinderprovider.aspx) classe. Toutefois, si votre classeur de modèles gère un type unique, il est plus facile à utiliser la fonction intégrée **SimpleModelBinderProvider**, qui est conçu à cet effet. Le code suivant montre comment procéder.
+Enfin, vous pouvez ajouter un fournisseur de classeur de modèles à la **HttpConfiguration**. Un fournisseur de classeur de modèles est simplement une classe de fabrique qui crée un classeur de modèles. Vous pouvez créer un fournisseur en dérivant de la [ModelBinderProvider](https://msdn.microsoft.com/library/system.web.http.modelbinding.modelbinderprovider.aspx) classe. Toutefois, si votre classeur de modèles gère un type unique, il est plus facile à utiliser la fonction intégrée **SimpleModelBinderProvider**, qui est conçu à cet effet. Le code suivant montre comment procéder.
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample12.cs)]
 

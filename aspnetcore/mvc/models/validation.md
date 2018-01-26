@@ -2,20 +2,18 @@
 title: "Validation de modèle dans ASP.NET MVC de base"
 author: rachelappel
 description: "En savoir plus sur la validation de modèle dans ASP.NET MVC de base."
-keywords: Validation ASP.NET Core, MVC,
 ms.author: riande
 manager: wpickett
 ms.date: 12/18/2016
 ms.topic: article
-ms.assetid: 3a8676dd-7ed8-4a05-bca2-44e288ab99ee
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/models/validation
-ms.openlocfilehash: 7f641c247cb672934e76fa13bc7b7beb3990dd82
-ms.sourcegitcommit: f5a7f0198628f0d152257d90dba6c3a0747a355a
+ms.openlocfilehash: 56928c61ae47d313145afadf3e0fa93a078b681b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/19/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="introduction-to-model-validation-in-aspnet-core-mvc"></a>Introduction à la validation de modèle dans ASP.NET MVC de base
 
@@ -150,14 +148,14 @@ MVC détermine les valeurs d’attribut de type en fonction du type de données 
 
 ### <a name="add-validation-to-dynamic-forms"></a>Ajouter une Validation aux formulaires dynamiques
 
-Car jQuery Validation discrète transmet la logique de validation et les paramètres jQuery validation lors du premier charge de la page, les formulaires générés de manière dynamique pas automatiquement présentera de validation. Au lieu de cela, vous devez indiquer jQuery Validation discrète pour analyser la forme dynamique immédiatement après sa création. Par exemple, le code ci-dessous montre comment vous pouvez configurer la validation côté client sur un formulaire ajoutée via AJAX.
+Car jQuery Validation discrète transmet la logique de validation et les paramètres jQuery validation lors du premier charge de la page, forms générés de manière dynamique ne sont pas automatiquement présentent de validation. Au lieu de cela, vous devez indiquer jQuery Validation discrète pour analyser la forme dynamique immédiatement après sa création. Par exemple, le code ci-dessous montre comment vous pouvez configurer la validation côté client sur un formulaire ajoutée via AJAX.
 
 ```js
 $.get({
     url: "https://url/that/returns/a/form",
     dataType: "html",
     error: function(jqXHR, textStatus, errorThrown) {
-        alert(textStatus + ": Could not add form. " + errorThrown);
+        alert(textStatus + ": Couldn't add form. " + errorThrown);
     },
     success: function(newFormHTML) {
         var container = document.getElementById("form-container");
@@ -173,14 +171,14 @@ Le `$.validator.unobtrusive.parse()` méthode accepte un sélecteur de jQuery po
 
 ### <a name="add-validation-to-dynamic-controls"></a>Ajouter une Validation à des contrôles dynamiques
 
-Vous pouvez également mettre à jour les règles de validation sur un formulaire lorsque les contrôles individuels, tels que `<input/>`s et `<select/>`s, sont générées de façon dynamique. Vous ne pouvez pas passer des sélecteurs pour ces éléments pour le `parse()` directement la méthode, car le formulaire qui l’entoure a déjà été analysé et ne met pas à jour.  Au lieu de cela, vous supprimez d’abord les données de validation existantes, puis d’analyse de l’intégralité du formulaire, comme indiqué ci-dessous :
+Vous pouvez également mettre à jour les règles de validation sur un formulaire lorsque les contrôles individuels, tels que `<input/>`s et `<select/>`s, sont générées de façon dynamique. Vous ne pouvez pas passer des sélecteurs pour ces éléments pour le `parse()` directement la méthode, car le formulaire qui l’entoure a déjà été analysé et ne sera pas mise à jour. Au lieu de cela, vous supprimez d’abord les données de validation existantes, puis d’analyse de l’intégralité du formulaire, comme indiqué ci-dessous :
 
 ```js
 $.get({
     url: "https://url/that/returns/a/control",
     dataType: "html",
     error: function(jqXHR, textStatus, errorThrown) {
-        alert(textStatus + ": Could not add form. " + errorThrown);
+        alert(textStatus + ": Couldn't add form. " + errorThrown);
     },
     success: function(newInputHTML) {
         var form = document.getElementById("my-form");
@@ -233,12 +231,11 @@ La définition de la `VerifyEmail()` méthode suit ces règles, comme indiqué c
 
 Maintenant lorsque les utilisateurs entrent un message électronique, JavaScript dans la vue effectue un appel à distance pour voir si l’e-mail a été utilisé et, dans ce cas, affiche le message d’erreur. Dans le cas contraire, l’utilisateur peut soumettre le formulaire comme d’habitude.
 
-Le `AdditionalFields` propriété de la `[Remote]` attribut est utile pour valider les combinaisons de champs sur des données sur le serveur.  Par exemple, si le `User` modèle ci-dessus a deux propriétés supplémentaires : `FirstName` et `LastName`, vous pouvez souhaiter vérifier qu’aucun utilisateur n’existant a déjà cette paire de noms.  Vous définissez les nouvelles propriétés comme indiqué dans le code suivant :
+Le `AdditionalFields` propriété de la `[Remote]` attribut est utile pour valider les combinaisons de champs sur des données sur le serveur. Par exemple, si le `User` modèle ci-dessus a deux propriétés supplémentaires : `FirstName` et `LastName`, vous pouvez souhaiter vérifier qu’aucun utilisateur n’existant a déjà cette paire de noms. Vous définissez les nouvelles propriétés comme indiqué dans le code suivant :
 
 [!code-csharp[Main](validation/sample/User.cs?range=10-13)]
 
-`AdditionalFields`Impossible ont été définis explicitement sur les chaînes `"FirstName"` et `"LastName"`, mais en utilisant le [ `nameof` ](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/nameof) opérateur comme cela simplifie la refactorisation ultérieurement.  La méthode d’action pour effectuer la validation doit accepter deux arguments, un pour la valeur de `FirstName` et l’autre pour la valeur de `LastName`.
-
+`AdditionalFields`peut avoir été défini explicitement pour les chaînes `"FirstName"` et `"LastName"`, mais en utilisant la [ `nameof` ](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/nameof) opérateur comme cela simplifie la refactorisation ultérieurement. La méthode d’action pour effectuer la validation doit accepter deux arguments, un pour la valeur de `FirstName` et l’autre pour la valeur de `LastName`.
 
 [!code-csharp[Main](validation/sample/UsersController.cs?range=30-39)]
 
@@ -248,11 +245,11 @@ Maintenant lorsque les utilisateurs entrer un nom et prénom, JavaScript :
 * Si la paire a été effectuée, un message d’erreur s’affiche. 
 * Si ne pas le cas, l’utilisateur peut envoyer le formulaire.
 
-Si vous devez valider deux ou plusieurs champs supplémentaires avec le `[Remote]` attribut, vous lui fournir sous forme de liste délimitée par des virgules.  Par exemple, pour ajouter un `MiddleName` propriété du modèle, affectez le `[Remote]` d’attributs comme indiqué dans le code suivant :
+Si vous devez valider deux ou plusieurs champs supplémentaires avec le `[Remote]` attribut, vous lui fournir sous forme de liste délimitée par des virgules. Par exemple, pour ajouter un `MiddleName` propriété du modèle, affectez le `[Remote]` d’attributs comme indiqué dans le code suivant :
 
 ```cs
 [Remote(action: "VerifyName", controller: "Users", AdditionalFields = nameof(FirstName) + "," + nameof(LastName))]
 public string MiddleName { get; set; }
 ```
 
-`AdditionalFields`, comme tous les arguments d’attribut, doit être une expression constante.  Par conséquent, vous ne devez pas utiliser un [interpolées chaîne](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/interpolated-strings) ou appelez [ `string.Join()` ](https://msdn.microsoft.com/en-us/library/system.string.join(v=vs.110).aspx) pour initialiser `AdditionalFields`. Pour chaque champ supplémentaire que vous ajoutez à la `[Remote]` attribut, vous devez ajouter un autre argument à la méthode d’action de contrôleur correspondant.
+`AdditionalFields`, comme tous les arguments d’attribut, doit être une expression constante. Par conséquent, vous ne devez pas utiliser un [interpolées chaîne](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/interpolated-strings) ou appelez [ `string.Join()` ](https://msdn.microsoft.com/library/system.string.join(v=vs.110).aspx) pour initialiser `AdditionalFields`. Pour chaque champ supplémentaire que vous ajoutez à la `[Remote]` attribut, vous devez ajouter un autre argument à la méthode d’action de contrôleur correspondant.

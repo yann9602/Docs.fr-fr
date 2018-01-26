@@ -2,20 +2,18 @@
 title: "Injection de dépendance dans les contrôleurs"
 author: ardalis
 description: 
-keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: bc8b4ba3-e9ba-48fd-b1eb-cd48ff6bc7a1
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/dependency-injection
-ms.openlocfilehash: 46b92a1cab6fb2cd06eff44feb6a55788fca5c2a
-ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
+ms.openlocfilehash: 946d695c572379c3ebc2eda1569f186f25ab9bfc
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="dependency-injection-into-controllers"></a>Injection de dépendance dans les contrôleurs
 
@@ -89,7 +87,7 @@ Parfois, vous n’avez pas besoin d’un service pour plusieurs actions dans vot
 
 ## <a name="accessing-settings-from-a-controller"></a>L’accès aux paramètres d’un contrôleur
 
-L’accès aux paramètres de configuration ou d’application à partir d’un contrôleur est un modèle commun. Cet accès doit utiliser le modèle des Options décrit dans [configuration](xref:fundamentals/configuration/index). Vous généralement ne devez pas demander les paramètres directement à partir de votre contrôleur à l’aide de l’injection de dépendances. Une meilleure approche consiste à demande un `IOptions<T>` instance, où `T` est la classe de configuration que vous avez besoin.
+L’accès aux paramètres de configuration ou d’application à partir d’un contrôleur est un modèle commun. Cet accès doit utiliser le modèle des Options décrit dans [configuration](xref:fundamentals/configuration/index). Généralement, vous ne doit pas demander les paramètres directement à partir de votre contrôleur à l’aide de l’injection de dépendances. Une meilleure approche consiste à demande un `IOptions<T>` instance, où `T` est la classe de configuration que vous avez besoin.
 
 Pour utiliser le modèle d’options, vous devez créer une classe qui représente les options, comme celle-ci :
 
