@@ -14,11 +14,12 @@ ms.openlocfilehash: 019e31fa749a950db48575e1f4e8d4d26d1cde75
 ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2018
+
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="introduction-to-error-handling-in-aspnet-core"></a>Introduction à la gestion des erreurs dans ASP.NET Core
 
-Article rédigé par [Steve Smith](https://ardalis.com/) et [Tom Dykstra](https://github.com/tdykstra/)
+Par [Steve Smith](https://ardalis.com/) et [Tom Dykstra](https://github.com/tdykstra/)
 
 Cet article traite des appoaches commune pour la gestion des erreurs dans les applications ASP.NET Core.
 
@@ -30,7 +31,7 @@ Pour configurer une application pour afficher une page qui affiche des informati
 
 [!code-csharp[Main](error-handling/sample/Startup.cs?name=snippet_DevExceptionPage&highlight=7)]
 
-Put `UseDeveloperExceptionPage` avant tout intergiciel (middleware) que vous souhaitez intercepter les exceptions, telles que `app.UseMvc`.
+Placer `UseDeveloperExceptionPage` avant tout intergiciel (middleware) dont vous souhaitez intercepter les exceptions, telles que `app.UseMvc`.
 
 >[!WARNING]
 > Activer la page d’exception développeur **uniquement lorsque l’application est en cours d’exécution dans l’environnement de développement**. Vous ne souhaitez pas partager publiquement les informations sur les exceptions détaillées lors de l’exécution de l’application en production. [En savoir plus sur la configuration d’environnements](environments.md).
@@ -65,7 +66,7 @@ public IActionResult Index()
 
 ## <a name="configuring-status-code-pages"></a>Configuration des pages de codes d’état
 
-Par défaut, votre application ne fournit une page de codes d’état complètes pour les codes d’état HTTP tel que 500 (erreur interne du serveur) ou 404 (introuvable). Vous pouvez configurer le `StatusCodePagesMiddleware` en ajoutant une ligne à la `Configure` méthode :
+Par défaut, votre application ne permet pas d’une page de codes d’état complètes pour les codes d’état HTTP tel que 500 (erreur interne du serveur) ou 404 (introuvable). Vous pouvez configurer le `StatusCodePagesMiddleware` en ajoutant une ligne à la `Configure` méthode :
 
 ```csharp
 app.UseStatusCodePages();
