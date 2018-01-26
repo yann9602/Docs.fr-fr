@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/core-differences-between-iis-and-the-asp-net-development-server-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 4fb0b71792422a75efa5d936ffc7b88a8ec19a57
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8e8ae3c0fd1d67fba6dff965704b550bdc919c6a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="core-differences-between-iis-and-the-aspnet-development-server-vb"></a>Différences principales entre IIS et le serveur de développement ASP.NET (VB)
 ====================
@@ -47,7 +47,7 @@ Pour afficher ce type d’erreur en action, j’ai créé une page dans le site 
 [!code-vb[Main](core-differences-between-iis-and-the-asp-net-development-server-vb/samples/sample1.vb)]
 
 > [!NOTE]
-> Le [ `File.WriteAllText` méthode](https://msdn.microsoft.com/en-us/library/system.io.file.writealltext.aspx) crée un fichier s’il n’existe pas et puis écrit le contenu spécifié. Si le fichier existe déjà, son contenu existant est remplacé.
+> Le [ `File.WriteAllText` méthode](https://msdn.microsoft.com/library/system.io.file.writealltext.aspx) crée un fichier s’il n’existe pas et puis écrit le contenu spécifié. Si le fichier existe déjà, son contenu existant est remplacé.
 
 
 Ensuite, visitez le *apprendre vous-même ASP.NET 3.5 des dernières 24 heures* page de révision de livres dans l’environnement de développement à l’aide du serveur de développement ASP.NET. En supposant que vous êtes connecté une session sur votre ordinateur avec un compte qui dispose des autorisations adéquates pour créer et modifier un fichier texte dans le site web répertoire racine de l’application la révision du livre s’affiche les mêmes qu’avant, mais chaque fois que la page est visité la date et l’heure et l’utilisateur  Adresse IP est stockée dans le `LastTYASP35Access.txt` fichier. Pointez votre navigateur sur ce fichier. Vous devez voir un message similaire à celui illustré dans la Figure 1.
@@ -58,7 +58,7 @@ Ensuite, visitez le *apprendre vous-même ASP.NET 3.5 des dernières 24 heures* 
 **Figure 1**: le fichier texte contient la Date et l’heure de la révision du livre a été visitée ([cliquez pour afficher l’image en taille réelle](core-differences-between-iis-and-the-asp-net-development-server-vb/_static/image3.png))
 
 
-Déployer l’application web en production, puis vous accédez hébergé *apprendre vous-même ASP.NET 3.5 des dernières 24 heures* page de révision de livre. À ce stade, vous devez voir soit la page vérifier les livres sous la forme normale ou le message d’erreur indiqué dans la Figure 2. Certains fournisseurs d’hébergement web accorder des autorisations d’écriture pour le compte d’ordinateur ASP.NET anonyme, dans lequel cas la page fonctionnera sans erreur. Si, toutefois, votre fournisseur d’hébergement web interdit l’accès en écriture pour le compte anonyme alors un [ `UnauthorizedAccessException` exception](https://msdn.microsoft.com/en-us/library/system.unauthorizedaccessexception.aspx) est déclenché lorsque la `TYASP35.aspx` page tente d’écrire la date et heure actuelles pour le `LastTYASP35Access.txt` fichier.
+Déployer l’application web en production, puis vous accédez hébergé *apprendre vous-même ASP.NET 3.5 des dernières 24 heures* page de révision de livre. À ce stade, vous devez voir soit la page vérifier les livres sous la forme normale ou le message d’erreur indiqué dans la Figure 2. Certains fournisseurs d’hébergement web accorder des autorisations d’écriture pour le compte d’ordinateur ASP.NET anonyme, dans lequel cas la page fonctionnera sans erreur. Si, toutefois, votre fournisseur d’hébergement web interdit l’accès en écriture pour le compte anonyme alors un [ `UnauthorizedAccessException` exception](https://msdn.microsoft.com/library/system.unauthorizedaccessexception.aspx) est déclenché lorsque la `TYASP35.aspx` page tente d’écrire la date et heure actuelles pour le `LastTYASP35Access.txt` fichier.
 
 
 [![Le compte d’ordinateur par défaut utilisé par IIS ne dispose pas des autorisations pour écrire dans le système de fichiers](core-differences-between-iis-and-the-asp-net-development-server-vb/_static/image5.png)](core-differences-between-iis-and-the-asp-net-development-server-vb/_static/image4.png)
@@ -90,7 +90,7 @@ Enfin, j’ai configuré l’application web pour utiliser l’authentification 
 
 [!code-xml[Main](core-differences-between-iis-and-the-asp-net-development-server-vb/samples/sample3.xml)]
 
-avec :
+Par :
 
 [!code-xml[Main](core-differences-between-iis-and-the-asp-net-development-server-vb/samples/sample4.xml)]
 
@@ -123,10 +123,10 @@ Une fois qu’IIS a été configuré pour utiliser le pipeline intégré ajoutez
 Ce balisage indique à IIS 7 pour utiliser les modules d’authentification et d’autorisation basés sur ASP.NET. Déployez de nouveau votre application et puis vous accédez à nouveau le fichier PDF. Instant lorsqu’IIS gère la demande il permet à la logique d’authentification et d’autorisation du runtime ASP.NET pour examiner la demande. Étant donné que seuls les utilisateurs authentifiés sont autorisés à afficher le contenu dans le `PrivateDocs` dossier, l’utilisateur anonyme est automatiquement redirigée vers la page de connexion (voir la Figure 3).
 
 > [!NOTE]
-> Si votre fournisseur d’hébergement web est toujours à l’aide de IIS 6 vous ne pouvez pas utiliser la fonctionnalité pipeline intégré. Une solution de contournement consiste à placer vos documents privés dans un dossier qui interdit l’accès HTTP (comme `App_Data`), puis créer une page pour répondre à ces documents. Cette page peut être appelée `GetPDF.aspx`et reçoit le nom du fichier PDF via un paramètre de chaîne de requête. Le `GetPDF.aspx` page serait Vérifiez d’abord que l’utilisateur a l’autorisation d’afficher le fichier et, dans ce cas, utilisez le [ `Response.WriteFile(filePath)` ](https://msdn.microsoft.com/en-us/library/system.web.httpresponse.writefile.aspx) méthode pour envoyer le contenu du fichier PDF demandé au client demandeur. Cette technique fonctionne également pour IIS 7 si vous ne pas activer le pipeline intégré.
+> Si votre fournisseur d’hébergement web est toujours à l’aide de IIS 6 vous ne pouvez pas utiliser la fonctionnalité pipeline intégré. Une solution de contournement consiste à placer vos documents privés dans un dossier qui interdit l’accès HTTP (comme `App_Data`), puis créer une page pour répondre à ces documents. Cette page peut être appelée `GetPDF.aspx`et reçoit le nom du fichier PDF via un paramètre de chaîne de requête. Le `GetPDF.aspx` page serait Vérifiez d’abord que l’utilisateur a l’autorisation d’afficher le fichier et, dans ce cas, utilisez le [ `Response.WriteFile(filePath)` ](https://msdn.microsoft.com/library/system.web.httpresponse.writefile.aspx) méthode pour envoyer le contenu du fichier PDF demandé au client demandeur. Cette technique fonctionne également pour IIS 7 si vous ne pas activer le pipeline intégré.
 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Les applications Web dans un environnement de production sont hébergées à l’aide du logiciel de serveur web IIS de Microsoft. Dans l’environnement de développement, toutefois, l’application peut être hébergée à l’aide d’IIS ou le serveur de développement ASP.NET. Dans l’idéal, le même logiciel de serveur web doit être utilisé dans les deux environnements, car il est à l’aide de logiciels différents ajoute une autre variable dans la combinaison. Toutefois, la facilité d’utilisation du serveur de développement ASP.NET rend un choix intéressant dans l’environnement de développement. La bonne nouvelle est qu’il existe uniquement quelques différences fondamentales entre IIS et le serveur de développement ASP.NET, et si vous êtes conscient de ces différences vous pouvez prendre des mesures afin de garantir que l’application fonctionne et qu’il fonctionne de la même façon quel que soit le environnement.
 
@@ -138,7 +138,7 @@ Pour plus d’informations sur les sujets abordés dans ce didacticiel, consulte
 
 - [Intégration d’ASP.NET à IIS 7.0](https://www.iis.net/learn/application-frameworks/building-and-running-aspnet-applications/aspnet-integration-with-iis)
 - [À l’aide de l’authentification ASP.NET Forums avec tous les Types de contenu sur IIS 7](https://blogs.iis.net/bills/archive/2007/05/19/using-asp-net-forms-authentication-with-all-types-of-content-with-iis7-video.aspx) (vidéo)
-- [Serveurs Web dans Visual Web Developer](https://msdn.microsoft.com/en-us/library/58wxa9w5.aspx)
+- [Serveurs Web dans Visual Web Developer](https://msdn.microsoft.com/library/58wxa9w5.aspx)
 
 >[!div class="step-by-step"]
 [Précédent](common-configuration-differences-between-development-and-production-vb.md)

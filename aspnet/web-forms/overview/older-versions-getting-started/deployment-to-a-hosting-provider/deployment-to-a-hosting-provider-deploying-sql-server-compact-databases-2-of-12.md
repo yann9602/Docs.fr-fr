@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: d0b76c06495c51df3ed0f61cd318507a05240392
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5296bc1ca3fd0b24123bd79a550a7e2cffc34a44
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-sql-server-compact-databases---2-of-12"></a>Déploiement d’Application Web ASP.NET avec SQL Server Compact à l’aide de Visual Studio ou Visual Web Developer : déploiement de SQL Server Compact bases de données - 2 de 12
 ====================
@@ -37,7 +37,7 @@ Pour l’accès de la base de données, l’application Contoso University requi
 
 - [SQL Server Compact](https://www.microsoft.com/sqlserver/en/us/editions/compact.aspx) (le moteur de base de données).
 - [ASP.NET Universal Providers](http://www.hanselman.com/blog/IntroducingSystemWebProvidersASPNETUniversalProvidersForSessionMembershipRolesAndUserProfileOnSQLCompactAndSQLAzure.aspx) (lequel activer le système d’appartenance ASP.NET utiliser SQL Server Compact)
-- [Entity Framework 5.0](https://msdn.microsoft.com/en-us/library/gg696172(d=lightweight,v=vs.103).aspx)(Code First avec Migrations).
+- [Entity Framework 5.0](https://msdn.microsoft.com/library/gg696172(d=lightweight,v=vs.103).aspx)(Code First avec Migrations).
 
 La structure de base de données et d’autres (et non la totalité) des données dans les deux de l’application bases de données doivent également être déployés. En règle générale, lorsque vous développez une application, vous devez entrer des données de test dans une base de données que vous ne souhaitez pas déployer sur un site en direct. Toutefois, vous pouvez également entrer des données de production que vous ne souhaitez pas déployer. Dans ce didacticiel, vous allez configurer le projet de Contoso University afin que les logiciels requis et les données correctes sont incluses lorsque vous déployez.
 
@@ -47,7 +47,7 @@ Rappel : Si vous obtenez un message d’erreur, ou quelque chose ne fonctionne 
 
 L’exemple d’application utilise SQL Server Compact 4.0. Ce moteur de base de données est une option relativement nouveau pour les sites Web ; les versions antérieures de SQL Server Compact ne fonctionnent pas dans un environnement d’hébergement web. SQL Server Compact offre plusieurs avantages par rapport au scénario plus courant de développement avec SQL Server Express et le déploiement vers SQL Server. Selon le fournisseur d’hébergement que vous choisissez, SQL Server Compact peut être économique à déployer, car certains fournisseurs de frais supplémentaires pour prendre en charge une base de données SQL Server complète. Il n’existe aucun frais supplémentaire pour SQL Server Compact, car vous pouvez déployer le moteur de base de données lui-même en tant que partie de votre application web.
 
-Toutefois, vous devez également être conscience de ses limites. SQL Server Compact ne prend pas en charge la réplication, des vues, des déclencheurs ou des procédures stockées. (Pour obtenir une liste complète des fonctionnalités de SQL Server qui ne sont pas pris en charge par SQL Server Compact, consultez [les différences entre SQL Server Compact et SQL Server](https://msdn.microsoft.com/en-us/library/bb896140.aspx).) En outre, certains des outils que vous pouvez utiliser pour manipuler des schémas et les données dans les bases de données SQL Server et de SQL Server Express ne fonctionnent pas avec SQL Server Compact. Par exemple, vous ne pouvez pas utiliser SQL Server Management Studio ou SQL Server Data Tools dans Visual Studio avec des bases de données SQL Server Compact. Vous disposez d’autres options pour travailler avec des bases de données SQL Server Compact :
+Toutefois, vous devez également être conscience de ses limites. SQL Server Compact ne prend pas en charge la réplication, des vues, des déclencheurs ou des procédures stockées. (Pour obtenir une liste complète des fonctionnalités de SQL Server qui ne sont pas pris en charge par SQL Server Compact, consultez [les différences entre SQL Server Compact et SQL Server](https://msdn.microsoft.com/library/bb896140.aspx).) En outre, certains des outils que vous pouvez utiliser pour manipuler des schémas et les données dans les bases de données SQL Server et de SQL Server Express ne fonctionnent pas avec SQL Server Compact. Par exemple, vous ne pouvez pas utiliser SQL Server Management Studio ou SQL Server Data Tools dans Visual Studio avec des bases de données SQL Server Compact. Vous disposez d’autres options pour travailler avec des bases de données SQL Server Compact :
 
 - Vous pouvez utiliser l’Explorateur de serveurs dans Visual Studio, qui offre des fonctionnalités de manipulation de base de données limité pour SQL Server Compact.
 - Vous pouvez utiliser la fonctionnalité de manipulation de base de données de [WebMatrix](https://www.microsoft.com/web/webmatrix/), qui a plus de fonctionnalités que l’Explorateur de serveurs.
@@ -119,7 +119,7 @@ La première étape consiste à vous assurer que le projet de ContosoUniversity 
 
 En haut de la **Package Manager Console** fenêtre Sélectionnez ContosoUniversity.DAL comme projet par défaut puis at la `PM>` invite Entrez « enable-migrations ».
 
-![Activer-migrations_command](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image7.png)
+![enable-migrations_command](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image7.png)
 
 Cette commande crée un *Configuration.cs* fichier dans une nouvelle *Migrations* dossier dans le projet ContosoUniversity.DAL.
 
@@ -159,13 +159,13 @@ Cliquez sur le *School.sdf* , cliquez sur **supprimer**.
 
 Dans le **Package Manager Console** fenêtre, entrez la commande « Ajouter-migration initiale » pour créer la migration initiale et le nommer « Initiale ».
 
-![migration_command ajouter](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image11.png)
+![add-migration_command](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image11.png)
 
 Migrations Code First crée un autre fichier de classe dans le *Migrations* dossier et cette classe contient du code qui crée le schéma de base de données.
 
 Dans le **Package Manager Console**, entrez la commande « mise à jour de base de données » pour créer la base de données et exécuter le **Seed** (méthode).
 
-![database_command de mise à jour](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image12.png)
+![update-database_command](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image12.png)
 
 (Si vous obtenez une erreur qui indique une table existe déjà et ne peut pas être créée, c’est probablement que vous avez exécuté l’application une fois que vous avez supprimé la base de données et avant l’exécution de `update-database`. In that case, supprimez le *School.sdf* de fichiers à nouveau, puis réessayez la `update-database` commande.)
 
@@ -190,7 +190,7 @@ Connectez-vous en tant que « admin », à l’aide du mot de passe « Pas$ w
 Lorsque vous déployez un site pour la première fois, il est courant pour exclure tout ou partie des comptes d’utilisateur que vous créez pour le test. Dans ce cas, vous allez déployer un compte d’administrateur et aucun compte d’utilisateur. Au lieu de la suppression manuelle des comptes de test, vous allez créer une nouvelle base de données d’appartenance ayant uniquement le compte d’utilisateur un administrateur dont vous avez besoin en production.
 
 > [!NOTE]
-> La base de données d’appartenance stocke un hachage des mots de passe de compte. Pour déployer des comptes à partir d’un ordinateur à un autre, il se peut que vous devez vous assurer que les routines de hachage ne génèrent pas hachages différents sur le serveur de destination et sur l’ordinateur source. Ils génèrent les hachages mêmes lorsque vous utilisez les fournisseurs universels ASP.NET, tant que vous ne modifiez pas l’algorithme par défaut. L’algorithme par défaut est HMACSHA256 et qu’il est spécifié dans le **validation** attribut de la  **[machineKey](https://msdn.microsoft.com/en-us/library/w8h3skw9.aspx)**  élément dans le fichier Web.config.
+> La base de données d’appartenance stocke un hachage des mots de passe de compte. Pour déployer des comptes à partir d’un ordinateur à un autre, il se peut que vous devez vous assurer que les routines de hachage ne génèrent pas hachages différents sur le serveur de destination et sur l’ordinateur source. Ils génèrent les hachages mêmes lorsque vous utilisez les fournisseurs universels ASP.NET, tant que vous ne modifiez pas l’algorithme par défaut. L’algorithme par défaut est HMACSHA256 et qu’il est spécifié dans le **validation** attribut de la  **[machineKey](https://msdn.microsoft.com/library/w8h3skw9.aspx)**  élément dans le fichier Web.config.
 
 
 La base de données d’appartenance n’est pas conservée par les Migrations Code First, et il n’existe aucun initialiseur automatique qui alimente la base de données avec des comptes de test (comme c’est la base de données School). Par conséquent, pour conserver les données de test disponible vous apporterez une copie de la base de données de test avant de créer un nouveau.
@@ -243,7 +243,7 @@ Le moteur de base de données SQL Server Compact et les bases de données sont m
 
 ## <a name="more-information"></a>Informations complémentaires
 
-Pour plus d’informations sur NuGet, consultez [gérer les bibliothèques de projets avec NuGet](https://msdn.microsoft.com/en-us/magazine/hh547106.aspx) et [Documentation de NuGet](http://docs.nuget.org/docs/start-here/overview). Si vous ne souhaitez pas utiliser NuGet, vous devez apprendre à analyser un package NuGet pour déterminer ce qu’il fait lorsqu’il est installé. (Par exemple, il peut configurer *Web.config* transformations, configurer des scripts PowerShell à exécuter au moment de la génération, etc..) Pour en savoir plus sur le fonctionne de NuGet, consultez surtout [créer et publier un Package](http://docs.nuget.org/docs/creating-packages/creating-and-publishing-a-package) et [fichier de Configuration et des Transformations de Code Source](http://docs.nuget.org/docs/creating-packages/configuration-file-and-source-code-transformations).
+Pour plus d’informations sur NuGet, consultez [gérer les bibliothèques de projets avec NuGet](https://msdn.microsoft.com/magazine/hh547106.aspx) et [Documentation de NuGet](http://docs.nuget.org/docs/start-here/overview). Si vous ne souhaitez pas utiliser NuGet, vous devez apprendre à analyser un package NuGet pour déterminer ce qu’il fait lorsqu’il est installé. (Par exemple, il peut configurer *Web.config* transformations, configurer des scripts PowerShell à exécuter au moment de la génération, etc..) Pour en savoir plus sur le fonctionne de NuGet, consultez surtout [créer et publier un Package](http://docs.nuget.org/docs/creating-packages/creating-and-publishing-a-package) et [fichier de Configuration et des Transformations de Code Source](http://docs.nuget.org/docs/creating-packages/configuration-file-and-source-code-transformations).
 
 >[!div class="step-by-step"]
 [Précédent](deployment-to-a-hosting-provider-introduction-1-of-12.md)

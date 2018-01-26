@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started
 msc.type: authoredcontent
-ms.openlocfilehash: 6f93d6033b68773507d624125936f0a69777e2b7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 83fe815af9030aee10a5204718b00c79925e9126
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-the-entity-framework-40-and-the-objectdatasource-control-part-1-getting-started"></a>À l’aide d’Entity Framework 4.0 et du contrôle ObjectDataSource, partie 1 : prise en main
 ====================
@@ -30,7 +30,7 @@ Par [Tom Dykstra](https://github.com/tdykstra)
 > 
 > ## <a name="database-first"></a>Tout d’abord la base de données
 > 
-> Il existe trois méthodes que vous pouvez utiliser des données dans Entity Framework : *Database First*, *Model First*, et *Code First*. Ce didacticiel est pour la première base de données. Pour plus d’informations sur les différences entre ces flux de travail et les conseils sur la façon de choisir la meilleure pour votre scénario, consultez [flux de travail de développement Entity Framework](https://msdn.microsoft.com/en-us/library/ms178359.aspx#dbfmfcf).
+> Il existe trois méthodes que vous pouvez utiliser des données dans Entity Framework : *Database First*, *Model First*, et *Code First*. Ce didacticiel est pour la première base de données. Pour plus d’informations sur les différences entre ces flux de travail et les conseils sur la façon de choisir la meilleure pour votre scénario, consultez [flux de travail de développement Entity Framework](https://msdn.microsoft.com/library/ms178359.aspx#dbfmfcf).
 > 
 > ## <a name="web-forms"></a>Web Forms
 > 
@@ -47,7 +47,7 @@ Par [Tom Dykstra](https://github.com/tdykstra)
 > 
 > ## <a name="questions"></a>Questions
 > 
-> Si vous avez des questions qui ne sont pas directement liées à ce didacticiel, vous pouvez les valider pour le [forum de ASP.NET Entity Framework](https://forums.asp.net/1227.aspx), le [Entity Framework et LINQ to forum d’entités](https://social.msdn.microsoft.com/forums/en-US/adodotnetentityframework/threads/), ou [ StackOverflow.com](http://stackoverflow.com/).
+> Si vous avez des questions qui ne sont pas directement liées à ce didacticiel, vous pouvez les valider pour le [forum de ASP.NET Entity Framework](https://forums.asp.net/1227.aspx), le [Entity Framework et LINQ to forum d’entités](https://social.msdn.microsoft.com/forums/adodotnetentityframework/threads/), ou [ StackOverflow.com](http://stackoverflow.com/).
 
 
 Le `EntityDataSource` contrôle vous permet de créer une application très rapidement, mais elle requiert en général vous permet de conserver une quantité importante de logique métier et logique d’accès aux données dans votre *.aspx* pages. Si vous pensez que votre application à croître en complexité et requièrent une maintenance, vous pouvez investir plus de temps de développement au préalable afin de créer un *MULTICOUCHE* ou *en couche* structure de l’application qui est plus facile à gérer. Pour implémenter cette architecture, vous séparez la couche de présentation à partir de la couche de logique métier (BLL) et la couche d’accès aux données (DAL). La première consiste à implémenter cette structure à utiliser le `ObjectDataSource` contrôler au lieu du `EntityDataSource` contrôle. Lorsque vous utilisez la `ObjectDataSource` contrôle, vous implémentez votre propre code d’accès aux données, puis pour appeler dans *.aspx* pages à l’aide d’un contrôle contenant la plupart de ces fonctionnalités que les autres contrôles de source de données. Cela vous permet de combiner les avantages d’une approche multiniveau avec les avantages de l’utilisation d’un contrôle Web Forms pour accéder aux données.
@@ -60,7 +60,7 @@ Un `ObjectDataSource` fonctionnement du contrôle en appelant une classe que vou
 
 Outre les opérations CRUD de base, la classe que vous créez pour l’utiliser avec le `ObjectDataSource` contrôle ne doivent pas exécuter la logique métier lors de la `ObjectDataSource` lit ou met à jour des données. Par exemple, lorsque vous mettez à jour un service, vous devrez peut-être valider que sans autres départements ont le même administrateur, car une personne ne peut pas être administrateur de plus d’un service.
 
-Dans certains `ObjectDataSource` documentation, telles que la [vue d’ensemble de la classe de ObjectDataSource](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.objectdatasource.aspx), le contrôle appelle une classe appelée un *objet métier* qui inclut une logique métier et logique d’accès aux données . Dans ce didacticiel, vous allez créer des classes distinctes pour la logique métier et logique d’accès aux données. La classe qui encapsule la logique d’accès aux données est appelée un *référentiel*. La classe de logique métier inclut à la fois des méthodes de logique métier et des méthodes d’accès aux données, mais les méthodes d’accès aux données appellent le référentiel pour effectuer des tâches d’accès aux données.
+Dans certains `ObjectDataSource` documentation, telles que la [vue d’ensemble de la classe de ObjectDataSource](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.aspx), le contrôle appelle une classe appelée un *objet métier* qui inclut une logique métier et logique d’accès aux données . Dans ce didacticiel, vous allez créer des classes distinctes pour la logique métier et logique d’accès aux données. La classe qui encapsule la logique d’accès aux données est appelée un *référentiel*. La classe de logique métier inclut à la fois des méthodes de logique métier et des méthodes d’accès aux données, mais les méthodes d’accès aux données appellent le référentiel pour effectuer des tâches d’accès aux données.
 
 Vous allez également créer une couche d’abstraction entre votre BLL et la couche DAL qui facilite l’unité automatisée de la couche BLL de test. Cette couche d’abstraction est implémentée par la création d’une interface et l’utilisation de l’interface lorsque vous instanciez le référentiel dans la classe de logique métier. Cela rend possible pour fournir la logique métier de classe avec une référence à un objet qui implémente l’interface de référentiel. Pour un fonctionnement normal, vous fournissez un objet de référentiel qui fonctionne avec Entity Framework. Pour le test, vous fournissez un objet de référentiel qui fonctionne avec les données stockées d’une manière qui vous pouvez de manipuler facilement, tels que des variables de classe définis en tant que collections.
 

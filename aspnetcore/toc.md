@@ -130,6 +130,7 @@
 ## [Contrôleurs de test](xref:mvc/controllers/testing)
 ## [Débogage distant](/visualstudio/debugger/remote-debugging-azure)
 ## [Débogage d’instantané](/azure/application-insights/app-insights-snapshot-debugger)
+## [Débogage d’instantané dans Visual Studio](/visualstudio/debugger/debug-live-azure-applications)
 
 # [Accès aux données et stockage](data/index.md)
 ## [Bien démarrer avec les pages Razor et Entity Framework Core à l’aide de Visual Studio](xref:data/ef-rp/intro)
@@ -204,6 +205,7 @@
 ### [Utiliser l’authentification par cookie sans Identity](xref:security/authentication/cookie)
 ### [Azure Active Directory](xref:security/authentication/azure-active-directory/index)
 #### [Intégrer Azure AD dans une application web ASP.NET Core](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-openidconnect-aspnetcore/)
+#### [Intégrer Azure AD B2C dans une application web ASP.NET Core orientée client](xref:security/authentication/azure-ad-b2c)
 #### [Appeler une API web ASP.NET Core à partir d’une application WPF via Azure AD](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-native-aspnetcore/)
 #### [Appeler une API web dans une application web ASP.NET Core via Azure AD](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore/)
 ### [Sécuriser les applications ASP.NET Core avec IdentityServer4](https://identityserver4.readthedocs.io/)

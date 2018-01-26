@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/models/file-uploads
-ms.openlocfilehash: 3c5abe84a5c7cc399e0586e680a414fab7a26c1d
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: bc1cfe0d6ee88a0af49cdff9ce77ad42f57b95f7
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="file-uploads-in-aspnet-core"></a>Téléchargements de fichiers dans ASP.NET Core
 
@@ -199,4 +199,4 @@ Ce paramètre s’applique uniquement à IIS. Le comportement ne se produit par 
 
 ### <a name="null-reference-exception-with-iformfile"></a>Exception de référence null avec IFormFile
 
-Si votre contrôleur est acceptant téléchargé à l’aide de fichiers `IFormFile` , mais vous découvrirez que la valeur est toujours null, vérifiez la spécification de votre formulaire HTML un `enctype` valeur `multipart/form-data`. Si cet attribut n’est pas défini sur le `<form>` élément, le téléchargement du fichier ne se produira pas et n’importe quelle limite `IFormFile` arguments est null.
+Si votre contrôleur est acceptant téléchargé à l’aide de fichiers `IFormFile` , mais vous découvrirez que la valeur est toujours null, vérifiez la spécification de votre formulaire HTML un `enctype` valeur `multipart/form-data`. Si cet attribut n’est pas défini sur le `<form>` élément, le téléchargement du fichier ne se produit et n’importe quelle limite `IFormFile` arguments est null.

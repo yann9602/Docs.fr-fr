@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/deploying-membership-databases-to-enterprise-environments
 msc.type: authoredcontent
-ms.openlocfilehash: f4d898b6e09b5b9df44b62f9cb4b9d367f288efb
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 27fade9fc5cae917579d4963da7bca12f6a5cda1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-membership-databases-to-enterprise-environments"></a>Déploiement de bases de données d’appartenance pour les environnements d’entreprise
 ====================
@@ -44,8 +44,8 @@ Malheureusement, les bases de données de l’appartenance ASP.NET présentent d
 
 Utilisez ces instructions lorsque vous choisissez la configuration d’une base de données d’appartenance dans un environnement de serveur d’entreprise :
 
-- Dans la mesure du possible, ne déployez pas les bases de données d’appartenance. Au lieu de cela, créez la base de données d’appartenance manuellement sur le serveur de base de données cible. Si vous n’avez pas personnalisé votre schéma de base de données d’abonnement, vous pouvez simplement créer un nouveau sur place à la destination à l’aide de la [ASP.NET SQL Server Registration Tool (aspnet\_regsql.exe)](https://msdn.microsoft.com/en-us/library/ms229862(v=vs.100).aspx).
-- Si vous ne disposez d’aucune option mais sur déployer une base de données d’appartenance & le #x 2014 ; par exemple, si vous avez apporté des modifications importantes au schéma de base de données & #x 2014 ; vous devez effectuer un déploiement de schéma uniquement de la base de données d’appartenance pour exclure les données de compte d’utilisateur, et puis exécuter un script de post-déploiement pour ajouter des données de configuration requis. Vous trouverez des instructions générales sur ces approches dans [Comment : déployer les ASP.NET d’appartenance de base de données sans y compris les comptes d’utilisateur](https://msdn.microsoft.com/en-us/library/ff361972(v=vs.100).aspx).
+- Dans la mesure du possible, ne déployez pas les bases de données d’appartenance. Au lieu de cela, créez la base de données d’appartenance manuellement sur le serveur de base de données cible. Si vous n’avez pas personnalisé votre schéma de base de données d’abonnement, vous pouvez simplement créer un nouveau sur place à la destination à l’aide de la [ASP.NET SQL Server Registration Tool (aspnet\_regsql.exe)](https://msdn.microsoft.com/library/ms229862(v=vs.100).aspx).
+- Si vous ne disposez d’aucune option mais sur déployer une base de données d’appartenance & le #x 2014 ; par exemple, si vous avez apporté des modifications importantes au schéma de base de données & #x 2014 ; vous devez effectuer un déploiement de schéma uniquement de la base de données d’appartenance pour exclure les données de compte d’utilisateur, et puis exécuter un script de post-déploiement pour ajouter des données de configuration requis. Vous trouverez des instructions générales sur ces approches dans [Comment : déployer les ASP.NET d’appartenance de base de données sans y compris les comptes d’utilisateur](https://msdn.microsoft.com/library/ff361972(v=vs.100).aspx).
 
 Il est important de se rappeler que *le schéma de votre base de données d’appartenance est susceptible d’être relativement statique*. Même si vous avez personnalisé la base de données d’appartenance, il est peu probable que vous aurez besoin mettre à jour le schéma sur un répertoire régulièrement & #x 2014 ; il ne va pas être modifiés avec la même fréquence que le code dans une application web ou un projet de base de données. Par conséquent, vous devez ne doit pas inclure la base de données d’appartenance dans les processus de déploiement automatisé ou seule étape.
 
@@ -57,8 +57,8 @@ L’alternative consiste à utiliser l’utilitaire VSDBCMD pour mettre à jour 
 
 Vous pouvez utiliser ces étapes pour mettre à jour un schéma de base de données d’appartenance :
 
-1. Utilisez l’outil VSDBCMD **importation** action pour générer un fichier .dbschema pour votre base de données source d’appartenance. Cette procédure est décrite dans [Comment : importer un schéma à partir d’une invite de commandes](https://msdn.microsoft.com/en-us/library/dd172135.aspx).
-2. Utilisez l’outil VSDBCMD **déployer** action pour déployer le fichier .dbschema à votre base de données d’appartenance de destination. Cette procédure est décrite dans [référence de ligne de commande pour VSDBCMD. EXE (déploiement et importation de schéma)](https://msdn.microsoft.com/en-us/library/dd193283.aspx).
+1. Utilisez l’outil VSDBCMD **importation** action pour générer un fichier .dbschema pour votre base de données source d’appartenance. Cette procédure est décrite dans [Comment : importer un schéma à partir d’une invite de commandes](https://msdn.microsoft.com/library/dd172135.aspx).
+2. Utilisez l’outil VSDBCMD **déployer** action pour déployer le fichier .dbschema à votre base de données d’appartenance de destination. Cette procédure est décrite dans [référence de ligne de commande pour VSDBCMD. EXE (déploiement et importation de schéma)](https://msdn.microsoft.com/library/dd193283.aspx).
 
 ## <a name="conclusion"></a>Conclusion
 
@@ -66,7 +66,7 @@ Cette rubrique décrit les défis que vous pouvez rencontrer lorsque vous avez b
 
 ## <a name="further-reading"></a>informations supplémentaires
 
-Pour plus d’instructions et des exemples montrant comment utiliser VSDBCMD, consultez [référence de ligne de commande pour VSDBCMD. EXE (déploiement et importation de schéma)](https://msdn.microsoft.com/en-us/library/dd193283.aspx) et [Comment : importer un schéma à partir d’une invite de commandes](https://msdn.microsoft.com/en-us/library/dd172135.aspx). Pour plus d’informations sur l’utilisation d’aspnet\_regsql.exe pour créer des bases de données d’appartenance, consultez [ASP.NET SQL Server Registration Tool (aspnet\_regsql.exe)](https://msdn.microsoft.com/en-us/library/ms229862(v=vs.100).aspx). Pour obtenir des instructions plus générales sur le déploiement de bases de données d’appartenance, consultez [Comment : déployer les ASP.NET d’appartenance de base de données sans y compris les comptes d’utilisateur](https://msdn.microsoft.com/en-us/library/ff361972(v=vs.100).aspx).
+Pour plus d’instructions et des exemples montrant comment utiliser VSDBCMD, consultez [référence de ligne de commande pour VSDBCMD. EXE (déploiement et importation de schéma)](https://msdn.microsoft.com/library/dd193283.aspx) et [Comment : importer un schéma à partir d’une invite de commandes](https://msdn.microsoft.com/library/dd172135.aspx). Pour plus d’informations sur l’utilisation d’aspnet\_regsql.exe pour créer des bases de données d’appartenance, consultez [ASP.NET SQL Server Registration Tool (aspnet\_regsql.exe)](https://msdn.microsoft.com/library/ms229862(v=vs.100).aspx). Pour obtenir des instructions plus générales sur le déploiement de bases de données d’appartenance, consultez [Comment : déployer les ASP.NET d’appartenance de base de données sans y compris les comptes d’utilisateur](https://msdn.microsoft.com/library/ff361972(v=vs.100).aspx).
 
 >[!div class="step-by-step"]
 [Précédent](deploying-database-role-memberships-to-test-environments.md)

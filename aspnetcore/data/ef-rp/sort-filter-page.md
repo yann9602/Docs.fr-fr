@@ -8,11 +8,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/sort-filter-page
-ms.openlocfilehash: 08f00e183dd8a8daa883d0b9ff15698b3a39f625
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 24649374b71da39d638d943617a219d45f064846
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="sorting-filtering-paging-and-grouping---ef-core-with-razor-pages-3-of-8"></a>Le tri, le filtrage, la pagination et le regroupement - Core EF avec les Pages Razor (3 sur 8)
 
@@ -139,7 +139,7 @@ Dans *Views/Student/Index.cshtml*, ajoutez le code en surbrillance suivant pour 
 
 [!code-html[](intro/samples/cu/Pages/Students/Index3.cshtml?highlight=14-23&range=1-25)]
 
-Le code précédent utilise la `<form>` [d’assistance de balise](xref:mvc/views/tag-helpers/intro) pour ajouter la zone de texte de recherche et le bouton. Par défaut, le `<form>` application d’assistance de balise envoie des données de formulaire avec une publication. Avec la publication, les paramètres sont passés dans le corps du message HTTP et non dans l’URL. Lorsque HTTP GET est utilisée, les données du formulaire sont transmises dans l’URL sous forme de chaînes de requête. En passant les données avec des chaînes de requête permet aux utilisateurs de l’URL de signet. Le [recommandations du W3C](https://www.w3.org/2001/tag/doc/whenToUseGet.html) est recommandé que GET doit être utilisée lorsque l’action n’entraîne pas une mise à jour.
+Le code précédent utilise la `<form>` [d’assistance de balise](xref:mvc/views/tag-helpers/intro) pour ajouter la zone de texte de recherche et le bouton. Par défaut, le `<form>` application d’assistance de balise envoie des données de formulaire avec une publication. Avec la publication, les paramètres sont passés dans le corps du message HTTP et non dans l’URL. Lorsque HTTP GET est utilisée, les données du formulaire sont transmises dans l’URL sous forme de chaînes de requête. En passant les données avec des chaînes de requête permet aux utilisateurs de l’URL de signet. Le [recommandations du W3C](https://www.w3.org/2001/tag/doc/whenToUseGet.html) est recommandé que GET doit être utilisée lorsque l’action ne produit pas une mise à jour.
 
 Testez l’application :
 

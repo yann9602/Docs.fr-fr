@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/older-versions/mapping-users-to-connections
 msc.type: authoredcontent
-ms.openlocfilehash: 561c5739c4e8465efeb4b5d1eaf8a196dab8673f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 896bf4142ce090e39ed5697ff053cd56728318ed
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="mapping-signalr-users-to-connections-in-signalr-1x"></a>Mappage des utilisateurs de SignalR pour les connexions SignalR 1.x
 ====================
@@ -98,7 +98,7 @@ Puis, dans le concentrateur, vous pouvez suivre l’état de chaque connexion av
 
 ### <a name="azure-table-storage"></a>Stockage de table Windows Azure
 
-L’exemple de stockage de table Azure suivant est semblable à l’exemple de base de données. Il n’inclut pas toutes les informations que vous devrez commencer avec le Service de stockage de Table Azure. Pour plus d’informations, consultez [comment utiliser le stockage de Table à partir de .NET](https://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-how-to-use-tables/).
+L’exemple de stockage de table Azure suivant est semblable à l’exemple de base de données. Il n’inclut pas toutes les informations que vous devrez commencer avec le Service de stockage de Table Azure. Pour plus d’informations, consultez [comment utiliser le stockage de Table à partir de .NET](https://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-tables/).
 
 L’exemple suivant montre une entité de table pour stocker les informations de connexion. Il partitionne les données par nom d’utilisateur et identifie chaque entité par l’id de connexion pour un utilisateur peut avoir plusieurs connexions à tout moment.
 

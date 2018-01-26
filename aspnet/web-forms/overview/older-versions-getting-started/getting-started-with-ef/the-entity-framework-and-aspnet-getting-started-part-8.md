@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-8
 msc.type: authoredcontent
-ms.openlocfilehash: 78a54fb1b0e4c0ebd5445cca175103471925a065
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 323ee44f43f6d4081bd9ba50791755696bc9128f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-8"></a>Mise en route avec base de données Entity Framework 4.0 tout d’abord et 4 les Web Forms ASP.NET - partie 8
 ====================
@@ -125,11 +125,11 @@ Ceci conclut cette série de didacticiels sur la mise en route avec Entity Frame
 
 - [Forum aux questions de Entity Framework](http://www.ef-faq.org/introduction.html)
 - [Blog de l’équipe Entity Framework](https://blogs.msdn.com/b/adonet/)
-- [Entity Framework dans la bibliothèque MSDN](https://msdn.microsoft.com/en-us/library/bb399572.aspx)
-- [Entity Framework dans le centre de développement de données MSDN](https://msdn.microsoft.com/en-us/data/ef.aspx)
-- [Vue d’ensemble du contrôle serveur Web EntityDataSource dans MSDN Library](https://msdn.microsoft.com/en-us/library/cc488502.aspx)
-- [Contrôle EntityDataSource référence d’API dans la bibliothèque MSDN](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.entitydatasource.aspx)
-- [Entity Framework Forums MSDN](https://social.msdn.microsoft.com/forums/en-US/adodotnetentityframework/)
+- [Entity Framework dans la bibliothèque MSDN](https://msdn.microsoft.com/library/bb399572.aspx)
+- [Entity Framework dans le centre de développement de données MSDN](https://msdn.microsoft.com/data/ef.aspx)
+- [Vue d’ensemble du contrôle serveur Web EntityDataSource dans MSDN Library](https://msdn.microsoft.com/library/cc488502.aspx)
+- [Contrôle EntityDataSource référence d’API dans la bibliothèque MSDN](https://msdn.microsoft.com/library/system.web.ui.webcontrols.entitydatasource.aspx)
+- [Entity Framework Forums MSDN](https://social.msdn.microsoft.com/forums/adodotnetentityframework/)
 - [Blog de Julie Lerman](http://thedatafarm.com/blog/)
 
 >[!div class="step-by-step"]

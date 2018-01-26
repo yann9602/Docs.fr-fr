@@ -8,11 +8,11 @@ ms.date: 09/20/2017
 ms.topic: article
 ms.prod: asp.net-core
 uid: performance/caching/response
-ms.openlocfilehash: 104cfb2eab706a2ec6278b4d1c461f70b0af5df1
-ms.sourcegitcommit: 216dfac27542f10a79274a9ce60dc449e888ed20
+ms.openlocfilehash: d7726443dbcc34c21fd6cf0f56c4412863617b9f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="response-caching-in-aspnet-core"></a>Réponse mise en cache dans ASP.NET Core
 
@@ -35,15 +35,15 @@ Common `Cache-Control` directives sont affichés dans le tableau suivant.
 | [public](https://tools.ietf.org/html/rfc7234#section-5.2.2.5)   | Un cache peut stocker la réponse. |
 | [private](https://tools.ietf.org/html/rfc7234#section-5.2.2.6)  | La réponse ne doit pas être stockée par un cache partagé. Un cache privé peut stocker et réutiliser la réponse. |
 | [max-age](https://tools.ietf.org/html/rfc7234#section-5.2.1.1)  | Le client n’accepte pas de réponse dont âge est supérieur au nombre de secondes spécifié. Exemples : `max-age=60` (60 secondes), `max-age=2592000` (1 mois) |
-| [Aucun cache](https://tools.ietf.org/html/rfc7234#section-5.2.1.4) | **Sur les demandes**: un cache ne doit pas utiliser de réponse stockée pour satisfaire la demande. Remarque : Le serveur d’origine génère à nouveau la réponse pour le client et l’intergiciel (middleware) met à jour la réponse stockée dans son cache.<br><br>**Sur les réponses**: la réponse ne doit pas être utilisée pour une demande ultérieure sans validation sur le serveur d’origine. |
-| [Aucun magasin](https://tools.ietf.org/html/rfc7234#section-5.2.1.5) | **Sur les demandes**: un cache ne doit pas stocker la demande.<br><br>**Sur les réponses**: un cache ne doit pas stocker n’importe quelle partie de la réponse. |
+| [no-cache](https://tools.ietf.org/html/rfc7234#section-5.2.1.4) | **Sur les demandes**: un cache ne doit pas utiliser de réponse stockée pour satisfaire la demande. Remarque : Le serveur d’origine génère à nouveau la réponse pour le client et l’intergiciel (middleware) met à jour la réponse stockée dans son cache.<br><br>**Sur les réponses**: la réponse ne doit pas être utilisée pour une demande ultérieure sans validation sur le serveur d’origine. |
+| [no-store](https://tools.ietf.org/html/rfc7234#section-5.2.1.5) | **Sur les demandes**: un cache ne doit pas stocker la demande.<br><br>**Sur les réponses**: un cache ne doit pas stocker n’importe quelle partie de la réponse. |
 
 Autres en-têtes de cache qui jouent un rôle dans la mise en cache sont affichés dans le tableau suivant.
 
 | Header                                                     | Fonction |
 | ---------------------------------------------------------- | -------- |
-| [Durée de vie](https://tools.ietf.org/html/rfc7234#section-5.1)     | Une estimation de la durée en secondes écoulées depuis la réponse a été générée ou validée sur le serveur d’origine. |
-| [Arrive à expiration](https://tools.ietf.org/html/rfc7234#section-5.3) | Date/heure après laquelle la réponse est considérée comme obsolète. |
+| [Age](https://tools.ietf.org/html/rfc7234#section-5.1)     | Une estimation de la durée en secondes écoulées depuis la réponse a été générée ou validée sur le serveur d’origine. |
+| [Expires](https://tools.ietf.org/html/rfc7234#section-5.3) | Date/heure après laquelle la réponse est considérée comme obsolète. |
 | [Pragma](https://tools.ietf.org/html/rfc7234#section-5.4)  | Existe pour descendante compatibilité avec HTTP/1.0 met en cache pour le paramètre `no-cache` comportement. Si le `Cache-Control` en-tête est présent, le `Pragma` en-tête est ignoré. |
 | [Varier](https://tools.ietf.org/html/rfc7231#section-7.1.4)  | Spécifie qu’une réponse mise en cache ne doit pas être envoyée tant que tous les de la `Vary` correspondent à des champs d’en-tête dans la demande d’origine de la réponse mise en cache et la nouvelle demande. |
 
@@ -65,7 +65,7 @@ Pour plus d’informations, consultez [Introduction à la mise en cache dans ASP
 
 ### <a name="distributed-cache"></a>Cache distribué
 
-Utiliser un cache distribué pour stocker des données en mémoire lorsque l’application est hébergée dans une batterie de serveurs cloud ou le serveur. Le cache est partagé entre les serveurs qui traitent les demandes. Un client peut soumettre une demande qui est gérée par n’importe quel serveur dans le groupe et les données mises en cache pour le client sont disponibles. ASP.NET Core offre SQL Server et les caches Redis distribué.
+Utiliser un cache distribué pour stocker des données en mémoire lorsque l’application est hébergée dans une batterie de serveurs cloud ou le serveur. Le cache est partagé entre les serveurs qui traitent les demandes. Un client peut soumettre une demande traitée par n’importe quel serveur dans le groupe et mis en cache des données pour le client est disponible. ASP.NET Core offre SQL Server et les caches Redis distribué.
 
 Pour plus d’informations, consultez [fonctionne avec un cache distribué](xref:performance/caching/distributed).
 
@@ -90,7 +90,7 @@ Le `ResponseCacheAttribute` spécifie les paramètres nécessaires à la configu
 
 `VaryByQueryKeys string[]`(nécessite ASP.NET Core 1.1 et versions ultérieures) : si la valeur, l’intergiciel (middleware) réponse mise en cache varie selon la réponse stockée par les valeurs de la liste donnée des clés de requête. L’intergiciel (middleware) réponse mise en cache doit être activé pour définir le `VaryByQueryKeys` propriété ; sinon, une exception runtime est levée. Il n’existe aucun en-tête HTTP correspondant pour le `VaryByQueryKeys` propriété. Cette propriété est une fonctionnalité HTTP gérée par l’intergiciel (middleware) réponse mise en cache. Pour l’intergiciel (middleware) servir une réponse mise en cache, la chaîne de requête et la valeur de chaîne de requête doivent correspondre à une demande précédente. Par exemple, considérez la séquence des demandes et les résultats présentés dans le tableau suivant.
 
-| Requête                          | Résultat                   |
+| Demande                          | Résultat                   |
 | -------------------------------- | ------------------------ |
 | `http://example.com?key1=value1` | retourné à partir du serveur     |
 | `http://example.com?key1=value1` | retourné à partir de l’intergiciel (middleware) |
@@ -177,9 +177,9 @@ Cache-Control: public,max-age=60
 
 * [Mise en cache dans HTTP à partir de la spécification](https://tools.ietf.org/html/rfc7234#section-3)
 * [Cache-Control](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9)
-* [La mise en cache en mémoire](xref:performance/caching/memory)
-* [Utilisation avec un cache distribué](xref:performance/caching/distributed)
-* [Détection des modifications avec modification de jetons](xref:fundamentals/primitives/change-tokens)
+* [Mise en cache en mémoire](xref:performance/caching/memory)
+* [Utilisation d’un cache distribué](xref:performance/caching/distributed)
+* [Détecter les modifications à l’aide de jetons de modification](xref:fundamentals/primitives/change-tokens)
 * [Intergiciel de mise en cache des réponses](xref:performance/caching/middleware)
-* [Application d’assistance de balise de cache](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
-* [Application d’assistance de balise de Cache distribué](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)
+* [Tag Helper de cache](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
+* [Tag Helper de cache distribué](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)

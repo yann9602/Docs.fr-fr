@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/aspnet-error-handling
 msc.type: authoredcontent
-ms.openlocfilehash: d5d89a6a82c91b915d61ddc3c350ea0935511c07
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c5ec43ac78be4a9452ebaa6495a6883506ac162f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-error-handling"></a>Gestion des erreurs de ASP.NET
 ====================
@@ -307,13 +307,13 @@ Afficher le journal ELMAH est facile, mais tout d’abord, vous allez créer une
 
     ![Gestion des erreurs ASP.NET - journal des erreurs ELMAH](aspnet-error-handling/_static/image9.png)
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Dans ce didacticiel, vous avez appris sur la gestion des erreurs au niveau de l’application, le niveau de la page et le niveau de code. Vous avez également appris à consigner les erreurs gérées et non gérées pour consultation ultérieure. Vous avez ajouté l’utilitaire ELMAH pour fournir la journalisation de l’exception et la notification à votre application à l’aide de NuGet. En outre, vous avez appris sur l’importance des messages d’erreur de sécurité.
 
 ## <a name="tutorial-series-conclusion"></a>Conclusion de la série de didacticiels
 
-*Merci de suivre. J’espère que cet ensemble de didacticiels vous a permis de vous familiariser avec ASP.NET Web Forms. Si vous avez besoin de plus d’informations sur les fonctionnalités de Web Forms disponibles dans ASP.NET 4.5 et Visual Studio 2013, consultez* [ *ASP.NET et Web Tools pour Visual Studio 2013 Release Notes* ](../../../../visual-studio/overview/2013/release-notes.md)  *. En outre, veillez à examiner le didacticiel mentionné dans le*   ***étapes *** section et defintely essaient le* [ *gratuite de Azure* ](https://azure.microsoft.com/pricing/free-trial/)*.*
+*Merci de suivre. J’espère que cet ensemble de didacticiels vous a permis de vous familiariser avec ASP.NET Web Forms. Si vous avez besoin de plus d’informations sur les fonctionnalités de Web Forms disponibles dans ASP.NET 4.5 et Visual Studio 2013, consultez* [ *ASP.NET et Web Tools pour Visual Studio 2013 Release Notes* ](../../../../visual-studio/overview/2013/release-notes.md)  *. En outre, veillez à examiner le didacticiel mentionné dans le* ***étapes *** section et defintely essaient le* [ *gratuite de Azure* ](https://azure.microsoft.com/pricing/free-trial/)*.*
 
 ![Nous vous remercions - Erik](aspnet-error-handling/_static/image10.png)  
 
@@ -335,13 +335,13 @@ En savoir plus sur le déploiement de votre application web sur Microsoft Azure,
 
 J’aimerais remercier les personnes suivantes qui a effectué des contributions significatives pour le contenu de cette série de didacticiels :
 
-- [Blog d’Alberto Poblacion, MVP &amp; MCT, Espagne](https://mvp.microsoft.com/en-us/mvp/Alberto%20Poblacion%20Bolano-36772)
+- [Alberto Poblacion, MVP &amp; MCT, Spain](https://mvp.microsoft.com/mvp/Alberto%20Poblacion%20Bolano-36772)
 - [Alex Thissen, pays-bas](http://blog.alexthissen.nl/) (twitter : [ @alexthissen ](http://twitter.com/alexthissen))
 - [Andre Tournier, États-Unis](http://andret503.wordpress.com/)
 - Apurva Joshi, Microsoft
-- [Bojan Vrhovnik, Slovénie](http://twitter.com/bvrhovnik)
+- [Bojan Vrhovnik, Slovenia](http://twitter.com/bvrhovnik)
 - [Bruno Sonnino, Brésil](http://msmvps.com/blogs/bsonnino) (twitter : [ @bsonnino ](http://twitter.com/bsonnino))
-- [Déni de service Carlos Santos, Brésil](http://www.carloscds.net/)
+- [Carlos dos Santos, Brazil](http://www.carloscds.net/)
 - [Dave Campbell, États-Unis](http://www.wynapse.com/) (twitter : [ @windowsdevnews ](http://twitter.com/windowsdevnews))
 - [Jon Galloway, Microsoft](https://weblogs.asp.net/jgalloway) (twitter : [ @jongalloway ](http://twitter.com/jongalloway))
 - [Des dièses de Michael, États-Unis](http://www.930solutions.com/) (twitter : [ @mrsharps ](http://twitter.com/mrsharps))

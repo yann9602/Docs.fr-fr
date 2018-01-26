@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-2
 msc.type: authoredcontent
-ms.openlocfilehash: 5d4c7d7d02ced5a99db5b59f9e2e1adf6588208a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a573b47d27767dc78d557cd2b6c73714eb9e94f4
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="part-2-creating-the-domain-models"></a>Partie 2 : Créer les modèles de domaine
 ====================
@@ -32,9 +32,9 @@ Il existe trois façons de l’approche Entity Framework :
 - Modèle d’abord : vous démarrez avec un modèle visual et Entity Framework génère la base de données et le code.
 - Code-first : vous démarrez avec le code et Entity Framework génère la base de données.
 
-Nous utilisons l’approche code-first, donc nous allons commencer en définissant les objets de domaine en tant que POCOs (des objets brut-old CLR). Avec l’approche code-first, objets de domaine n’avez pas besoin tout code supplémentaire pour prendre en charge de la couche de base de données, telles que les transactions ou la persistance. (Plus précisément, ils n’avez pas besoin d’hériter la [EntityObject](https://msdn.microsoft.com/en-us/library/system.data.objects.dataclasses.entityobject.aspx) classe.) Vous pouvez toujours utiliser des annotations de données pour contrôler comment Entity Framework crée le schéma de base de données.
+Nous utilisons l’approche code-first, donc nous allons commencer en définissant les objets de domaine en tant que POCOs (des objets brut-old CLR). Avec l’approche code-first, objets de domaine n’avez pas besoin tout code supplémentaire pour prendre en charge de la couche de base de données, telles que les transactions ou la persistance. (Plus précisément, ils n’avez pas besoin d’hériter la [EntityObject](https://msdn.microsoft.com/library/system.data.objects.dataclasses.entityobject.aspx) classe.) Vous pouvez toujours utiliser des annotations de données pour contrôler comment Entity Framework crée le schéma de base de données.
 
-Étant donné que POCOs ne s’appliquent pas toutes les propriétés supplémentaires qui décrivent [de base de données d’état](https://msdn.microsoft.com/en-us/library/system.data.entitystate.aspx), ils peuvent facilement être sérialisés vers JSON ou XML. Toutefois, cela ne signifie pas vous devez toujours exposer vos modèles Entity Framework directement aux clients, comme nous le verrons plus tard dans le didacticiel.
+Étant donné que POCOs ne s’appliquent pas toutes les propriétés supplémentaires qui décrivent [de base de données d’état](https://msdn.microsoft.com/library/system.data.entitystate.aspx), ils peuvent facilement être sérialisés vers JSON ou XML. Toutefois, cela ne signifie pas vous devez toujours exposer vos modèles Entity Framework directement aux clients, comme nous le verrons plus tard dans le didacticiel.
 
 Nous allons créer les POCOs suivants :
 

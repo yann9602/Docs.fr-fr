@@ -2,7 +2,7 @@
 uid: mvc/overview/getting-started/getting-started-with-ef-using-mvc/reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
 title: "Lors de la lecture des données associées avec Entity Framework dans une Application ASP.NET MVC | Documents Microsoft"
 author: tdykstra
-description: /AJAX/Tutorials/Using-AJAX-Control-Toolkit-Controls-and-Control-Extenders-VB
+description: /ajax/tutorials/using-ajax-control-toolkit-controls-and-control-extenders-vb
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/07/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 1f4912bb3113a8f9cdae4211e055a7e317ab2aff
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7a74d01f306abeeac5ac28c942f03001e0fe00f8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="reading-related-data-with-the-entity-framework-in-an-aspnet-mvc-application"></a>Les données avec Entity Framework dans une Application ASP.NET MVC inhérentes à la lecture
 ====================
@@ -45,7 +45,7 @@ Il existe plusieurs façons qu’Entity Framework peut charger des données conn
 - *Chargement hâtif*. Lors de la lecture de l’entité, les données associées sont récupérées en même temps. Cela entraîne généralement une requête de jointure unique qui extrait toutes les données que nécessaire. Vous spécifiez un chargement hâtif à l’aide de la `Include` (méthode).
 
     ![Eager_loading_example](https://asp.net/media/2577856/Windows-Live-Writer_Reading-Re.NET-MVC-Application-5-of-10h1_ADC3_Eager_loading_example_33f907ff-f0b0-4057-8e75-05a8cacac807.png)
-- *Chargement explicite*. Cela revient à chargement différé, à ceci près que vous explicitement de récupérer les données associées dans le code ; Il ne se produit automatiquement lorsque vous accédez à une propriété de navigation. Vous chargez manuellement les données associées en obtenant l’entrée du gestionnaire objet état pour une entité et l’appel du [Collection.Load](https://msdn.microsoft.com/en-us/library/gg696220(v=vs.103).aspx) méthode pour les collections ou les [Reference.Load](https://msdn.microsoft.com/en-us/library/gg679166(v=vs.103).aspx) méthode pour les propriétés qui contiennent un entité unique. (Dans l’exemple suivant, si vous souhaitez charger la propriété de navigation administrateur, vous devez remplacer `Collection(x => x.Courses)` avec `Reference(x => x.Administrator)`.) En règle générale, vous pouvez utiliser le chargement explicite uniquement lorsque vous avez activé la chargement désactivé différé.
+- *Chargement explicite*. Cela revient à chargement différé, à ceci près que vous explicitement de récupérer les données associées dans le code ; Il ne se produit automatiquement lorsque vous accédez à une propriété de navigation. Vous chargez manuellement les données associées en obtenant l’entrée du gestionnaire objet état pour une entité et l’appel du [Collection.Load](https://msdn.microsoft.com/library/gg696220(v=vs.103).aspx) méthode pour les collections ou les [Reference.Load](https://msdn.microsoft.com/library/gg679166(v=vs.103).aspx) méthode pour les propriétés qui contiennent un entité unique. (Dans l’exemple suivant, si vous souhaitez charger la propriété de navigation administrateur, vous devez remplacer `Collection(x => x.Courses)` avec `Reference(x => x.Administrator)`.) En règle générale, vous pouvez utiliser le chargement explicite uniquement lorsque vous avez activé la chargement désactivé différé.
 
     ![Explicit_loading_example](https://asp.net/media/2577862/Windows-Live-Writer_Reading-Re.NET-MVC-Application-5-of-10h1_ADC3_Explicit_loading_example_79d8c368-6d82-426f-be9a-2b443644ab15.png)
 
@@ -57,7 +57,7 @@ Si vous savez que vous avez besoin des données associées pour toutes les entit
 
 En revanche, dans certains scénarios de chargement différé est plus efficace. Chargement hâtif peut entraîner une jointure très complexe à générer, lequel SQL Server ne peut pas traiter efficacement. Ou, si vous avez besoin d’accéder aux propriétés de navigation d’une entité uniquement pour un sous-ensemble d’un jeu d’entités que vous traitez, le chargement tardif peut-être être améliorées, car le chargement hâtif permet de récupérer plus de données que vous avez besoin. Si les performances sont critiques, il est préférable de tester les performances les deux méthodes pour effectuer le meilleur choix.
 
-Chargement différé peut masquer le code qui provoque des problèmes de performances. Par exemple, le code qui ne spécifie pas de chargement hâtif ou explicit, mais traite un volume élevé d’entités et utilise plusieurs propriétés de navigation dans chaque itération peut être très inefficace (en raison des nombreux allers-retours vers la base de données). Une application qui effectue correctement dans le développement à l’aide d’un serveur SQL local peut avoir des problèmes de performances lorsque déplacé vers la base de données SQL Azure en raison de la latence accrue et le chargement différé. Les requêtes de base de données avec une charge réaliste de tests de profilage vous aidera à déterminer si le chargement différé est approprié. Pour plus d’informations, consultez [Démystification des stratégies Entity Framework : chargement des données connexes](https://msdn.microsoft.com/en-us/magazine/hh205756.aspx) et [à l’aide d’Entity Framework pour réduire la latence du réseau à SQL Azure](https://msdn.microsoft.com/en-us/magazine/gg309181.aspx).
+Chargement différé peut masquer le code qui provoque des problèmes de performances. Par exemple, le code qui ne spécifie pas de chargement hâtif ou explicit, mais traite un volume élevé d’entités et utilise plusieurs propriétés de navigation dans chaque itération peut être très inefficace (en raison des nombreux allers-retours vers la base de données). Une application qui effectue correctement dans le développement à l’aide d’un serveur SQL local peut avoir des problèmes de performances lorsque déplacé vers la base de données SQL Azure en raison de la latence accrue et le chargement différé. Les requêtes de base de données avec une charge réaliste de tests de profilage vous aidera à déterminer si le chargement différé est approprié. Pour plus d’informations, consultez [Démystification des stratégies Entity Framework : chargement des données connexes](https://msdn.microsoft.com/magazine/hh205756.aspx) et [à l’aide d’Entity Framework pour réduire la latence du réseau à SQL Azure](https://msdn.microsoft.com/magazine/gg309181.aspx).
 
 ### <a name="disable-lazy-loading-before-serialization"></a>Désactiver le chargement tardif avant la sérialisation
 
@@ -67,9 +67,9 @@ Sérialisation peut également être compliquée par les classes proxy qui utili
 
 Une façon d’éviter les problèmes de sérialisation consiste à sérialiser des objets de transfert de données (DTO) au lieu d’objets d’entité, comme indiqué dans le [à l’aide des API Web avec Entity Framework](../../../../web-api/overview/data/using-web-api-with-entity-framework/part-5.md) didacticiel.
 
-Si vous n’utilisez pas DTO, vous pouvez désactiver le chargement différé et éviter les problèmes de proxy par [la désactivation de la création du proxy](https://msdn.microsoft.com/en-US/data/jj592886.aspx).
+Si vous n’utilisez pas DTO, vous pouvez désactiver le chargement différé et éviter les problèmes de proxy par [la désactivation de la création du proxy](https://msdn.microsoft.com/data/jj592886.aspx).
 
-Voici un autre [comment désactiver le chargement différé](https://msdn.microsoft.com/en-US/data/jj574232):
+Voici un autre [comment désactiver le chargement différé](https://msdn.microsoft.com/data/jj574232):
 
 - Pour les propriétés de navigation spécifiques, omettez le `virtual` mot clé lorsque vous déclarez la propriété.
 - Pour toutes les propriétés de navigation, définissez `LazyLoadingEnabled` à `false`, placez le code suivant dans le constructeur de votre classe de contexte : 
@@ -164,7 +164,7 @@ Si un ID de formateur a été sélectionné, le formateur sélectionné est réc
 
 Le `Where` méthode retourne une collection, mais dans ce cas les critères passé à ce résultat de la méthode dans une seule `Instructor` entité qui est retournée. Le `Single` méthode convertit la collection en une seule `Instructor` entité, qui vous permet d’accéder à cette entité `Courses` propriété.
 
-Vous utilisez la [unique](https://msdn.microsoft.com/en-us/library/system.linq.enumerable.single.aspx) méthode sur une collection lorsque vous savez que la collection aura qu’un seul élément. Le `Single` méthode lève une exception si la collection passée à ce dernier est vide ou s’il existe plusieurs éléments. Une alternative est [SingleOrDefault](https://msdn.microsoft.com/en-us/library/bb342451.aspx), qui retourne une valeur par défaut (`null` dans ce cas) si la collection est vide. Toutefois, dans ce cas encore aboutirait à une exception (tente de trouver un `Courses` propriété sur un `null` référence), et le message d’exception indique moins clairement la cause du problème. Lorsque vous appelez le `Single` (méthode), vous pouvez également transmettre le `Where` condition au lieu d’appeler le `Where` méthode séparément :
+Vous utilisez la [unique](https://msdn.microsoft.com/library/system.linq.enumerable.single.aspx) méthode sur une collection lorsque vous savez que la collection aura qu’un seul élément. Le `Single` méthode lève une exception si la collection passée à ce dernier est vide ou s’il existe plusieurs éléments. Une alternative est [SingleOrDefault](https://msdn.microsoft.com/library/bb342451.aspx), qui retourne une valeur par défaut (`null` dans ce cas) si la collection est vide. Toutefois, dans ce cas encore aboutirait à une exception (tente de trouver un `Courses` propriété sur un `null` référence), et le message d’exception indique moins clairement la cause du problème. Lorsque vous appelez le `Single` (méthode), vous pouvez également transmettre le `Where` condition au lieu d’appeler le `Where` méthode séparément :
 
 [!code-csharp[Main](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample12.cs)]
 
@@ -242,7 +242,7 @@ Notez que vous utilisez le `Collection` méthode pour charger une propriété de
 
 Exécuter maintenant de la page d’Index du formateur et vous ne verrez aucune différence de ce qui est affiché dans la page, même si vous avez modifié la façon dont les données sont récupérées.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Vous avez maintenant utilisé toutes les trois façons (lazy eager et explicites) pour charger des données connexes dans les propriétés de navigation. Dans l’étape suivante du didacticiel, vous allez apprendre à mettre à jour les données associées.
 

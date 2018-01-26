@@ -8,11 +8,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: security/authorization/secure-data
-ms.openlocfilehash: 861ac619c7f5fb19a56c59536e20724d96bbddca
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 7404b8ec20ed6a00554c8a7ade9a282362b9a186
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="create-an-aspnet-core-app-with-user-data-protected-by-authorization"></a>Créer une application ASP.NET Core et de données utilisateur protégées par l’autorisation
 
@@ -53,7 +53,7 @@ A `ContactIsOwnerAuthorizationHandler` Gestionnaire d’autorisation garantit qu
 
 ## <a name="prerequisites"></a>Prérequis
 
-Ce n’est pas un didacticiel de début. Vous devez être familiarisé avec :
+Cela n’est pas un didacticiel de début. Vous devez être familiarisé avec :
 
 * [Base d’ASP.NET MVC](xref:tutorials/first-mvc-app/start-mvc)
 * [Entity Framework Core](xref:data/ef-mvc/intro)
@@ -163,7 +163,7 @@ Services à l’aide d’Entity Framework Core doivent être inscrit pour [injec
 
 [!code-csharp[Main](secure-data/samples/final/Startup.cs?name=AuthorizationHandlers)]
 
-`ContactAdministratorsAuthorizationHandler`et `ContactManagerAuthorizationHandler` sont ajoutés en tant que singletons. Elles sont singletons, car ils n’utilisent pas EF et toutes les informations nécessitées sont dans le `Context` paramètre de la `HandleRequirementAsync` (méthode).
+`ContactAdministratorsAuthorizationHandler`et `ContactManagerAuthorizationHandler` sont ajoutés en tant que singletons. Ils sont singletons, car ils n’utilisent pas EF et toutes les informations nécessitées sont dans le `Context` paramètre de la `HandleRequirementAsync` (méthode).
 
 Le texte complet `ConfigureServices`:
 
@@ -225,7 +225,7 @@ Mise à jour la `Edit` et `Delete` liens afin qu’ils sont rendus uniquement po
 
 [!code-html[Main](secure-data/samples/final/Views/Contacts/Index.cshtml?range=63-84)]
 
-Avertissement : Le masquage des liens à partir des utilisateurs qui ne disposent pas d’autorisation pour modifier ou supprimer des données ne sécurise pas l’application. Le masquage des liens rend l’application utilisateur plus convivial en affichant des liens n’est valides. Les utilisateurs peuvent hack les URL générées pour appeler modifier et supprimer des opérations sur les données qu’ils ne possèdent pas.  Le contrôleur doit répéter vérifie l’accès sécurisé.
+Avertissement : Le masquage des liens à partir des utilisateurs qui ne sont pas autorisés à modifier ou supprimer des données ne sécuriser l’application. Le masquage des liens rend l’application utilisateur plus convivial en affichant des liens n’est valides. Les utilisateurs peuvent hack les URL générées pour appeler modifier et supprimer des opérations sur les données qu’ils ne possèdent pas.  Le contrôleur doit répéter vérifie l’accès sécurisé.
 
 ### <a name="update-the-details-view"></a>Mettre à jour l’affichage des détails
 
@@ -304,7 +304,7 @@ Ajoutez le code en surbrillance à la fin de la `Configure` méthode dans le *St
 
 [!code-csharp[Main](secure-data/samples/starter/Startup.cs?name=Configure&highlight=28-)]
 
-Test de l’application d’amorçage la base de données. La méthode de la valeur de départ n’est pas exécuté s’il existe des lignes dans la base de données de contact.
+Test de l’application d’amorçage la base de données. La méthode de valeur initiale ne s’exécute pas s’il existe des lignes dans la base de données de contact.
 
 ### <a name="create-a-class-used-in-the-tutorial"></a>Créer une classe utilisée dans le didacticiel
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/understanding-the-build-process
 msc.type: authoredcontent
-ms.openlocfilehash: 551e31a7a2d0a4e6259f74977c2f8e21cb694e42
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3efcefc40dc135ff42f55911036f8b38b5aa13b1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="understanding-the-build-process"></a>Comprendre le processus de génération
 ====================
@@ -77,7 +77,7 @@ Pour déployer la solution de gestionnaire de contacts pour un environnement de 
 
 
 > [!NOTE]
-> Le **/fl** basculer (abréviation de **chiffre**) enregistre la sortie de génération dans un fichier nommé *msbuild.log* dans le répertoire actif. Pour plus d’informations, consultez la [référence de ligne de commande MSBuild](https://msdn.microsoft.com/en-us/library/ms164311.aspx).
+> Le **/fl** basculer (abréviation de **chiffre**) enregistre la sortie de génération dans un fichier nommé *msbuild.log* dans le répertoire actif. Pour plus d’informations, consultez la [référence de ligne de commande MSBuild](https://msdn.microsoft.com/library/ms164311.aspx).
 
 
 À ce stade, MSBuild commence à s’exécuter, charge le *Publish.proj* fichier et commence à traiter les instructions qu’il contient. La première instruction indique à MSBuild d’importer le projet de fichiers qui le **TargetEnvPropsFile** paramètre spécifie.
@@ -178,7 +178,7 @@ Les éléments ne sont pas utilisés dans cette cible de & #x 2014 ; cette cibl
 Le **DbPublishPackages** élément contient une valeur unique, le chemin d’accès à la *ContactManager.Database.deploymanifest* fichier.
 
 > [!NOTE]
-> Un fichier .deploymanifest est généré lorsque vous générez un projet de base de données, et elle utilise le même schéma comme un fichier projet MSBuild. Il contient toutes les informations nécessaires pour déployer une base de données, y compris l’emplacement du schéma de base de données (.dbschema) et les détails de tous les scripts de prédéploiement et de post-déploiement. Pour plus d’informations, consultez [une vue d’ensemble de base de données Build and Deployment](https://msdn.microsoft.com/en-us/library/aa833165.aspx).
+> Un fichier .deploymanifest est généré lorsque vous générez un projet de base de données, et elle utilise le même schéma comme un fichier projet MSBuild. Il contient toutes les informations nécessaires pour déployer une base de données, y compris l’emplacement du schéma de base de données (.dbschema) et les détails de tous les scripts de prédéploiement et de post-déploiement. Pour plus d’informations, consultez [une vue d’ensemble de base de données Build and Deployment](https://msdn.microsoft.com/library/aa833165.aspx).
 
 
 Vous en apprendrez davantage sur la façon dont les packages de déploiement et des manifestes de déploiement de base de données sont créés et utilisés dans [génération et des projets d’Application Web Packaging](building-and-packaging-web-application-projects.md) et [déploiement de projets de base de données](deploying-database-projects.md).
@@ -193,13 +193,13 @@ Tout d’abord, vous remarquerez que la balise d’ouverture comprend un **sorti
 [!code-xml[Main](understanding-the-build-process/samples/sample10.xml)]
 
 
-Il s’agit d’un exemple de *le traitement par lot cible*. Dans les fichiers de projet MSBuild, le traitement par lots est une technique pour itérer sur des collections. La valeur de la **sorties** attribut, **« % (DbPublishPackages.Identity) »**, fait référence à la **identité** propriété de métadonnées de la **DbPublishPackages**  liste d’éléments. Cette notation, **sorties = %***(ItemList.ItemMetadataName)*, est convertie en tant que :
+Il s’agit d’un exemple de *le traitement par lot cible*. Dans les fichiers de projet MSBuild, le traitement par lots est une technique pour itérer sur des collections. La valeur de la **sorties** attribut, **« % (DbPublishPackages.Identity) »**, fait référence à la **identité** propriété de métadonnées de la **DbPublishPackages**  liste d’éléments. Cette notation, **Outputs=%***(ItemList.ItemMetadataName)*, est convertie en tant que :
 
 - Fractionner les éléments de **DbPublishPackages** dans des lots d’éléments qui contiennent la même **identité** valeur des métadonnées.
 - Exécutez la cible une fois par lot.
 
 > [!NOTE]
-> **Identité** est un de la [les valeurs de métadonnées intégrées](https://msdn.microsoft.com/en-us/library/ms164313.aspx) qui est assignée à chaque élément lors de la création. Il fait référence à la valeur de la **Include** d’attribut dans le **élément** , élément & #x 2014 ; en d’autres termes, le chemin d’accès et le nom de l’élément.
+> **Identité** est un de la [les valeurs de métadonnées intégrées](https://msdn.microsoft.com/library/ms164313.aspx) qui est assignée à chaque élément lors de la création. Il fait référence à la valeur de la **Include** d’attribut dans le **élément** , élément & #x 2014 ; en d’autres termes, le chemin d’accès et le nom de l’élément.
 
 
 Dans ce cas, car il ne doit jamais y avoir plus d’un élément avec le même chemin d’accès et nom de fichier, nous travaillons essentiellement avec des tailles de lot d’un. La cible est exécutée une fois pour chaque package de base de données.
@@ -219,7 +219,7 @@ Dans ce cas, **%(DbPublishPackages.DatabaseConnectionString)**, **%(DbPublishPac
 À la suite de cette notation, le **Exec** tâche créera des lots en fonction de combinaisons uniques de la **DatabaseConnectionString**, **TargetDatabase**et **FullPath** les valeurs de métadonnées et que la tâche seront exécutée une fois pour chaque lot. Il s’agit d’un exemple de *tâche de traitement par lot*. Toutefois, parce que le niveau de la cible de traitement par lot a divisé déjà notre collection d’éléments dans un seul élément lots, la **Exec** tâche sera exécutée une fois et une seule fois pour chaque itération de la cible. En d’autres termes, cette tâche appelle l’utilitaire VSDBCMD une fois pour chaque package de base de données dans la solution.
 
 > [!NOTE]
-> Pour plus d’informations sur la cible et la tâche de traitement par lot, consultez MSBuild [le traitement par lot](https://msdn.microsoft.com/en-us/library/ms171473.aspx), [métadonnées d’éléments dans le traitement par lot cible](https://msdn.microsoft.com/en-US/library/ms228229.aspx), et [métadonnées d’éléments dans la tâche de traitement par lot](https://msdn.microsoft.com/en-us/library/ms171474.aspx).
+> Pour plus d’informations sur la cible et la tâche de traitement par lot, consultez MSBuild [le traitement par lot](https://msdn.microsoft.com/library/ms171473.aspx), [métadonnées d’éléments dans le traitement par lot cible](https://msdn.microsoft.com/library/ms228229.aspx), et [métadonnées d’éléments dans la tâche de traitement par lot](https://msdn.microsoft.com/library/ms171474.aspx).
 
 
 ### <a name="the-publishwebpackages-target"></a>La cible PublishWebPackages

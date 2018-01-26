@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/data-partitioning-strategies
 msc.type: authoredcontent
-ms.openlocfilehash: 8eddb7af2d9032153b30ab54d5e882f0b46cd4ce
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: dca016cb6293a346f5622cc272e510b182c86d58
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="data-partitioning-strategies-building-real-world-cloud-apps-with-azure"></a>Données (génération d’applications Cloud du monde réel avec Azure) de stratégies de partitionnement
 ====================
@@ -89,7 +89,7 @@ Point de vue conceptuel, il est facile de voir le fonctionne d’un schéma de p
 
 Les complications sont faciles à gérer en tant que vous êtes sur leur planification avant de passer en production. De nombreuses personnes qui ne souhaitent qu’elles avaient plus tard. En moyenne notre équipe de l’équipe de consultants clients (CAT) Obtient indique une erreur grave des appels téléphoniques sur une fois par mois aux clients dont les applications sont tirant d’une manière très volumineuse, et ils n’avez pas cette planification. Et ils affirment que quelque chose comme : « aide ! Je tout placer dans un magasin de données unique, et dans les 45 jours je vais manquer d’espace sur ce dernier ! » Et si vous avez beaucoup de logique métier intégrée à la façon d’y accéder votre banque de données et que vous avez des clients qui utilisent votre application, il n’existe aucun moment opportun pour aller vers le bas pour un jour pendant la migration. Nous finir traverser efforts herculean pour aider à la partition de client de leurs données à la volée sans temps mort bas. Il est très attractive et très inquiétant, et pas quelque chose vous souhaitez participer si vous pouvez l’éviter ! Vous réfléchissez à ce sujet au préalable et les intégrer à votre application permettront à votre vie beaucoup plus facile si l’application devient plus tard.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Un schéma de partitionnement efficace peut activer votre application cloud à l’échelle en plusieurs pétaoctets de données dans le cloud sans les goulots d’étranglement. Et vous n’êtes pas obligé de payer au préalable pour machines massives ou infrastructure étendue comme vous le feriez si vous exécutiez l’application dans un centre de données local. Dans le cloud, vous pouvez vous pouvez ajouter de façon incrémentielle la capacité que vous en avez besoin, et que vous payez uniquement pour autant que vous utilisez lorsque vous l’utilisez.
 
@@ -101,8 +101,8 @@ Pour plus d’informations sur les stratégies de partitionnement, consultez les
 
 Documentation :
 
-- [Meilleures pratiques pour la création de Services à grande échelle sur les Services Cloud Windows Azure](https://msdn.microsoft.com/en-us/library/windowsazure/jj717232.aspx). Livre blanc par Mark Simms et Michael Thomassy.
-- [Microsoft Patterns and Practices - modèles de conception de cloud computing](https://msdn.microsoft.com/en-us/library/dn568099.aspx). Consultez les conseils de partitionnement des données, modèle de partitionnement.
+- [Meilleures pratiques pour la création de Services à grande échelle sur les Services Cloud Windows Azure](https://msdn.microsoft.com/library/windowsazure/jj717232.aspx). Livre blanc par Mark Simms et Michael Thomassy.
+- [Microsoft Patterns and Practices - modèles de conception de cloud computing](https://msdn.microsoft.com/library/dn568099.aspx). Consultez les conseils de partitionnement des données, modèle de partitionnement.
 
 Vidéos :
 

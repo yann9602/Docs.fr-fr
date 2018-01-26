@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/cors
-ms.openlocfilehash: e6b49b9dde94cc7d035ea91b992a13df8cb8caf2
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 9f53ce11f1659aa3416fe4fbb94183c64ab0dab5
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="enabling-cross-origin-requests-cors"></a>L’activation de demandes de Cross-Origin (CORS)
 
@@ -78,7 +78,7 @@ Cet exemple ajoute une stratégie CORS nommée « AllowSpecificOrigin ». Pour
 
 ## <a name="enabling-cors-in-mvc"></a>L’activation de CORS dans MVC
 
-Vous pouvez également utiliser MVC pour appliquer les CORS spécifiques par action, par contrôleur, ou pour tous les contrôleurs. Lors de l’utilisation de MVC activer CORS les mêmes services CORS sont utilisés, mais n’est pas dans l’intergiciel (middleware) CORS.
+Vous pouvez également utiliser MVC pour appliquer les CORS spécifiques par action, par contrôleur, ou pour tous les contrôleurs. Lors de l’utilisation de MVC activer CORS les mêmes services CORS sont utilisés, mais n’est pas de l’intergiciel (middleware) CORS.
 
 ### <a name="per-action"></a>Par action
 
@@ -207,7 +207,7 @@ En outre, le serveur doit autoriser les informations d’identification. Pour au
 
 La réponse HTTP inclut désormais un en-tête Access-contrôle-Allow-Credentials, lequel indique au navigateur que le serveur autorise les informations d’identification pour une demande cross-origin.
 
-Si le navigateur envoie des informations d’identification, mais la réponse n’inclut pas un en-tête Access-contrôle-Allow-Credentials valid, le navigateur ne doit pas exposer la réponse à l’application et la requête AJAX échoue.
+Si le navigateur envoie des informations d’identification, mais la réponse n’inclut pas un en-tête Access-contrôle-Allow-Credentials valid, le navigateur ne sera pas exposer la réponse à l’application et la requête AJAX échoue.
 
 Soyez très prudent à l’autorisation d’informations d’identification de cross-origine, car cela signifie qu’un site Web à un autre domaine peut envoyer des informations d’identification d’un utilisateur de connecté à votre application sur l’utilisateur, sans l’utilisateur. CORS spec également États d’origine de ce paramètre à « * » (toutes les origines) n’est pas valide si l’en-tête Access-contrôle-Allow-Credentials est présent.
 
@@ -260,7 +260,7 @@ Pour certaines requêtes CORS, le navigateur envoie une demande supplémentaire,
 
 * La méthode de demande est GET, HEAD ou POST, et
 
-* L’application ne définit pas de tous les en-têtes de demande que Accept, Accept-Language, Content-Language, Content-Type ou dernier-ID d’événement, et
+* L’application ne définit pas les en-têtes de demande que Accept, Accept-Language, Content-Language, Content-Type ou dernier-ID d’événement, et
 
 * L’en-tête Content-Type (si défini) est une des opérations suivantes :
 

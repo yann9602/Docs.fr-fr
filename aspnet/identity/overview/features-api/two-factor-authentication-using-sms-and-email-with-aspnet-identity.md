@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: ecb1fc693063995a3a05a7af5db64554c9f595e2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 0f9ff7cf74048a008b150da1e843ff15333269ab
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="two-factor-authentication-using-sms-and-email-with-aspnet-identity"></a>Authentification à deux facteurs avec l’identité de ASP.NET à l’aide de SMS et par courrier électronique
 ====================
@@ -168,7 +168,7 @@ Le `ChangePhoneNumberAsync` méthode vérifie le code de sécurité publié. Si 
 
 Le `isPersistent` paramètre définit si la session d’authentification est maintenue entre plusieurs demandes.
 
-Lorsque vous modifiez votre profil de sécurité, un nouvel horodatage de sécurité est généré et stocké dans le `SecurityStamp` champ le *AspNetUsers* table. Notez que le `SecurityStamp` champ est différent à partir du cookie de sécurité. Le cookie de sécurité n’est pas stocké dans le `AspNetUsers` table (ou ailleurs dans la base de données d’identité). Le jeton de cookie de sécurité est auto-signé à l’aide de [DPAPI](https://msdn.microsoft.com/en-us/library/system.security.cryptography.protecteddata.aspx) et est créé avec le `UserId, SecurityStamp` et les informations d’heure d’expiration.
+Lorsque vous modifiez votre profil de sécurité, un nouvel horodatage de sécurité est généré et stocké dans le `SecurityStamp` champ le *AspNetUsers* table. Notez que le `SecurityStamp` champ est différent à partir du cookie de sécurité. Le cookie de sécurité n’est pas stocké dans le `AspNetUsers` table (ou ailleurs dans la base de données d’identité). Le jeton de cookie de sécurité est auto-signé à l’aide de [DPAPI](https://msdn.microsoft.com/library/system.security.cryptography.protecteddata.aspx) et est créé avec le `UserId, SecurityStamp` et les informations d’heure d’expiration.
 
 Le middleware du cookie vérifie le cookie à chaque demande. Le `SecurityStampValidator` méthode dans le `Startup` classe accède à la base de données et vérifie périodiquement, de tampon de sécurité tel que spécifié par le `validateInterval`. Cela se produit uniquement toutes les 30 minutes (dans notre exemple), sauf si vous modifiez votre profil de sécurité. L’intervalle de 30 minutes a été choisi pour réduire les allers-retours vers la base de données.
 
@@ -264,7 +264,7 @@ Les journaux locaux dans et journal sociaux dans, vérifiez si 2FA est activé. 
 
 [!code-csharp[Main](two-factor-authentication-using-sms-and-email-with-aspnet-identity/samples/sample17.cs?highlight=10-11,17-18)]
 
-Le code suivant illustre la `SendCode` méthode d’action. A [SelectListItem](https://msdn.microsoft.com/en-us/library/system.web.mvc.selectlistitem.aspx) est créée avec toutes les méthodes 2FA activées pour l’utilisateur. Le [SelectListItem](https://msdn.microsoft.com/en-us/library/system.web.mvc.selectlistitem.aspx) est passé à la [DropDownListFor](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.dropdownlist.aspx) assistance, ce qui permet à l’utilisateur à sélectionner l’approche 2FA (généralement par courrier électronique et SMS).
+Le code suivant illustre la `SendCode` méthode d’action. A [SelectListItem](https://msdn.microsoft.com/library/system.web.mvc.selectlistitem.aspx) est créée avec toutes les méthodes 2FA activées pour l’utilisateur. Le [SelectListItem](https://msdn.microsoft.com/library/system.web.mvc.selectlistitem.aspx) est passé à la [DropDownListFor](https://msdn.microsoft.com/library/system.web.ui.webcontrols.dropdownlist.aspx) assistance, ce qui permet à l’utilisateur à sélectionner l’approche 2FA (généralement par courrier électronique et SMS).
 
 [!code-csharp[Main](two-factor-authentication-using-sms-and-email-with-aspnet-identity/samples/sample18.cs)]
 
@@ -284,6 +284,6 @@ Bien que vous pouvez définir le verrouillage de compte sur les échecs de tenta
 - [Application MVC est 5 avec Facebook, Twitter, LinkedIn et d’authentification Google OAuth2](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md) montre également comment ajouter des informations de profil à la table des utilisateurs.
 - [ASP.NET MVC et identité 2.0 : comprendre les aspects fondamentaux](http://typecastexception.com/post/2014/04/20/ASPNET-MVC-and-Identity-20-Understanding-the-Basics.aspx) par John Atten.
 - [Confirmation du compte et la récupération de mot de passe avec l’identité de ASP.NET](account-confirmation-and-password-recovery-with-aspnet-identity.md)
-- [Introduction à l’identité ASP.NET](../getting-started/introduction-to-aspnet-identity.md)
+- [Introduction à ASP.NET Identity](../getting-started/introduction-to-aspnet-identity.md)
 - [Annonce de la version RTM d’ASP.NET Identity 2.0.0](https://blogs.msdn.com/b/webdev/archive/2014/03/20/test-announcing-rtm-of-asp-net-identity-2-0-0.aspx) par Pranav Rastogi.
 - [Identité ASP.NET 2.0 : Configuration de la Validation du compte et l’autorisation de deux facteurs](http://typecastexception.com/post/2014/04/20/ASPNET-Identity-20-Setting-Up-Account-Validation-and-Two-Factor-Authorization.aspx) par John Atten.

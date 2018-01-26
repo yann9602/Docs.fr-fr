@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/aspnet4
 msc.type: content
-ms.openlocfilehash: 226ef83f289b8fbe9a68f0d0741c7eca0d96ba94
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f0224bcd2badc423ba5146feacccc44b8f33a608
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-4-and-visual-studio-2010-web-development-overview"></a>ASP.NET 4 et Visual Studio 2010 Web présentation du développement
 ====================
@@ -199,7 +199,7 @@ ASP.NET 4 présente de nouvelles options pour le développement de la taille des
 
 [!code-xml[Main](overview/samples/sample10.xml)]
 
-Pour permettre les chemins d’accès plus ou moins longtemps (la partie de l’URL qui n’inclut pas de protocole, de nom de serveur et de chaîne de requête), modifiez le  *[maxUrlLength](https://msdn.microsoft.com/en-us/library/system.web.configuration.httpruntimesection.maxurllength.aspx)*  attribut. Pour permettre les chaînes de requête longue ou plus courte, modifiez la valeur de la  *[maxQueryStringLength](https://msdn.microsoft.com/en-us/library/system.web.configuration.httpruntimesection.maxquerystringlength.aspx)*  attribut.
+Pour permettre les chemins d’accès plus ou moins longtemps (la partie de l’URL qui n’inclut pas de protocole, de nom de serveur et de chaîne de requête), modifiez le  *[maxUrlLength](https://msdn.microsoft.com/library/system.web.configuration.httpruntimesection.maxurllength.aspx)*  attribut. Pour permettre les chaînes de requête longue ou plus courte, modifiez la valeur de la  *[maxQueryStringLength](https://msdn.microsoft.com/library/system.web.configuration.httpruntimesection.maxquerystringlength.aspx)*  attribut.
 
 ASP.NET 4 vous permet également à configurer les caractères qui sont utilisés par la vérification des caractères d’URL. Lorsque ASP.NET trouve un caractère non valide dans la partie chemin d’accès d’une URL, il rejette la demande et génère une erreur HTTP 400. Dans les versions précédentes d’ASP.NET, les vérifications de caractères URL étaient limitées à un ensemble fixe de caractères. Dans ASP.NET 4, vous pouvez personnaliser le jeu de caractères valides à l’aide de la nouvelle *requestPathInvalidChars* attribut de la *httpRuntime* élément de configuration, comme indiqué dans l’exemple suivant :
 
@@ -561,7 +561,7 @@ Routage a été disponible à partir de ASP.NET 3.5 SP1. (Pour obtenir un exempl
 - Les nouveaux générateurs expression suivantes qui sont définies dans *System.Web.Compilation.RouteUrlExpressionBuilder* et *System.Web.Compilation.RouteValueExpressionBuilder*:
 - *RouteUrl*, qui offre un moyen simple de créer une URL qui correspond à une URL de routage au sein d’un contrôle serveur ASP.NET.
 - *RouteValue*, qui offre un moyen simple pour extraire des informations à partir de la *RouteContext* objet.
-- Le *RouteParameter* (classe), ce qui le rend plus facile de passer des données contenues dans un *RouteContext* objet à une requête pour un contrôle de source de données (semblable à [ *FormParameter* ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.formparameter.aspx)).
+- Le *RouteParameter* (classe), ce qui le rend plus facile de passer des données contenues dans un *RouteContext* objet à une requête pour un contrôle de source de données (semblable à [ *FormParameter* ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.formparameter.aspx)).
 
 #### <a name="routing-for-web-forms-pages"></a>Routage pour les Pages Web Forms
 
@@ -625,7 +625,7 @@ Le *RouteValue* expression ainsi très facile à utiliser les données d’itin�
 
 #### <a name="using-route-data-for-data-source-control-parameters"></a>À l’aide des données d’itinéraire pour les paramètres de contrôle de Source de données
 
-Le *RouteParameter* classe vous permet de spécifier les données d’itinéraire comme valeur de paramètre pour les requêtes dans un contrôle de source de données. Il [fonctionne bien comme la](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.formparameter.aspx) classe, comme indiqué dans l’exemple suivant :
+Le *RouteParameter* classe vous permet de spécifier les données d’itinéraire comme valeur de paramètre pour les requêtes dans un contrôle de source de données. Il [fonctionne bien comme la](https://msdn.microsoft.com/library/system.web.ui.webcontrols.formparameter.aspx) classe, comme indiqué dans l’exemple suivant :
 
 [!code-aspx[Main](overview/samples/sample46.aspx)]
 
@@ -1146,7 +1146,7 @@ Dynamique des données a été introduites dans la version de .NET Framework 3.5
 - La possibilité de modifier facilement le balisage généré pour les champs dans le *GridView* et *DetailsView* contrôles en utilisant des modèles de champ qui font partie de votre projet Dynamic Data.
 
 > [!NOTE]
-> Remarque Pour plus d’informations, consultez la [documentation de données dynamiques](https://msdn.microsoft.com/en-us/library/cc488545.aspx) dans MSDN Library.
+> Remarque Pour plus d’informations, consultez la [documentation de données dynamiques](https://msdn.microsoft.com/library/cc488545.aspx) dans MSDN Library.
 
 
 Pour ASP.NET 4, Dynamic Data a été amélioré pour permettre aux développeurs encore plus de puissance pour créer rapidement des sites Web pilotés par les données.
@@ -1325,7 +1325,7 @@ Visual Studio 2010 utilise l’outil MSDeploy pour créer un fichier compressé 
 
 Un package Web peut être copié sur n’importe quel serveur et puis installé manuellement à l’aide du Gestionnaire des services Internet. Vous pouvez également, pour un déploiement automatisé, le package peut être installé à l’aide en ligne de commande ou à l’aide des API de déploiement.
 
-Visual Studio 2010 fournit des tâches MSBuild et les cibles pour créer des packages Web intégrés. Pour plus d’informations, consultez [vue d’ensemble du déploiement de projet d’Application ASP.NET Web](https://msdn.microsoft.com/en-us/library/dd394698%28VS.100%29.aspx) sur le site Web MSDN et [10 + 20 raisons pour lesquelles vous devez créer un Package Web](http://vishaljoshi.blogspot.com/2009/07/10-20-reasons-why-you-should-create-web.html) sur le blog de Vishal.
+Visual Studio 2010 fournit des tâches MSBuild et les cibles pour créer des packages Web intégrés. Pour plus d’informations, consultez [vue d’ensemble du déploiement de projet d’Application ASP.NET Web](https://msdn.microsoft.com/library/dd394698%28VS.100%29.aspx) sur le site Web MSDN et [10 + 20 raisons pour lesquelles vous devez créer un Package Web](http://vishaljoshi.blogspot.com/2009/07/10-20-reasons-why-you-should-create-web.html) sur le blog de Vishal.
 
 <a id="0.2__Toc224729057"></a><a id="0.2__Toc253429294"></a><a id="0.2__Toc243304665"></a>
 
@@ -1337,7 +1337,7 @@ L’exemple suivant montre une partie d’un `web.release.config` fichier qui pe
 
 [!code-xml[Main](overview/samples/sample102.xml)]
 
-Pour plus d’informations, consultez [syntaxe de Transformation Web.config pour le déploiement de projet d’Application Web](https://msdn.microsoft.com/en-us/library/dd465326%28VS.100%29.aspx) sur le site Web MSDN <a id="0.2_a"> </a> site Web et[déploiement Web : Web.Config Transformation](http://vishaljoshi.blogspot.com/2009/03/web-deployment-webconfig-transformation_23.html)sur le blog de Vishal.
+Pour plus d’informations, consultez [syntaxe de Transformation Web.config pour le déploiement de projet d’Application Web](https://msdn.microsoft.com/library/dd465326%28VS.100%29.aspx) sur le site Web MSDN <a id="0.2_a"> </a> site Web et[déploiement Web : Web.Config Transformation](http://vishaljoshi.blogspot.com/2009/03/web-deployment-webconfig-transformation_23.html)sur le blog de Vishal.
 
 <a id="0.2__Toc224729058"></a><a id="0.2__Toc253429295"></a><a id="0.2__Toc243304666"></a>
 
@@ -1345,7 +1345,7 @@ Pour plus d’informations, consultez [syntaxe de Transformation Web.config pour
 
 Un package de déploiement de Visual Studio 2010 peut inclure des dépendances sur les bases de données SQL Server. Dans le cadre de la définition du package, vous fournissez la chaîne de connexion pour votre base de données source. Lorsque vous créez le package Web, Visual Studio 2010 crée les scripts SQL pour le schéma de base de données et, éventuellement, pour les données, puis les ajoute au package. Vous pouvez également fournir des scripts SQL personnalisés et spécifier l’ordre dans lequel il doit s’exécuter sur le serveur. Au moment du déploiement, vous fournissez une chaîne de connexion qui est appropriée pour le serveur cible. le processus de déploiement utilise ensuite cette chaîne de connexion pour exécuter les scripts de création du schéma de base de données et ajouter les données.
 
-En outre, à l’aide d’un seul clic publier, vous pouvez configurer le déploiement pour publier votre base de données directement lorsque l’application est publiée sur un site d’hébergement partagé à distance. Pour plus d’informations, consultez [Comment : déployer une base de données avec un projet d’Application Web](https://msdn.microsoft.com/en-us/library/dd465343%28VS.100%29.aspx) sur le site Web MSDN et [déploiement de base de données avec Visual Studio 2010](http://vishaljoshi.blogspot.com/2009/03/web-deployment-webconfig-transformation_23.html) sur le blog de Vishal.
+En outre, à l’aide d’un seul clic publier, vous pouvez configurer le déploiement pour publier votre base de données directement lorsque l’application est publiée sur un site d’hébergement partagé à distance. Pour plus d’informations, consultez [Comment : déployer une base de données avec un projet d’Application Web](https://msdn.microsoft.com/library/dd465343%28VS.100%29.aspx) sur le site Web MSDN et [déploiement de base de données avec Visual Studio 2010](http://vishaljoshi.blogspot.com/2009/03/web-deployment-webconfig-transformation_23.html) sur le blog de Vishal.
 
 <a id="0.2__Toc224729059"></a><a id="0.2__Toc253429296"></a><a id="0.2__Toc243304667"></a>
 
@@ -1353,7 +1353,7 @@ En outre, à l’aide d’un seul clic publier, vous pouvez configurer le déplo
 
 Visual Studio 2010 vous permet également d’utiliser le service de gestion à distance de IIS pour publier une application Web sur un serveur distant. Vous pouvez créer un profil de publication pour votre compte d’hébergement ou de serveurs de test ou de serveurs de mise en lots. Chaque profil peut enregistrer des informations d’identification appropriées en toute sécurité. Vous pouvez ensuite déployer à un de la cible de la barre d’outils de publication de serveurs avec un seul clic à l’aide du Web en un clic. Avec Visual Studio 2010, vous pouvez également publier à l’aide de la ligne de commande MSBuild. Cela vous permet de configurer votre environnement de build d’équipe afin d’inclure la publication dans un modèle d’intégration continue.
 
-Pour plus d’informations, consultez [Comment : déployer une Application à l’aide en un clic publication de projet Web et Web Deploy](https://msdn.microsoft.com/en-us/library/dd465337%28VS.100%29.aspx) sur le site Web MSDN et [Web publier en 1 clic avec Visual Studio 2010](http://vishaljoshi.blogspot.com/2009/05/web-1-click-publish-with-vs-2010.html) sur le blog de Vishal. Pour afficher des présentations vidéo sur le déploiement d’application Web dans Visual Studio 2010, consultez [Visual Studio 2010 pour les versions préliminaires de développeur Web](http://vishaljoshi.blogspot.com/2008/12/vs-2010-for-web-developer-previews.html) sur le blog de Vishal.
+Pour plus d’informations, consultez [Comment : déployer une Application à l’aide en un clic publication de projet Web et Web Deploy](https://msdn.microsoft.com/library/dd465337%28VS.100%29.aspx) sur le site Web MSDN et [Web publier en 1 clic avec Visual Studio 2010](http://vishaljoshi.blogspot.com/2009/05/web-1-click-publish-with-vs-2010.html) sur le blog de Vishal. Pour afficher des présentations vidéo sur le déploiement d’application Web dans Visual Studio 2010, consultez [Visual Studio 2010 pour les versions préliminaires de développeur Web](http://vishaljoshi.blogspot.com/2008/12/vs-2010-for-web-developer-previews.html) sur le blog de Vishal.
 
 <a id="0.2__Toc224729060"></a><a id="0.2__Toc253429297"></a><a id="0.2__Toc243304668"></a>
 
@@ -1361,9 +1361,9 @@ Pour plus d’informations, consultez [Comment : déployer une Application à l
 
 Les sites Web suivants fournissent des informations supplémentaires sur ASP.NET 4 et Visual Studio 2010.
 
-- [ASP.NET 4](https://msdn.microsoft.com/en-us/library/ee532866%28VS.100%29.aspx) : la documentation officielle pour ASP.NET 4 sur le site Web MSDN.
+- [ASP.NET 4](https://msdn.microsoft.com/library/ee532866%28VS.100%29.aspx) : la documentation officielle pour ASP.NET 4 sur le site Web MSDN.
 - [https://www.ASP.NET/](https://www.asp.net/) : ASP.NET du site Web de l’équipe.
-- [https://www.ASP.NET/DynamicData/](https://msdn.microsoft.com/en-us/library/cc488545.aspx) et [ASP.NET Dynamic Data Content Map](https://msdn.microsoft.com/en-us/library/cc488545%28VS.100%29.aspx) : ressources en ligne sur le site d’équipe ASP.NET et dans la documentation officielle pour Dynamic Data ASP.NET.
+- [https://www.ASP.NET/DynamicData/](https://msdn.microsoft.com/library/cc488545.aspx) et [ASP.NET Dynamic Data Content Map](https://msdn.microsoft.com/library/cc488545%28VS.100%29.aspx) : ressources en ligne sur le site d’équipe ASP.NET et dans la documentation officielle pour Dynamic Data ASP.NET.
 - [https://www.ASP.NET/AJAX/](../../ajax/index.md) : la ressource Web principale pour le développement d’ASP.NET Ajax.
 - [https://blogs.msdn.com/webdevtools/](https://blogs.msdn.com/webdevtools/) , Visual Web Developer Team blog, qui inclut des informations sur les fonctionnalités dans Visual Studio 2010.
 - [ASP.NET WebStack](https://github.com/aspnet/AspNetWebStack) : la ressource Web principale pour les versions préliminaires de ASP.NET.
@@ -1372,15 +1372,15 @@ Les sites Web suivants fournissent des informations supplémentaires sur ASP.NET
 
 ## <a name="disclaimer"></a>Exclusion de responsabilité
 
-Ce document est une version préliminaire et peut être modifié substantiellement avant le lancement de la version commerciale finale du logiciel qu'il décrit.
+Ce document est une version préliminaire et peut être modifié substantiellement avant le lancement de la mise en production commerciale finale du logiciel qu’il décrit.
 
-Les informations contenues dans ce document correspondent à la connaissance que Microsoft Corporation possède des problèmes abordés à la date de la publication. Microsoft devant répondre à des conditions de marché qui évoluent, ce document ne doit pas être considéré comme un engagement de sa part, et Microsoft ne peut pas garantir l'exactitude des informations présentées à la date de la publication.
+Les informations contenues dans ce document correspondent à la connaissance que Microsoft Corporation possède des problèmes abordés à la date de la publication. Microsoft devant répondre à des conditions de marché qui évoluent, ce document ne doit pas être considéré comme un engagement de sa part, et Microsoft ne peut pas garantir l’exactitude des informations présentées à la date de la publication.
 
 Ce livre blanc est fourni à titre d'information uniquement. MICROSOFT NE FOURNIT AUCUNE GARANTIE, EXPRESSE, IMPLICITE OU LÉGALE, QUANT AUX INFORMATIONS CONTENUES DANS CE DOCUMENT.
 
 L'utilisateur est tenu d'observer la réglementation relative aux droits d'auteur applicable dans son pays. Aucune partie de ce document ne peut être reproduite, stockée ou introduite dans un système de restitution, ou transmise à quelque fin ou par quelque moyen que ce soit (électronique, mécanique, photocopie, enregistrement ou autre) sans la permission expresse et écrite de Microsoft Corporation.
 
-Microsoft peut détenir des brevets, avoir déposé des demandes d'enregistrement de brevets ou être titulaire de marques, droits d'auteur ou autres droits de propriété intellectuelle portant sur tout ou partie des éléments qui font l'objet du présent document. Sauf stipulation expresse contraire d'un contrat de licence écrit de Microsoft, la fourniture de ce document n'a pas pour effet de vous concéder une licence sur ces brevets, marques, droits d'auteur ou autres droits de propriété intellectuelle.
+Microsoft peut détenir des brevets, avoir déposé des demandes d’enregistrement de brevets ou être titulaire de marques, droits d’auteur ou autres droits de propriété intellectuelle portant sur tout ou partie des éléments qui font l’objet du présent document. Sauf stipulation expresse contraire d’un contrat de licence écrit de Microsoft, la fourniture de ce document n’a pas pour effet de vous concéder une licence sur ces brevets, marques, droits d’auteur ou autres droits de propriété intellectuelle.
 
 Sauf mention contraire, les noms de sociétés, d'organisations, de produits et de domaines, les adresses de messagerie, les logos, et les noms de personnes et de lieux, ou les événements utilisés dans les exemples, sont fictifs et toute ressemblance avec des noms ou des événements réels est purement fortuite et involontaire.
 

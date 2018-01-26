@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/partial
-ms.openlocfilehash: e5c8aac855a1f4ec4c6f08087dbe77f6820cc506
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 5919c273de2a298c3e407f118ac478e6a6031332
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="partial-views"></a>Vues partielles
 
@@ -37,7 +37,7 @@ Conseil : Suivez le [ne répétez vous-même principe](http://deviq.com/don-t-r
 
 ## <a name="declaring-partial-views"></a>Déclarer des vues partielles
 
-Les vues partielles sont créés comme toute autre vue : vous créez un *.cshtml* fichier inclus dans le *vues* dossier. Il n’existe aucune différence de sémantique entre une vue partielle et un affichage normal : ils sont rendus simplement différemment. Vous pouvez avoir une vue qui est retournée directement à partir d’un contrôleur de `ViewResult`, et la vue peut être utilisée comme une vue partielle. La principale différence entre le mode de rendu une vue et une vue partielle est que les vues partielles n’exécutent pas *_ViewStart.cshtml* (alors que les vues faire - en savoir plus sur *_ViewStart.cshtml* dans [mise en page ](layout.md)).
+Les vues partielles sont créés comme toute autre vue : vous créez un *.cshtml* fichier inclus dans le *vues* dossier. Il n’existe aucune différence de sémantique entre une vue partielle et un affichage normal - simplement les convertir différemment. Vous pouvez avoir une vue qui est retournée directement à partir d’un contrôleur de `ViewResult`, et la vue peut être utilisée comme une vue partielle. La principale différence entre le mode de rendu une vue et une vue partielle est que les vues partielles ne s’exécutent pas *_ViewStart.cshtml* (alors que les vues faire - en savoir plus sur *_ViewStart.cshtml* dans [mise en page ](layout.md)).
 
 ## <a name="referencing-a-partial-view"></a>Faisant référence à une vue partielle
 

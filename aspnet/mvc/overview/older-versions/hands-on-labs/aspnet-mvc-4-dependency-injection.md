@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-dependency-injection
 msc.type: authoredcontent
-ms.openlocfilehash: af4967f642ba4615f3392c0c404d2ec62edaaae8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 48a7d7fdb670aebb72450fc4eb12a364ef595c53
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-mvc-4-dependency-injection"></a>Injection de dépendances d’ASP.NET MVC 4
 ====================
@@ -25,7 +25,7 @@ par [Web Camps équipe](https://twitter.com/webcamps)
 > [!NOTE]
 > Cet atelier pratique suppose que vous avez une connaissance élémentaire des **ASP.NET MVC** et **les filtres ASP.NET MVC 4**. Si vous n’avez pas utilisé **les filtres ASP.NET MVC 4** auparavant, nous vous recommandons de dépasser **filtres d’Action ASP.NET MVC personnalisée** atelier pratique.
 > 
-> Tous les exemples de code et des extraits de code sont inclus dans le Kit de formation Camps Web, disponible à l’adresse [https://www.microsoft.com/en-us/download/29843](https://www.microsoft.com/en-us/download/29843).
+> Tous les exemples de code et des extraits de code sont inclus dans le Kit de formation Camps Web, disponible à l’adresse [https://www.microsoft.com/download/29843](https://www.microsoft.com/download/29843).
 
 
 Dans **objet orienté programmation** paradigme, objets fonctionnent ensemble dans un modèle de collaboration où il existe des collaborateurs et les consommateurs. Naturellement, ce modèle de communication génère des dépendances entre les objets et composants, devient difficile à gérer lorsque la complexité augmente.
@@ -76,7 +76,7 @@ Dans cet atelier pratique, vous allez apprendre comment :
 <a id="Prerequisites"></a>
 
 <a id="Prerequisites"></a>
-### <a name="prerequisites"></a>Conditions préalables
+### <a name="prerequisites"></a>Prérequis
 
 Vous devez disposer des éléments suivants pour effectuer ce laboratoire :
 
@@ -491,7 +491,7 @@ Dans cette tâche, vous exécutez l’application et que le filtre d’action pe
 <a id="Summary"></a>
 
 <a id="Summary"></a>
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 À la fin de cet atelier pratique, vous avez appris à utiliser l’Injection de dépendances dans ASP.NET MVC 4 en intégrant Unity à l’aide d’un NuGet Package. Pour ce faire, vous avez utilisé l’Injection de dépendances à l’intérieur des contrôleurs, des vues et des filtres d’action.
 

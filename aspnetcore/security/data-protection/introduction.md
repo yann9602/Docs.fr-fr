@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/introduction
-ms.openlocfilehash: b98027ee0e7c63bac23054d7623f28294388dede
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: b02ef9121e50ab9d9f24032d32f1e65fe73049c0
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="introduction-to-data-protection"></a>Introduction à la Protection des données
 
@@ -23,7 +23,7 @@ La pile de protection de données ASP.NET Core est conçue pour servir de rempla
 
 ## <a name="problem-statement"></a>Énoncé du problème
 
-L’instruction problème global peut être établie succinctement dans une phrase unique : j’ai besoin de conserver les informations approuvées pour une récupération ultérieure, mais je n’autorise pas le mécanisme de persistance. Cela peut être écrite en termes de web, comme « Ai-je besoin pour effectuer un aller-retour état approuvé via un client non fiable ».
+L’instruction problème global peut être établie succinctement dans une phrase unique : j’ai besoin de conserver les informations approuvées pour une récupération ultérieure, mais vous ne faites pas confiance le mécanisme de persistance. Cela peut être écrite en termes de web, comme « Ai-je besoin pour effectuer un aller-retour état approuvé via un client non fiable ».
 
 L’exemple canonique de ce est un cookie d’authentification ou au porteur jeton. Le serveur génère un « Je suis Groot et disposer des autorisations de xyz » du jeton et qu’il transmet au client. Ultérieurement, le client présentera ce jeton sur le serveur, mais le serveur doit quelconque d’assurance que le client n’est pas falsifié le jeton. Par conséquent, la première exigence : authenticité (aussi appelé) l’intégrité, vérification de falsification).
 
@@ -31,7 +31,7 @@ L’exemple canonique de ce est un cookie d’authentification ou au porteur jet
 
 Enfin, étant donné que les applications modernes sont basées sur des composants que nous avons vu est que les composants individuels voulez tirer parti de ce système sans tenir compte des autres composants dans le système. Par exemple, si un composant d’émission de jeton de support à l’aide de cette pile, elle doit fonctionner sans interférence à partir d’un mécanisme d’anti-CSRF qui peut également être à l’aide de la même pile. Par conséquent, la spécification finale : isolation.
 
-Nous pouvons fournir des contraintes supplémentaires afin de limiter la portée de la configuration requise. Nous partons du principe que tous les services d’exploitation dans le système de cryptage par sont également approuvés et que les données n’a pas besoin d’être généré ou consommés en dehors des services sous notre contrôle direct. En outre, nous avons besoin que les opérations sont aussi rapides que possible, car chaque demande au service web peut accéder via le système de cryptage par une ou plusieurs fois. Cela rend le chiffrement symétrique idéale pour notre scénario, et nous pouvons discount cryptographie asymétrique tant que tel, une fois qu’il est nécessaire.
+Nous pouvons fournir des contraintes supplémentaires afin de limiter la portée de la configuration requise. Nous partons du principe que tous les services d’exploitation dans le système de cryptage par sont également approuvés et que les données n’a pas besoin d’être généré ou consommés en dehors des services sous notre contrôle direct. En outre, nous avons besoin que les opérations sont aussi rapides que possible, car chaque demande au service web peut accéder via le système de cryptage par une ou plusieurs fois. Cela rend le chiffrement symétrique idéale pour notre scénario, et nous pouvons discount cryptographie asymétrique tant que tels, une fois qu’il est nécessaire.
 
 ## <a name="design-philosophy"></a>Philosophie de conception
 
@@ -41,7 +41,7 @@ Nous avons commencé en identifiant les problèmes liés à la pile existante. U
 
 * Offre une API pour les consommateurs simple. Les API doivent être facile d’utiliser correctement et difficile à utiliser correctement.
 
-* Les développeurs doivent apprendre pas les principes de la gestion de clés. Le système doit gérer la sélection d’un algorithme et la durée de vie de clé sur le compte de développeur. Dans l’idéal, le développeur ne doit jamais avoir accès au matériel de clé brut.
+* Les développeurs ne doivent pas Découvrez les principes de la gestion de clés. Le système doit gérer la sélection d’un algorithme et la durée de vie de clé sur le compte de développeur. Dans l’idéal, le développeur ne doit jamais avoir accès au matériel de clé brut.
 
 * Les clés doivent être protégées au repos lorsque cela est possible. Le système doit déterminer un mécanisme de protection par défaut approprié et l’applique automatiquement.
 

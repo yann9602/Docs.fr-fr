@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/basic-reporting/programmatically-setting-the-objectdatasource-s-parameter-values-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 1f84558bcc59068f2c6cab390c303ebd97953aaa
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: aa4afbf2200e1167c9f66aeaddb4273e710394b4
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="programmatically-setting-the-objectdatasources-parameter-values-vb"></a>Définition par programme des valeurs de paramètres de l’ObjectDataSource (VB)
 ====================
@@ -33,7 +33,7 @@ Comme nous l’avons vu dans la [didacticiel précédent](declarative-parameters
 
 Il peut arriver lorsque la valeur du paramètre provient d’une source pas déjà pris en compte par une des sources de données intégrés `Parameter` objets. Si notre site pris en charge les comptes d’utilisateur, nous voulons définir le paramètre selon actuellement connecté dans nom d’utilisateur. son Ou bien, nous devons personnaliser la valeur du paramètre avant de l’envoyer le long de méthode de l’objet sous-jacent de l’ObjectDataSource.
 
-Chaque fois que l’ObjectDataSource `Select` méthode est appelée ObjectDataSource déclenche d’abord son [événement Selecting](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.objectdatasource.selecting%28VS.80%29.aspx). Méthode de l’objet sous-jacent de l’ObjectDataSource est ensuite appelée. Une fois que se termine l’ObjectDataSource [sélectionnés événement](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.objectdatasource.selected%28VS.80%29.aspx) se déclenche (Figure 1 illustre cette séquence d’événements). Les valeurs de paramètre passés dans la méthode de l’objet sous-jacent de l’ObjectDataSource peuvent être définies ou personnalisés dans un gestionnaire d’événements pour le `Selecting` événement.
+Chaque fois que l’ObjectDataSource `Select` méthode est appelée ObjectDataSource déclenche d’abord son [événement Selecting](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.selecting%28VS.80%29.aspx). Méthode de l’objet sous-jacent de l’ObjectDataSource est ensuite appelée. Une fois que se termine l’ObjectDataSource [sélectionnés événement](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.selected%28VS.80%29.aspx) se déclenche (Figure 1 illustre cette séquence d’événements). Les valeurs de paramètre passés dans la méthode de l’objet sous-jacent de l’ObjectDataSource peuvent être définies ou personnalisés dans un gestionnaire d’événements pour le `Selecting` événement.
 
 
 [![L’ObjectDataSource sélectionné et en sélectionnant le déclencher les événements avant et d’après son objet sous-jacent la méthode est appelée.](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image2.png)](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image1.png)
@@ -55,7 +55,7 @@ Pour notre premier exemple, nous devons ajouter un moyen de récupérer les empl
 **Figure 2**: ajouter une nouvelle requête pour le `EmployeesTableAdapter` ([cliquez pour afficher l’image en taille réelle](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image6.png))
 
 
-Choisissez cette option Ajouter une instruction SQL qui retourne des lignes. Quand vous atteignez la spécifier un `SELECT` la valeur par défaut de l’écran instruction `SELECT` instruction pour le `EmployeesTableAdapter` sera déjà chargé. Ajoutez simplement dans le `WHERE` clause : `WHERE DATEPART(m, HireDate) = @Month`. [DATEPART](https://msdn.microsoft.com/en-us/library/ms174420.aspx) est une fonction de T-SQL qui retourne une partie de date particulière d’un `datetime` type ; dans ce cas, nous utilisons `DATEPART` pour renvoyer le mois de la `HireDate` colonne.
+Choisissez cette option Ajouter une instruction SQL qui retourne des lignes. Quand vous atteignez la spécifier un `SELECT` la valeur par défaut de l’écran instruction `SELECT` instruction pour le `EmployeesTableAdapter` sera déjà chargé. Ajoutez simplement dans le `WHERE` clause : `WHERE DATEPART(m, HireDate) = @Month`. [DATEPART](https://msdn.microsoft.com/library/ms174420.aspx) est une fonction de T-SQL qui retourne une partie de date particulière d’un `datetime` type ; dans ce cas, nous utilisons `DATEPART` pour renvoyer le mois de la `HireDate` colonne.
 
 
 [![Uniquement les lignes où la HireDate colonne de retour est inférieure ou égale à la @HiredBeforeDate paramètre](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image8.png)](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image7.png)
@@ -137,7 +137,7 @@ Lorsque vous visitez cette page via un navigateur, nous pouvons voir que seul un
 **La figure 10**: ceux employés dont anniversaires ce mois sont affichés ([cliquez pour afficher l’image en taille réelle](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image28.png))
 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Valeurs des paramètres de l’ObjectDataSource peuvent généralement être définies de façon déclarative, sans nécessiter une ligne de code, il est facile de définir les valeurs de paramètre par programmation. Il suffit de faire est de créer un gestionnaire d’événements pour l’ObjectDataSource `Selecting` événement qui se déclenche avant que la méthode de l’objet sous-jacent est appelée et définir manuellement les valeurs pour un ou plusieurs paramètres via la `InputParameters` collection.
 

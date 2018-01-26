@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-a-new-field
 msc.type: authoredcontent
-ms.openlocfilehash: 7427b4f7c6b7a00fe795053aac0f612471a163cd
-ms.sourcegitcommit: 2b263e87217658caa42eedc4f9d2d21ef0ab5d59
+ms.openlocfilehash: 7339f6658ede16e79d19762bd6636917fe4de85f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/12/2018
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-a-new-field"></a>Ajout d’un nouveau champ
 ====================
@@ -42,7 +42,7 @@ Générez l’application pour vous assurer, qu'il n’y a aucune erreur.
 
 Dans le **Package Manager Console** fenêtre à la `PM>` invite Entrez
 
-Enable-Migrations - ContextTypeName MvcMovie.Models.MovieDBContext
+Enable-Migrations -ContextTypeName MvcMovie.Models.MovieDBContext
 
 ![](adding-a-new-field/_static/image3.png)
 
@@ -66,13 +66,13 @@ Cela ajoute les éléments suivants à l’aide d’instruction :
 > 
 > Code appelle la méthode Migrations First le `Seed` méthode après chaque migration (autrement dit, l’appel **mise à jour de la base de données** dans la Console du Gestionnaire de Package), et cette méthode met à jour les lignes qui ont déjà été insérés, ou les insère si elles n’existent pas encore.
 > 
-> Le [AddOrUpdate](https://msdn.microsoft.com/en-us/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx) méthode dans le code suivant effectue une opération « upsert » :
+> Le [AddOrUpdate](https://msdn.microsoft.com/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx) méthode dans le code suivant effectue une opération « upsert » :
 > 
 > [!code-csharp[Main](adding-a-new-field/samples/sample3.cs)]
 > 
-> Étant donné que la [Seed](https://msdn.microsoft.com/en-us/library/hh829453(v=vs.103).aspx) méthode s’exécute avec chaque migration, vous ne peut pas simplement insérer des données, car les lignes que vous essayez d’ajouter sera déjà présente après la migration initiale qui crée la base de données. Le «[upsert](http://en.wikipedia.org/wiki/Upsert)« opération empêche les erreurs qui se passerait si vous essayez d’insérer une ligne qui existe déjà, mais elle substitue à toutes les modifications apportées aux données que vous avez apportées lors du test de l’application. Avec des données de test dans certaines tables vous pouvez qui doit se produire : dans certains cas lorsque vous modifiez des données pendant le test vous souhaitez que vos modifications restant après les mises à jour de la base de données. Dans ce cas, vous souhaitez effectuer une opération d’insertion conditionnel : insérer une ligne uniquement si elle n’existe pas déjà.   
+> Étant donné que la [Seed](https://msdn.microsoft.com/library/hh829453(v=vs.103).aspx) méthode s’exécute avec chaque migration, vous ne peut pas simplement insérer des données, car les lignes que vous essayez d’ajouter sera déjà présente après la migration initiale qui crée la base de données. Le «[upsert](http://en.wikipedia.org/wiki/Upsert)« opération empêche les erreurs qui se passerait si vous essayez d’insérer une ligne qui existe déjà, mais elle substitue à toutes les modifications apportées aux données que vous avez apportées lors du test de l’application. Avec des données de test dans certaines tables vous pouvez qui doit se produire : dans certains cas lorsque vous modifiez des données pendant le test vous souhaitez que vos modifications restant après les mises à jour de la base de données. Dans ce cas, vous souhaitez effectuer une opération d’insertion conditionnel : insérer une ligne uniquement si elle n’existe pas déjà.   
 >   
-> Le premier paramètre passé à la [AddOrUpdate](https://msdn.microsoft.com/en-us/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx) méthode spécifie la propriété à utiliser pour vérifier si une ligne existe déjà. Pour les données de film de test que vous fournissez, le `Title` propriété peut être utilisée à cet effet dans la mesure où chaque titre de la liste est unique :
+> Le premier paramètre passé à la [AddOrUpdate](https://msdn.microsoft.com/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx) méthode spécifie la propriété à utiliser pour vérifier si une ligne existe déjà. Pour les données de film de test que vous fournissez, le `Title` propriété peut être utilisée à cet effet dans la mesure où chaque titre de la liste est unique :
 > 
 > [!code-csharp[Main](adding-a-new-field/samples/sample4.cs)]
 > 
@@ -80,7 +80,7 @@ Cela ajoute les éléments suivants à l’aide d’instruction :
 >   
 >  *La séquence contient plusieurs éléments*  
 >   
-> Pour plus d’informations sur la [AddOrUpdate](https://msdn.microsoft.com/en-us/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx) méthode, consultez [soyez prudent avec EF 4.3 AddOrUpdate méthode](http://thedatafarm.com/blog/data-access/take-care-with-ef-4-3-addorupdate-method/)...
+> Pour plus d’informations sur la [AddOrUpdate](https://msdn.microsoft.com/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx) méthode, consultez [soyez prudent avec EF 4.3 AddOrUpdate méthode](http://thedatafarm.com/blog/data-access/take-care-with-ef-4-3-addorupdate-method/)...
 
 
 **Appuyez sur CTRL-MAJ + B pour générer le projet.** (Les étapes suivantes échoue si vous ne créez pas à ce stade.)

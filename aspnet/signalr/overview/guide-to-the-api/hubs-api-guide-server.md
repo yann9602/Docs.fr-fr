@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/guide-to-the-api/hubs-api-guide-server
 msc.type: authoredcontent
-ms.openlocfilehash: 1cd5569554c3fbd966ee5d55ad08a79b81af36de
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c2567d4d39a494daf77a23db5dff83c8fae4925d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-signalr-hubs-api-guide---server-c"></a>Guide d’API ASP.NET SignalR concentrateurs - serveur (c#)
 ====================
@@ -102,7 +102,7 @@ Les composants serveur pour SignalR 2 sont uniquement disponibles dans .NET 4.5.
 
 ## <a name="how-to-register-signalr-middleware"></a>Comment inscrire SignalR intergiciel (middleware)
 
-Pour définir l’itinéraire que les clients utiliseront pour se connecter à votre concentrateur, appelez le `MapSignalR` méthode lorsque l’application démarre. `MapSignalR`est un [méthode d’extension](https://msdn.microsoft.com/en-us/library/vstudio/bb383977.aspx) pour la `OwinExtensions` classe. L’exemple suivant montre comment définir l’itinéraire de concentrateurs SignalR à l’aide d’une classe de démarrage OWIN.
+Pour définir l’itinéraire que les clients utiliseront pour se connecter à votre concentrateur, appelez le `MapSignalR` méthode lorsque l’application démarre. `MapSignalR`est un [méthode d’extension](https://msdn.microsoft.com/library/vstudio/bb383977.aspx) pour la `OwinExtensions` classe. L’exemple suivant montre comment définir l’itinéraire de concentrateurs SignalR à l’aide d’une classe de démarrage OWIN.
 
 [!code-csharp[Main](hubs-api-guide-server/samples/sample1.cs)]
 
@@ -156,7 +156,7 @@ L’exemple suivant montre comment spécifier l’URL de connexion SignalR et ce
 
 ## <a name="how-to-create-and-use-hub-classes"></a>Comment créer et utiliser des classes de Hub
 
-Pour créer un concentrateur, créez une classe qui dérive de [Microsoft.Aspnet.Signalr.Hub](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.hub(v=vs.111).aspx). L’exemple suivant montre une classe simple de Hub pour une application de conversation.
+Pour créer un concentrateur, créez une classe qui dérive de [Microsoft.Aspnet.Signalr.Hub](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hub(v=vs.111).aspx). L’exemple suivant montre une classe simple de Hub pour une application de conversation.
 
 [!code-csharp[Main](hubs-api-guide-server/samples/sample7.cs)]
 
@@ -178,7 +178,7 @@ Si vous souhaitez envoyer des messages aux clients de votre propre code qui s’
 
 Par défaut, les clients JavaScript font référence à des concentrateurs à l’aide d’une version de casse mixte du nom de classe. SignalR effectue automatiquement cette modification afin que le code JavaScript peut être conforme aux conventions de JavaScript. L’exemple précédent est désigné en tant que `contosoChatHub` dans le code JavaScript.
 
-**Serveur**
+**Server**
 
 [!code-csharp[Main](hubs-api-guide-server/samples/sample8.cs?highlight=1)]
 
@@ -188,7 +188,7 @@ Par défaut, les clients JavaScript font référence à des concentrateurs à l�
 
 Si vous souhaitez spécifier un autre nom pour les clients, ajoutez le `HubName` attribut. Lorsque vous utilisez un `HubName` d’attribut, il n’existe aucun changement de nom en casse mixte sur les clients JavaScript.
 
-**Serveur**
+**Server**
 
 [!code-csharp[Main](hubs-api-guide-server/samples/sample10.cs?highlight=1)]
 
@@ -240,7 +240,7 @@ Vous pouvez spécifier un type de retour et des paramètres, y compris les types
 
 Par défaut, les clients JavaScript font référence aux méthodes de concentrateur à l’aide d’une version de casse mixte du nom de la méthode. SignalR effectue automatiquement cette modification afin que le code JavaScript peut être conforme aux conventions de JavaScript.
 
-**Serveur**
+**Server**
 
 [!code-csharp[Main](hubs-api-guide-server/samples/sample15.cs?highlight=1)]
 
@@ -250,7 +250,7 @@ Par défaut, les clients JavaScript font référence aux méthodes de concentrat
 
 Si vous souhaitez spécifier un autre nom pour les clients, ajoutez le `HubMethodName` attribut.
 
-**Serveur**
+**Server**
 
 [!code-csharp[Main](hubs-api-guide-server/samples/sample17.cs?highlight=1)]
 
@@ -262,17 +262,17 @@ Si vous souhaitez spécifier un autre nom pour les clients, ajoutez le `HubMetho
 
 ### <a name="when-to-execute-asynchronously"></a>Quand exécuter de façon asynchrone
 
-Si la méthode sera être longue ou effectuer le travail qui serait impliquent en attente, telles que la recherche d’une base de données ou un appel de service web, la méthode de concentrateur asynchrone en retournant un [tâche](https://msdn.microsoft.com/en-us/library/system.threading.tasks.task.aspx) (à la place de `void` retourner) ou [ Tâche&lt;T&gt; ](https://msdn.microsoft.com/en-us/library/dd321424.aspx) objet (à la place de `T` type de retour). Lorsque vous retournez un `Task` objet à partir de la méthode SignalR attend le `Task` se termine, puis il transmet le résultat désencapsulé au client, il n’existe aucune différence dans la façon dont vous codez l’appel de méthode dans le client.
+Si la méthode sera être longue ou effectuer le travail qui serait impliquent en attente, telles que la recherche d’une base de données ou un appel de service web, la méthode de concentrateur asynchrone en retournant un [tâche](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx) (à la place de `void` retourner) ou [ Tâche&lt;T&gt; ](https://msdn.microsoft.com/library/dd321424.aspx) objet (à la place de `T` type de retour). Lorsque vous retournez un `Task` objet à partir de la méthode SignalR attend le `Task` se termine, puis il transmet le résultat désencapsulé au client, il n’existe aucune différence dans la façon dont vous codez l’appel de méthode dans le client.
 
 Effectue une méthode de concentrateur asynchrone évite de bloquer la connexion lorsqu’il utilise le transport WebSocket. Lorsqu’une méthode de concentrateur exécute de façon synchrone et le transport est WebSocket, les appels suivants de méthodes sur le concentrateur du même client sont bloquées jusqu'à la fin de la méthode de concentrateur.
 
 L’exemple suivant montre la même méthode codé pour s’exécuter de façon synchrone ou asynchrone, suivi par le code JavaScript client qui fonctionne pour appeler des versions.
 
-**Synchrone**
+**Synchronous**
 
 [!code-csharp[Main](hubs-api-guide-server/samples/sample19.cs)]
 
-**Asynchrone**
+**Asynchronous**
 
 [!code-csharp[Main](hubs-api-guide-server/samples/sample20.cs?highlight=1,7-8)]
 
@@ -303,7 +303,7 @@ Lorsque vous écrivez une méthode de serveur longue, il est important d’utili
 
 Pour appeler des méthodes de client à partir du serveur, utilisez le `Clients` propriété dans une méthode dans votre classe de concentrateur. L’exemple suivant montre le code de serveur qui appelle `addNewMessageToPage` sur tous les clients connectés et le code client qui définit la méthode dans un client JavaScript.
 
-**Serveur**
+**Server**
 
 [!code-csharp[Main](hubs-api-guide-server/samples/sample23.cs?highlight=5)]
 
@@ -331,7 +331,7 @@ Vous pouvez spécifier les types complexes et des tableaux pour les paramètres.
 
 ### <a name="selecting-which-clients-will-receive-the-rpc"></a>En sélectionnant les clients qui reçoivent l’appel RPC
 
-La propriété retourne de Clients un [HubConnectionContext](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.hubs.hubconnectioncontext(v=vs.111).aspx) objet qui fournit plusieurs options permettant de spécifier les clients qui recevront le RPC :
+La propriété retourne de Clients un [HubConnectionContext](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.hubconnectioncontext(v=vs.111).aspx) objet qui fournit plusieurs options permettant de spécifier les clients qui recevront le RPC :
 
 - Tous les clients connectés.
 
@@ -403,7 +403,7 @@ Si vous utilisez `await` pour attendre qu’une méthode de client se termine av
 
 ### <a name="how-to-use-a-string-variable-as-the-method-name"></a>Comment utiliser une variable de chaîne en tant que nom de la méthode
 
-Si vous souhaitez appeler une méthode du client à l’aide d’une variable de chaîne en tant que nom de la méthode, casté `Clients.All` (ou `Clients.Others`, `Clients.Caller`, etc.) à `IClientProxy` , puis appelez [Invoke (methodName, args...) ](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.hubs.iclientproxy.invoke(v=vs.111).aspx).
+Si vous souhaitez appeler une méthode du client à l’aide d’une variable de chaîne en tant que nom de la méthode, casté `Clients.All` (ou `Clients.Others`, `Clients.Caller`, etc.) à `IClientProxy` , puis appelez [Invoke (methodName, args...) ](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.iclientproxy.invoke(v=vs.111).aspx).
 
 [!code-csharp[Main](hubs-api-guide-server/samples/sample42.cs)]
 
@@ -413,9 +413,9 @@ Si vous souhaitez appeler une méthode du client à l’aide d’une variable de
 
 Groupes dans SignalR fournissent une méthode pour diffuser des messages à des sous-ensembles spécifiés de clients connectés. Un groupe peut avoir n’importe quel nombre de clients, et un client peut être un membre de n’importe quel nombre de groupes.
 
-Pour gérer l’appartenance au groupe, utilisez le [ajouter](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.igroupmanager.add(v=vs.111).aspx) et [supprimer](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.igroupmanager.remove(v=vs.111).aspx) méthodes fournies par le `Groups` propriété de la classe de concentrateur. L’exemple suivant illustre la `Groups.Add` et `Groups.Remove` méthodes utilisées dans les méthodes de concentrateur qui sont appelées par le code client, suivi par le code JavaScript client qui les appelle.
+Pour gérer l’appartenance au groupe, utilisez le [ajouter](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.igroupmanager.add(v=vs.111).aspx) et [supprimer](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.igroupmanager.remove(v=vs.111).aspx) méthodes fournies par le `Groups` propriété de la classe de concentrateur. L’exemple suivant illustre la `Groups.Add` et `Groups.Remove` méthodes utilisées dans les méthodes de concentrateur qui sont appelées par le code client, suivi par le code JavaScript client qui les appelle.
 
-**Serveur**
+**Server**
 
 [!code-csharp[Main](hubs-api-guide-server/samples/sample43.cs?highlight=5,10)]
 
@@ -494,7 +494,7 @@ Les méthodes de gestionnaire de connexions durée de vie des événements sont 
 
 ## <a name="how-to-get-information-about-the-client-from-the-context-property"></a>Comment obtenir des informations sur le client à partir de la propriété de contexte
 
-Pour obtenir plus d’informations sur le client, utilisez le `Context` propriété de la classe de concentrateur. Le `Context` propriété retourne un [HubCallerContext](https://msdn.microsoft.com/en-us/library/jj890883(v=vs.111).aspx) objet qui fournit l’accès aux informations suivantes :
+Pour obtenir plus d’informations sur le client, utilisez le `Context` propriété de la classe de concentrateur. Le `Context` propriété retourne un [HubCallerContext](https://msdn.microsoft.com/library/jj890883(v=vs.111).aspx) objet qui fournit l’accès aux informations suivantes :
 
 - L’ID de connexion du client appelant.
 
@@ -578,7 +578,7 @@ Dans VB.NET ou dans un concentrateur fortement typée, l’objet d’état de l�
 Pour gérer les erreurs qui se produisent dans vos méthodes de classe de concentrateur, utilisez une ou plusieurs des méthodes suivantes :
 
 - Encapsuler votre code de la méthode dans les blocs try-catch et les journaux de l’objet exception. À des fins de débogage, vous pouvez envoyer l’exception au client, mais pour la sécurité de raisons d’envoyer des informations détaillées sur les clients en production ne sont pas recommandées.
-- Créer un module de pipeline concentrateurs qui gère la [OnIncomingError](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.hubs.hubpipelinemodule.onincomingerror(v=vs.111).aspx) (méthode). L’exemple suivant montre un module de pipeline qui enregistre les erreurs, suivis par le code dans Startup.cs qui injecte le module dans le pipeline de concentrateurs.
+- Créer un module de pipeline concentrateurs qui gère la [OnIncomingError](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.hubpipelinemodule.onincomingerror(v=vs.111).aspx) (méthode). L’exemple suivant montre un module de pipeline qui enregistre les erreurs, suivis par le code dans Startup.cs qui injecte le module dans le pipeline de concentrateurs.
 
     [!code-csharp[Main](hubs-api-guide-server/samples/sample61.cs)]
 
@@ -674,4 +674,4 @@ Le code suivant dans le *Startup.cs* fichier enregistre le module à s’exécut
 
 [!code-csharp[Main](hubs-api-guide-server/samples/sample77.cs?highlight=3)]
 
-Il existe de nombreuses méthodes différentes que vous pouvez substituer. Pour obtenir la liste complète, consultez [HubPipelineModule méthodes](https://msdn.microsoft.com/en-us/library/jj918633(v=vs.111).aspx).
+Il existe de nombreuses méthodes différentes que vous pouvez substituer. Pour obtenir la liste complète, consultez [HubPipelineModule méthodes](https://msdn.microsoft.com/library/jj918633(v=vs.111).aspx).

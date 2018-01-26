@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/anti-request-forgery
-ms.openlocfilehash: d7df8f91e88290509c8751a4b69804b60138846e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3831bf737186d10eb1b298f5ec2da1fd33ebedd9
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="preventing-cross-site-request-forgery-xsrfcsrf-attacks-in-aspnet-core"></a>Prévention des attaques Cross-Site Request Forgery (XSRF/CSRF) ASP.NET Core
 
@@ -21,7 +21,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="what-attack-does-anti-forgery-prevent"></a>Les attaques anti-contrefaçon n’empêche ?
 
-Falsification de requête (également appelé XSRF ou CSRF, prononcé *voir-navigation*) est une attaque contre les applications hébergées par le web dans laquelle un site web malveillant peut influencer l’interaction entre un navigateur client et un site web qui approuve ce navigateur. Ces attaques sont rendu possible, car certains types de jetons d’authentification automatiquement avec chaque demande d’envoi de navigateurs web à un site web. Cette forme d’attaque est également appelé un *en un clic attaque* ou en tant que *vol de session*, car l’attaque tire parti de l’utilisateur est authentifié précédemment de session.
+Falsification de requête (également appelé XSRF ou CSRF, prononcé *voir-navigation*) est une attaque contre les applications hébergées par le web dans laquelle un site web malveillant peut influencer l’interaction entre un navigateur client et un site web qui approuve ce navigateur. Ces attaques sont rendu possible, car certains types de jetons d’authentification automatiquement avec chaque demande d’envoi de navigateurs web à un site web. Cette forme d’attaque de l’appelé aussi un *en un clic attaque* ou en tant que *vol de session*, car l’attaque tire parti de l’utilisateur est authentifié précédemment de session.
 
 Voici un exemple d’une attaque CSRF :
 
@@ -51,13 +51,13 @@ Cet exemple oblige l’utilisateur à cliquer sur le bouton du formulaire. La pa
 * Envoie un envoi de formulaire sous la forme d’une requête AJAX. 
 * Utiliser un formulaire masqué avec CSS. 
 
-À l’aide de SSL n’empêche pas une attaque CSRF, le site malveillant peut envoyer un `https://` demande. 
+Une attaque CSRF n’empêche pas l’utilisation de SSL, le site malveillant peut envoyer un `https://` demande. 
 
 Certaines attaques de ciblent des points de terminaison de site qui répondent aux `GET` demandes, dans lequel la case une balise d’image peut être utilisé pour effectuer l’action (cette forme d’attaque est courant sur les sites de forum qui autorisent les images mais bloquent JavaScript). Les applications qui modifient l’état avec `GET` demandes sont vulnérables contre les attaques malveillantes.
 
 Les attaques CSRF sont possibles contre les sites web qui utilisent des cookies pour l’authentification, étant donné que les navigateurs envoient tous les cookies pertinentes pour le site de destination. Toutefois, les attaques CSRF n’êtes pas limités pour exploiter les cookies. Par exemple, l’authentification de base et Digest sont également vulnérables. Une fois un utilisateur se connecte avec l’authentification de base ou Digest, le navigateur envoie automatiquement les informations d’identification jusqu'à ce que la session se termine.
 
-Remarque : dans ce contexte, *session* fait référence à la session côté client au cours de laquelle l’utilisateur est authentifié. Il n’est pas lié à des sessions de côté serveur ou [intergiciel (middleware) de session](xref:fundamentals/app-state).
+Remarque : dans ce contexte, *session* fait référence à la session côté client au cours de laquelle l’utilisateur est authentifié. Il est sans rapport avec les sessions côté serveur ou [intergiciel (middleware) de session](xref:fundamentals/app-state).
 
 Les utilisateurs peuvent se protéger contre les vulnérabilités CSRF par :
 * Déconnexion de sites web lorsqu’ils ont terminé leur utilisation.
@@ -171,7 +171,7 @@ Le ``ValidateAntiForgeryToken`` attribut requiert un jeton pour les demandes de 
 
 ### <a name="autovalidateantiforgerytoken"></a>AutoValidateAntiforgeryToken
 
-Généralement, les applications ASP.NET Core ne génèrent pas côté des jetons pour les méthodes sans échec HTTP (GET, HEAD, OPTIONS et TRACE). Au lieu d’appliquer globalement la ``ValidateAntiForgeryToken`` attribut et en remplaçant puis avec ``IgnoreAntiforgeryToken`` attributs, vous pouvez utiliser la ``AutoValidateAntiforgeryToken`` attribut. Cet attribut fonctionne de manière identique à la ``ValidateAntiForgeryToken`` d’attribut, sauf qu’elle ne nécessite pas les jetons pour les demandes effectuées à l’aide des méthodes HTTP suivantes :
+Applications ASP.NET Core généralement ne pas générer de jetons de côté pour les méthodes sans échec HTTP (GET, HEAD, OPTIONS et TRACE). Au lieu d’appliquer globalement la ``ValidateAntiForgeryToken`` attribut et en remplaçant puis avec ``IgnoreAntiforgeryToken`` attributs, vous pouvez utiliser la ``AutoValidateAntiforgeryToken`` attribut. Cet attribut fonctionne de manière identique à la ``ValidateAntiForgeryToken`` d’attribut, sauf qu’elle ne nécessite pas les jetons pour les demandes effectuées à l’aide des méthodes HTTP suivantes :
 
 * GET
 * HEAD
@@ -337,7 +337,7 @@ Https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.cookieau
 
 ### <a name="extending-antiforgery"></a>Extension Antiforgery
 
-Le [IAntiForgeryAdditionalDataProvider](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.antiforgery.iantiforgeryadditionaldataprovider) permet aux développeurs d’étendre le comportement du système anti-XSRF par des données supplémentaires aller-retour dans chaque jeton. Le [GetAdditionalData](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.antiforgery.iantiforgeryadditionaldataprovider#Microsoft_AspNetCore_Antiforgery_IAntiforgeryAdditionalDataProvider_GetAdditionalData_Microsoft_AspNetCore_Http_HttpContext_) méthode est appelée chaque fois qu’un jeton de champ est généré, et la valeur de retour est incorporée dans le jeton généré. Un implémenteur peut retourner un horodatage, une valeur à usage unique ou toute autre valeur, puis appelez [ValidateAdditionalData](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.antiforgery.iantiforgeryadditionaldataprovider#Microsoft_AspNetCore_Antiforgery_IAntiforgeryAdditionalDataProvider_ValidateAdditionalData_Microsoft_AspNetCore_Http_HttpContext_System_String_) pour valider ces données lorsque le jeton est validé. Nom d’utilisateur du client est déjà incorporée dans les jetons générés, il est donc inutile d’inclure ces informations. Si un jeton contient des données supplémentaires, mais non `IAntiForgeryAdditionalDataProvider` a été configuré, les données supplémentaires ne sont pas validées.
+Le [IAntiForgeryAdditionalDataProvider](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.antiforgery.iantiforgeryadditionaldataprovider) permet aux développeurs d’étendre le comportement du système anti-XSRF par des données supplémentaires aller-retour dans chaque jeton. Le [GetAdditionalData](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.antiforgery.iantiforgeryadditionaldataprovider#Microsoft_AspNetCore_Antiforgery_IAntiforgeryAdditionalDataProvider_GetAdditionalData_Microsoft_AspNetCore_Http_HttpContext_) méthode est appelée chaque fois qu’un jeton de champ est généré, et la valeur de retour est incorporée dans le jeton généré. Un implémenteur peut retourner un horodatage, une valeur à usage unique ou toute autre valeur, puis appelez [ValidateAdditionalData](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.antiforgery.iantiforgeryadditionaldataprovider#Microsoft_AspNetCore_Antiforgery_IAntiforgeryAdditionalDataProvider_ValidateAdditionalData_Microsoft_AspNetCore_Http_HttpContext_System_String_) pour valider ces données lorsque le jeton est validé. Nom d’utilisateur du client est déjà incorporée dans les jetons générés, il est donc inutile d’inclure ces informations. Si un jeton contient des données supplémentaires, mais non `IAntiForgeryAdditionalDataProvider` a été configuré, les données supplémentaires n’est pas validées.
 
 ## <a name="fundamentals"></a>Notions de base
 
@@ -353,11 +353,11 @@ Lorsqu’un utilisateur est connecté à un système, une session utilisateur es
 
 ### <a name="user-tokens"></a>Jetons d’utilisateur
 
-L’authentification basée sur le jeton ne stocke pas session sur le serveur. En revanche, lorsqu’un utilisateur est connecté, ils sont émis un jeton (pas un jeton côté). Ce jeton conserve toutes les données qui sont nécessaire pour valider le jeton. Il contient également des informations d’utilisateur, sous la forme de [revendications](https://docs.microsoft.com/dotnet/framework/security/claims-based-identity-model). Lorsqu’un utilisateur souhaite accéder à une ressource de serveur nécessitant une authentification, le jeton est envoyé au serveur avec un en-tête d’autorisation supplémentaires sous forme de porteur {jeton}. Cela rend l’application sans état, car dans chaque demande ultérieure le jeton est passé dans la demande pour la validation côté serveur. Ce jeton n’est pas *chiffrées*; il s’agit plutôt *codé*. Sur le côté serveur, le jeton peut être décodé pour accéder aux informations brutes dans le jeton. Pour envoyer le jeton dans les demandes suivantes, vous pouvez soit l’enregistrer dans le stockage local du navigateur ou dans un cookie. Vous n’avez pas à vous soucier de vulnérabilité XSRF si ce dernier est stocké dans le stockage local, mais il s’agit d’un problème si le jeton est stocké dans un cookie.
+L’authentification basée sur le jeton ne stocke pas session sur le serveur. Au lieu de cela, lorsqu’un utilisateur est connecté, ils sont émis un jeton (pas un jeton côté). Ce jeton conserve toutes les données requises pour valider le jeton. Il contient également des informations d’utilisateur, sous la forme de [revendications](https://docs.microsoft.com/dotnet/framework/security/claims-based-identity-model). Lorsqu’un utilisateur souhaite accéder à une ressource de serveur nécessitant une authentification, le jeton est envoyé au serveur avec un en-tête d’autorisation supplémentaires sous forme de porteur {jeton}. Cela rend l’application sans état, car dans chaque demande ultérieure le jeton est passé dans la demande pour la validation côté serveur. Ce jeton n’est pas *chiffrées*; il s’agit plutôt *codé*. Sur le côté serveur, le jeton peut être décodé pour accéder aux informations brutes dans le jeton. Pour envoyer le jeton dans les demandes suivantes, vous pouvez soit l’enregistrer dans le stockage local du navigateur ou dans un cookie. Vous n’avez pas à vous soucier de vulnérabilité XSRF si ce dernier est stocké dans le stockage local, mais il s’agit d’un problème si le jeton est stocké dans un cookie.
 
 ### <a name="multiple-applications-are-hosted-in-one-domain"></a>Plusieurs applications sont hébergées dans un domaine
 
-Bien que `example1.cloudapp.net` et `example2.cloudapp.net` sont des hôtes différents, il existe une relation d’approbation implicite entre tous les hôtes de le `*.cloudapp.net` domaine. Cette relation de confiance implicite permet à des hôtes potentiellement non fiables affecter l’autre les cookies (les même origine les stratégies qui régissent les requêtes AJAX ne pas nécessairement s’appliquent pour les cookies HTTP). Le runtime ASP.NET Core permet une limitation dans la mesure où le nom d’utilisateur est incorporée dans le jeton de champ, donc, même si un sous-domaine malveillant est en mesure de remplacer un jeton de session qu’il est impossible de générer un jeton de champ valide pour l’utilisateur. Toutefois, lorsqu’il est hébergé dans un tel environnement les routines intégrées anti-XSRF toujours ne peut pas protéger contre le piratage de session ou connexion CSRF contre les attaques. Environnements d’hébergement partagés sont vunerable le piratage de session, connexion CSRF et autres attaques.
+Bien que `example1.cloudapp.net` et `example2.cloudapp.net` sont des hôtes différents, il existe une relation d’approbation implicite entre tous les hôtes de le `*.cloudapp.net` domaine. Cette relation de confiance implicite permet à des hôtes potentiellement non fiables affecter l’autre les cookies (les même origine les stratégies qui régissent les requêtes AJAX ne pas nécessairement appliquer les cookies HTTP). Le runtime ASP.NET Core permet une limitation dans la mesure où le nom d’utilisateur est incorporée dans le jeton de champ, donc, même si un sous-domaine malveillant est en mesure de remplacer un jeton de session qu’il est impossible de générer un jeton de champ valide pour l’utilisateur. Toutefois, lorsqu’il est hébergé dans un tel environnement les routines intégrées anti-XSRF toujours ne peut pas protéger contre le piratage de session ou connexion CSRF contre les attaques. Environnements d’hébergement partagés sont vunerable le piratage de session, connexion CSRF et autres attaques.
 
 
 ### <a name="additional-resources"></a>Ressources supplémentaires

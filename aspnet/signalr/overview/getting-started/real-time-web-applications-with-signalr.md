@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/getting-started/real-time-web-applications-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 96d3b8b82f78d8f6da85012aac8a1411cf297e26
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 22123a9c61e6830f3f9f66a45182e1e923950341
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="hands-on-lab-real-time-web-applications-with-signalr"></a>Ateliers pratiques : Les Applications Web en temps réel avec SignalR
 ====================
@@ -49,7 +49,7 @@ Dans cet atelier pratique, vous allez apprendre comment :
 - Montée en charge votre application SignalR à l’aide **SQL Server**.
 
 <a id="Prerequisites"></a>
-### <a name="prerequisites"></a>Conditions préalables
+### <a name="prerequisites"></a>Prérequis
 
 Les éléments suivants sont nécessaire pour terminer cet atelier pratique :
 
@@ -263,7 +263,7 @@ Il existe actuellement trois types de fonds de panier pour SignalR :
 - **SQL Server**. L’infrastructure d’intégration SQL Server écrit des messages dans des tables SQL. L’infrastructure d’intégration utilise Service Broker de messagerie efficace. Toutefois, il fonctionne également si Service Broker n’est pas activé.
 - **Redis**. Redis est un magasin clé-valeur de mémoire. Redis prend en charge un modèle de publication/abonnement (« pub/sub ») pour envoyer des messages.
 
-Chaque message est envoyé via un bus de messages. Un bus de messages implémente la [IMessageBus](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.messaging.imessagebus(v=vs.100).aspx) interface, qui fournit une abstraction publication/abonnement. Les fonds de panier de travail en remplaçant la valeur par défaut **IMessageBus** avec un bus conçu pour que fond de panier.
+Chaque message est envoyé via un bus de messages. Un bus de messages implémente la [IMessageBus](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.messaging.imessagebus(v=vs.100).aspx) interface, qui fournit une abstraction publication/abonnement. Les fonds de panier de travail en remplaçant la valeur par défaut **IMessageBus** avec un bus conçu pour que fond de panier.
 
 Chaque instance de serveur se connecte au fond de panier via le bus. Lorsqu’un message est envoyé, il est placé dans le fond de panier, et le fond de panier envoie à tous les serveurs. Lorsqu’un serveur reçoit un message à partir de l’infrastructure d’intégration, il stocke le message dans sa mémoire cache locale. Le serveur puis remet les messages aux clients à partir de sa mémoire cache locale.
 
@@ -397,6 +397,6 @@ Dans cette tâche, vous allez configurer **fou questionnaire** pour se connecter
 * * *
 
 <a id="Summary"></a>
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Dans cet atelier, vous avez appris comment ajouter **SignalR** à votre application et envoyer des notifications à partir du serveur à vos clients connectés à l’aide de **concentrateurs**. En outre, vous avez appris comment faire évoluer votre application en utilisant un *fond de panier* composant lorsque votre application est déployée dans plusieurs instances d’IIS.

@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2012/aspnet-and-web-tools-20131-for-visual-studio-2012
 msc.type: authoredcontent
-ms.openlocfilehash: 1e4ee8eb4901305bf6a8c9c5b949dc4ee10290e5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c11e2ef9c33b0cae1f196690533094ce1c342da5
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="release-notes-for-aspnet-and-web-tools-20131-for-visual-studio-2012"></a>Notes de version de ASP.NET et outils Web 2013.1 pour Visual Studio 2012
 ====================
@@ -31,7 +31,7 @@ par [Microsoft](https://github.com/microsoft)
 - [Configuration logicielle requise](#requirements)
 - Nouvelles fonctionnalités dans ASP.NET et outils Web 2013.1 pour Visual Studio 2012
 
-    - [Programme d’amorçage](#bootstrap)
+    - [Bootstrap](#bootstrap)
     - [Modèles](#templates)
 
         - [Modèle ASP.NET MVC 5](#mvc5template)
@@ -190,7 +190,7 @@ Lorsque vous créez ASP.NET MVC projets avec Visual Studio 2012 sur Windows 8.1 
 
 ![Erreur de configuration](aspnet-and-web-tools-20131-for-visual-studio-2012/_static/image2.png)
 
-Vous voyez cette erreur, car Visual Studio 2012 n’active pas la fonctionnalité ASP.NET 4.5 lorsqu’il est installé sur ces versions de Windows. Pour activer ASP.NET 4.5, effectuez les étapes décrites dans [ou désactiver des fonctionnalités Windows d’activer](https://windows.microsoft.com/en-us/windows-8/turn-windows-features-on-off).
+Vous voyez cette erreur, car Visual Studio 2012 n’active pas la fonctionnalité ASP.NET 4.5 lorsqu’il est installé sur ces versions de Windows. Pour activer ASP.NET 4.5, effectuez les étapes décrites dans [ou désactiver des fonctionnalités Windows d’activer](https://windows.microsoft.com/windows-8/turn-windows-features-on-off).
 
 ![activer ou désactiver des fonctionnalités Windows](aspnet-and-web-tools-20131-for-visual-studio-2012/_static/image3.png)
 

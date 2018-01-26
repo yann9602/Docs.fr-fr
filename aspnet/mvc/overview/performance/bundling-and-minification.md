@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/performance/bundling-and-minification
 msc.type: authoredcontent
-ms.openlocfilehash: e83be2446ef1e3ff1275d06d5b743fb5b9444a6a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7192481de46c36f7de71164766e68afdbba74f6d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="bundling-and-minification"></a>Groupement et minimisation
 ====================
@@ -43,7 +43,7 @@ L’illustration suivante montre la même vue de minutage de la vue à propos d�
 
 ![](bundling-and-minification/_static/image3.png)
 
-## <a name="minification"></a>Minimisation
+## <a name="minification"></a>Minification
 
 Minimisation effectue diverses optimisations de code différentes css, telles que la suppression d’un espace blanc inutile et les commentaires et de raccourcir les noms de variables pour un caractère ou de scripts. Considérez la fonction JavaScript suivante.
 
@@ -55,7 +55,7 @@ Après réduction, la fonction est réduite à ce qui suit :
 
 Outre la suppression des commentaires et espaces inutiles, les paramètres suivants et les noms de variables ont été renommés (abrégé) comme suit :
 
-| **Langue source** | **Renommé** |
+| **Original** | **Renommé** |
 | --- | --- |
 | imageTagAndImageID | n |
 | imageContext | t |
@@ -65,7 +65,7 @@ Outre la suppression des commentaires et espaces inutiles, les paramètres suiva
 
 Le tableau suivant montre plusieurs différences importantes entre la liste de tous les composants individuellement et à l’aide de groupement et la minimisation (B/M) dans l’exemple de programme.
 
-|  | **À l’aide de B/M** | **Sans B/M** | **Modification** |
+|  | **À l’aide de B/M** | **Sans B/M** | **Change** |
 | --- | --- | --- | --- |
 | **Demandes de fichiers** | 9 | 34 | 256% |
 | **Ko envoyé** | 3.26 | 11.92 | 266% |
@@ -76,7 +76,7 @@ Les octets envoyés avaient une réduction significative avec regroupement comme
 
 ## <a name="debugging-bundled-and-minified-javascript"></a>Débogage groupée et réduites de JavaScript
 
-Il est facile de déboguer votre JavaScript dans un environnement de développement (où le [compilation élément](https://msdn.microsoft.com/en-us/library/s10awwz0.aspx) dans les *Web.config* fichier est défini sur `debug="true"` ), car les fichiers JavaScript ne sont pas fournis ou réduites. Vous pouvez également déboguer une version Release où vos fichiers JavaScript sont regroupés et réduites. Utilisez les outils de développement Internet Explorer F12, déboguer une fonction JavaScript dans un regroupement réduite à l’aide de l’approche suivante :
+Il est facile de déboguer votre JavaScript dans un environnement de développement (où le [compilation élément](https://msdn.microsoft.com/library/s10awwz0.aspx) dans les *Web.config* fichier est défini sur `debug="true"` ), car les fichiers JavaScript ne sont pas fournis ou réduites. Vous pouvez également déboguer une version Release où vos fichiers JavaScript sont regroupés et réduites. Utilisez les outils de développement Internet Explorer F12, déboguer une fonction JavaScript dans un regroupement réduite à l’aide de l’approche suivante :
 
 1. Sélectionnez le **Script** onglet, puis sélectionnez le **démarrer le débogage** bouton.
 2. Sélectionnez le groupe qui contient la fonction JavaScript à déboguer à l’aide du bouton de ressources.  
@@ -85,11 +85,11 @@ Il est facile de déboguer votre JavaScript dans un environnement de développem
 4. Dans le **recherche titre** zone d’entrée de t, sélectionnez le nom de la fonction que vous souhaitez déboguer. Dans l’image suivante, **AddAltToImg** a été entré dans le **recherche titre** zone d’entrée de t.  
     ![](bundling-and-minification/_static/image6.png)
 
-Pour plus d’informations sur le débogage avec les outils de développement F12, consultez l’article MSDN [utilisant les outils de développement F12 pour déboguer les erreurs JavaScript](https://msdn.microsoft.com/en-us/library/ie/gg699336(v=vs.85).aspx).
+Pour plus d’informations sur le débogage avec les outils de développement F12, consultez l’article MSDN [utilisant les outils de développement F12 pour déboguer les erreurs JavaScript](https://msdn.microsoft.com/library/ie/gg699336(v=vs.85).aspx).
 
 ## <a name="controlling-bundling-and-minification"></a>Contrôle de regroupement et minimisation
 
-Groupement et la minimisation est activé ou désactivé en définissant la valeur de l’attribut de débogage dans le [compilation élément](https://msdn.microsoft.com/en-us/library/s10awwz0.aspx) dans les *Web.config* fichier. Dans le code XML suivant, `debug` est un groupement de possède la valeur true, et la réduction est désactivée.
+Groupement et la minimisation est activé ou désactivé en définissant la valeur de l’attribut de débogage dans le [compilation élément](https://msdn.microsoft.com/library/s10awwz0.aspx) dans les *Web.config* fichier. Dans le code XML suivant, `debug` est un groupement de possède la valeur true, et la réduction est désactivée.
 
 [!code-xml[Main](bundling-and-minification/samples/sample3.xml?highlight=2)]
 
@@ -98,7 +98,7 @@ Pour activer le groupement et la minimisation, définissez la `debug` la valeur 
 [!code-csharp[Main](bundling-and-minification/samples/sample4.cs?highlight=7)]
 
 > [!NOTE]
-> À moins que `EnableOptimizations` est `true` ou l’attribut de débogage dans le [compilation, élément](https://msdn.microsoft.com/en-us/library/s10awwz0.aspx) dans les *Web.config* fichier est défini sur `false`, fichiers ne seront pas fournis ou réduites. En outre, la version .min de fichiers ne sera pas utilisée, les versions de débogage complet seront sélectionnées. `EnableOptimizations`remplace l’attribut de débogage dans le [compilation élément](https://msdn.microsoft.com/en-us/library/s10awwz0.aspx) dans les *Web.config* fichier
+> À moins que `EnableOptimizations` est `true` ou l’attribut de débogage dans le [compilation, élément](https://msdn.microsoft.com/library/s10awwz0.aspx) dans les *Web.config* fichier est défini sur `false`, fichiers ne seront pas fournis ou réduites. En outre, la version .min de fichiers ne sera pas utilisée, les versions de débogage complet seront sélectionnées. `EnableOptimizations`remplace l’attribut de débogage dans le [compilation élément](https://msdn.microsoft.com/library/s10awwz0.aspx) dans les *Web.config* fichier
 
 
 ## <a name="using-bundling-and-minification-with-aspnet-web-forms-and-web-pages"></a>À l’aide de regroupement et la minimisation avec Web Forms ASP.NET et des Pages Web
@@ -137,11 +137,11 @@ Dans le code ci-dessus, vous sera demandé jQuery du CDN tandis que dans la vers
 
 ## <a name="creating-a-bundle"></a>Création d’un regroupement
 
-Le [groupe](https://msdn.microsoft.com/en-us/library/system.web.optimization.bundle(v=VS.110).aspx) classe `Include` méthode prend un tableau de chaînes, où chaque chaîne est un chemin d’accès virtuel à la ressource. Le code suivant à partir de la méthode RegisterBundles dans le *application\_Start\BundleConfig.cs* fichier montre comment plusieurs fichiers sont ajoutés à un regroupement :
+Le [groupe](https://msdn.microsoft.com/library/system.web.optimization.bundle(v=VS.110).aspx) classe `Include` méthode prend un tableau de chaînes, où chaque chaîne est un chemin d’accès virtuel à la ressource. Le code suivant à partir de la méthode RegisterBundles dans le *application\_Start\BundleConfig.cs* fichier montre comment plusieurs fichiers sont ajoutés à un regroupement :
 
 [!code-csharp[Main](bundling-and-minification/samples/sample8.cs)]
 
-Le [groupe](https://msdn.microsoft.com/en-us/library/system.web.optimization.bundle(v=VS.110).aspx) classe `IncludeDirectory` méthode est fournie pour ajouter tous les fichiers dans un répertoire (et éventuellement tous ses sous-répertoires) qui correspondent à un modèle de recherche. Le [groupe](https://msdn.microsoft.com/en-us/library/system.web.optimization.bundle(v=VS.110).aspx) classe `IncludeDirectory` API est indiqué ci-dessous :
+Le [groupe](https://msdn.microsoft.com/library/system.web.optimization.bundle(v=VS.110).aspx) classe `IncludeDirectory` méthode est fournie pour ajouter tous les fichiers dans un répertoire (et éventuellement tous ses sous-répertoires) qui correspondent à un modèle de recherche. Le [groupe](https://msdn.microsoft.com/library/system.web.optimization.bundle(v=VS.110).aspx) classe `IncludeDirectory` API est indiqué ci-dessous :
 
 [!code-csharp[Main](bundling-and-minification/samples/sample9.cs)]
 
@@ -170,17 +170,17 @@ Le tableau suivant présente les fichiers ajoutés à un groupe en utilisant le 
 
 | **Call** | **Fichiers ajoutés ou Exception levée** |
 | --- | --- |
-| Inclure (« ~/Scripts/Common/\*.js ») | *AddAltToImg.js, ToggleDiv.js, ToggleImg.js* |
-| Inclure (« ~/Scripts/Common/T\*.js ») | Exception de modèle non valide. Le caractère générique est uniquement autorisé sur le préfixe ou le suffixe. |
-| Inclure (« ~/Scripts/Common/\*og.\*») | Exception de modèle non valide. Qu’un seul caractère générique est autorisé. |
-| « Inclure (« ~/Scripts/Common/T\*») | *ToggleDiv.js, ToggleImg.js* |
-| « Inclure (« ~/Scripts/Common/\*») | Exception de modèle non valide. Un segment de caractère générique pure n’est pas valide. |
-| IncludeDirectory (« ~/Scripts/Common », « T\*») | *ToggleDiv.js, ToggleImg.js* |
-| IncludeDirectory (« ~/Scripts/Common », « T\*", true) | *ToggleDiv.js, ToggleImg.js, ToggleLinks.js* |
+| Include("~/Scripts/Common/\*.js") | *AddAltToImg.js, ToggleDiv.js, ToggleImg.js* |
+| Include("~/Scripts/Common/T\*.js") | Exception de modèle non valide. Le caractère générique est uniquement autorisé sur le préfixe ou le suffixe. |
+| Include("~/Scripts/Common/\*og.\*") | Exception de modèle non valide. Qu’un seul caractère générique est autorisé. |
+| "Include("~/Scripts/Common/T\*") | *ToggleDiv.js, ToggleImg.js* |
+| "Include("~/Scripts/Common/\*") | Exception de modèle non valide. Un segment de caractère générique pure n’est pas valide. |
+| IncludeDirectory("~/Scripts/Common", "T\*") | *ToggleDiv.js, ToggleImg.js* |
+| IncludeDirectory("~/Scripts/Common", "T\*",true) | *ToggleDiv.js, ToggleImg.js, ToggleLinks.js* |
 
 Ajouter explicitement chaque fichier à une offre groupée est généralement préférable sur le chargement de caractère générique des fichiers pour les raisons suivantes :
 
-- Ajout de scripts par défaut de caractère générique pour les charger dans l’ordre alphabétique, qui est généralement pas ce que vous souhaitez. Fichiers CSS et JavaScript fréquemment doivent être ajoutés dans l’ordre (non alphabétiques). Vous pouvez réduire ce risque en ajoutant une personnalisée [IBundleOrderer](https://msdn.microsoft.com/en-us/library/system.web.optimization.ibundleorderer(VS.110).aspx) implémentation, mais ajouter explicitement chaque fichier est moins sujet aux erreurs. Par exemple, vous pouvez ajouter de nouvelles ressources dans un dossier dans le futur, qui peuvent vous amener à modifier votre [IBundleOrderer](https://msdn.microsoft.com/en-us/library/system.web.optimization.ibundleorderer(VS.110).aspx) mise en œuvre.
+- Ajout de scripts par défaut de caractère générique pour les charger dans l’ordre alphabétique, qui est généralement pas ce que vous souhaitez. Fichiers CSS et JavaScript fréquemment doivent être ajoutés dans l’ordre (non alphabétiques). Vous pouvez réduire ce risque en ajoutant une personnalisée [IBundleOrderer](https://msdn.microsoft.com/library/system.web.optimization.ibundleorderer(VS.110).aspx) implémentation, mais ajouter explicitement chaque fichier est moins sujet aux erreurs. Par exemple, vous pouvez ajouter de nouvelles ressources dans un dossier dans le futur, qui peuvent vous amener à modifier votre [IBundleOrderer](https://msdn.microsoft.com/library/system.web.optimization.ibundleorderer(VS.110).aspx) mise en œuvre.
 - Afficher les fichiers spécifiques ajoutées à un répertoire à l’aide du caractère générique du chargement peuvent être inclus dans toutes les vues faisant référence à cette offre groupée. Si le script d’affichage spécifique est ajouté à un groupe, vous pouvez obtenir une erreur de JavaScript sur les autres vues qui font référence à l’offre groupée.
 - Fichiers CSS importer d’autres fichiers entraîner des fichiers importés chargés à deux reprises. Par exemple, le code suivant crée un regroupement avec la plupart des fichiers CSS thème de l’interface utilisateur de jQuery chargés à deux reprises. 
 
@@ -209,10 +209,10 @@ Le groupement et la minimisation framework fournit un mécanisme permettant de t
 1. Créez un dossier pour moins de votre contenu. L’exemple suivant utilise le *Content\MyLess* dossier.
 2. Ajouter le [.less](http://www.dotlesscss.org/) package NuGet **sans point** à votre projet.  
     ![Installation sans point de NuGet](bundling-and-minification/_static/image9.png)
-3. Ajoutez une classe qui implémente le [IBundleTransform](https://msdn.microsoft.com/en-us/library/system.web.optimization.ibundletransform(VS.110).aspx) interface. Pour la transformation .less, ajoutez le code suivant à votre projet.
+3. Ajoutez une classe qui implémente le [IBundleTransform](https://msdn.microsoft.com/library/system.web.optimization.ibundletransform(VS.110).aspx) interface. Pour la transformation .less, ajoutez le code suivant à votre projet.
 
     [!code-csharp[Main](bundling-and-minification/samples/sample13.cs)]
-4. Créer un groupe de fichiers LESS avec la `LessTransform` et [CssMinify](https://msdn.microsoft.com/en-us/library/system.web.optimization.cssminify(VS.110).aspx) transformer. Ajoutez le code suivant à la `RegisterBundles` méthode dans le *application\_Start\BundleConfig.cs* fichier.
+4. Créer un groupe de fichiers LESS avec la `LessTransform` et [CssMinify](https://msdn.microsoft.com/library/system.web.optimization.cssminify(VS.110).aspx) transformer. Ajoutez le code suivant à la `RegisterBundles` méthode dans le *application\_Start\BundleConfig.cs* fichier.
 
     [!code-csharp[Main](bundling-and-minification/samples/sample14.cs)]
 5. Ajoutez le code suivant à toutes les vues qui fait référence à l’application de moins.

@@ -12,28 +12,28 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/aspnet-mvc-4-mobile-features
 msc.type: authoredcontent
-ms.openlocfilehash: e660595d66d81069fa47b77387509e73b1ec834e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d47d8f61dc7af6e1dc5887338be862ea81d7bb17
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-mvc-4-mobile-features"></a>Fonctionnalités mobiles ASP.NET MVC 4
 ====================
 Par [Rick Anderson](https://github.com/Rick-Anderson)
 
-> Il existe désormais une version MVC 5 de ce didacticiel avec des exemples de code à [déployer une Application Web de Mobile dans ASP.NET MVC 5 sur les Sites Web Azure](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-mobile-app/).
+> Il existe désormais une version MVC 5 de ce didacticiel avec des exemples de code à [déployer une Application Web de Mobile dans ASP.NET MVC 5 sur les Sites Web Azure](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-mobile-app/).
 
 
-Ce didacticiel, vous allez apprendre les principes fondamentaux de l’utilisation des fonctionnalités mobiles dans une application Web ASP.NET MVC 4. Pour ce didacticiel, vous pouvez utiliser [Visual Studio 2012 Express](https://www.microsoft.com/visualstudio/11/en-us/products/express) ou Visual Web Developer 2010 Express Service Pack 1 (&quot;Visual Web Developer ou VWD&quot;). Vous pouvez utiliser la version professional de Visual Studio si vous l’avez déjà.
+Ce didacticiel, vous allez apprendre les principes fondamentaux de l’utilisation des fonctionnalités mobiles dans une application Web ASP.NET MVC 4. Pour ce didacticiel, vous pouvez utiliser [Visual Studio 2012 Express](https://www.microsoft.com/visualstudio/11/products/express) ou Visual Web Developer 2010 Express Service Pack 1 (&quot;Visual Web Developer ou VWD&quot;). Vous pouvez utiliser la version professional de Visual Studio si vous l’avez déjà.
 
 Avant de commencer, assurez-vous que vous avez installé les composants requis répertoriés ci-dessous.
 
-- [Visual Studio 2012 Express](https://www.microsoft.com/visualstudio/11/en-us/products/express) (recommandé) ou Visual Studio Web Developer Express SP1. Visual Studio 2012 contient ASP.NET MVC 4. Si vous utilisez Visual Web Developer 2010, vous devez installer [ASP.NET MVC 4](https://go.microsoft.com/fwlink/?LinkId=243392).
+- [Visual Studio 2012 Express](https://www.microsoft.com/visualstudio/11/products/express) (recommandé) ou Visual Studio Web Developer Express SP1. Visual Studio 2012 contient ASP.NET MVC 4. Si vous utilisez Visual Web Developer 2010, vous devez installer [ASP.NET MVC 4](https://go.microsoft.com/fwlink/?LinkId=243392).
 
 Vous devez également un émulateur navigateur mobile. Les éléments suivants ne fonctionnent pas :
 
-- [Émulateur de téléphone Windows 7](https://msdn.microsoft.com/en-us/library/ff402563(VS.92).aspx). (Il s’agit de l’émulateur qui est utilisé dans la plupart des captures d’écran de ce didacticiel.)
+- [Émulateur de téléphone Windows 7](https://msdn.microsoft.com/library/ff402563(VS.92).aspx). (Il s’agit de l’émulateur qui est utilisé dans la plupart des captures d’écran de ce didacticiel.)
 - Modifiez la chaîne de l’agent utilisateur pour émuler un iPhone. Consultez [cela](http://www.howtogeek.com/113439/how-to-change-your-browsers-user-agent-without-installing-any-extensions/) entrée de blog.
 - [Émulateur de Opera Mobile](http://www.opera.com/developer/tools/mobile/)
 - [Apple Safari](http://www.apple.com/safari/download/) avec l’agent utilisateur défini sur iPhone. Pour obtenir des instructions sur la définition de l’agent utilisateur dans Safari sur « iPhone », consultez [comment permettre Safari prétendez qu’il se IE](http://www.davidalison.com/2008/05/how-to-let-safari-pretend-its-ie.html) sur le blog de David Alison.
@@ -45,7 +45,7 @@ Les projets Visual Studio avec code source c# sont disponibles pour accompagner 
 
 ### <a name="what-youll-build"></a>Ce que vous allez générer
 
-Pour ce didacticiel, vous allez ajouter des fonctionnalités mobiles à l’application de liste de conférence simple qui est fournie dans le [projet de démarrage](https://go.microsoft.com/fwlink/?LinkId=228307). La capture d’écran suivante montre la page de balises de l’application terminée comme indiqué dans le [émulateur Windows Phone de Windows 7](https://msdn.microsoft.com/en-us/library/ff402563(VS.92).aspx). Consultez [clavier mappage pour Windows Phone Emulator](https://msdn.microsoft.com/en-us/library/ff754352(v=vs.92).aspx) pour simplifier l’entrée au clavier.
+Pour ce didacticiel, vous allez ajouter des fonctionnalités mobiles à l’application de liste de conférence simple qui est fournie dans le [projet de démarrage](https://go.microsoft.com/fwlink/?LinkId=228307). La capture d’écran suivante montre la page de balises de l’application terminée comme indiqué dans le [émulateur Windows Phone de Windows 7](https://msdn.microsoft.com/library/ff402563(VS.92).aspx). Consultez [clavier mappage pour Windows Phone Emulator](https://msdn.microsoft.com/library/ff754352(v=vs.92).aspx) pour simplifier l’entrée au clavier.
 
 [![p1_Tags_CompletedProj](aspnet-mvc-4-mobile-features/_static/image2.png)](aspnet-mvc-4-mobile-features/_static/image1.png)
 
@@ -61,7 +61,7 @@ Voici ce que vous allez apprendre :
 - Comment créer des affichages mobiles spécifiques.
 - Comment créer un sélecteur de vue qui permet aux utilisateurs basculer un affichage mobile et un affichage du bureau de l’application.
 
-### <a name="getting-started"></a>Commencer
+### <a name="getting-started"></a>Prise en main
 
 Téléchargez l’application de liste de conférence pour le projet de démarrage à l’aide du lien suivant : [télécharger](https://go.microsoft.com/fwlink/?LinkId=228307). Puis, dans l’Explorateur Windows, cliquez sur le *MvcMobile.zip* de fichier et choisissez **propriétés**. Dans le **MvcMobile.zip propriétés** boîte de dialogue, choisissez le **Unblock** bouton. (Le déblocage empêche un avertissement de sécurité qui se produit lorsque vous essayez d’utiliser un *.zip* fichier que vous avez téléchargé à partir du web.)
 
@@ -137,7 +137,7 @@ Copie le *Views\Home\AllTags.cshtml* le fichier *Views\Home\AllTags.Mobile.cshtm
 
 Accédez à la page de balises à l’aide d’un navigateur de bureau et à l’aide d’émulateur de navigateur mobile. L’émulateur de navigateur mobile montre les deux modifications apportées.
 
-[![p2m_layoutTags.Mobile](aspnet-mvc-4-mobile-features/_static/image12.png)](aspnet-mvc-4-mobile-features/_static/image11.png)
+[![p2m_layoutTags.mobile](aspnet-mvc-4-mobile-features/_static/image12.png)](aspnet-mvc-4-mobile-features/_static/image11.png)
 
 En revanche, l’affichage du bureau n’a pas changé.
 
@@ -215,7 +215,7 @@ Le code suivant montre l’intégralité *Global.asax* fichier.
 [!code-csharp[Main](aspnet-mvc-4-mobile-features/samples/sample11.cs?highlight=26)]
 
 > [!NOTE]
-> Si vous utilisez Internet Explorer 9 et que vous ne voyez pas le `BundleMobileConfig` au-dessus de la ligne en surbrillance jaune, cliquez sur le [bouton Affichage de compatibilité](https://windows.microsoft.com/en-US/windows7/How-to-use-Compatibility-View-in-Internet-Explorer-9)![image du bouton d’affichage de compatibilité (désactivé)] (http://res2.windows.microsoft.com/resbox/en/Windows 7/main/f080e77f-9b66-4ac8-9af0-803c4f8a859c_15.jpg " Image du bouton d’affichage de compatibilité (désactivé)") dans Internet Explorer pour modifier l’icône à partir d’un plan ![image du bouton d’affichage de compatibilité (désactivé)](http://res2.windows.microsoft.com/resbox/en/Windows 7/main/f080e77f-9b66-4ac8-9af0-803c4f8a859c_15.jpg "image du bouton d’affichage de compatibilité (désactivé) ") une couleur unie ![image du bouton d’affichage de compatibilité (on)](http://res1.windows.microsoft.com/resbox/en/Windows 7/main/156805ff-3130-481b-a12d-4d3a96470f36_14.jpg "image du bouton d’affichage de compatibilité (on)"). Vous pouvez également afficher ce didacticiel dans FireFox ou Chrome.
+> Si vous utilisez Internet Explorer 9 et que vous ne voyez pas le `BundleMobileConfig` au-dessus de la ligne en surbrillance jaune, cliquez sur le [bouton Affichage de compatibilité](https://windows.microsoft.com/windows7/How-to-use-Compatibility-View-in-Internet-Explorer-9)![image du bouton d’affichage de compatibilité (désactivé)] (http://res2.windows.microsoft.com/resbox/en/Windows 7/main/f080e77f-9b66-4ac8-9af0-803c4f8a859c_15.jpg " Image du bouton d’affichage de compatibilité (désactivé)") dans Internet Explorer pour modifier l’icône à partir d’un plan ![image du bouton d’affichage de compatibilité (désactivé)](http://res2.windows.microsoft.com/resbox/en/Windows 7/main/f080e77f-9b66-4ac8-9af0-803c4f8a859c_15.jpg "image du bouton d’affichage de compatibilité (désactivé) ") une couleur unie ![image du bouton d’affichage de compatibilité (on)](http://res1.windows.microsoft.com/resbox/en/Windows 7/main/156805ff-3130-481b-a12d-4d3a96470f36_14.jpg "image du bouton d’affichage de compatibilité (on)"). Vous pouvez également afficher ce didacticiel dans FireFox ou Chrome.
 
 
 Ouvrez le *MvcMobile\Views\Shared\\_Layout.Mobile.cshtml* et ajoutez le balisage suivant directement après le `Html.Partial` appeler :
@@ -270,7 +270,7 @@ Vous pouvez désactiver globalement d’une vue de (non mobile) par défaut à p
 
 [!code-cshtml[Main](aspnet-mvc-4-mobile-features/samples/sample17.cshtml)]
 
-Lorsque `RequireConsistentDisplayMode` a la valeur `true`, la mise en page mobile (*\_Layout.Mobile.cshtml*) est utilisé uniquement pour les périphériques mobiles. (Autrement dit, le fichier est au format  ***ViewName**. Mobile.cshtml*.) Vous souhaiterez peut-être définir `RequireConsistentDisplayMode` à `true` si votre mise en page mobile ne fonctionne pas correctement avec les vues non mobiles. La capture d’écran ci-dessous montre comment la *haut-parleurs* page restitue lorsque `RequireConsistentDisplayMode` a la valeur `true`.
+Lorsque `RequireConsistentDisplayMode` a la valeur `true`, la mise en page mobile (*\_Layout.Mobile.cshtml*) est utilisé uniquement pour les périphériques mobiles. (Autrement dit, le fichier est sous la forme ***ViewName**. Mobile.cshtml*.) Vous souhaiterez peut-être définir `RequireConsistentDisplayMode` à `true` si votre mise en page mobile ne fonctionne pas correctement avec les vues non mobiles. La capture d’écran ci-dessous montre comment la *haut-parleurs* page restitue lorsque `RequireConsistentDisplayMode` a la valeur `true`.
 
 [![p3_speakersConsistent](aspnet-mvc-4-mobile-features/_static/image33.png)](aspnet-mvc-4-mobile-features/_static/image32.png)
 

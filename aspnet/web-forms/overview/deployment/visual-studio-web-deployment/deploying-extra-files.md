@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-extra-files
 msc.type: authoredcontent
-ms.openlocfilehash: a34607b25f6cf502f5fbf2fe51bf1937f470159e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 46e18ba81c3db8bb04c5cb997bcc1607e4e38bae
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-extra-files"></a>Déploiement de Web ASP.NET à l’aide de Visual Studio : déploiement de fichiers supplémentaires
 ====================
@@ -77,19 +77,19 @@ Vous ne devez *robots.txt* la zone de transit, donc le profil de publication uni
 
 Si vous utilisez un seul clic publier, vous pouvez vérifier dans le **aperçu** fenêtre qui *robots.txt* seront copiés. Sinon, utilisez l’outil FTP pour vérifier que le *robots.txt* fichier se trouve dans le dossier racine du site web après le déploiement.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cette étape termine cette série de didacticiels sur le déploiement d’une application de web ASP.NET sur un fournisseur d’hébergement tiers. Pour plus d’informations sur les sujets abordés dans ces didacticiels, consultez le [ASP.NET Deployment Content Map](https://go.microsoft.com/fwlink/p/?LinkId=282413).
 
 ## <a name="more-information"></a>Complément d'information
 
-Si vous savez comment travailler avec des fichiers de MSBuild, vous pouvez automatiser de nombreuses autres tâches de déploiement en écrivant du code *.pubxml* les fichiers (pour des tâches spécifiques à profil) ou le projet *. wpp.targets* fichier (pour vos tâches s’applique à tous les profils). Pour plus d’informations sur *.pubxml* et *. wpp.targets* de fichiers, consultez [Comment : modifier les paramètres de déploiement dans les fichiers de profil de publication (.pubxml) et le. wpp.targets fichier dans Visual Studio Web Projets](https://msdn.microsoft.com/en-us/library/ff398069). Pour une introduction au code de MSBuild, consultez **la structure d’un fichier projet** dans [série de déploiement d’entreprise : présentation du fichier de projet](../web-deployment-in-the-enterprise/understanding-the-project-file.md). Pour savoir comment travailler avec des fichiers de MSBuild pour effectuer des tâches pour vos propres scénarios, consultez cet ouvrage : [à l’intérieur de la Microsoft Build Engine : à l’aide de MSBuild et Team Foundation Build](http://msbuildbook.com) par Sayed Ibraham Hashimi et William Bartholomew.
+Si vous savez comment travailler avec des fichiers de MSBuild, vous pouvez automatiser de nombreuses autres tâches de déploiement en écrivant du code *.pubxml* les fichiers (pour des tâches spécifiques à profil) ou le projet *. wpp.targets* fichier (pour vos tâches s’applique à tous les profils). Pour plus d’informations sur *.pubxml* et *. wpp.targets* de fichiers, consultez [Comment : modifier les paramètres de déploiement dans les fichiers de profil de publication (.pubxml) et le. wpp.targets fichier dans Visual Studio Web Projets](https://msdn.microsoft.com/library/ff398069). Pour une introduction au code de MSBuild, consultez **la structure d’un fichier projet** dans [série de déploiement d’entreprise : présentation du fichier de projet](../web-deployment-in-the-enterprise/understanding-the-project-file.md). Pour savoir comment travailler avec des fichiers de MSBuild pour effectuer des tâches pour vos propres scénarios, consultez cet ouvrage : [à l’intérieur de la Microsoft Build Engine : à l’aide de MSBuild et Team Foundation Build](http://msbuildbook.com) par Sayed Ibraham Hashimi et William Bartholomew.
 
 ## <a name="acknowledgements"></a>Remerciements
 
 J’aimerais remercier les personnes suivantes qui a effectué des contributions significatives pour le contenu de cette série de didacticiels :
 
-- [Blog d’Alberto Poblacion, MVP &amp; MCT, Espagne](https://mvp.microsoft.com/en-us/mvp/Alberto%20Poblacion%20Bolano-36772)
+- [Alberto Poblacion, MVP &amp; MCT, Spain](https://mvp.microsoft.com/mvp/Alberto%20Poblacion%20Bolano-36772)
 - Jarod Ferguson, MVP de développement de plate-forme de données, États-Unis
 - Sévères Mittal, Microsoft
 - [Jon Galloway](https://weblogs.asp.net/jgalloway) (twitter : [ @jongalloway ](http://twitter.com/jongalloway))
@@ -101,7 +101,7 @@ J’aimerais remercier les personnes suivantes qui a effectué des contributions
 - [Sayed Hashimi, Microsoft](http://sedodream.com/default.aspx)(twitter : [ @sayedihashimi ](http://twitter.com/sayedihashimi))
 - [Scott Hanselman](http://www.hanselman.com/blog/) (twitter : [ @shanselman ](http://twitter.com/shanselman))
 - [Scott Hunter, Microsoft](https://blogs.msdn.com/b/scothu/) (twitter : [ @coolcsh ](http://twitter.com/coolcsh))
-- [Srđan Božović, Serbie](http://msforge.net/blogs/zmajcek/)
+- [Srđan Božović, Serbia](http://msforge.net/blogs/zmajcek/)
 - [Vishal Joshi, Microsoft](http://vishaljoshi.blogspot.com/) (twitter : [ @vishalrjoshi ](http://twitter.com/vishalrjoshi))
 
 >[!div class="step-by-step"]

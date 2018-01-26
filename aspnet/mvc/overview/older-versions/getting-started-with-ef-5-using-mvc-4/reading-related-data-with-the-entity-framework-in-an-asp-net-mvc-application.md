@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: f455c3656c9120f4d7e6fccdba8f705e0a1c7d35
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9093fb90a52b297f173c5cddb6f332d2d1a25135
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="reading-related-data-with-the-entity-framework-in-an-aspnet-mvc-application-5-of-10"></a>Lecture associées données avec Entity Framework dans une Application ASP.NET MVC (5 sur 10)
 ====================
@@ -68,7 +68,7 @@ La classe de contexte de base de données effectue un chargement différé par d
 
     [!code-csharp[Main](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample1.cs)]
 
-Chargement différé peut masquer le code qui provoque des problèmes de performances. Par exemple, le code qui ne spécifie pas de chargement hâtif ou explicit, mais traite un volume élevé d’entités et utilise plusieurs propriétés de navigation dans chaque itération peut être très inefficace (en raison des nombreux allers-retours vers la base de données). Une application qui effectue correctement dans le développement à l’aide d’un serveur SQL local peut avoir des problèmes de performances lorsque déplacé vers la base de données SQL Azure en raison de la latence accrue et le chargement différé. Les requêtes de base de données avec une charge réaliste de tests de profilage vous aidera à déterminer si le chargement différé est approprié. Pour plus d’informations, consultez [Démystification des stratégies Entity Framework : chargement des données connexes](https://msdn.microsoft.com/en-us/magazine/hh205756.aspx) et [à l’aide d’Entity Framework pour réduire la latence du réseau à SQL Azure](https://msdn.microsoft.com/en-us/magazine/gg309181.aspx).
+Chargement différé peut masquer le code qui provoque des problèmes de performances. Par exemple, le code qui ne spécifie pas de chargement hâtif ou explicit, mais traite un volume élevé d’entités et utilise plusieurs propriétés de navigation dans chaque itération peut être très inefficace (en raison des nombreux allers-retours vers la base de données). Une application qui effectue correctement dans le développement à l’aide d’un serveur SQL local peut avoir des problèmes de performances lorsque déplacé vers la base de données SQL Azure en raison de la latence accrue et le chargement différé. Les requêtes de base de données avec une charge réaliste de tests de profilage vous aidera à déterminer si le chargement différé est approprié. Pour plus d’informations, consultez [Démystification des stratégies Entity Framework : chargement des données connexes](https://msdn.microsoft.com/magazine/hh205756.aspx) et [à l’aide d’Entity Framework pour réduire la latence du réseau à SQL Azure](https://msdn.microsoft.com/magazine/gg309181.aspx).
 
 ## <a name="create-a-courses-index-page-that-displays-department-name"></a>Créer une Page d’Index cours ce nom affiche service
 
@@ -155,7 +155,7 @@ La méthode accepte les données d’itinéraire facultatif (`id`) et un paramè
 > 
 > Données d’itinéraire sont les données que le classeur de modèles trouvé dans un segment d’URL spécifié dans la table de routage. Par exemple, l’itinéraire par défaut spécifie `controller`, `action`, et `id` segments :
 > 
-> itinéraires. MapRoute)  
+> routes.MapRoute(  
 >  nom : « Default »,  
 >  URL : « {controller} / {action} / {id} »,  
 >  valeurs par défaut : new {contrôleur = « Home », action = « Index », id = UrlParameter.Optional}  
@@ -194,7 +194,7 @@ Si un ID de formateur a été sélectionné, le formateur sélectionné est réc
 
 Le `Where` méthode retourne une collection, mais dans ce cas les critères passé à ce résultat de la méthode dans une seule `Instructor` entité qui est retournée. Le `Single` méthode convertit la collection en une seule `Instructor` entité, qui vous permet d’accéder à cette entité `Courses` propriété.
 
-Vous utilisez la [unique](https://msdn.microsoft.com/en-us/library/system.linq.enumerable.single.aspx) méthode sur une collection lorsque vous savez que la collection aura qu’un seul élément. Le `Single` méthode lève une exception si la collection passée à ce dernier est vide ou s’il existe plusieurs éléments. Une alternative est [SingleOrDefault](https://msdn.microsoft.com/en-us/library/bb342451.aspx), qui retourne une valeur par défaut (`null` dans ce cas) si la collection est vide. Toutefois, dans ce cas encore aboutirait à une exception (tente de trouver un `Courses` propriété sur un `null` référence), et le message d’exception indique moins clairement la cause du problème. Lorsque vous appelez le `Single` (méthode), vous pouvez également transmettre le `Where` condition au lieu d’appeler le `Where` méthode séparément :
+Vous utilisez la [unique](https://msdn.microsoft.com/library/system.linq.enumerable.single.aspx) méthode sur une collection lorsque vous savez que la collection aura qu’un seul élément. Le `Single` méthode lève une exception si la collection passée à ce dernier est vide ou s’il existe plusieurs éléments. Une alternative est [SingleOrDefault](https://msdn.microsoft.com/library/bb342451.aspx), qui retourne une valeur par défaut (`null` dans ce cas) si la collection est vide. Toutefois, dans ce cas encore aboutirait à une exception (tente de trouver un `Courses` propriété sur un `null` référence), et le message d’exception indique moins clairement la cause du problème. Lorsque vous appelez le `Single` (méthode), vous pouvez également transmettre le `Where` condition au lieu d’appeler le `Where` méthode séparément :
 
 [!code-csharp[Main](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample15.cs)]
 
@@ -276,7 +276,7 @@ Ensuite, il charge explicitement chaque `Enrollment` associée d’entité du `S
 
 Notez que vous utilisez le `Collection` méthode pour charger une propriété de collection, mais pour une propriété qui contient uniquement une entité, vous utilisez la `Reference` (méthode). Vous pouvez exécuter maintenant la page d’Index du formateur et vous ne verrez aucune différence de ce qui est affiché dans la page, même si vous avez modifié la façon dont les données sont récupérées.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Vous avez maintenant utilisé toutes les trois façons (lazy eager et explicites) pour charger des données connexes dans les propriétés de navigation. Dans l’étape suivante du didacticiel, vous allez apprendre à mettre à jour les données associées.
 

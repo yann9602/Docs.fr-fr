@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 58b76f0ac07051496c6f34be41dcf20154e34674
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1f95a6868ccce8ce0dfa16a92486e705c42e1db4
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-existing-stored-procedures-for-the-typed-datasets-tableadapters-c"></a>À l’aide d’existante des procédures stockées pour TableAdapters le groupe de données typé (c#)
 ====================
@@ -200,7 +200,7 @@ Ce modèle peut être implémenté dans la syntaxe T-SQL en utilisant le modèle
 
 Le modèle de démarrage en définissant un `TRY...CATCH` bloquer, une construction de nouveau vers SQL Server 2005. Comme avec `try...catch` bloque en c#, l’instruction SQL `TRY...CATCH` bloc exécute les instructions dans le `TRY` bloc. Si n’importe quelle instruction génère une erreur, le contrôle est immédiatement transféré vers le `CATCH` bloc.
 
-Si aucun message d’erreur l’exécution des instructions SQL que la transaction, de la composition du `COMMIT TRANSACTION` instruction valide les modifications et termine la transaction. Si, toutefois, une des instructions entraîne une erreur, le `ROLLBACK TRANSACTION` dans le `CATCH` bloc retourne la base de données à son état avant le début de la transaction. La procédure stockée génère également une erreur à l’aide de la [commande RAISERROR](https://msdn.microsoft.com/en-us/library/ms178592.aspx), ce qui entraîne un `SqlException` pour être déclenchés dans l’application.
+Si aucun message d’erreur l’exécution des instructions SQL que la transaction, de la composition du `COMMIT TRANSACTION` instruction valide les modifications et termine la transaction. Si, toutefois, une des instructions entraîne une erreur, le `ROLLBACK TRANSACTION` dans le `CATCH` bloc retourne la base de données à son état avant le début de la transaction. La procédure stockée génère également une erreur à l’aide de la [commande RAISERROR](https://msdn.microsoft.com/library/ms178592.aspx), ce qui entraîne un `SqlException` pour être déclenchés dans l’application.
 
 > [!NOTE]
 > Étant donné que le `TRY...CATCH` bloc est une nouveauté dans SQL Server 2005, le modèle ci-dessus ne fonctionnera pas si vous utilisez des versions antérieures de Microsoft SQL Server. Si vous n’utilisez pas SQL Server 2005, consultez [la gestion des Transactions dans les procédures stockées SQL Server](http://www.4guysfromrolla.com/webtech/080305-1.shtml) pour un modèle qui fonctionne avec d’autres versions de SQL Server.
@@ -265,7 +265,7 @@ Une fois que la couche DAL a été mis à jour, suppression d’une catégorie a
 > Avant de tester le `Categories_Delete` procédure stockée, ce qui supprimera un certain nombre de produits en même temps que la catégorie sélectionnée, il est recommandé de faire une copie de sauvegarde de votre base de données. Si vous utilisez la `NORTHWND.MDF` dans la base de données `App_Data`, simplement fermer Visual Studio et copiez les fichiers MDF et LDF dans `App_Data` à un autre dossier. Après avoir testé les fonctionnalités, vous pouvez restaurer la base de données par la fermeture de Visual Studio et les fichiers en remplaçant l’actuel MDF et LDF dans `App_Data` avec les copies de sauvegarde.
 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Si l’Assistant TableAdapter s génère automatiquement les procédures stockées pour nous, sont reprises quand nous pouvons déjà avoir ces procédures stockées créées ou à les créer manuellement ou avec d’autres outils à la place. Pour prendre en charge ces scénarios, le TableAdapter peut également être configuré pour pointer vers une procédure stockée existante. Dans ce didacticiel, nous avons étudié comment ajouter manuellement des procédures stockées pour une base de données via l’environnement Visual Studio et comment associer les méthodes de s TableAdapter à ces procédures stockées. Aussi, nous avons examiné les commandes T-SQL et le modèle de script utilisé pour le démarrage, validation et annulation de transactions à partir d’une procédure stockée.
 

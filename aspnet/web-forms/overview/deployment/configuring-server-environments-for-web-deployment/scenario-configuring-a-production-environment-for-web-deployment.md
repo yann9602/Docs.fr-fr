@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/scenario-configuring-a-production-environment-for-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: d5574ee353ff41205e9029e4aa5d139a5aa0e959
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cdd13f96ddf08ff86b01ef9de17ea82cf038ab28
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="scenario-configuring-a-production-environment-for-web-deployment"></a>Scénario : Configuration d’un environnement de Production pour le déploiement Web
 ====================
@@ -35,7 +35,7 @@ L’environnement de production constitue la destination finale pour une applica
 - Modifications dans les applications sont déployées sur les moins fréquemment que test ou des déploiements intermédiaires.
 
 > [!NOTE]
-> Montée en puissance parallèle d’un déploiement de base de données sur plusieurs serveurs est dépasse le cadre de ce didacticiel. Pour plus d’informations sur cette zone, consultez [la documentation en ligne de SQL Server](https://technet.microsoft.com/en-us/library/ms130214.aspx).
+> Montée en puissance parallèle d’un déploiement de base de données sur plusieurs serveurs est dépasse le cadre de ce didacticiel. Pour plus d’informations sur cette zone, consultez [la documentation en ligne de SQL Server](https://technet.microsoft.com/library/ms130214.aspx).
 
 
 Par exemple, dans notre [scénario du didacticiel](../deploying-web-applications-in-enterprise-scenarios/enterprise-web-deployment-scenario-overview.md), un serveur Team Build inclut les définitions de build qui permettent aux utilisateurs de générer la solution de gestionnaire de contacts et le déployer dans un environnement intermédiaire en une seule étape. Lorsque l’application est prête à être déployée en production, en raison de contraintes imposées par les exigences de sécurité et de l’infrastructure réseau, l’administrateur d’environnement de production doit copier le package web sur un serveur web de production et importez manuellement Il via le Gestionnaire des Services Internet (IIS).

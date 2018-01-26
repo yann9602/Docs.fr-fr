@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/update-related-data
-ms.openlocfilehash: 0e4df407a1ca15aa5baa2b7226be1cf91902a583
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 3cdd36ae03824645e09f97cae85cc55956679390
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="updating-related-data---ef-core-with-aspnet-core-mvc-tutorial-7-of-10"></a>Mise à jour des données connexes - Core EF avec le didacticiel d’ASP.NET MVC de base (7 sur 10)
 
@@ -49,7 +49,7 @@ Après le `Edit` HttpPost (méthode), créez une méthode qui charge les informa
 
 Le `PopulateDepartmentsDropDownList` Obtient une liste de tous les départements sont triés par nom de méthode, crée un `SelectList` collection pour obtenir la liste déroulante et passe la collection à la vue dans `ViewBag`. La méthode accepte le paramètre facultatif `selectedDepartment` paramètre qui permet au code appelant spécifier l’élément est sélectionné lors du rendu de la liste déroulante. La vue passe le nom « DepartmentID » pour le `<select>` d’assistance de balise et l’application d’assistance puis sache qu’il peut pour rechercher dans le `ViewBag` de l’objet pour un `SelectList` nommé « DepartmentID ».
 
-Le HttpGet `Create` les appels de méthode le `PopulateDepartmentsDropDownList` méthode sans définir l’élément sélectionné, car de formation le service n’est pas établi encore :
+Le HttpGet `Create` les appels de méthode le `PopulateDepartmentsDropDownList` méthode sans définir l’élément sélectionné, car de formation le service n’est pas encore établi :
 
 [!code-csharp[Main](intro/samples/cu/Controllers/CoursesController.cs?highlight=3&name=snippet_CreateGet)]
 
@@ -129,7 +129,7 @@ Le code effectue les opérations suivantes :
 
 -  Met à jour l’entité Instructor récupérée avec des valeurs dans le classeur de modèles. Le `TryUpdateModel` surcharge vous permet à la liste blanche les propriétés que vous souhaitez inclure. Cela empêche la validation excessive, comme expliqué dans la [deuxième didacticiel](crud.md).
 
-    <!-- Snippets do not play well with <ul> [!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?range=241-244)] -->
+    <!-- Snippets don't play well with <ul> [!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?range=241-244)] -->
 
     ```csharp
     if (await TryUpdateModelAsync<Instructor>(
@@ -140,7 +140,7 @@ Le code effectue les opérations suivantes :
     
 -   Si l’emplacement du bureau est vide, définit la propriété Instructor.OfficeAssignment NULL afin que la ligne correspondante dans la table OfficeAssignment est supprimée.
 
-    <!-- Snippets do not play well with <ul>  "intro/samples/cu/Controllers/InstructorsController.cs"} -->
+    <!-- Snippets don't play well with <ul>  "intro/samples/cu/Controllers/InstructorsController.cs"} -->
 
     ```csharp
     if (String.IsNullOrWhiteSpace(instructorToUpdate.OfficeAssignment?.Location))
@@ -221,7 +221,7 @@ Dans *Views/Instructors/Edit.cshtml*, ajouter un **cours** champ avec un tableau
 
 [!code-html[Main](intro/samples/cu/Views/Instructors/Edit.cshtml?range=35-61)]
 
-Ce code crée une table HTML qui possède trois colonnes. Dans chaque colonne est une case à cocher suivie d’une légende qui est constitué par le numéro et le titre. Toutes les cases à cocher ont le même nom (« selectedCourses »), qui informe le classeur de modèles, ils doivent être traités en tant que groupe. L’attribut de valeur de chaque case à cocher est défini à la valeur de `CourseID`. Lorsque la page est publiée, le classeur de modèles passe un tableau au contrôleur qui se compose de la `CourseID` valeurs pour seulement les cases à cocher qui sont sélectionnées.
+Ce code crée une table HTML qui possède trois colonnes. Dans chaque colonne est une case à cocher suivie d’une légende qui est constitué par le numéro et le titre. Toutes les cases à cocher ont le même nom (« selectedCourses »), qui informe le classeur de modèles qu’ils sont traités comme un groupe. L’attribut de valeur de chaque case à cocher est défini à la valeur de `CourseID`. Lorsque la page est publiée, le classeur de modèles passe un tableau au contrôleur qui se compose de la `CourseID` valeurs pour seulement les cases à cocher qui sont sélectionnées.
 
 Lorsque les cases à cocher sont restitués initialement, ceux qui sont pour les cours affectés pour le formateur archivées attributs, qui sélectionne les (affiche les archivés).
 

@@ -12,17 +12,17 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/working-with-the-dropdownlist-box-and-jquery/using-the-dropdownlist-helper-with-aspnet-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: b8393e1503cb562a46a00f49b51c0cb64ff2cfdc
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 278d04aec68e93f3ebfd12d06a96b59f3bcbef4b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-the-dropdownlist-helper-with-aspnet-mvc"></a>À l’aide du programme d’assistance DropDownList avec ASP.NET MVC
 ====================
 Par [Rick Anderson](https://github.com/Rick-Anderson)
 
-Ce didacticiel, vous allez apprendre les principes fondamentaux de l’utilisation de la [DropDownList](https://msdn.microsoft.com/en-us/library/dd492948.aspx) helper et [ListBox](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.selectextensions.listbox.aspx) helper dans une application Web ASP.NET MVC. Vous pouvez utiliser Microsoft Visual Web Developer 2010 Express Service Pack 1, qui est une version gratuite de Microsoft Visual Studio pour suivre le didacticiel. Avant de commencer, assurez-vous que vous avez installé les composants requis répertoriés ci-dessous. Vous pouvez installer tous les en cliquant sur le lien suivant : [Web Platform Installer](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack). Vous pouvez également installer individuellement les conditions préalables à l’aide des liens suivants :
+Ce didacticiel, vous allez apprendre les principes fondamentaux de l’utilisation de la [DropDownList](https://msdn.microsoft.com/library/dd492948.aspx) helper et [ListBox](https://msdn.microsoft.com/library/system.web.mvc.html.selectextensions.listbox.aspx) helper dans une application Web ASP.NET MVC. Vous pouvez utiliser Microsoft Visual Web Developer 2010 Express Service Pack 1, qui est une version gratuite de Microsoft Visual Studio pour suivre le didacticiel. Avant de commencer, assurez-vous que vous avez installé les composants requis répertoriés ci-dessous. Vous pouvez installer tous les en cliquant sur le lien suivant : [Web Platform Installer](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack). Vous pouvez également installer individuellement les conditions préalables à l’aide des liens suivants :
 
 - [Conditions préalables requises de Visual Studio Web Developer Express SP1](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack)<a id="post"></a>
 - [Mettre à jour des outils ASP.NET MVC 3](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=MVC3)
@@ -34,7 +34,7 @@ Un projet Visual Web Developer, dans le code source c# du didacticiel terminé e
 
 ### <a name="what-youll-build"></a>Ce que vous allez générer
 
-Vous allez créer des méthodes d’action et des vues qui utilisent la [DropDownList](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.selectextensions.dropdownlist.aspx) application d’assistance pour sélectionner une catégorie. Vous utiliserez également **jQuery** pour ajouter une boîte de dialogue Insérer catégorie qui peut être utilisé lorsqu’une nouvelle catégorie (par exemple, genre ou artiste) est nécessaire. Voici une capture d’écran de la vue Create affichant des liaisons pour ajouter un nouveau genre et ajouter un nouvel artiste.
+Vous allez créer des méthodes d’action et des vues qui utilisent la [DropDownList](https://msdn.microsoft.com/library/system.web.mvc.html.selectextensions.dropdownlist.aspx) application d’assistance pour sélectionner une catégorie. Vous utiliserez également **jQuery** pour ajouter une boîte de dialogue Insérer catégorie qui peut être utilisé lorsqu’une nouvelle catégorie (par exemple, genre ou artiste) est nécessaire. Voici une capture d’écran de la vue Create affichant des liaisons pour ajouter un nouveau genre et ajouter un nouvel artiste.
 
 ![](using-the-dropdownlist-helper-with-aspnet-mvc/_static/image1.png)
 
@@ -42,10 +42,10 @@ Vous allez créer des méthodes d’action et des vues qui utilisent la [DropDow
 
 Voici ce que vous allez apprendre :
 
-- Comment utiliser le [DropDownList](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.selectextensions.dropdownlist.aspx) application d’assistance pour sélectionner les données de catégorie.
+- Comment utiliser le [DropDownList](https://msdn.microsoft.com/library/system.web.mvc.html.selectextensions.dropdownlist.aspx) application d’assistance pour sélectionner les données de catégorie.
 - Comment ajouter un **jQuery** boîte de dialogue pour ajouter de nouvelles catégories.
 
-### <a name="getting-started"></a>Commencer
+### <a name="getting-started"></a>Prise en main
 
 Commencez par télécharger le projet de démarrage avec le lien suivant : [télécharger](https://archive.msdn.microsoft.com/Project/Download/FileDownload.aspx?ProjectName=aspnetmvcsamples&amp;DownloadId=15829). Dans l’Explorateur Windows, avec le bouton droit, cliquez sur le *DDL\_Starter.zip* fichier et sélectionnez Propriétés. Dans le **DDL\_Starter.zip propriétés** boîte de dialogue, sélectionnez débloquer.
 
@@ -75,9 +75,9 @@ Ouvrez le *Controllers\HomeController.cs* de fichiers et d’examiner le `Select
 
 [!code-csharp[Main](using-the-dropdownlist-helper-with-aspnet-mvc/samples/sample2.cs)]
 
-Le [DropDownList](https://msdn.microsoft.com/en-us/library/dd492738.aspx) nécessite l’application d’assistance utilisée pour créer une liste de sélection HTML un **IEnumerable&lt;SelectListItem &gt;** , explicitement ou implicitement. Autrement dit, vous pouvez passer le **IEnumerable&lt;SelectListItem &gt;**  explicitement à la [DropDownList](https://msdn.microsoft.com/en-us/library/dd492738.aspx) assistance ou vous pouvez ajouter la **IEnumerable&lt; SelectListItem &gt;**  à la [ViewBag](https://blogs.msdn.com/b/rickandy/archive/2011/01/28/dynamic-v-strongly-typed-views.aspx) en utilisant le même nom pour le **SelectListItem** en tant que la propriété du modèle. En passant le **SelectListItem** implicitement et explicitement est traitée dans la partie suivante du didacticiel. Le code ci-dessus illustre la manière la plus simple possible de créer un **IEnumerable&lt;SelectListItem &gt;**  et le remplir avec les valeurs et le texte. Remarque la `Comedy` [SelectListItem](https://msdn.microsoft.com/en-us/library/system.web.mvc.selectlistitem.aspx) a le [sélectionnés](https://msdn.microsoft.com/en-us/library/system.web.mvc.selectlistitem.selected.aspx) propriété **true ;** cela entraînera la liste de sélection de rendu afficher **comédie** en tant que l’élément sélectionné dans la liste.
+Le [DropDownList](https://msdn.microsoft.com/library/dd492738.aspx) nécessite l’application d’assistance utilisée pour créer une liste de sélection HTML un **IEnumerable&lt;SelectListItem &gt;** , explicitement ou implicitement. Autrement dit, vous pouvez passer le **IEnumerable&lt;SelectListItem &gt;**  explicitement à la [DropDownList](https://msdn.microsoft.com/library/dd492738.aspx) assistance ou vous pouvez ajouter la **IEnumerable&lt; SelectListItem &gt;**  à la [ViewBag](https://blogs.msdn.com/b/rickandy/archive/2011/01/28/dynamic-v-strongly-typed-views.aspx) en utilisant le même nom pour le **SelectListItem** en tant que la propriété du modèle. En passant le **SelectListItem** implicitement et explicitement est traitée dans la partie suivante du didacticiel. Le code ci-dessus illustre la manière la plus simple possible de créer un **IEnumerable&lt;SelectListItem &gt;**  et le remplir avec les valeurs et le texte. Remarque la `Comedy` [SelectListItem](https://msdn.microsoft.com/library/system.web.mvc.selectlistitem.aspx) a le [sélectionnés](https://msdn.microsoft.com/library/system.web.mvc.selectlistitem.selected.aspx) propriété **true ;** cela entraînera la liste de sélection de rendu afficher **comédie** en tant que l’élément sélectionné dans la liste.
 
-Le **IEnumerable&lt;SelectListItem &gt;**  créé ci-dessus est ajouté à la [ViewBag](https://blogs.msdn.com/b/rickandy/archive/2011/01/28/dynamic-v-strongly-typed-views.aspx) portant le nom MovieType. Voici comment nous transmettons le **IEnumerable&lt;SelectListItem &gt;**  implicitement le [DropDownList](https://msdn.microsoft.com/en-us/library/dd492738.aspx) helper indiqué ci-dessous.
+Le **IEnumerable&lt;SelectListItem &gt;**  créé ci-dessus est ajouté à la [ViewBag](https://blogs.msdn.com/b/rickandy/archive/2011/01/28/dynamic-v-strongly-typed-views.aspx) portant le nom MovieType. Voici comment nous transmettons le **IEnumerable&lt;SelectListItem &gt;**  implicitement le [DropDownList](https://msdn.microsoft.com/library/dd492738.aspx) helper indiqué ci-dessous.
 
 Ouvrez le *Views\Home\SelectCategory.cshtml* de fichiers et examinez le balisage.
 
@@ -85,7 +85,7 @@ Ouvrez le *Views\Home\SelectCategory.cshtml* de fichiers et examinez le balisage
 
 Sur la troisième ligne, nous devons définir la disposition sur Views/Shared/\_Simple\_Layout.cshtml, qui est une version simplifiée du fichier de disposition standard. Nous procéder ainsi pour conserver l’affichage et rendu HTML simple.
 
-Dans cet exemple nous pas modifions l’état de l’application, afin de nous envoie les données à l’aide un **HTTP GET**, et non **HTTP POST**. Consultez la section W3C [liste de vérification rapide pour le choix de HTTP GET ou POST](http://www.w3.org/2001/tag/doc/whenToUseGet.html#checklist). Étant donné que nous ne sommes pas la modification de l’application et l’écran de validation, nous utilisons le [Html.BeginForm](https://msdn.microsoft.com/en-us/library/dd460344.aspx) surcharge qui permet de spécifier la méthode d’action, la méthode de contrôleur et du formulaire (**HTTP POST** ou **HTTP GET**). En général, les vues contiennent le [Html.BeginForm](https://msdn.microsoft.com/en-us/library/dd505244.aspx) surcharge qui n’accepte aucun paramètre. La version aucun paramètre par défaut, les données du formulaire vers la version de publication de la même méthode d’action et le contrôleur de validation.
+Dans cet exemple nous pas modifions l’état de l’application, afin de nous envoie les données à l’aide un **HTTP GET**, et non **HTTP POST**. Consultez la section W3C [liste de vérification rapide pour le choix de HTTP GET ou POST](http://www.w3.org/2001/tag/doc/whenToUseGet.html#checklist). Étant donné que nous ne sommes pas la modification de l’application et l’écran de validation, nous utilisons le [Html.BeginForm](https://msdn.microsoft.com/library/dd460344.aspx) surcharge qui permet de spécifier la méthode d’action, la méthode de contrôleur et du formulaire (**HTTP POST** ou **HTTP GET**). En général, les vues contiennent le [Html.BeginForm](https://msdn.microsoft.com/library/dd505244.aspx) surcharge qui n’accepte aucun paramètre. La version aucun paramètre par défaut, les données du formulaire vers la version de publication de la même méthode d’action et le contrôleur de validation.
 
 La ligne suivante
 
@@ -112,7 +112,7 @@ Ouvrez le *Controllers\HomeController.cs* de fichier et examinez le code suivant
 
 [!code-csharp[Main](using-the-dropdownlist-helper-with-aspnet-mvc/samples/sample6.cs)]
 
-Le [enum](https://msdn.microsoft.com/en-us/library/sbbt4032(VS.80).aspx) `eMovieCategories` capture les types de séquence de quatre. Le `SetViewBagMovieType` méthode crée le **IEnumerable&lt;SelectListItem &gt;**  à partir de la `eMovieCategories` **enum**et définit le `Selected` propriété à partir de la `selectedMovie` paramètre. Le `SelectCategoryEnum` méthode d’action utilise la même vue comme la `SelectCategory` méthode d’action.
+Le [enum](https://msdn.microsoft.com/library/sbbt4032(VS.80).aspx) `eMovieCategories` capture les types de séquence de quatre. Le `SetViewBagMovieType` méthode crée le **IEnumerable&lt;SelectListItem &gt;**  à partir de la `eMovieCategories` **enum**et définit le `Selected` propriété à partir de la `selectedMovie` paramètre. Le `SelectCategoryEnum` méthode d’action utilise la même vue comme la `SelectCategory` méthode d’action.
 
 Accédez à la page de Test et cliquez sur le `Select Movie Category (Enum)` lien. Cette fois-ci, au lieu d’une valeur (nombre) qui est affichée, une chaîne qui représente l’énumération s’affiche.
 
@@ -128,7 +128,7 @@ En passant un `eMovieCategories` enum pour le `POST` (méthode), nous pouvons ex
 
 ### <a name="creating-a-multiple-section-select-element"></a>Création d’un élément Select Section multiples
 
-Le [ListBox](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.selectextensions.listbox.aspx) programme d’assistance HTML effectue le rendu HTML `<select>` élément avec la `multiple` attribut, ce qui permet aux utilisateurs d’effectuer des sélections multiples. Cliquez sur le lien de Test, puis sélectionnez le **multiples sélection du pays** lien. L’interface utilisateur de rendu vous permet de sélectionner plusieurs pays. Dans l’image ci-dessous, le Canada et la Chine sont sélectionnés.
+Le [ListBox](https://msdn.microsoft.com/library/system.web.mvc.html.selectextensions.listbox.aspx) programme d’assistance HTML effectue le rendu HTML `<select>` élément avec la `multiple` attribut, ce qui permet aux utilisateurs d’effectuer des sélections multiples. Cliquez sur le lien de Test, puis sélectionnez le **multiples sélection du pays** lien. L’interface utilisateur de rendu vous permet de sélectionner plusieurs pays. Dans l’image ci-dessous, le Canada et la Chine sont sélectionnés.
 
 ![](using-the-dropdownlist-helper-with-aspnet-mvc/_static/image8.png)
 
@@ -142,7 +142,7 @@ Le `GetCountries` méthode crée une liste de pays, puis passe à la `MultiSelec
 
 [!code-csharp[Main](using-the-dropdownlist-helper-with-aspnet-mvc/samples/sample9.cs)]
 
-1. *éléments*: un [IEnumerable](https://msdn.microsoft.com/en-us/library/system.collections.ienumerable.aspx) contenant les éléments dans la liste. Dans l’exemple ci-dessus, la liste des pays.
+1. *éléments*: un [IEnumerable](https://msdn.microsoft.com/library/system.collections.ienumerable.aspx) contenant les éléments dans la liste. Dans l’exemple ci-dessus, la liste des pays.
 2. *dataValueField*: le nom de la propriété dans le **IEnumerable** liste qui contient la valeur. Dans l’exemple ci-dessus, le `ID` propriété.
 3. *dataTextField*: le nom de la propriété dans le **IEnumerable** liste qui contient les informations à afficher. Dans l’exemple ci-dessus, le `name` propriété.
 4. *selectedValues*: la liste des valeurs sélectionnées.
@@ -151,7 +151,7 @@ Dans l’exemple ci-dessus, le `MultiSelectCountry` méthode passe un `null` val
 
 [!code-cshtml[Main](using-the-dropdownlist-helper-with-aspnet-mvc/samples/sample10.cshtml)]
 
-Le programme d’assistance HTML [ListBox](https://msdn.microsoft.com/en-us/library/dd470200.aspx) méthode utilisée ci-avant prennent deux paramètres, le nom de la propriété pour la liaison de modèle et la [MultiSelectList](https://msdn.microsoft.com/en-us/library/system.web.mvc.multiselectlist.aspx) contenant les options de sélection et les valeurs. Le `ViewBag.YouSelected` code ci-dessus est utilisé pour afficher les valeurs des pays que vous avez sélectionné lorsque vous envoyez le formulaire. Examinez la surcharge de la requête HTTP POST de la `MultiSelectCountry` (méthode).
+Le programme d’assistance HTML [ListBox](https://msdn.microsoft.com/library/dd470200.aspx) méthode utilisée ci-avant prennent deux paramètres, le nom de la propriété pour la liaison de modèle et la [MultiSelectList](https://msdn.microsoft.com/library/system.web.mvc.multiselectlist.aspx) contenant les options de sélection et les valeurs. Le `ViewBag.YouSelected` code ci-dessus est utilisé pour afficher les valeurs des pays que vous avez sélectionné lorsque vous envoyez le formulaire. Examinez la surcharge de la requête HTTP POST de la `MultiSelectCountry` (méthode).
 
 [!code-csharp[Main](using-the-dropdownlist-helper-with-aspnet-mvc/samples/sample11.cs)]
 
@@ -193,7 +193,7 @@ Ouvrez le *Views\Home\MultiSelectCountry.cshtml* et ajoutez un `htmlAttributes` 
 
 [!code-cshtml[Main](using-the-dropdownlist-helper-with-aspnet-mvc/samples/sample12.cshtml)]
 
-Dans le code ci-dessus, nous ajoutons l’attribut HTML et la valeur d’attribut `class = "chzn-select"`. Le caractère « @ » précédant la classe n’a rien à faire avec le moteur d’affichage Razor. `class`est un [mot clé c#](https://msdn.microsoft.com/en-us/library/x53a06bb.aspx). Mots clés c# ne peut pas être utilisés en tant qu’identificateurs, sauf si elles comprennent un préfixe. Dans l’exemple ci-dessus, `@class` est un identificateur valide mais **classe** n’est pas car **classe** est un mot clé.
+Dans le code ci-dessus, nous ajoutons l’attribut HTML et la valeur d’attribut `class = "chzn-select"`. Le caractère « @ » précédant la classe n’a rien à faire avec le moteur d’affichage Razor. `class`est un [mot clé c#](https://msdn.microsoft.com/library/x53a06bb.aspx). Mots clés c# ne peut pas être utilisés en tant qu’identificateurs, sauf si elles comprennent un préfixe. Dans l’exemple ci-dessus, `@class` est un identificateur valide mais **classe** n’est pas car **classe** est un mot clé.
 
 Ajouter des références à la *Chosen/chosen.jquery.js* et *Chosen/chosen.css* fichiers. Le *Chosen/chosen.jquery.js* et implémente le point de vue fonctionnel du plug-in sélectionné. Le *Chosen/chosen.css* fichier fournit le style. Ajoutez ces références au bas de la *Views\Home\MultiSelectCountry.cshtml* fichier. Le code suivant montre comment référencer le plug-in sélectionné.
 

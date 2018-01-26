@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 99d04c95b42402ae2bc72562a652b6edec5e9313
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 613ad1fb101a168c79310c9dc7bf731be264f889
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="masterdetail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb"></a>Maître/détail à l’aide d’une liste à puces des enregistrements principaux avec détails DataList (VB)
 ====================
@@ -243,9 +243,9 @@ Après avoir terminé l’Assistant Configurer la Source de données, Visual Stu
 
 Actuellement, le `CategoryProductsDataSource` ObjectDataSource s  *`categoryID`*  paramètre n’est jamais défini, aucun produit ne s’affichent lors de l’affichage de la page. Nous devons est ont cette valeur de paramètre en fonction de la `CategoryID` de la catégorie sélectionnée dans le répéteur. Cet article présente deux défis : tout d’abord, comment nous déterminer quand un LinkButton dans le répéteur s `ItemTemplate` a été cliquée ; et le deuxième comment pouvons nous déterminons le `CategoryID` de la catégorie correspondante, l’utilisateur a cliqué sur dont LinkButton ?
 
-Le LinkButton comme les contrôles Button et ImageButton a un `Click` événement et un [ `Command` événement](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.linkbutton.command.aspx). Le `Click` événement est conçu pour simplement Notez que le bouton de lien a été cliqué. Dans certains cas, toutefois, en plus de noter que le bouton de lien a été cliqué nous devons également passer des informations supplémentaires au gestionnaire d’événements. Si c’est le cas, le LinkButton s [ `CommandName` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.linkbutton.commandname.aspx) et [ `CommandArgument` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.linkbutton.commandargument.aspx) propriétés peuvent être attribuées à ces informations supplémentaires. Ensuite, lorsque l’utilisateur clique sur le bouton de lien, son `Command` se déclenche des événements (au lieu de son `Click` événement) et le Gestionnaire d’événements reçoit les valeurs de la `CommandName` et `CommandArgument` propriétés.
+Le LinkButton comme les contrôles Button et ImageButton a un `Click` événement et un [ `Command` événement](https://msdn.microsoft.com/library/system.web.ui.webcontrols.linkbutton.command.aspx). Le `Click` événement est conçu pour simplement Notez que le bouton de lien a été cliqué. Dans certains cas, toutefois, en plus de noter que le bouton de lien a été cliqué nous devons également passer des informations supplémentaires au gestionnaire d’événements. Si c’est le cas, le LinkButton s [ `CommandName` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.linkbutton.commandname.aspx) et [ `CommandArgument` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.linkbutton.commandargument.aspx) propriétés peuvent être attribuées à ces informations supplémentaires. Ensuite, lorsque l’utilisateur clique sur le bouton de lien, son `Command` se déclenche des événements (au lieu de son `Click` événement) et le Gestionnaire d’événements reçoit les valeurs de la `CommandName` et `CommandArgument` propriétés.
 
-Lorsqu’un `Command` événement est déclenché à partir d’un modèle dans le répéteur, s répéteur [ `ItemCommand` événement](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.repeater.itemcommand.aspx) est activé et est passé le `CommandName` et `CommandArgument` les valeurs du contrôle LinkButton un clic sur (ou bouton ou ImageButton). Par conséquent, pour déterminer quand une LinkButton dans la répétition de la catégorie a été activée, nous devons effectuer les opérations suivantes :
+Lorsqu’un `Command` événement est déclenché à partir d’un modèle dans le répéteur, s répéteur [ `ItemCommand` événement](https://msdn.microsoft.com/library/system.web.ui.webcontrols.repeater.itemcommand.aspx) est activé et est passé le `CommandName` et `CommandArgument` les valeurs du contrôle LinkButton un clic sur (ou bouton ou ImageButton). Par conséquent, pour déterminer quand une LinkButton dans la répétition de la catégorie a été activée, nous devons effectuer les opérations suivantes :
 
 1. Définir le `CommandName` propriété du contrôle LinkButton dans le répéteur s `ItemTemplate` à une valeur (Je ve utilisé ListProducts). En définissant ce paramètre `CommandName` valeur, le s LinkButton `Command` événement est déclenché lorsque l’utilisateur clique sur le bouton de lien.
 2. Définir le LinkButton s `CommandArgument` valeur à la propriété de l’élément actuel s `CategoryID`.
@@ -276,7 +276,7 @@ Avec ces ajouts, notre didacticiel est terminé ! Prenez un moment pour le test
 **Figure 15**: en cliquant sur la catégorie de produits répertorie les produits correspondant à la droite ([cliquez pour afficher l’image en taille réelle](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image43.png))
 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Comme nous l’avons vu dans ce didacticiel et précédente, les rapports maître/détail peuvent être répartis dans deux pages ou consolidées sur un. Affichage d’un rapport maître/détail sur une seule page, toutefois, présente des défis sur la façon de mieux le maître de disposition et les enregistrements de détails sur la page. Dans le *maître/détail à l’aide d’un GridView maître avec un contrôle DetailsView détails* didacticiel, nous avons dû les enregistrements de détails sont affichés ci-dessus les enregistrements maîtres ; dans ce didacticiel, nous avons utilisé les techniques CSS d’avoir la valeur flottante principaux pour le gauche des détails.
 

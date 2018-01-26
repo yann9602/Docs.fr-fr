@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/introduction-and-overview
 msc.type: authoredcontent
-ms.openlocfilehash: 6ee3e244c4ed29384d11c7acc1440692d3f9b23e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6ae398f94c0ac3872601bdc8fd935f6d285793db
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="getting-started-with-aspnet-45-web-forms-and-visual-studio-2013"></a>Prise en main 4.5 Web Forms ASP.NET et Visual Studio 2013
 ====================
@@ -60,7 +60,7 @@ Est de cette série de didacticiels destiné aux développeurs expérimentés qu
 Si vous souhaitez parcourir les éléments mentionnés ci-dessus, examinez le contenu suivant :
 
 - [Prise en main de Visual c#](https://msdn.microsoft.com/library/a72418yk.aspx)
-- [Développement Web](https://msdn.microsoft.com/beginner/bb308760.aspx), [HTML, CSS, JavaScript, SQL, PHP, JQuery](http://w3schools.com/)
+- [Web Development](https://msdn.microsoft.com/beginner/bb308760.aspx), [HTML, CSS, JavaScript, SQL, PHP, JQuery](http://w3schools.com/)
 - [Base de données relationnelle](http://en.wikipedia.org/wiki/Relational_database)
 - [Architecture multiniveau](http://en.wikipedia.org/wiki/Multitier_architecture)
 
@@ -146,11 +146,11 @@ Après le retour à partir de PayPal, vous pouvez consulter et finaliser votre c
 
 ![Wingtip Toys - vérification de la commande](introduction-and-overview/_static/image7.png)
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 Avant de commencer, assurez-vous d’avoir les logiciels suivants installés sur votre ordinateur :
 
-- [Microsoft Visual Studio 2013](https://www.microsoft.com/visualstudio/11/en-us/downloads#vs) ou [Microsoft Visual Studio Express 2013 pour le Web](https://www.microsoft.com/visualstudio/11/en-us/downloads#express-web). Le .NET Framework est installé automatiquement.
+- [Microsoft Visual Studio 2013](https://www.microsoft.com/visualstudio/11/downloads#vs) ou [Microsoft Visual Studio Express 2013 pour le Web](https://www.microsoft.com/visualstudio/11/downloads#express-web). Le .NET Framework est installé automatiquement.
 
 Cette série de didacticiels utilise Microsoft Visual Studio Express 2013 pour le Web. Pour terminer cette série de didacticiels, vous pouvez utiliser Microsoft Visual Studio Express 2013 pour le Web ou Microsoft Visual Studio 2013.
 
@@ -163,7 +163,7 @@ Si vous avez déjà installée une version de Visual Studio, le processus d’in
 
 > [!NOTE] 
 > 
-> Cette procédure pas à pas suppose que vous avez sélectionné le *développement Web* collection de paramètres de la première fois que vous avez démarré Visual Studio. Pour plus d’informations, consultez [Comment : sélectionner des paramètres d’environnement de développement Web](https://msdn.microsoft.com/en-us/library/ff521558.aspx).
+> Cette procédure pas à pas suppose que vous avez sélectionné le *développement Web* collection de paramètres de la première fois que vous avez démarré Visual Studio. Pour plus d’informations, consultez [Comment : sélectionner des paramètres d’environnement de développement Web](https://msdn.microsoft.com/library/ff521558.aspx).
 
 
 ## <a name="download-the-sample-application"></a>Télécharger l’exemple d’Application

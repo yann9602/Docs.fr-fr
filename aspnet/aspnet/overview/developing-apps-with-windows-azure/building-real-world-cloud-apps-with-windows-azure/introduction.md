@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/introduction
 msc.type: authoredcontent
-ms.openlocfilehash: 5054f932d05fb612a6e18a81274719d7e249b77b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4de0b52e0b4ae7ce00e7b07bce2decfc5068964a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="building-real-world-cloud-apps-with-azure"></a>Création d’applications de Cloud du monde réel avec Azure
 ====================
@@ -103,7 +103,7 @@ Ce livre électronique explique treize recommandé de modèles pour le développ
     - Activer la haute disponibilité et améliorer l’évolutivité en faiblement couplage niveaux web et de travail.
     - Démo : Files d’attente de stockage Azure dans l’application corriger.
 - [Plus les modèles d’applications et des conseils de cloud](more-patterns-and-guidance.md).
-- [Annexe : Le correctif exemple d’Application](the-fix-it-sample-application.md)
+- [Annexe : L’exemple d’application Fix It](the-fix-it-sample-application.md)
 
     - Problèmes connus
     - Meilleures pratiques
@@ -155,10 +155,10 @@ Si un ordinateur tombe en panne, Azure automatiquement extrait la rotation, tour
 
 Tout ceci a lieu automatiquement. Il vous suffit de faire est de créer un site web et de déployer votre application, à l’aide de Windows PowerShell, Visual Studio ou le portail de gestion Azure.
 
-Pour rapidement et facilement obtenir un didacticiel qui montre comment créer une application web dans Visual Studio et le déployer sur un Site Web de Azure, consultez [prise en main Azure et ASP.NET](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-get-started/).
+Pour rapidement et facilement obtenir un didacticiel qui montre comment créer une application web dans Visual Studio et le déployer sur un Site Web de Azure, consultez [prise en main Azure et ASP.NET](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-get-started/).
 
 <a id="summary"></a>
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cette introduction a passé à une liste de rubriques que couvre le carnet, captures d’écran de l’exemple d’application et une brève vue d’ensemble des applications Web dans l’environnement Azure App Service cloud. Un des principaux avantages du développement d’applications et pour le cloud est qu’il est facile automatiser les tâches répétitives développement telles que la création d’un environnement de test et de déploiement de votre code à ce dernier. Procédure à suivre qui est le sujet de la [chapitre suivant](automate-everything.md).
 
@@ -168,13 +168,13 @@ Pour plus d’informations sur les sujets abordés dans ce chapitre, consultez l
 
 Documentation :
 
-- [Les applications dans Azure App Service Web](https://azure.microsoft.com/en-us/services/app-service/web/). Page de documentation Azure sur les applications Web du portail.
-- [Les applications Web, Services de cloud computing et machines virtuelles : quand les utiliser ?](https://azure.microsoft.com/en-us/documentation/articles/choose-web-site-cloud-service-vm/) WAWS, comme illustré dans ce chapitre est simplement l’une des trois méthodes que vous pouvez exécuter des applications web dans Azure. Cet article explique les différences entre les trois méthodes et fournit des conseils sur le choix qui convient le mieux pour votre scénario. Comme les Sites Web, Services de cloud computing est une fonctionnalité de PaaS Azure. Les machines virtuelles sont une fonctionnalité IaaS. Pour obtenir une explication de PaaS et IaaS, consultez le [Options données](data-storage-options.md#paasiaas) chapitre.
+- [Les applications dans Azure App Service Web](https://azure.microsoft.com/services/app-service/web/). Page de documentation Azure sur les applications Web du portail.
+- [Les applications Web, Services de cloud computing et machines virtuelles : quand les utiliser ?](https://azure.microsoft.com/documentation/articles/choose-web-site-cloud-service-vm/) WAWS, comme illustré dans ce chapitre est simplement l’une des trois méthodes que vous pouvez exécuter des applications web dans Azure. Cet article explique les différences entre les trois méthodes et fournit des conseils sur le choix qui convient le mieux pour votre scénario. Comme les Sites Web, Services de cloud computing est une fonctionnalité de PaaS Azure. Les machines virtuelles sont une fonctionnalité IaaS. Pour obtenir une explication de PaaS et IaaS, consultez le [Options données](data-storage-options.md#paasiaas) chapitre.
 
 Vidéos :
 
-- [Scott Guthrie commence à l’étape 0 - quel est le système d’exploitation du Cloud Azure ?](https://azure.microsoft.com/en-us/documentation/videos/what-is-the-cloud-os-scottgu/)
-- [Architecture de Sites Web - avec Stefan Schackow](https://azure.microsoft.com/en-us/documentation/videos/why-azure-web-sites-plus-architecture/).
+- [Scott Guthrie commence à l’étape 0 - quel est le système d’exploitation du Cloud Azure ?](https://azure.microsoft.com/documentation/videos/what-is-the-cloud-os-scottgu/)
+- [Architecture de Sites Web - avec Stefan Schackow](https://azure.microsoft.com/documentation/videos/why-azure-web-sites-plus-architecture/).
 - [Éléments internes de Sites Web Azure avec Nir Mashkowski](https://channel9.msdn.com/Shows/Web+Camps+TV/Windows-Azure-Web-Sites-Internals-with-Nir-Mashkowski).
 
 >[!div class="step-by-step"]

@@ -2,7 +2,6 @@
 title: "Ajout d’un modèle à une application de pages Razor dans ASP.NET Core"
 author: rick-anderson
 description: "Ajout d’un modèle à une application de pages Razor dans ASP.NET Core"
-keywords: ASP.NET Core,pages Razor,Razor,MVC
 ms.author: riande
 manager: wpickett
 ms.date: 07/27/2017
@@ -10,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: tutorials/razor-pages/model
-ms.openlocfilehash: 38f27a1d5ca80cec4b7bc43c3d5473fc829f1b05
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 84e5ec27904b564fa6ee29843ceae0bb70754ea7
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="adding-a-model-to-a-razor-pages-app"></a>Ajout d’un modèle à une application de pages Razor
 
@@ -40,7 +39,7 @@ Ajoutez une chaîne de connexion au fichier *appsettings.json*.
 
 Inscrivez le contexte de base de données auprès du conteneur d’[injection de dépendances](xref:fundamentals/dependency-injection) dans le fichier *Startup.cs*.
 
-[!code-csharp[Main](../../tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Startup.cs?name=snippet_ConfigureServices&highlight=3-6)]
+[!code-csharp[Main](../../tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Startup.cs?name=snippet_ConfigureServices&highlight=3-5,7-9)]
 
 Générez le projet pour vérifier qu’il ne comporte aucune erreur.
 
@@ -60,7 +59,7 @@ Dans le menu **Outils**, sélectionnez **Gestionnaire de package NuGet** > **Con
 Dans la console du gestionnaire de package, entrez les commandes suivantes :
 
 ```powershell
-Install-Package Microsoft.VisualStudio.Web.CodeGeneration.Design -Version 2.0.0
+Install-Package Microsoft.VisualStudio.Web.CodeGeneration.Design
 Add-Migration Initial
 Update-Database
 ```

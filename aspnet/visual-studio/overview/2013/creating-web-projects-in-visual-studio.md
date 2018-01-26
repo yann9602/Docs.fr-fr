@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2013/creating-web-projects-in-visual-studio
 msc.type: authoredcontent
-ms.openlocfilehash: 96960ef56b1206374458dbbba4befffaa83c1624
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: aacae7a9ccf483b21d3c6796c0411d558fa3c75b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-aspnet-web-projects-in-visual-studio-2013"></a>Création de projets Web ASP.NET dans Visual Studio 2013
 ====================
@@ -31,18 +31,18 @@ Par [Tom Dykstra](https://github.com/tdykstra)
 > - L’utilisation de [Bootstrap](#bootstrap) pour fournir des fonctionnalités de conception et des thèmes réactives.
 > - Nouvelles fonctionnalités pour les formulaires Web utilisé pour être proposés uniquement pour MVC, telles que [la création de projet de test automatique](#testproj) et un [modèle de site Intranet](#winauth).
 > 
-> Pour plus d’informations sur la façon de créer des projets web pour les Services de cloud computing Azure ou Azure Mobile Services, consultez [prise en main des Services de cloud computing Azure et ASP.NET](https://azure.microsoft.com/en-us/documentation/articles/cloud-services-dotnet-get-started/) et [création d’une application Leaderboard avec Azure Mobile Services .NET Principal](https://azure.microsoft.com/en-us/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-leaderboard/).
+> Pour plus d’informations sur la façon de créer des projets web pour les Services de cloud computing Azure ou Azure Mobile Services, consultez [prise en main des Services de cloud computing Azure et ASP.NET](https://azure.microsoft.com/documentation/articles/cloud-services-dotnet-get-started/) et [création d’une application Leaderboard avec Azure Mobile Services .NET Principal](https://azure.microsoft.com/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-leaderboard/).
 
 
 <a id="prerequisites"></a>
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 Cet article s’applique aux [Visual Studio 2013](https://go.microsoft.com/fwlink/?LinkId=306566) avec [mise à jour 3](https://go.microsoft.com/fwlink/?linkid=397827&amp;clcid=0x409) installé.
 
 <a id="wap"></a>
 ## <a name="web-application-projects-versus-web-site-projects"></a>Projets d’application Web et projets de site web
 
-ASP.NET vous permet de choisir entre deux types de projets web : *projets d’application web* et *projets de site web*. Nous vous recommandons de projets d’application web pour tout nouveau développement, et cet article s’applique uniquement aux projets d’application web. Pour plus d’informations, consultez [des projets d’Application Web et projets de Site Web dans Visual Studio](https://msdn.microsoft.com/en-us/library/dd547590(v=vs.120).aspx) sur le site MSDN.
+ASP.NET vous permet de choisir entre deux types de projets web : *projets d’application web* et *projets de site web*. Nous vous recommandons de projets d’application web pour tout nouveau développement, et cet article s’applique uniquement aux projets d’application web. Pour plus d’informations, consultez [des projets d’Application Web et projets de Site Web dans Visual Studio](https://msdn.microsoft.com/library/dd547590(v=vs.120).aspx) sur le site MSDN.
 
 <a id="overview"></a>
 ## <a name="overview-of-web-application-project-creation"></a>Vue d’ensemble de la création de projet d’application web
@@ -54,8 +54,8 @@ Les étapes suivantes montrent comment créer un projet web :
 
     ![Boîte de dialogue Nouveau projet](creating-web-projects-in-visual-studio/_static/image1.png)
 
-    Vous pouvez choisir **Cloud** dans le volet gauche pour créer un [Azure Cloud Service](https://docs.microsoft.com/azure/cloud-services/cloud-services-how-to-create-deploy), [Service Mobile Azure](https://msdn.microsoft.com/en-us/library/windows/apps/dn629482.aspx), ou [la tâche Web Azure](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-deploy-webjobs). Cette rubrique n’aborde pas les modèles.
-3. Dans le volet droit, cliquez sur le **ajouter Application Insights au projet** case à cocher si vous souhaitez que l’intégrité et la surveillance de l’utilisation de votre application. Pour plus d’informations, consultez [analyser les performances dans les applications web](https://azure.microsoft.com/en-us/documentation/articles/app-insights-web-monitor-performance/).
+    Vous pouvez choisir **Cloud** dans le volet gauche pour créer un [Azure Cloud Service](https://docs.microsoft.com/azure/cloud-services/cloud-services-how-to-create-deploy), [Service Mobile Azure](https://msdn.microsoft.com/library/windows/apps/dn629482.aspx), ou [la tâche Web Azure](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-webjobs). Cette rubrique n’aborde pas les modèles.
+3. Dans le volet droit, cliquez sur le **ajouter Application Insights au projet** case à cocher si vous souhaitez que l’intégrité et la surveillance de l’utilisation de votre application. Pour plus d’informations, consultez [analyser les performances dans les applications web](https://azure.microsoft.com/documentation/articles/app-insights-web-monitor-performance/).
 4. Spécifier le projet **nom**, **emplacement**et les autres options, puis cliquez sur **OK**.
 
     Le **nouveau projet ASP.NET** boîte de dialogue s’affiche.
@@ -86,7 +86,7 @@ Visual Studio comprend des fonctionnalités qui la rendent facile à utiliser av
 - Exécuter en mode débogage à distance alors que l’application s’exécute dans le cloud.
 - Viiew et gérer d’autres services Azure tels que des bases de données SQL.
 
-Vous pouvez [créer un compte Azure](https://www.windowsazure.com/en-us/pricing/free-trial/) qui inclut des services de base tels que les applications web gratuit et si vous êtes abonné à MSDN, vous pouvez [activer les avantages](https://azure.microsoft.com/pricing/member-offers/visual-studio-subscriptions/) qui vous donne des crédits mensuels supplémentaires Azure Services. 
+Vous pouvez [créer un compte Azure](https://www.windowsazure.com/pricing/free-trial/) qui inclut des services de base tels que les applications web gratuit et si vous êtes abonné à MSDN, vous pouvez [activer les avantages](https://azure.microsoft.com/pricing/member-offers/visual-studio-subscriptions/) qui vous donne des crédits mensuels supplémentaires Azure Services. 
 
 Par défaut le **nouveau projet ASP.NET** boîte de dialogue vous permet de créer une application web ou un ordinateur virtuel pour un projet web. Si vous ne souhaitez pas créer un ordinateur virtuel ou une application web, désactivez le **hôte dans le cloud** case à cocher.
 
@@ -96,7 +96,7 @@ La légende de la case à cocher peut être **hôte dans le cloud** ou **créer 
 
 ![Configurer les paramètres de l’application Azure](creating-web-projects-in-visual-studio/_static/image9.png)
 
-Pour plus d’informations sur l’utilisation de ce processus pour la création de ressources Azure, consultez [prise en main Azure et ASP.NET](https://docs.microsoft.com/azure/app-service-web/app-service-web-get-started-dotnet) et [création d’un ordinateur virtuel pour un site web avec Visual Studio](https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-dotnet-create-visual-studio-powershell/).
+Pour plus d’informations sur l’utilisation de ce processus pour la création de ressources Azure, consultez [prise en main Azure et ASP.NET](https://docs.microsoft.com/azure/app-service-web/app-service-web-get-started-dotnet) et [création d’un ordinateur virtuel pour un site web avec Visual Studio](https://azure.microsoft.com/documentation/articles/virtual-machines-dotnet-create-visual-studio-powershell/).
 
 Le reste de cet article fournit des informations sur les modèles disponibles et leurs options. L’article présente également les thèmes, la disposition et les données d’amorçage framework utilisé dans les modèles.
 
@@ -112,7 +112,7 @@ Visual Studio 2013 propose les options suivantes pour les modèles de projet web
 - [Modèle MVC](#mvc)
 - [Modèle de l’API Web](#webapi)
 - [Modèle d’Application à Page unique](#spa)
-- [Modèle de Service Mobile Azure](https://azure.microsoft.com/en-us/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-leaderboard/)
+- [Azure Mobile Service template](https://azure.microsoft.com/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-leaderboard/)
 - [Modèles de Visual Studio 2012](#vs2012)
 
 Vous pouvez également installer une extension Visual Studio qui fournit un [Facebook modèle](#facebook).
@@ -198,7 +198,7 @@ Pour plus d’informations sur ASP.NET Applications à Page unique et sur les mo
 
 - [ASP.NET Single Page Application](../../../single-page-application/index.md).
 - [Présentation des fonctionnalités de sécurité dans le modèle SPA pour VS2013 RC](https://blogs.msdn.com/b/webdev/archive/2013/09/20/understanding-security-features-in-spa-template.aspx)
-- [Applications à Page unique : Générer des applications Web modernes et réactif avec ASP.NET](https://msdn.microsoft.com/en-us/magazine/dn463786.aspx)
+- [Applications à Page unique : Générer des applications Web modernes et réactif avec ASP.NET](https://msdn.microsoft.com/magazine/dn463786.aspx)
 
 <a id="facebook"></a>
 ### <a name="facebook-template"></a>Modèle pour Facebook
@@ -321,7 +321,7 @@ ASP.NET Identity est un bon choix si vous créez un site Internet qui est princi
 
 Pour plus d’informations sur l’option de comptes d’utilisateur individuels, consultez les ressources suivantes :
 
-- [www.ASP.NET/Identity](../../../identity/index.md). Documentation sur ASP.NET Identity sur le site web ASP.NET.
+- [www.asp.net/identity](../../../identity/index.md). Documentation sur ASP.NET Identity sur le site web ASP.NET.
 - [Créer une application ASP.NET MVC 5 avec Facebook et Google OAuth2 et authentification OpenID](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md). Montre également comment personnaliser les données de profil utilisateur.
 - [API - Web service d’authentification externe](../../../web-api/overview/security/external-authentication-services.md)
 - [Ajout de connexions externes à votre application ASP.NET dans Visual Studio 2013](https://blogs.msdn.com/b/webdev/archive/2013/06/27/adding-external-logins-to-your-asp-net-application-in-visual-studio-2013.aspx)
@@ -360,7 +360,7 @@ Si vous souhaitez essayez l’une des options d’Azure AD mais que vous n’ave
 
 ![Authentification unique d’entreprise](creating-web-projects-in-visual-studio/_static/image24.png)
 
-Choisissez cette option si vous souhaitez activer l’authentification de comptes d’utilisateur qui sont définis dans un Azure AD [client](https://technet.microsoft.com/en-us/library/jj573650.aspx). Par exemple, le site est contoso.com, et il sera disponible pour les employés de la société Contoso qui sont dans le client contoso.onmicrosoft.com. Vous ne pourrez pas configurer Azure AD pour permettre aux utilisateurs d’autres locataires d’accéder à l’application.
+Choisissez cette option si vous souhaitez activer l’authentification de comptes d’utilisateur qui sont définis dans un Azure AD [client](https://technet.microsoft.com/library/jj573650.aspx). Par exemple, le site est contoso.com, et il sera disponible pour les employés de la société Contoso qui sont dans le client contoso.onmicrosoft.com. Vous ne pourrez pas configurer Azure AD pour permettre aux utilisateurs d’autres locataires d’accéder à l’application.
 
 #### <a name="domain"></a>Domaine
 
@@ -368,7 +368,7 @@ Entrez le domaine Azure AD que vous souhaitez configurer l’application, par ex
 
 #### <a name="access-level"></a>Niveau d’accès
 
-Si l’application doit interroger ou mettre à jour les informations d’annuaire à l’aide de l’API Graph, choisissez **Single Sign-On, les données d’annuaire en lecture** ou **Single Sign-On, lire et écrire des données active**. Sinon, choisissez **Single Sign-On**. Pour plus d’informations, consultez [niveaux d’accès Application](https://msdn.microsoft.com/en-us/library/windowsazure/b08d91fa-6a64-4deb-92f4-f5857add9ed8#BKMK_AccessLevels) et [à l’aide de l’API Graph pour interroger Azure AD](https://msdn.microsoft.com/en-US/library/windowsazure/dn151791.aspx).
+Si l’application doit interroger ou mettre à jour les informations d’annuaire à l’aide de l’API Graph, choisissez **Single Sign-On, les données d’annuaire en lecture** ou **Single Sign-On, lire et écrire des données active**. Sinon, choisissez **Single Sign-On**. Pour plus d’informations, consultez [niveaux d’accès Application](https://msdn.microsoft.com/library/windowsazure/b08d91fa-6a64-4deb-92f4-f5857add9ed8#BKMK_AccessLevels) et [à l’aide de l’API Graph pour interroger Azure AD](https://msdn.microsoft.com/library/windowsazure/dn151791.aspx).
 
 #### <a name="application-id-uri"></a>URI ID d’application
 
@@ -387,7 +387,7 @@ Pour plus d’informations sur la façon de créer des applications qui utilisen
 - [Authentification Azure](../2012/windows-azure-authentication.md)
 - [Ajouter l’authentification à votre Application Web à l’aide d’Azure AD](https://msdn.microsoft.com/library/windowsazure/dn151790.aspx)
 - [Développement d’applications ASP.NET avec Azure Active Directory](../../../identity/overview/getting-started/developing-aspnet-apps-with-windows-azure-active-directory.md)
-- [Sécuriser l’API Web ASP.NET avec Azure AD et les composants Microsoft OWIN](https://msdn.microsoft.com/en-us/magazine/dn463788.aspx)
+- [Sécuriser l’API Web ASP.NET avec Azure AD et les composants Microsoft OWIN](https://msdn.microsoft.com/magazine/dn463788.aspx)
 
 Les didacticiels n’ont pas encore été mis à jour pour Visual Studio 2013 ; Parmi les didacticiels dirigent vous permet d’effectuer manuellement est automatisé dans Visual Studio 2013.
 
@@ -396,14 +396,14 @@ Les didacticiels n’ont pas encore été mis à jour pour Visual Studio 2013 ;
 
 ![Authentification d’organisation multiple](creating-web-projects-in-visual-studio/_static/image25.png)
 
-Choisissez cette option si vous souhaitez activer l’authentification de comptes d’utilisateur qui sont définis dans plusieurs Azure AD [clients](https://technet.microsoft.com/en-us/library/jj573650.aspx). Par exemple, le site est contoso.com, et il sera disponible pour les employés de la société Contoso qui sont dans le client de contoso.onmicrosoft.com et les employés de la société Fabrikam dans le locataire fabrikam.onmicrosoft.com.
+Choisissez cette option si vous souhaitez activer l’authentification de comptes d’utilisateur qui sont définis dans plusieurs Azure AD [clients](https://technet.microsoft.com/library/jj573650.aspx). Par exemple, le site est contoso.com, et il sera disponible pour les employés de la société Contoso qui sont dans le client de contoso.onmicrosoft.com et les employés de la société Fabrikam dans le locataire fabrikam.onmicrosoft.com.
 
 Les paramètres que vous entrez et l’approvisionnement d’étape de l’application sont similaires aux [l’authentification unique organisation](#orgauthsingle).
 
 Pour plus d’informations sur la façon de créer des applications qui utilisent **Cloud - Multi organisation** l’authentification, consultez les ressources suivantes :
 
 - [Une intégration facile de votre application Web avec Azure Active Directory, ASP.NET &amp; Visual Studio](https://blogs.msdn.com/b/active_directory_team_blog/archive/2013/06/26/improved-windows-azure-active-directory-integration-with-asp-net-amp-visual-studio.aspx) sur le blog de l’équipe Active Directory.
-- [Développement d’Applications Web de plusieurs locataires avec Azure AD](https://msdn.microsoft.com/en-us/library/windowsazure/dn151789.aspx) didacticiel. Le didacticiel n’a pas encore été mis à jour pour Visual Studio 2013 ; partie de ce que le didacticiel dirige vous permet d’effectuer manuellement est automatisé dans Visual Studio 2013.
+- [Développement d’Applications Web de plusieurs locataires avec Azure AD](https://msdn.microsoft.com/library/windowsazure/dn151789.aspx) didacticiel. Le didacticiel n’a pas encore été mis à jour pour Visual Studio 2013 ; partie de ce que le didacticiel dirige vous permet d’effectuer manuellement est automatisé dans Visual Studio 2013.
 - [Vous devez inscrire avant de vous connecter avec votre propre application ASP.NET de plusieurs organisations](http://www.cloudidentity.com/blog/2013/10/26/you-have-to-sign-up-with-your-own-multiple-organizations-asp-net-app-before-you-can-sign-in/). Blog de Vittorio Bertocci qui explique comment résoudre un personnes problème commun rencontrer lors de la création d’un projet qui utilise l’authentification de plusieurs organisation.
 
 <a id="orgauthonprem"></a>

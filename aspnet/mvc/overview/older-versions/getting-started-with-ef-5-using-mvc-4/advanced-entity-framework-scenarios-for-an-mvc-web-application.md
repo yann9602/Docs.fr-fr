@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/advanced-entity-framework-scenarios-for-an-mvc-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: d58a745896b29317c1d1049e3bf1a5ec2e628820
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 148a1aa33f6f713ae471ab14c7180f6c08a8679a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="advanced-entity-framework-scenarios-for-an-mvc-web-application-10-of-10"></a>Scénarios d’infrastructure entité avancées pour une Application Web MVC (10 10)
 ====================
@@ -55,7 +55,7 @@ L’API de premier Code Entity Framework comprend les méthodes qui vous permett
 
 - Utilisez la `DbSet.SqlQuery` méthode pour les requêtes qui retournent des types d’entités. Les objets retournés doivent être du type attendu par le `DbSet` objet et elles sont suivies automatiquement par le contexte de base de données sauf si vous désactivez le suivi. (Consultez la section suivante la `AsNoTracking` méthode.)
 - Utilisez la `Database.SqlQuery` méthode pour les requêtes qui retournent des types qui ne sont pas des entités. Les données renvoyées n’est pas suivies par le contexte de la base de données, même si vous utilisez cette méthode pour récupérer des types d’entités.
-- Utilisez le [Database.ExecuteSqlCommand](https://msdn.microsoft.com/en-us/library/gg679456(v=vs.103).aspx) pour les commandes de requête non.
+- Utilisez le [Database.ExecuteSqlCommand](https://msdn.microsoft.com/library/gg679456(v=vs.103).aspx) pour les commandes de requête non.
 
 Un des avantages de l’utilisation d’Entity Framework est qu’elle évite de lier votre code trop près d’une méthode particulière du stockage des données. Cela en générant des requêtes et commandes SQL pour vous, ce qui vous évite de les écrire. Il existe des scénarios exceptionnelles lorsque vous avez besoin exécuter des requêtes SQL spécifiques que vous avez créé manuellement, mais ces méthodes permettent de gérer ces exceptions.
 
@@ -255,17 +255,17 @@ Entity Framework détermine la manière dont une entité a changé (et par cons�
 - `DbContext.Entry`
 - `DbChangeTracker.Entries`
 
-Si vous effectuez le suivi d’un grand nombre d’entités et que vous appelez l’une de ces méthodes plusieurs fois dans une boucle, vous pouvez obtenir des améliorations significatives des performances en activant temporairement désactiver la détection de modification automatique à l’aide du [AutoDetectChangesEnabled](https://msdn.microsoft.com/en-us/library/system.data.entity.infrastructure.dbcontextconfiguration.autodetectchangesenabled(VS.103).aspx) propriété. Pour plus d’informations, consultez [détecter automatiquement les modifications](https://blogs.msdn.com/b/adonet/archive/2011/02/06/using-dbcontext-in-ef-feature-ctp5-part-12-automatically-detecting-changes.aspx).
+Si vous effectuez le suivi d’un grand nombre d’entités et que vous appelez l’une de ces méthodes plusieurs fois dans une boucle, vous pouvez obtenir des améliorations significatives des performances en activant temporairement désactiver la détection de modification automatique à l’aide du [AutoDetectChangesEnabled](https://msdn.microsoft.com/library/system.data.entity.infrastructure.dbcontextconfiguration.autodetectchangesenabled(VS.103).aspx) propriété. Pour plus d’informations, consultez [détecter automatiquement les modifications](https://blogs.msdn.com/b/adonet/archive/2011/02/06/using-dbcontext-in-ef-feature-ctp5-part-12-automatically-detecting-changes.aspx).
 
 ## <a name="disabling-validation-when-saving-changes"></a>Désactivation de la Validation lors de l’enregistrement de modifications
 
-Lorsque vous appelez le `SaveChanges` (méthode), par défaut Entity Framework valide les données de toutes les propriétés de toutes les entités modifiées avant la mise à jour de la base de données. Si vous avez mis à jour un grand nombre d’entités et vous avez déjà validé les données, ce travail n’est pas nécessaire et vous pouvez apporter le processus d’enregistrement les modifications en moins de temps à désactiver temporairement la validation. Vous pouvez effectuer ce à l’aide de la [ValidateOnSaveEnabled](https://msdn.microsoft.com/en-us/library/system.data.entity.infrastructure.dbcontextconfiguration.validateonsaveenabled(VS.103).aspx) propriété. Pour plus d’informations, consultez [Validation](https://blogs.msdn.com/b/adonet/archive/2010/12/15/ef-feature-ctp5-validation.aspx).
+Lorsque vous appelez le `SaveChanges` (méthode), par défaut Entity Framework valide les données de toutes les propriétés de toutes les entités modifiées avant la mise à jour de la base de données. Si vous avez mis à jour un grand nombre d’entités et vous avez déjà validé les données, ce travail n’est pas nécessaire et vous pouvez apporter le processus d’enregistrement les modifications en moins de temps à désactiver temporairement la validation. Vous pouvez effectuer ce à l’aide de la [ValidateOnSaveEnabled](https://msdn.microsoft.com/library/system.data.entity.infrastructure.dbcontextconfiguration.validateonsaveenabled(VS.103).aspx) propriété. Pour plus d’informations, consultez [Validation](https://blogs.msdn.com/b/adonet/archive/2010/12/15/ef-feature-ctp5-validation.aspx).
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cette étape termine cette série de didacticiels sur l’utilisation d’Entity Framework dans une application ASP.NET MVC. Vous trouverez des liens vers d’autres ressources Entity Framework dans le [ASP.NET Data Access Content Map](../../../../whitepapers/aspnet-data-access-content-map.md).
 
-Pour plus d’informations sur la façon de déployer votre application web, une fois que vous l’avez créé, consultez [ASP.NET Deployment Content Map](https://msdn.microsoft.com/en-us/library/bb386521.aspx) dans MSDN Library.
+Pour plus d’informations sur la façon de déployer votre application web, une fois que vous l’avez créé, consultez [ASP.NET Deployment Content Map](https://msdn.microsoft.com/library/bb386521.aspx) dans MSDN Library.
 
 Pour plus d’informations sur les autres rubriques relatives à MVC, telles que l’authentification et l’autorisation, consultez le [MVC recommandé de ressources](../../getting-started/recommended-resources-for-mvc.md).
 

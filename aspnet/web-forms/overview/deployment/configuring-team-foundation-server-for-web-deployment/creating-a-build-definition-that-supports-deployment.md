@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/creating-a-build-definition-that-supports-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: c2e7a768c2cf9900731b822ec187093a4b250ead
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e5610753968328e5d0f1dba4cbbfed08480fd773
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-a-build-definition-that-supports-deployment"></a>Création d’une définition de Build qui prend en charge le déploiement
 ====================
@@ -42,7 +42,7 @@ Une définition de build est le mécanisme qui contrôle comment et quand les bu
 - Divers autres paramètres du processus de génération.
 
 > [!NOTE]
-> Pour plus d’informations sur les définitions de build, consultez [définir votre processus de génération](https://msdn.microsoft.com/en-us/library/ms181715.aspx).
+> Pour plus d’informations sur les définitions de build, consultez [définir votre processus de génération](https://msdn.microsoft.com/library/ms181715.aspx).
 
 
 Cette rubrique vous indique comment créer une définition de build qui utilise l’élément de configuration, afin qu’une build est déclenchée lorsqu’un développeur archive du nouveau contenu. Si la génération réussit, le service de build exécute un fichier de projet personnalisés pour déployer la solution dans un environnement de test.
@@ -149,7 +149,7 @@ Vous pouvez utiliser ces informations pour résoudre les problèmes d’échec d
 
 ## <a name="monitor-the-build-process"></a>Surveiller le processus de génération
 
-TFS fournit un large éventail de fonctionnalités pour vous aider à surveiller le processus de génération. Par exemple, TFS peut vous envoyer un courrier électronique ou afficher les alertes dans la zone de notification de la barre des tâches lorsqu’une build est terminée. Pour plus d’informations, consultez [exécuter et surveiller les Builds](https://msdn.microsoft.com/en-us/library/ms181721.aspx).
+TFS fournit un large éventail de fonctionnalités pour vous aider à surveiller le processus de génération. Par exemple, TFS peut vous envoyer un courrier électronique ou afficher les alertes dans la zone de notification de la barre des tâches lorsqu’une build est terminée. Pour plus d’informations, consultez [exécuter et surveiller les Builds](https://msdn.microsoft.com/library/ms181721.aspx).
 
 ## <a name="conclusion"></a>Conclusion
 
@@ -159,7 +159,7 @@ Dans l’ordre pour un déploiement automatisé réussir dans le cadre du proces
 
 ## <a name="further-reading"></a>informations supplémentaires
 
-Pour plus d’informations sur la création de définitions de build, consultez [créer une définition de Build](https://msdn.microsoft.com/en-us/library/ms181716.aspx) et [définir votre processus de génération](https://msdn.microsoft.com/en-us/library/ms181715.aspx). Pour plus d’informations sur les files d’attente de builds, consultez [une Build en file d’attente](https://msdn.microsoft.com/en-us/library/ms181722.aspx).
+Pour plus d’informations sur la création de définitions de build, consultez [créer une définition de Build](https://msdn.microsoft.com/library/ms181716.aspx) et [définir votre processus de génération](https://msdn.microsoft.com/library/ms181715.aspx). Pour plus d’informations sur les files d’attente de builds, consultez [une Build en file d’attente](https://msdn.microsoft.com/library/ms181722.aspx).
 
 >[!div class="step-by-step"]
 [Précédent](configuring-a-tfs-build-server-for-web-deployment.md)

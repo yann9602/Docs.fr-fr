@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/app-secrets
-ms.openlocfilehash: e2c11b768098b3d92ef702e0daad746963dc3856
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 94356cef7a0333f0faac6420b1b5425920b99deb
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="safe-storage-of-app-secrets-during-development-in-aspnet-core"></a>Stockage sécurisé des secrets d’application pendant le développement dans ASP.NET Core
 
@@ -37,7 +37,7 @@ Par exemple, si vous créez une application web ASP.NET Core avec les comptes d�
 L’outil Gestionnaire de secret principal stocke des données sensibles pour les travaux de développement en dehors de l’arborescence de votre projet. L’outil Gestionnaire de la clé secrète est un outil de projet qui peut être utilisé pour stocker des secrets pour un [.NET Core](https://www.microsoft.com/net/core) projet pendant le développement. Avec l’outil Gestionnaire de la clé secrète, vous pouvez associer des secrets de l’application à un projet spécifique et les partager entre plusieurs projets.
 
 >[!WARNING]
-> Le Gestionnaire du Secret ne chiffre pas les clés secrètes stockées et ne doit pas être considérée comme un magasin approuvé. Il est uniquement à des fins de développement. Les clés et valeurs sont stockées dans un fichier de configuration JSON dans le répertoire de profil utilisateur.
+> Le Gestionnaire du Secret ne chiffrer les clés secrètes stockées et ne doit pas être traité comme un magasin approuvé. Il est uniquement à des fins de développement. Les clés et valeurs sont stockées dans un fichier de configuration JSON dans le répertoire de profil utilisateur.
 
 ## <a name="installing-the-secret-manager-tool"></a>Installation de l’outil Gestionnaire de la clé secrète
 
@@ -122,7 +122,7 @@ L’outil Gestionnaire de Secret élimine les détails d’implémentation, tels
 
 La valeur de `userSecretsId` provient de la valeur spécifiée dans *.csproj* fichier.
 
-Vous ne devez pas écrire le code qui dépend de l’emplacement ou le format des données enregistrées avec l’outil Gestionnaire de la clé secrète, car ces détails d’implémentation peuvent changer. Par exemple, les valeurs de clé secrètes sont actuellement *pas* chiffré aujourd'hui, mais peut être un jour.
+Vous ne devez pas écrire du code qui dépend de l’emplacement ou le format des données enregistrées avec l’outil Gestionnaire de la clé secrète, car ces détails d’implémentation peuvent changer. Par exemple, les valeurs de clé secrètes sont actuellement *pas* chiffré aujourd'hui, mais peut être un jour.
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 

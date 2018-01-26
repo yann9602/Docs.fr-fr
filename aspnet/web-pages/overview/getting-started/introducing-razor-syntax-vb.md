@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-razor-syntax-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 42beb4ffcff9974230ba0c4a2f243020bcd4f99d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8f5d223a5944d8adb9fe65c89e87829d18d1c7ee
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-visual-basic"></a>Introduction à la programmation Web ASP.NET à l’aide de la syntaxe Razor (Visual Basic)
 ====================
@@ -121,7 +121,7 @@ Les lignes de code suivantes affectent une valeur à la variable `lastname` à l
 
 Le résultat est affiché dans un navigateur :
 
-![VB-syntaxe-5](introducing-razor-syntax-vb/_static/image5.jpg)
+![vb-syntax-5](introducing-razor-syntax-vb/_static/image5.jpg)
 
 ### <a name="7-much-of-your-coding-involves-working-with-objects"></a>7. Une grande partie de votre programmation implique de travailler avec des objets
 
@@ -318,7 +318,7 @@ Voici un exemple pour vous aider à comprendre les différences :
 | URL complète | `http://mycompanyserver/humanresources/CompanyPolicy.htm` |
 | --- | --- |
 | Nom du serveur | *mycompanyserver* |
-| Chemin d'accès virtuel | */HumanResources/CompanyPolicy.htm* |
+| Chemin d'accès virtuel | */humanresources/CompanyPolicy.htm* |
 | Chemin d’accès physique | *C:\mywebsites\humanresources\CompanyPolicy.htm* |
 
 La racine virtuelle est /, tout comme la racine de votre lecteur est \. (Chemins d’accès du dossier virtuel utilisent toujours des barres obliques.) Le chemin d’accès virtuel d’un dossier ne doit pas nécessairement avoir le même nom que le dossier physique ; Il peut être un alias. (Sur les serveurs de production, le chemin d’accès virtuel rarement correspond à un chemin d’accès physique exact.)
@@ -518,5 +518,5 @@ Si votre code n’a pas gérer l’exception, vous voyez une page d’erreur com
 
 ### <a name="reference-documentation"></a>Documentation de référence
 
-- [ASP.NET](https://msdn.microsoft.com/en-us/library/ee532866.aspx)
-- [Langage Visual Basic](https://msdn.microsoft.com/en-us/library/2x7h1hfk.aspx)
+- [ASP.NET](https://msdn.microsoft.com/library/ee532866.aspx)
+- [Langage Visual Basic](https://msdn.microsoft.com/library/2x7h1hfk.aspx)

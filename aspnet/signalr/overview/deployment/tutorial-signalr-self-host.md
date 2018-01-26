@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/deployment/tutorial-signalr-self-host
 msc.type: authoredcontent
-ms.openlocfilehash: 997756ff8d48e41da981491d6154f3107ec7a051
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d38e6fbc3407e4beca6942bbdefcaa8258ebc5ad
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="tutorial-signalr-self-host"></a>Didacticiel : SignalR l’auto-hébergement
 ====================
@@ -94,7 +94,7 @@ Dans ce didacticiel, vous allez créer un serveur qui est hébergé dans une app
 
     Le code ci-dessus inclut trois classes :
 
-    - **Programme**, y compris le **Main** méthode définissant le chemin d’accès principal d’exécution. Dans cette méthode, une application web de type **démarrage** est démarré à l’URL spécifiée (`http://localhost:8080`). Si la sécurité est requise sur le point de terminaison, SSL peut être implémenté. Consultez [Comment : configurer un Port avec un certificat SSL](https://msdn.microsoft.com/en-us/library/ms733791.aspx) pour plus d’informations.
+    - **Programme**, y compris le **Main** méthode définissant le chemin d’accès principal d’exécution. Dans cette méthode, une application web de type **démarrage** est démarré à l’URL spécifiée (`http://localhost:8080`). Si la sécurité est requise sur le point de terminaison, SSL peut être implémenté. Consultez [Comment : configurer un Port avec un certificat SSL](https://msdn.microsoft.com/library/ms733791.aspx) pour plus d’informations.
     - **Démarrage**, la classe contenant la configuration pour le serveur SignalR (la seule configuration de ce didacticiel utilise est l’appel à `UseCors`) et l’appel à `MapSignalR`, ce qui crée des itinéraires pour tous les objets de concentrateur dans le projet.
     - **MyHub**, la classe de concentrateur SignalR qui fournit aux clients l’application. Cette classe a une méthode unique, **envoyer**, que les clients appelleront pour diffuser un message à tous les autres clients connectés.
 6. Compilez et exécutez l'application. L’adresse que le serveur est en cours d’exécution doit s’afficher dans une fenêtre de console.

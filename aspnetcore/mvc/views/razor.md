@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/razor
-ms.openlocfilehash: d932e28246998c60e2b3f9c77a2521fe55991e85
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: abdbb8112533d42f81180abad52f5ee86e3b280f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="razor-syntax-for-aspnet-core"></a>Syntaxe Razor pour ASP.NET Core
 
@@ -73,7 +73,7 @@ Les expressions implicites **ne peut pas** contiennent les génériques c#, comm
 Le code précédent génère une erreur du compilateur semblable à un des éléments suivants :
 
  * L’élément « int » n’a pas été fermé. Tous les éléments doivent être à fermeture automatique ou concordent une balise de fin.
- * Impossible de convertir le groupe de méthodes 'GenericMethod' au type 'object' non-délégué. Souhaitiez-vous appeler la méthode ? » 
+ *  Impossible de convertir le groupe de méthodes 'GenericMethod' au type 'object' non-délégué. Souhaitiez-vous appeler la méthode ? » 
  
 Appels de méthode générique doivent être encapsulées dans un [expression Razor explicite](#explicit-razor-expressions) ou un [bloc de code Razor](#razor-code-blocks).
 
@@ -119,7 +119,7 @@ Les expressions explicites peuvent être utilisées pour afficher la sortie à p
 Le code précédent génère une erreur du compilateur semblable à un des éléments suivants :
 
  * L’élément « int » n’a pas été fermé. Tous les éléments doivent être à fermeture automatique ou concordent une balise de fin.
- * Impossible de convertir le groupe de méthodes 'GenericMethod' au type 'object' non-délégué. Souhaitiez-vous appeler la méthode ? » 
+ *  Impossible de convertir le groupe de méthodes 'GenericMethod' au type 'object' non-délégué. Souhaitiez-vous appeler la méthode ? » 
  
  Le balisage suivant illustre l’écriture de façon correcte ce code. Le code est écrit en tant qu’expression explicite :
 

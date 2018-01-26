@@ -2,20 +2,18 @@
 title: "Méthodes et vues de contrôleur dans une application ASP.NET Core MVC"
 author: rick-anderson
 description: "Utilisation des méthodes, vues et DataAnnotations de contrôleur"
-keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
 ms.date: 04/07/2017
 ms.topic: get-started-article
-ms.assetid: c7313211-babe-babe-babe-8e72603cc0ce
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/first-mvc-app-mac/controller-methods-views
-ms.openlocfilehash: 846a78a09cdde0cfdbcf35bb899c1822ebe8fea2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1c58a3bbac227e06a36df0b0d3ed6c2455eb46c4
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="controller-methods-and-views-in-an-aspnet-core-mvc-app"></a>Méthodes et vues de contrôleur dans une application ASP.NET Core MVC
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/configuring-parameters-for-web-package-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: dd1ae266740ea4728c0624b1833a98ac262e0e5a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 12a4ba8ad30df43e7192500ad4514dfa9679f899
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="configuring-parameters-for-web-package-deployment"></a>Configuration des paramètres de déploiement du Package Web
 ====================
@@ -88,7 +88,7 @@ En plus de paramétrer l’URL de point de terminaison dans le package de déplo
 
 Si vous installez manuellement le package de déploiement, le Gestionnaire IIS vous demandera l’adresse de point de terminaison de service en même temps que les propriétés qui ont été paramétré automatiquement. Si vous installez le package de déploiement en exécutant la *. deploy.cmd* fichier, vous pouvez modifier le *SetParameters.xml* fichier pour fournir une valeur pour l’adresse de point de terminaison de service ainsi que les valeurs pour le propriétés qui ont été paramétrées automatiquement.
 
-Pour plus d’informations sur la création d’un *parameters.xml* de fichiers, consultez [Comment : utiliser les paramètres pour configurer les paramètres lorsqu’un Package de déploiement est installé](https://msdn.microsoft.com/en-us/library/ff398068.aspx). La procédure nommée **à utiliser les paramètres de déploiement pour les paramètres du fichier Web.config** fournit des instructions détaillées.
+Pour plus d’informations sur la création d’un *parameters.xml* de fichiers, consultez [Comment : utiliser les paramètres pour configurer les paramètres lorsqu’un Package de déploiement est installé](https://msdn.microsoft.com/library/ff398068.aspx). La procédure nommée **à utiliser les paramètres de déploiement pour les paramètres du fichier Web.config** fournit des instructions détaillées.
 
 ## <a name="modifying-the-setparametersxml-file"></a>Modification du fichier SetParameters.xml
 
@@ -144,7 +144,7 @@ La rubrique suivante, [déploiement des Packages Web](deploying-web-packages.md)
 
 ## <a name="further-reading"></a>informations supplémentaires
 
-Pour plus d’informations sur la façon de créer des packages web, consultez [génération et des projets d’Application Web empaquetage](building-and-packaging-web-application-projects.md). Pour obtenir des conseils sur la façon de déployer un package web, consultez [déploiement des Packages Web](deploying-web-packages.md). Pour connaître la procédure pas à pas sur la création d’un *parameters.xml* de fichiers, consultez [Comment : utiliser les paramètres pour configurer les paramètres lorsqu’un Package de déploiement est installé](https://msdn.microsoft.com/en-us/library/ff398068.aspx).
+Pour plus d’informations sur la façon de créer des packages web, consultez [génération et des projets d’Application Web empaquetage](building-and-packaging-web-application-projects.md). Pour obtenir des conseils sur la façon de déployer un package web, consultez [déploiement des Packages Web](deploying-web-packages.md). Pour connaître la procédure pas à pas sur la création d’un *parameters.xml* de fichiers, consultez [Comment : utiliser les paramètres pour configurer les paramètres lorsqu’un Package de déploiement est installé](https://msdn.microsoft.com/library/ff398068.aspx).
 
 Pour plus d’informations sur le paramétrage de Web Deploy, consultez [Web déployer le paramétrage dans l’Action](https://go.microsoft.com/?linkid=9805119) (billet de blog).
 

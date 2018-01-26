@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/advanced/custom-mvc-templates
 msc.type: authoredcontent
-ms.openlocfilehash: a1fe1844e582f402a1eed9ddf10ee249e856b083
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c3ddd4e341511f520927e924b25d890088adb69e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="custom-mvc-template"></a>Modèle MVC personnalisée
 ====================
@@ -26,14 +26,14 @@ La version de MVC 3 Tools Update pour Visual Studio 2010 a introduit un Assistan
 
 L’ajout de modèles personnalisés était un processus complexe qui s’appuyaient sur l’utilisation du Registre pour que les nouveaux modèles visible par l’Assistant de projet MVC. L’auteur d’un nouveau modèle devait placez-le à l’intérieur d’un fichier MSI pour vous assurer que les entrées du Registre nécessaires sont créées au moment de l’installation. L’alternative était de créer un fichier ZIP contenant le modèle disponible et avoir l’utilisateur final de créer manuellement les entrées de Registre nécessaires.
 
-Aucun des approches citée plus haut est idéale afin de nous avons décidé de tirer parti de l’infrastructure fournie par [VSIX](https://msdn.microsoft.com/en-us/library/ff363239.aspx) extensions pour faciliter leur auteur, distribuer et installer des modèles MVC personnalisés à partir de MVC 4 pour Visual Studio 2012. Certains des avantages fournis par cette approche sont :
+Aucun des approches citée plus haut est idéale afin de nous avons décidé de tirer parti de l’infrastructure fournie par [VSIX](https://msdn.microsoft.com/library/ff363239.aspx) extensions pour faciliter leur auteur, distribuer et installer des modèles MVC personnalisés à partir de MVC 4 pour Visual Studio 2012. Certains des avantages fournis par cette approche sont :
 
 - Une extension VSIX peut contenir plusieurs modèles qui prennent en charge différentes langues (c# et Visual Basic) et plusieurs moteurs d’affichage (ASPX et Razor).
 - Une extension VSIX peut cibler plusieurs références (SKU) de Visual Studio, y compris les références (SKU) Express.
 - Le [galerie Visual Studio](https://visualstudiogallery.msdn.microsoft.com/) facilite la distribution de l’extension à un large public.
 - Extensions VSIX peuvent être mis à niveau, ce qui la rend plus facile de créer des corrections et mises à jour de vos modèles personnalisés.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 - Les utilisateurs ont besoin de se familiariser avec la création de modèles de projet, y compris le balisage requis pour les fichiers vstemplate, etc.
 - Les utilisateurs doivent disposer de Visual Studio Professional et ultérieure. Références SKU Express ne permettent pas de créer des projets VSIX.
@@ -63,15 +63,15 @@ Si vous envisagez de prendre en charge tous les les SKU Professional et versions
 
 Le **actifs** onglet est utilisé pour ajouter tous vos fichiers de contenu à l’extension VSIX. Étant donné que MVC requiert des métadonnées personnalisées que vous aurez à modifier le code XML brut du fichier manifeste VSIX au lieu d’utiliser le **actifs** onglet pour ajouter du contenu. Commencez par ajouter le contenu du modèle pour le projet VSIX. Il est important que la structure du dossier et le contenu de mise en miroir de la disposition du projet. L’exemple ci-dessous contient quatre modèles de projet qui ont été dérivées à partir du modèle de projet MVC de base. Assurez-vous que tous les fichiers qui composent votre modèle de projet (tous les éléments sous le dossier ProjectTemplates) sont ajoutés à la **contenu** itemgroup dans le VSIX fichier projet et que chaque élément contient le  **CopyToOutputDirectory** et **IncludeInVsix** métadonnées définies comme indiqué dans l’exemple ci-dessous.
 
-&lt;Inclure du contenu =&quot;ProjectTemplates\MyMvcWebApplicationProjectTemplate.csaspx\BasicWeb.config&quot;&gt;
+&lt;Content Include=&quot;ProjectTemplates\MyMvcWebApplicationProjectTemplate.csaspx\BasicWeb.config&quot;&gt;
 
-&lt;CopyToOutputDirectory&gt;toujours&lt;/CopyToOutputDirectory&gt;
+&lt;CopyToOutputDirectory&gt;Always&lt;/CopyToOutputDirectory&gt;
 
 &lt;IncludeInVSIX&gt;true&lt;/IncludeInVSIX&gt;
 
-&lt;/ Contenu&gt;
+&lt;/Content&gt;
 
-Si ce n’est pas le cas, l’IDE tente de se compiler le contenu du modèle lorsque vous générez l’extension VSIX et vous verrez probablement une erreur. Fichiers de code dans les modèles contiennent souvent spéciaux [les paramètres de modèle](https://msdn.microsoft.com/en-us/library/eehb4faa(v=vs.110).aspx) utilisé par Visual Studio lorsque le modèle de projet est instancié et par conséquent ne peut pas être compilé dans l’IDE.
+Si ce n’est pas le cas, l’IDE tente de se compiler le contenu du modèle lorsque vous générez l’extension VSIX et vous verrez probablement une erreur. Fichiers de code dans les modèles contiennent souvent spéciaux [les paramètres de modèle](https://msdn.microsoft.com/library/eehb4faa(v=vs.110).aspx) utilisé par Visual Studio lorsque le modèle de projet est instancié et par conséquent ne peut pas être compilé dans l’IDE.
 
 ![Explorateur de solutions](custom-mvc-templates/_static/image6.jpg)
 
@@ -83,27 +83,27 @@ Créer un  **&lt;actifs&gt;**  élément et ajouter un  **&lt;Asset&gt;**  élé
 
 Ajouter simplement les fichiers à l’extension VSIX n’est pas suffisant pour enregistrer les modèles avec l’Assistant MVC. Vous devez fournir des informations telles que le nom du modèle, une description, moteurs d’affichage pris en charge et langage de programmation à l’Assistant MVC. Cette information est contenue dans les attributs personnalisés associés à la  **&lt;Asset&gt;**  élément pour chaque **vstemplate** fichier.
 
-&lt;Asset d:VsixSubPath =&quot;ProjectTemplates\MyMvcWebApplicationProjectTemplate.csaspx&quot;
+&lt;Asset d:VsixSubPath=&quot;ProjectTemplates\MyMvcWebApplicationProjectTemplate.csaspx&quot;
 
-Type =&quot;Microsoft.VisualStudio.Mvc.Template&quot;
+Type=&quot;Microsoft.VisualStudio.Mvc.Template&quot;
 
-d:source =&quot;fichier&quot;
+d:Source=&quot;File&quot;
 
-Chemin d’accès =&quot;ProjectTemplates\MyMvcWebApplicationProjectTemplate.csaspx\BasicMvcWebApplicationProjectTemplate.11.csaspx.vstemplate&quot;
+Path=&quot;ProjectTemplates\MyMvcWebApplicationProjectTemplate.csaspx\BasicMvcWebApplicationProjectTemplate.11.csaspx.vstemplate&quot;
 
-ProjectType =&quot;MVC&quot;
+ProjectType=&quot;MVC&quot;
 
-Language =&quot;c#&quot;
+Language=&quot;C#&quot;
 
-ViewEngine =&quot;Aspx&quot;
+ViewEngine=&quot;Aspx&quot;
 
-TemplateId =&quot;MyMvcApplication&quot;
+TemplateId=&quot;MyMvcApplication&quot;
 
 Titre =&quot;Application Web de base personnalisée&quot;
 
 Description =&quot;dérivée d’un modèle personnalisé à partir d’une application web de MVC de base (Razor)&quot;
 
-Version =&quot;4.0&quot;/&gt;
+Version=&quot;4.0&quot;/&gt;
 
 Voici une explication des attributs personnalisés qui doivent être présents :
 

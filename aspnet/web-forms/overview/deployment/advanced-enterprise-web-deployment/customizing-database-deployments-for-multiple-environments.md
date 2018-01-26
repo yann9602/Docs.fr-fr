@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/customizing-database-deployments-for-multiple-environments
 msc.type: authoredcontent
-ms.openlocfilehash: 449c448d1be237f3f95a437bb2c0415bd8ed0d99
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f3ca344c2466d9d538f55cd8ff0a5bf5b7bac808
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="customizing-database-deployments-for-multiple-environments"></a>Personnalisation des déploiements de base de données pour plusieurs environnements
 ====================
@@ -74,15 +74,15 @@ Ce tableau montre les paramètres de déploiement classiques pour différents en
 | **Classement de comparaison de déploiement** | Source | une cible | une cible |
 | **Déployer les propriétés de la base de données** | True | Uniquement la première fois | Uniquement la première fois |
 | **Toujours recréer la base de données** | True | False | False |
-| **Bloquer le déploiement incrémentiel si une perte de données peut se produire.** | False | Peut-être | True |
+| **Bloquer le déploiement incrémentiel si une perte de données peut se produire.** | False | Maybe | True |
 | **Exécutez le script de déploiement en mode mono-utilisateur** | False | True | True |
-| **Sauvegarder la base de données avant le déploiement** | False | Peut-être | True |
+| **Sauvegarder la base de données avant le déploiement** | False | Maybe | True |
 | **Générer des instructions DROP pour les objets qui se trouvent dans la base de données cible, mais qui ne sont pas dans le projet de base de données** | False | True | True |
 | **N’utilisez pas d’instructions ALTER ASSEMBLY pour mettre à jour les types CLR** | False | False | False |
   
 
 > [!NOTE]
-> Pour plus d’informations sur les propriétés de déploiement de base de données et les considérations sur l’environnement, consultez [une vue d’ensemble de base de données de paramètres de projet](https://msdn.microsoft.com/en-us/library/aa833291(v=VS.100).aspx), [Comment : configurer les propriétés des détails du déploiement](https://msdn.microsoft.com/en-us/library/dd172125.aspx), [ Générer et déployer la base de données dans un environnement de développement isolé](https://msdn.microsoft.com/en-us/library/dd193409.aspx), et [créer et déployer des bases de données dans un environnement de Production ou de mise en lots](https://msdn.microsoft.com/en-us/library/dd193413.aspx).
+> Pour plus d’informations sur les propriétés de déploiement de base de données et les considérations sur l’environnement, consultez [une vue d’ensemble de base de données de paramètres de projet](https://msdn.microsoft.com/library/aa833291(v=VS.100).aspx), [Comment : configurer les propriétés des détails du déploiement](https://msdn.microsoft.com/library/dd172125.aspx), [ Générer et déployer la base de données dans un environnement de développement isolé](https://msdn.microsoft.com/library/dd193409.aspx), et [créer et déployer des bases de données dans un environnement de Production ou de mise en lots](https://msdn.microsoft.com/library/dd193413.aspx).
 
 
 Pour prendre en charge le déploiement d’un projet de base de données vers plusieurs destinations, vous devez créer un fichier de configuration de déploiement pour chaque environnement cible.
@@ -94,7 +94,7 @@ Pour prendre en charge le déploiement d’un projet de base de données vers pl
 
     ![](customizing-database-deployments-for-multiple-environments/_static/image1.png)
 3. Dans le **nouveau fichier de Configuration de déploiement** boîte de dialogue zone, donnez au fichier un nom significatif (par exemple, **TestEnvironment.sqldeployment**), puis cliquez sur **enregistrer**.
-4. Sur le *[nom_fichier]***.sqldeployment** page, définissez les propriétés de déploiement pour répondre aux besoins de votre environnement de destination, puis enregistrez le fichier.
+4. Sur le *[nom_fichier] *** .sqldeployment** page, définissez les propriétés de déploiement pour répondre aux besoins de votre environnement de destination, puis enregistrez le fichier.
 
     ![](customizing-database-deployments-for-multiple-environments/_static/image2.png)
 5. Notez que le nouveau fichier est ajouté dans le dossier Propriétés de votre projet de base de données.
@@ -141,10 +141,10 @@ Pour plus d’informations sur le déploiement des projets de base de données �
 
 Ces articles sur MSDN fournissent des instructions plus générales sur le déploiement de la base de données :
 
-- [Une vue d’ensemble de paramètres de projet de base de données](https://msdn.microsoft.com/en-us/library/aa833291(v=VS.100).aspx)
-- [Comment : configurer les propriétés des détails du déploiement](https://msdn.microsoft.com/en-us/library/dd172125.aspx)
-- [Créer et déployer des bases de données dans un environnement de développement isolé](https://msdn.microsoft.com/en-us/library/dd193409.aspx)
-- [Créer et déployer des bases de données dans un environnement de Production ou de mise en lots](https://msdn.microsoft.com/en-us/library/dd193413.aspx)
+- [Une vue d’ensemble de paramètres de projet de base de données](https://msdn.microsoft.com/library/aa833291(v=VS.100).aspx)
+- [Comment : configurer les propriétés des détails du déploiement](https://msdn.microsoft.com/library/dd172125.aspx)
+- [Créer et déployer des bases de données dans un environnement de développement isolé](https://msdn.microsoft.com/library/dd193409.aspx)
+- [Créer et déployer des bases de données dans un environnement de Production ou de mise en lots](https://msdn.microsoft.com/library/dd193413.aspx)
 
 >[!div class="step-by-step"]
 [Précédent](performing-a-what-if-deployment.md)

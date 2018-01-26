@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: mvc/views/tag-helpers/builtin-th/cache-tag-helper
-ms.openlocfilehash: dfd9c3c0c4e50a99e4f8703b01bd9b384930b87a
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 10aa1b493dbd0672cac789f6e48ddf2f14ba35dc
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="cache-tag-helper-in-aspnet-core-mvc"></a>Mettre en cache d’assistance de balise dans le cœur d’ASP.NET MVC
 

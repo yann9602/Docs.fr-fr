@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/configuring-the-data-access-layer-s-connection-and-command-level-settings-vb
 msc.type: authoredcontent
-ms.openlocfilehash: f2da69ba1b7511e8659ab7212785e8148b438a4b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ab392f2a7d9b6cf97da920f899aea23379209f96
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="configuring-the-data-access-layers-connection--and-command-level-settings-vb"></a>Configuration des paramètres de niveau de connexion et de commande de la couche d’accès aux données (Visual Basic)
 ====================
@@ -37,7 +37,7 @@ Dans ce didacticiel, nous allons examiner comment accéder aux paramètres de ba
 
 ## <a name="working-with-data-using-adonet"></a>Utilisation des données à l’aide d’ADO.NET
 
-Microsoft .NET Framework contient une multitude de classes conçues spécifiquement pour fonctionner avec des données. Ces classes, trouvés dans le [ `System.Data` espace de noms](https://msdn.microsoft.com/en-us/library/system.data.aspx), sont appelés les *ADO.NET* classes. Certaines des classes dans le cadre ADO.NET sont liés à un particulier *fournisseur de données*. Vous pouvez considérer un fournisseur de données comme un canal de communication qui permet des informations entre les classes ADO.NET et le magasin de données sous-jacent. Il existe des fournisseurs généralisés, telles qu’OLE DB et ODBC, ainsi que les fournisseurs qui sont spécialement conçus pour un système de base de données particulière. Par exemple, s’il est possible de se connecter à une base de données Microsoft SQL Server à l’aide du fournisseur OleDb, le fournisseur SqlClient est beaucoup plus efficace car elle a été conçu et optimisé spécifiquement pour SQL Server.
+Microsoft .NET Framework contient une multitude de classes conçues spécifiquement pour fonctionner avec des données. Ces classes, trouvés dans le [ `System.Data` espace de noms](https://msdn.microsoft.com/library/system.data.aspx), sont appelés les *ADO.NET* classes. Certaines des classes dans le cadre ADO.NET sont liés à un particulier *fournisseur de données*. Vous pouvez considérer un fournisseur de données comme un canal de communication qui permet des informations entre les classes ADO.NET et le magasin de données sous-jacent. Il existe des fournisseurs généralisés, telles qu’OLE DB et ODBC, ainsi que les fournisseurs qui sont spécialement conçus pour un système de base de données particulière. Par exemple, s’il est possible de se connecter à une base de données Microsoft SQL Server à l’aide du fournisseur OleDb, le fournisseur SqlClient est beaucoup plus efficace car elle a été conçu et optimisé spécifiquement pour SQL Server.
 
 Lors de l’accès par programme aux données, le modèle suivant est couramment utilisé :
 
@@ -45,7 +45,7 @@ Lors de l’accès par programme aux données, le modèle suivant est couramment
 2. Émettre une commande.
 3. Pour `SELECT` requêtes, travailler avec les enregistrements résultants.
 
-Il existe des classes ADO.NET distinctes pour la réalisation de chacune de ces étapes. Pour vous connecter à une base de données à l’aide du fournisseur SqlClient, par exemple, utiliser le [ `SqlConnection` classe](https://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqlconnection(VS.80).aspx). Pour émettre un `INSERT`, `UPDATE`, `DELETE`, ou `SELECT` commande à la base de données, utilisez la [ `SqlCommand` classe](https://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqlcommand.aspx).
+Il existe des classes ADO.NET distinctes pour la réalisation de chacune de ces étapes. Pour vous connecter à une base de données à l’aide du fournisseur SqlClient, par exemple, utiliser le [ `SqlConnection` classe](https://msdn.microsoft.com/library/system.data.sqlclient.sqlconnection(VS.80).aspx). Pour émettre un `INSERT`, `UPDATE`, `DELETE`, ou `SELECT` commande à la base de données, utilisez la [ `SqlCommand` classe](https://msdn.microsoft.com/library/system.data.sqlclient.sqlcommand.aspx).
 
 À l’exception de la [encapsulant les Modifications de base de données d’une Transaction](../working-with-batched-data/wrapping-database-modifications-within-a-transaction-vb.md) didacticiel, nous n’avons pas reçu les écrire à ADO.NET de bas niveau nous-mêmes de code, car le code généré automatiquement des TableAdapters inclut la fonctionnalité nécessaire pour se connecter à la base de données, exécuter des commandes, récupérer des données et remplir ces données dans les tables de données. Toutefois, il peut arriver lorsque nous aurons besoin de personnaliser ces paramètres de bas niveau. Sur les étapes suivantes, nous allons examiner comment exploiter les objets ADO.NET utilisés en interne par les TableAdapters.
 
@@ -121,7 +121,7 @@ Enregistrer le jeu de données, puis revenez à la `ProductsBLL` classe. Comme a
 
 ## <a name="step-3-examining-the-command-related-properties"></a>Étape 3 : Examiner les propriétés de commande
 
-Un TableAdapter se compose d’une requête principale, qui, par défaut, a généré automatiquement `INSERT`, `UPDATE`, et `DELETE` instructions. Cette requête principale s `INSERT`, `UPDATE`, et `DELETE` instructions sont implémentées dans le code du TableAdapter s comme un objet d’adaptateur de données ADO.NET via le `Adapter` propriété. Par exemple lors de sa `Connection` propriété, le `Adapter` type de données de propriété s est déterminé par le fournisseur de données utilisé. Étant donné que ces didacticiels utilisent le fournisseur SqlClient, le `Adapter` propriété est de type [ `SqlDataAdapter` ](https://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqldataadapter(VS.80).aspx).
+Un TableAdapter se compose d’une requête principale, qui, par défaut, a généré automatiquement `INSERT`, `UPDATE`, et `DELETE` instructions. Cette requête principale s `INSERT`, `UPDATE`, et `DELETE` instructions sont implémentées dans le code du TableAdapter s comme un objet d’adaptateur de données ADO.NET via le `Adapter` propriété. Par exemple lors de sa `Connection` propriété, le `Adapter` type de données de propriété s est déterminé par le fournisseur de données utilisé. Étant donné que ces didacticiels utilisent le fournisseur SqlClient, le `Adapter` propriété est de type [ `SqlDataAdapter` ](https://msdn.microsoft.com/library/system.data.sqlclient.sqldataadapter(VS.80).aspx).
 
 Le TableAdapter s `Adapter` propriété possède trois propriétés de type `SqlCommand` qu’il utilise pour problème la `INSERT`, `UPDATE`, et `DELETE` instructions :
 
@@ -129,7 +129,7 @@ Le TableAdapter s `Adapter` propriété possède trois propriétés de type `Sql
 - `UpdateCommand`
 - `DeleteCommand`
 
-A `SqlCommand` objet est chargé d’envoyer une requête spécifique à la base de données et possède des propriétés comme : [ `CommandText` ](https://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqlcommand.commandtext.aspx), qui contient l’instruction SQL d’ad hoc ou procédure stockée à exécuter ; et [ `Parameters` ](https://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqlcommand.parameters.aspx), qui est une collection de `SqlParameter` objets. Comme nous l’avons vu dans la [création d’une couche d’accès aux données](../introduction/creating-a-data-access-layer-vb.md) (didacticiel), ces commandes objets peuvent être personnalisés via la fenêtre Propriétés.
+A `SqlCommand` objet est chargé d’envoyer une requête spécifique à la base de données et possède des propriétés comme : [ `CommandText` ](https://msdn.microsoft.com/library/system.data.sqlclient.sqlcommand.commandtext.aspx), qui contient l’instruction SQL d’ad hoc ou procédure stockée à exécuter ; et [ `Parameters` ](https://msdn.microsoft.com/library/system.data.sqlclient.sqlcommand.parameters.aspx), qui est une collection de `SqlParameter` objets. Comme nous l’avons vu dans la [création d’une couche d’accès aux données](../introduction/creating-a-data-access-layer-vb.md) (didacticiel), ces commandes objets peuvent être personnalisés via la fenêtre Propriétés.
 
 En plus de la requête principale, le TableAdapter peut inclure un nombre variable de méthodes qui, lorsqu’elle est appelée, une commande spécifiée pour la base de données de distribution. L’objet de commande de requête principale s et les objets de commande pour toutes les méthodes supplémentaires sont stockés dans le TableAdapter s `CommandCollection` propriété.
 
@@ -146,7 +146,7 @@ Dans l’idéal, les informations au niveau de la commande doivent rester encaps
 
 Étant donné que le TableAdapter a uniquement un seul `Connection` propriété, le code qui permet d’exposer les paramètres au niveau de la connexion est assez simple. Éléments sont un peu plus complexes lorsque vous modifiez les paramètres au niveau de la commande, car le TableAdapter peut avoir plusieurs objets command - une `InsertCommand`, `UpdateCommand`, et `DeleteCommand`, ainsi que d’un nombre variable d’objets de commande dans le `CommandCollection` propriété. Lors de la mise à jour des paramètres au niveau de la commande, ces paramètres seront doivent être propagées à tous les objets de commande.
 
-Par exemple, imaginez que certaines requêtes sont dans le TableAdapter qui a pris un temps extraordinaire à s’exécuter. Lorsque vous utilisez le TableAdapter pour exécuter l’une de ces requêtes, nous voulons augmenter l’objet de commande s [ `CommandTimeout` propriété](https://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqlcommand.commandtimeout.aspx). Cette propriété spécifie le nombre de secondes d’attente de la commande à exécuter et la valeur par défaut est 30.
+Par exemple, imaginez que certaines requêtes sont dans le TableAdapter qui a pris un temps extraordinaire à s’exécuter. Lorsque vous utilisez le TableAdapter pour exécuter l’une de ces requêtes, nous voulons augmenter l’objet de commande s [ `CommandTimeout` propriété](https://msdn.microsoft.com/library/system.data.sqlclient.sqlcommand.commandtimeout.aspx). Cette propriété spécifie le nombre de secondes d’attente de la commande à exécuter et la valeur par défaut est 30.
 
 Pour permettre la `CommandTimeout` propriété être ajustée par la couche BLL, ajoutez le code suivant `Public` méthode à la `ProductsDataTable` à l’aide du fichier de classe partielle créée à l’étape 2 (`ProductsTableAdapter.ConnectionAndCommandSettings.vb`) :
 
@@ -159,7 +159,7 @@ Cette méthode peut être appelée à partir de la couche BLL ou une couche de p
 > Le `Adapter` et `CommandCollection` propriétés sont marquées comme `Private`, ce qui signifie que leur est accessible uniquement à partir du code dans le TableAdapter. Contrairement à la `Connection` propriété, ces modificateurs d’accès ne sont pas configurables. Par conséquent, si vous avez besoin d’exposer les propriétés au niveau de la commande à d’autres couches de l’architecture, vous devez utiliser l’approche de la classe partielle mentionnée ci-dessus pour fournir un `Public` méthode ou propriété qui lit ou écrit dans le `Private` objets de commande.
 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Les TableAdapters dans un DataSet typé servent pour encapsuler les détails de l’accès aux données et la complexité. À l’aide des TableAdapters, ne pas avoir à vous soucier de l’écriture de code ADO.NET pour se connecter à la base de données, exécutez une commande ou remplir les résultats dans un DataTable. Tout est traité automatiquement pour nous.
 

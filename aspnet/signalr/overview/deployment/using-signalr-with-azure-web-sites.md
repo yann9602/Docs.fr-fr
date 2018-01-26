@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/deployment/using-signalr-with-azure-web-sites
 msc.type: authoredcontent
-ms.openlocfilehash: 414701159b4e1fa3da9597503b14281a1e9991de
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8386441690a3fb479ffb941ebd7c0b2f83870781
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-signalr-with-web-apps-in-azure-app-service"></a>À l’aide de SignalR avec les applications Web dans Azure App Service
 ====================
@@ -36,7 +36,7 @@ par [Patrick Fletcher](https://github.com/pfletcher)
 > 
 > ## <a name="questions-and-comments"></a>Questions et des commentaires
 > 
-> Veuillez laisser des commentaires sur la façon dont vous avez aimé ce didacticiel et nous pouvons améliorer dans les commentaires en bas de la page. Si vous avez des questions qui ne sont pas directement liées à ce didacticiel, vous pouvez les valider pour le [ASP.NET SignalR forum](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR), [StackOverflow.com](http://stackoverflow.com/), ou [forums de Microsoft Azure](https://social.msdn.microsoft.com/Forums/windowsazure/en-US/home?category=windowsazureplatform).
+> Veuillez laisser des commentaires sur la façon dont vous avez aimé ce didacticiel et nous pouvons améliorer dans les commentaires en bas de la page. Si vous avez des questions qui ne sont pas directement liées à ce didacticiel, vous pouvez les valider pour le [ASP.NET SignalR forum](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR), [StackOverflow.com](http://stackoverflow.com/), ou [forums de Microsoft Azure](https://social.msdn.microsoft.com/Forums/windowsazure/home?category=windowsazureplatform).
 
 
 ## <a name="table-of-contents"></a>Sommaire
@@ -61,7 +61,7 @@ SignalR n’ajoute pas les complications particuliers au déploiement d’une ap
 
 - Visual Studio 2013. Si vous n’avez pas Visual Studio, Visual Studio 2013 Express pour le Web est inclus dans l’installation du SDK Azure.
 - [Azure SDK 2.3 pour Visual Studio 2013](https://go.microsoft.com/fwlink/?linkid=324322&clcid=0x409) ou [Azure SDK 2.3 pour Visual Studio 2012](https://go.microsoft.com/fwlink/p/?linkid=323511).
-- Pour effectuer ce didacticiel, vous devez un abonnement Azure. Vous pouvez [activer vos avantages d’abonné MSDN](https://azure.microsoft.com/en-us/pricing/member-offers/msdn-benefits-details/), ou [souscrire un abonnement d’évaluation](https://azure.microsoft.com/en-us/pricing/free-trial/).
+- Pour effectuer ce didacticiel, vous devez un abonnement Azure. Vous pouvez [activer vos avantages d’abonné MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/), ou [souscrire un abonnement d’évaluation](https://azure.microsoft.com/pricing/free-trial/).
 
 ### <a name="deploying-a-signalr-web-app-to-azure"></a>Déploiement d’une application web de SignalR vers Azure
 
@@ -115,4 +115,4 @@ Si vous utilisez plusieurs instances de votre application web, et que les utilis
 <a id="nextsteps"></a>
 ## <a name="next-steps"></a>Étapes suivantes
 
-Pour plus d’informations sur les applications Web dans Azure App Service, consultez [vue d’ensemble des applications Web](https://azure.microsoft.com/en-us/documentation/articles/app-service-web-overview/).
+Pour plus d’informations sur les applications Web dans Azure App Service, consultez [vue d’ensemble des applications Web](https://azure.microsoft.com/documentation/articles/app-service-web-overview/).

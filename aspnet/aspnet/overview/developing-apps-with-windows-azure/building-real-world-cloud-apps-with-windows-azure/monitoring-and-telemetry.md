@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry
 msc.type: authoredcontent
-ms.openlocfilehash: dfb0158ec05c890ecf80571d95b22d8c791ba7fc
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9baddd1836323385239206a3cf49e5938bbaff58
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="monitoring-and-telemetry-building-real-world-cloud-apps-with-azure"></a>Surveillance et télémétrie (génération d’applications Cloud du monde réel avec Azure)
 ====================
@@ -39,9 +39,9 @@ Une des choses excellent sur l’environnement de cloud computing est qu’il es
 
 - [New Relic](http://newrelic.com/)
 - [AppDynamics](http://www.appdynamics.com/)
-- [DynaTrace](https://datamarket.azure.com/application/b4011de2-1212-4375-9211-e882766121ff)
+- [Dynatrace](https://datamarket.azure.com/application/b4011de2-1212-4375-9211-e882766121ff)
 
-À partir de mars 2015, [Microsoft Application Insights pour Visual Studio Online](https://azure.microsoft.com/en-us/documentation/articles/app-insights-get-started/) n’est pas encore libéré, mais est disponible en version préliminaire pour essayer. [Microsoft System Center](http://www.petri.co.il/microsoft-system-center-introduction.htm#) inclut également des fonctionnalités d’analyse.
+À partir de mars 2015, [Microsoft Application Insights pour Visual Studio Online](https://azure.microsoft.com/documentation/articles/app-insights-get-started/) n’est pas encore libéré, mais est disponible en version préliminaire pour essayer. [Microsoft System Center](http://www.petri.co.il/microsoft-system-center-introduction.htm#) inclut également des fonctionnalités d’analyse.
 
 Nous examinerons rapidement configurer New Relic pour montrer comment il peut être facile à utiliser un système de télémétrie.
 
@@ -156,13 +156,13 @@ Nous vous recommandons vivement d’écrire un journal chaque fois que votre app
 
 Ce que nous recommandons cette opération lorsque vous créez une application de production est à créer un simple *ILogger* d’interface et de respecter certaines méthodes qu’elle contient. Cela facilite la modifier ultérieurement l’implémentation de journalisation et évite de devoir parcourir tout votre code pour le faire. Nous aurions pu utiliser le `System.Diagnostics.Trace` classe tout au long de l’application corriger, mais au lieu de cela nous allons l’utiliser en arrière-plan dans une classe de journalisation qui implémente *ILogger*, et nous *ILogger* des appels de méthode dans l’ensemble de l’application.
 
-De cette façon, si vous voulez enrichir la journalisation, vous pouvez remplacer [ `System.Diagnostics.Trace` ](https://docs.microsoft.com/azure/app-service-web/web-sites-dotnet-troubleshoot-visual-studio#apptracelogs) avec le mécanisme de journalisation souhaité. Par exemple, que votre application se développe vous pouvez décider que vous souhaitez utiliser un package plus complète de la journalisation comme [NLog](http://nlog-project.org/) ou [bloc journalisation de l’Application d’Enterprise Library](https://msdn.microsoft.com/en-us/library/dn440731(v=pandp.60).aspx). ([Log4Net](http://logging.apache.org/log4net/) est une autre infrastructure de journalisation courantes, mais il n’asynchrone de journalisation.)
+De cette façon, si vous voulez enrichir la journalisation, vous pouvez remplacer [ `System.Diagnostics.Trace` ](https://docs.microsoft.com/azure/app-service-web/web-sites-dotnet-troubleshoot-visual-studio#apptracelogs) avec le mécanisme de journalisation souhaité. Par exemple, que votre application se développe vous pouvez décider que vous souhaitez utiliser un package plus complète de la journalisation comme [NLog](http://nlog-project.org/) ou [bloc journalisation de l’Application d’Enterprise Library](https://msdn.microsoft.com/library/dn440731(v=pandp.60).aspx). ([Log4Net](http://logging.apache.org/log4net/) est une autre infrastructure de journalisation courantes, mais il n’asynchrone de journalisation.)
 
 Une des raisons possibles à l’aide d’une infrastructure telle que NLog sont de faciliter la division de journalisation de sortie dans les magasins de données de volume élevé et de grande valeur distincte. Qui vous permet de stocker efficacement d’importants volumes de données INFORM que vous n’avez pas besoin de l’exécuter rapidement des requêtes, tout en conservant un accès rapide aux données de ACT.
 
 ### <a name="semantic-logging"></a>Journalisation de sémantique
 
-Pour une méthode relativement nouvelle effectuer l’enregistrement qui peut générer des informations de diagnostic plus utiles, consultez [Enterprise Library sémantique journalisation Application bloc (plaque)](http://convective.wordpress.com/2013/08/12/semantic-logging-application-block-slab/). PANNEAU utilise [Event Tracing for Windows](https://msdn.microsoft.com/en-us/library/windows/desktop/bb968803.aspx) (ETW) et [EventSource](https://msdn.microsoft.com/en-us/library/system.diagnostics.tracing.eventsource.aspx) prend en charge dans .NET 4.5 pour vous permettre de créer des journaux plus structurés et utilisable dans une requête. Vous définissez une méthode différente pour chaque type d’événement que vous vous connectez, ce qui vous permet de personnaliser les informations que vous écrivez. Par exemple, pour enregistrer une erreur de base de données SQL que vous pouvez appeler un `LogSQLDatabaseError` (méthode). Pour ce type d’exception, vous connaissez qu'une information clée étant le numéro d’erreur, vous pouvez inclure un paramètre de numéro d’erreur dans la signature de méthode et enregistrer le numéro d’erreur comme un champ distinct dans l’enregistrement de journal que vous écrivez. Étant donné que le nombre est dans un champ séparé vous pouvez plus facilement et de manière fiable obtenir des rapports basés sur les numéros d’erreur SQL que vous pourriez le faire si vous ont été simplement concaténez le numéro d’erreur dans une chaîne de message.
+Pour une méthode relativement nouvelle effectuer l’enregistrement qui peut générer des informations de diagnostic plus utiles, consultez [Enterprise Library sémantique journalisation Application bloc (plaque)](http://convective.wordpress.com/2013/08/12/semantic-logging-application-block-slab/). PANNEAU utilise [Event Tracing for Windows](https://msdn.microsoft.com/library/windows/desktop/bb968803.aspx) (ETW) et [EventSource](https://msdn.microsoft.com/library/system.diagnostics.tracing.eventsource.aspx) prend en charge dans .NET 4.5 pour vous permettre de créer des journaux plus structurés et utilisable dans une requête. Vous définissez une méthode différente pour chaque type d’événement que vous vous connectez, ce qui vous permet de personnaliser les informations que vous écrivez. Par exemple, pour enregistrer une erreur de base de données SQL que vous pouvez appeler un `LogSQLDatabaseError` (méthode). Pour ce type d’exception, vous connaissez qu'une information clée étant le numéro d’erreur, vous pouvez inclure un paramètre de numéro d’erreur dans la signature de méthode et enregistrer le numéro d’erreur comme un champ distinct dans l’enregistrement de journal que vous écrivez. Étant donné que le nombre est dans un champ séparé vous pouvez plus facilement et de manière fiable obtenir des rapports basés sur les numéros d’erreur SQL que vous pourriez le faire si vous ont été simplement concaténez le numéro d’erreur dans une chaîne de message.
 
 ## <a name="logging-in-the-fix-it-app"></a>Enregistrer le correctif application
 
@@ -244,15 +244,15 @@ L’application Fix It utilise le traçage System.Diagnostics. Il vous souhaitez
 
 Une fois que vous activez la journalisation dans Azure, vous pouvez voir les journaux dans la fenêtre Sortie de Visual Studio comme elles sont créées.
 
-![Menu de journaux de diffusion en continu](http://wacomdpsstorage.blob.core.windows.net/articlesmedia/content-ppe.windowsazure.com/en-us/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/20140115062810/tws-viewlogsmenu.png)
+![Menu de journaux de diffusion en continu](http://wacomdpsstorage.blob.core.windows.net/articlesmedia/content-ppe.windowsazure.com/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/20140115062810/tws-viewlogsmenu.png)
 
-![Menu de journaux de diffusion en continu](http://wacomdpsstorage.blob.core.windows.net/articlesmedia/content-ppe.windowsazure.com/en-us/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/20140115062810/tws-nologsyet.png)
+![Menu de journaux de diffusion en continu](http://wacomdpsstorage.blob.core.windows.net/articlesmedia/content-ppe.windowsazure.com/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/20140115062810/tws-nologsyet.png)
 
 Vous pouvez également avoir des journaux écrits pour votre compte de stockage et la vue avec un outil qui peut accéder au service de la Table de stockage Azure, tel que **l’Explorateur de serveurs** dans Visual Studio ou [Azure Storage Explorer](https://azure.microsoft.com/features/storage-explorer/).
 
-![Journaux dans l’Explorateur de serveurs](http://wacomdpsstorage.blob.core.windows.net/articlesmedia/content-ppe.windowsazure.com/en-us/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/20140115062810/tws-storagelogs.png)
+![Journaux dans l’Explorateur de serveurs](http://wacomdpsstorage.blob.core.windows.net/articlesmedia/content-ppe.windowsazure.com/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/20140115062810/tws-storagelogs.png)
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Il est très simple à implémenter un système de télémétrie d’out of box, instrumenter journalisation dans votre propre code et configurer la journalisation dans Azure. Et si vous rencontrez des problèmes de production, la combinaison d’un système de télémétrie et les journaux personnalisés vous aideront à résoudre rapidement les problèmes avant qu’ils deviennent des problèmes majeurs pour vos clients.
 
@@ -264,10 +264,10 @@ Pour plus d'informations, voir les ressources ci-dessous.
 
 Documentation principalement sur les données de télémétrie :
 
-- [Microsoft Patterns and Practices - Guide Azure](https://msdn.microsoft.com/en-us/library/dn568099.aspx). Consultez l’Instrumentation et la télémétrie des conseils, des conseils de Service de contrôle, analyse de point de terminaison de contrôle d’intégrité et une Reconfiguration du Runtime modèle.
+- [Microsoft Patterns and Practices - Guide Azure](https://msdn.microsoft.com/library/dn568099.aspx). Consultez l’Instrumentation et la télémétrie des conseils, des conseils de Service de contrôle, analyse de point de terminaison de contrôle d’intégrité et une Reconfiguration du Runtime modèle.
 - [Minime pincement dans le Cloud : l’activation des performances New Relic analyse sur des sites Web Azure](http://www.hanselman.com/blog/PennyPinchingInTheCloudEnablingNewRelicPerformanceMonitoringOnWindowsAzureWebsites.aspx).
-- [Meilleures pratiques pour la création de Services à grande échelle sur les Services Cloud Azure](https://msdn.microsoft.com/en-us/library/windowsazure/jj717232.aspx). Livre blanc par Mark Simms et Michael Thomassy. Consultez la section télémesure et Diagnostics.
-- [Développement de nouvelle génération avec Application Insights](https://msdn.microsoft.com/en-us/magazine/dn683794.aspx). Article du MSDN Magazine.
+- [Meilleures pratiques pour la création de Services à grande échelle sur les Services Cloud Azure](https://msdn.microsoft.com/library/windowsazure/jj717232.aspx). Livre blanc par Mark Simms et Michael Thomassy. Consultez la section télémesure et Diagnostics.
+- [Développement de nouvelle génération avec Application Insights](https://msdn.microsoft.com/magazine/dn683794.aspx). Article du MSDN Magazine.
 
 Documentation principalement sur la journalisation :
 

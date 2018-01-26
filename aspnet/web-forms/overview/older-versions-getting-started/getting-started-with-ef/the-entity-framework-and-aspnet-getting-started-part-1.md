@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-1
 msc.type: authoredcontent
-ms.openlocfilehash: 5a852ec2301e63bde9a5ce99db80224dad7fb258
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ae2fddc81f6f4da866ec0719a0e74516bdd2a4d1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms"></a>Mise en route avec base de données Entity Framework 4.0 tout d’abord et 4 d’ASP.NET Web Forms
 ====================
@@ -28,7 +28,7 @@ Par [Tom Dykstra](https://github.com/tdykstra)
 > 
 > ## <a name="database-first"></a>Tout d’abord la base de données
 > 
-> Il existe trois méthodes que vous pouvez utiliser des données dans Entity Framework : *Database First*, *Model First*, et *Code First*. Ce didacticiel est pour la première base de données. Pour plus d’informations sur les différences entre ces flux de travail et les conseils sur la façon de choisir la meilleure pour votre scénario, consultez [flux de travail de développement Entity Framework](https://msdn.microsoft.com/en-us/library/ms178359.aspx#dbfmfcf).
+> Il existe trois méthodes que vous pouvez utiliser des données dans Entity Framework : *Database First*, *Model First*, et *Code First*. Ce didacticiel est pour la première base de données. Pour plus d’informations sur les différences entre ces flux de travail et les conseils sur la façon de choisir la meilleure pour votre scénario, consultez [flux de travail de développement Entity Framework](https://msdn.microsoft.com/library/ms178359.aspx#dbfmfcf).
 > 
 > ## <a name="web-forms"></a>Web Forms
 > 
@@ -45,7 +45,7 @@ Par [Tom Dykstra](https://github.com/tdykstra)
 > 
 > ## <a name="questions"></a>Questions
 > 
-> Si vous avez des questions qui ne sont pas directement liées à ce didacticiel, vous pouvez les valider pour le [forum de ASP.NET Entity Framework](https://forums.asp.net/1227.aspx), le [Entity Framework et LINQ to forum d’entités](https://social.msdn.microsoft.com/forums/en-US/adodotnetentityframework/threads/), ou [ StackOverflow.com](http://stackoverflow.com/).
+> Si vous avez des questions qui ne sont pas directement liées à ce didacticiel, vous pouvez les valider pour le [forum de ASP.NET Entity Framework](https://forums.asp.net/1227.aspx), le [Entity Framework et LINQ to forum d’entités](https://social.msdn.microsoft.com/forums/adodotnetentityframework/threads/), ou [ StackOverflow.com](http://stackoverflow.com/).
 
 
 ## <a name="overview"></a>Vue d'ensemble
@@ -96,7 +96,7 @@ Pour ces didacticiels, vous utiliserez le Concepteur de modèle de données Enti
 
 Pour la méthode de base de données en premier est utilisée dans ce didacticiel, l’étape suivante consiste à ajouter une base de données pour le site. Le moyen le plus simple est tout d’abord télécharger le projet qui accompagne ce didacticiel. Cliquez sur le *application\_données* dossier, sélectionnez **ajouter un élément existant**, puis sélectionnez le *School.mdf* fichier de base de données à partir du projet téléchargé.
 
-Une alternative consiste à suivre les instructions sur [création de la base de données School](https://msdn.microsoft.com/en-us/library/bb399731.aspx). Si vous téléchargez la base de données ou le créer, copier le *School.mdf* fichier dans le dossier suivant à votre application *application\_données* dossier :
+Une alternative consiste à suivre les instructions sur [création de la base de données School](https://msdn.microsoft.com/library/bb399731.aspx). Si vous téléchargez la base de données ou le créer, copier le *School.mdf* fichier dans le dossier suivant à votre application *application\_données* dossier :
 
 `%PROGRAMFILES%\Microsoft SQL Server\MSSQL10.SQLEXPRESS\MSSQL\DATA`
 

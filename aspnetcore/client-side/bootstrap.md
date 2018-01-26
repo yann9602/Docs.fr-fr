@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/bootstrap
-ms.openlocfilehash: aee3304515686fc8e45e8e2aafb79d957219f94a
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 4332dce4c341cb8e5c241a67547048301ae9a8b1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="building-beautiful-responsive-sites-with-bootstrap"></a>Création de sites et attrayantes et réactives avec les données d’amorçage
 
@@ -214,8 +214,8 @@ Vues miniatures sont un composant de l’interface utilisateur commun utilisé p
 
 ## <a name="javascript-support"></a>Prise en charge de JavaScript
 
-Bibliothèque de JavaScript du programme d’amorçage inclut la prise en charge API pour les composants inclus, ce qui vous permet de contrôler leur comportement par programme au sein de votre application. En outre, *bootstrap.js* inclut plus d’une dizaine plug-ins de jQuery personnalisées, en fournissant des fonctionnalités supplémentaires, comme des transitions, boîtes de dialogue modales, faites défiler la détection (où l’utilisateur a défilé dans le document en fonction des styles de mise à jour), comportement de réduction, tapis roulants et menus apposition dans la fenêtre de sorte qu’ils ne pas faire défiler l’écran. Il n’existe pas de suffisamment d’espace pour couvrir tous les modules complémentaires JavaScript intégrés Bootstrap – pour en savoir plus, consultez [http://getbootstrap.com/javascript/](http://getbootstrap.com/javascript/).
+Bibliothèque de JavaScript du programme d’amorçage inclut la prise en charge API pour les composants inclus, ce qui vous permet de contrôler leur comportement par programme au sein de votre application. En outre, *bootstrap.js* inclut plus d’une dizaine plug-ins de jQuery personnalisées, en fournissant des fonctionnalités supplémentaires, comme des transitions, boîtes de dialogue modales, faites défiler la détection (où l’utilisateur a défilé dans le document en fonction des styles de mise à jour), comportement de réduction, tapis roulants et menus apposition dans la fenêtre de sorte qu’ils ne défilent pas hors de l’écran. Il n’existe pas de suffisamment d’espace pour couvrir tous les modules complémentaires JavaScript intégrés Bootstrap – pour en savoir plus, consultez [http://getbootstrap.com/javascript/](http://getbootstrap.com/javascript/).
 
 ## <a name="summary"></a>Récapitulatif
 
-Programme d’amorçage fournit une infrastructure web qui peut être utilisée pour rapidement et efficacement mise en page et le style d’un large éventail d’applications et sites Web. Typographie de base et des styles fournissent une apparence et convivialité agréable qui peuvent être manipulée aisément prise en charge du thème personnalisé qui peut être écrit à la main ou acheté dans le commerce. Il prend en charge un ordinateur hôte des composants web qui aurait nécessité coûteuse des contrôles tiers pour mener à bien, lors de la prise en charge des normes web modernes et ouvertes dans le passé.
+Programme d’amorçage fournit une infrastructure web qui peut être utilisée pour rapidement et efficacement mise en page et le style d’un large éventail d’applications et sites Web. Typographie de base et des styles fournissent une apparence et convivialité agréable qui peuvent être manipulée aisément prise en charge du thème personnalisé qui peut être écrit à la main ou acheté dans le commerce. Il prend en charge un ordinateur hôte des composants web qui serait avez requise coûteuse des contrôles tiers pour mener à bien, lors de la prise en charge des normes web modernes et ouvertes dans le passé.

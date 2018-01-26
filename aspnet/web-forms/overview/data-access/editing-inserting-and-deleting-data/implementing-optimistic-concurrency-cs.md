@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/implementing-optimistic-concurrency-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 50d02e8da7b7ab489e662b42d8f08ad3a99e66eb
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a19e6c320838849e10d2aa397a23a0ee906bac22
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="implementing-optimistic-concurrency-c"></a>Implémentation de l’accès concurrentiel optimiste (c#)
 ====================
@@ -257,7 +257,7 @@ Pour ces didacticiels précédents impliquant la modification des données, nous
 > La valeur de la `OldValuesParameterFormatString` propriété doit correspondre aux noms de paramètre d’entrée de la couche BLL qui attendent les valeurs d’origine. Étant donné que nous avons nommé ces paramètres `original_productName`, `original_supplierID`, et ainsi de suite, vous pouvez laisser le `OldValuesParameterFormatString` en tant que valeur de la propriété `original_{0}`. Si, toutefois, les paramètres d’entrée des méthodes de la couche BLL avaient des noms comme `old_productName`, `old_supplierID`, et ainsi de suite, vous devez mettre à jour le `OldValuesParameterFormatString` propriété `old_{0}`.
 
 
-Il existe un paramètre de propriété final qui doit être effectuée dans l’ordre pour ObjectDataSource correctement passer les valeurs d’origine pour les méthodes de la couche BLL. ObjectDataSource a un [propriété ConflictDetection](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.objectdatasource.conflictdetection.aspx) pouvant être assigné à [une des deux valeurs](https://msdn.microsoft.com/en-US/library/system.web.ui.conflictoptions.aspx):
+Il existe un paramètre de propriété final qui doit être effectuée dans l’ordre pour ObjectDataSource correctement passer les valeurs d’origine pour les méthodes de la couche BLL. ObjectDataSource a un [propriété ConflictDetection](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.conflictdetection.aspx) pouvant être assigné à [une des deux valeurs](https://msdn.microsoft.com/library/system.web.ui.conflictoptions.aspx):
 
 - `OverwriteChanges`-la valeur par défaut ; n’envoie pas les valeurs d’origine pour les paramètres d’entrée d’origine des méthodes de la couche BLL
 - `CompareAllValues`-envoie les valeurs d’origine pour les méthodes de la couche BLL ; Choisissez cette option lors de l’utilisation de l’accès concurrentiel optimiste
@@ -342,7 +342,7 @@ Avec ces modifications, nous sommes en mesure de supprimer correctement et de mo
 
 Pour vérifier que les violations d’accès concurrentiel sont détectées (plutôt que de données qui doit être remplacées à l’aveugle), nous devons ouvrez deux fenêtres de navigateur à cette page. Dans les deux instances du navigateur, cliquez sur le bouton Modifier pour Tran. Puis, dans simplement un des navigateurs, remplacez le nom « Thé Tran » et cliquez sur la mise à jour. La mise à jour doit réussir et retourner le contrôle GridView à son état avant modification, avec « Tran thé » en tant que le nouveau nom de produit.
 
-Dans l’autre instance de fenêtre de navigateur, toutefois, la zone de texte Nom du produit indique toujours « Martin ». Dans cette deuxième fenêtre de navigateur, mettez à jour le `UnitPrice` à `25.00`. Sans prise en charge de l’accès concurrentiel optimiste, en cliquant sur la mise à jour dans la deuxième instance du navigateur serait rétablir le nom du produit « Martin », en écrasant les modifications apportées par la première instance du navigateur. Avec les employés l’accès concurrentiel optimiste, toutefois, en cliquant sur le bouton de mise à jour dans la deuxième instance du navigateur entraîne un [DBConcurrencyException](https://msdn.microsoft.com/en-us/library/system.data.dbconcurrencyexception.aspx).
+Dans l’autre instance de fenêtre de navigateur, toutefois, la zone de texte Nom du produit indique toujours « Martin ». Dans cette deuxième fenêtre de navigateur, mettez à jour le `UnitPrice` à `25.00`. Sans prise en charge de l’accès concurrentiel optimiste, en cliquant sur la mise à jour dans la deuxième instance du navigateur serait rétablir le nom du produit « Martin », en écrasant les modifications apportées par la première instance du navigateur. Avec les employés l’accès concurrentiel optimiste, toutefois, en cliquant sur le bouton de mise à jour dans la deuxième instance du navigateur entraîne un [DBConcurrencyException](https://msdn.microsoft.com/library/system.data.dbconcurrencyexception.aspx).
 
 
 [![Lorsqu’une Violation d’accès concurrentiel est détectée, un objet DBConcurrencyException est levé.](implementing-optimistic-concurrency-cs/_static/image48.png)](implementing-optimistic-concurrency-cs/_static/image47.png)
@@ -417,7 +417,7 @@ En dépit d’une violation d’accès concurrentiel, une demande de suppression
 **Figure 20**: un utilisateur s Delete est annulée en cas de défaillance une Violation d’accès concurrentiel ([cliquez pour afficher l’image en taille réelle](implementing-optimistic-concurrency-cs/_static/image58.png))
 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Il existe des possibilités de violations d’accès concurrentiel dans chaque application qui permet à plusieurs utilisateurs simultanés pour mettre à jour ou supprimer des données. Si ces violations ne sont pas prises en compte pour, lorsque deux utilisateurs mettre à jour simultanément les mêmes données, la personne qui obtient de la dernière écriture « wins », remplacement de l’utilisateur modifie les modifications. Vous pouvez également, les développeurs peuvent implémenter un contrôle d’accès concurrentiel optimiste ou pessimiste. Contrôle d’accès concurrentiel optimiste part du principe que les violations d’accès concurrentiel sont peu fréquentes simplement n’autorise pas une mise à jour ou supprimer des commandes qui constitue une violation d’accès concurrentiel. Contrôle d’accès concurrentiel pessimiste suppose l’accès concurrentiel violations sont fréquentes et simplement rejet d’un utilisateur de mettre à jour ou de supprimer la commande n’est pas acceptable. Avec le contrôle d’accès concurrentiel pessimiste, mise à jour un enregistrement implique le verrouillage, ce qui évite que d’autres utilisateurs de modifier ou supprimer l’enregistrement lorsqu’il est verrouillé.
 

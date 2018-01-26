@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/updating-the-tableadapter-to-use-joins-vb
 msc.type: authoredcontent
-ms.openlocfilehash: bb0b80f63ea69bb12a28f01193946f5689e70fb9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2e0698269c0a29c234f03dc56f7b63e7bc83d032
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="updating-the-tableadapter-to-use-joins-vb"></a>Mise à jour le TableAdapter à l’utilisation de jointures (Visual Basic)
 ====================
@@ -54,7 +54,7 @@ Vous pouvez également un `JOIN` peut être utilisé pour renvoyer le nom de fou
 A `JOIN` fusionne les enregistrements d’une table avec des enregistrements à partir d’une autre table en fonction de certains critères. Dans la requête ci-dessus, par exemple, le `LEFT JOIN Categories ON Categories.CategoryID = Products.CategoryID` fait en sorte que SQL Server pour la fusion de chaque enregistrement de produit avec la catégorie Enregistrer dont `CategoryID` valeur correspond au produit s `CategoryID` valeur. Le résultat fusionné nous permet de travailler avec les champs de catégorie correspondant pour chaque produit (tel que `CategoryName`).
 
 > [!NOTE]
-> `JOIN`s sont fréquemment utilisés lors de l’interrogation des données à partir de bases de données relationnelles. Si vous ne connaissez pas le `JOIN` syntaxe ou devoir rafraîchir un bit sur son utilisation, je d recommande le [SQL Join le didacticiel](http://www.w3schools.com/sql/sql_join.asp) à [W3 écoles](http://www.w3schools.com/). Également intéressant de lecture sont les [ `JOIN` notions de base](https://msdn.microsoft.com/en-us/library/ms191517.aspx) et [principes de base](https://msdn.microsoft.com/en-us/library/ms189575.aspx) sections de la [la documentation en ligne de SQL](https://msdn.microsoft.com/en-us/library/ms130214.aspx).
+> `JOIN`s sont fréquemment utilisés lors de l’interrogation des données à partir de bases de données relationnelles. Si vous ne connaissez pas le `JOIN` syntaxe ou devoir rafraîchir un bit sur son utilisation, je d recommande le [SQL Join le didacticiel](http://www.w3schools.com/sql/sql_join.asp) à [W3 écoles](http://www.w3schools.com/). Également intéressant de lecture sont les [ `JOIN` notions de base](https://msdn.microsoft.com/library/ms191517.aspx) et [principes de base](https://msdn.microsoft.com/library/ms189575.aspx) sections de la [la documentation en ligne de SQL](https://msdn.microsoft.com/library/ms130214.aspx).
 
 
 Étant donné que `JOIN` s et les sous-requêtes en corrélation peuvent être utilisés pour récupérer les données associées provenant d’autres tables, de nombreux développeurs sont laissés vous demandez l’approche à utiliser et de leurs en-têtes. Tous les experts SQL je ve, nous avons pour ont dit à peu près la même chose qu’il n’importent vraiment performance-wise comme SQL Server génère des plans d’exécution à peu près identique. Leur avis, il faut utiliser la technique que vous et votre équipe conviennent le mieux. Elle mérite en notant qu’après imprimer ce Conseil ces experts expriment immédiatement leurs préférences de `JOIN` s sur les sous-requêtes en corrélation.
@@ -248,7 +248,7 @@ Pour autoriser un employé à être supprimé vous impossible :
 
 J’ai laisser ce champ comme un exercice pour le lecteur.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Lorsque vous travaillez avec des bases de données relationnelles, il est courant pour les requêtes extraire les données de plusieurs des tables associées. Sous-requêtes en corrélation et `JOIN` fournissent deux techniques différentes pour accéder aux données des tables associées dans une requête. Dans didacticiels précédents, nous avons apporté plus souvent utilisent de sous-requêtes en corrélation, car le TableAdapter ne peut pas générer automatiquement `INSERT`, `UPDATE`, et `DELETE` instructions pour les requêtes impliquant `JOIN` s. Alors que ces valeurs peuvent être fournies manuellement, lors de l’utilisation des instructions SQL ad hoc toutes les personnalisations sont écrasées quand l’Assistant Configuration de TableAdapter est terminé.
 

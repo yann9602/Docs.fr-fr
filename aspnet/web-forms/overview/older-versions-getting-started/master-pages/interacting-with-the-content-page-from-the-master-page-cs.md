@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/interacting-with-the-content-page-from-the-master-page-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 923d291d84a47e64b31d99bcb13cfe53e5806444
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4d7f6eeac084f3516ab470adf8973351cf08a7f1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="interacting-with-the-content-page-from-the-master-page-c"></a>Interagir avec la Page de contenu à partir de la Page maître (c#)
 ====================
@@ -158,7 +158,7 @@ Une classe s’abonne à un événement en créant une *Gestionnaire d’événe
 Le second paramètre transmis au gestionnaire d’événements peut inclure des informations supplémentaires sur l’événement. Lors de la base de `EventArgs` classe ne passe pas d’informations, le .NET Framework inclut un nombre de classes qui étendent `EventArgs` et englobe les propriétés supplémentaires. Par exemple, un `CommandEventArgs` instance est passée aux gestionnaires d’événements qui répondent à la `Command` événement et inclut deux propriétés d’information : `CommandArgument` et `CommandName`.
 
 > [!NOTE]
-> Pour plus d’informations sur la création de déclenchement et la gestion des événements, consultez [événements et des délégués](https://msdn.microsoft.com/en-us/library/17sde2xt.aspx) et [délégués d’événements en anglais Simple](http://www.codeproject.com/KB/cs/eventdelegates.aspx).
+> Pour plus d’informations sur la création de déclenchement et la gestion des événements, consultez [événements et des délégués](https://msdn.microsoft.com/library/17sde2xt.aspx) et [délégués d’événements en anglais Simple](http://www.codeproject.com/KB/cs/eventdelegates.aspx).
 
 
 Pour définir un événement utilisent la syntaxe suivante :
@@ -238,7 +238,7 @@ Les chiffres 8 et 9 illustrent ce comportement. La figure 8 illustre la page vis
 **Figure 09**: The Just-Doubled prix sont affichés dans les contrôles GridView ([cliquez pour afficher l’image en taille réelle](interacting-with-the-content-page-from-the-master-page-cs/_static/image27.png))
 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Dans l’idéal, une page maître et ses pages de contenu sont complètement séparées les unes des autres et ne nécessitent aucun niveau d’interaction. Toutefois, si vous avez une page maître ou la page de contenu qui affiche les données qui peuvent être modifiées à partir de la page maître ou la page de contenu, puis vous devrez peut-être pour que la page maître à la page de contenu (ou inversement a) d’alerte lorsque les données sont modifiées afin que l’affichage peut être mis à jour. Dans le didacticiel précédent, nous avons vu comment avoir une page de contenu d’interagir par programme avec sa page maître ; Dans ce didacticiel, nous avons étudié comment : lancer une page maître l’interaction.
 
@@ -251,7 +251,7 @@ Bonne programmation !
 Pour plus d’informations sur les sujets abordés dans ce didacticiel, consultez les ressources suivantes :
 
 - [L’accès et la mise à jour des données dans ASP.NET](http://aspnet.4guysfromrolla.com/articles/011106-1.aspx)
-- [Événements et délégués](https://msdn.microsoft.com/en-us/library/17sde2xt.aspx)
+- [Événements et délégués](https://msdn.microsoft.com/library/17sde2xt.aspx)
 - [Passage des informations entre le contenu et les Pages maîtres](http://aspnet.4guysfromrolla.com/articles/013107-1.aspx)
 - [Utilisation des données dans les didacticiels ASP.NET](../../data-access/index.md)
 

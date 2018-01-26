@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/advanced/dependency-injection
 msc.type: authoredcontent
-ms.openlocfilehash: b4cf39c59ed257b0014dbdbecef3eb7bc48f410d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7f64cc83e36c80b0ffd53edfc629557c0847b200
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="dependency-injection-in-aspnet-web-api-2"></a>Injection de dépendances dans ASP.NET Web API 2
 ====================
@@ -91,7 +91,7 @@ Un conteneur inversion de contrôle est un composant logiciel qui est chargé de
 > « IoC » signifie « d’inversion de contrôle », qui est un modèle général où une infrastructure appelle du code d’application. Un conteneur IoC construit vos objets, lequel « inverse » le flux habituel de contrôle.
 
 
-Pour ce didacticiel, nous allons utiliser [Unity](https://msdn.microsoft.com/en-us/library/ff647202.aspx) à partir de Microsoft Patterns &amp; pratiques. (Incluent d’autres bibliothèques populaires [Castle Windsor](http://www.castleproject.org/), [Spring.Net](http://www.springframework.net/), [Autofac](https://code.google.com/p/autofac/), [Ninject](http://www.ninject.org/), et [StructureMap ](http://docs.structuremap.net/).) Vous pouvez utiliser le Gestionnaire de Package NuGet pour installer Unity. À partir de la **outils** menu dans Visual Studio, sélectionnez **Gestionnaire de Package de bibliothèque**, puis sélectionnez **Package Manager Console**. Dans la fenêtre de Console du Gestionnaire de Package, tapez la commande suivante :
+Pour ce didacticiel, nous allons utiliser [Unity](https://msdn.microsoft.com/library/ff647202.aspx) à partir de Microsoft Patterns &amp; pratiques. (Incluent d’autres bibliothèques populaires [Castle Windsor](http://www.castleproject.org/), [Spring.Net](http://www.springframework.net/), [Autofac](https://code.google.com/p/autofac/), [Ninject](http://www.ninject.org/), et [StructureMap ](http://docs.structuremap.net/).) Vous pouvez utiliser le Gestionnaire de Package NuGet pour installer Unity. À partir de la **outils** menu dans Visual Studio, sélectionnez **Gestionnaire de Package de bibliothèque**, puis sélectionnez **Package Manager Console**. Dans la fenêtre de Console du Gestionnaire de Package, tapez la commande suivante :
 
 [!code-console[Main](dependency-injection/samples/sample7.cmd)]
 

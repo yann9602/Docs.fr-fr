@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/caching-data/caching-data-with-the-objectdatasource-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 5ce0bd1d3302ee68c9c65584686172a07143e4a4
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8cd4fd2afb16772baf45618ccee2c3c3caea5b64
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="caching-data-with-the-objectdatasource-c"></a>La mise en cache des données avec ObjectDataSource (c#)
 ====================
@@ -44,7 +44,7 @@ La mise en cache peut améliorer considérablement les s application une évolut
 
 Quel que soit les critères d’éviction spécifiés peut être un élément dans le cache *au nettoyage* avant les critères basée sur une dépendance ou temps a été remplie. Si le cache a atteint sa capacité, les éléments existants doivent être supprimés avant de pouvoir ajouter des nouveaux. Par conséquent, lorsque par programmation l’utilisation avec les données mises en cache s vital que vous supposez toujours que les données mises en cache ne peuvent pas être présentes. Nous allons examiner le modèle à utiliser lors de l’accès aux données à partir du cache par programmation dans notre didacticiel suivant, *mise en cache des données dans l’Architecture*.
 
-La mise en cache permet d’économique tirant plus de performances à partir d’une application. En tant que [Steven Smith](http://aspadvice.com/blogs/ssmith/) énonce dans son article [mise en cache ASP.NET : Techniques et meilleures pratiques](https://msdn.microsoft.com/en-us/library/aa478965.aspx):
+La mise en cache permet d’économique tirant plus de performances à partir d’une application. En tant que [Steven Smith](http://aspadvice.com/blogs/ssmith/) énonce dans son article [mise en cache ASP.NET : Techniques et meilleures pratiques](https://msdn.microsoft.com/library/aa478965.aspx):
 
 La mise en cache peut être un bon moyen pour obtenir une bonne suffisamment les performances sans nécessiter beaucoup de temps et d’analyse. La mémoire est bon marchée, si vous pouvez obtenir des performances en mettant en cache la sortie de 30 secondes au lieu de perdre un jour ou semaine de l’optimisation de votre code ou la base de données, effectuez la solution de mise en cache (en supposant que 30 - seconde anciennes données est OK) et passer. Par la suite, une mauvaise conception accèdera probablement, donc bien sûr vous devriez concevoir correctement vos applications. Mais si vous devez obtenir une bonne suffisamment performances aujourd'hui, la mise en cache peut être une excellente [approche], l’achat du temps de refactoriser votre application à une date ultérieure, lorsque vous avez le temps de le faire.
 
@@ -175,10 +175,10 @@ Il a beau sembler inutile récupérer les données de la base de données chaque
 
 En définissant simplement quelques propriétés, ObjectDataSource peut être configuré pour mettre en cache automatiquement ses données récupérées dans le cache de données ASP.NET. La liste suivante résume les propriétés liés au cache de ObjectDataSource :
 
-- [EnableCaching](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.objectdatasource.enablecaching.aspx) doit avoir la valeur `true` pour activer la mise en cache. La valeur par défaut est `false`.
-- [CacheDuration](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.objectdatasource.cacheduration.aspx) la quantité de temps, en secondes, pendant laquelle les données sont mises en cache. La valeur par défaut est 0. ObjectDataSource stockera uniquement les données si `EnableCaching` est `true` et `CacheDuration` est définie sur une valeur supérieure à zéro.
-- [CacheExpirationPolicy](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.objectdatasource.cacheexpirationpolicy.aspx) peut être définie sur `Absolute` ou `Sliding`. Si `Absolute`, ObjectDataSource met en cache les données récupérées pour `CacheDuration` secondes ; si `Sliding`, les données expirent uniquement une fois qu’il n’a pas été accédé pour `CacheDuration` secondes. La valeur par défaut est `Absolute`.
-- [CacheKeyDependency](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.objectdatasource.cachekeydependency.aspx) cette propriété permet d’associer les entrées de cache ObjectDataSource s avec une dépendance de cache existante. Les entrées de données s ObjectDataSource peuvent être prématurément supprimées du cache en faisant expirer qui lui est associée `CacheKeyDependency`. Cette propriété est couramment utilisée pour associer une dépendance de cache SQL avec le cache de s ObjectDataSource, une rubrique nous allons Explorer à l’avenir [à l’aide des dépendances de Cache SQL](using-sql-cache-dependencies-cs.md) didacticiel.
+- [EnableCaching](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.enablecaching.aspx) doit avoir la valeur `true` pour activer la mise en cache. La valeur par défaut est `false`.
+- [CacheDuration](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.cacheduration.aspx) la quantité de temps, en secondes, pendant laquelle les données sont mises en cache. La valeur par défaut est 0. ObjectDataSource stockera uniquement les données si `EnableCaching` est `true` et `CacheDuration` est définie sur une valeur supérieure à zéro.
+- [CacheExpirationPolicy](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.cacheexpirationpolicy.aspx) peut être définie sur `Absolute` ou `Sliding`. Si `Absolute`, ObjectDataSource met en cache les données récupérées pour `CacheDuration` secondes ; si `Sliding`, les données expirent uniquement une fois qu’il n’a pas été accédé pour `CacheDuration` secondes. La valeur par défaut est `Absolute`.
+- [CacheKeyDependency](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.cachekeydependency.aspx) cette propriété permet d’associer les entrées de cache ObjectDataSource s avec une dépendance de cache existante. Les entrées de données s ObjectDataSource peuvent être prématurément supprimées du cache en faisant expirer qui lui est associée `CacheKeyDependency`. Cette propriété est couramment utilisée pour associer une dépendance de cache SQL avec le cache de s ObjectDataSource, une rubrique nous allons Explorer à l’avenir [à l’aide des dépendances de Cache SQL](using-sql-cache-dependencies-cs.md) didacticiel.
 
 S permettent de configurer le `ProductsDataSource` ObjectDataSource à ses données en cache pendant 30 secondes sur une échelle absolue. Définir le s ObjectDataSource `EnableCaching` propriété `true` et son `CacheDuration` propriété à 30. Laissez le `CacheExpirationPolicy` sa valeur par défaut, la valeur de propriété `Absolute`.
 
@@ -206,7 +206,7 @@ Figure 12 illustre le s ObjectDataSource mise en cache de flux de travail. Lors 
 
 Chaque application ASP.NET a son propre cache de données d’instance s partagées par toutes les pages et les visiteurs. Cela signifie que les données stockées dans le cache de données par ObjectDataSource sont également partagées entre tous les utilisateurs visitant la page. Pour vérifier cela, ouvrez le `ObjectDataSource.aspx` page dans un navigateur. Lors de la première visite de la page, la déclenchement d’événement de sélection de texte s’affiche (en supposant que les données ajoutées au cache par les tests précédents a, à ce stade, été supprimées). Ouvrez une deuxième instance du navigateur et la copie et collez l’URL de la première instance du navigateur à la seconde. Dans la deuxième instance du navigateur, la déclenchement d’événement de sélection de texte n’est pas affichée car il s à l’aide de la même mis en cache les données en tant que la première.
 
-Lors de l’insertion de ses données récupérées dans le cache, ObjectDataSource utilise une valeur de clé de cache qui inclut : le `CacheDuration` et `CacheExpirationPolicy` les valeurs de propriété ; le type de l’objet métier sous-jacente utilisée par ObjectDataSource, qui est spécifiée via le [ `TypeName` propriété](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.objectdatasource.typename.aspx) (`ProductsBLL`, dans cet exemple) ; la valeur de la `SelectMethod` propriété et le nom et les valeurs des paramètres dans le `SelectParameters` collection ; et les valeurs de ses `StartRowIndex`et `MaximumRows` propriétés, qui sont utilisées lors de l’implémentation [la pagination personnalisée.](../paging-and-sorting/paging-and-sorting-report-data-cs.md)
+Lors de l’insertion de ses données récupérées dans le cache, ObjectDataSource utilise une valeur de clé de cache qui inclut : le `CacheDuration` et `CacheExpirationPolicy` les valeurs de propriété ; le type de l’objet métier sous-jacente utilisée par ObjectDataSource, qui est spécifiée via le [ `TypeName` propriété](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.typename.aspx) (`ProductsBLL`, dans cet exemple) ; la valeur de la `SelectMethod` propriété et le nom et les valeurs des paramètres dans le `SelectParameters` collection ; et les valeurs de ses `StartRowIndex`et `MaximumRows` propriétés, qui sont utilisées lors de l’implémentation [la pagination personnalisée.](../paging-and-sorting/paging-and-sorting-report-data-cs.md)
 
 Élaboration de la valeur de clé de cache comme une combinaison de ces propriétés permet de garantir une entrée de cache unique comme ces valeurs changent. Par exemple, dans ces didacticiels nous ve examiné à l’aide de la `ProductsBLL` classe s `GetProductsByCategoryID(categoryID)`, qui retourne tous les produits pour une catégorie spécifiée. Un utilisateur peut provenir des page et afficher les boissons, qui a un `CategoryID` de 1. Si l’ObjectDataSource mis en cache ses résultats sans tenir compte de le `SelectParameters` de valeurs, lorsqu’un autre utilisateur a accédé à la page pour afficher les condiments pendant les produits de boissons dans le cache, ils d voient les produits de boissons mis en cache plutôt que de condiments. En modifiant la clé de cache par ces propriétés, qui incluent les valeurs de la `SelectParameters`, ObjectDataSource tient à jour une entrée de cache distinct pour beverages et condiments.
 
@@ -218,7 +218,7 @@ Ce scénario pourrait également dérouler de façon plus subtile. Alors que Obj
 
 En bref, utilisent uniquement temporels des expirations dans le si vous êtes disposé à ont la possibilité de données périmées et utiliser des expirations dans le plus courtes pour les scénarios où l’actualisation des données est importante. Si des données obsolètes ne sont pas acceptables, renoncer à la mise en cache ou utiliser les dépendances de cache SQL (en supposant qu’il soit des données de base de données vous re mise en cache). Nous allons explorer les dépendances de cache SQL dans un didacticiel futures.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Dans ce didacticiel, nous avons examiné les fonctionnalités de mise en cache intégrées ObjectDataSource s. En définissant simplement quelques propriétés, nous pouvons indiquer ObjectDataSource pour mettre en cache les résultats retournés à partir du spécifié `SelectMethod` dans le cache de données ASP.NET. Le `CacheDuration` et `CacheExpirationPolicy` propriétés indiquent la durée de l’élément est mis en cache et si elle est absolue ou glissante d’expiration. Le `CacheKeyDependency` propriété associe toutes les entrées de cache ObjectDataSource s avec une dépendance de cache existante. Cela permet de supprimer les entrées s ObjectDataSource le cache avant l’expiration de la durée est atteinte et est généralement utilisée avec les dépendances de cache SQL.
 
@@ -230,8 +230,8 @@ Bonne programmation !
 
 Pour plus d’informations sur les sujets abordés dans ce didacticiel, consultez les ressources suivantes :
 
-- [Mise en cache ASP.NET : Meilleures pratiques et les Techniques](https://msdn.microsoft.com/en-us/library/aa478965.aspx)
-- [Guide d’Architecture de mise en cache pour les Applications .NET Framework](https://msdn.microsoft.com/en-us/library/ee817645.aspx)
+- [Mise en cache ASP.NET : Meilleures pratiques et les Techniques](https://msdn.microsoft.com/library/aa478965.aspx)
+- [Guide d’Architecture de mise en cache pour les Applications .NET Framework](https://msdn.microsoft.com/library/ee817645.aspx)
 - [Mise en cache de sortie dans ASP.NET 2.0](http://aspnet.4guysfromrolla.com/articles/121306-1.aspx)
 
 ## <a name="about-the-author"></a>À propos de l’auteur

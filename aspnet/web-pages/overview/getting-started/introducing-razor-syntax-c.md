@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-razor-syntax-c
 msc.type: authoredcontent
-ms.openlocfilehash: f054d574026ab6444cc59a126ef9dcdc323f7bff
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 32cdd8d524d783d7ccc3ab076de636ce4a868132
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-c"></a>Introduction à la programmation Web ASP.NET à l’aide de la syntaxe Razor (c#)
 ====================
@@ -389,7 +389,7 @@ Voici un exemple pour vous aider à comprendre les différences :
 | URL complète | `http://mycompanyserver/humanresources/CompanyPolicy.htm` |
 | --- | --- |
 | Nom du serveur | *mycompanyserver* |
-| Chemin d'accès virtuel | */HumanResources/CompanyPolicy.htm* |
+| Chemin d'accès virtuel | */humanresources/CompanyPolicy.htm* |
 | Chemin d’accès physique | *C:\mywebsites\humanresources\CompanyPolicy.htm* |
 
 La racine virtuelle est /, tout comme la racine de votre lecteur est \. (Chemins d’accès du dossier virtuel utilisent toujours des barres obliques.) Le chemin d’accès virtuel d’un dossier ne doit pas nécessairement avoir le même nom que le dossier physique ; Il peut être un alias. (Sur les serveurs de production, le chemin d’accès virtuel rarement correspond à un chemin d’accès physique exact.)
@@ -600,6 +600,6 @@ Si votre code n’a pas gérer l’exception, vous voyez une page d’erreur com
 **Documentation de référence**
 
 
-[ASP.NET](https://msdn.microsoft.com/en-us/library/ee532866.aspx)
+[ASP.NET](https://msdn.microsoft.com/library/ee532866.aspx)
 
-[Langage c#](https://msdn.microsoft.com/en-us/library/kx37x362.aspx)
+[Langage c#](https://msdn.microsoft.com/library/kx37x362.aspx)

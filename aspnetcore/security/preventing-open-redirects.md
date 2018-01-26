@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/preventing-open-redirects
-ms.openlocfilehash: e57ae429e9af54ade74485361ba591cb75c16752
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 6ecf2440ac7073bdad098f6fe48f6c788ba7795a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="preventing-open-redirect-attacks-in-an-aspnet-core-app"></a>Prévention des attaques de redirection ouvert dans une application ASP.NET Core
 
@@ -23,7 +23,7 @@ Chaque fois que votre logique d’application redirige vers une URL spécifiée,
 
 ## <a name="what-is-an-open-redirect-attack"></a>Qu’est une attaque de redirection ouvrir ?
 
-Les applications Web rediriger fréquemment les utilisateurs vers une page de connexion lorsqu’ils accèdent aux ressources qui requièrent une authentification. La redirection typlically inclut un `returnUrl` paramètre querystring afin que l’utilisateur peut être retourné à l’URL demandée à l’origine une fois qu’ils ont connecté avec succès. Une fois que l’utilisateur s’authentifie, ils sont redirigés vers l’URL qui avait initialement demandée.
+Les applications Web rediriger fréquemment les utilisateurs vers une page de connexion lorsqu’ils accèdent aux ressources qui requièrent une authentification. La redirection typlically inclut un `returnUrl` paramètre querystring afin que l’utilisateur peut être retourné à l’URL demandée à l’origine une fois qu’ils ont connecté avec succès. Une fois que l’utilisateur s’authentifie, ils êtes redirigés vers l’URL était initialement demandée.
 
 Étant donné que l’URL de destination est spécifié dans la chaîne de requête de la demande, un utilisateur malveillant peut falsifier la chaîne de requête. Une chaîne de requête falsifiée pourrait permettre au site pour rediriger l’utilisateur vers un site externe, malveillant. Cette technique est appelée une attaque de redirection (ou une redirection) ouverte.
 
@@ -36,7 +36,7 @@ Un utilisateur malveillant peut développer une attaque conçue pour permettre l
 3. L’utilisateur est redirigé (par le site) à ``http://nerddiner.com/Account/LogOn`` (site malveillant qui ressemble à un site réel).
 4. L’utilisateur se connecte à nouveau (donnant malveillant leurs informations d’identification de site) et est redirigé vers le site réel.
 
-L’utilisateur sera pensez probablement de leur première tentative de connexion a échoué, et leur autre a réussi. Ils allez restent très probablement pas au courant leurs informations d’identification ont été compromises.
+L’utilisateur sera pensez probablement de leur première tentative de connexion a échoué, et leur autre a réussi. Ils sont conservés très probablement pas au courant leurs informations d’identification ont été compromises.
 
 ![Processus d’attaque Redirection ouvert](preventing-open-redirects/_static/open-redirection-attack-process.png)
 

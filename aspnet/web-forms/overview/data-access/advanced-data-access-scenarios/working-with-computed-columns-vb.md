@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/working-with-computed-columns-vb
 msc.type: authoredcontent
-ms.openlocfilehash: a6ff0df27e19d6feecde27a77d4b212d1e9bc45e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 52fc0b89343236b70f8a2e013ad8a33431ae3d2d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="working-with-computed-columns-vb"></a>Utilisation des colonnes calculées (VB)
 ====================
@@ -29,7 +29,7 @@ par [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 ## <a name="introduction"></a>Introduction
 
-Permet à Microsoft SQL Server pour  *[les colonnes calculées](https://msdn.microsoft.com/en-us/library/ms191250.aspx)*, qui sont des colonnes dont les valeurs sont calculées à partir d’une expression référençant généralement les valeurs des autres colonnes dans la même table. Par exemple, un modèle de données de suivi de temps peut comporter une table nommée `ServiceLog` avec des colonnes, y compris `ServicePerformed`, `EmployeeID`, `Rate`, et `Duration`, entre autres. Alors que le montant dû par service (qui est le taux multiplié par la durée) peut être calculé via une page web ou une autre interface de programmation, il peut être utile pour inclure une colonne dans la `ServiceLog` table nommée `AmountDue` qui a signalé cette plus d’informations. Cette colonne a pu être créée pour une colonne, mais il doit être mis à jour à tout moment la `Rate` ou `Duration` les valeurs de colonne modifiées. Une meilleure approche consisterait à rendre le `AmountDue` une colonne calculée à l’aide de l’expression de colonne `Rate * Duration`. Entraînerait SQL Server permet de calculer automatiquement le `AmountDue` valeur chaque fois qu’il a été référencé dans une requête de la colonne.
+Permet à Microsoft SQL Server pour  *[les colonnes calculées](https://msdn.microsoft.com/library/ms191250.aspx)*, qui sont des colonnes dont les valeurs sont calculées à partir d’une expression référençant généralement les valeurs des autres colonnes dans la même table. Par exemple, un modèle de données de suivi de temps peut comporter une table nommée `ServiceLog` avec des colonnes, y compris `ServicePerformed`, `EmployeeID`, `Rate`, et `Duration`, entre autres. Alors que le montant dû par service (qui est le taux multiplié par la durée) peut être calculé via une page web ou une autre interface de programmation, il peut être utile pour inclure une colonne dans la `ServiceLog` table nommée `AmountDue` qui a signalé cette plus d’informations. Cette colonne a pu être créée pour une colonne, mais il doit être mis à jour à tout moment la `Rate` ou `Duration` les valeurs de colonne modifiées. Une meilleure approche consisterait à rendre le `AmountDue` une colonne calculée à l’aide de l’expression de colonne `Rate * Duration`. Entraînerait SQL Server permet de calculer automatiquement le `AmountDue` valeur chaque fois qu’il a été référencé dans une requête de la colonne.
 
 Une valeur de colonne calculée s est déterminée par une expression, ces colonnes sont en lecture seule et par conséquent ne peut pas attribuer une valeur correspondante dans `INSERT` ou `UPDATE` instructions. Toutefois, lorsque des colonnes calculées font partie de la requête principale pour un TableAdapter qui utilise des instructions SQL ad hoc, ils sont automatiquement inclus dans générées automatiquement `INSERT` et `UPDATE` instructions. Par conséquent, le TableAdapter s `INSERT` et `UPDATE` requêtes et `InsertCommand` et `UpdateCommand` propriétés doivent être mises à jour pour supprimer les références à des colonnes calculées.
 
@@ -51,7 +51,7 @@ Commencez par ouvrir le `Suppliers` définition d’une table en cliquant sur le
 Notez que les chaînes peuvent être concaténés de SQL à l’aide de la `+` opérateur. La `CASE` instruction peut être utilisée comme une condition dans un langage de programmation traditionnel. Dans l’expression ci-dessus le `CASE` peut être lue en tant que : si `ContactTitle` n’est pas `NULL` puis sortie le `ContactTitle` valeur concaténée avec une virgule, sinon émettre rien. Pour plus d’informations sur l’utilité de la `CASE` instruction, consultez [la puissance de SQL `CASE` instructions](http://www.4guysfromrolla.com/webtech/102704-1.shtml).
 
 > [!NOTE]
-> Au lieu d’utiliser un `CASE` instruction ici, nous pouvons également utiliser `ISNULL(ContactTitle, '')`. [`ISNULL(checkExpression, replacementValue)`](https://msdn.microsoft.com/en-us/library/ms184325.aspx)Retourne *checkExpression* si elle n’est pas NULL, sinon elle retourne *replacementValue*. Lors de le `ISNULL` ou `CASE` fonctionnera dans cette instance, il existe des scénarios plus complexes où la flexibilité de la `CASE` instruction ne peut pas être mis en correspondance par `ISNULL`.
+> Au lieu d’utiliser un `CASE` instruction ici, nous pouvons également utiliser `ISNULL(ContactTitle, '')`. [`ISNULL(checkExpression, replacementValue)`](https://msdn.microsoft.com/library/ms184325.aspx)Retourne *checkExpression* si elle n’est pas NULL, sinon elle retourne *replacementValue*. Lors de le `ISNULL` ou `CASE` fonctionnera dans cette instance, il existe des scénarios plus complexes où la flexibilité de la `CASE` instruction ne peut pas être mis en correspondance par `ISNULL`.
 
 
 Après l’ajout de cette colonne calculée, votre écran doit ressembler à la capture d’écran de la Figure 1.
@@ -69,10 +69,10 @@ L’enregistrement de la table doit actualiser l’Explorateur de serveurs, y co
 
 [!code-sql[Main](working-with-computed-columns-vb/samples/sample2.sql)]
 
-Pour plus d’informations sur les colonnes calculées dans Microsoft SQL Server, reportez-vous à la [documentation technique](https://msdn.microsoft.com/en-us/library/ms191250.aspx). Consultez également le [Comment : spécifier des colonnes calculées](https://msdn.microsoft.com/en-us/library/ms188300.aspx) pour une procédure pas à pas de créer des colonnes calculées.
+Pour plus d’informations sur les colonnes calculées dans Microsoft SQL Server, reportez-vous à la [documentation technique](https://msdn.microsoft.com/library/ms191250.aspx). Consultez également le [Comment : spécifier des colonnes calculées](https://msdn.microsoft.com/library/ms188300.aspx) pour une procédure pas à pas de créer des colonnes calculées.
 
 > [!NOTE]
-> Par défaut, les colonnes calculées ne sont pas stockées physiquement dans la table mais sont recalculées à la place de chaque fois qu’elles sont référencées dans une requête. En activant la case à cocher est rendue persistante, toutefois, vous pouvez demander à SQL Server pour le stockage physique de la colonne calculée dans la table. Ainsi, un index doit être créé sur la colonne calculée, ce qui peut améliorer les performances des requêtes qui utilisent la valeur de la colonne calculée dans leurs `WHERE` clauses. Consultez [création d’index sur des colonnes calculées](https://msdn.microsoft.com/en-us/library/ms189292.aspx) pour plus d’informations.
+> Par défaut, les colonnes calculées ne sont pas stockées physiquement dans la table mais sont recalculées à la place de chaque fois qu’elles sont référencées dans une requête. En activant la case à cocher est rendue persistante, toutefois, vous pouvez demander à SQL Server pour le stockage physique de la colonne calculée dans la table. Ainsi, un index doit être créé sur la colonne calculée, ce qui peut améliorer les performances des requêtes qui utilisent la valeur de la colonne calculée dans leurs `WHERE` clauses. Consultez [création d’index sur des colonnes calculées](https://msdn.microsoft.com/library/ms189292.aspx) pour plus d’informations.
 
 
 ## <a name="step-2-viewing-the-computed-column-s-values"></a>Étape 2 : Afficher les valeurs de colonne calculée s
@@ -251,7 +251,7 @@ Continuez et mettre à jour la valeur d’un ou plusieurs des colonnes modifiabl
 > Le contrôle GridView utilise actuellement BoundFields pour les champs modifiables, ce qui entraîne la rédaction d’interface par défaut. Étant donné que le `CompanyName` champ est obligatoire, il doit être converti en TemplateField qui inclut un contrôle RequiredFieldValidator. J’ai laisser ce champ comme un exercice pour le lecteur intéressé. Consultez le [Ajout de contrôles de Validation à la modification et l’insertion des Interfaces](../editing-inserting-and-deleting-data/adding-validation-controls-to-the-editing-and-inserting-interfaces-vb.md) didacticiel pour obtenir des instructions sur la conversion en un BoundField TemplateField et ajout de contrôles de validation.
 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Lorsque vous définissez le schéma pour une table, Microsoft SQL Server permet l’inclusion de colonnes calculées. Ce sont des colonnes dont les valeurs sont calculées à partir d’une expression référençant généralement les valeurs des autres colonnes dans le même enregistrement. Depuis les valeurs pour les colonnes calculées sont basés sur une expression, ils sont en lecture seule et ne peut pas être assignés à une valeur dans un `INSERT` ou `UPDATE` instruction. Cela introduit des problèmes lors de l’utilisation d’une colonne calculée dans la requête principale d’un TableAdapter qui essaie de générer automatiquement le correspondant `INSERT`, `UPDATE`, et `DELETE` instructions.
 

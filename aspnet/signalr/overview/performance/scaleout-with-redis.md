@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/performance/scaleout-with-redis
 msc.type: authoredcontent
-ms.openlocfilehash: 965c32a4e2f2c9c4bd457d0c13ae99c1378c22c9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2ef161f35e69ef4a754d2740199166ee48c3fbab
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="signalr-scaleout-with-redis"></a>Montée en charge SignalR avec Redis
 ====================
@@ -150,7 +150,7 @@ Incluent également le Service de gestion (répertoriées sous « Outils de ges
 
 Vérifiez que le Service de gestion Web est en cours d’exécution. Si ce n’est pas le cas, démarrez le service. (Si vous ne voyez pas Service de gestion Web dans la liste des services Windows, assurez-vous que vous avez installé le Service de gestion lorsque vous avez ajouté le rôle IIS.)
 
-Par défaut, le Service de gestion Web écoute sur le port TCP 8172. Dans le pare-feu Windows, créez une règle de trafic entrant pour autoriser le trafic TCP sur le port 8172. Pour plus d’informations, consultez [configuration des règles de pare-feu](https://technet.microsoft.com/en-us/library/dd448559(WS.10).aspx). (Si vous hébergez les machines virtuelles sur Azure, vous pouvez faire directement dans le portail Azure. Consultez [comment faire pour configurer des points de terminaison à une Machine virtuelle](https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-set-up-endpoints/).)
+Par défaut, le Service de gestion Web écoute sur le port TCP 8172. Dans le pare-feu Windows, créez une règle de trafic entrant pour autoriser le trafic TCP sur le port 8172. Pour plus d’informations, consultez [configuration des règles de pare-feu](https://technet.microsoft.com/library/dd448559(WS.10).aspx). (Si vous hébergez les machines virtuelles sur Azure, vous pouvez faire directement dans le portail Azure. Consultez [comment faire pour configurer des points de terminaison à une Machine virtuelle](https://azure.microsoft.com/documentation/articles/virtual-machines-set-up-endpoints/).)
 
 Vous êtes maintenant prêt à déployer le projet de Visual Studio à partir de votre ordinateur de développement sur le serveur. Dans l’Explorateur de solutions, avec le bouton droit de la solution, puis cliquez sur **publier**.
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/older-versions/signalr-1x-hubs-api-guide-javascript-client
 msc.type: authoredcontent
-ms.openlocfilehash: 56931827a1a1edf003d2662b2d36964b9b6f3761
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f92470b2022f343cfd6d822abb255dc19947b4d1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="signalr-1x-hubs-api-guide---javascript-client"></a>Guide d’API concentrateurs SignalR 1.x - Client JavaScript
 ====================
@@ -61,7 +61,7 @@ Pour plus d’informations sur la façon de programmer le serveur ou les clients
 - [Guide d’API concentrateurs SignalR - serveur](../guide-to-the-api/hubs-api-guide-server.md)
 - [Guide d’API concentrateurs SignalR - Client .NET](../guide-to-the-api/hubs-api-guide-net-client.md)
 
-Des liens vers des rubriques de référence de l’API sont à la version de .NET 4.5 de l’API. Si vous utilisez le .NET 4, consultez [la version de .NET 4 des rubriques API](https://msdn.microsoft.com/en-us/library/jj891075(v=vs.100).aspx).
+Des liens vers des rubriques de référence de l’API sont à la version de .NET 4.5 de l’API. Si vous utilisez le .NET 4, consultez [la version de .NET 4 des rubriques API](https://msdn.microsoft.com/library/jj891075(v=vs.100).aspx).
 
 <a id="genproxy"></a>
 
@@ -125,7 +125,7 @@ Dans une application ASP.NET Web Forms, utilisez `ResolveClientUrl` pour les pro
 
 [!code-aspx[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample7.aspx)]
 
-En règle générale, utilisez la même méthode pour spécifier l’URL « concentrateurs signalr / / » que vous utilisez pour les fichiers CSS ou JavaScript. Si vous spécifiez une URL sans l’aide d’un tilde, dans certains scénarios de votre application fonctionnera correctement lorsque vous testez dans Visual Studio à l’aide d’IIS Express, mais échoue avec une erreur 404 lorsque vous déployez vers IIS complet. Pour plus d’informations, consultez **résolution des références aux ressources de niveau racine** dans [serveurs Web dans Visual Studio pour les projets Web ASP.NET](https://msdn.microsoft.com/en-us/library/58wxa9w5.aspx) sur le site MSDN.
+En règle générale, utilisez la même méthode pour spécifier l’URL « concentrateurs signalr / / » que vous utilisez pour les fichiers CSS ou JavaScript. Si vous spécifiez une URL sans l’aide d’un tilde, dans certains scénarios de votre application fonctionnera correctement lorsque vous testez dans Visual Studio à l’aide d’IIS Express, mais échoue avec une erreur 404 lorsque vous déployez vers IIS complet. Pour plus d’informations, consultez **résolution des références aux ressources de niveau racine** dans [serveurs Web dans Visual Studio pour les projets Web ASP.NET](https://msdn.microsoft.com/library/58wxa9w5.aspx) sur le site MSDN.
 
 Lorsque vous exécutez un projet web dans Visual Studio 2012 en mode débogage, et si vous utilisez Internet Explorer comme navigateur, vous pouvez voir le fichier proxy dans **l’Explorateur de solutions** sous **Documents de Script**, comme illustré dans le illustration suivante.
 
@@ -287,10 +287,10 @@ En guise d’alternative, vous pouvez spécifier plusieurs méthodes de transpor
 
 Vous pouvez utiliser les valeurs suivantes pour spécifier le mode de transport :
 
-- « webSockets »
-- « foreverFrame »
-- « serverSentEvents »
-- « longPolling »
+- "webSockets"
+- "foreverFrame"
+- "serverSentEvents"
+- "longPolling"
 
 Les exemples suivants montrent comment déterminer quelle méthode de transport est utilisé par une connexion.
 

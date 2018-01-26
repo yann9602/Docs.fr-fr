@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 1bbc2efc67d2d828dd0a5c1fcfe95145e8ffb2cb
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6d004a0ee0b46e2984aec8d0a99835dbf414ed9d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb"></a>Spécifier le titre, les balises Meta et les autres en-têtes HTML dans la Page maître (VB)
 ====================
@@ -42,7 +42,7 @@ Le fichier de page maître par défaut créé par Visual Studio 2008 contient le
 
 [!code-aspx[Main](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/samples/sample1.aspx)]
 
-Notez que la `<head>` élément contient un `runat="server"` attribut, ce qui indique qu’il s’agit d’un contrôle serveur (plutôt que du code HTML statique). Toutes les pages ASP.NET dérivent la [ `Page` classe](https://msdn.microsoft.com/en-us/library/system.web.ui.page.aspx), qui se trouve dans le `System.Web.UI` espace de noms. Cette classe contient un [ `Header` propriété](https://msdn.microsoft.com/en-us/library/system.web.ui.page.header.aspx) qui fournit l’accès à la page `<head>` région. À l’aide de la `Header` propriété nous pouvons définir le titre d’une page ASP.NET ou ajouter des balises supplémentaires pour le rendu `<head>` section. Il est possible, puis, pour personnaliser une page de contenu `<head>` élément en écrivant un peu de code dans la page `Page_Load` Gestionnaire d’événements. Nous examinons comment définir par programme le titre de la page à l’étape 1.
+Notez que la `<head>` élément contient un `runat="server"` attribut, ce qui indique qu’il s’agit d’un contrôle serveur (plutôt que du code HTML statique). Toutes les pages ASP.NET dérivent la [ `Page` classe](https://msdn.microsoft.com/library/system.web.ui.page.aspx), qui se trouve dans le `System.Web.UI` espace de noms. Cette classe contient un [ `Header` propriété](https://msdn.microsoft.com/library/system.web.ui.page.header.aspx) qui fournit l’accès à la page `<head>` région. À l’aide de la `Header` propriété nous pouvons définir le titre d’une page ASP.NET ou ajouter des balises supplémentaires pour le rendu `<head>` section. Il est possible, puis, pour personnaliser une page de contenu `<head>` élément en écrivant un peu de code dans la page `Page_Load` Gestionnaire d’événements. Nous examinons comment définir par programme le titre de la page à l’étape 1.
 
 Le balisage indiqué dans le `<head>` élément ci-dessus inclut également un contrôle ContentPlaceHolder nommé `head`. Ce contrôle ContentPlaceHolder n’est pas nécessaire, comme les pages de contenu peuvent ajouter du contenu personnalisé à la `<head>` élément par programmation. Il est utile, cependant, dans les situations où une page de contenu doit ajouter le balisage statique pour le `<head>` élément en tant que le balisage statique peut être ajouté de façon déclarative pour le contrôle de contenu correspondant plutôt que par programmation.
 
@@ -69,7 +69,7 @@ Contenu de pages n’ont pas un `<title>` élément, tel qu’il est défini dan
 
 ### <a name="setting-the-pages-title-declaratively"></a>Définition de façon déclarative titre de la Page
 
-Titre d’une page de contenu permet de façon déclarative par la `Title` attribut de la [ `<%@ Page %>` directive](https://msdn.microsoft.com/en-us/library/ydy4x04a.aspx). Cette propriété peut être définie en modifiant directement le `<%@ Page %>` directive ou via la fenêtre Propriétés. Examinons les deux approches.
+Titre d’une page de contenu permet de façon déclarative par la `Title` attribut de la [ `<%@ Page %>` directive](https://msdn.microsoft.com/library/ydy4x04a.aspx). Cette propriété peut être définie en modifiant directement le `<%@ Page %>` directive ou via la fenêtre Propriétés. Examinons les deux approches.
 
 À partir de la vue de Source, recherchez la `<%@ Page %>` directive, qui est en haut du balisage déclaratif de la page. Le `<%@ Page %>` directive `Default.aspx` suit :
 
@@ -96,7 +96,7 @@ Titre de la page peut également être défini à partir de la fenêtre Proprié
 
 ### <a name="setting-the-pages-title-programmatically"></a>Titre de la Page de la définition par programmation
 
-La page maître `<head runat="server">` balisage est convertie en un [ `HtmlHead` classe](https://msdn.microsoft.com/en-us/library/system.web.ui.htmlcontrols.htmlhead.aspx) instance lorsque la page est rendue par le moteur ASP.NET. Le `HtmlHead` classe a un [ `Title` propriété](https://msdn.microsoft.com/en-us/library/system.web.ui.htmlcontrols.htmlhead.title.aspx) dont la valeur est répercutée dans le rendu `<title>` élément. Cette propriété est accessible à partir de la classe de code-behind d’une page ASP.NET via `Page.Header.Title`; ce même propriété est également accessibles `Page.Title`.
+La page maître `<head runat="server">` balisage est convertie en un [ `HtmlHead` classe](https://msdn.microsoft.com/library/system.web.ui.htmlcontrols.htmlhead.aspx) instance lorsque la page est rendue par le moteur ASP.NET. Le `HtmlHead` classe a un [ `Title` propriété](https://msdn.microsoft.com/library/system.web.ui.htmlcontrols.htmlhead.title.aspx) dont la valeur est répercutée dans le rendu `<title>` élément. Cette propriété est accessible à partir de la classe de code-behind d’une page ASP.NET via `Page.Header.Title`; ce même propriété est également accessibles `Page.Title`.
 
 Exercez-vous à titre de la page par programme, accédez à la `About.aspx` code-behind de la page de classe et de créer un gestionnaire d’événements de la page `Load` événement. Ensuite, définissez le titre de la page « didacticiels de Page maître :: sur :: *date*», où *date* est la date actuelle. Après avoir ajouté ce code votre `Page_Load` Gestionnaire d’événements doit ressembler à ce qui suit :
 
@@ -189,7 +189,7 @@ La structure de plan de site est également accessibles par programme à partir 
 
 ### <a name="creating-the-site-map"></a>Création du mappage de Site
 
-Le système de mappage de site est construit sur le [modèle de fournisseur](http://aspnet.4guysfromrolla.com/articles/101905-1.aspx), qui dissocie le plan de site API à partir de la logique qui sérialise les informations de plan de site entre la mémoire et un magasin persistant. Le .NET Framework est fourni avec le [ `XmlSiteMapProvider` classe](https://msdn.microsoft.com/en-us/library/system.web.xmlsitemapprovider.aspx), qui est le fournisseur de plan de site par défaut. Comme son nom l’indique, `XmlSiteMapProvider` utilise un fichier XML comme magasin de mappage de site. Nous allons utiliser ce fournisseur pour la définition de notre plan de site.
+Le système de mappage de site est construit sur le [modèle de fournisseur](http://aspnet.4guysfromrolla.com/articles/101905-1.aspx), qui dissocie le plan de site API à partir de la logique qui sérialise les informations de plan de site entre la mémoire et un magasin persistant. Le .NET Framework est fourni avec le [ `XmlSiteMapProvider` classe](https://msdn.microsoft.com/library/system.web.xmlsitemapprovider.aspx), qui est le fournisseur de plan de site par défaut. Comme son nom l’indique, `XmlSiteMapProvider` utilise un fichier XML comme magasin de mappage de site. Nous allons utiliser ce fournisseur pour la définition de notre plan de site.
 
 Commencez par créer un fichier de mappage de site dans le dossier de racine du site Web nommé `Web.sitemap`. Pour ce faire, avec le bouton droit sur le nom de site Web dans l’Explorateur de solutions, choisissez Ajouter un nouvel élément, sélectionnez le modèle de plan de Site. Vérifiez que le fichier est nommé `Web.sitemap` et cliquez sur Ajouter.
 
@@ -247,7 +247,7 @@ Après avoir configuré les modèles de ListView, visitez le site Web. Comme le 
 **Figure 09**: la Section leçons contient un seul élément de liste ([cliquez pour afficher l’image en taille réelle](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/_static/image17.png))
 
 
-Pour afficher plusieurs niveaux, nous avons imbriquer plusieurs ListViews dans le `ItemTemplate`. Cette technique a été examinée dans le [ *Pages maîtres et la Navigation sur le Site* didacticiel](../../data-access/introduction/master-pages-and-site-navigation-vb.md) de mon [utilisation de la série de didacticiels données](../../data-access/index.md). Toutefois, pour cette série de didacticiels notre plan de site contient uniquement un deux niveaux : accueil (niveau supérieur) ; et chaque leçon en tant qu’enfant d’accueil. Au lieu de l’élaboration d’une liste imbriquée, nous pouvons indiquer à la place à SiteMapDataSource pour ne pas retourner le nœud de démarrage en définissant son [ `ShowStartingNode` propriété](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.sitemapdatasource.showstartingnode.aspx) à `False`. L’effet net est que SiteMapDataSource démarre en retournant le deuxième niveau de nœuds.
+Pour afficher plusieurs niveaux, nous avons imbriquer plusieurs ListViews dans le `ItemTemplate`. Cette technique a été examinée dans le [ *Pages maîtres et la Navigation sur le Site* didacticiel](../../data-access/introduction/master-pages-and-site-navigation-vb.md) de mon [utilisation de la série de didacticiels données](../../data-access/index.md). Toutefois, pour cette série de didacticiels notre plan de site contient uniquement un deux niveaux : accueil (niveau supérieur) ; et chaque leçon en tant qu’enfant d’accueil. Au lieu de l’élaboration d’une liste imbriquée, nous pouvons indiquer à la place à SiteMapDataSource pour ne pas retourner le nœud de démarrage en définissant son [ `ShowStartingNode` propriété](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sitemapdatasource.showstartingnode.aspx) à `False`. L’effet net est que SiteMapDataSource démarre en retournant le deuxième niveau de nœuds.
 
 Avec cette modification, ListView affiche les éléments à puce pour l’et à l’aide de plusieurs contrôles ContentPlaceHolder leçons, mais omet un élément de puce Home. Pour résoudre ce problème, nous pouvons ajouter explicitement un élément de liste à puces Home dans le `LayoutTemplate`:
 
@@ -279,7 +279,7 @@ Mise à jour la `BasePage` de classe `OnLoadComplete` méthode pour inclure le c
 
 Comme précédemment, la `OnLoadComplete` méthode commence par déterminer si le titre de la page a été défini explicitement. Si `Page.Title` est `Nothing`, une chaîne vide, ou la valeur « Page sans titre » est affectée, puis le code affecte automatiquement une valeur à `Page.Title`.
 
-Pour déterminer le titre à utiliser, le code commence par référencer le [ `SiteMap` classe](https://msdn.microsoft.com/en-us/library/system.web.sitemap.aspx)de [ `CurrentNode` propriété](https://msdn.microsoft.com/en-us/library/system.web.sitemap.currentnode.aspx). `CurrentNode`Retourne le [ `SiteMapNode` ](https://msdn.microsoft.com/en-us/library/system.web.sitemapnode.aspx) instance dans le plan de site qui correspond à la page actuellement demandée. En supposant que la page actuellement demandée se trouve dans le plan de site, le `SiteMapNode`de `Title` est affectée au titre de la page. Si la page actuellement demandée n’est pas dans le plan de site, `CurrentNode` retourne `Nothing` et nom de fichier de la page demandée est utilisé comme titre (a été effectuée à l’étape 2).
+Pour déterminer le titre à utiliser, le code commence par référencer le [ `SiteMap` classe](https://msdn.microsoft.com/library/system.web.sitemap.aspx)de [ `CurrentNode` propriété](https://msdn.microsoft.com/library/system.web.sitemap.currentnode.aspx). `CurrentNode`Retourne le [ `SiteMapNode` ](https://msdn.microsoft.com/library/system.web.sitemapnode.aspx) instance dans le plan de site qui correspond à la page actuellement demandée. En supposant que la page actuellement demandée se trouve dans le plan de site, le `SiteMapNode`de `Title` est affectée au titre de la page. Si la page actuellement demandée n’est pas dans le plan de site, `CurrentNode` retourne `Nothing` et nom de fichier de la page demandée est utilisé comme titre (a été effectuée à l’étape 2).
 
 Figure 12 montre la `MultipleContentPlaceHolders.aspx` page lorsqu’ils sont affichés via un navigateur. Titre de cette page n’est pas définie explicitement, titre du son site carte nœud correspondant est utilisé à la place.
 
@@ -320,13 +320,13 @@ La possibilité d’ajouter par programme un contenu le `<head>` région est uti
 
 [!code-vb[Main](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-vb/samples/sample15.vb)]
 
-Le code ci-dessus ajoute le `<meta>` mots clés, élément pour les `<head>` région, qui fournit une liste délimitée par des virgules des mots clés qui décrivent la page. Notez que pour ajouter un `<meta>` balise que vous créez un [ `HtmlMeta` ](https://msdn.microsoft.com/en-us/library/system.web.ui.htmlcontrols.htmlmeta.aspx) de l’instance, définissez son `Name` et `Content` propriétés, puis l’ajouter à la `Header`de `Controls` collection. De même, pour ajouter par programmation un `<link>` élément, créer un [ `HtmlLink` ](https://msdn.microsoft.com/en-us/library/system.web.ui.htmlcontrols.htmllink.aspx) de l’objet, définissez ses propriétés, puis ajoutez-le à la `Header`de `Controls` collection.
+Le code ci-dessus ajoute le `<meta>` mots clés, élément pour les `<head>` région, qui fournit une liste délimitée par des virgules des mots clés qui décrivent la page. Notez que pour ajouter un `<meta>` balise que vous créez un [ `HtmlMeta` ](https://msdn.microsoft.com/library/system.web.ui.htmlcontrols.htmlmeta.aspx) de l’instance, définissez son `Name` et `Content` propriétés, puis l’ajouter à la `Header`de `Controls` collection. De même, pour ajouter par programmation un `<link>` élément, créer un [ `HtmlLink` ](https://msdn.microsoft.com/library/system.web.ui.htmlcontrols.htmllink.aspx) de l’objet, définissez ses propriétés, puis ajoutez-le à la `Header`de `Controls` collection.
 
 > [!NOTE]
-> Pour ajouter le balisage arbitraire, créez un [ `LiteralControl` ](https://msdn.microsoft.com/en-us/library/system.web.ui.literalcontrol.aspx) de l’instance, définissez son `Text` propriété, puis l’ajouter à la `Header`de `Controls` collection.
+> Pour ajouter le balisage arbitraire, créez un [ `LiteralControl` ](https://msdn.microsoft.com/library/system.web.ui.literalcontrol.aspx) de l’instance, définissez son `Text` propriété, puis l’ajouter à la `Header`de `Controls` collection.
 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Dans ce didacticiel, nous avons étudié de différentes façons pour ajouter `<head>` balisage région sur une base de page par page. Une page maître doit inclure un `HtmlHead` instance (`<head runat="server">`) avec un espace réservé. Le `HtmlHead` instance autorise des pages de contenu pour accéder par programme le `<head>` région et de façon déclarative et par programme de la page Définir le titre, le contrôle ContentPlaceHolder permet de balisage personnalisée à ajouter à la `<head>` section de façon déclarative par le biais d’un contrôle de contenu.
 

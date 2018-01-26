@@ -2,7 +2,7 @@
 uid: web-forms/overview/older-versions-getting-started/continuing-with-ef/what-s-new-in-the-entity-framework-4
 title: "Quelles sont les nouveautés dans Entity Framework 4.0 | Documents Microsoft"
 author: tdykstra
-description: "Cette série de didacticiels s’appuie sur l’application web de l’université Contoso qui est créée par la prise en main de la série de didacticiels Entity Framework 4.0. JE..."
+description: "Cette série de didacticiels s’appuie sur l’application web de l’université Contoso qui est créée par la prise en main de la série de didacticiels Entity Framework 4.0. I..."
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/26/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/what-s-new-in-the-entity-framework-4
 msc.type: authoredcontent
-ms.openlocfilehash: 4c89ca004ad4c9d731868e868cf6723aa4ed625d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c114627388217e892c84d6b76366d0fa96b0b70c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="whats-new-in-the-entity-framework-40"></a>Quelles sont les nouveautés dans Entity Framework 4.0
 ====================
@@ -90,7 +90,7 @@ Exécutez le *Courses.aspx* page pour afficher les données modifiées.
 
 (Si vous souhaitez définir le nombre de crédits vers leurs valeurs d’origine, en *UpdateCredits.aspx.cs* modifier `Credits * {0}` à `Credits / {0}` et exécutez de nouveau la page, entrez 10 comme diviseur.)
 
-Pour plus d’informations sur l’exécution de requêtes que vous définissez dans le code, consultez [Comment : directement exécuter des commandes par rapport à la Source de données](https://msdn.microsoft.com/en-us/library/ee358769.aspx).
+Pour plus d’informations sur l’exécution de requêtes que vous définissez dans le code, consultez [Comment : directement exécuter des commandes par rapport à la Source de données](https://msdn.microsoft.com/library/ee358769.aspx).
 
 ## <a name="model-first-development"></a>Développement basé d’abord de modèle
 
@@ -178,7 +178,7 @@ Exécutez la page.
 
 (Remarque : cette page est incluse dans le projet téléchargeable, mais pour la rendre opérationnelle, vous devez créer la base de données dans votre instance locale de SQL Server Express ; la base de données n’est pas inclus en tant qu’un *.mdf* de fichiers dans le *application\_ Données* dossier.)
 
-Pour plus d’informations sur l’utilisation de la fonctionnalité de modèle d’Entity Framework, consultez [Model-First dans Entity Framework 4](https://msdn.microsoft.com/en-us/data/ff830362.aspx).
+Pour plus d’informations sur l’utilisation de la fonctionnalité de modèle d’Entity Framework, consultez [Model-First dans Entity Framework 4](https://msdn.microsoft.com/data/ff830362.aspx).
 
 ## <a name="poco-support"></a>Prise en charge POCO
 
@@ -188,7 +188,7 @@ L’Entity Framework 4 introduit la possibilité d’utiliser les classes d’en
 
 Pour plus d’informations sur l’utilisation de POCOs dans Entity Framework, consultez les ressources suivantes :
 
-- [Utilisation des entités POCO](https://msdn.microsoft.com/en-us/library/dd456853.aspx). Il s’agit d’un document MSDN qui est une vue d’ensemble de POCOs, avec des liens vers d’autres documents qui possèdent des informations plus détaillées.
+- [Utilisation des entités POCO](https://msdn.microsoft.com/library/dd456853.aspx). Il s’agit d’un document MSDN qui est une vue d’ensemble de POCOs, avec des liens vers d’autres documents qui possèdent des informations plus détaillées.
 - [Procédure pas à pas : POCO modèle pour Entity Framework](https://blogs.msdn.com/b/adonet/archive/2010/01/25/walkthrough-poco-template-for-the-entity-framework.aspx) il s’agit d’un billet de blog de l’équipe de développement Entity Framework, avec des liens vers d’autres billets de blog sur POCOs.
 
 ## <a name="code-first-development"></a>Développement de code en premier.
@@ -209,7 +209,7 @@ En outre, un nouveau didacticiel MVC Code-First qui génère une application sim
 
 Cette étape termine la vue d’ensemble à ce qui est nouvelle dans Entity Framework et de poursuite de l’opération avec la série de didacticiels Entity Framework. Pour plus d’informations sur les nouvelles fonctionnalités qui ne sont pas couverts ici dans Entity Framework 4, consultez les ressources suivantes :
 
-- [Nouveautés dans ADO.NET](https://msdn.microsoft.com/en-us/library/ex6y04yf.aspx) rubrique MSDN sur les nouvelles fonctionnalités dans la version 4 d’Entity Framework.
+- [Nouveautés dans ADO.NET](https://msdn.microsoft.com/library/ex6y04yf.aspx) rubrique MSDN sur les nouvelles fonctionnalités dans la version 4 d’Entity Framework.
 - [Annonce de la version d’Entity Framework 4](https://blogs.msdn.com/b/efdesign/archive/2010/04/12/announcing-the-release-of-entity-framework-4.aspx) billet de blog de l’équipe de développement Entity Framework sur les nouvelles fonctionnalités dans la version 4.
 
 >[!div class="step-by-step"]

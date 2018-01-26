@@ -10,11 +10,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/tag-helpers/intro
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 003a22d4b0d9400f3e9effe0892d2d7e03704cde
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 3c198ccc3e3e2c11f3e2b9379bc63bd6428dbf69
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="introduction-to-tag-helpers-in-aspnet-core"></a>Introduction aux applications d’assistance de balise dans ASP.NET Core 
 
@@ -22,7 +22,7 @@ Par [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 ## <a name="what-are-tag-helpers"></a>Quels sont les programmes d’assistance de balise ?
 
-Programmes d’assistance de balise permettent au code côté serveur participer à la création et le rendu des éléments HTML dans les fichiers Razor. Par exemple, la fonction intégrée `ImageTagHelper` peut ajouter un numéro de version pour le nom de l’image. Chaque modification de l’image, le serveur génère une nouvelle version unique pour l’image, pour les clients sont assurées de bénéficier de l’image actuelle (au lieu d’une image mise en cache obsolète). Il existe de nombreuses applications auxiliaires balise intégrés pour les tâches courantes - telles que la création de formulaires, des liens, des ressources de chargement et plus - et encore plus disponibles dans les référentiels GitHub publics et comme NuGet packages. Programmes d’assistance de balise sont créés en c#, et ils conviennent à des éléments HTML en fonction de la balise parente, nom d’attribut ou nom de l’élément. Par exemple, la fonction intégrée `LabelTagHelper` peuvent cibler HTML `<label>` élément lorsque la `LabelTagHelper` les attributs sont appliqués. Si vous êtes familiarisé avec [programmes d’assistance HTML](http://stephenwalther.com/archive/2009/03/03/chapter-6-understanding-html-helpers), programmes d’assistance de balise de réduire les transitions explicites entre HTML et c# dans les vues Razor. Dans de nombreux cas, les programmes d’assistance HTML fournissent une approche alternative à une application d’assistance de balise spécifique, mais il est important de reconnaître que les programmes d’assistance de balise ne remplacent pas les programmes d’assistance HTML et n’est pas un programme d’assistance de balise pour chaque programme d’assistance HTML. [Programmes d’assistance par rapport aux programmes d’assistance HTML de la balise](#tag-helpers-compared-to-html-helpers) explique les différences de plus en détail.
+Programmes d’assistance de balise permettent au code côté serveur participer à la création et le rendu des éléments HTML dans les fichiers Razor. Par exemple, la fonction intégrée `ImageTagHelper` peut ajouter un numéro de version pour le nom de l’image. Chaque modification de l’image, le serveur génère une nouvelle version unique pour l’image, pour les clients sont assurées de bénéficier de l’image actuelle (au lieu d’une image mise en cache obsolète). Il existe de nombreuses applications auxiliaires balise intégrés pour les tâches courantes - telles que la création de formulaires, des liens, des ressources de chargement et plus - et encore plus disponibles dans les référentiels GitHub publics et comme NuGet packages. Programmes d’assistance de balise sont créés en c#, et ils conviennent à des éléments HTML en fonction de la balise parente, nom d’attribut ou nom de l’élément. Par exemple, la fonction intégrée `LabelTagHelper` peuvent cibler HTML `<label>` élément lorsque la `LabelTagHelper` les attributs sont appliqués. Si vous êtes familiarisé avec [programmes d’assistance HTML](http://stephenwalther.com/archive/2009/03/03/chapter-6-understanding-html-helpers), programmes d’assistance de balise de réduire les transitions explicites entre HTML et c# dans les vues Razor. Dans de nombreux cas, les programmes d’assistance HTML fournissent une approche alternative à une application d’assistance de balise spécifique, mais il est important de reconnaître que les programmes d’assistance de balise ne pas remplacer les programmes d’assistance HTML et n’est pas un programme d’assistance de balise pour chaque programme d’assistance HTML. [Programmes d’assistance par rapport aux programmes d’assistance HTML de la balise](#tag-helpers-compared-to-html-helpers) explique les différences de plus en détail.
 
 ## <a name="what-tag-helpers-provide"></a>Ce qui fournissent des programmes d’assistance de balise
 
@@ -112,7 +112,7 @@ Le `@tagHelperPrefix` directive vous permet de spécifier une chaîne de préfix
 ```cshtml
 @tagHelperPrefix th:
 ```
-Dans l’image du code ci-dessous, le préfixe d’assistance de balise est défini sur `th:`, ainsi que les éléments à l’aide du préfixe `th:` prend en charge des programmes d’assistance de balise (compatible d’assistance de balise les éléments ont une police unique). Le `<label>` et `<input>` éléments ont le préfixe d’assistance de balise et sont compatibles d’assistance de balise, lors de la `<span>` n’est pas le cas de l’élément.
+Dans l’image du code ci-dessous, le préfixe d’assistance de balise est défini sur `th:`, ainsi que les éléments à l’aide du préfixe `th:` prend en charge des programmes d’assistance de balise (compatible d’assistance de balise les éléments ont une police unique). Le `<label>` et `<input>` éléments ont le préfixe d’assistance de balise et sont compatibles d’assistance de balise, lors de la `<span>` ne de l’élément.
 
 ![image](intro/_static/thp.png)
 

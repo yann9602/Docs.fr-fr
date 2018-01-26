@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/read-related-data
-ms.openlocfilehash: 1321cb00a432669b4a97ad20063b6cf9ea75f24c
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 2333ac70c77847ece1f90c9ff22eec30bc35fea1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="reading-related-data---ef-core-with-aspnet-core-mvc-tutorial-6-of-10"></a>Lecture liés de données - Core EF avec le didacticiel ASP.NET Core MVC (partie 6 sur 10)
 
@@ -75,7 +75,7 @@ Vous avez effectué les modifications suivantes au code de modèle généré aut
 
 * Modifié le titre de l’Index au cours.
 
-* Ajouter un **nombre** colonne qui affiche le `CourseID` valeur de propriété. Par défaut, les clés primaires ne sont pas structurés, car ceux-ci ne sont généralement pas de sens pour les utilisateurs finaux. Toutefois, dans ce cas, la clé primaire est significative et que vous souhaitez afficher.
+* Ajouter un **nombre** colonne qui affiche le `CourseID` valeur de propriété. Par défaut, les clés primaires ne sont pas structurés, car ils sont normalement pas de sens pour les utilisateurs finaux. Toutefois, dans ce cas, la clé primaire est significative et que vous souhaitez afficher.
 
 * Modifié le **service** colonne pour afficher le nom du service. Le code affiche le `Name` propriété de l’entité de service qui est chargée dans le `Department` propriété de navigation :
 

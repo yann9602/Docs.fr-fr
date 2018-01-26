@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/caching
 msc.type: authoredcontent
-ms.openlocfilehash: d3ef613f625d862314eb0bb60f083f60bb2317e5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9b229de60e09b94189f62a6bb6fa61a9973d637b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="caching"></a>Mise en cache
 ====================
@@ -102,7 +102,7 @@ Lorsque cette commande exécute les modifications suivantes sont apportées à l
 | AspNet\_SqlCacheUpdateChangeIdStoredProcedure | Met à jour la table de notifications en incrémentant le changeId sur la table modifiée. ASP.NET utilise cette valeur pour déterminer si les données ont changé. Comme indiqué ci-dessous, cette procédure stockée est exécutée par le déclencheur créé lors de la table est activée. |
 
 
-- Un déclencheur SQL Server appelé  ***table\_nom*\_AspNet\_SqlCacheNotification\_déclencheur** est créé pour la table. Ce déclencheur s’exécute le compte AspNet\_SqlCacheUpdateChangeIdStoredProcedure lorsqu’un INSERT, UPDATE ou DELETE est exécutée sur la table.
+- Un déclencheur SQL Server appelée ***table\_nom *\_AspNet\_SqlCacheNotification\_déclencheur** est créé pour la table. Ce déclencheur s’exécute le compte AspNet\_SqlCacheUpdateChangeIdStoredProcedure lorsqu’un INSERT, UPDATE ou DELETE est exécutée sur la table.
 - Un rôle SQL Server appelé **aspnet\_ChangeNotification\_ReceiveNotificationsOnlyAccess** est ajouté à la base de données.
 
 Le **aspnet\_ChangeNotification\_ReceiveNotificationsOnlyAccess** rôle SQL Server dispose des autorisations d’exécution pour le compte AspNet\_SqlCachePollingStoredProcedure. Dans l’ordre pour le modèle d’interrogation fonctionne correctement, vous devez ajouter votre compte de processus pour le compte aspnet\_ChangeNotification\_ReceiveNotificationsOnlyAccess rôle. Le compte aspnet\_regsql.exe outil n’effectue cela pour vous.
@@ -144,7 +144,7 @@ L’exemple de code suivant illustre comment configurer la gestion des exception
 
 [!code-csharp[Main](caching/samples/sample11.cs)]
 
-Plus d’informations : [https://msdn.microsoft.com/en-us/library/t9x04ed2.aspx](https://msdn.microsoft.com/en-us/library/t9x04ed2.aspx)
+Plus d’informations : [https://msdn.microsoft.com/library/t9x04ed2.aspx](https://msdn.microsoft.com/library/t9x04ed2.aspx)
 
 ## <a name="query-based-sql-cache-dependencies-sql-server-2005-only"></a>Dépendances de Cache basée sur une requête SQL (SQL Server 2005 uniquement)
 
@@ -188,7 +188,7 @@ Le contrôle de Substitution ASP.NET spécifie une section d’une page mise en 
 
 ### <a name="substitution-api"></a>API de substitution
 
-Pour créer un contenu dynamique pour une page mise en cache par programme, vous pouvez appeler la [WriteSubstitution](https://msdn.microsoft.com/en-us/library/system.web.httpresponse.writesubstitution.aspx) méthode dans votre code de page, en lui passant le nom d’une méthode en tant que paramètre. La méthode qui gère la création du contenu dynamique prend un seul [HttpContext](https://msdn.microsoft.com/en-us/library/system.web.httpcontext.aspx) paramètre et retourne une chaîne. La chaîne retournée est le contenu qui est remplacé à l’emplacement donné. Un avantage de l’appel de la méthode WriteSubstitution au lieu d’utiliser de façon déclarative le contrôle de Substitution est que vous pouvez appeler une méthode de n’importe quel objet arbitraire, plutôt que d’appeler une méthode statique de la Page ou l’objet UserControl.
+Pour créer un contenu dynamique pour une page mise en cache par programme, vous pouvez appeler la [WriteSubstitution](https://msdn.microsoft.com/library/system.web.httpresponse.writesubstitution.aspx) méthode dans votre code de page, en lui passant le nom d’une méthode en tant que paramètre. La méthode qui gère la création du contenu dynamique prend un seul [HttpContext](https://msdn.microsoft.com/library/system.web.httpcontext.aspx) paramètre et retourne une chaîne. La chaîne retournée est le contenu qui est remplacé à l’emplacement donné. Un avantage de l’appel de la méthode WriteSubstitution au lieu d’utiliser de façon déclarative le contrôle de Substitution est que vous pouvez appeler une méthode de n’importe quel objet arbitraire, plutôt que d’appeler une méthode statique de la Page ou l’objet UserControl.
 
 Appel de la méthode WriteSubstitution provoque la mise en cache côté client à modifier dans le cache du serveur, afin que la page n’est pas mis en cache sur le client. Cela garantit que les requêtes ultérieures à la page d’appellent la méthode pour générer le contenu dynamique.
 
@@ -198,15 +198,15 @@ AdRotator implémente du contrôle serveur prend en charge en interne pour la su
 
 ## <a name="controlcachepolicy-class"></a>Classe de ControlCachePolicy
 
-La classe ControlCachePolicy permet le contrôle par programmation du fragment de la mise en cache à l’aide de contrôles utilisateur. ASP.NET incorpore des contrôles utilisateur dans un [BasePartialCachingControl effectue](https://msdn.microsoft.com/en-us/library/system.web.ui.basepartialcachingcontrol.aspx) instance. La classe BasePartialCachingControl effectue représente un contrôle utilisateur qui possède une mise en cache de sortie.
+La classe ControlCachePolicy permet le contrôle par programmation du fragment de la mise en cache à l’aide de contrôles utilisateur. ASP.NET incorpore des contrôles utilisateur dans un [BasePartialCachingControl effectue](https://msdn.microsoft.com/library/system.web.ui.basepartialcachingcontrol.aspx) instance. La classe BasePartialCachingControl effectue représente un contrôle utilisateur qui possède une mise en cache de sortie.
 
-Lorsque vous accédez à la [BasePartialCachingControl.CachePolicy](https://msdn.microsoft.com/en-us/library/system.web.ui.basepartialcachingcontrol.cachepolicy.aspx) propriété d’un [contrôle PartialCachingControl](https://msdn.microsoft.com/en-us/library/system.web.ui.partialcachingcontrol.aspx) (contrôle), vous recevez toujours un objet ControlCachePolicy valide. Toutefois, si vous accédez à la [UserControl.CachePolicy](https://msdn.microsoft.com/en-us/library/system.web.ui.usercontrol.cachepolicy.aspx) propriété d’un [UserControl](https://msdn.microsoft.com/en-us/library/system.web.ui.usercontrol.aspx) (contrôle), vous recevez un objet ControlCachePolicy valide uniquement si le contrôle utilisateur est déjà encapsulé par un BasePartialCachingControl effectue le contrôle. S’il n’est pas encapsulé, l’objet ControlCachePolicy retournée par la propriété lèvera des exceptions lorsque vous tentez de manipuler parce qu’il n’a pas un BasePartialCachingControl effectue associé. Pour déterminer si une instance UserControl prend en charge la mise en cache sans générer d’exception, vérifiez le [SupportsCaching](https://msdn.microsoft.com/en-us/library/system.web.ui.controlcachepolicy.supportscaching.aspx) propriété.
+Lorsque vous accédez à la [BasePartialCachingControl.CachePolicy](https://msdn.microsoft.com/library/system.web.ui.basepartialcachingcontrol.cachepolicy.aspx) propriété d’un [contrôle PartialCachingControl](https://msdn.microsoft.com/library/system.web.ui.partialcachingcontrol.aspx) (contrôle), vous recevez toujours un objet ControlCachePolicy valide. Toutefois, si vous accédez à la [UserControl.CachePolicy](https://msdn.microsoft.com/library/system.web.ui.usercontrol.cachepolicy.aspx) propriété d’un [UserControl](https://msdn.microsoft.com/library/system.web.ui.usercontrol.aspx) (contrôle), vous recevez un objet ControlCachePolicy valide uniquement si le contrôle utilisateur est déjà encapsulé par un BasePartialCachingControl effectue le contrôle. S’il n’est pas encapsulé, l’objet ControlCachePolicy retournée par la propriété lèvera des exceptions lorsque vous tentez de manipuler parce qu’il n’a pas un BasePartialCachingControl effectue associé. Pour déterminer si une instance UserControl prend en charge la mise en cache sans générer d’exception, vérifiez le [SupportsCaching](https://msdn.microsoft.com/library/system.web.ui.controlcachepolicy.supportscaching.aspx) propriété.
 
 À l’aide de la classe ControlCachePolicy est de plusieurs manières, que vous pouvez activer la mise en cache de sortie. La liste suivante décrit les méthodes que vous pouvez utiliser pour activer la mise en cache de sortie :
 
-- Utilisez le [@ OutputCache](https://msdn.microsoft.com/en-us/library/hdxfb6cy.aspx) directive pour activer la sortie mise en cache dans les scénarios déclaratifs.
-- Utilisez le [PartialCachingAttribute](https://msdn.microsoft.com/en-us/library/system.web.ui.partialcachingattribute.aspx) attribut pour activer la mise en cache pour un contrôle utilisateur dans un fichier code-behind.
-- Utilisez la classe ControlCachePolicy pour spécifier les paramètres de cache dans les scénarios de programmation dans lequel vous travaillez avec des instances BasePartialCachingControl effectue qui ont été activées par cache à l’aide d’une des méthodes précédentes et chargées dynamiquement à l’aide de la [System.Web.UI.TemplateControl.LoadControl](https://msdn.microsoft.com/en-us/library/system.web.ui.templatecontrol.loadcontrol.aspx) (méthode).
+- Utilisez le [@ OutputCache](https://msdn.microsoft.com/library/hdxfb6cy.aspx) directive pour activer la sortie mise en cache dans les scénarios déclaratifs.
+- Utilisez le [PartialCachingAttribute](https://msdn.microsoft.com/library/system.web.ui.partialcachingattribute.aspx) attribut pour activer la mise en cache pour un contrôle utilisateur dans un fichier code-behind.
+- Utilisez la classe ControlCachePolicy pour spécifier les paramètres de cache dans les scénarios de programmation dans lequel vous travaillez avec des instances BasePartialCachingControl effectue qui ont été activées par cache à l’aide d’une des méthodes précédentes et chargées dynamiquement à l’aide de la [System.Web.UI.TemplateControl.LoadControl](https://msdn.microsoft.com/library/system.web.ui.templatecontrol.loadcontrol.aspx) (méthode).
 
 Une instance de ControlCachePolicy peut être manipulée avec succès uniquement entre les étapes du cycle de vie contrôle Init et PreRender. Si vous modifiez un objet ControlCachePolicy après la phase PreRender, ASP.NET lève une exception, car les modifications apportées après le rendu du contrôle n’affectent pas réellement des paramètres de cache (un contrôle est mis en cache pendant l’étape de rendu). Enfin, une instance de contrôle utilisateur (et par conséquent son objet ControlCachePolicy) est uniquement disponibles pour la manipulation de programmation lorsqu’il est réellement restitué.
 
@@ -240,7 +240,7 @@ Les attributs suivants sont disponibles pour le &lt;outputCache&gt; élément.
 | **Attribut** | **Description** |
 | --- | --- |
 | **enableOutputCache** | Facultatif **Boolean** attribut. Active/désactive le cache de sortie de page. Si désactivé, aucune page n’est mis en cache, indépendamment des paramètres déclaratives ou par programme. Valeur par défaut est **true**. |
-| **enableFragmentCache** | Facultatif **Boolean** attribut. Active/désactive le cache de fragment d’application. Si désactivé, aucune page n’est mis en cache, quel que soit le [@ OutputCache](https://msdn.microsoft.com/en-us/library/hdxfb6cy.aspx) directive ou la mise en cache de profil utilisé. Inclut un en-tête cache-control indiquant que les serveurs proxy en amont, ainsi que des clients de navigateur ne doivent pas essayer de sortie de la page du cache. Valeur par défaut est **false**. |
+| **enableFragmentCache** | Facultatif **Boolean** attribut. Active/désactive le cache de fragment d’application. Si désactivé, aucune page n’est mis en cache, quel que soit le [@ OutputCache](https://msdn.microsoft.com/library/hdxfb6cy.aspx) directive ou la mise en cache de profil utilisé. Inclut un en-tête cache-control indiquant que les serveurs proxy en amont, ainsi que des clients de navigateur ne doivent pas essayer de sortie de la page du cache. Valeur par défaut est **false**. |
 | **sendCacheControlHeader** | Facultatif **Boolean** attribut. Obtient ou définit une valeur indiquant si le **cache-contrôle : private** en-tête est envoyé par le module de cache de sortie par défaut. Valeur par défaut est **false**. |
 | **omitVaryStar** | Facultatif **Boolean** attribut. Active/désactive l’envoi d’un Http «**Vary : \*** « en-tête dans la réponse. Avec le paramètre par défaut de la valeur est false, un «**Vary : \*** « en-tête est envoyé pour les pages mises en cache de sortie. Lorsque l’en-tête Vary est envoyé, il permet pour différentes versions doit être mis en cache en fonction de ce qui est spécifié dans l’en-tête Vary. Par exemple, *Vary : utilisateur-Agents* stockera les différentes versions d’une page en fonction de l’agent utilisateur qui émet la demande. Valeur par défaut est **false**. |
 
@@ -254,7 +254,7 @@ Les attributs suivants sont disponibles pour le &lt;sqlCacheDependency&gt; élé
 
 | **Attribut** | **Description** |
 | --- | --- |
-| **activé** | Requis **Boolean** attribut. Indique si les modifications sont interrogées pour. |
+| **enabled** | Requis **Boolean** attribut. Indique si les modifications sont interrogées pour. |
 | **pollTime** | Facultatif **Int32** attribut. Définit la fréquence à laquelle SqlCacheDependency interroge les modifications dans la table de base de données. Cette valeur correspond au nombre de millisecondes entre des interrogations consécutives. La valeur ne doit pas être inférieure à 500 millisecondes. Valeur par défaut est 1 minute. |
 
 ### <a name="more-information"></a>Informations complémentaires

@@ -11,11 +11,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: spa/angular
-ms.openlocfilehash: b54798a43f6a448c2e2aad0613ee60805a61f303
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: 4162b1c26e9d278c811f691c4277d4de25adb204
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="use-the-angular-project-template-release-candidate"></a>Utilisez le modèle de projet angulaire (version finale)
 
@@ -176,7 +176,7 @@ Au cours de SSR, vous pouvez souhaiter transmettre des données de chaque demand
 ```csharp
 options.SupplyData = (context, data) =>
 {
-    // Creates a new value called isHttpsRequest that is passed to TypeScript code
+    // Creates a new value called isHttpsRequest that's passed to TypeScript code
     data["isHttpsRequest"] = context.Request.IsHttps;
 };
 ```

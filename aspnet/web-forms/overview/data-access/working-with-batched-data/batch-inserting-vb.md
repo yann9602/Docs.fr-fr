@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/batch-inserting-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e1e77dde4602350b18508bf5d71dbcd953f8961c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3f09b5fd86c1cc6641fb42a466b07da161c1dd35
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="batch-inserting-vb"></a>Lot d’insertion (VB)
 ====================
@@ -96,7 +96,7 @@ Démarrage en faisant glisser un panneau de configuration à partir de la boîte
 Ensuite, nous avons besoin créer l’interface d’insertion qui a été indiqué dans la Figure 1. Cette interface peut être créée par le biais de diverses techniques HTML, mais nous allons utiliser un index relativement simple : une table en quatre colonnes et d’une ligne sept.
 
 > [!NOTE]
-> Lors de la saisie de balisage HTML `<table>` éléments, je préfère utiliser la vue de Source. Lors de Visual Studio dispose d’outils permettant d’ajouter `<table>` éléments par le biais du concepteur, le concepteur semble tout trop souhaite injecter qui pour `style` paramètres dans le balisage. Une fois que j’ai créé la `<table>` balisage, généralement renvoyer au concepteur pour ajouter des contrôles Web et de définir leurs propriétés. Lors de la création de tables avec des colonnes et lignes, je préfère à l’aide de code HTML statique plutôt que la [contrôle Web Table](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.table.aspx) , car tous les contrôles Web placés dans un contrôle Web de la Table est accessible uniquement à l’aide de la `FindControl("controlID")` modèle. Contrôles Web de la Table faire, toutefois, utiliser des tables dimensionnées de manière dynamique (ceux dont lignes ou les colonnes est basés sur certains de base de données ou les critères définis par l’utilisateur), depuis le Web de la Table contrôle peut être construit par programme.
+> Lors de la saisie de balisage HTML `<table>` éléments, je préfère utiliser la vue de Source. Lors de Visual Studio dispose d’outils permettant d’ajouter `<table>` éléments par le biais du concepteur, le concepteur semble tout trop souhaite injecter qui pour `style` paramètres dans le balisage. Une fois que j’ai créé la `<table>` balisage, généralement renvoyer au concepteur pour ajouter des contrôles Web et de définir leurs propriétés. Lors de la création de tables avec des colonnes et lignes, je préfère à l’aide de code HTML statique plutôt que la [contrôle Web Table](https://msdn.microsoft.com/library/system.web.ui.webcontrols.table.aspx) , car tous les contrôles Web placés dans un contrôle Web de la Table est accessible uniquement à l’aide de la `FindControl("controlID")` modèle. Contrôles Web de la Table faire, toutefois, utiliser des tables dimensionnées de manière dynamique (ceux dont lignes ou les colonnes est basés sur certains de base de données ou les critères définis par l’utilisateur), depuis le Web de la Table contrôle peut être construit par programme.
 
 
 Entrez le balisage suivant dans le `<asp:Panel>` balises de la `InsertingInterface` Panneau de configuration :
@@ -259,7 +259,7 @@ Figure 13, 14 et 15 afficher l’insertion et affichent des interfaces dans l’
 > Le lot d’insertion de logique utilisée dans ce didacticiel inclut les insertions dans l’étendue de transaction. Pour vérifier cela, délibérément présentent une erreur au niveau de la base de données. Par exemple, au lieu de l’affectation de la nouvelle `ProductsRow` instance s `CategoryID` valeur à la propriété sélectionnée dans le `Categories` DropDownList, affecter à une valeur comme `i * 5`. Ici `i` est l’indexeur de la boucle et a des valeurs comprises entre 1 et 5. Par conséquent, lorsque l’ajout de deux ou plusieurs produits de traitement par lots Insérer le premier produit aura valide `CategoryID` valeur (5), mais les produits suivants aura `CategoryID` les valeurs qui ne correspondent pas à `CategoryID` des valeurs dans le `Categories` table. Le résultat est que lors de la première `INSERT` réussit, les conditions suivantes échouent avec une violation de contrainte de clé étrangère. Étant donné que l’insertion de lot est atomique, la première `INSERT` sera restaurée, retour à la base de données à son état avant que le processus d’insertion de lot a commencé.
 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Cet aspect ainsi que deux didacticiels précédents, nous avons créé les interfaces qui permettent de mettre à jour, suppression, et l’insertion des lots de données, tous les deux utilisés la prise en charge de transactions que nous avons ajouté à la couche d’accès aux données dans le [encapsulant les Modifications de base de données dans une Transaction](wrapping-database-modifications-within-a-transaction-vb.md) didacticiel. Pour certains scénarios, ces interfaces utilisateur pour le traitement par lots considérablement améliorent l’efficacité de l’utilisateur final en réduisant le nombre de clics, les publications (postback) et les commutateurs de contexte du clavier de la souris, tout en préservant l’intégrité des données sous-jacentes.
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-migrating-to-sql-server-10-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: 31d83a11488212ab0ff83494d5e896ffcbeaa8a4
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b97834e3e287645151bf927996fde63d93ae8356
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-migrating-to-sql-server---10-of-12"></a>Déploiement d’Application Web ASP.NET avec SQL Server Compact à l’aide de Visual Studio ou Visual Web Developer : migration vers SQL Server - 10 12
 ====================
@@ -37,7 +37,7 @@ Ce didacticiel vous montre comment effectuer une migration à partir de SQL Serv
 
 Une fois que vous avez décidé de mettre à niveau vers SQL Server, vous pouvez souhaiter utiliser SQL Server ou SQL Server Express dans vos environnements de développement et de test. Outre les différences de prise en charge de l’outil et fonctionnalités du moteur de base de données, il existe de différences dans les implémentations de fournisseur SQL Server Compact et d’autres versions de SQL Server. Ces différences peuvent occasionner le même code générer des résultats différents. Par conséquent, si vous décidez de conserver SQL Server Compact que votre base de données de développement, vous devez tester minutieusement votre site dans SQL Server ou SQL Server Express dans un environnement de test avant chaque déploiement en production.
 
-Contrairement à SQL Server Compact, SQL Server Express est essentiellement le même moteur de base de données et utilise le même fournisseur .NET en tant que serveur SQL Server complet. Lorsque vous testez avec SQL Server Express, vous pouvez être certain d’obtenir les mêmes résultats que vous allez avec SQL Server. Vous pouvez utiliser la plupart des outils de base de données avec SQL Server Express que vous pouvez utiliser avec SQL Server (une exception notable étant [SQL Server Profiler](https://msdn.microsoft.com/en-us/library/ms181091.aspx)), et il prend en charge d’autres fonctionnalités de SQL Server, comme les procédures stockées, vues, déclencheurs, et la réplication. (Vous devez en général utiliser complète de SQL Server dans un site Web de production, cependant. SQL Server Express peut s’exécuter dans un environnement d’hébergement partagé, mais il n’a pas été conçu pour que, et de nombreux fournisseurs d’hébergements ne le prennent pas en charge.)
+Contrairement à SQL Server Compact, SQL Server Express est essentiellement le même moteur de base de données et utilise le même fournisseur .NET en tant que serveur SQL Server complet. Lorsque vous testez avec SQL Server Express, vous pouvez être certain d’obtenir les mêmes résultats que vous allez avec SQL Server. Vous pouvez utiliser la plupart des outils de base de données avec SQL Server Express que vous pouvez utiliser avec SQL Server (une exception notable étant [SQL Server Profiler](https://msdn.microsoft.com/library/ms181091.aspx)), et il prend en charge d’autres fonctionnalités de SQL Server, comme les procédures stockées, vues, déclencheurs, et la réplication. (Vous devez en général utiliser complète de SQL Server dans un site Web de production, cependant. SQL Server Express peut s’exécuter dans un environnement d’hébergement partagé, mais il n’a pas été conçu pour que, et de nombreux fournisseurs d’hébergements ne le prennent pas en charge.)
 
 Si vous utilisez Visual Studio 2012, vous choisissez généralement SQL Server Express LocalDB pour votre environnement de développement, car c’est ce qui est installé par défaut avec Visual Studio. Toutefois, base de données locale ne fonctionne pas dans IIS, donc pour votre environnement de test, vous devez utiliser SQL Server ou SQL Server Express.
 
@@ -57,9 +57,9 @@ Rappel : Si vous obtenez un message d’erreur, ou quelque chose ne fonctionne 
 
 SQL Server Express est installé automatiquement par défaut avec Visual Studio 2010, mais par défaut avec Visual Studio 2012 n’est pas installé. Pour installer SQL Server 2012 Express, cliquez sur le lien suivant
 
-- [SQL Server Express 2012](https://www.microsoft.com/en-us/download/details.aspx?id=29062)
+- [SQL Server Express 2012](https://www.microsoft.com/download/details.aspx?id=29062)
 
-Choisissez *fra/x64/SQLEXPR\_x64\_ENU.exe* ou *fra/x86/SQLEXPR\_x86\_ENU.exe*et dans l’Assistant installation, acceptez la valeur par défaut Paramètres. Pour plus d’informations sur les options d’installation, consultez [installer SQL Server 2012 à partir de l’Assistant Installation (programme d’installation)](https://msdn.microsoft.com/en-us/library/ms143219.aspx).
+Choisissez *fra/x64/SQLEXPR\_x64\_ENU.exe* ou *fra/x86/SQLEXPR\_x86\_ENU.exe*et dans l’Assistant installation, acceptez la valeur par défaut Paramètres. Pour plus d’informations sur les options d’installation, consultez [installer SQL Server 2012 à partir de l’Assistant Installation (programme d’installation)](https://msdn.microsoft.com/library/ms143219.aspx).
 
 ## <a name="creating-sql-server-express-databases-for-the-test-environment"></a>Création de bases de données SQL Server Express pour l’environnement de Test
 

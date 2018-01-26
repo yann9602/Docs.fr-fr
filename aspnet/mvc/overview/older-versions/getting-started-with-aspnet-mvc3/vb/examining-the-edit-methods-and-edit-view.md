@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/examining-the-edit-methods-and-edit-view
 msc.type: authoredcontent
-ms.openlocfilehash: db2b39fab9c0701c8792d48f2ed0a059b9e450ad
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9a933324b48d4117d5d4c806920f1691a7ef7849
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="examining-the-edit-methods-and-edit-view-vb"></a>Examen des méthodes de modification et la vue d’édition (VB)
 ====================
@@ -65,7 +65,7 @@ Le `HttpGet` `Edit` méthode accepte le paramètre d’ID de film, recherche le 
 
 Notez comment le modèle d’affichage a une `@ModelType MvcMovie.Models.Movie` instruction en haut du fichier : Spécifie que la vue prévoit que le modèle pour le modèle d’affichage de type `Movie`.
 
-Le code de modèle généré automatiquement utilise plusieurs *méthodes d’assistance* afin de rationaliser le balisage HTML. Le [ `Html.LabelFor` ](https://msdn.microsoft.com/en-us/library/gg401864(VS.98).aspx) affiche le nom du champ (&quot;titre&quot;, &quot;ReleaseDate&quot;, &quot;Genre&quot;, ou &quot;prix &quot;). Le [ `Html.EditorFor` ](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.editorextensions.editorfor(VS.98).aspx) HTML affiche `<input>` élément. Le [ `Html.ValidationMessageFor` ](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.validationextensions.validationmessagefor(VS.98).aspx) affiche les messages de validation associés à cette propriété.
+Le code de modèle généré automatiquement utilise plusieurs *méthodes d’assistance* afin de rationaliser le balisage HTML. Le [ `Html.LabelFor` ](https://msdn.microsoft.com/library/gg401864(VS.98).aspx) affiche le nom du champ (&quot;titre&quot;, &quot;ReleaseDate&quot;, &quot;Genre&quot;, ou &quot;prix &quot;). Le [ `Html.EditorFor` ](https://msdn.microsoft.com/library/system.web.mvc.html.editorextensions.editorfor(VS.98).aspx) HTML affiche `<input>` élément. Le [ `Html.ValidationMessageFor` ](https://msdn.microsoft.com/library/system.web.mvc.html.validationextensions.validationmessagefor(VS.98).aspx) affiche les messages de validation associés à cette propriété.
 
 Exécutez l’application et accédez à la */Movies* URL. Cliquez sur un lien **Edit**. Dans le navigateur, affichez la source de la page. Le code HTML dans la page ressemble à l’exemple suivant. (Le balisage de menu a été exclu par souci de clarté).
 
@@ -85,7 +85,7 @@ Si les valeurs publiées ne sont pas valides, ils sont affichés de nouveau dans
 
 [![abcNotValid](examining-the-edit-methods-and-edit-view/_static/image7.png)](examining-the-edit-methods-and-edit-view/_static/image6.png)
 
-> **Remarque sur les paramètres régionaux** si vous travaillez normalement avec les paramètres régionaux autres que l’anglais, consultez [prenant en charge la Validation ASP.NET MVC 3 avec les paramètres régionaux Non anglais.](https://msdn.microsoft.com/en-us/library/gg674880(VS.98).aspx)
+> **Remarque sur les paramètres régionaux** si vous travaillez normalement avec les paramètres régionaux autres que l’anglais, consultez [prenant en charge la Validation ASP.NET MVC 3 avec les paramètres régionaux Non anglais.](https://msdn.microsoft.com/library/gg674880(VS.98).aspx)
 
 
 ## <a name="making-the-edit-method-more-robust"></a>Rendre la plus fiable de la méthode de modification
@@ -114,7 +114,7 @@ Commencez par ajouter un `SearchIndex` à l’objet de méthode d’action `Movi
 
 [!code-vb[Main](examining-the-edit-methods-and-edit-view/samples/sample8.vb)]
 
-La première ligne de la `SearchIndex` méthode crée les éléments suivants [LINQ](https://msdn.microsoft.com/en-us/library/bb397926.aspx) requête pour sélectionner les films :
+La première ligne de la `SearchIndex` méthode crée les éléments suivants [LINQ](https://msdn.microsoft.com/library/bb397926.aspx) requête pour sélectionner les films :
 
 [!code-vb[Main](examining-the-edit-methods-and-edit-view/samples/sample9.vb)]
 
@@ -126,7 +126,7 @@ Si ce n’est pas String.IsNullOrEmpty(searchString) puis
  films = films. Où (ou les fonctions s.Title.Contains(searchString))   
  End If
 
-Les requêtes LINQ ne sont pas exécutées lorsqu’ils sont définis, ou lorsqu’il est modifié en appelant une méthode comme `Where` ou `OrderBy`. Au lieu de cela, l’exécution de la requête est différée, ce qui signifie que l’évaluation d’une expression est retardée jusqu'à ce que sa valeur réalisé est réellement itéré ou [ `ToList` ](https://msdn.microsoft.com/en-us/library/bb342261.aspx) méthode est appelée. Dans la `SearchIndex` exemple, la requête est exécutée dans la vue SearchIndex. Pour plus d’informations sur l’exécution différée des requêtes, consultez [Exécution de requête](https://msdn.microsoft.com/en-us/library/bb738633.aspx).
+Les requêtes LINQ ne sont pas exécutées lorsqu’ils sont définis, ou lorsqu’il est modifié en appelant une méthode comme `Where` ou `OrderBy`. Au lieu de cela, l’exécution de la requête est différée, ce qui signifie que l’évaluation d’une expression est retardée jusqu'à ce que sa valeur réalisé est réellement itéré ou [ `ToList` ](https://msdn.microsoft.com/library/bb342261.aspx) méthode est appelée. Dans la `SearchIndex` exemple, la requête est exécutée dans la vue SearchIndex. Pour plus d’informations sur l’exécution différée des requêtes, consultez [Exécution de requête](https://msdn.microsoft.com/library/bb738633.aspx).
 
 Maintenant que vous pouvez implémenter la `SearchIndex` vue qui affiche le formulaire à l’utilisateur. Avec le bouton droit à l’intérieur de la `SearchIndex` (méthode), puis cliquez sur **ajouter une vue**. Dans le **ajouter une vue** boîte de dialogue, spécifiez que vous souhaitez passer un `Movie` objet pour le modèle d’affichage en tant que sa classe de modèle. Dans le **modèle de vue de structure** , choisissez **liste**, puis cliquez sur **ajouter**.
 

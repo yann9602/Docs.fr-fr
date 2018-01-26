@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 24320b9f0262fba0aa5ac77f6c1294541c42267a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e483c37cc773a7255f18c26bc3609d68f71dff7d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="an-overview-of-inserting-updating-and-deleting-data-c"></a>Une vue d’ensemble de l’insertion, mise à jour et suppression de données (c#)
 ====================
@@ -140,7 +140,7 @@ Après avoir configuré l’ObjectDataSource via l’Assistant, passez à la vue
 
 ObjectDataSource inclut un paramètre pour chacun des paramètres d’entrée pour ses méthodes associées, tout comme une liste de `SelectParameter` s est présent lorsque l’ObjectDataSource est configurée pour appeler une méthode select qui attend un paramètre d’entrée (par exemple `GetProductsByCategoryID(categoryID)`). Comme nous allons bientôt, les valeurs de ces `DeleteParameters`, `UpdateParameters`, et `InsertParameters` sont définies automatiquement par le GridView, DetailsView et FormView avant d’appeler l’ObjectDataSource `Insert()`, `Update()`, ou `Delete()` méthode. Ces valeurs peuvent également définies par programme en fonction des besoins, comme nous verrons dans un didacticiel futures.
 
-Un effet secondaire de l’utilisation de l’Assistant Configuration pour ObjectDataSource est que Visual Studio définit les [propriété OldValuesParameterFormatString](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.objectdatasource.oldvaluesparameterformatstring(VS.80).aspx) à `original_{0}`. Valeur de cette propriété est utilisée pour inclure les valeurs d’origine des données en cours de modification et s’avère utile dans deux scénarios :
+Un effet secondaire de l’utilisation de l’Assistant Configuration pour ObjectDataSource est que Visual Studio définit les [propriété OldValuesParameterFormatString](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.oldvaluesparameterformatstring(VS.80).aspx) à `original_{0}`. Valeur de cette propriété est utilisée pour inclure les valeurs d’origine des données en cours de modification et s’avère utile dans deux scénarios :
 
 - Si, lorsque vous modifiez un enregistrement, les utilisateurs peuvent modifier la valeur de clé primaire. Dans ce cas, la nouvelle valeur de clé primaire et la valeur de clé primaire d’origine doivent être fournis afin que l’enregistrement avec la valeur de clé primaire d’origine peut être trouvée et afficher sa valeur mis à jour en conséquence.
 - Lors de l’utilisation de l’accès concurrentiel optimiste. Optimiste d’accès concurrentiel est une technique pour vous assurer que deux utilisateurs simultanés ne pas écraser les modifications par un autre et la rubrique pour un didacticiel futures.
@@ -168,8 +168,8 @@ Commencez par faire glisser un contrôle GridView à partir de la boîte à outi
 
 Liaison de contrôle GridView à ObjectDataSource via sa balise active présente deux avantages :
 
-- BoundFields et CheckBoxFields sont automatiquement créés pour chacun des champs retournés par ObjectDataSource. En outre, les propriétés de la BoundField et de CheckBoxField sont définies en fonction sur les métadonnées du champ sous-jacent. Par exemple, le `ProductID`, `CategoryName`, et `SupplierName` les champs sont marqués en lecture seule dans le `ProductsDataTable` et par conséquent ne doit pas être mis à jour lors de la modification. Pour prendre en compte cette, ces BoundFields [propriétés ReadOnly](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.boundfield.readonly(VS.80).aspx) ont la valeur `true`.
-- Le [propriété DataKeyNames](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.datakeynames(VS.80).aspx) est attribué pour les champs de clé primaires de l’objet sous-jacent. Ceci est essentiel quand à l’aide de GridView pour modifier ou supprimer des données, car cette propriété indique que le champ (ou un ensemble de champs) unique qui identifie chaque enregistrement. Pour plus d’informations sur la `DataKeyNames` propriété, faire référence à la [maître/détail à l’aide d’un GridView maître avec un DetailView détail](../masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs.md) didacticiel.
+- BoundFields et CheckBoxFields sont automatiquement créés pour chacun des champs retournés par ObjectDataSource. En outre, les propriétés de la BoundField et de CheckBoxField sont définies en fonction sur les métadonnées du champ sous-jacent. Par exemple, le `ProductID`, `CategoryName`, et `SupplierName` les champs sont marqués en lecture seule dans le `ProductsDataTable` et par conséquent ne doit pas être mis à jour lors de la modification. Pour prendre en compte cette, ces BoundFields [propriétés ReadOnly](https://msdn.microsoft.com/library/system.web.ui.webcontrols.boundfield.readonly(VS.80).aspx) ont la valeur `true`.
+- Le [propriété DataKeyNames](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.datakeynames(VS.80).aspx) est attribué pour les champs de clé primaires de l’objet sous-jacent. Ceci est essentiel quand à l’aide de GridView pour modifier ou supprimer des données, car cette propriété indique que le champ (ou un ensemble de champs) unique qui identifie chaque enregistrement. Pour plus d’informations sur la `DataKeyNames` propriété, faire référence à la [maître/détail à l’aide d’un GridView maître avec un DetailView détail](../masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs.md) didacticiel.
 
 Alors que le contrôle GridView peut être lié à ObjectDataSource via la fenêtre Propriétés ou de la syntaxe déclarative, cela vous oblige à ajouter manuellement le BoundField approprié et `DataKeyNames` balisage.
 
@@ -327,7 +327,7 @@ Notez que pour le contrôle DetailsView le CommandField apparaît à la fin de l
 
 En cliquant sur le bouton de suppression commence la même séquence d’événements que le contrôle GridView : une publication (postback) ; suivi par le contrôle DetailsView remplissage de son ObjectDataSource `DeleteParameters` selon la `DataKeyNames` ; les valeurs et s’est terminée avec un appel de ses ObjectDataSource `Delete()` (méthode), ce qui en fait supprime le produit à partir de la base de données. Modification dans le contrôle DetailsView fonctionne également de manière identique à celle du contrôle GridView.
 
-Pour l’insertion, l’utilisateur final est présenté avec un nouveau bouton qui, lorsque vous cliquez dessus, restitue le contrôle DetailsView en « mode d’insertion ». Avec le « mode insertion » le bouton Nouveau est remplacé par les boutons Insérer et annuler et uniquement ces BoundFields dont `InsertVisible` est définie sur `true` (la valeur par défaut) sont affichés. Les champs de données identifiés en tant que champs de l’incrémentation automatique, telles que `ProductID`, ont leurs [InsertVisible propriété](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datacontrolfield.insertvisible(VS.80).aspx) définie sur `false` lors de la liaison du DetailsView à la source de données via la balise active.
+Pour l’insertion, l’utilisateur final est présenté avec un nouveau bouton qui, lorsque vous cliquez dessus, restitue le contrôle DetailsView en « mode d’insertion ». Avec le « mode insertion » le bouton Nouveau est remplacé par les boutons Insérer et annuler et uniquement ces BoundFields dont `InsertVisible` est définie sur `true` (la valeur par défaut) sont affichés. Les champs de données identifiés en tant que champs de l’incrémentation automatique, telles que `ProductID`, ont leurs [InsertVisible propriété](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datacontrolfield.insertvisible(VS.80).aspx) définie sur `false` lors de la liaison du DetailsView à la source de données via la balise active.
 
 Lors de la liaison d’une source de données à un contrôle DetailsView via la balise active, Visual Studio définit les `InsertVisible` propriété `false` uniquement pour les champs de l’incrémentation automatique. Les champs en lecture seule, tels que `CategoryName` et `SupplierName`, apparaît dans l’interface utilisateur de « mode insert », sauf si leur `InsertVisible` est explicitement définie sur `false`. Prenez un moment pour définir ces deux champs `InsertVisible` propriétés `false`, soit via la syntaxe déclarative de DetailsView ou modifier les champs lien dans la balise active. Figure 19 présente l’affectation du `InsertVisible` propriétés `false` en cliquant sur Modifier les champs lien.
 
@@ -354,7 +354,7 @@ Après la saisie des détails pour Acme thé et en cliquant sur le bouton Insér
 
 
 > [!NOTE]
-> Le contrôle du DetailsView [CurrentMode propriété](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.detailsview.currentmode(VS.80).aspx) indique l’interface qui est affichée et peut prendre l’une des valeurs suivantes : `Edit`, `Insert`, ou `ReadOnly`. Le [DefaultMode propriété](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.detailsview.defaultmode(VS.80).aspx) indique le mode de DetailsView retourne vers après une modification ou insérer est terminé et est utile pour afficher un contrôle DetailsView est définitivement en mode édition ou en mode insertion.
+> Le contrôle du DetailsView [CurrentMode propriété](https://msdn.microsoft.com/library/system.web.ui.webcontrols.detailsview.currentmode(VS.80).aspx) indique l’interface qui est affichée et peut prendre l’une des valeurs suivantes : `Edit`, `Insert`, ou `ReadOnly`. Le [DefaultMode propriété](https://msdn.microsoft.com/library/system.web.ui.webcontrols.detailsview.defaultmode(VS.80).aspx) indique le mode de DetailsView retourne vers après une modification ou insérer est terminé et est utile pour afficher un contrôle DetailsView est définitivement en mode édition ou en mode insertion.
 
 
 Le point et cliquez sur Insertion et la modification des fonctionnalités de DetailsView concernées par les mêmes limitations que le contrôle GridView : l’utilisateur doit entrer existant `CategoryID` et `SupplierID` valeurs à une zone de texte ; les n’a pas d’interface de logique de validation ; tous les les champs de produit qui n’autorisent pas `NULL` valeurs ou vous n’avez pas une valeur par défaut valeur spécifiée au niveau de la base de données doit être inclus dans l’interface de l’insertion et ainsi de suite.
@@ -432,7 +432,7 @@ En séparant en lecture seule, modification et l’insertion des interfaces dans
 > Comme le contrôle DetailsView, le contrôle FormView `CurrentMode` propriété indique l’interface qui est affichée et son `DefaultMode` propriété indique le mode du FormView retourne à après une modification ou d’insertion est terminée.
 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Dans ce didacticiel, nous avons examiné les principes fondamentaux de l’insertion, de modification et de suppression des données à l’aide du contrôle GridView, DetailsView et FormView. Les trois de ces contrôles permettent un certain degré de modification des données intégrées qui peuvent être utilisées sans écrire une seule ligne de code dans la page ASP.NET, les données des contrôles Web et ObjectDataSource. Toutefois, la simple point et cliquez sur rendu techniques relativement affaiblie naïve interface utilisateur de modification des données. Pour fournir la validation, injecter des valeurs par programme, gérer correctement les exceptions, personnaliser l’interface utilisateur, et ainsi de suite, nous allons devoir s’appuient sur une multitude de techniques qui seront abordés sur plusieurs didacticiels suivants.
 

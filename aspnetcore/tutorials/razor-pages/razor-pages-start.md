@@ -2,7 +2,6 @@
 title: "Bien démarrer avec des pages Razor dans ASP.NET Core"
 author: rick-anderson
 description: "Bien démarrer avec des pages Razor dans ASP.NET Core"
-keywords: ASP.NET Core,pages Razor,Razor,MVC
 ms.author: riande
 manager: wpickett
 ms.date: 12/22/2017
@@ -10,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: tutorials/razor-pages/razor-pages-start
-ms.openlocfilehash: 12685d6a391c127d78399408291c26caa0192ee2
-ms.sourcegitcommit: 44a62f59d4db39d685c4487a0345a486be18d7c7
+ms.openlocfilehash: 69a5bc439130ffacf2d267c79b1a6b0347171e49
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="get-started-with-razor-pages-in-aspnet-core"></a>Bien démarrer avec des pages Razor dans ASP.NET Core
 
@@ -41,10 +40,7 @@ Il existe trois versions de ce didacticiel :
   ![Nouvelle application web ASP.NET Core](../../mvc/razor-pages/index/_static/np.png)
 * Sélectionnez **ASP.NET Core 2.0** dans la liste déroulante, puis sélectionnez **Application web**.
 
-> [!NOTE]
-> Si vous souhaitez utiliser ASP.NET Core sur le .NET Framework, vous devez d’abord sélectionner **.NET Framework** dans la liste déroulante la plus à gauche dans la boîte de dialogue, puis la version d’ASP.NET Core souhaitée.
-
-  ![Application web (pages Razor)](razor-pages-start/_static/np2.png)
+  [!INCLUDE[install 2.0](../../includes/dotnetcore-on-dotnetfx-vs.md)]
 
 Le modèle Visual Studio crée un projet de démarrage :
 
@@ -58,6 +54,9 @@ Appuyez sur **F5** pour exécuter l’application en mode débogage ou sur **Ctr
 * Si vous lancez l’application avec **Ctrl+F5** (mode sans débogage), vous pouvez effectuer des modifications du code, enregistrer le fichier, actualiser le navigateur et afficher les modifications du code. De nombreux développeurs préfèrent utiliser le mode sans débogage pour lancer rapidement l’application et afficher les changements.
 
 [!INCLUDE[razor-pages-start](../../includes/RP/razor-pages-start.md)]
+
+>[!div class="step-by-step"]
+[Suivant : Ajout d’un modèle](xref:tutorials/razor-pages/model)
 
 >[!div class="step-by-step"]
 [Suivant : Ajout d’un modèle](xref:tutorials/razor-pages/model)

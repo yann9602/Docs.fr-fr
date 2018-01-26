@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/crud
-ms.openlocfilehash: 7e495ba56958012713836c1dd75ac0c5a8bff942
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 873e4592ba668bbcb22f761c2a547a2a27d7e443
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="create-read-update-and-delete---ef-core-with-aspnet-core-mvc-tutorial-2-of-10"></a>Créer, lire, mettre à jour et supprimer - Core EF avec le didacticiel d’ASP.NET MVC de base (2 sur 10)
 
@@ -46,7 +46,7 @@ Dans *Controllers/StudentsController.cs*, la méthode d’action pour les détai
 
 Le `Include` et `ThenInclude` méthodes provoquent le contexte de chargement le `Student.Enrollments` propriété de navigation et dans chaque inscription le `Enrollment.Course` propriété de navigation.  Vous en apprendrez davantage sur ces méthodes dans les [la lecture des données connexes](read-related-data.md) didacticiel.
 
-Le `AsNoTracking` méthode améliore les performances dans les scénarios où les entités retournées ne seront pas modifiées dans la durée de vie du contexte actuel. Vous allez en savoir plus sur `AsNoTracking` à la fin de ce didacticiel.
+Le `AsNoTracking` méthode améliore les performances dans les scénarios où les entités retournées ne sont pas mis à jour dans la durée de vie du contexte actuel. Vous allez en savoir plus sur `AsNoTracking` à la fin de ce didacticiel.
 
 ### <a name="route-data"></a>Données d’itinéraire
 
@@ -118,7 +118,7 @@ Dans *StudentsController.cs*, modifier le HttpPost `Create` méthode en ajoutant
 
 Ce code ajoute l’entité Student créée par le classeur de modèles ASP.NET MVC à l’entité étudiants défini et puis enregistre les modifications dans la base de données. (Classeur de modèles fait référence à la fonctionnalité d’ASP.NET MVC qui rend plus facile de travailler avec les données envoyées par un formulaire, un classeur de modèles convertit les valeurs de formulaire publiées à des types CLR et les transmet à la méthode d’action dans les paramètres. Dans ce cas, le classeur de modèles instancie une entité de l’étudiant pour vous à l’aide des valeurs de propriété de la collection de formulaires.)
 
-Vous supprimé `ID` à partir de la `Bind` d’attribut, car l’ID est la valeur de clé primaire SQL Server définira automatiquement lorsque la ligne est insérée. Entrée de l’utilisateur ne définit pas la valeur d’ID.
+Vous supprimé `ID` à partir de la `Bind` d’attribut, car l’ID est la valeur de clé primaire SQL Server définira automatiquement lorsque la ligne est insérée. Entrée de l’utilisateur n’affecte pas la valeur d’ID.
 
 Autre que le `Bind` attribut, le bloc try-catch est la seule modification que vous avez apportées au code de modèle généré automatiquement. Si une exception qui dérive de `DbUpdateException` est interceptée pendant l’enregistrement des modifications, un message d’erreur générique s’affiche. `DbUpdateException`exceptions sont parfois due à un élément externe à l’application plutôt qu’une erreur de programmation, il est conseillé pour réessayer. Bien que non implémenté dans cet exemple, une application de qualité production se connectera l’exception. Pour plus d’informations, consultez la **journal pour obtenir un aperçu** section [surveillance et télémétrie (construction réelle les applications Cloud avec Azure)](https://docs.microsoft.com/aspnet/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry).
 
@@ -176,7 +176,7 @@ Remplacez la méthode d’action HttpPost modifier avec le code suivant.
 
 [!code-csharp[Main](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_ReadFirst)]
 
-Ces modifications implémentent une meilleure pratique de sécurité pour empêcher overposting. Le scaffolder généré un `Bind` d’attribut et ajouté l’entité créée par le classeur de modèles à l’entité avec une `Modified` indicateur. Que code n’est pas recommandé pour de nombreux scénarios, car le `Bind` attribut efface toutes les données existantes dans les champs non répertoriés dans le `Include` paramètre.
+Ces modifications implémentent une meilleure pratique de sécurité pour empêcher overposting. Le scaffolder généré un `Bind` d’attribut et ajouté l’entité créée par le classeur de modèles à l’entité avec une `Modified` indicateur. Que le code n’est pas recommandé pour de nombreux scénarios, car le `Bind` attribut efface toutes les données existantes dans les champs non répertoriés dans le `Include` paramètre.
 
 Le nouveau code lit l’entité existante et les appels `TryUpdateModel` pour mettre à jour les champs dans l’entité récupérée [en fonction de l’entrée d’utilisateur dans les données de formulaire publiées](xref:mvc/models/model-binding#how-model-binding-works). Le suivi automatique d’Entity Framework définit le `Modified` indicateur sur les champs qui sont modifiés par l’entrée du formulaire. Lorsque le `SaveChanges` est appelée, Entity Framework crée des instructions SQL pour mettre à jour la ligne de base de données. Conflits d’accès concurrentiel sont ignorés, et uniquement les colonnes de table qui ont été mis à jour par l’utilisateur sont mises à jour dans la base de données. (Un prochain didacticiel montre comment gérer les conflits d’accès concurrentiel.)
 

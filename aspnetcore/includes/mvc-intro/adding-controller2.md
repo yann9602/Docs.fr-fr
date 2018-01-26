@@ -16,7 +16,7 @@ MVC appelle les classes du contrôleur (et les méthodes d’action au sein de c
 
 `/[Controller]/[ActionName]/[Parameters]`
 
-Vous définissez le format pour le routage dans le fichier *Startup.cs*.
+Vous définissez le format pour le routage dans la méthode `Configure` du fichier *Startup.cs*.
 
 [!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Startup.cs?name=snippet_1&highlight=5)]
 

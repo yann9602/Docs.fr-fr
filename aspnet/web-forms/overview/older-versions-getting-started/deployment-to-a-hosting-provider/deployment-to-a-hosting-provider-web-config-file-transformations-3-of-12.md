@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-web-config-file-transformations-3-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: 8f68a85e44389ed17576436a9210c0ca3f414403
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ed78b55d2b0315cf428f137c56ad85b29a95e1c5
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-webconfig-file-transformations---3-of-12"></a>Déploiement d’Application Web ASP.NET avec SQL Server Compact à l’aide de Visual Studio ou Visual Web Developer : Transformations du fichier Web.Config - 3 sur 12
 ====================
@@ -37,7 +37,7 @@ Rappel : Si vous obtenez un message d’erreur, ou quelque chose ne fonctionne 
 
 ## <a name="webconfig-transformations-versus-web-deploy-parameters"></a>Les Transformations Web.config et Web déploiement des paramètres
 
-Il existe deux façons d’automatiser le processus de modification *Web.config* les paramètres des fichiers : [transformations Web.config](https://msdn.microsoft.com/en-us/library/dd465326.aspx) et [paramètres de déploiement Web](https://msdn.microsoft.com/en-us/library/ff398068.aspx). A *Web.config* fichier de transformation contient le balisage XML qui spécifie comment modifier le *Web.config* fichier lorsqu’il est déployé. Vous pouvez spécifier des modifications pour spécifiques à différentes configurations de build et spécifique des profils de publication. Les configurations de build par défaut sont Debug et Release, et vous pouvez créer des configurations de build personnalisée. Un profil de publication correspond généralement à un environnement de destination. (Vous allez apprendre plus sur Publier les profils dans le [déploiement vers IIS comme environnement de Test](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12.md) didacticiel.)
+Il existe deux façons d’automatiser le processus de modification *Web.config* les paramètres des fichiers : [transformations Web.config](https://msdn.microsoft.com/library/dd465326.aspx) et [paramètres de déploiement Web](https://msdn.microsoft.com/library/ff398068.aspx). A *Web.config* fichier de transformation contient le balisage XML qui spécifie comment modifier le *Web.config* fichier lorsqu’il est déployé. Vous pouvez spécifier des modifications pour spécifiques à différentes configurations de build et spécifique des profils de publication. Les configurations de build par défaut sont Debug et Release, et vous pouvez créer des configurations de build personnalisée. Un profil de publication correspond généralement à un environnement de destination. (Vous allez apprendre plus sur Publier les profils dans le [déploiement vers IIS comme environnement de Test](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12.md) didacticiel.)
 
 Paramètres de déploiement Web peuvent servir à spécifier les différents types de paramètres qui doivent être configurés au cours du déploiement, y compris les paramètres qui sont trouvent dans *Web.config* fichiers. Lorsqu’il est utilisé pour spécifier *Web.config* fichier change, les paramètres de Web Deploy sont plus complexes à configurer, mais ils sont utiles lorsque vous ne connaissez pas la valeur à définir jusqu'à ce que vous déployez. Par exemple, dans un environnement d’entreprise, vous pouvez créer un *package de déploiement* et lui donner à une personne du département informatique pour installer en production, et que cette personne doit être en mesure d’entrer des chaînes de connexion ou mots de passe que vous ne connaître.
 
@@ -146,7 +146,7 @@ Vous avez spécifié maintenant toutes les *Web.config* transformations dont vou
 
 ## <a name="more-information"></a>Informations complémentaires
 
-Pour plus d’informations sur les sujets abordés dans ce didacticiel, consultez le scénario de transformation Web.config dans [ASP.NET Deployment Content Map](https://msdn.microsoft.com/en-us/library/bb386521.aspx).
+Pour plus d’informations sur les sujets abordés dans ce didacticiel, consultez le scénario de transformation Web.config dans [ASP.NET Deployment Content Map](https://msdn.microsoft.com/library/bb386521.aspx).
 
 >[!div class="step-by-step"]
 [Précédent](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12.md)

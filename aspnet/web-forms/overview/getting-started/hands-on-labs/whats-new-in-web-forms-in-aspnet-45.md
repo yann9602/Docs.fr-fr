@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/hands-on-labs/whats-new-in-web-forms-in-aspnet-45
 msc.type: authoredcontent
-ms.openlocfilehash: 23e38416dc294a1a07cb320cf5ab328fa036d1e8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 560f949f79be8ba4936e4a6f8ee8ee32ef15acbf
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="whats-new-in-web-forms-in-aspnet-45"></a>Quelles sont les nouveautés dans les formulaires Web dans ASP.NET 4.5
 ====================
@@ -59,7 +59,7 @@ Dans cet atelier pratique, vous allez apprendre comment :
 - Implémenter le traitement dans les formulaires Web asynchrone de la page
 
 <a id="Prerequisites"></a>
-### <a name="prerequisites"></a>Conditions préalables
+### <a name="prerequisites"></a>Prérequis
 
 Vous devez disposer des éléments suivants pour effectuer ce laboratoire :
 
@@ -562,7 +562,7 @@ Dans cette tâche, vous mettrez à jour la page Détails du produit pour autoris
     (Code d’extrait de code - *Web Forms Lab - Ex03 - UpdateProductImage appel*)
 
     [!code-csharp[Main](whats-new-in-web-forms-in-aspnet-45/samples/sample34.cs)]
-7. Exécutez l’application et essayez de télécharger une image pour un produit. Par exemple, vous pouvez utiliser l’URL d’image suivants à partir d’Office Clip Arts : [ [http://officeimg.vo.msecnd.net/en-us/images/MB900437099.jpg](http://officeimg.vo.msecnd.net/en-us/images/MB900437099.jpg)](http://officeimg.vo.msecnd.net/en-us/images/MB900437099.jpg)
+7. Exécutez l’application et essayez de télécharger une image pour un produit. Par exemple, vous pouvez utiliser l’URL d’image suivants à partir d’Office Clip Arts : [ [http://officeimg.vo.msecnd.net/images/MB900437099.jpg](http://officeimg.vo.msecnd.net/images/MB900437099.jpg)](http://officeimg.vo.msecnd.net/images/MB900437099.jpg)
 
     ![Définition d’une image pour un produit](whats-new-in-web-forms-in-aspnet-45/_static/image23.png "définition d’une image pour un produit")
 
@@ -619,7 +619,7 @@ Opérations de longue durée sur votre site web sont des candidats idéaux pour 
 * * *
 
 <a id="Summary"></a>
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Dans cet atelier pratique, les concepts suivants ont été traités et présentés icis :
 

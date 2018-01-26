@@ -11,11 +11,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: spa/react
-ms.openlocfilehash: a63d81633a0f37d24ad5e05de293e3c41004eba1
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: 5978094083a098a771f5dca103434ea8fcce7777
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="use-the-react-project-template-release-candidate"></a>Utilisez le modèle de projet React (version finale)
 
@@ -33,7 +33,7 @@ Pour commencer, assurez-vous que vous avez [installé le modèle de projet mis �
 Créez un nouveau projet à partir d’une invite de commandes à l’aide de la commande `dotnet new react` dans un répertoire vide. Par exemple, les commandes suivantes créent l’application dans un *application mon nouveau* active et basculer vers ce répertoire :
 
 ```console
-dotnet new -o my-new-app
+dotnet new react -o my-new-app
 cd my-new-app
 ```
 

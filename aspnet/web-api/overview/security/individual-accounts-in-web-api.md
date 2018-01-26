@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/security/individual-accounts-in-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 8207df79c1e915b33a0ba095d917a6dc69550173
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e2056e769edf972cba830b31cf37f6418148ca73
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="secure-a-web-api-with-individual-accounts-and-local-login-in-aspnet-web-api-22"></a>Sécuriser une API Web avec des comptes individuels et de la connexion locale dans ASP.NET Web API 2.2
 ====================
@@ -204,8 +204,8 @@ Voici les classes de l’application principale qui implémentent ces fonctionna
 
 - `AccountController`. Fournit un point de terminaison API Web pour la gestion des comptes d’utilisateur. Le `Register` action est la seule que nous avons utilisés dans ce didacticiel. Autres méthodes de la classe prend en charge la réinitialisation de mot de passe, les connexions de réseaux sociale et autres fonctionnalités.
 - `ApplicationUser`, défini dans /Models/IdentityModels.cs. Cette classe est le modèle EF de comptes d’utilisateur dans la base de données d’appartenance.
-- `ApplicationUserManager`, défini dans/App\_Start/IdentityConfig.cs cette classe dérive [UserManager](https://msdn.microsoft.com/en-us/library/dn613290.aspx) et effectue des opérations sur les comptes d’utilisateur, telles que la création d’un nouvel utilisateur, vérification des mots de passe et ainsi de suite et applique automatiquement modifications apportées à la base de données.
-- `ApplicationOAuthProvider`. Cet objet se connecte à l’intergiciel (middleware) OWIN et traite les événements déclenchés par l’intergiciel (middleware). Elle est dérivée de [OAuthAuthorizationServerProvider](https://msdn.microsoft.com/en-us/library/microsoft.owin.security.oauth.oauthauthorizationserverprovider.aspx).
+- `ApplicationUserManager`, défini dans/App\_Start/IdentityConfig.cs cette classe dérive [UserManager](https://msdn.microsoft.com/library/dn613290.aspx) et effectue des opérations sur les comptes d’utilisateur, telles que la création d’un nouvel utilisateur, vérification des mots de passe et ainsi de suite et applique automatiquement modifications apportées à la base de données.
+- `ApplicationOAuthProvider`. Cet objet se connecte à l’intergiciel (middleware) OWIN et traite les événements déclenchés par l’intergiciel (middleware). Elle est dérivée de [OAuthAuthorizationServerProvider](https://msdn.microsoft.com/library/microsoft.owin.security.oauth.oauthauthorizationserverprovider.aspx).
 
 ![](individual-accounts-in-web-api/_static/image14.png)
 

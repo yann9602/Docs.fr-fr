@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/custom-formatting-based-upon-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 7c44327e1196a9e7cb9f9d12c963fb5f9b6b1b41
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 606721b01fae34a7bce85d497a442cb110f1b51e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="custom-formatting-based-upon-data-c"></a>Mise en forme personnalisée en fonction des données (c#)
 ====================
@@ -93,7 +93,7 @@ Le code suivant illustre comment déterminer si le `UnitPrice` valeur liée au c
 [!code-csharp[Main](custom-formatting-based-upon-data-cs/samples/sample3.cs)]
 
 > [!NOTE]
-> Étant donné que `UnitPrice` peut avoir un `NULL` valeur dans la base de données, nous Vérifiez tout d’abord vous assurer que nous n’avons pas affaire à un `NULL` valeur avant d’accéder à la `ProductsRow`de `UnitPrice` propriété. Cette vérification est importante, car si nous tentons pour accéder à la `UnitPrice` propriété lorsqu’il a un `NULL` valeur le `ProductsRow` objet lèvera une [StrongTypingException exception](https://msdn.microsoft.com/en-us/library/system.data.strongtypingexception.aspx).
+> Étant donné que `UnitPrice` peut avoir un `NULL` valeur dans la base de données, nous Vérifiez tout d’abord vous assurer que nous n’avons pas affaire à un `NULL` valeur avant d’accéder à la `ProductsRow`de `UnitPrice` propriété. Cette vérification est importante, car si nous tentons pour accéder à la `UnitPrice` propriété lorsqu’il a un `NULL` valeur le `ProductsRow` objet lèvera une [StrongTypingException exception](https://msdn.microsoft.com/library/system.data.strongtypingexception.aspx).
 
 
 ## <a name="step-3-formatting-the-unitprice-value-in-the-detailsview"></a>Étape 3 : Mise en forme la valeur de UnitPrice dans le contrôle DetailsView
@@ -189,7 +189,7 @@ Une fois que nous disposons d’une référence de programmation pour le contrô
 [!code-csharp[Main](custom-formatting-based-upon-data-cs/samples/sample12.cs)]
 
 > [!NOTE]
-> La syntaxe de mise en forme d’un modèle par programme l’accès à l’utilisation de contrôle Web `FindControl("controlID")` et puis en définissant ses propriétés associées au style peut également être utilisé lors de l’utilisation [TemplateField](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.templatefield(VS.80).aspx) dans le DetailsView ou GridView contrôles. Nous allons examiner TemplateField dans notre didacticiel suivant.
+> La syntaxe de mise en forme d’un modèle par programme l’accès à l’utilisation de contrôle Web `FindControl("controlID")` et puis en définissant ses propriétés associées au style peut également être utilisé lors de l’utilisation [TemplateField](https://msdn.microsoft.com/library/system.web.ui.webcontrols.templatefield(VS.80).aspx) dans le DetailsView ou GridView contrôles. Nous allons examiner TemplateField dans notre didacticiel suivant.
 
 
 Figures 7 montre le FormView lors de l’affichage d’un produit dont `UnitsInStock` valeur est supérieure à 10, alors que le produit dans la Figure 8 a sa valeur inférieure à 10.
@@ -307,7 +307,7 @@ Au lieu de définir la `GridViewRow`de `BackColor` propriété directement, teno
 **Figure 11**: The Most des produits abordables sont mis en surbrillance en jaune ([cliquez pour afficher l’image en taille réelle](custom-formatting-based-upon-data-cs/_static/image27.png))
 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Dans ce didacticiel, nous avons vu comment mettre en forme le GridView, DetailsView et FormView basé sur les données liées au contrôle. Pour cela que nous avons créé un gestionnaire d’événements pour le `DataBound` ou `RowDataBound` événements, où les données sous-jacentes a été examinées avec une modification de mise en forme, si nécessaire. Pour accéder aux données liées à un contrôle DetailsView ou les FormView, nous utilisons le `DataItem` propriété dans le `DataBound` Gestionnaire d’événements ; pour un GridView, chaque `GridViewRow` l’instance `DataItem` propriété contient les données liées à cette ligne, qui est disponible dans le `RowDataBound` Gestionnaire d’événements.
 

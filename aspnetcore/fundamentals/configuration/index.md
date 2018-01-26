@@ -5,16 +5,16 @@ description: "Utilisez l’API de configuration pour configurer une application 
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
-ms.date: 1/11/2018
+ms.date: 01/11/2018
 ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/configuration/index
-ms.openlocfilehash: 0f8618898089418f709506aee5eb013f983dc294
-ms.sourcegitcommit: 87168cdc409e7a7257f92a0f48f9c5ab320b5b28
+ms.openlocfilehash: c4f57d1e02ad5f4e235039999af9df9d236756a7
+ms.sourcegitcommit: 3d512ea991ac36dfd4c800b7d1f8a27bfc50635e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/23/2018
 ---
 # <a name="configure-an-aspnet-core-app"></a>Configurer une application ASP.NET Core
 
@@ -50,7 +50,7 @@ L’application lit et affiche les paramètres de configuration suivants :
 
 La configuration se compose d’une liste hiérarchique des paires nom/valeur dans laquelle les nœuds sont séparés par un signe deux-points. Pour récupérer une valeur, accédez à l’indexeur `Configuration` avec la clé de l’élément correspondant :
 
-[!code-csharp[Main](index/sample/ConfigJson/Program.cs?range=24-24)]
+[!code-csharp[Main](index/sample/ConfigJson/Program.cs?range=21-22)]
 
 Pour utiliser des tableaux dans des sources de configuration au format JSON, utilisez un index de tableau comme partie d’une chaîne séparée par des signes deux-points. L’exemple suivant obtient le nom du premier élément dans le tableau `wizards` précédent :
 
@@ -59,7 +59,7 @@ Console.Write($"{Configuration["wizards:0:Name"]}");
 // Output: Gandalf
 ```
 
-Les paires nom/valeur écrites dans les fournisseurs [Configuration](https://docs.microsoft.com/ dotnet/api/microsoft.extensions.configuration) intégrés ne sont **pas** conservées. Toutefois, vous pouvez créer un fournisseur personnalisé qui enregistre les valeurs. Consultez la section relative à la création d’un [fournisseur de configuration personnalisé](xref:fundamentals/configuration/index#custom-config-providers).
+Les paires nom/valeur écrites dans les fournisseurs [Configuration](/dotnet/api/microsoft.extensions.configuration) intégrés ne sont **pas** conservées. Toutefois, vous pouvez créer un fournisseur personnalisé qui enregistre les valeurs. Consultez la section relative à la création d’un [fournisseur de configuration personnalisé](xref:fundamentals/configuration/index#custom-config-providers).
 
 L’exemple précédent utilise l’indexeur de configuration pour lire des valeurs. Pour accéder à la configuration en dehors de `Startup`, utilisez le *modèle d’options*. Pour plus d’informations, consultez la rubrique [Options](xref:fundamentals/configuration/options).
 
@@ -72,7 +72,7 @@ Il est courant d’avoir des paramètres de configuration différents pour diff�
 * *appsettings.\<nom_environnement>.json*
 * Variables d’environnement
 
-Les applications ASP.NET Core 1.x doivent appeler `AddJsonFile` et [AddEnvironmentVariables](https://docs.microsoft.com/ dotnet/api/microsoft.extensions.configuration.environmentvariablesextensions.addenvironmentvariables #Microsoft_Extensions_Configuration_EnvironmentVariablesExtensions_AddEnvironmentVariables_Microsoft_Extensions_Configuration_IConfigurationBuilder_System_String_).
+Les applications ASP.NET Core 1.x doivent appeler `AddJsonFile` et [AddEnvironmentVariables](/dotnet/api/microsoft.extensions.configuration.environmentvariablesextensions.addenvironmentvariables#Microsoft_Extensions_Configuration_EnvironmentVariablesExtensions_AddEnvironmentVariables_Microsoft_Extensions_Configuration_IConfigurationBuilder_System_String_).
 
 Consultez [AddJsonFile](/dotnet/api/microsoft.extensions.configuration.jsonconfigurationextensions) pour obtenir une explication des paramètres. `reloadOnChange` est pris en charge uniquement dans ASP.NET Core 1.1 et ultérieur.
 
@@ -106,7 +106,7 @@ Les valeurs de configuration sont retournées sous forme de chaînes, mais la li
 
 ### <a name="getvalue"></a>GetValue
 
-L’exemple suivant illustre la méthode d’extension [GetValue&lt;T&gt;](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.configuration.configurationbinder#Microsoft_Extensions_Configuration_ConfigurationBinder_GetValue_Microsoft_Extensions_Configuration_IConfiguration_System_Type_System_String_System_Object_) :
+L’exemple suivant illustre la méthode d’extension [GetValue&lt;T&gt;](/dotnet/api/microsoft.extensions.configuration.configurationbinder.get?view=aspnetcore-2.0#Microsoft_Extensions_Configuration_ConfigurationBinder_Get__1_Microsoft_Extensions_Configuration_IConfiguration_) :
 
 [!code-csharp[Main](index/sample/InMemoryGetValue/Program.cs?highlight=31)]
 
@@ -175,11 +175,11 @@ Ajoutez un `ConfigurationContext` pour stocker les valeurs configurées et y acc
 
 [!code-csharp[Main](index/sample/CustomConfigurationProvider/ConfigurationContext.cs?name=snippet1)]
 
-Créez une classe qui implémente [IConfigurationSource](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.configuration.iconfigurationsource) :
+Créez une classe qui implémente [IConfigurationSource](/dotnet/api/Microsoft.Extensions.Configuration.IConfigurationSource) :
 
 [!code-csharp[Main](index/sample/CustomConfigurationProvider/EntityFrameworkConfigurationSource.cs?highlight=7)]
 
-Créez le fournisseur de configuration personnalisé en héritant de [ConfigurationProvider](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.configuration.configurationprovider). Le fournisseur de configuration initialise la base de données quand elle est vide :
+Créez le fournisseur de configuration personnalisé en héritant de [ConfigurationProvider](/dotnet/api/Microsoft.Extensions.Configuration.ConfigurationProvider). Le fournisseur de configuration initialise la base de données quand elle est vide :
 
 [!code-csharp[Main](index/sample/CustomConfigurationProvider/EntityFrameworkConfigurationProvider.cs?highlight=9,18-31,38-39)]
 
@@ -401,7 +401,7 @@ Un fichier *web.config* est nécessaire pour héberger l’application dans IIS 
 * `IConfiguration` a deux spécialisations :
   * `IConfigurationRoot` Utilisé pour le nœud racine. Peut déclencher un rechargement.
   * `IConfigurationSection` Représente une section de valeurs de configuration. Les méthodes `GetSection` et `GetChildren` retournent un `IConfigurationSection`.
-  * Utilisez [IConfigurationRoot](https://docs.microsoft.com/ dotnet/api/microsoft.extensions.configuration.iconfigurationroot) quand vous rechargez la configuration ou devez accéder à chaque fournisseur. Aucune de ces situations n’est courante.
+  * Utilisez [IConfigurationRoot](/dotnet/api/microsoft.extensions.configuration.iconfigurationroot) quand vous rechargez la configuration ou devez accéder à chaque fournisseur. Aucune de ces situations n’est courante.
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 

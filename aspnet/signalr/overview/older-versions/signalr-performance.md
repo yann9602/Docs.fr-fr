@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/older-versions/signalr-performance
 msc.type: authoredcontent
-ms.openlocfilehash: 52052ad202958eb5d648ceb64d9f06fb86ef3777
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: bad742af28d6c36bb1b66207c2ba09d140332449
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="signalr-performance-signalr-1x"></a>SignalR performances (SignalR 1.x)
 ====================
@@ -70,7 +70,7 @@ En diminuant l’encombrement de mémoire (autrement dit, la quantité de mémoi
 
 ### <a name="tuning-your-signalr-server-for-performance"></a>Réglage de votre serveur SignalR pour des performances
 
-Les paramètres de configuration suivants peuvent être utilisés pour paramétrer votre serveur pour de meilleures performances dans une application SignalR. Pour obtenir des informations générales sur la façon d’améliorer les performances dans une application ASP.NET, consultez [amélioration des performances ASP.NET](https://msdn.microsoft.com/en-us/library/ff647787.aspx).
+Les paramètres de configuration suivants peuvent être utilisés pour paramétrer votre serveur pour de meilleures performances dans une application SignalR. Pour obtenir des informations générales sur la façon d’améliorer les performances dans une application ASP.NET, consultez [amélioration des performances ASP.NET](https://msdn.microsoft.com/library/ff647787.aspx).
 
 **Paramètres de configuration SignalR**
 
@@ -171,7 +171,7 @@ Les métriques suivantes mesurent le trafic via le bus de messages SignalR inter
 - **Bus de messages des Messages publiés par seconde**
 - **Message Bus abonnés actuel**
 - **Nombre Total d’abonnés message Bus**
-- **Les abonnés de Bus de messages/s**
+- **Message Bus Subscribers/Sec**
 - **Bus de messages allouée travailleurs**
 - **Threads de travail occupés de Bus de messages**
 - **Actuel de rubriques de Bus de messages**
@@ -209,7 +209,7 @@ Pour plus d’informations sur ce que ces compteurs sont de mesure, consultez [S
 
 Les compteurs de performances suivants peuvent également être utiles pour surveiller les performances de votre application.
 
-**Mémoire**
+**Memory**
 
 - .NET CLR mémoire Nb d’octets dans tous les segments de mémoire (pour w3wp)
 
@@ -219,7 +219,7 @@ Les compteurs de performances suivants peuvent également être utiles pour surv
 - ASP.NET\Queued
 - ASP.NET\Rejected
 
-**PROCESSEUR**
+**CPU**
 
 - Temps de processeur Information\Processor
 
@@ -244,6 +244,6 @@ Les compteurs de performances suivants peuvent également être utiles pour surv
 
 Pour plus d’informations sur les performances d’ASP.NET la surveillance et de paramétrage, consultez les rubriques suivantes :
 
-- [Vue d’ensemble des performances ASP.NET](https://msdn.microsoft.com/en-us/library/cc668225(v=vs.100).aspx)
+- [Vue d’ensemble des performances ASP.NET](https://msdn.microsoft.com/library/cc668225(v=vs.100).aspx)
 - [Utilisation de Thread ASP.NET sur IIS 6.0, IIS 7.0 et IIS 7.5](https://blogs.msdn.com/b/tmarq/archive/2007/07/21/asp-net-thread-usage-on-iis-7-0-and-6-0.aspx)
-- [&lt;applicationPool&gt; élément (paramètres Web)](https://msdn.microsoft.com/en-us/library/dd560842.aspx)
+- [&lt;applicationPool&gt; élément (paramètres Web)](https://msdn.microsoft.com/library/dd560842.aspx)

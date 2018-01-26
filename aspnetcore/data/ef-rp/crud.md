@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/crud
-ms.openlocfilehash: c26ba75f6a401d50a6b46bd7ee40500c5736f20f
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: d9b34c141401fbeaafe439fae1a7a75f2fe7b4ae
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="create-read-update-and-delete---ef-core-with-razor-pages-2-of-8"></a>Créer, lire, mettre à jour et supprimer - Core EF avec les Pages Razor (2 de 8)
 
@@ -132,7 +132,7 @@ Dans l’exemple précédent :
 <a id="overpost"></a>
 ### <a name="overposting"></a>Sur-validation
 
-À l’aide de `TryUpdateModel` pour mettre à jour les champs avec les valeurs publiées est une meilleure pratique de sécurité, car elle empêche overposting. Par exemple, supposons que l’entité Student inclut un `Secret` propriété que cette page web ne doit pas mettre à jour ou ajouter :
+À l’aide de `TryUpdateModel` pour mettre à jour les champs avec les valeurs publiées est une meilleure pratique de sécurité, car elle empêche overposting. Par exemple, supposons que l’entité Student inclut un `Secret` propriété cette page web ne doivent pas mettre à jour ou ajouter :
 
 [!code-csharp[Main](intro/samples/cu/Models/StudentZsecret.cs?name=snippet_Intro&highlight=7)]
 

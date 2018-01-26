@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/displaying-binary-data-in-the-data-web-controls-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 1b9dadbfb82790a08a25a5c0f759b733cb59eb60
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: df79748bf5734ffcb9eb81ca089aeded0e63bdc5
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="displaying-binary-data-in-the-data-web-controls-vb"></a>Affichage des données binaires dans les contrôles Web de données (Visual Basic)
 ====================
@@ -129,7 +129,7 @@ Ensuite, créez un `Protected` méthode dans ASP.NET page classe code-behind de 
 
 [!code-vb[Main](displaying-binary-data-in-the-data-web-controls-vb/samples/sample3.vb)]
 
-Cette méthode détermine si le passé dans `Object` valeur est une base de données `NULL` et, dans ce cas, retourne un message indiquant que la catégorie ne dispose pas d’une brochure. Sinon, s’il existe un `BrochurePath` valeur, il s’affiché dans un lien hypertexte. Notez que si le `BrochurePath` valeur est présente s passé dans le [ `ResolveUrl(url)` méthode](https://msdn.microsoft.com/en-us/library/system.web.ui.control.resolveurl.aspx). Cette méthode résout le passé dans *url*, en remplaçant le `~` caractère avec le chemin d’accès virtuel approprié. Par exemple, si l’application est rattachée à `/Tutorial55`, `ResolveUrl("~/Brochures/Meats.pdf")` retournera `/Tutorial55/Brochures/Meat.pdf`.
+Cette méthode détermine si le passé dans `Object` valeur est une base de données `NULL` et, dans ce cas, retourne un message indiquant que la catégorie ne dispose pas d’une brochure. Sinon, s’il existe un `BrochurePath` valeur, il s’affiché dans un lien hypertexte. Notez que si le `BrochurePath` valeur est présente s passé dans le [ `ResolveUrl(url)` méthode](https://msdn.microsoft.com/library/system.web.ui.control.resolveurl.aspx). Cette méthode résout le passé dans *url*, en remplaçant le `~` caractère avec le chemin d’accès virtuel approprié. Par exemple, si l’application est rattachée à `/Tutorial55`, `ResolveUrl("~/Brochures/Meats.pdf")` retournera `/Tutorial55/Brochures/Meat.pdf`.
 
 La figure 10 illustre la page après que ces modifications ont été appliquées. Notez que la catégorie Seafood s `BrochurePath` champ affiche maintenant le texte Brochure aucune n’est disponible.
 
@@ -164,7 +164,7 @@ Dans la classe code-behind de la page s, ajoutez le code suivant à la `Page_Loa
 
 [!code-vb[Main](displaying-binary-data-in-the-data-web-controls-vb/samples/sample6.vb)]
 
-Ce code commence par la lecture dans le `CategoryID` valeur de chaîne de requête dans une variable nommée `categoryID`. Ensuite, les données d’image sont récupérées via un appel à la `CategoriesBLL` classe s `GetCategoryWithBinaryDataByCategoryID(categoryID)` (méthode). Ces données sont retournées au client à l’aide de la `Response.BinaryWrite(data)` (méthode), mais avant que cela est appelée, le `Picture` en-tête de colonne valeur s OLE doit être supprimé. Cela est accompli en créant un `Byte` tableau nommé `strippedImageData` de contenir précisément 78 caractères inférieur à ce qui est dans le `Picture` colonne. Le [ `Array.Copy` méthode](https://msdn.microsoft.com/en-us/library/z50k9bft.aspx) est utilisé pour copier les données à partir de `category.Picture` recommencer à la position 78 à `strippedImageData`.
+Ce code commence par la lecture dans le `CategoryID` valeur de chaîne de requête dans une variable nommée `categoryID`. Ensuite, les données d’image sont récupérées via un appel à la `CategoriesBLL` classe s `GetCategoryWithBinaryDataByCategoryID(categoryID)` (méthode). Ces données sont retournées au client à l’aide de la `Response.BinaryWrite(data)` (méthode), mais avant que cela est appelée, le `Picture` en-tête de colonne valeur s OLE doit être supprimé. Cela est accompli en créant un `Byte` tableau nommé `strippedImageData` de contenir précisément 78 caractères inférieur à ce qui est dans le `Picture` colonne. Le [ `Array.Copy` méthode](https://msdn.microsoft.com/library/z50k9bft.aspx) est utilisé pour copier les données à partir de `category.Picture` recommencer à la position 78 à `strippedImageData`.
 
 Le `Response.ContentType` propriété spécifie le [type MIME](http://en.wikipedia.org/wiki/MIME) du contenu qui est retourné afin que le navigateur sait comment rendre. Étant donné que la `Categories` table s `Picture` la colonne est une image bitmap, la type MIME de la bitmap est utilisée ici (image/bmp). Si vous omettez le type MIME, la plupart des navigateurs s’affichera toujours l’image correctement, car il peuvent déduire le type en fonction du contenu des données binaires de s de fichier image. Toutefois, il s prudente à inclure MIME de type lorsque cela est possible. Consultez le [site Web de s Internet Assigned Numbers Authority](http://www.iana.org/) pour une liste complète des [types de média MIME](http://www.iana.org/assignments/media-types/).
 
@@ -216,7 +216,7 @@ Prenez un moment pour afficher cette page via un navigateur. Notez la façon don
 **Figure 13**: s de catégorie de l’image est affichée pour chaque ligne ([cliquez pour afficher l’image en taille réelle](displaying-binary-data-in-the-data-web-controls-vb/_static/image20.png))
 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Dans ce didacticiel, nous avons examiné comment présenter des données binaires. Comment les données sont présentées varie selon le type de données. Pour les fichiers de brochure PDF, nous avons proposé à l’utilisateur une Brochure vue lien qui, lorsque vous cliquez dessus, a mis l’utilisateur directement dans le fichier PDF. Pour l’image de s catégorie, nous avons tout d’abord créer une page pour récupérer et retourner les données binaires à partir de la base de données et ensuite utilisé cette page pour afficher chaque image s de catégorie dans un GridView.
 

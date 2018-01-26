@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/what-is-new-in-aspnet-mvc
 msc.type: content
-ms.openlocfilehash: e7f92dd7a09d1986ad775203effcbce76fb0e6f4
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 29692b380f0ad1673459681042610876d152a76f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="whats-new-in-aspnet-mvc-2"></a>Quelles sont les nouveautés dans ASP.NET MVC 2
 ====================
@@ -44,7 +44,7 @@ ms.lasthandoff: 11/10/2017
 [Modifications avec rupture](#_TOC5)  
 [Exclusion de responsabilité](#_TOC6)  
 
-## <a id="_TOC1"></a>Introduction
+## <a id="_TOC1"></a>  Introduction
 
 ASP.NET MVC 2 repose sur ASP.NET MVC 1.0 et introduit un grand ensemble d’améliorations et fonctionnalités qui sont concentrent sur la productivité. Cette version est compatible avec la version 1.0 de ASP.NET MVC, afin que tous les votre base de connaissances, compétences, code et extensions pour ASP.NET MVC 1.0 continuent à appliquer.
 
@@ -66,7 +66,7 @@ Cette section décrit les fonctionnalités qui ont été introduites dans la ver
 
 Programmes d’assistance basés sur des modèles vous permettent des éléments HTML associés automatiquement pour les modifier et affichent des types de données. Par exemple, lorsque les données de type System.DateTime s’affiche dans une vue, un élément de l’interface utilisateur du sélecteur de dates permettre être automatiquement rendu. Cela est similaire au fonctionnement des modèles de champs dans Dynamic Data ASP.NET. Pour plus d’informations, consultez [à l’aide d’application auxiliaire pour afficher les données](https://go.microsoft.com/fwlink/?LinkId=159062) sur le site Web MSDN.
 
-### <a id="_TOC3_2"></a>Zones
+### <a id="_TOC3_2"></a>  Areas
 
 Zones vous permettent d’organiser un grand projet en plusieurs sections plus petites pour gérer la complexité d’une grande application Web. En général, chaque section (« zone ») représente une section distincte d’un site Web de grande taille et permet de regrouper des ensembles connexes des contrôleurs et des vues. Pour plus d’informations, consultez [procédure pas à pas : organisation d’une Application ASP.NET MVC en fonction des zones](https://go.microsoft.com/fwlink/?LinkId=158978) sur le site Web MSDN.
 
@@ -88,7 +88,7 @@ Si vous ne spécifiez pas l’espace de noms dans la méthode RegisterArea en ap
 
 ### <a id="_TOC3_3"></a>Prise en charge pour les contrôleurs asynchrones
 
-ASP.NET MVC 2 permet maintenant aux contrôleurs à traiter de manière asynchrone. Cela peut entraîner des gains de performances en permettant aux serveurs qui appellent fréquemment des opérations de blocage (comme les demandes du réseau) pour appeler non bloquant les équivalents à la place. Pour plus d’informations, consultez la [à l’aide d’un contrôleur asynchrone dans ASP.NET MVC](https://msdn.microsoft.com/en-us/library/ee728598(v=VS.100).aspx) rubrique sur MSDN.
+ASP.NET MVC 2 permet maintenant aux contrôleurs à traiter de manière asynchrone. Cela peut entraîner des gains de performances en permettant aux serveurs qui appellent fréquemment des opérations de blocage (comme les demandes du réseau) pour appeler non bloquant les équivalents à la place. Pour plus d’informations, consultez la [à l’aide d’un contrôleur asynchrone dans ASP.NET MVC](https://msdn.microsoft.com/library/ee728598(v=VS.100).aspx) rubrique sur MSDN.
 
 ### <a id="_TOC3_4"></a>Prise en charge de DefaultValueAttribute dans les paramètres de méthode d’Action
 
@@ -102,9 +102,9 @@ Supposons également que la méthode de contrôleur et l’action suivante est d
 
 Un de la demande suivante URL appelle la méthode d’action d’affichage est définie dans l’exemple précédent.
 
-- / Article/vue/123
+- /Article/View/123
 - / Article/vue/123 ? page = 1 (efficacement identique à la demande précédente)
-- / Article/vue/123 ? page = 2
+- /Article/View/123?page=2
 
 Sans l’attribut DefaultValueAttribute, la première URL à partir de la liste précédente échouera, car l’argument de la page est un type valeur non nullable dont la valeur n’a pas été fournie.
 
@@ -142,7 +142,7 @@ La classe ModelMetadataProvider fournit une abstraction pour obtenir des métado
 
 La classe ViewDataDictionary expose un objet ModelMetadata qui contient les métadonnées sont extraites à partir du modèle par la classe ModelMetadataProvider. Ainsi, les programmes d’assistance basés sur des modèles à utiliser ces métadonnées et ajuster en conséquence de leur sortie.
 
-Pour plus d’informations, consultez la documentation relative à la [ModelMetadata](https://msdn.microsoft.com/en-us/library/system.web.mvc.modelmetadataprovider(VS.100).aspx) et [ModelMetadataProvider](https://msdn.microsoft.com/en-us/library/system.web.mvc.modelmetadataprovider(VS.100).aspx) classes.
+Pour plus d’informations, consultez la documentation relative à la [ModelMetadata](https://msdn.microsoft.com/library/system.web.mvc.modelmetadataprovider(VS.100).aspx) et [ModelMetadataProvider](https://msdn.microsoft.com/library/system.web.mvc.modelmetadataprovider(VS.100).aspx) classes.
 
 ### <a id="_TOC3_7"></a>Prise en charge des attributs DataAnnotations
 
@@ -152,7 +152,7 @@ Pour plus d’informations, consultez [Comment : valider les modèle de donnée
 
 ### <a id="_TOC3_8"></a>Fournisseurs de validateurs de modèle
 
-La classe de fournisseur de validation de modèle représente une abstraction qui fournit la logique de validation pour le modèle. ASP.NET MVC inclut un fournisseur par défaut en fonction des attributs de validation qui sont inclus dans l’espace de noms System.ComponentModel.DataAnnotations. Vous pouvez également créer vos propres fournisseurs de validation qui définissent les règles de validation personnalisées et des mappages personnalisés de règles de validation pour le modèle. Pour plus d’informations, consultez la documentation relative à la [ModelValidatorProvider](https://msdn.microsoft.com/en-us/library/system.web.mvc.ModelValidatorProvider(VS.100).aspx) classe.
+La classe de fournisseur de validation de modèle représente une abstraction qui fournit la logique de validation pour le modèle. ASP.NET MVC inclut un fournisseur par défaut en fonction des attributs de validation qui sont inclus dans l’espace de noms System.ComponentModel.DataAnnotations. Vous pouvez également créer vos propres fournisseurs de validation qui définissent les règles de validation personnalisées et des mappages personnalisés de règles de validation pour le modèle. Pour plus d’informations, consultez la documentation relative à la [ModelValidatorProvider](https://msdn.microsoft.com/library/system.web.mvc.ModelValidatorProvider(VS.100).aspx) classe.
 
 ### <a id="_TOC3_9"></a>Validation côté client
 
@@ -293,13 +293,13 @@ Si vous utilisez la fonctionnalité de zones, assurez-vous de ne pas utiliser {z
 
 Ce document est une version préliminaire et peut être modifié substantiellement avant le lancement de la mise en production commerciale finale du logiciel qu’il décrit.
 
-Les informations contenues dans ce document correspondent à la connaissance que Microsoft Corporation possède des problèmes abordés à la date de la publication. Microsoft devant répondre à des conditions de marché qui évoluent, ce document ne doit pas être considéré comme un engagement de sa part, et Microsoft ne peut pas garantir l'exactitude des informations présentées à la date de la publication.
+Les informations contenues dans ce document correspondent à la connaissance que Microsoft Corporation possède des problèmes abordés à la date de la publication. Microsoft devant répondre à des conditions de marché qui évoluent, ce document ne doit pas être considéré comme un engagement de sa part, et Microsoft ne peut pas garantir l’exactitude des informations présentées à la date de la publication.
 
 Ce livre blanc est fourni à titre d'information uniquement. MICROSOFT NE FOURNIT AUCUNE GARANTIE, EXPRESSE, IMPLICITE OU LÉGALE, QUANT AUX INFORMATIONS CONTENUES DANS CE DOCUMENT.
 
 L'utilisateur est tenu d'observer la réglementation relative aux droits d'auteur applicable dans son pays. Aucune partie de ce document ne peut être reproduite, stockée ou introduite dans un système de restitution, ou transmise à quelque fin ou par quelque moyen que ce soit (électronique, mécanique, photocopie, enregistrement ou autre) sans la permission expresse et écrite de Microsoft Corporation.
 
-Microsoft peut détenir des brevets, avoir déposé des demandes d'enregistrement de brevets ou être titulaire de marques, droits d'auteur ou autres droits de propriété intellectuelle portant sur tout ou partie des éléments qui font l'objet du présent document. Sauf stipulation expresse contraire d'un contrat de licence écrit de Microsoft, la fourniture de ce document n'a pas pour effet de vous concéder une licence sur ces brevets, marques, droits d'auteur ou autres droits de propriété intellectuelle.
+Microsoft peut détenir des brevets, avoir déposé des demandes d’enregistrement de brevets ou être titulaire de marques, droits d’auteur ou autres droits de propriété intellectuelle portant sur tout ou partie des éléments qui font l’objet du présent document. Sauf stipulation expresse contraire d’un contrat de licence écrit de Microsoft, la fourniture de ce document n’a pas pour effet de vous concéder une licence sur ces brevets, marques, droits d’auteur ou autres droits de propriété intellectuelle.
 
 Sauf mention contraire, les noms de sociétés, d'organisations, de produits et de domaines, les adresses de messagerie, les logos, et les noms de personnes et de lieux, ou les événements utilisés dans les exemples, sont fictifs et toute ressemblance avec des noms ou des événements réels est purement fortuite et involontaire.
 

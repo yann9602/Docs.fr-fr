@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/create-the-project
 msc.type: authoredcontent
-ms.openlocfilehash: 2678342891a87d591476a07e418c118b2ae94d4d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 094733dcbe31486385dda2f8b44ba77a17486c82
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="create-the-project"></a>Créer le projet
 ====================
@@ -114,7 +114,7 @@ Il existe trois pages principales dans cette application Web de valeur par défa
 
 ## <a name="aspnet-web-forms-background"></a>Web Forms ASP.NET en arrière-plan
 
-ASP.NET Web Forms sont les pages qui sont basées sur la technologie Microsoft ASP.NET, dans laquelle le code qui s’exécute dynamiquement sur le serveur génère la sortie de page Web sur le navigateur ou le périphérique client. Une page Web Forms ASP.NET restitue automatiquement le HTML conforme au navigateur correct des fonctionnalités telles que les styles, disposition et ainsi de suite. Web Forms sont compatibles avec n’importe quel langage pris en charge par le common language runtime .NET, tels que Microsoft Visual Basic et Microsoft Visual c#. En outre, les Web Forms reposent sur la [Microsoft .NET Framework](https://msdn.microsoft.com/en-US/vstudio/aa496123), qui fournit des avantages, notamment un environnement géré, sécurité de type et l’héritage.
+ASP.NET Web Forms sont les pages qui sont basées sur la technologie Microsoft ASP.NET, dans laquelle le code qui s’exécute dynamiquement sur le serveur génère la sortie de page Web sur le navigateur ou le périphérique client. Une page Web Forms ASP.NET restitue automatiquement le HTML conforme au navigateur correct des fonctionnalités telles que les styles, disposition et ainsi de suite. Web Forms sont compatibles avec n’importe quel langage pris en charge par le common language runtime .NET, tels que Microsoft Visual Basic et Microsoft Visual c#. En outre, les Web Forms reposent sur la [Microsoft .NET Framework](https://msdn.microsoft.com/vstudio/aa496123), qui fournit des avantages, notamment un environnement géré, sécurité de type et l’héritage.
 
 Lorsqu’une page Web Forms ASP.NET s’exécute, la page passe par un cycle de vie dans lequel elle exécute une série d’étapes de traitement. Ces étapes comprennent l’initialisation, l’instanciation des contrôles, restauration et la gestion de l’état, code gestionnaire d’événements en cours d’exécution et de rendu. Lorsque vous serez familiarisé avec la puissance d’ASP.NET Web Forms, il est important de comprendre le [cycle de vie de page ASP.NET](https://msdn.microsoft.com/library/ms178472(v=vs.100).aspx) afin que vous pouvez écrire du code à l’étape de cycle de vie approprié pour l’effet que vous avez l’intention.
 
@@ -128,7 +128,7 @@ Lorsqu’un serveur Web reçoit une demande pour une page, il recherche la page,
 > 
 > **Appartenance**
 > 
-> [ASP.NET](https://msdn.microsoft.com/en-us/library/yh26yfzy.aspx) identité stocke les informations d’identification des utilisateurs dans une base de données créée par l’application. Quand vos utilisateurs de se connectent, l’application valide leurs informations d’identification en lisant la base de données. De votre projet *compte* dossier contient les fichiers qui implémentent les différentes parties de l’appartenance : l’inscription, connexion, la modification d’un mot de passe et autoriser l’accès. En outre, ASP.NET Web Forms prend en charge OAuth et OpenID. Ces améliorations de l’authentification permettent aux utilisateurs de se connecter à votre site à l’aide des informations d’identification existantes, à partir de ces comptes en tant que Facebook, Twitter, Windows Live et Google.
+> [ASP.NET](https://msdn.microsoft.com/library/yh26yfzy.aspx) identité stocke les informations d’identification des utilisateurs dans une base de données créée par l’application. Quand vos utilisateurs de se connectent, l’application valide leurs informations d’identification en lisant la base de données. De votre projet *compte* dossier contient les fichiers qui implémentent les différentes parties de l’appartenance : l’inscription, connexion, la modification d’un mot de passe et autoriser l’accès. En outre, ASP.NET Web Forms prend en charge OAuth et OpenID. Ces améliorations de l’authentification permettent aux utilisateurs de se connecter à votre site à l’aide des informations d’identification existantes, à partir de ces comptes en tant que Facebook, Twitter, Windows Live et Google.
 > 
 > ![Créer le projet - Explorateur de solutions (identité ASP.NET)](create-the-project/_static/image7.png)
 > 
@@ -140,7 +140,7 @@ Lorsqu’un serveur Web reçoit une demande pour une page, il recherche la page,
 > 
 > **Pages maîtres**
 > 
-> Un [page maître ASP.NET](https://msdn.microsoft.com/en-us/library/wtxbf3hh.aspx) définit une apparence cohérente et le comportement de toutes les pages de votre application. La disposition de la page maître fusionne avec le contenu à partir d’une page de contenu individuelle pour produire la dernière page de l’utilisateur voit. Dans l’application Wingtip Toys, vous modifiez le *Site.master* page maître afin que toutes les pages dans le site Web de Wingtip Toys partagent la même barre logo distinctive de navigation.
+> Un [page maître ASP.NET](https://msdn.microsoft.com/library/wtxbf3hh.aspx) définit une apparence cohérente et le comportement de toutes les pages de votre application. La disposition de la page maître fusionne avec le contenu à partir d’une page de contenu individuelle pour produire la dernière page de l’utilisateur voit. Dans l’application Wingtip Toys, vous modifiez le *Site.master* page maître afin que toutes les pages dans le site Web de Wingtip Toys partagent la même barre logo distinctive de navigation.
 > 
 > **HTML5**
 > 
@@ -150,7 +150,7 @@ Lorsqu’un serveur Web reçoit une demande pour une page, il recherche la page,
 > 
 > Pour les navigateurs qui ne prennent pas en charge HTML5, vous pouvez utiliser [Modernizr](http://www.modernizr.com/). Modernizr est une bibliothèque JavaScript open source qui peut détecter si un navigateur prend en charge les fonctionnalités HTML5 et les activer, si elle n’est pas le cas. Dans le modèle d’Application ASP.NET Web Forms, Modernizr est installé en tant que package NuGet.
 > 
-> **Programme d’amorçage**
+> **Bootstrap**
 > 
 > Utilisent des modèles de projet Visual Studio 2013 [Bootstrap](http://getbootstrap.com/), une infrastructure de mise en page et des thèmes créée par Twitter. Programme d’amorçage utilise CSS3 pour fournir une conception réactive, ce qui signifie que les dispositions peuvent s’adapter dynamiquement aux tailles de fenêtre de navigateur différents. Vous pouvez également utiliser la fonctionnalité de thèmes du programme d’amorçage pour facilement effectuer un changement dans l’apparence de l’application. Par défaut, le modèle d’Application Web ASP.NET dans Visual Studio 2013 inclut Bootstrap comme package NuGet.
 > 
@@ -185,15 +185,15 @@ Les fenêtres principales dans Visual Studio incluent le **l’Explorateur de so
 
 Pour plus d’informations sur Visual Studio, consultez [laissez-vous guider par Visual Web Developer](https://msdn.microsoft.com/library/ee410104.aspx).
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Dans ce didacticiel vous avez créé, révisé et exécuter l’application Web Forms par défaut. Vous avez passé en revue les différentes fonctionnalités de l’application de formulaires Web par défaut et appris les notions de base sur l’utilisation de l’environnement Visual Studio. Dans les didacticiels suivants, vous allez créer la couche d’accès aux données.
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
 [Le choix de modèle de programmation](../../../videos/how-do-i/choosing-the-right-programming-model.md)   
-[Projets d’Application Web et projets de Site Web](https://msdn.microsoft.com/en-us/library/dd547590.aspx)   
-[Vue d’ensemble des Pages de formulaires Web ASP.NET](https://msdn.microsoft.com/en-us/library/428509ah.aspx)
+[Projets d’Application Web et projets de Site Web](https://msdn.microsoft.com/library/dd547590.aspx)   
+[Vue d’ensemble des Pages de formulaires Web ASP.NET](https://msdn.microsoft.com/library/428509ah.aspx)
 
 >[!div class="step-by-step"]
 [Précédent](introduction-and-overview.md)

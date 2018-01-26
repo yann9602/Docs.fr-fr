@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/testing
-ms.openlocfilehash: 7f34bc7766b41beafb2a1ee09577109bc1402867
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: f27e7ec43cd17e249dd646a7dfbce5df69d59664
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="testing-controller-logic-in-aspnet-core"></a>Pour tester la logique de contrôleur dans ASP.NET Core
 
@@ -40,7 +40,7 @@ Responsabilités du contrôleur classique :
 
 ## <a name="unit-testing"></a>Test unitaire
 
-[Tests unitaires](https://docs.microsoft.com/dotnet/articles/core/testing/unit-testing-with-dotnet-test) implique le test d’une partie d’une application de manière isolée de son infrastructure et des dépendances. Lorsque la logique du contrôleur, seul le contenu d’une seule action de test unitaire est testé, pas le comportement de ses dépendances ou de l’infrastructure elle-même. En tant qu’unité vous vos actions de contrôleur de test, assurez-vous que vous concentrer uniquement sur son comportement. Un test unitaire de contrôleur évite des éléments tels que les [filtres](filters.md), [routage](../../fundamentals/routing.md), ou [liaison de modèle](../models/model-binding.md). En se concentrant sur la seule chose, les tests unitaires sont généralement simple à écrire et rapides à exécuter. Un ensemble bien écrit de tests unitaires peut être exécuté souvent sans la quantité de surcharge. Toutefois, les tests unitaires ne pas détecteront les problèmes dans l’interaction entre les composants, qui est l’objectif de [test d’intégration](xref:mvc/controllers/testing#integration-testing).
+[Tests unitaires](https://docs.microsoft.com/dotnet/articles/core/testing/unit-testing-with-dotnet-test) implique le test d’une partie d’une application de manière isolée de son infrastructure et des dépendances. Lorsque la logique du contrôleur, seul le contenu d’une seule action de test unitaire est testé, pas le comportement de ses dépendances ou de l’infrastructure elle-même. En tant qu’unité vous vos actions de contrôleur de test, assurez-vous que vous concentrer uniquement sur son comportement. Un test unitaire de contrôleur évite des éléments tels que les [filtres](filters.md), [routage](../../fundamentals/routing.md), ou [liaison de modèle](../models/model-binding.md). En se concentrant sur la seule chose, les tests unitaires sont généralement simple à écrire et rapides à exécuter. Un ensemble bien écrit de tests unitaires peut être exécuté souvent sans la quantité de surcharge. Toutefois, les tests unitaires ne pas détecter les problèmes dans l’interaction entre les composants, qui est l’objectif de [test d’intégration](xref:mvc/controllers/testing#integration-testing).
 
 Si vous écrivez des filtres personnalisés, itinéraires, etc., vous devez le test unitaire leur, mais pas dans le cadre de vos tests sur une action de contrôleur spécifique. Ils doivent être testées de manière isolée.
 
@@ -65,7 +65,7 @@ Le `HomeController` `HTTP POST Index` (méthode) (illustré ci-dessus) devez vé
 
 [!code-csharp[Main](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/UnitTests/HomeControllerTests.cs?highlight=8,15-16,37-39&range=35-75)]
 
-Le premier test confirme lorsque `ModelState` n’est pas valide, le même `ViewResult` est retourné en tant que pour un `GET` demande. Notez que le test ne tente pas de passer d’un modèle non valide. Cela ne fonctionnera pas tout de même, car la liaison de modèle n’est pas en cours d’exécution (si un [test d’intégration](xref:mvc/controllers/testing#integration-testing) utiliserait la liaison de modèle exercice). Dans ce cas, liaison de modèle n’est pas testée. Ces tests unitaires Testez uniquement le code dans la méthode d’action.
+Le premier test confirme lorsque `ModelState` n’est pas valide, le même `ViewResult` est retourné en tant que pour un `GET` demande. Notez que le test ne tente pas de passer d’un modèle non valide. Cela ne fonctionnera pas tout de même, car la liaison de modèle n’est pas en cours d’exécution (si un [test d’intégration](xref:mvc/controllers/testing#integration-testing) utiliserait la liaison de modèle exercice). Dans ce cas, liaison de modèle n’est pas en cours de test. Ces tests unitaires Testez uniquement le code dans la méthode d’action.
 
 Le deuxième test vérifie que quand `ModelState` est valide, un nouveau `BrainstormSession` est ajouté (via le référentiel), et la méthode retourne un `RedirectToActionResult` avec les propriétés attendues. Les appels factices qui ne sont pas appelés sont normalement ignoré, mais en appelant `Verifiable` à la fin de l’installation appel lui permet de le vérifier dans le test. Cette opération s’effectue avec l’appel à `mockRepo.Verify`, ce qui échoue au test si la méthode attendue n’a pas été appelée.
 
@@ -121,7 +121,7 @@ Vous verrez la `GetTestSession` méthode fréquemment utilisée dans les tests d
 Chaque classe de test d’intégration configure le `TestServer` qui exécutera l’application ASP.NET Core. Par défaut, `TestServer` héberge l’application web dans le dossier dans lequel il est en cours d’exécution - dans ce cas, le dossier de projet de test. Par conséquent, lorsque vous essayez d’actions qui retournent du contrôleur de test `ViewResult`, vous pouvez voir cette erreur :
 
 ```
-The view 'Index' was not found. The following locations were searched:
+The view 'Index' wasn't found. The following locations were searched:
 (list of locations)
 ```
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-search
 msc.type: authoredcontent
-ms.openlocfilehash: 10457d154f5fda875f7d1054d48daeeba3a50b7c
-ms.sourcegitcommit: 2b263e87217658caa42eedc4f9d2d21ef0ab5d59
+ms.openlocfilehash: 116f681e14af0a09a4eb1502ef9f057c5db2f97d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/12/2018
+ms.lasthandoff: 01/24/2018
 ---
 <a name="search"></a>Rechercher
 ====================
@@ -34,7 +34,7 @@ Commencez par mettre à jour le `Index` à l’objet de méthode d’action `Mov
 
 [!code-csharp[Main](adding-search/samples/sample1.cs?highlight=1,6-9)]
 
-La première ligne de la `Index` méthode crée les éléments suivants [LINQ](https://msdn.microsoft.com/en-us/library/bb397926.aspx) requête pour sélectionner les films :
+La première ligne de la `Index` méthode crée les éléments suivants [LINQ](https://msdn.microsoft.com/library/bb397926.aspx) requête pour sélectionner les films :
 
 [!code-csharp[Main](adding-search/samples/sample2.cs)]
 
@@ -44,10 +44,10 @@ Si le `searchString` paramètre contient une chaîne, la requête de films est m
 
 [!code-csharp[Main](adding-search/samples/sample3.cs)]
 
-Le code `s => s.Title` ci-dessus est une [expression lambda](https://msdn.microsoft.com/en-us/library/bb397687.aspx). Les lambdas sont utilisés dans fondée sur une méthode [LINQ](https://msdn.microsoft.com/en-us/library/bb397926.aspx) interroge en tant qu’arguments à des méthodes d’opérateur de requête standard telles que la [où](https://msdn.microsoft.com/en-us/library/system.linq.enumerable.where.aspx) méthode utilisée dans le code ci-dessus. Les requêtes LINQ ne sont pas exécutées lorsqu’ils sont définis, ou lorsqu’il est modifié en appelant une méthode comme `Where` ou `OrderBy`. Au lieu de cela, l’exécution de la requête est différée, ce qui signifie que l’évaluation d’une expression est retardée jusqu'à ce que sa valeur réalisé est réellement itéré ou [ `ToList` ](https://msdn.microsoft.com/en-us/library/bb342261.aspx) méthode est appelée. Dans le `Search` exemple, la requête est exécutée dans le *Index.cshtml* vue. Pour plus d’informations sur l’exécution différée des requêtes, consultez [Exécution de requête](https://msdn.microsoft.com/en-us/library/bb738633.aspx).
+Le code `s => s.Title` ci-dessus est une [expression lambda](https://msdn.microsoft.com/library/bb397687.aspx). Les lambdas sont utilisés dans fondée sur une méthode [LINQ](https://msdn.microsoft.com/library/bb397926.aspx) interroge en tant qu’arguments à des méthodes d’opérateur de requête standard telles que la [où](https://msdn.microsoft.com/library/system.linq.enumerable.where.aspx) méthode utilisée dans le code ci-dessus. Les requêtes LINQ ne sont pas exécutées lorsqu’ils sont définis, ou lorsqu’il est modifié en appelant une méthode comme `Where` ou `OrderBy`. Au lieu de cela, l’exécution de la requête est différée, ce qui signifie que l’évaluation d’une expression est retardée jusqu'à ce que sa valeur réalisé est réellement itéré ou [ `ToList` ](https://msdn.microsoft.com/library/bb342261.aspx) méthode est appelée. Dans le `Search` exemple, la requête est exécutée dans le *Index.cshtml* vue. Pour plus d’informations sur l’exécution différée des requêtes, consultez [Exécution de requête](https://msdn.microsoft.com/library/bb738633.aspx).
 
 > [!NOTE]
-> Le [Contains](https://msdn.microsoft.com/en-us/library/bb155125.aspx) méthode est exécutée sur la base de données, pas le code c# ci-dessus. Sur la base de données [contient](https://msdn.microsoft.com/en-us/library/bb155125.aspx) est mappé à [SQL LIKE](https://msdn.microsoft.com/en-us/library/ms179859.aspx), qui respecte la casse.
+> Le [Contains](https://msdn.microsoft.com/library/bb155125.aspx) méthode est exécutée sur la base de données, pas le code c# ci-dessus. Sur la base de données [contient](https://msdn.microsoft.com/library/bb155125.aspx) est mappé à [SQL LIKE](https://msdn.microsoft.com/library/ms179859.aspx), qui respecte la casse.
 
 Maintenant vous pouvez mettre à jour le `Index` vue qui affiche le formulaire à l’utilisateur.
 
@@ -123,7 +123,7 @@ Le code suivant est une requête LINQ qui récupère tous les genres dans la bas
 
 [!code-csharp[Main](adding-search/samples/sample12.cs)]
 
-Le code utilise le `AddRange` méthode du générique `List` collection pour ajouter tous les genres distincts à la liste. (Sans le `Distinct` modificateur, genres en double sont ajoutés, par exemple, comédie est ajoutée à deux reprises dans notre exemple). Le code puis stocke la liste des genres dans le `ViewBag.MovieGenre` objet. Le stockage des données de catégorie (de ce un genre de film) comme un [SelectList](https://msdn.microsoft.com/en-us/library/system.web.mvc.selectlist(v=vs.108).aspx) de l’objet dans un `ViewBag`, accéder aux données de catégorie dans une zone de liste déroulante est une approche courante pour les applications MVC.
+Le code utilise le `AddRange` méthode du générique `List` collection pour ajouter tous les genres distincts à la liste. (Sans le `Distinct` modificateur, genres en double sont ajoutés, par exemple, comédie est ajoutée à deux reprises dans notre exemple). Le code puis stocke la liste des genres dans le `ViewBag.MovieGenre` objet. Le stockage des données de catégorie (de ce un genre de film) comme un [SelectList](https://msdn.microsoft.cus/library/system.web.mvc.selectlist(v=vs.108).aspx) de l’objet dans un `ViewBag`, accéder aux données de catégorie dans une zone de liste déroulante est une approche courante pour les applications MVC.
 
 Le code suivant montre comment vérifier la `movieGenre` paramètre. S’il n’est pas vide, le code plus contraint la requête de films pour limiter les films sélectionnés pour le genre spécifié.
 

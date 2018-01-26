@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/performing-a-what-if-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 62be7c9636fb74c40bec812e9ac76b360995da50
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cea805c86f0764c7443ccc5c9f89248860a6a842
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="performing-a-what-if-deployment"></a>Exécution d’un déploiement « Que se passe-t-il si »
 ====================
@@ -52,7 +52,7 @@ Si vous utilisez MSDeploy.exe directement, vous pouvez exécuter un déploiement
 Lorsque vous êtes satisfait des résultats de votre déploiement « que se passe-t-il si », vous pouvez supprimer la **– whatif** indicateur pour exécuter un déploiement.
 
 > [!NOTE]
-> Pour plus d’informations sur les options de ligne de commande pour MSDeploy.exe, consultez [Web Deploy opération Settings](https://technet.microsoft.com/en-us/library/dd569089(WS.10).aspx).
+> Pour plus d’informations sur les options de ligne de commande pour MSDeploy.exe, consultez [Web Deploy opération Settings](https://technet.microsoft.com/library/dd569089(WS.10).aspx).
 
 
 Si vous utilisez la *. deploy.cmd* fichier, vous pouvez exécuter un déploiement « que se passe-t-il si » en incluant le **/t** drapeau de (mode d’évaluation) au lieu du **/y** indicateur (« Oui », ou en mode de mise à jour) dans votre commande. Par exemple, pour évaluer ce qui se passerait si vous avez déployé le package ContactManager.Mvc.zip en exécutant la *. deploy.cmd* fichier, votre commande doit ressembler à ceci :
@@ -68,7 +68,7 @@ Lorsque vous êtes satisfait des résultats de votre déploiement de « mode d�
 
 
 > [!NOTE]
-> Pour plus d’informations sur les options de ligne de commande pour *. deploy.cmd* fichiers, voir [Comment : installer un Package de déploiement à l’aide du fichier deploy.cmd](https://msdn.microsoft.com/en-us/library/ff356104.aspx). Si vous exécutez le *. deploy.cmd* fichier sans spécifier de tous les indicateurs, l’invite de commandes affiche une liste des indicateurs disponibles.
+> Pour plus d’informations sur les options de ligne de commande pour *. deploy.cmd* fichiers, voir [Comment : installer un Package de déploiement à l’aide du fichier deploy.cmd](https://msdn.microsoft.com/library/ff356104.aspx). Si vous exécutez le *. deploy.cmd* fichier sans spécifier de tous les indicateurs, l’invite de commandes affiche une liste des indicateurs disponibles.
 
 
 ## <a name="performing-a-what-if-deployment-for-databases"></a>Exécution d’un déploiement « Que se passe-t-il si » pour les bases de données
@@ -142,7 +142,7 @@ Cette rubrique décrit comment exécuter « que se passe-t-il si » les déplo
 
 ## <a name="further-reading"></a>informations supplémentaires
 
-Pour plus d’informations sur la syntaxe de ligne de commande de Web Deploy, consultez [Web Deploy opération Settings](https://technet.microsoft.com/en-us/library/dd569089(WS.10).aspx). Pour obtenir des conseils sur les options de ligne de commande lorsque vous utilisez la *. deploy.cmd* de fichiers, consultez [Comment : installer un Package de déploiement à l’aide du fichier deploy.cmd](https://msdn.microsoft.com/en-us/library/ff356104.aspx). Pour obtenir des conseils sur la syntaxe de ligne de commande de VSDBCMD, consultez [référence de ligne de commande pour VSDBCMD. EXE (déploiement et importation de schéma)](https://msdn.microsoft.com/en-us/library/dd193283.aspx).
+Pour plus d’informations sur la syntaxe de ligne de commande de Web Deploy, consultez [Web Deploy opération Settings](https://technet.microsoft.com/library/dd569089(WS.10).aspx). Pour obtenir des conseils sur les options de ligne de commande lorsque vous utilisez la *. deploy.cmd* de fichiers, consultez [Comment : installer un Package de déploiement à l’aide du fichier deploy.cmd](https://msdn.microsoft.com/library/ff356104.aspx). Pour obtenir des conseils sur la syntaxe de ligne de commande de VSDBCMD, consultez [référence de ligne de commande pour VSDBCMD. EXE (déploiement et importation de schéma)](https://msdn.microsoft.com/library/dd193283.aspx).
 
 >[!div class="step-by-step"]
 [Précédent](advanced-enterprise-web-deployment.md)

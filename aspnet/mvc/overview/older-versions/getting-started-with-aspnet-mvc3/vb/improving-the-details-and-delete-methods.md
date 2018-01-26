@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/improving-the-details-and-delete-methods
 msc.type: authoredcontent
-ms.openlocfilehash: 24c986f7ec8376bc997f1ebc575338772507cbc9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e057d9f106aaa8afbe521d8185a06dfbf48e46fb
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="improving-the-details-and-delete-methods-vb"></a>Améliorer les détails et les méthodes de suppression (VB)
 ====================
@@ -73,13 +73,13 @@ Ce didacticiel de base obtenu vous lancer dans la création de contrôleurs, de 
 
 Si vous souhaitez déployer votre application, il est utile pour le premier test de l’application sur votre serveur IIS 7 local. Vous pouvez utiliser cette [Web Platform Installer](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=ASPNET;) lien pour activer le paramètre IIS pour les applications ASP.NET. Consultez les liens de déploiement suivants :
 
-- [Organigramme de déploiement ASP.NET](https://msdn.microsoft.com/en-us/library/dd394698.aspx)
+- [Organigramme de déploiement ASP.NET](https://msdn.microsoft.com/library/dd394698.aspx)
 - [L’activation d’IIS 7.x](https://blogs.msdn.com/b/rickandy/archive/2011/03/14/enabling-iis-7-x-on-windows-7-vista-sp1-windows-2008-windows-2008-r2.aspx)
-- [Déploiement de projets d’Application Web](https://msdn.microsoft.com/en-us/library/dd394698.aspx)
+- [Déploiement de projets d’Application Web](https://msdn.microsoft.com/library/dd394698.aspx)
 
-Je maintenant vous encourage à passer à notre niveau intermédiaire [création d’un modèle de données Entity Framework pour une Application ASP.NET MVC](../../../getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md) et [magasin de musique MVC](../../mvc-music-store/mvc-music-store-part-1.md) didacticiels, pour Explorer le [ASP.NET articles sur MSDN](https://msdn.microsoft.com/en-us/library/gg416514(VS.98).aspx)et à consulter les vidéos et des ressources sur plusieurs [https://asp.net/mvc](https://asp.net/mvc) pour en savoir plus sur ASP.NET MVC ! Le [forums d’ASP.NET MVC](https://forums.asp.net/1146.aspx) sont idéal pour poser des questions.
+Je maintenant vous encourage à passer à notre niveau intermédiaire [création d’un modèle de données Entity Framework pour une Application ASP.NET MVC](../../../getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md) et [magasin de musique MVC](../../mvc-music-store/mvc-music-store-part-1.md) didacticiels, pour Explorer le [ASP.NET articles sur MSDN](https://msdn.microsoft.com/library/gg416514(VS.98).aspx)et à consulter les vidéos et des ressources sur plusieurs [https://asp.net/mvc](https://asp.net/mvc) pour en savoir plus sur ASP.NET MVC ! Le [forums d’ASP.NET MVC](https://forums.asp.net/1146.aspx) sont idéal pour poser des questions.
 
-Profitez de !
+Bonne lecture !
 
 — Scott Hanselman ([http://hanselman.com](http://hanselman.com) et [ @shanselman ](http://twitter.com/shanselman) sur Twitter) et Rick Anderson [blogs.msdn.com/rickAndy](https://blogs.msdn.com/rickAndy)
 

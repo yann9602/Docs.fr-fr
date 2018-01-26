@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/code-editing-in-web-forms-pages
 msc.type: authoredcontent
-ms.openlocfilehash: dfcddb4373fbf17ca29c5ab94c6ab3387ed6b526
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8714f673cb0434189ca23d2dda14035d8652a051
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="code-editing-aspnet-web-forms-in-visual-studio-2013"></a>Code Édition Web Forms ASP.NET dans Visual Studio 2013
 ====================
@@ -33,12 +33,12 @@ Pendant cette procédure pas à pas, vous allez apprendre à :
 - Renommer des variables et des objets.
 - Insérer des extraits de code.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 
 Pour exécuter cette procédure pas à pas, vous avez besoin des éléments suivants :
 
-- [Microsoft Visual Studio 2013](https://www.microsoft.com/visualstudio/11/en-us/downloads#vs) ou [Microsoft Visual Studio Express 2013 pour le Web](https://www.microsoft.com/visualstudio/11/en-us/downloads#express-web). Le .NET Framework est installé automatiquement. 
+- [Microsoft Visual Studio 2013](https://www.microsoft.com/visualstudio/11/downloads#vs) ou [Microsoft Visual Studio Express 2013 pour le Web](https://www.microsoft.com/visualstudio/11/downloads#express-web). Le .NET Framework est installé automatiquement. 
 
     > [!NOTE] 
     > 
@@ -132,8 +132,8 @@ Dans cette partie de la procédure pas à pas, vous écrivez du code simple et p
 ### <a name="to-extract-a-method-in-a-c-page"></a>Pour extraire une méthode dans une page c#
 
 1. Basculez vers **conception** vue.
-2. Dans le **boîte à outils**, à partir de la **Standard** onglet, faites glisser un [bouton](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.button.aspx) contrôle sur la page.
-3. Double-cliquez sur le **bouton** contrôle pour créer un gestionnaire pour son [cliquez sur](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.button.click.aspx) événement, puis ajoutez le code en surbrillance suivant :
+2. Dans le **boîte à outils**, à partir de la **Standard** onglet, faites glisser un [bouton](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.aspx) contrôle sur la page.
+3. Double-cliquez sur le **bouton** contrôle pour créer un gestionnaire pour son [cliquez sur](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.click.aspx) événement, puis ajoutez le code en surbrillance suivant :
 
     [!code-csharp[Main](code-editing-in-web-forms-pages/samples/sample2.cs?highlight=3-16)]
 
@@ -185,13 +185,13 @@ Lorsque vous travaillez avec des variables, ainsi que des objets, vous souhaiter
 
 Étant donné que les développeurs de Web Forms doivent souvent effectuer plusieurs tâches de programmation, l’éditeur de code fournit une bibliothèque d’extraits de code ou des blocs de code prédéfinis. Vous pouvez insérer ces extraits de code dans votre page.
 
-Chaque langue que vous utilisez dans Visual Studio présente de légères différences dans la façon de qu'insérer des extraits de code. Pour plus d’informations sur l’insertion d’extraits de code, consultez [extraits de Code IntelliSense Visual Basic](https://msdn.microsoft.com/en-us/library/18yz4be4.aspx). Pour plus d’informations sur l’insertion d’extraits de code dans Visual c#, consultez [extraits de Code Visual c#](https://msdn.microsoft.com/en-us/library/z41h7fat.aspx).
+Chaque langue que vous utilisez dans Visual Studio présente de légères différences dans la façon de qu'insérer des extraits de code. Pour plus d’informations sur l’insertion d’extraits de code, consultez [extraits de Code IntelliSense Visual Basic](https://msdn.microsoft.com/library/18yz4be4.aspx). Pour plus d’informations sur l’insertion d’extraits de code dans Visual c#, consultez [extraits de Code Visual c#](https://msdn.microsoft.com/library/z41h7fat.aspx).
 
 ## <a name="next-steps"></a>Étapes suivantes
 
 Cette procédure pas à pas a illustré les fonctionnalités de base de l’éditeur de code Visual Studio 2010 pour la correction des erreurs dans votre code, la refactorisation du code, renommer des variables et l’insertion d’extraits de code dans votre code. Fonctionnalités supplémentaires dans l’éditeur peuvent rendre le développement d’application simple et rapide. Vous pouvez, par exemple, décider d'effectuer les opérations suivantes :
 
-- En savoir plus sur les fonctionnalités d’IntelliSense, telles que la modification des options IntelliSense, la gestion des extraits de code et de recherche pour les extraits de code en ligne. Pour plus d’informations, consultez [Utilisation d’IntelliSense](https://msdn.microsoft.com/en-us/library/hcw1s69b.aspx).
-- Découvrez comment créer vos propres extraits de code. Pour plus d’informations, consultez [création et utilisation des extraits de Code IntelliSense](https://msdn.microsoft.com/en-us/library/ms165392.aspx)
-- En savoir plus sur les fonctionnalités spécifiques à Visual Basic d’extraits de code IntelliSense, telles que la personnalisation des extraits de code et le dépannage. Pour plus d’informations, consultez [extraits de Code IntelliSense Visual Basic](https://msdn.microsoft.com/en-us/library/18yz4be4.aspx)
-- En savoir plus sur c#-fonctionnalités spécifiques d’IntelliSense, telles que des extraits de code et de refactorisation. Pour plus d’informations, consultez [Visual c# IntelliSense](https://msdn.microsoft.com/en-us/library/43f44291.aspx).
+- En savoir plus sur les fonctionnalités d’IntelliSense, telles que la modification des options IntelliSense, la gestion des extraits de code et de recherche pour les extraits de code en ligne. Pour plus d’informations, consultez [Utilisation d’IntelliSense](https://msdn.microsoft.com/library/hcw1s69b.aspx).
+- Découvrez comment créer vos propres extraits de code. Pour plus d’informations, consultez [création et utilisation des extraits de Code IntelliSense](https://msdn.microsoft.com/library/ms165392.aspx)
+- En savoir plus sur les fonctionnalités spécifiques à Visual Basic d’extraits de code IntelliSense, telles que la personnalisation des extraits de code et le dépannage. Pour plus d’informations, consultez [extraits de Code IntelliSense Visual Basic](https://msdn.microsoft.com/library/18yz4be4.aspx)
+- En savoir plus sur c#-fonctionnalités spécifiques d’IntelliSense, telles que des extraits de code et de refactorisation. Pour plus d’informations, consultez [Visual c# IntelliSense](https://msdn.microsoft.com/library/43f44291.aspx).

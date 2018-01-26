@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/debugging-stored-procedures-cs
 msc.type: authoredcontent
-ms.openlocfilehash: eda544d72fe3449c8d701fc579f2f26d37090f24
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3c5f797691a6920c65db7e3906aa5fd3b348b54b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="debugging-stored-procedures-c"></a>Débogage des procédures stockées (c#)
 ====================
@@ -39,7 +39,7 @@ Dans ce didacticiel, nous examinerons pas à pas détaillé dans les procédures
 
 ## <a name="sql-server-debugging-concepts"></a>Concepts de débogage de SQL Server
 
-Microsoft SQL Server 2005 a été conçu pour permettre l’intégration avec les [Common Language Runtime (CLR)](https://msdn.microsoft.com/en-us/netframework/aa497266.aspx), qui est le runtime utilisé par tous les assemblys .NET. Par conséquent, SQL Server 2005 prend en charge les objets de base de données managés. Autrement dit, vous pouvez créer des objets de base de données tels que des procédures stockées et les fonctions définies par l’utilisateur (UDF) en tant que méthodes dans une classe c#. Ainsi, ces procédures stockées et les UDF pour utiliser la fonctionnalité dans le .NET Framework et à partir de vos propres classes personnalisées. Bien entendu, SQL Server 2005 prend également en charge pour les objets de base de données de T-SQL.
+Microsoft SQL Server 2005 a été conçu pour permettre l’intégration avec les [Common Language Runtime (CLR)](https://msdn.microsoft.com/netframework/aa497266.aspx), qui est le runtime utilisé par tous les assemblys .NET. Par conséquent, SQL Server 2005 prend en charge les objets de base de données managés. Autrement dit, vous pouvez créer des objets de base de données tels que des procédures stockées et les fonctions définies par l’utilisateur (UDF) en tant que méthodes dans une classe c#. Ainsi, ces procédures stockées et les UDF pour utiliser la fonctionnalité dans le .NET Framework et à partir de vos propres classes personnalisées. Bien entendu, SQL Server 2005 prend également en charge pour les objets de base de données de T-SQL.
 
 SQL Server 2005 offre la prise en charge du débogage pour T-SQL et les objets de base de données managés. Toutefois, ces objets peuvent uniquement être débogués via les éditions de Visual Studio 2005 Professional et les systèmes de l’équipe. Dans ce didacticiel, nous allons examiner les objets de base de données débogage T-SQL. Le didacticiel suivant ressemble au débogage d’objets de base de données managés.
 
@@ -53,7 +53,7 @@ Visual Studio peut déboguer les procédures stockées sur des instances de SQL 
 
 Si vous utilisez une instance de SQL Server locale, vous pouvez commencer à l’étape 1 et parcourez ce didacticiel jusqu'à la fin. Si vous utilisez une instance distante de SQL Server, toutefois, vous ne serez pour vous assurer que lorsque le débogage, vous devez êtes connecté à votre ordinateur de développement avec un compte d’utilisateur Windows qui dispose d’une connexion de SQL Server sur l’instance distante. Moveover, cette connexion de base de données et la connexion de base de données utilisé pour se connecter à la base de données à partir de l’application ASP.NET en cours d’exécution doit être membres de la `sysadmin` rôle. Consultez les objets de base de données de débogage T-SQL dans la section des Instances distantes à la fin de ce didacticiel pour plus d’informations sur la configuration de Visual Studio et SQL Server pour déboguer une instance distante.
 
-Enfin, comprendre que la prise en charge pour les objets de base de données de T-SQL de débogage n’est pas en tant que fonctionnalités comme la prise en charge pour les applications .NET de débogage. Par exemple, les conditions de point d’arrêt et les filtres ne sont pas pris en charge, seul un sous-ensemble des fenêtres de débogage sont disponibles, vous ne pouvez pas utiliser Modifier & Continuer, la fenêtre exécution est rendue inutile et ainsi de suite. Consultez [Limitations sur les fonctionnalités et les commandes du débogueur](https://msdn.microsoft.com/en-us/library/ms165035(VS.80).aspx) pour plus d’informations.
+Enfin, comprendre que la prise en charge pour les objets de base de données de T-SQL de débogage n’est pas en tant que fonctionnalités comme la prise en charge pour les applications .NET de débogage. Par exemple, les conditions de point d’arrêt et les filtres ne sont pas pris en charge, seul un sous-ensemble des fenêtres de débogage sont disponibles, vous ne pouvez pas utiliser Modifier & Continuer, la fenêtre exécution est rendue inutile et ainsi de suite. Consultez [Limitations sur les fonctionnalités et les commandes du débogueur](https://msdn.microsoft.com/library/ms165035(VS.80).aspx) pour plus d’informations.
 
 ## <a name="step-1-directly-stepping-into-a-stored-procedure"></a>Étape 1 : Directement pas à pas détaillé dans une procédure stockée
 
@@ -172,13 +172,13 @@ Un exemple doit aider à clarifier les choses. Imaginez qu’il existe un compte
 
 [!code-console[Main](debugging-stored-procedures-cs/samples/sample2.cmd)]
 
-Pour plus d’informations sur ce processus, consultez [William R. Vaughn](http://betav.com/BLOG/billva/) s *Hitchhiker s s Guide sur Visual Studio et SQL Server, Édition septième* ainsi que [comment faire : définir des autorisations SQL Server pour le débogage](https://msdn.microsoft.com/en-us/library/w1bhybwz(VS.80).aspx).
+Pour plus d’informations sur ce processus, consultez [William R. Vaughn](http://betav.com/BLOG/billva/) s *Hitchhiker s s Guide sur Visual Studio et SQL Server, Édition septième* ainsi que [comment faire : définir des autorisations SQL Server pour le débogage](https://msdn.microsoft.com/library/w1bhybwz(VS.80).aspx).
 
 > [!NOTE]
-> Si votre ordinateur de développement s’exécute Windows XP Service Pack 2, vous devez configurer le pare-feu pour autoriser le débogage distant. [La procédure pour : activer le débogage de SQL Server 2005](https://msdn.microsoft.com/en-us/library/s0fk6z6e(VS.80).aspx) article note que cela implique deux étapes : (a) sur l’ordinateur hôte Visual Studio, vous devez ajouter `Devenv.exe` à la liste des Exceptions et ouvrir le port TCP 135 ; et (b) sur l’ordinateur distant (SQL), vous devez ouvrir TCP 135 de port et ajoutez `sqlservr.exe` à la liste des Exceptions. Si votre stratégie de domaine requiert que la communication réseau via IPSec, vous devez ouvrir les ports UDP 4500 et UDP 500.
+> Si votre ordinateur de développement s’exécute Windows XP Service Pack 2, vous devez configurer le pare-feu pour autoriser le débogage distant. [La procédure pour : activer le débogage de SQL Server 2005](https://msdn.microsoft.com/library/s0fk6z6e(VS.80).aspx) article note que cela implique deux étapes : (a) sur l’ordinateur hôte Visual Studio, vous devez ajouter `Devenv.exe` à la liste des Exceptions et ouvrir le port TCP 135 ; et (b) sur l’ordinateur distant (SQL), vous devez ouvrir TCP 135 de port et ajoutez `sqlservr.exe` à la liste des Exceptions. Si votre stratégie de domaine requiert que la communication réseau via IPSec, vous devez ouvrir les ports UDP 4500 et UDP 500.
 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 En plus de la prise en charge du débogage pour le code d’application .NET, Visual Studio fournit également une variété d’options de débogage pour SQL Server 2005. Dans ce didacticiel, nous avons étudié deux de ces options : débogage Direct de base de données et de débogage de l’application. Pour déboguer directement un objet de base de données T-SQL, recherchez l’objet via l’Explorateur de serveurs, puis avec le bouton droit dessus et choisissez pas à pas détaillé. Cela démarre le débogueur et s’arrête à la première instruction dans l’objet de base de données, à partir de laquelle vous pouvez parcourir les instructions de s d’objet et de la vue et modifier les valeurs de paramètre. À l’étape 1, nous avons utilisé cette approche à parcourir le `Products_SelectByCategoryID` procédure stockée.
 

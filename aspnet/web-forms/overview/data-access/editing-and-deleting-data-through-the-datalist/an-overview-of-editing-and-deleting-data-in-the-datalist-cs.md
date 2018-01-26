@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/an-overview-of-editing-and-deleting-data-in-the-datalist-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 1c7a1c7a9839f2f56658618958c234e0064cb427
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8b3067c5a6bcf81a35f66d43886c9b116a0ef7d8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="an-overview-of-editing-and-deleting-data-in-the-datalist-c"></a>Une vue d’ensemble de la modification et suppression des données dans le contrôle DataList (c#)
 ====================
@@ -86,11 +86,11 @@ Modification et suppression des données avec le contrôle GridView sont donc fa
 
 Malheureusement, le contrôle DataList ne fournit pas une de ces fonctionnalités intégrées. Il incombe notre pour vous assurer que les valeurs de l’utilisateur s sont affectées pour les paramètres de s ObjectDataSource et que son `Update()` méthode est appelée. Pour faciliter cette tâche, le contrôle DataList fournit les propriétés et les événements suivants :
 
-- **Le [ `DataKeyField` propriété](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.basedatalist.datakeyfield.aspx)**  lors de la mise à jour ou la suppression, nous devons être en mesure d’identifier de façon unique chaque élément dans le contrôle DataList. Définissez cette propriété sur le champ de clé primaire des données affichées. Cela remplira du contrôle DataList s [ `DataKeys` collection](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.basedatalist.datakeys.aspx) avec l’objet `DataKeyField` pour chaque élément du contrôle DataList.
-- **Le [ `EditCommand` événement](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalist.editcommand.aspx)**  se déclenche lorsqu’un bouton, LinkButton ou ImageButton dont `CommandName` est définie sur un clic sur Modifier.
-- **Le [ `CancelCommand` événement](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalist.cancelcommand.aspx)**  se déclenche lorsqu’un bouton, LinkButton ou ImageButton dont `CommandName` est définie sur un clic sur Annuler.
-- **Le [ `UpdateCommand` événement](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalist.updatecommand.aspx)**  se déclenche lorsqu’un bouton, LinkButton ou ImageButton dont `CommandName` est définie sur mise à jour est activé.
-- **Le [ `DeleteCommand` événement](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalist.deletecommand.aspx)**  se déclenche lorsqu’un bouton, LinkButton ou ImageButton dont `CommandName` est définie sur un clic sur Supprimer.
+- **Le [ `DataKeyField` propriété](https://msdn.microsoft.com/library/system.web.ui.webcontrols.basedatalist.datakeyfield.aspx)**  lors de la mise à jour ou la suppression, nous devons être en mesure d’identifier de façon unique chaque élément dans le contrôle DataList. Définissez cette propriété sur le champ de clé primaire des données affichées. Cela remplira du contrôle DataList s [ `DataKeys` collection](https://msdn.microsoft.com/library/system.web.ui.webcontrols.basedatalist.datakeys.aspx) avec l’objet `DataKeyField` pour chaque élément du contrôle DataList.
+- **Le [ `EditCommand` événement](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.editcommand.aspx)**  se déclenche lorsqu’un bouton, LinkButton ou ImageButton dont `CommandName` est définie sur un clic sur Modifier.
+- **Le [ `CancelCommand` événement](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.cancelcommand.aspx)**  se déclenche lorsqu’un bouton, LinkButton ou ImageButton dont `CommandName` est définie sur un clic sur Annuler.
+- **Le [ `UpdateCommand` événement](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.updatecommand.aspx)**  se déclenche lorsqu’un bouton, LinkButton ou ImageButton dont `CommandName` est définie sur mise à jour est activé.
+- **Le [ `DeleteCommand` événement](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.deletecommand.aspx)**  se déclenche lorsqu’un bouton, LinkButton ou ImageButton dont `CommandName` est définie sur un clic sur Supprimer.
 
 À l’aide de ces propriétés et des événements, il existe quatre approches, que nous pouvons utiliser pour mettre à jour et supprimer des données à partir du contrôle DataList :
 
@@ -153,7 +153,7 @@ Prenez un moment pour afficher la progression via un navigateur. Comme le montre
 >  Le lecteur perspicace nous l’avons vu que nous avons pu désactiver l’état d’affichage lors de la création de contrôles GridView, DetailsViews et FormViews modifiable. Il s’agit, car les contrôles Web ASP.NET 2.0 peuvent inclure *état du contrôle*, qui est état persistant entre publications (postback) comme état d’affichage, mais indispensables présumé.
 
 
-Désactiver l’affichage de l’état dans le GridView simplement omet les informations d’état triviale, mais conserve l’état du contrôle (qui inclut l’état nécessaire pour la modification et suppression). Le contrôle DataList ayant été créé dans le délai d’exécution ASP.NET 1.x, n’utilise pas l’état du contrôle et doit donc état d’affichage. Consultez [vs de l’état du contrôle. État d’affichage](https://msdn.microsoft.com/en-us/library/1whwt1k7.aspx) pour plus d’informations sur l’objectif de l’état du contrôle et comment il diffère de l’état d’affichage.
+Désactiver l’affichage de l’état dans le GridView simplement omet les informations d’état triviale, mais conserve l’état du contrôle (qui inclut l’état nécessaire pour la modification et suppression). Le contrôle DataList ayant été créé dans le délai d’exécution ASP.NET 1.x, n’utilise pas l’état du contrôle et doit donc état d’affichage. Consultez [vs de l’état du contrôle. État d’affichage](https://msdn.microsoft.com/library/1whwt1k7.aspx) pour plus d’informations sur l’objectif de l’état du contrôle et comment il diffère de l’état d’affichage.
 
 ## <a name="step-4-adding-an-editing-user-interface"></a>Étape 4 : Ajout d’une Interface utilisateur de modification
 
@@ -225,7 +225,7 @@ Après avoir ajouté ce bouton Modifier, prenez un moment pour afficher la page 
 
 Cliquez sur le bouton provoque une publication (postback), mais *pas* mettre le produit dans le mode édition. Pour modifier le produit, nous devons :
 
-1. Valeur du contrôle DataList s [ `EditItemIndex` propriété](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalist.edititemindex.aspx) à l’index de la `DataListItem` dont modifier simplement bouton.
+1. Valeur du contrôle DataList s [ `EditItemIndex` propriété](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.edititemindex.aspx) à l’index de la `DataListItem` dont modifier simplement bouton.
 2. Lier de nouveau les données du contrôle DataList. Lorsque le contrôle DataList est restituée, la `DataListItem` dont `ItemIndex` correspond à du contrôle DataList s `EditItemIndex` sera rendu à l’aide de son `EditItemTemplate`.
 
 Depuis le contrôle DataList s `EditCommand` événement est déclenché lorsque l’utilisateur clique sur le bouton Modifier, créer un `EditCommand` Gestionnaire d’événements avec le code suivant :
@@ -249,7 +249,7 @@ En cliquant sur le produit modifié s mise à jour ou les boutons Annuler n’ex
 
 Pour que le contrôle DataList restituer tous ses éléments dans le mode lecture seule, nous devons :
 
-1. Valeur du contrôle DataList s [ `EditItemIndex` propriété](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalist.edititemindex.aspx) à l’index d’un inexistant `DataListItem` index. `-1`est un choix sûr, étant donné que la `DataListItem` index commencent à `0`.
+1. Valeur du contrôle DataList s [ `EditItemIndex` propriété](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.edititemindex.aspx) à l’index d’un inexistant `DataListItem` index. `-1`est un choix sûr, étant donné que la `DataListItem` index commencent à `0`.
 2. Lier de nouveau les données du contrôle DataList. Etant donné que `DataListItem` `ItemIndex` es correspondent à du contrôle DataList s `EditItemIndex`, DataList entière sera rendue dans un mode en lecture seule.
 
 Ces étapes peuvent être accomplies avec le code de gestionnaire d’événements suivantes :
@@ -263,7 +263,7 @@ Le dernier gestionnaire d’événements nécessaires est le `UpdateCommand` Ges
 
 1. Accès par programme le nom de l’utilisateur a entré un produit et prix, ainsi que le produit modifié s `ProductID`.
 2. Lancer le processus de mise à jour en appelant approprié `UpdateProduct` surcharge dans les `ProductsBLL` classe.
-3. Valeur du contrôle DataList s [ `EditItemIndex` propriété](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalist.edititemindex.aspx) à l’index d’un inexistant `DataListItem` index. `-1`est un choix sûr, étant donné que la `DataListItem` index commencent à `0`.
+3. Valeur du contrôle DataList s [ `EditItemIndex` propriété](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.edititemindex.aspx) à l’index d’un inexistant `DataListItem` index. `-1`est un choix sûr, étant donné que la `DataListItem` index commencent à `0`.
 4. Lier de nouveau les données du contrôle DataList. Etant donné que `DataListItem` `ItemIndex` es correspondent à du contrôle DataList s `EditItemIndex`, DataList entière sera rendue dans un mode en lecture seule.
 
 Les étapes 1 et 2 sont chargés pour enregistrer les modifications de s ; de l’utilisateur les étapes 3 et 4 retournent du contrôle DataList à son état avant modification une fois que les modifications ont été enregistrées et sont identiques aux étapes effectuées dans le `CancelCommand` Gestionnaire d’événements.
@@ -327,7 +327,7 @@ En cliquant sur le bouton Supprimer provoque une publication (postback) et se d�
 
 Après la suppression du produit, elle s importants que nous lier de nouveau les données du contrôle DataList (`DataList1.DataBind()`), sinon DataList continue d’afficher le produit qui a été supprimé uniquement.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 DataList ne possède pas le point et sur la modification et suppression de prise en charge de GridView, avec un court peu de code il peut être améliorée pour inclure ces fonctionnalités. Dans ce didacticiel, nous avons vu comment créer une liste de deux colonnes de produits qui pourrait être supprimée et dont le nom et prix a pu être modifiés. Ajout de modification et suppression de prise en charge consiste à y compris les contrôles Web appropriés dans le `ItemTemplate` et `EditItemTemplate`, créer les gestionnaires d’événements correspondants, lire les valeurs de clé primaires et entré par l’utilisateur et interagissant avec l’entreprise Couche de logique.
 

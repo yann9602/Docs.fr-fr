@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/running-windows-powershell-scripts-from-msbuild-project-files
 msc.type: authoredcontent
-ms.openlocfilehash: 5f6ba0655f5dc1d043b905428a3797ed141b0fed
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: afee7b0621df42a8bc70fc6f7c4a8fd0383fa83a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="running-windows-powershell-scripts-from-msbuild-project-files"></a>En cours d’exécution de Scripts Windows PowerShell à partir de fichiers de projet MSBuild
 ====================
@@ -137,10 +137,10 @@ Lorsque vous exécutez cette cible dans le cadre de votre processus de générat
 
 ## <a name="executing-a-windows-powershell-script-on-a-remote-computer"></a>L’exécution d’un Script Windows PowerShell sur un ordinateur distant
 
-Windows PowerShell est capable d’exécuter des scripts sur des ordinateurs distants via [Windows Remote Management](https://msdn.microsoft.com/en-us/library/windows/desktop/aa384426.aspx) (WinRM). Pour ce faire, vous devez utiliser le [Invoke-Command](https://technet.microsoft.com/en-us/library/dd347578.aspx) applet de commande. Cela vous permet d’exécuter votre script sur un ou plusieurs ordinateurs distants sans copier le script pour les ordinateurs distants. Tous les résultats sont retournés à l’ordinateur local à partir duquel vous avez exécuté le script.
+Windows PowerShell est capable d’exécuter des scripts sur des ordinateurs distants via [Windows Remote Management](https://msdn.microsoft.com/library/windows/desktop/aa384426.aspx) (WinRM). Pour ce faire, vous devez utiliser le [Invoke-Command](https://technet.microsoft.com/library/dd347578.aspx) applet de commande. Cela vous permet d’exécuter votre script sur un ou plusieurs ordinateurs distants sans copier le script pour les ordinateurs distants. Tous les résultats sont retournés à l’ordinateur local à partir duquel vous avez exécuté le script.
 
 > [!NOTE]
-> Avant d’utiliser le **Invoke-Command** applet de commande à exécuter Windows PowerShell scripts sur un ordinateur distant, vous devez configurer un écouteur WinRM pour accepter les messages à distance. Vous pouvez le faire en exécutant la commande **winrm quickconfig** sur l’ordinateur distant. Pour plus d’informations, consultez [Installation et Configuration de Windows Remote Management](https://msdn.microsoft.com/en-us/library/windows/desktop/aa384372(v=vs.85).aspx).
+> Avant d’utiliser le **Invoke-Command** applet de commande à exécuter Windows PowerShell scripts sur un ordinateur distant, vous devez configurer un écouteur WinRM pour accepter les messages à distance. Vous pouvez le faire en exécutant la commande **winrm quickconfig** sur l’ordinateur distant. Pour plus d’informations, consultez [Installation et Configuration de Windows Remote Management](https://msdn.microsoft.com/library/windows/desktop/aa384372(v=vs.85).aspx).
 
 
 À partir d’une fenêtre Windows PowerShell, vous devez utiliser cette syntaxe pour exécuter le **LogDeploy.ps1** script sur un ordinateur distant :
@@ -179,7 +179,7 @@ Cette rubrique décrit comment exécuter un script Windows PowerShell à partir 
 
 ## <a name="further-reading"></a>informations supplémentaires
 
-Pour obtenir des conseils sur la signature des scripts Windows PowerShell et la gestion des stratégies d’exécution, consultez [en cours d’exécution de Scripts Windows PowerShell](https://technet.microsoft.com/en-us/library/ee176949.aspx). Pour obtenir des conseils sur l’exécution de commandes Windows PowerShell à partir d’un ordinateur distant, consultez [en cours d’exécution des commandes à distance](https://technet.microsoft.com/en-us/library/dd819505.aspx).
+Pour obtenir des conseils sur la signature des scripts Windows PowerShell et la gestion des stratégies d’exécution, consultez [en cours d’exécution de Scripts Windows PowerShell](https://technet.microsoft.com/library/ee176949.aspx). Pour obtenir des conseils sur l’exécution de commandes Windows PowerShell à partir d’un ordinateur distant, consultez [en cours d’exécution des commandes à distance](https://technet.microsoft.com/library/dd819505.aspx).
 
 Pour plus d’informations sur l’utilisation des fichiers projet MSBuild personnalisés pour contrôler le processus de déploiement, consultez [présentation du fichier de projet](../web-deployment-in-the-enterprise/understanding-the-project-file.md) et [comprendre le processus de génération](../web-deployment-in-the-enterprise/understanding-the-build-process.md).
 

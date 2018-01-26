@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/paging-and-sorting-report-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 2ef1bb0b68a46535e3320834a0374b9a4f66182c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 23dbd63110092b2e91b7f3f9f6b602ef917c5527
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="paging-and-sorting-report-data-vb"></a>La pagination et le tri des données de rapport (VB)
 ====================
@@ -101,7 +101,7 @@ La figure 6 illustre notre progression jusque-là lorsqu’ils sont affichés vi
 
 ## <a name="step-3-adding-paging-support"></a>Étape 3 : Ajout de prise en charge de la pagination
 
-Affichage de la liste *tous les* des produits sur un seul écran peut entraîner la surcharge d’informations pour l’utilisateur qui lit les données. Pour aider à rendre les résultats plus faciles à gérer, nous pouvons diviser les données dans les pages de données plus petits et autoriser l’utilisateur à parcourir les données d’une page à la fois. Pour accomplir cela Cochez simplement la case à cocher Activer la pagination de la balise active de GridView s (Cela définit le GridView s [ `AllowPaging` propriété](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.allowpaging.aspx) à `true`).
+Affichage de la liste *tous les* des produits sur un seul écran peut entraîner la surcharge d’informations pour l’utilisateur qui lit les données. Pour aider à rendre les résultats plus faciles à gérer, nous pouvons diviser les données dans les pages de données plus petits et autoriser l’utilisateur à parcourir les données d’une page à la fois. Pour accomplir cela Cochez simplement la case à cocher Activer la pagination de la balise active de GridView s (Cela définit le GridView s [ `AllowPaging` propriété](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.allowpaging.aspx) à `true`).
 
 
 [![La case Activer la pagination pour prendre en charge la pagination](paging-and-sorting-report-data-vb/_static/image10.png)](paging-and-sorting-report-data-vb/_static/image9.png)
@@ -111,12 +111,12 @@ Affichage de la liste *tous les* des produits sur un seul écran peut entraîner
 
 L’activation de la pagination limite le nombre d’enregistrements affichés par page et ajoute un *interface pagination* au GridView. L’interface de pagination par défaut, illustré dans la Figure 7, est une série de numéros de page, permettant à l’utilisateur accéder rapidement à partir d’une page de données à un autre. Cette interface de pagination doit sembler familière, comme nous avons vu lors de l’ajout de prise en charge la pagination pour les contrôles DetailsView et FormView dans ces didacticiels.
 
-Contrôles à la fois le contrôle DetailsView et FormView affichent uniquement un seul enregistrement par page. Le GridView, toutefois, consulte sa [ `PageSize` propriété](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.gridview.pagesize.aspx) pour déterminer le nombre d’enregistrements à afficher par page (cette propriété par défaut est une valeur de 10).
+Contrôles à la fois le contrôle DetailsView et FormView affichent uniquement un seul enregistrement par page. Le GridView, toutefois, consulte sa [ `PageSize` propriété](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.pagesize.aspx) pour déterminer le nombre d’enregistrements à afficher par page (cette propriété par défaut est une valeur de 10).
 
 Cette interface de pagination s GridView, DetailsView et FormView peut être personnalisée en utilisant les propriétés suivantes :
 
 - `PagerStyle`Indique les informations de style pour l’interface de l’échange ; peut spécifier de paramètres tels que `BackColor`, `ForeColor`, `CssClass`, `HorizontalAlign`, et ainsi de suite.
-- `PagerSettings`contient une multitude de propriétés que vous pouvez personnaliser les fonctionnalités de l’interface de l’échange ; `PageButtonCount` indique le nombre maximal de nombres de pages numériques affichées dans l’interface de pagination (la valeur par défaut est 10) ; le [ `Mode` propriété](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.pagersettings.mode.aspx) indique comment l’interface de pagination fonctionne et peut être défini sur : 
+- `PagerSettings`contient une multitude de propriétés que vous pouvez personnaliser les fonctionnalités de l’interface de l’échange ; `PageButtonCount` indique le nombre maximal de nombres de pages numériques affichées dans l’interface de pagination (la valeur par défaut est 10) ; le [ `Mode` propriété](https://msdn.microsoft.com/library/system.web.ui.webcontrols.pagersettings.mode.aspx) indique comment l’interface de pagination fonctionne et peut être défini sur : 
 
     - `NextPrevious`montre un boutons suivant et précédent, permettant à l’utilisateur à l’étape avancer ou reculer une page à la fois
     - `NextPreviousFirstLast`en plus des boutons suivant et précédent, premier et dernier boutons sont également inclus, autoriser l’utilisateur à accéder rapidement à la première ou dernière page de données
@@ -216,7 +216,7 @@ Comme le montre la Figure 11, modifiez le s GridView `PageIndex` propriété ent
 
 ## <a name="step-5-adding-bi-directional-sorting-support"></a>Étape 5 : Ajout de prise en charge du tri bidirectionnelle
 
-Ajout de prise en charge du tri bidirectionnelle est aussi simple que l’ajout de prise en charge la pagination Cochez simplement l’option Activer le tri de la balise active de s GridView (qui définit les opérations de mappage GridView [ `AllowSorting` propriété](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.gridview.allowsorting.aspx) à `true`). Cela restitue chacune des en-têtes des champs s GridView comme LinkButton qui, lorsque vous cliquez sur, provoquent une publication (postback) et retourner les données triées par la colonne sélectionnée dans l’ordre croissant. Cliquez de nouveau sur le même en-tête LinkButton nouveau tri basé sur les données dans l’ordre décroissant.
+Ajout de prise en charge du tri bidirectionnelle est aussi simple que l’ajout de prise en charge la pagination Cochez simplement l’option Activer le tri de la balise active de s GridView (qui définit les opérations de mappage GridView [ `AllowSorting` propriété](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.allowsorting.aspx) à `true`). Cela restitue chacune des en-têtes des champs s GridView comme LinkButton qui, lorsque vous cliquez sur, provoquent une publication (postback) et retourner les données triées par la colonne sélectionnée dans l’ordre croissant. Cliquez de nouveau sur le même en-tête LinkButton nouveau tri basé sur les données dans l’ordre décroissant.
 
 > [!NOTE]
 > Si vous utilisez une couche d’accès aux données personnalisées plutôt que d’un DataSet typé, peut-être pas une option d’activer le tri dans la balise active de GridView s. Uniquement les contrôles GridView liés à des sources de données qui prennent en charge le tri a cette case à cocher est disponible. Le DataSet typé fournit la prise en charge du tri d’out of box, car la table de données ADO.NET fournit un `Sort` méthode qui, lorsqu’elle est appelée, trie les s DataTable DataRows à l’aide des critères spécifiés.
@@ -243,11 +243,11 @@ Après cet ajout CSS, lors de la visite de la page via un navigateur votre écra
 
 GridView tous les champs du BoundField, CheckBoxField, TemplateField, et ainsi de suite ont un `SortExpression` propriété qui indique l’expression qui doit être utilisée pour trier les données de cas de clic sur s champ lien de l’en-tête de tri. Le contrôle GridView a également un `SortExpression` propriété. Lorsque LinkButton clic est effectué sur un en-tête de tri, le contrôle GridView affecte ce champ s `SortExpression` valeur ses `SortExpression` propriété. Ensuite, les données sont ré-extraite ObjectDataSource et triées en fonction de la s GridView `SortExpression` propriété. La liste suivante décrit la séquence d’étapes qui apparaît lorsqu’un utilisateur final trie les données dans un GridView :
 
-1. Le contrôle GridView s [événement Sorting](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.sorting(VS.80).aspx) se déclenche
-2. Le GridView s [ `SortExpression` propriété](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.sortexpression.aspx) est définie sur la `SortExpression` du champ dont l’en-tête tri LinkButton l’utilisateur a cliqué
+1. Le contrôle GridView s [événement Sorting](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.sorting(VS.80).aspx) se déclenche
+2. Le GridView s [ `SortExpression` propriété](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.sortexpression.aspx) est définie sur la `SortExpression` du champ dont l’en-tête tri LinkButton l’utilisateur a cliqué
 3. ObjectDataSource nouveau récupère toutes les données à partir de la couche BLL et trie ensuite les données à l’aide de la s GridView`SortExpression`
 4. Les s GridView `PageIndex` propriété est réinitialisée à 0, ce qui signifie que, lors du tri de l’utilisateur est renvoyé à la première page de données (en supposant la prise en charge la pagination a été implémenté)
-5. Le contrôle GridView s [ `Sorted` événement](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.sorted(VS.80).aspx) se déclenche
+5. Le contrôle GridView s [ `Sorted` événement](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.sorted(VS.80).aspx) se déclenche
 
 Comme avec la pagination de la valeur par défaut, la valeur par défaut, option de tri récupère nouveau *tous les* des enregistrements à partir de la couche BLL. Lors de l’utilisation de tri sans pagination ou lors de l’utilisation de tri avec valeur par défaut la pagination, là s aucun moyen de contourner ces performances atteint (au niveau de la mise en cache de la base de données). Toutefois, comme nous le verrons dans un futur didacticiel, il s possible de trier les données de manière efficace lors de l’utilisation de la pagination personnalisée.
 
@@ -274,7 +274,7 @@ Une fois la `SortExpression` propriété a été supprimée pour le `UnitPrice` 
 
 ## <a name="programmatically-sorting-the-gridview"></a>De tri par programmation le contrôle GridView
 
-Vous pouvez également trier par programme le contenu du contrôle GridView à l’aide du contrôle GridView s [ `Sort` méthode](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.sort.aspx). Il suffit de passer le `SortExpression` valeur pour les trier avec la [ `SortDirection` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.sortdirection.aspx) (`Ascending` ou `Descending`), et les données de s GridView seront retriées.
+Vous pouvez également trier par programme le contenu du contrôle GridView à l’aide du contrôle GridView s [ `Sort` méthode](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.sort.aspx). Il suffit de passer le `SortExpression` valeur pour les trier avec la [ `SortDirection` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sortdirection.aspx) (`Ascending` ou `Descending`), et les données de s GridView seront retriées.
 
 Imaginez que la raison pour laquelle nous avons désactivé en triant le `UnitPrice` était car nous inquiétiez que nos clients achèterait simplement les produits moins cher. Toutefois, nous souhaitons les encourager à acheter les produits les plus chers, afin que nous d comme qu’ils soient en mesure de trier les produits par prix, mais uniquement à partir du prix le plus cher au moins.
 
@@ -291,7 +291,7 @@ Ce bouton renvoie l’utilisateur à la première page avec les produits triés 
 **Figure 15**: en cliquant sur le bouton trie les produits à partir de la plus coûteuse au moins ([cliquez pour afficher l’image en taille réelle](paging-and-sorting-report-data-vb/_static/image33.png))
 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Dans ce didacticiel, que nous avons vu comment implémenter la pagination et des fonctionnalités de tri par défaut, qui a été aussi simples que la vérification de la case à cocher. Lorsqu’un utilisateur trie ou des pages de données, un flux de travail similaire se déroule :
 

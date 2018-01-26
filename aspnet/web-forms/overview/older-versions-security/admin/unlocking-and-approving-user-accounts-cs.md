@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/admin/unlocking-and-approving-user-accounts-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 65d32309cbd8bed6decbba4c5027d8e10a558ae8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f22a745f42dae66cd64dc38df28c59b910c17070
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="unlocking-and-approving-user-accounts-c"></a>L’approbation et de déverrouillage des comptes d’utilisateur (c#)
 ====================
@@ -57,7 +57,7 @@ Après avoir ajouté le HyperLinkField au GridView, prenez un moment pour affich
 **Figure 1**: le HyperLinkField ajoute un lien « Gérer » pour chaque compte d’utilisateur ([cliquez pour afficher l’image en taille réelle](unlocking-and-approving-user-accounts-cs/_static/image3.png))
 
 
-Nous allons en créer l’interface utilisateur et du code pour le `UserInformation.aspx` page dans un moment, mais le premier nous allons parler sur comment modifier par programme un utilisateur verrouillé et approuvé les États. Le [ `MembershipUser` classe](https://msdn.microsoft.com/en-us/library/system.web.security.membershipuser.aspx) a [ `IsLockedOut` ](https://msdn.microsoft.com/en-us/library/system.web.security.membershipuser.islockedout.aspx) et [ `IsApproved` propriétés](https://msdn.microsoft.com/en-us/library/system.web.security.membershipuser.isapproved.aspx). Le `IsLockedOut` propriété est en lecture seule. Il n’existe aucun mécanisme de verrouillage par programme à un utilisateur ; Pour déverrouiller un utilisateur, utilisez la `MembershipUser` de classe [ `UnlockUser` méthode](https://msdn.microsoft.com/en-us/library/system.web.security.membershipuser.unlockuser.aspx). Le `IsApproved` propriété est accessible en lecture et en écriture. Pour enregistrer les modifications à cette propriété, il faut appeler la `Membership` de classe [ `UpdateUser` méthode](https://msdn.microsoft.com/en-us/library/system.web.security.membership.updateuser.aspx), en passant le texte modifié `MembershipUser` objet.
+Nous allons en créer l’interface utilisateur et du code pour le `UserInformation.aspx` page dans un moment, mais le premier nous allons parler sur comment modifier par programme un utilisateur verrouillé et approuvé les États. Le [ `MembershipUser` classe](https://msdn.microsoft.com/library/system.web.security.membershipuser.aspx) a [ `IsLockedOut` ](https://msdn.microsoft.com/library/system.web.security.membershipuser.islockedout.aspx) et [ `IsApproved` propriétés](https://msdn.microsoft.com/library/system.web.security.membershipuser.isapproved.aspx). Le `IsLockedOut` propriété est en lecture seule. Il n’existe aucun mécanisme de verrouillage par programme à un utilisateur ; Pour déverrouiller un utilisateur, utilisez la `MembershipUser` de classe [ `UnlockUser` méthode](https://msdn.microsoft.com/library/system.web.security.membershipuser.unlockuser.aspx). Le `IsApproved` propriété est accessible en lecture et en écriture. Pour enregistrer les modifications à cette propriété, il faut appeler la `Membership` de classe [ `UpdateUser` méthode](https://msdn.microsoft.com/library/system.web.security.membership.updateuser.aspx), en passant le texte modifié `MembershipUser` objet.
 
 Étant donné que le `IsApproved` propriété est accessible en lecture et en écriture, un contrôle de case à cocher est probablement la meilleure élément d’interface utilisateur pour la configuration de cette propriété. Toutefois, une case à cocher ne fonctionnera pas pour le `IsLockedOut` propriété, car un administrateur ne peut pas verrouiller un utilisateur, elle peut uniquement déverrouiller un utilisateur. Une interface utilisateur appropriée pour le `IsLockedOut` propriété est un bouton qui, lorsque vous cliquez dessus, déverrouille le compte d’utilisateur. Ce bouton doit être activé uniquement si l’utilisateur est verrouillé.
 
@@ -88,7 +88,7 @@ Le code ci-dessus démarre en vous assurant qu’il s’agit de la première vis
 
 Le `MembershipUser` l’objet `UserName` valeur est ensuite affichée dans le `UserNameLabel` et le `IsApproved` case à cocher est activée en fonction de la `IsApproved` valeur de propriété.
 
-Le `MembershipUser` l’objet [ `LastLockoutDate` propriété](https://msdn.microsoft.com/en-us/library/system.web.security.membershipuser.lastlockoutdate.aspx) retourne un `DateTime` indiquant quand l’utilisateur a été verrouillé. Si l’utilisateur n’a jamais été verrouillé, la valeur retournée varie selon le fournisseur d’appartenances. Lorsqu’un nouveau compte est créé, le `SqlMembershipProvider` définit le `aspnet_Membership` la table `LastLockoutDate` au champ `1754-01-01 12:00:00 AM`. Le code ci-dessus affiche une chaîne vide dans le `LastLockoutDateLabel` si le `LastLockoutDate` propriété se produit avant l’année 2000 ; sinon, la partie date de la `LastLockoutDate` propriété s’affiche dans l’étiquette. Le `UnlockUserButton'` s `Enabled` est définie sur l’utilisateur verrouillé d’état, ce qui signifie que que ce bouton est uniquement activé si l’utilisateur est verrouillé.
+Le `MembershipUser` l’objet [ `LastLockoutDate` propriété](https://msdn.microsoft.com/library/system.web.security.membershipuser.lastlockoutdate.aspx) retourne un `DateTime` indiquant quand l’utilisateur a été verrouillé. Si l’utilisateur n’a jamais été verrouillé, la valeur retournée varie selon le fournisseur d’appartenances. Lorsqu’un nouveau compte est créé, le `SqlMembershipProvider` définit le `aspnet_Membership` la table `LastLockoutDate` au champ `1754-01-01 12:00:00 AM`. Le code ci-dessus affiche une chaîne vide dans le `LastLockoutDateLabel` si le `LastLockoutDate` propriété se produit avant l’année 2000 ; sinon, la partie date de la `LastLockoutDate` propriété s’affiche dans l’étiquette. Le `UnlockUserButton'` s `Enabled` est définie sur l’utilisateur verrouillé d’état, ce qui signifie que que ce bouton est uniquement activé si l’utilisateur est verrouillé.
 
 Prenez un moment pour tester le `UserInformation.aspx` page via un navigateur. Vous, bien entendu, devez commencent à `ManageUsers.aspx` et sélectionnez un compte d’utilisateur à gérer. Lors de la réception sur `UserInformation.aspx`, notez que le `IsApproved` case à cocher est activée uniquement si l’utilisateur est approuvé. Si l’utilisateur a déjà été verrouillé, leur dernière verrouillé date s’affiche. Le bouton de déverrouillage de l’utilisateur est activé uniquement si l’utilisateur est actuellement verrouillé. Activant ou désactivant la `IsApproved` case à cocher ou en cliquant sur le bouton de déverrouillage de l’utilisateur entraîne une publication, mais aucun modifications ne sont apportées au compte d’utilisateur, car nous avons encore pour créer des gestionnaires d’événements pour ces événements.
 
@@ -146,7 +146,7 @@ Ensuite, nous avons besoin configurer le contrôle CreateUserWizard pour envoyer
 
 ### <a name="sending-a-verification-email-to-new-users"></a>Envoyer un message électronique de vérification pour les nouveaux utilisateurs
 
-Pour envoyer un message électronique à partir du contrôle CreateUserWizard, configurer ses `MailDefinition` propriété correctement. Comme indiqué dans le <a id="Tutorial13"> </a> [didacticiel précédent](recovering-and-changing-passwords-cs.md), les contrôles ChangePassword et PasswordRecovery incluent un [ `MailDefinition` propriété](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.createuserwizard.maildefinition.aspx) qui fonctionne de la même manière que CreateUserWizard du contrôle.
+Pour envoyer un message électronique à partir du contrôle CreateUserWizard, configurer ses `MailDefinition` propriété correctement. Comme indiqué dans le <a id="Tutorial13"> </a> [didacticiel précédent](recovering-and-changing-passwords-cs.md), les contrôles ChangePassword et PasswordRecovery incluent un [ `MailDefinition` propriété](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.maildefinition.aspx) qui fonctionne de la même manière que CreateUserWizard du contrôle.
 
 > [!NOTE]
 > Pour utiliser le `MailDefinition` options de propriété, vous devez spécifier la remise des messages dans `Web.config`. Pour plus d’informations, reportez-vous à [envoi de courrier électronique dans ASP.NET](http://aspnet.4guysfromrolla.com/articles/072606-1.aspx).
@@ -160,7 +160,7 @@ Définir le `MailDefinition'` s `BodyFileName` propriété « ~ / EmailTemplate
 
 Notez que la `CreateUserWizard.txt` modèle de courrier électronique inclut un `<%VerificationUrl%>` espace réservé. Cette propriété est si l’URL pour le `Verification.aspx` page sera placée. CreateUserWizard remplace automatiquement le `<%UserName%>` et `<%Password%>` des espaces réservés avec du nouveau compte nom d’utilisateur et mot de passe, mais il n’intègre aucune `<%VerificationUrl%>` espace réservé. Nous devons remplacer manuellement par l’URL de vérification appropriées.
 
-Pour ce faire, créez un gestionnaire d’événements pour de CreateUserWizard [ `SendingMail` événements](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.createuserwizard.sendingmail.aspx) et ajoutez le code suivant :
+Pour ce faire, créez un gestionnaire d’événements pour de CreateUserWizard [ `SendingMail` événements](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.sendingmail.aspx) et ajoutez le code suivant :
 
 [!code-csharp[Main](unlocking-and-approving-user-accounts-cs/samples/sample4.cs)]
 
@@ -196,7 +196,7 @@ La figure 7 montre le `Verification.aspx` page lorsque visité via un navigateur
 **Figure 7**: compte du nouvel utilisateur l’est à présent approuvé ([cliquez pour afficher l’image en taille réelle](unlocking-and-approving-user-accounts-cs/_static/image21.png))
 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Tous les comptes d’utilisateur d’appartenance ont deux États qui déterminent si l’utilisateur peut se connecter au site : `IsLockedOut` et `IsApproved`. Ces deux propriétés doivent être `true` pour l’utilisateur de connexion.
 

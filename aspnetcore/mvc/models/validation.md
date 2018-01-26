@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/models/validation
-ms.openlocfilehash: 91db17e103723ac411a2ad4f3f9549860f250cce
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 56928c61ae47d313145afadf3e0fa93a078b681b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="introduction-to-model-validation-in-aspnet-core-mvc"></a>Introduction à la validation de modèle dans ASP.NET MVC de base
 
@@ -148,14 +148,14 @@ MVC détermine les valeurs d’attribut de type en fonction du type de données 
 
 ### <a name="add-validation-to-dynamic-forms"></a>Ajouter une Validation aux formulaires dynamiques
 
-Car jQuery Validation discrète transmet la logique de validation et les paramètres jQuery validation lors du premier charge de la page, les formulaires générés de manière dynamique pas automatiquement présentera de validation. Au lieu de cela, vous devez indiquer jQuery Validation discrète pour analyser la forme dynamique immédiatement après sa création. Par exemple, le code ci-dessous montre comment vous pouvez configurer la validation côté client sur un formulaire ajoutée via AJAX.
+Car jQuery Validation discrète transmet la logique de validation et les paramètres jQuery validation lors du premier charge de la page, forms générés de manière dynamique ne sont pas automatiquement présentent de validation. Au lieu de cela, vous devez indiquer jQuery Validation discrète pour analyser la forme dynamique immédiatement après sa création. Par exemple, le code ci-dessous montre comment vous pouvez configurer la validation côté client sur un formulaire ajoutée via AJAX.
 
 ```js
 $.get({
     url: "https://url/that/returns/a/form",
     dataType: "html",
     error: function(jqXHR, textStatus, errorThrown) {
-        alert(textStatus + ": Could not add form. " + errorThrown);
+        alert(textStatus + ": Couldn't add form. " + errorThrown);
     },
     success: function(newFormHTML) {
         var container = document.getElementById("form-container");
@@ -171,14 +171,14 @@ Le `$.validator.unobtrusive.parse()` méthode accepte un sélecteur de jQuery po
 
 ### <a name="add-validation-to-dynamic-controls"></a>Ajouter une Validation à des contrôles dynamiques
 
-Vous pouvez également mettre à jour les règles de validation sur un formulaire lorsque les contrôles individuels, tels que `<input/>`s et `<select/>`s, sont générées de façon dynamique. Vous ne pouvez pas passer des sélecteurs pour ces éléments pour le `parse()` directement la méthode, car le formulaire qui l’entoure a déjà été analysé et ne met pas à jour. Au lieu de cela, vous supprimez d’abord les données de validation existantes, puis d’analyse de l’intégralité du formulaire, comme indiqué ci-dessous :
+Vous pouvez également mettre à jour les règles de validation sur un formulaire lorsque les contrôles individuels, tels que `<input/>`s et `<select/>`s, sont générées de façon dynamique. Vous ne pouvez pas passer des sélecteurs pour ces éléments pour le `parse()` directement la méthode, car le formulaire qui l’entoure a déjà été analysé et ne sera pas mise à jour. Au lieu de cela, vous supprimez d’abord les données de validation existantes, puis d’analyse de l’intégralité du formulaire, comme indiqué ci-dessous :
 
 ```js
 $.get({
     url: "https://url/that/returns/a/control",
     dataType: "html",
     error: function(jqXHR, textStatus, errorThrown) {
-        alert(textStatus + ": Could not add form. " + errorThrown);
+        alert(textStatus + ": Couldn't add form. " + errorThrown);
     },
     success: function(newInputHTML) {
         var form = document.getElementById("my-form");
@@ -235,8 +235,7 @@ Le `AdditionalFields` propriété de la `[Remote]` attribut est utile pour valid
 
 [!code-csharp[Main](validation/sample/User.cs?range=10-13)]
 
-`AdditionalFields`Impossible ont été définis explicitement sur les chaînes `"FirstName"` et `"LastName"`, mais en utilisant le [ `nameof` ](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/nameof) opérateur comme cela simplifie la refactorisation ultérieurement. La méthode d’action pour effectuer la validation doit accepter deux arguments, un pour la valeur de `FirstName` et l’autre pour la valeur de `LastName`.
-
+`AdditionalFields`peut avoir été défini explicitement pour les chaînes `"FirstName"` et `"LastName"`, mais en utilisant la [ `nameof` ](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/nameof) opérateur comme cela simplifie la refactorisation ultérieurement. La méthode d’action pour effectuer la validation doit accepter deux arguments, un pour la valeur de `FirstName` et l’autre pour la valeur de `LastName`.
 
 [!code-csharp[Main](validation/sample/UsersController.cs?range=30-39)]
 
@@ -253,4 +252,4 @@ Si vous devez valider deux ou plusieurs champs supplémentaires avec le `[Remote
 public string MiddleName { get; set; }
 ```
 
-`AdditionalFields`, comme tous les arguments d’attribut, doit être une expression constante. Par conséquent, vous ne devez pas utiliser un [interpolées chaîne](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/interpolated-strings) ou appelez [ `string.Join()` ](https://msdn.microsoft.com/en-us/library/system.string.join(v=vs.110).aspx) pour initialiser `AdditionalFields`. Pour chaque champ supplémentaire que vous ajoutez à la `[Remote]` attribut, vous devez ajouter un autre argument à la méthode d’action de contrôleur correspondant.
+`AdditionalFields`, comme tous les arguments d’attribut, doit être une expression constante. Par conséquent, vous ne devez pas utiliser un [interpolées chaîne](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/interpolated-strings) ou appelez [ `string.Join()` ](https://msdn.microsoft.com/library/system.string.join(v=vs.110).aspx) pour initialiser `AdditionalFields`. Pour chaque champ supplémentaire que vous ajoutez à la `[Remote]` attribut, vous devez ajouter un autre argument à la méthode d’action de contrôleur correspondant.

@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-models-and-data-access
 msc.type: authoredcontent
-ms.openlocfilehash: bf4bb5c6f9ad8339c3597b0d6666c7077ac476e0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 076fa87eff140a3e7ff6855e4876abac40419c57
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-mvc-4-models-and-data-access"></a>Accès aux données et les modèles ASP.NET MVC 4
 ====================
@@ -27,7 +27,7 @@ par [Web Camps équipe](https://twitter.com/webcamps)
 > 
 > Ce laboratoire présente les améliorations et nouvelles fonctionnalités décrites précédemment en appliquant les modifications mineures à un exemple d’application Web dans le dossier Source.
 > 
-> Tous les exemples de code et des extraits de code sont inclus dans le Kit de formation Camps Web, disponible à l’adresse [https://www.microsoft.com/en-us/download/29843](https://www.microsoft.com/en-us/download/29843).
+> Tous les exemples de code et des extraits de code sont inclus dans le Kit de formation Camps Web, disponible à l’adresse [https://www.microsoft.com/download/29843](https://www.microsoft.com/download/29843).
 
 
 Dans **notions de base ASP.NET MVC** atelier pratique, vous avez été passant données codées en dur à partir des contrôleurs pour les modèles d’affichage. Toutefois, pour générer une application Web réelle, vous pouvez souhaiter utiliser une base de données réel.
@@ -59,7 +59,7 @@ Les avantages de l’utilisation de cette approche est que le modèle reste ind�
 <a id="Prerequisites"></a>
 
 <a id="Prerequisites"></a>
-### <a name="prerequisites"></a>Conditions préalables
+### <a name="prerequisites"></a>Prérequis
 
 Vous devez disposer des éléments suivants pour effectuer ce laboratoire :
 
@@ -235,7 +235,7 @@ Dans cette tâche, la classe StoreController met à jour, afin que, au lieu d’
     > [!NOTE]
     > Vous utilisez une fonctionnalité de .NET appelée **LINQ** (language integrated query) pour écrire des expressions de requête fortement typée par rapport à ces regroupements - qui exécutera le code par rapport à la base de données et retourner des objets que vous pouvez programmer par rapport aux.
     > 
-    > Pour plus d’informations à propos de LINQ, visitez le [site msdn](https://msdn.microsoft.com/en-us/library/bb397926&amp;#040;v=vs.110&amp;#041;.aspx).
+    > Pour plus d’informations à propos de LINQ, visitez le [site msdn](https://msdn.microsoft.com/library/bb397926&amp;#040;v=vs.110&amp;#041;.aspx).
 3. Mise à jour **Index** pour récupérer tous les genres des méthode d’action.
 
     (Code d’extrait de code - *modèles et accès aux données - Index de magasin Ex1*)
@@ -351,7 +351,7 @@ Maintenant que vous avez déjà configuré la connexion à la base de données, 
     > [!NOTE]
     > Pour utiliser des conventions de Code First, la Genre de classe doit avoir une propriété de clé primaire sera automatiquement détectée.
     > 
-    > Vous pouvez en savoir plus sur les Conventions de premier Code de cette [article msdn](https://msdn.microsoft.com/en-us/library/hh161541&amp;#040;v=vs.103&amp;#041;.aspx).
+    > Vous pouvez en savoir plus sur les Conventions de premier Code de cette [article msdn](https://msdn.microsoft.com/library/hh161541&amp;#040;v=vs.103&amp;#041;.aspx).
 2. Maintenant, ouvrez la classe de modèle POCO **Album** de **modèles** dossier de projet et inclure les clés étrangères, créer des propriétés avec les noms **GenreId** et  **ArtistId**. Cette classe possède déjà le **GenreId** pour la clé primaire.
 
     (Code d’extrait de code - *modèles et accès aux données - Ex2 Code premier Album*)
@@ -385,7 +385,7 @@ Maintenant que vous avez déjà configuré la connexion à la base de données, 
     [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample12.cs)]
 
     > [!NOTE]
-    > Avec Entity Framework **DbContext** et **DBSet** vous serez en mesure d’interroger la classe POCO Genre. En étendant **OnModelCreating** (méthode), vous spécifiez dans le **code** comment Genre est mappée à une table de base de données. Vous trouverez plus d’informations sur DBContext et DBSet dans cet article msdn : [lien](https://msdn.microsoft.com/en-us/library/system.data.entity.dbcontext(v=vs.103).aspx)
+    > Avec Entity Framework **DbContext** et **DBSet** vous serez en mesure d’interroger la classe POCO Genre. En étendant **OnModelCreating** (méthode), vous spécifiez dans le **code** comment Genre est mappée à une table de base de données. Vous trouverez plus d’informations sur DBContext et DBSet dans cet article msdn : [lien](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=vs.103).aspx)
 
 <a id="Ex2Task4"></a>
 
@@ -416,7 +416,7 @@ Dans cette tâche, la classe StoreController met à jour, afin que, au lieu d’
     > [!NOTE]
     > Vous utilisez une fonctionnalité de .NET appelée **LINQ** (language integrated query) pour écrire des expressions de requête fortement typée par rapport à ces regroupements - qui exécutera le code par rapport à la base de données et retourner des objets que vous pouvez programmer par rapport aux.
     > 
-    > Pour plus d’informations à propos de LINQ, visitez le [site msdn](https://msdn.microsoft.com/en-us/library/bb397926(v=vs.110).aspx).
+    > Pour plus d’informations à propos de LINQ, visitez le [site msdn](https://msdn.microsoft.com/library/bb397926(v=vs.110).aspx).
 3. Mise à jour **Index** pour récupérer tous les genres des méthode d’action.
 
     (Code d’extrait de code - *modèles et accès aux données - Index de magasin Ex2*)
@@ -457,7 +457,7 @@ Dans cette tâche, vous allez vérifier que la page d’Index du magasin s’aff
 Dans cet exercice, vous allez apprendre comment interroger la base de données à l’aide de paramètres et comment utiliser la mise en forme du résultat de requête, une fonctionnalité qui permet de réduire la base de données nombre accède à la récupération des données de manière plus efficace.
 
 > [!NOTE]
-> Pour plus d’informations sur la mise en forme du résultat de requête, visitez [article msdn](https://msdn.microsoft.com/en-us/library/bb896272&amp;#040;v=vs.100&amp;#041;.aspx).
+> Pour plus d’informations sur la mise en forme du résultat de requête, visitez [article msdn](https://msdn.microsoft.com/library/bb896272&amp;#040;v=vs.100&amp;#041;.aspx).
 
 
 <a id="Ex3Task1"></a>
@@ -542,7 +542,7 @@ Dans cette tâche, vous exécutez l’Application dans un navigateur web et obte
 <a id="Summary"></a>
 
 <a id="Summary"></a>
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 En fin de cet atelier pratique que vous avez appris les notions de base de l’accès aux données et les modèles ASP.NET MVC, à l’aide de la **Database First** approche, ainsi que les **Code First** approche :
 

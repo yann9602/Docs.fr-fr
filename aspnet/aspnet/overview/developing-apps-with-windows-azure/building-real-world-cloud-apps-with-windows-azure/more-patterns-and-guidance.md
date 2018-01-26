@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/more-patterns-and-guidance
 msc.type: authoredcontent
-ms.openlocfilehash: 2ac18799d214777d098cc85ec6c85fd09f84a782
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a388f2e0ca3e1f0ce24a6def2a2b91711a7bf5a7
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="more-patterns-and-guidance-building-real-world-cloud-apps-with-azure"></a>Plusieurs modèles et conseils (génération d’applications Cloud du monde réel avec Azure)
 ====================
@@ -31,18 +31,18 @@ Vous avez maintenant vu 13 motifs qui fournissent des instructions sur la façon
 
 - Migration des applications existantes sur site vers le cloud. 
 
-    - [Déplacer les Applications sur le Cloud](https://msdn.microsoft.com/en-us/library/ff728592.aspx). Livres par Microsoft Patterns and Practices. Également disponible en tant qu’un [livre de poche papier](https://www.amazon.com/dp/1621140202).
+    - [Déplacer les Applications sur le Cloud](https://msdn.microsoft.com/library/ff728592.aspx). Livres par Microsoft Patterns and Practices. Également disponible en tant qu’un [livre de poche papier](https://www.amazon.com/dp/1621140202).
     - [Migration et Microsoft ASP.NET IIS.NET](https://go.microsoft.com/fwlink/?LinkId=400656). Étude de cas par Robert McMurray.
     - [Déplacement 4e &amp; maire vers des Sites Web Azure](http://www.jeff.wilcox.name/2013/04/4thandmayor-azure-websites/). Le billet de blog par Jeff Wilcox chronicling son expérience déplacement d’une application web à partir d’Amazon Web Services pour des applications Web dans Azure App Service.
-    - [Déplacement des applications vers Azure : les modifications ?](https://azure.microsoft.com/en-us/documentation/videos/web-sites-internals-and-the-file-system/) Courte vidéo par Stefan Schackow, explique l’accès au système de fichiers dans les applications Web dans Azure App Service.
+    - [Déplacement des applications vers Azure : les modifications ?](https://azure.microsoft.com/documentation/videos/web-sites-internals-and-the-file-system/) Courte vidéo par Stefan Schackow, explique l’accès au système de fichiers dans les applications Web dans Azure App Service.
     - [Cloud hybride Azure](https://www.amazon.com/dp/B00EOP4UQW). Papier ou des livres par Adam Fazio, Jamal Malik et Danny Garber.
 - Problèmes de sécurité, l’authentification et d’autorisation uniques aux applications de cloud
 
     - [Guide de sécurité Azure](https://azure.microsoft.com/blog/2014/02/10/best-practices-windows-azure-websites-waws/)
-    - [Microsoft Patterns and Practices - Guide Azure](https://msdn.microsoft.com/en-us/library/dn568099.aspx). Voir Gatekeeper motif, identité fédérée.
+    - [Microsoft Patterns and Practices - Guide Azure](https://msdn.microsoft.com/library/dn568099.aspx). Voir Gatekeeper motif, identité fédérée.
     - [Sécurité du réseau Azure](https://download.microsoft.com/download/4/3/9/43902EC9-410E-4875-8800-0788BE146A3D/Windows%20Azure%20Network%20Security%20Whitepaper%20-%20FINAL.docx). Livre blanc par Ashin Palekar.
 
-Consultez également les modèles de calcul cloud supplémentaire et des conseils à [Microsoft Patterns and Practices - aide de Azure](https://msdn.microsoft.com/en-us/library/dn568099.aspx).
+Consultez également les modèles de calcul cloud supplémentaire et des conseils à [Microsoft Patterns and Practices - aide de Azure](https://msdn.microsoft.com/library/dn568099.aspx).
 
 <a id="resources"></a>
 ## <a name="resources"></a>Ressources
@@ -51,9 +51,9 @@ Chacun des chapitres de ce livre électronique fournit des liens vers des ressou
 
 Documentation
 
-- [Meilleures pratiques pour la création de Services à grande échelle sur les Services Cloud Azure](https://msdn.microsoft.com/en-us/library/windowsazure/jj717232.aspx). Livre blanc par Mark Simms et Michael Thomassy.
-- [Prévention de défaillance : Aide sur les Architectures de Cloud résilientes](https://msdn.microsoft.com/en-us/library/windowsazure/jj853352.aspx). Livre blanc par Marc Mercuri, Ulrich Homann et Andrew Townhill. Version de la page Web de la série de vidéos de prévention de défaillance.
-- [Aide sur Azure](https://azure.microsoft.com/en-us/develop/net/guidance/) page portail pour la documentation officielle liés au développement d’applications pour Azure.
+- [Meilleures pratiques pour la création de Services à grande échelle sur les Services Cloud Azure](https://msdn.microsoft.com/library/windowsazure/jj717232.aspx). Livre blanc par Mark Simms et Michael Thomassy.
+- [Prévention de défaillance : Aide sur les Architectures de Cloud résilientes](https://msdn.microsoft.com/library/windowsazure/jj853352.aspx). Livre blanc par Marc Mercuri, Ulrich Homann et Andrew Townhill. Version de la page Web de la série de vidéos de prévention de défaillance.
+- [Aide sur Azure](https://azure.microsoft.com/develop/net/guidance/) page portail pour la documentation officielle liés au développement d’applications pour Azure.
 
 Vidéos
 
@@ -75,7 +75,7 @@ Documentation de papier
 - [Windows Azure, modèles de programmation pour naissantes](https://www.amazon.com/dp/1849685606). Par Riccardo Becker.
 - [Microsoft Windows Azure développement Cookbook](https://www.amazon.com/dp/1849682224). Par Neil Mackenzie.
 
-Enfin, lorsque vous commencez à créer des applications du monde réel et les exécute dans Azure, tôt ou tard vous aurez probablement besoin d’aide des experts. Vous pouvez poser des questions dans les sites de Communauté comme [forums Azure ou StackOverflow](https://azure.microsoft.com/en-us/support/forums/), ou vous pouvez contacter Microsoft directement pour la prise en charge Azure. Microsoft propose plusieurs niveaux de support technique Azure : pour un résumé et une comparaison des options, consultez [Azure prend en charge](https://azure.microsoft.com/en-us/support/plans/).
+Enfin, lorsque vous commencez à créer des applications du monde réel et les exécute dans Azure, tôt ou tard vous aurez probablement besoin d’aide des experts. Vous pouvez poser des questions dans les sites de Communauté comme [forums Azure ou StackOverflow](https://azure.microsoft.com/support/forums/), ou vous pouvez contacter Microsoft directement pour la prise en charge Azure. Microsoft propose plusieurs niveaux de support technique Azure : pour un résumé et une comparaison des options, consultez [Azure prend en charge](https://azure.microsoft.com/support/plans/).
 
 <a id="acknowledgments"></a>
 ## <a name="acknowledgments"></a>Accusés de réception

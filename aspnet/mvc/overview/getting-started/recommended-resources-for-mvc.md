@@ -12,17 +12,17 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/recommended-resources-for-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: 2aa7ded558ff52f252468ef3412c719b4596c79f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d08ee5c2bf56611caa483337af0ec1bd7cf982c0
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="mvc-recommended-resources"></a>MVC recommandé de ressources
 ====================
 Par [Rick Anderson](https://github.com/Rick-Anderson)
 
-> Cette rubrique fournit des liens vers des ressources de documentation sur ASP.NET MVC 5. Si vous connaissez un excellent blog post, [stackoverflow](http://stackoverflow.com/) thread ou un autre lien qui serait utile, envoyer [me](mailto:aspnetue@microsoft.com?subject=Great ASP.NET MVC link) un message électronique avec le lien. Les liens fournis ici sont régulièrement mises à jour. Vous trouverez plus anciens (mais dans de nombreux cas toujours applicables) ASP.NET MVC les liens fournis sur le [plan du contenu MSDN](https://msdn.microsoft.com/en-us/library/gg416514(v=vs.108).aspx).
+> Cette rubrique fournit des liens vers des ressources de documentation sur ASP.NET MVC 5. Si vous connaissez un excellent blog post, [stackoverflow](http://stackoverflow.com/) thread ou un autre lien qui serait utile, envoyer [me](mailto:aspnetue@microsoft.com?subject=Great ASP.NET MVC link) un message électronique avec le lien. Les liens fournis ici sont régulièrement mises à jour. Vous trouverez plus anciens (mais dans de nombreux cas toujours applicables) ASP.NET MVC les liens fournis sur le [plan du contenu MSDN](https://msdn.microsoft.com/library/gg416514(v=vs.108).aspx).
 > 
 > Un bon emplacement pour obtenir des réponses à vos questions ou pour trouver des solutions aux problèmes est le [forum ASP.NET MVC](https://forums.asp.net/1146.aspx/1?MVC) ou sur [stackoverflow](http://stackoverflow.com/questions/tagged/mvc+asp.net-mvc).
 <a id="gettingstarted"></a>
@@ -46,7 +46,7 @@ Par [Rick Anderson](https://github.com/Rick-Anderson)
 - [Créer une application ASP.NET MVC 5 avec Facebook et Google OAuth2 Sign-on](../security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md)
 - [ASP.NET MVC de présentation des filtres et des attributs](http://www.dotnet-tricks.com/Tutorial/mvc/b11a280114-Understanding-ASP.NET-MVC-Filters-and-Attributes.html)
 - [Cycle de vie d’une Application ASP.NET MVC 5](lifecycle-of-an-aspnet-mvc-5-application.md) (PDF)
-- [Procédure ne pas à suivre dans ASP.NET et comment procéder à la place](../../../aspnet/overview/web-development-best-practices/what-not-to-do-in-aspnet-and-what-to-do-instead.md)
+- [Ce qu’il ne faut pas faire dans ASP.NET et ce qu’il faut faire à la place](../../../aspnet/overview/web-development-best-practices/what-not-to-do-in-aspnet-and-what-to-do-instead.md)
 - [Libération SocialGoal - référence d’application Web pour ASP.NET MVC 5, EF 6 du Code en premier lieu, AutoMapper, Autofac, TDD et DDD](https://weblogs.asp.net/shijuvarghese/archive/2014/01/24/releasing-socialgoal-reference-web-app-for-asp-net-mvc-5-ef-6-code-first-automapper-autofac-tdd-and-ddd.aspx)
 - [Création d’applications de Cloud du monde réel avec Azure](../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/introduction.md)
 - [Pipeline détaillées ASP.NET MVC](http://www.dotnet-tricks.com/Tutorial/mvc/LYHK270114-Detailed-ASP.NET-MVC-Pipeline.html)
@@ -87,7 +87,7 @@ Par [Rick Anderson](https://github.com/Rick-Anderson)
 ## <a name="security"></a>Sécurité
 
 - [Créer une application ASP.NET MVC 5 avec Facebook et Google OAuth2 Sign-on](../security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md)
-- [Procédure ne pas à suivre dans ASP.NET et comment procéder à la place](../../../aspnet/overview/web-development-best-practices/what-not-to-do-in-aspnet-and-what-to-do-instead.md)
+- [Ce qu’il ne faut pas faire dans ASP.NET et ce qu’il faut faire à la place](../../../aspnet/overview/web-development-best-practices/what-not-to-do-in-aspnet-and-what-to-do-instead.md)
 - [Comment générer (et ne pas générer) une fonctionnalité « mémoriser »](http://www.troyhunt.com/2013/07/how-to-build-and-how-not-to-build.html) par la recherche de Troie
 - Vidéo : [le nouveau modèle d’authentification pour les Applications Cloud par Lucas Adams, Stuart Kwan, mobiles et Web](https://channel9.msdn.com/Events/Build/2014/2-601)
 - [Vidéo : Entreprise de génération et les applications Web SaaS et API Web à l’aide d’Azure Active Directory pour la connexion par Vittorio Bertocci](https://channel9.msdn.com/Events/Build/2014/3-599)
@@ -103,13 +103,13 @@ Par [Rick Anderson](https://github.com/Rick-Anderson)
 - [Sécurité dans ASP.NET MVC](http://www.codeproject.com/Articles/654846/Security-In-ASP-NET-MVC)
 - [Sécurisation de votre application ASP.NET MVC 4](https://blogs.msdn.com/b/rickandy/archive/2012/03/23/securing-your-asp-net-mvc-4-app-and-the-new-allowanonymous-attribute.aspx)
 - [Vue d’ensemble de pratiques de sécurité de vidéo Pluralsight](http://www.pluralsight-training.net/microsoft/players/PSODPlayer?author=scott-allen&amp;name=mvc3-building-security&amp;mode=live&amp;clip=0&amp;course=aspdotnet-mvc3-intro)
-- [Prévention de XSRF/CSRF dans ASP.NET MVC et les Pages Web](../security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages.md)
+- [Prévention de XSRF/CSRF dans ASP.NET MVC et les pages web](../security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages.md)
 - [OWASP avoir Top 10 pour les développeurs .NET](http://www.troyhunt.com/2010/05/owasp-top-10-for-net-developers-part-1.html)
-- [À l’aide des fournisseurs OAuth avec MVC 4](../older-versions/using-oauth-providers-with-mvc.md)
-- [Vérification de piratage de vos Applications ASP.NET](https://msdn.microsoft.com/en-us/magazine/hh580736.aspx) décembre 2011 article MSDN Magazine par Adam Tuliper
-- [Sécurisation de vos Applications ASP.NET](https://msdn.microsoft.com/en-us/magazine/hh708755.aspx) janvier 2012 article MSDN Magazine par Adam Tuliper
+- [Utilisation de fournisseurs OAuth avec MVC 4](../older-versions/using-oauth-providers-with-mvc.md)
+- [Vérification de piratage de vos Applications ASP.NET](https://msdn.microsoft.com/magazine/hh580736.aspx) décembre 2011 article MSDN Magazine par Adam Tuliper
+- [Sécurisation de vos Applications ASP.NET](https://msdn.microsoft.com/magazine/hh708755.aspx) janvier 2012 article MSDN Magazine par Adam Tuliper
 - [Prévention des attaques de Redirection ouvert](../security/preventing-open-redirection-attacks.md)
-- [Comment créer un Site Intranet à l’aide d’ASP.NET MVC](https://msdn.microsoft.com/en-us/library/gg703322(v=vs.98).aspx)
+- [Comment créer un Site Intranet à l’aide d’ASP.NET MVC](https://msdn.microsoft.com/library/gg703322(v=vs.98).aspx)
 - [Fournisseur de valeur ASP.NET MVC pour la chaîne de requête chiffrée](http://www.dotnetexpertguide.com/2013/01/aspnet-mvc-value-provider-for-encrypted-query-string.html?utm_source=dlvr.it&amp;utm_medium=twitter&amp;utm_campaign=Feed:_Dotnetexpertguide)
 - [Présentation HaaHa : Sécurité de Microsoft ASP.NET MVC avec Haack et Hanselman](https://channel9.msdn.com/Events/MIX/MIX10/FT05) (vidéo)
 - [Identité de l’utilisateur en charge les revendications dans ASP.NET](http://brockallen.com/2013/01/26/replacing-forms-authentication-with-wifs-session-authentication-module-sam-to-enable-claims-aware-identity/)
@@ -142,7 +142,7 @@ Par [Rick Anderson](https://github.com/Rick-Anderson)
 ## <a name="data-access-in-aspnet-mvc"></a>Accès aux données dans ASP.NET MVC
 
 - [Mise en route avec Entity Framework à l’aide d’ASP.NET MVC](getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)
-- [ASP.NET Data Access Content Map](https://msdn.microsoft.com/en-us/library/6759sth4.aspx)
+- [ASP.NET Data Access Content Map](https://msdn.microsoft.com/library/6759sth4.aspx)
 - [Création d’une Application ASP.NET MVC 4 avec EF et Web API](http://net.tutsplus.com/tutorials/building-an-asp-net-mvc4-application-with-ef-and-webapi/)
 - [DataList dans ASP.NET MVC &amp; KnockoutJS](http://www.devcurry.com/2013/04/datalist-in-aspnet-mvc-knockoutjs.html)
 
@@ -150,7 +150,7 @@ Par [Rick Anderson](https://github.com/Rick-Anderson)
 
 ## <a name="web-forms-to-mvc"></a>Web Forms pour MVC
 
-- [Migration de formulaires Web ASP.NET pour le modèle MVC avec ASP.NET Web API](https://msdn.microsoft.com/en-us/magazine/jj991978.aspx)
+- [Migration de formulaires Web ASP.NET pour le modèle MVC avec ASP.NET Web API](https://msdn.microsoft.com/magazine/jj991978.aspx)
 - Vidéo de Matthew Kane [intégration complète de MVC et les Web Forms](https://channel9.msdn.com/Events/aspConf/aspConf/Deep-Integration-of-MVC-and-WebForms)
 - [ASP.NET MVC - vivant dans un monde de formulaires Web](http://www.eworldui.net/blog/post/2008/05/09/ASPNET-MVC-Living-in-a-Web-Forms-World.aspx)
 - [Web Forms pour MVC](http://www.davepaquette.com/archive/2013/12/30/so-you-inherited-an-asp-net-web-forms-application.aspx)
@@ -171,7 +171,7 @@ Par [Rick Anderson](https://github.com/Rick-Anderson)
 - [Vidéo : Obtenir les avertir de problèmes de performances et d’échecs et identifier la Cause avec l’Application par Bret Grinslade, Vlad Joanovic](https://channel9.msdn.com/Events/Build/2014/3-597)
 - [La mise en cache de l’anneau et le trou de l’anneau de mise en cache avec Asp.Net MVC 4](http://www.dotnet-tricks.com/Tutorial/mvc/ODJa210113-Donut-Caching-and-Donut-Hole-Caching-with-Asp.Net-MVC-4.html)
 - [Présentation de la mise en cache dans Asp.Net MVC avec l’exemple](http://www.dotnet-tricks.com/Tutorial/mvc/4R5c050113-Understanding-Caching-in-Asp.Net-MVC-with-example.html)
-- [http://webdevchecklist.com/ASP.NET/performance/](http://webdevchecklist.com/asp.net/performance/)
+- [http://webdevchecklist.com/asp.net/performance/](http://webdevchecklist.com/asp.net/performance/)
 - [Modèle d’affichage ASP.NET MVC : Entity Framework &amp; sérialisation JSON](http://www.dotnetexpertguide.com/2013/06/aspnet-mvc-view-model-entity-framework-json-serialization.html)  
  Nandip Makwana affiche une info-bulle agréable à l’augmentation des performances (et l’utilisation du processeur inférieure) en éliminant la sérialisation inutile des entités enfants
 - [Async et Await](http://blog.stephencleary.com/2012/02/async-and-await.html) dans ASP.NET par Stephen Cleary
@@ -217,10 +217,10 @@ Par [Rick Anderson](https://github.com/Rick-Anderson)
 - [Les attributs à l’aide de données personnalisé pour stocker des données JSON dans ASP.NET MVC](http://www.binaryintellect.net/articles/8b993a74-a84a-42bd-9127-e701a03f5885.aspx)
 - Liens MVC 4 toujours applicables à MVC 5
 - [Envoi de JSON à une méthode d’Action](http://haacked.com/archive/2010/04/15/sending-json-to-an-asp-net-mvc-action-method-argument.aspx)
-- [Créer des Interfaces utilisateur riches à l’aide de jQuery](https://msdn.microsoft.com/en-us/magazine/dd722809.aspx)
+- [Créer des Interfaces utilisateur riches à l’aide de jQuery](https://msdn.microsoft.com/magazine/dd722809.aspx)
 - [Remplir automatiquement la zone des colonnes de table de données aux vues dans ASP.NET MVC](http://www.dotnetfunda.com/articles/show/2669/auto-populate-datatable-columns-to-the-views-in-aspnet-mvc) par Sheo Narayan
 - [Utilisation de HTML5 et du calendrier contextuel jQuery UI avec ASP.NET MVC](../older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-1.md)
-- [À l’aide du programme d’assistance DropDownList avec ASP.NET MVC](../older-versions/working-with-the-dropdownlist-box-and-jquery/using-the-dropdownlist-helper-with-aspnet-mvc.md)
+- [Utilisation du helper DropDownList avec ASP.NET MVC](../older-versions/working-with-the-dropdownlist-box-and-jquery/using-the-dropdownlist-helper-with-aspnet-mvc.md)
 - [DropDownListFor avec ASP.NET MVC](http://odetocode.com/blogs/scott/archive/2013/03/11/dropdownlistfor-with-asp-net-mvc.aspx)
 - [Liaison de données de programme d’assistance DropDownList dans ASP.NET MVC](http://www.itorian.com/2013/02/dropdownlist-helper-data-binding-in-mvc.html)
 - [Vidéo Pluralsight montrant comment utiliser JavaScript et Ajax](http://www.pluralsight-training.net/microsoft/players/PSODPlayer?author=scott-allen&amp;name=mvc3-building-ajax&amp;mode=live&amp;clip=0&amp;course=aspdotnet-mvc3-intro)
@@ -237,9 +237,9 @@ Par [Rick Anderson](https://github.com/Rick-Anderson)
 ## <a name="html5"></a>HTML5
 
 - [Utilisation de HTML5 et du calendrier contextuel jQuery UI avec ASP.NET MVC](../older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-1.md)
-- [Concevoir l’accessibilité avec HTML5](https://msdn.microsoft.com/en-us/magazine/jj863135.aspx)
-- [Créer des formulaires de HTML5 adaptés aux appareils mobiles avec ASP.NET MVC 4 et jQuery Mobile](https://msdn.microsoft.com/en-us/magazine/hh848259.aspx)
-- [Intégrer des HTML5 dans des formulaires Web ASP.NET existants et les Applications MVC](https://msdn.microsoft.com/en-us/magazine/jj129609.aspx)
+- [Concevoir l’accessibilité avec HTML5](https://msdn.microsoft.com/magazine/jj863135.aspx)
+- [Créer des formulaires de HTML5 adaptés aux appareils mobiles avec ASP.NET MVC 4 et jQuery Mobile](https://msdn.microsoft.com/magazine/hh848259.aspx)
+- [Intégrer des HTML5 dans des formulaires Web ASP.NET existants et les Applications MVC](https://msdn.microsoft.com/magazine/jj129609.aspx)
 
 <a id="Routing"></a>
 
@@ -272,7 +272,7 @@ Par [Rick Anderson](https://github.com/Rick-Anderson)
 ## <a name="azure-and-aspnet-mvc"></a>Azure et ASP.NET MVC
 
 - [Application à plusieurs niveaux à l’aide d’objets BLOB, les files d’attente et les Tables de stockage](https://code.msdn.microsoft.com/Windows-Azure-Multi-Tier-eadceb36)
-- [Sites Web Windows Azure : Hébergement rapide et simple en tant que Service](https://msdn.microsoft.com/en-us/magazine/jj883953.aspx)
+- [Sites Web Windows Azure : Hébergement rapide et simple en tant que Service](https://msdn.microsoft.com/magazine/jj883953.aspx)
 - [Conseils de configuration pour ASP.NET MVC 4 sur un site Web Azure](http://odetocode.com/Blogs/scott/archive/2012/08/07/configuration-tips-for-asp-net-mvc-4-on-a-windows.aspx)
 - [Épisode 85 - Azure, Windows 8 et MVC 4 démonstrations](https://channel9.msdn.com/Shows/Cloud+Cover/Episode-85-Windows-Azure-Sample-Content-Review) (vidéo)
 - [Déploiement d’un site Web ASP.NET sur Azure dans Visual Studio 2012 à partir d’un référentiel Git directement](http://www.dotnetcurry.com/ShowArticle.aspx?ID=881)
@@ -285,11 +285,11 @@ Par [Rick Anderson](https://github.com/Rick-Anderson)
 - [[Vidéo] Création de sites Web conviviales mobiles avec MVC 4](https://www.bitcast.io/v/building-mobile-friendly-websites-with-mvc-4)
 - [Création de sites Web mobiles à hautes performances](http://mobile.smashingmagazine.com/2013/08/12/creating-high-performance-mobile-websites/)
 - [Création de vues Mobile optimisé dans ASP.NET MVC 4](https://msdn.microsoft.com/en-gb/magazine/dn296507.aspx)
-- [Créer des formulaires de HTML5 adaptés aux appareils mobiles avec ASP.NET MVC 4 et jQuery Mobile](https://msdn.microsoft.com/en-us/magazine/hh848259.aspx)
-- [L’intégration de jQuery Mobile dans les applications Web MVC](https://msdn.microsoft.com/en-us/magazine/jj650891.aspx)
-- [Approfondir jQuery Mobile](https://msdn.microsoft.com/en-us/magazine/jj906416.aspx)
-- [Nouveautés pour le développement Mobile dans ASP.NET MVC 4](https://msdn.microsoft.com/en-us/magazine/hh975347.aspx)
-- [Hybride développer des applications Web mobiles et natif](https://msdn.microsoft.com/en-us/magazine/hh852592.aspx)
+- [Créer des formulaires de HTML5 adaptés aux appareils mobiles avec ASP.NET MVC 4 et jQuery Mobile](https://msdn.microsoft.com/magazine/hh848259.aspx)
+- [L’intégration de jQuery Mobile dans les applications Web MVC](https://msdn.microsoft.com/magazine/jj650891.aspx)
+- [Approfondir jQuery Mobile](https://msdn.microsoft.com/magazine/jj906416.aspx)
+- [Nouveautés pour le développement Mobile dans ASP.NET MVC 4](https://msdn.microsoft.com/magazine/hh975347.aspx)
+- [Hybride développer des applications Web mobiles et natif](https://msdn.microsoft.com/magazine/hh852592.aspx)
 - [Rendre un site de bureau et mobiles permutables avec ASP.NET MVC 4 et jQuery Mobile](http://www.hanselman.com/blog/MakingASwitchableDesktopAndMobileSiteWithASPNETMVC4AndJQueryMobile.aspx)
 - [Applications MVC 4 Mobile Web convivial](http://www.codeproject.com/Articles/455627/MVC4-Mobile-Friendly-Web-Applications)
 - [ASP.NET MVC 4 Mobile](https://channel9.msdn.com/Events/aspConf/aspConf/ASP-NET-MVC-4-Mobile)
@@ -298,7 +298,7 @@ Par [Rick Anderson](https://github.com/Rick-Anderson)
 
 ## <a name="single-page-application-spa"></a>Application à Page unique (SPA)
 
-- [Un manuel de développeurs .NET pour les Applications à Page unique](https://msdn.microsoft.com/en-us/magazine/dn605877.aspx) MSDN Magazine
+- [Un manuel de développeurs .NET pour les Applications à Page unique](https://msdn.microsoft.com/magazine/dn605877.aspx) MSDN Magazine
 - [Application de Page unique avec AngularJS et d’ASP.NET MVC 4](http://tarkus.me/post/32121691785/angularjs-with-asp-net-mvc-4)
 - [Dans le modèle d’applications ASP.NET unique Page](http://www.johnpapa.net/inside-the-asp-net-single-page-apps-template/)
 - [Mise à jour du modèle de l’Application MVC Page unique pour ASP.NET et Web Tools 2012.2 RC](https://blogs.msdn.com/b/webdev/archive/2012/12/19/mvc-single-page-template-update-for-asp-net-and-web-tools-2012-2-rc.aspx)
@@ -327,14 +327,14 @@ Par [Rick Anderson](https://github.com/Rick-Anderson)
 - [Tester la conduite ASP.NET MVC](https://channel9.msdn.com/Events/aspConf/aspConf/Test-Driving-ASP-NET-MVC) (vidéo)
 - [Intégration de test avec SpecsFor.Mvc – ASP.NET MVC test sur Surpuissantes !](https://channel9.msdn.com/Events/aspConf/aspConf/Integration-Testing-With-SpecsFor-Mvc-ASP-NET-MVC-Testing-on-Steroids) (vidéo)
 - [Création d’Applications Testable unité dans ASP.NET MVC - didacticiel du débutant](http://www.codeproject.com/Articles/579035/Creating-Unit-Testable-Applications-in-ASP-NET-MVC)
-- [Procédure pas à pas : Utilisation de TDD avec ASP.NET MVC](https://msdn.microsoft.com/en-us/library/gg416511(v=vs.98).aspx) (MVC 3)
+- [Procédure pas à pas : Utilisation de TDD avec ASP.NET MVC](https://msdn.microsoft.com/library/gg416511(v=vs.98).aspx) (MVC 3)
 - [Libération SocialGoal - référence d’application Web pour ASP.NET MVC 5, EF 6 du Code en premier lieu, AutoMapper, Autofac, TDD et DDD](https://weblogs.asp.net/shijuvarghese/archive/2014/01/24/releasing-socialgoal-reference-web-app-for-asp-net-mvc-5-ef-6-code-first-automapper-autofac-tdd-and-ddd.aspx)
 
 <a id="best"></a>
 
 ## <a name="best-practices"></a>Meilleures pratiques
 
-- [Procédure ne pas à suivre dans ASP.NET et comment procéder à la place](../../../aspnet/overview/web-development-best-practices/what-not-to-do-in-aspnet-and-what-to-do-instead.md)
+- [Ce qu’il ne faut pas faire dans ASP.NET et ce qu’il faut faire à la place](../../../aspnet/overview/web-development-best-practices/what-not-to-do-in-aspnet-and-what-to-do-instead.md)
 - [Liste de vérification de développeur Web](http://webdevchecklist.com/aspnet)
 - [Vidéo : Ne pas le faire, cela !](http://vimeo.com/68390507)
 - [Meilleures pratiques d’ASP.NET MVC Solution](https://channel9.msdn.com/Events/aspConf/aspConf/ASP-NET-MVC-Solution-Best-Practices) (vidéo)
@@ -353,8 +353,8 @@ Par [Rick Anderson](https://github.com/Rick-Anderson)
 
 ## <a name="rich-text-editors-for-mvc"></a>Texte enrichi éditeurs pour MVC
 
-- [http://www.TinyMCE.com/](http://www.tinymce.com/)
-- [http://www.ComponentOne.com/SuperProducts/StudioASPNET/](http://www.componentone.com/SuperProducts/StudioASPNET/)
+- [http://www.tinymce.com/](http://www.tinymce.com/)
+- [http://www.componentone.com/SuperProducts/StudioASPNET/](http://www.componentone.com/SuperProducts/StudioASPNET/)
 - [Texte enrichi avec l’éditeur HTML Infragistics dans les deux jQuery et d’ASP.NET MVC](http://www.infragistics.com/community/blogs/damyan_petev/archive/2012/02/24/rich-text-editing-with-infragistics-html-editor-in-both-jquery-and-asp-net-mvc.aspx)
 - [DevExpress ASP.NET MVC du contrôle RichEdit](https://go.devexpress.com/AjaxControlToolkit_ASP_Resources_MVC_RichEdit.aspx)
 - [Dispositions d’imbrication dans MVC](http://astutelogic.com/nesting-layouts-in-mvc/) par Russell Waite
@@ -363,9 +363,9 @@ Par [Rick Anderson](https://github.com/Rick-Anderson)
 
 ## <a name="general"></a>Général
 
-- [Comment mettre à niveau un ASP.NET MVC 4 et le projet d’API Web ASP.NET MVC 5 et API Web 2](../releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2.md)
+- [Guide pratique pour mettre à niveau un projet ASP.NET MVC 4 et Web API vers ASP.NET MVC 5 et API Web 2](../releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2.md)
 - [ASP.NET MVC de présentation des filtres et des attributs](http://www.dotnet-tricks.com/Tutorial/mvc/b11a280114-Understanding-ASP.NET-MVC-Filters-and-Attributes.html)
-- [API Web et de la négociation de contenu pour les développeurs ASP.NET MVC](https://msdn.microsoft.com/en-us/magazine/dn574797.aspx)
+- [API Web et de la négociation de contenu pour les développeurs ASP.NET MVC](https://msdn.microsoft.com/magazine/dn574797.aspx)
 - [Desservant WebP images avec ASP.NET MVC](http://friism.com/serving-webp-images-with-asp-net-mvc)
 - [Pipeline détaillées ASP.NET MVC](http://www.dotnet-tricks.com/Tutorial/mvc/LYHK270114-Detailed-ASP.NET-MVC-Pipeline.html)
 - [Dispositions d’imbrication dans MVC](http://astutelogic.com/nesting-layouts-in-mvc/) par Russell Waite
@@ -378,23 +378,23 @@ Par [Rick Anderson](https://github.com/Rick-Anderson)
 - [Télécharger des fichiers à l’aide d’ASP.NET MVC](http://rachelappel.com/upload-and-download-files-using-asp.net-mvc#)
 - [Obtenez des erreurs de la vue au moment de la compilation dans ASP.NET MVC](http://blog.falafel.com/Blogs/JonathanTower/j-tower/2013/12/02/get-compile-time-view-errors-in-asp-net-mvc)
 - [À l’aide de la Validation Fluent avec ASP.NET MVC](http://www.beabigrockstar.com/using-fluent-validation-with-asp-net-mvc-part-1-the-basics/)
-- [ASP.NET MVC sous la partie capot\_1](http://www.pieterg.com/2013/4/aspnet-mvc-under-the-hood-part-1) le [MvcHandler](https://msdn.microsoft.com/en-us/library/system.web.mvc.mvchandler(v=vs.108).aspx), l’objet responsable de la gestion d’une demande pour ASP.NET MVC.
+- [ASP.NET MVC sous la partie capot\_1](http://www.pieterg.com/2013/4/aspnet-mvc-under-the-hood-part-1) le [MvcHandler](https://msdn.microsoft.com/library/system.web.mvc.mvchandler(v=vs.108).aspx), l’objet responsable de la gestion d’une demande pour ASP.NET MVC.
 - [ASP.NET MVC sous la partie capot\_2](http://www.pieterg.com/2013/4/aspnet-mvc-under-the-hood-part-2)
 - [ASP.NET MVC sous la partie capot 3](http://www.pieterg.com/2013/4/aspnet-mvc-under-the-hood-part-3) recherche le Type du contrôleur
 - [ASP.NET MVC sous la partie capot 4](http://www.pieterg.com/2013/4/aspnet-mvc-under-the-hood-part-4) TempData
-- [ASP.NET MVC sous la partie capot 5](http://www.pieterg.com/2013/4/aspnet-mvc-under-the-hood-part-5) le [ActionInvoker](https://msdn.microsoft.com/en-us/library/system.web.mvc.controller.actioninvoker(v=vs.108).aspx)
+- [ASP.NET MVC sous la partie capot 5](http://www.pieterg.com/2013/4/aspnet-mvc-under-the-hood-part-5) le [ActionInvoker](https://msdn.microsoft.com/library/system.web.mvc.controller.actioninvoker(v=vs.108).aspx)
 - [ASP.NET MVC sous la partie capot 6](http://www.pieterg.com/2013/5/aspnet-mvc-under-the-hood-part-6) ActionFilters comment sont découverts et leur mode d’application
 - [Créer votre propre ViewWebPage personnalisé pour ASP.NET MVC](http://www.love2dev.com/#!article/Create-Your-Own-Custom-ViewWebPage-for-ASPNET-MVC)
 - [Le traçage dans les vues Razor ASP.NET MVC](https://blogs.msdn.com/b/webdev/archive/2013/07/16/tracing-in-asp-net-mvc-razor-views.aspx)
 - [Rendu des vues de Razor ASP.NET MVC en dehors de MVC a été revisitée](http://www.west-wind.com/weblog/posts/2013/Jul/15/Rendering-ASPNET-MVC-Razor-Views-outside-of-MVC-revisited)
 - [Cinq essentielles frontal outils que doit être utilisé avec les projets MVC moderne](http://www.adamtibi.net/06-2013/five-essential-front-end-tools-that-should-be-used-with-modern-mvc-projects)
-- [Liaison de modèle de fonctionnalités et faiblesses d’ASP.NET MVC](https://msdn.microsoft.com/en-us/magazine/hh781022.aspx)
+- [Liaison de modèle de fonctionnalités et faiblesses d’ASP.NET MVC](https://msdn.microsoft.com/magazine/hh781022.aspx)
 - [Contrôle du comportement de Session dans Asp.Net MVC 4](http://www.dotnet-tricks.com/Tutorial/mvc/906b060113-Controlling-Session-Behavior-in-Asp.Net-MVC4.html)
 - [RenderPartial vs RenderAction vs vs partielles Action dans MVC Razor](http://www.dotnet-tricks.com/Tutorial/mvc/Q8V2130113-RenderPartial-vs-RenderAction-vs-Partial-vs-Action-in-MVC-Razor.html)
 - [Résoudre les erreur contrôleur ambigu en itinéraires](http://www.dotnet-tricks.com/Tutorial/mvc/30HJ010113-Resolve-Ambiguous-Controller-Error-by-routes.html)
 - [Fournisseur de TempData basé sur les cookies](http://brockallen.com/2012/06/11/cookie-based-tempdata-provider/)
 - [Partage d’un seul \_ViewStart dans les domaines dans ASP.NET MVC](http://brockallen.com/2012/08/31/sharing-a-single-_viewstart-across-areas-in-asp-net-mvc/)
-- [Filtrage dans ASP.NET MVC](https://msdn.microsoft.com/en-us/library/gg416513(VS.98).aspx)
+- [Filtrage dans ASP.NET MVC](https://msdn.microsoft.com/library/gg416513(VS.98).aspx)
 - [Accéder à des filtres d’Action savoir dans ASP.NET MVC 3 à l’aide de HandleError](https://channel9.msdn.com/Shows/DevNuggets/Get2KnowActionFiltersUsingHandleError) (vidéo)
 - [Délai d’expiration de Session MVC - filtres personnalisés - gestion](http://codeblockdrive.blogspot.in/2012/12/mvc-custom-filters-session-timeout.html)
 - [Procédure pas à pas MVC personnalisée 4 modèle](https://blogs.msdn.com/b/yjhong/archive/2012/12/13/custom-mvc-4-template-walkthrough.aspx)

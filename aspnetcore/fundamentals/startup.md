@@ -10,50 +10,53 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/startup
-ms.openlocfilehash: dd2eb3d3996bc0bf277c8d5e772c8568ef9f147e
-ms.sourcegitcommit: f5a7f0198628f0d152257d90dba6c3a0747a355a
+ms.openlocfilehash: 81d76c39b7890e2d4ab86252cb0a343e3bb7359a
+ms.sourcegitcommit: 83b5a4715fd25e4eb6f7c8427c0ef03850a7fa07
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/19/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="application-startup-in-aspnet-core"></a>Démarrage de l’application dans ASP.NET Core
 
 Par [Steve Smith](https://ardalis.com), [Tom Dykstra](https://github.com/tdykstra), et [Luke Latham](https://github.com/guardrex)
 
-La classe `Startup` configure les services et le pipeline de demande de l’application.
+La `Startup` classe configure les services et le pipeline de demande de l’application.
 
 ## <a name="the-startup-class"></a>Classe de démarrage.
 
-Les applications ASP.NET Core utilisent une classe de `démarrage`, qui est nommée `Startup` par convention. La classe `Startup` :
+Utilisation des applications ASP.NET Core un `Startup` (classe), qui est nommé `Startup` par convention. La `Startup` classe :
 
-* Peut éventuellement inclure une méthode [ConfigureServices](/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configureservices) permettant de configurer les services de l’application.
-* Doit inclure une méthode [configurer](/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configure) pour créer le pipeline de traitement de demande de l’application.
+* Peut éventuellement inclure un [ConfigureServices](/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configureservices) méthode permettant de configurer les services de l’application.
+* Doit inclure un [configurer](/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configure) méthode pour créer le pipeline de traitement de demande de l’application.
 
-`ConfigureServices`et `Configure` sont appelées par le runtime au démarrage de l’application :
+`ConfigureServices`et `Configure` sont appelés par le runtime au démarrage de l’application :
 
 [!code-csharp[Main](startup/snapshot_sample/Startup1.cs)]
 
-Spécifiez la classe `Startup` classe avec la méthode [WebHostBuilderExtensions](/dotnet/api/Microsoft.AspNetCore.Hosting.WebHostBuilderExtensions) [UseStartup&lt;TStartup&gt; ](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.usestartup#Microsoft_AspNetCore_Hosting_WebHostBuilderExtensions_UseStartup__1_Microsoft_AspNetCore_Hosting_IWebHostBuilder_) :
+Spécifiez le `Startup` classe avec le [WebHostBuilderExtensions](/dotnet/api/Microsoft.AspNetCore.Hosting.WebHostBuilderExtensions) [UseStartup&lt;TStartup&gt; ](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.usestartup#Microsoft_AspNetCore_Hosting_WebHostBuilderExtensions_UseStartup__1_Microsoft_AspNetCore_Hosting_IWebHostBuilder_) méthode :
 
 [!code-csharp[Main](../common/samples/WebApplication1DotNetCore2.0App/Program.cs?name=snippet_Main&highlight=10)]
 
-Le constructeur de la classe `Startup` accepte les dépendances définies par l’hôte. Une utilisation courante de [injection de dépendance](xref:fundamentals/dependency-injection) dans la classe `Startup` consiste à injecter [IHostingEnvironment](/dotnet/api/Microsoft.AspNetCore.Hosting.IHostingEnvironment) pour configurer les services par environnement :
+Le `Startup` constructeur de classe accepte les dépendances définies par l’hôte. Une utilisation courante de [injection de dépendance](xref:fundamentals/dependency-injection) dans la `Startup` classe consiste à injecter :
+
+* [IHostingEnvironment](/dotnet/api/Microsoft.AspNetCore.Hosting.IHostingEnvironment) pour configurer les services à l’environnement.
+* [IConfiguration](/dotnet/api/microsoft.extensions.configuration.iconfiguration) pour configurer l’application lors du démarrage.
 
 [!code-csharp[Main](startup/snapshot_sample/Startup2.cs)]
 
-Une alternative à l’injection de `IHostingStartup` consiste à utiliser une approche basée sur les conventions. L’application peut définir différentes classes `Startup` pour différents environnements (par exemple, `StartupDevelopment`), et la classe de démarrage appropriée est sélectionnée lors de l’exécution. La classe dont le suffixe du nom correspond à l'environnement actuel est prioritaire. Si l’application est exécutée dans l’environnement de développement et comprend à la fois une classe `Startup` et une classe `StartupDevelopment`, la classe `StartupDevelopment` est utilisée. Pour plus d’informations, consultez [Utilisation de plusieurs environnements](xref:fundamentals/environments#startup-conventions).
+Une alternative à l’injection `IHostingEnvironment` consiste à utiliser une approche basée sur les conventions. L’application peut définir distinct `Startup` classes pour différents environnements (par exemple, `StartupDevelopment`), et la classe de démarrage approprié est sélectionnée lors de l’exécution. La priorité de la classe dont suffixe de nom correspond à l’environnement actuel. Si l’application est exécutée dans l’environnement de développement et comprend à la fois un `Startup` classe et un `StartupDevelopment` (classe), la `StartupDevelopment` classe est utilisée. Pour plus d’informations, consultez [Utilisation de plusieurs environnements](xref:fundamentals/environments#startup-conventions).
 
-Pour en savoir plus sur `WebHostBuilder`, consultez la rubrique [hébergement](xref:fundamentals/hosting). Pour plus d’informations sur la gestion des erreurs lors du démarrage, consultez [la gestion des exceptions de démarrage](xref:fundamentals/error-handling#startup-exception-handling).
+Pour en savoir plus sur `WebHostBuilder`, consultez la [hébergement](xref:fundamentals/hosting) rubrique. Pour plus d’informations sur la gestion des erreurs lors du démarrage, consultez [la gestion des exceptions de démarrage](xref:fundamentals/error-handling#startup-exception-handling).
 
 ## <a name="the-configureservices-method"></a>La méthode ConfigureServices
 
-La méthode [ConfigureServices](/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configureservices) est :
+Le [ConfigureServices](/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configureservices) méthode est :
 
-* Facultative.
-* Appelée par l’hôte web avant la méthode `Configure` pour configurer les services de l’application.
-* Où [les options de configuration](xref:fundamentals/configuration/index) sont définies par convention.
+* Facultatif.
+* Appelée par l’hôte web avant du `Configure` méthode permettant de configurer les services de l’application.
+* Où [les options de configuration](xref:fundamentals/configuration/index) sont définis par convention.
 
-L'ajout de services au conteneur de service les rend disponibles au sein de l’application et dans la méthode `Configure`. Les services ne sont pas résolus via [injection de dépendance](xref:fundamentals/dependency-injection) ou à partir de [IApplicationBuilder.ApplicationServices](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder.applicationservices).
+Ajout de services au conteneur de service les rend disponibles au sein de l’application et dans le `Configure` (méthode). Les services ne sont pas résolus via [injection de dépendance](xref:fundamentals/dependency-injection) ou à partir de [IApplicationBuilder.ApplicationServices](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder.applicationservices).
 
 L’hôte web peut configurer certains services avant `Startup` méthodes sont appelées. Détails sont disponibles dans le [hébergement](xref:fundamentals/hosting) rubrique. 
 
@@ -83,7 +86,7 @@ Pour plus d’informations sur l’utilisation de `IApplicationBuilder`, consult
 
 [ConfigureServices](/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder.configureservices) et [configurer](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.configure) méthodes pratiques peuvent être utilisés au lieu de spécifier un `Startup` classe. Appels multiples à `ConfigureServices` ajouter à un autre. Appels multiples à `Configure` utiliser le dernier appel de méthode.
 
-[!code-csharp[Main](startup/snapshot_sample/Program.cs?highlight=16,20)]
+[!code-csharp[Main](startup/snapshot_sample/Program.cs?highlight=18,22)]
 
 ## <a name="startup-filters"></a>Filtres de démarrage
 

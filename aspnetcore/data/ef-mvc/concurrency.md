@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/concurrency
-ms.openlocfilehash: 69ffafc7f92cda75c001fe1098275766063113fb
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: eee84fe0fbec6ed772342d09931986994903906a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="handling-concurrency-conflicts---ef-core-with-aspnet-core-mvc-tutorial-8-of-10"></a>La gestion des conflits d’accès concurrentiel - Core EF avec le didacticiel d’ASP.NET MVC de base (8 sur 10)
 
@@ -59,11 +59,11 @@ Certaines de ces options sont les suivantes :
 
 * Vous pouvez effectuer le suivi des dont un utilisateur a modifié la propriété et mettre à jour uniquement les colonnes correspondantes dans la base de données.
 
-     Dans l’exemple de scénario, aucune donnée n’a été perdue, car des propriétés différentes ont été mis à jour par les deux utilisateurs. La prochaine fois qu’un utilisateur parcourt le service en anglais, il voit les modifications à la fois de John et Jane : une date de début de 1/9/2013 et un budget de zéro dollars. Cette méthode de mise à jour peut réduire le nombre de conflits qui peuvent entraîner une perte de données, mais il ne peut pas éviter la perte de données si des modifications concurrentes sont apportées à la même propriété d’une entité. Si Entity Framework fonctionne de cette façon dépend de la façon dont vous implémentez votre code de mise à jour. Il est souvent pratique dans une application web, car elle peut requérir que vous conservez des grandes quantités d’état afin d’effectuer le suivi de toutes les valeurs de propriété d’origine d’une entité, ainsi que les nouvelles valeurs. Maintenance de grandes quantités d’état peut affecter les performances de l’application, car il nécessite des ressources serveur ou doit être inclus dans la page web elle-même (par exemple, dans les champs masqués) ou dans un cookie.
+     Dans l’exemple de scénario, aucune donnée n’a été perdue, car des propriétés différentes ont été mis à jour par les deux utilisateurs. La prochaine fois qu’un utilisateur parcourt le service en anglais, ils verront les modifications à la fois de John et Jane : une date de début de 1/9/2013 et un budget de zéro dollars. Cette méthode de mise à jour peut réduire le nombre de conflits qui peuvent entraîner une perte de données, mais il ne peut pas éviter la perte de données si des modifications concurrentes sont apportées à la même propriété d’une entité. Si Entity Framework fonctionne de cette façon dépend de la façon dont vous implémentez votre code de mise à jour. Il est souvent pratique dans une application web, car elle peut requérir que vous conservez des grandes quantités d’état afin d’effectuer le suivi de toutes les valeurs de propriété d’origine d’une entité, ainsi que les nouvelles valeurs. Maintenance de grandes quantités d’état peut affecter les performances de l’application, car il nécessite des ressources serveur ou doit être inclus dans la page web elle-même (par exemple, dans les champs masqués) ou dans un cookie.
 
 * Vous pouvez laisser les modifications de John écrase les modifications de Jeanne.
 
-     La prochaine fois que quelqu'un accède le service en anglais, il voit le 1/9/2013 et la valeur de $350,000.00 restaurée. Cela s’appelle un *Client Wins* ou *dernier dans Wins* scénario. (Toutes les valeurs à partir du client sont prioritaires sur les nouveautés dans le magasin de données). Comme indiqué dans l’introduction de cette section, si vous ne le faites pas de codage pour la gestion d’accès concurrentiel, cela se produit automatiquement.
+     La prochaine fois que quelqu'un accède le service en anglais, ils verront le 1/9/2013 et la valeur de $350,000.00 restaurée. Cela s’appelle un *Client Wins* ou *dernier dans Wins* scénario. (Toutes les valeurs à partir du client sont prioritaires sur les nouveautés dans le magasin de données). Comme indiqué dans l’introduction de cette section, si vous ne le faites pas de codage pour la gestion d’accès concurrentiel, cela se produit automatiquement.
 
 * Vous pouvez empêcher la modification de Jean à partir de la mise à jour dans la base de données.
 

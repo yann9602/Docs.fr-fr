@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/testing-and-debugging/unit-testing-with-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 13211ee4543e17a4bfb2f83495f4041880f37df2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4d6102dd81589e41894d8ecd95bf9ddd761a65bd
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="unit-testing-aspnet-web-api-2"></a>ASP.NET Web API 2 de tests unitaires
 ====================
@@ -53,7 +53,7 @@ Cette rubrique contient les sections suivantes :
 - [Exécuter des tests](#runtests)
 
 <a id="prereqs"></a>
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Prérequis
 
 Visual Studio 2017 Community, Professional ou l’édition entreprise
 
@@ -118,7 +118,7 @@ Remplacez le code existant par le code ci-dessous. Pour simplifier cet exemple, 
 
 [!code-csharp[Main](unit-testing-with-aspnet-web-api/samples/sample2.cs)]
 
-La méthode GetProduct retourne une instance de la **IHttpActionResult** interface. IHttpActionResult est une des nouvelles fonctionnalités de l’API Web 2, et il simplifie le développement de test unitaire. Les classes qui implémentent l’interface IHttpActionResult se trouvent dans le [System.Web.Http.Results](https://msdn.microsoft.com/en-us/library/system.web.http.results.aspx) espace de noms. Ces classes représentent des réponses possibles à partir d’une demande d’action, et elles correspondent aux codes d’état HTTP.
+La méthode GetProduct retourne une instance de la **IHttpActionResult** interface. IHttpActionResult est une des nouvelles fonctionnalités de l’API Web 2, et il simplifie le développement de test unitaire. Les classes qui implémentent l’interface IHttpActionResult se trouvent dans le [System.Web.Http.Results](https://msdn.microsoft.com/library/system.web.http.results.aspx) espace de noms. Ces classes représentent des réponses possibles à partir d’une demande d’action, et elles correspondent aux codes d’état HTTP.
 
 Générez la solution.
 
@@ -161,6 +161,6 @@ Ouvrez le **l’Explorateur de tests** fenêtre et notez les résultats des test
 
 ![résultats des tests](unit-testing-with-aspnet-web-api/_static/image12.png)
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Vous avez terminé ce didacticiel. Les données dans ce didacticiel a été intentionnellement simplifiées pour vous concentrer sur les conditions de test unitaire. Pour des scénarios plus avancés de données de tests unitaires, consultez [simulation Entity Framework lorsque unité test ASP.NET Web API 2](mocking-entity-framework-when-unit-testing-aspnet-web-api-2.md).

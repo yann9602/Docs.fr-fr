@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: performance/response-compression
-ms.openlocfilehash: 9270287b62f91ddb81d6a347dd583e1cbb32f3c3
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 2b39a5105339beb416490db282d4cd8b83d08660
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="response-compression-middleware-for-aspnet-core"></a>Intergiciel (middleware) de réponse Compression pour ASP.NET Core
 
@@ -110,7 +110,7 @@ Le fournisseur de la compression gzip par défaut est le niveau de compression p
 
 | Niveau de compression                | Description                                                                                                   |
 | -------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| `CompressionLevel.Fastest`       | La compression doit se terminer aussi rapidement que possible, même si le résultat n’est pas compressé de façon optimale. |
+| `CompressionLevel.Fastest`       | La compression doit se terminer aussi rapidement que possible, même si le résultat n’est pas compressé optimale. |
 | `CompressionLevel.NoCompression` | Aucune compression ne doit être effectuée.                                                                           |
 | `CompressionLevel.Optimal`       | Les réponses doivent être compressées optimale, même si la compression prend plus de temps pour terminer.                |
 

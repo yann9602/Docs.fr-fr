@@ -10,11 +10,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/spa-services
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 6d84659c8c65bebb46551eb38bd52e405ff56016
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 514efcdd78957f999e46c521d0266f092f742538
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="using-javascriptservices-for-creating-single-page-applications-with-aspnet-core"></a>À l’aide de JavaScriptServices pour la création d’Applications à Page unique avec ASP.NET Core
 
@@ -46,7 +46,7 @@ Une grande partie du focus dans cet article est placée sur l’utilisation du p
 
 ## <a name="what-is-spaservices"></a>Qu’est SpaServices ?
 
-SpaServices a été créé pour positionner plateforme par défaut côté serveur les développeurs de génération SPAs ASP.NET Core. SpaServices n’est pas requis pour développer des SPAs avec ASP.NET Core, et il ne vous dans une infrastructure client particulier.
+SpaServices a été créé pour positionner plateforme par défaut côté serveur les développeurs de génération SPAs ASP.NET Core. SpaServices n’est pas requis pour développer SPAs avec ASP.NET Core, et il ne vous dans une infrastructure client particulier.
 
 SpaServices fournit une infrastructure utile telles que :
 * [Pré-rendu du côté serveur](#server-prerendering)
@@ -200,7 +200,7 @@ Après le chargement de l’application dans le navigateur, onglet de la Console
 
 ## <a name="routing-helpers"></a>Programmes d’assistance de routage
 
-Dans la plupart des SPAs basée sur ASP.NET Core, vous souhaiterez routage côté client en plus du routage du côté serveur. Les systèmes de routage SPA et MVC peuvent travailler indépendamment sans interférence. Il existe, toutefois, un bord cas posant des défis : identification des réponses HTTP 404.
+Dans la plupart des SPAs basée sur ASP.NET Core, vous souhaiterez routage côté client en plus du routage du côté serveur. Les systèmes de routage SPA et MVC peuvent travailler indépendamment sans interférence. Il existe, toutefois, les cas à un bord posant défis : identification des réponses HTTP 404.
 
 Considérez le scénario dans lequel un itinéraire sans extension de `/some/page` est utilisé. Supposons que la demande n’à la correspondance un itinéraire côté serveur, mais son modèle ne correspond pas à un itinéraire côté client. Examinons à présent une demande entrante de `/images/user-512.png`, qui généralement s’attend à trouver un fichier image sur le serveur. Si ce chemin d’accès de la ressource demandée ne correspond pas à un itinéraire de côté serveur ou d’un fichier statique, il est peu probable que l’application côté client serait la gérer, il est souvent préférable de retourner un code d’état HTTP 404.
 

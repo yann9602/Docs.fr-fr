@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/mvc4-beta-release-notes
 msc.type: content
-ms.openlocfilehash: 4af2df61ab4507b1f100d6bb75777da1168c5a75
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 58ae178a0e6578d8353e1a4e9d67fc1026e99f55
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-mvc-4"></a>ASP.NET MVC 4
 ====================
@@ -28,7 +28,7 @@ ms.lasthandoff: 11/10/2017
 
 - [Notes d’installation](#_Toc303253802)
 - [Documentation](#_Toc303253803)
-- [Prise en charge](#_Toc303253804)
+- [Support](#_Toc303253804)
 - [Configuration logicielle requise](#_Toc303253805)
 - [La mise à niveau d’un projet ASP.NET MVC 3 vers ASP.NET MVC 4](#_Toc303253806)
 - [Nouvelles fonctionnalités de la version bêta d’ASP.NET MVC 4](#_Toc303253807)
@@ -60,7 +60,7 @@ ASP.NET MVC 4 peut être installé et qu’il peut s’exécuter côte à côte 
 
 Documentation pour ASP.NET MVC est disponible sur le site Web MSDN à l’adresse suivante :
 
-[https://go.Microsoft.com/fwlink/?LinkId=243043](https://go.microsoft.com/fwlink/?LinkID=243043)
+[https://go.microsoft.com/fwlink/?LinkID=243043](https://go.microsoft.com/fwlink/?LinkID=243043)
 
 Didacticiels et autres informations sur ASP.NET MVC sont disponibles sur la page MVC 4 du site Web ASP.NET ([https://www.asp.net/mvc/mvc4](../mvc/mvc4.md)).
 
@@ -245,7 +245,7 @@ La nouvelle fonctionnalité de recettes permet à Visual Studio générer le cod
 
 Vous pouvez maintenant écrire des méthodes d’action asynchrones des méthodes comme unique qui retournent un objet de type *tâche* ou *tâche&lt;ActionResult&gt;*.
 
-Par exemple, si vous utilisez Visual c# 5 (ou à l’aide de la [Async CTP](https://msdn.microsoft.com/en-us/vstudio/async.aspx)), vous pouvez créer une méthode d’action asynchrone qui ressemble à ce qui suit :
+Par exemple, si vous utilisez Visual c# 5 (ou à l’aide de la [Async CTP](https://msdn.microsoft.com/vstudio/async.aspx)), vous pouvez créer une méthode d’action asynchrone qui ressemble à ce qui suit :
 
 [!code-csharp[Main](mvc4-beta-release-notes/samples/sample8.cs)]
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/form-basics
 msc.type: authoredcontent
-ms.openlocfilehash: 97e4a2a1794dbdccf80f0b44c1246c743fa23019
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 68056759b2e80230e5fd2c0f9b2d2a89b549cf37
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="introducing-aspnet-web-pages---html-form-basics"></a>Présentation des Pages Web ASP.NET - notions de base de formulaire HTML
 ====================
@@ -186,7 +186,7 @@ Maintenant que vous savez comment obtenir le terme de recherche entré par l’u
 
 `SELECT * FROM Movies`
 
-Pour obtenir uniquement certains films, vous devez utiliser une requête qui inclut un `Where` clause. Cette clause permet de définir une condition sur laquelle les lignes sont retournées par la requête. Voici un exemple :
+Pour obtenir uniquement certains films, vous devez utiliser une requête qui inclut un `Where` clause. Cette clause permet de définir une condition sur laquelle les lignes sont retournées par la requête. Voici un exemple :
 
 `SELECT * FROM Movies WHERE Genre = 'Action'`
 
@@ -220,7 +220,7 @@ Si vous placez tous ces éléments ensemble, vous obtenez le code suivant :
 > 
 > **Important !** À l’aide des espaces réservés (comme `@0`) pour passer des valeurs à une commande SQL est *extrêmement important* pour la sécurité. La façon que vous le voyez ici, avec des espaces réservés pour les données de variable, est la seule façon de créer des commandes SQL.
 > 
-> Impossible de créer une instruction SQL à assembler le texte littéral (concaténation) et les valeurs que vous obtenez à partir de l’utilisateur. Concaténation de l’entrée d’utilisateur dans une instruction SQL s’ouvre votre site vers un *attaque par injection SQL* où un utilisateur malveillant soumet les valeurs à votre page hack votre base de données. (Vous pouvez en savoir plus dans l’article [Injection SQL](https://msdn.microsoft.com/en-us/library/ms161953.aspx) le site Web MSDN.)
+> Impossible de créer une instruction SQL à assembler le texte littéral (concaténation) et les valeurs que vous obtenez à partir de l’utilisateur. Concaténation de l’entrée d’utilisateur dans une instruction SQL s’ouvre votre site vers un *attaque par injection SQL* où un utilisateur malveillant soumet les valeurs à votre page hack votre base de données. (Vous pouvez en savoir plus dans l’article [Injection SQL](https://msdn.microsoft.com/library/ms161953.aspx) le site Web MSDN.)
 
 
 ## <a name="updating-the-movies-page-with-search-code"></a>Mise à jour de la Page de films avec Code de recherche

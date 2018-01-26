@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: mvc/views/tag-helpers/builtin-th/anchor-tag-helper
-ms.openlocfilehash: 7923876c792544ac4d559eb8de29475d8a4b37e0
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 74609b515936ec7da8bfc133c27cb69f51311924
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="anchor-tag-helper"></a>Application d’assistance de balise d’ancrage
 
@@ -44,7 +44,7 @@ Le balisage généré sera :
 <a href="/Speaker">All Speakers</a>
 ```
 
-Si le `asp-controller` est spécifié et `asp-action` n’est pas le cas, la valeur par défaut `asp-action` correspondra à la méthode de contrôleur par défaut de la vue en cours d’exécution. Qu’est, dans l’exemple ci-dessus, si `asp-action` est omis, et ce programme d’assistance de balise d’ancrage est généré à partir de *HomeController*de `Index` vue (**/Home**), le balisage généré sera :
+Si le `asp-controller` est spécifié et `asp-action` n’est pas, la valeur par défaut `asp-action` correspondra à la méthode de contrôleur par défaut de la vue en cours d’exécution. Qu’est, dans l’exemple ci-dessus, si `asp-action` est omis, et ce programme d’assistance de balise d’ancrage est généré à partir de *HomeController*de `Index` vue (**/Home**), le balisage généré sera :
 
 ```html
 <a href="/Home">All Speakers</a>
@@ -142,7 +142,7 @@ Le code HTML généré sera ensuite comme suit, car **id** a été trouvé dans 
 <a href='/Speaker/Detail/12'>SpeakerId: 12</a>
 ```
 
-Si le préfixe d’itinéraire n’est pas partie du modèle de routage trouvé, qui est le cas avec les éléments suivants **cshtml** fichier :
+Si le préfixe d’itinéraire ne fait pas partie du modèle de routage trouvé, qui est le cas avec les éléments suivants **cshtml** fichier :
 
 ```cshtml
 @model SpeakerData
@@ -152,7 +152,7 @@ Si le préfixe d’itinéraire n’est pas partie du modèle de routage trouvé,
 <body></html>
 ```
 
-Le code HTML généré sera ensuite comme suit, car **speakerid** est introuvable dans l’itinéraire mis en correspondance :
+Le code HTML généré sera ensuite comme suit, car **speakerid** n’a pas été trouvé dans l’itinéraire mis en correspondance :
 
 ```html
 <a href='/Speaker/Detail?speakerid=12'>SpeakerId: 12</a>
@@ -164,7 +164,7 @@ Si le paramètre `asp-controller` ou `asp-action` ne sont pas spécifiés, le m�
 
 `asp-route`fournit un moyen de créer une URL qui accède directement à un itinéraire nommé. À l’aide des attributs de routage, un itinéraire peut être nommé comme indiqué dans le `SpeakerController` et utilisé dans son `Evaluations` (méthode).
 
-`Name = "speakerevals"`Indique à l’application d’assistance de balise d’ancrage pour générer un itinéraire directement à cette méthode de contrôleur à l’aide de l’URL `/Speaker/Evaluations`. Si `asp-controller` ou `asp-action` est spécifié en plus de `asp-route`, l’itinéraire généré est peut-être pas ce que vous attendez. `asp-route`ne doit pas être utilisé avec un des attributs `asp-controller` ou `asp-action` afin d’éviter un conflit d’itinéraire.
+`Name = "speakerevals"`Indique à l’application d’assistance de balise d’ancrage pour générer un itinéraire directement à cette méthode de contrôleur à l’aide de l’URL `/Speaker/Evaluations`. Si `asp-controller` ou `asp-action` est spécifié en plus de `asp-route`, l’itinéraire généré est peut-être pas ce que vous attendez. `asp-route`ne doit pas être utilisée avec des attributs `asp-controller` ou `asp-action` afin d’éviter un conflit d’itinéraire.
 
 ### <a name="asp-all-route-data"></a>asp-all-route-data
 
