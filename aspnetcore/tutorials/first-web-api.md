@@ -63,7 +63,7 @@ Un modèle est un objet qui représente les données de l’application. Dans le
 
 Ajoutez un dossier nommé « Models ». Dans l’Explorateur de solutions, cliquez avec le bouton droit sur le projet. Sélectionnez **Ajouter** > **Nouveau dossier**. Nommez le dossier *Models*.
 
-Remarque : Les classes de modèles vont n’importe où dans le projet. Le dossier *Modèles* est utilisé par convention pour les classes de modèles.
+Remarque : Les classes de modèles vont n’importe où dans le projet. Le dossier *Models* est utilisé par convention pour les classes de modèles.
 
 Ajoutez une classe `TodoItem`. Cliquez avec le bouton droit sur le dossier *Models* et sélectionnez **Ajouter** > **Classe**. Nommez la classe `TodoItem` et sélectionnez **Ajouter**.
 
