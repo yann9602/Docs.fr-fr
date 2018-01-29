@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/advanced
-ms.openlocfilehash: 4ee12cae0220825c81bd8b178dea3ac777f97bb6
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: b1d1cb8710595acd72bd5a0786bf1b1fed8b1d79
+ms.sourcegitcommit: 09b342b45e7372ba9ebf17f35eee331e5a08fb26
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/26/2018
 ---
 # <a name="advanced-topics---ef-core-with-aspnet-core-mvc-tutorial-10-of-10"></a>Rubriques avancées - Core EF avec le didacticiel d’ASP.NET MVC de base (10 10)
 
@@ -169,7 +169,7 @@ _context.ChangeTracker.AutoDetectChangesEnabled = false;
 
 ## <a name="entity-framework-core-source-code-and-development-plans"></a>Entity Framework Core source code et le développement des plans
 
-La source de l’Entity Framework Core est à [https://github.com/aspnet/EntityFrameworkCore](https://github.com/aspnet/EntityFrameworkCore). Le référentiel EF Core contient les builds nocturnes, suivi des problèmes, spécifications des fonctionnalités, notes, de la réunion de conception et le [la feuille de route pour le développement futur](https://github.com/aspnet/EntityFrameworkCore/wiki/Roadmap). Vous pouvez de fichiers ou rechercher des bogues et contribuer.
+La source de l’Entity Framework Core est à [https://github.com/aspnet/EntityFrameworkCore](https://github.com/aspnet/EntityFrameworkCore). Le référentiel EF Core contient les builds nocturnes, suivi des problèmes, spécifications des fonctionnalités, notes, de la réunion de conception et [la feuille de route pour le développement futur](https://github.com/aspnet/EntityFrameworkCore/wiki/Roadmap). Vous pouvez de fichiers ou rechercher des bogues et contribuer.
 
 Bien que le code source est ouvert, Entity Framework Core est entièrement pris en charge comme un produit Microsoft. L’équipe Microsoft Entity Framework conserve le contrôle sur lequel les contributions sont acceptées et teste toutes les modifications du code pour garantir la qualité de chaque version.
 

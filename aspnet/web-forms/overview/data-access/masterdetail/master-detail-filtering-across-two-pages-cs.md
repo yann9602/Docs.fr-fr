@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-filtering-across-two-pages-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 6ddce74be81cb3ea33df9f7a6b91eae604b83025
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3411272896dee0da4d5f89aa2bdda0999d660423
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="masterdetail-filtering-across-two-pages-c"></a>Maître/détail, le filtrage entre les deux Pages (c#)
 ====================
@@ -71,7 +71,7 @@ Avec la `SupplierListMaster.aspx` et `ProductsForSupplierDetails.aspx` pages cr�
 
 Nous devons inclure un lien intitulé d’afficher les produits dans chaque ligne GridView qui, lorsque vous cliquez dessus, dirige l’utilisateur vers `ProductsForSupplierDetails.aspx` en passant de la ligne sélectionnée `SupplierID` valeur via la chaîne de requête. Par exemple, si l’utilisateur clique sur le lien Afficher les produits pour le fournisseur de Tokyo Traders (qui a un `SupplierID` valeur 4), ils doivent être envoyés à `ProductsForSupplierDetails.aspx?SupplierID=4`.
 
-Pour ce faire, ajoutez un [HyperLinkField](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.hyperlinkfield.aspx) au GridView, qui ajoute un lien hypertexte à chaque ligne GridView. Démarrez en cliquant sur le lien Modifier les colonnes à partir de la balise active du GridView. Ensuite, sélectionnez le HyperLinkField dans la liste en haut à gauche et cliquez sur Ajouter pour inclure la HyperLinkField dans la liste de champs de GridView.
+Pour ce faire, ajoutez un [HyperLinkField](https://msdn.microsoft.com/library/system.web.ui.webcontrols.hyperlinkfield.aspx) au GridView, qui ajoute un lien hypertexte à chaque ligne GridView. Démarrez en cliquant sur le lien Modifier les colonnes à partir de la balise active du GridView. Ensuite, sélectionnez le HyperLinkField dans la liste en haut à gauche et cliquez sur Ajouter pour inclure la HyperLinkField dans la liste de champs de GridView.
 
 
 [![Ajouter un HyperLinkField au contrôle GridView](master-detail-filtering-across-two-pages-cs/_static/image9.png)](master-detail-filtering-across-two-pages-cs/_static/image8.png)
@@ -208,7 +208,7 @@ Par défaut, tous les fournisseurs dans la base de données Northwind fournissen
 **La figure 18**: les utilisateurs sont informés que le fournisseur ne fournit pas tous les produits ([cliquez pour afficher l’image en taille réelle](master-detail-filtering-across-two-pages-cs/_static/image52.png))
 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Alors que les rapports maître/détail peuvent afficher les enregistrements maître et détail sur une seule page, dans de nombreux sites Web qu’ils sont séparés sur deux pages web. Dans ce didacticiel, nous avons étudié comment implémenter un tel rapport maître/détail en ayant les fournisseurs répertoriés dans un contrôle GridView dans la page web « maître » et les produits associés, répertoriés dans la page « Détails ». Chaque ligne du fournisseur dans la page maître web contenait un lien vers la page de détails passé le long de la ligne `SupplierID` valeur. Ces liens à certaines lignes peuvent être ajoutées facilement à l’aide HyperLinkField de GridView.
 

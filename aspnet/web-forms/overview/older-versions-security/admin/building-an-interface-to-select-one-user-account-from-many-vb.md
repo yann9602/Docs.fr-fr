@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/admin/building-an-interface-to-select-one-user-account-from-many-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 6561fec9ccffbc421dd6a542dcd421acd0af6052
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f0339578291c536a474f1c7314b28668a6519c8c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="building-an-interface-to-select-one-user-account-from-many-vb"></a>Création d’une Interface pour sélectionner un compte d’utilisateur à partir de nombreux (VB)
 ====================
@@ -134,13 +134,13 @@ La figure 5 illustre le `ManageUsers.aspx` page lorsqu’ils sont affichés via 
 > Les noms d’utilisateur peut commencer par n’importe quel caractère, y compris des nombres et des signes de ponctuation. Pour afficher ces comptes, l’administrateur devra utiliser l’option LinkButton tous les. Ou bien, vous pouvez ajouter un LinkButton pour retourner tous les comptes d’utilisateur qui commencent par un chiffre. J’ai laisser ce champ comme un exercice pour le lecteur.
 
 
-Cliquez simplement sur le LinkButton filtrage provoque une publication (postback) et déclenche de répéteur `ItemCommand` événement, mais il n’existe aucune modification de la grille, car nous avons encore à écrire du code pour filtrer les résultats. Le `Membership` classe inclut un [ `FindUsersByName` méthode](https://technet.microsoft.com/en-us/library/system.web.security.membership.findusersbyname.aspx) qui retourne ces comptes d’utilisateur dont nom d’utilisateur correspond à un modèle de recherche spécifié. Nous pouvons utiliser cette méthode pour récupérer uniquement les comptes d’utilisateurs dont les noms commencent par la lettre spécifiée par la `CommandName` du contrôle LinkButton filtré que l’utilisateur a cliqué.
+Cliquez simplement sur le LinkButton filtrage provoque une publication (postback) et déclenche de répéteur `ItemCommand` événement, mais il n’existe aucune modification de la grille, car nous avons encore à écrire du code pour filtrer les résultats. Le `Membership` classe inclut un [ `FindUsersByName` méthode](https://technet.microsoft.com/library/system.web.security.membership.findusersbyname.aspx) qui retourne ces comptes d’utilisateur dont nom d’utilisateur correspond à un modèle de recherche spécifié. Nous pouvons utiliser cette méthode pour récupérer uniquement les comptes d’utilisateurs dont les noms commencent par la lettre spécifiée par la `CommandName` du contrôle LinkButton filtré que l’utilisateur a cliqué.
 
 Commencez par mettre à jour le `ManageUser.aspx` de classe code-behind de la page afin qu’il inclue une propriété nommée `UsernameToMatch` cette propriété persiste la chaîne de filtre de nom d’utilisateur entre publications (postback) :
 
 [!code-vb[Main](building-an-interface-to-select-one-user-account-from-many-vb/samples/sample8.vb)]
 
-Le `UsernameToMatch` propriété stocke sa valeur, il est attribué dans le `ViewState` collection à l’aide de la clé UsernameToMatch. Lorsque la valeur de cette propriété est en lecture, il vérifie si une valeur existe dans le `ViewState` collection ; sinon, elle retourne la valeur par défaut, une chaîne vide. Le `UsernameToMatch` propriété expose un modèle commun, à savoir persistance d’une valeur pour l’état d’affichage afin que toute modification apportée à la propriété est conservées entre les publications (postback). Pour plus d’informations sur ce modèle, consultez [état d’affichage ASP.NET compréhension](https://msdn.microsoft.com/en-us/library/ms972976.aspx).
+Le `UsernameToMatch` propriété stocke sa valeur, il est attribué dans le `ViewState` collection à l’aide de la clé UsernameToMatch. Lorsque la valeur de cette propriété est en lecture, il vérifie si une valeur existe dans le `ViewState` collection ; sinon, elle retourne la valeur par défaut, une chaîne vide. Le `UsernameToMatch` propriété expose un modèle commun, à savoir persistance d’une valeur pour l’état d’affichage afin que toute modification apportée à la propriété est conservées entre les publications (postback). Pour plus d’informations sur ce modèle, consultez [état d’affichage ASP.NET compréhension](https://msdn.microsoftn-us/library/ms972976.aspx).
 
 Ensuite, mettez à jour le `BindUserAccounts` méthode afin qu’au lieu de l’appel de `Membership.GetAllUsers`, il appelle `Membership.FindUsersByName`, en passant la valeur de la `UsernameToMatch` propriété ajoutée avec le caractère générique SQL, %.
 
@@ -177,7 +177,7 @@ La différence de performances entre la valeur par défaut et la pagination pers
 
 Pour implémenter la pagination personnalisée, nous devons tout d’abord un mécanisme permettant de récupérer le sous-ensemble précis d’enregistrements affiché par le contrôle GridView. La bonne nouvelle est que le `Membership` de classe `FindUsersByName` méthode a une surcharge qui permet de spécifier l’index de page et la taille de page et retourne uniquement les comptes d’utilisateurs qui se trouvent dans la plage d’enregistrements.
 
-En particulier, cette surcharge possède la signature suivante : [ `FindUsersByName(usernameToMatch, pageIndex, pageSize, totalRecords)` ](https://msdn.microsoft.com/en-us/library/fa5st8b2.aspx).
+En particulier, cette surcharge possède la signature suivante : [ `FindUsersByName(usernameToMatch, pageIndex, pageSize, totalRecords)` ](https://msdn.microsoft.com/library/fa5st8b2.aspx).
 
 Le *pageIndex* paramètre spécifie la page des comptes d’utilisateur à retourner ; *pageSize* indique le nombre d’enregistrements à afficher par page. Le *totalRecords* paramètre est un `ByRef` paramètre qui retourne le nombre de comptes utilisateur total dans le magasin de l’utilisateur.
 
@@ -240,7 +240,7 @@ Les chiffres 8 et 9 afficher l’interface de la pagination personnalisée en ac
 **Figure 9**: en cliquant sur le lien suivant affiche la deuxième Page de comptes d’utilisateur ([cliquez pour afficher l’image en taille réelle](building-an-interface-to-select-one-user-account-from-many-vb/_static/image27.png))
 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Administrateurs ont souvent besoin de sélectionner un utilisateur à partir de la liste des comptes. Dans les didacticiels précédents, nous avons étudié à l’aide d’une liste déroulante remplie avec les utilisateurs, mais cette approche n’évolue pas bien. Dans ce didacticiel, nous avons exploré une meilleure alternative : une interface filtrable dont les résultats sont affichés dans un GridView paginé. Avec cette interface utilisateur, les administrateurs peuvent rapidement et facilement localiser et sélectionner un compte d’utilisateur parmi des milliers.
 

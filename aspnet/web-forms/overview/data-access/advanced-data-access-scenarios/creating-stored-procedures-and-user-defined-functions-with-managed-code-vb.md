@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/creating-stored-procedures-and-user-defined-functions-with-managed-code-vb
 msc.type: authoredcontent
-ms.openlocfilehash: efec52c4085c24b1d6227a86f7c435ca657e493c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e30df9ddc094d0390d9e5985ec676713b57feaf4
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-stored-procedures-and-user-defined-functions-with-managed-code-vb"></a>Création de procédures stockées et fonctions définies par l’utilisateur avec du Code managé (VB)
 ====================
@@ -33,12 +33,12 @@ Utilisent des bases de données comme s de Microsoft SQL Server 2005 le [Transac
 
 Fondamentalement, SQL est conçu pour l’utilisation des jeux de données. Le `SELECT`, `UPDATE`, et `DELETE` par nature, les instructions s’appliquent à tous les enregistrements dans la table correspondante et sont limitées uniquement par leur `WHERE` clauses. Il existe encore des nombreuses fonctionnalités de langage conçues pour travailler avec un enregistrement à la fois et de manipulation des données scalaires. [`CURSOR`s](http://www.sqlteam.com/item.asp?ItemID=553) permettant à un ensemble d’enregistrements à être bouclée via un à la fois. Comme les fonctions de manipulation de chaîne `LEFT`, `CHARINDEX`, et `PATINDEX` fonctionnent avec des données scalaires. SQL inclut également des instructions de flux de contrôle comme `IF` et `WHILE`.
 
-Antérieures à Microsoft SQL Server 2005, les procédures stockées et les fonctions peut uniquement être définies comme une collection d’instructions T-SQL. SQL Server 2005, cependant, a été conçu pour permettre l’intégration avec les [Common Language Runtime (CLR)](https://msdn.microsoft.com/en-us/netframework/aa497266.aspx), qui est le runtime utilisé par tous les assemblys .NET. Par conséquent, les procédures stockées et les UDF dans une base de données SQL Server 2005 peuvent être créés à l’aide de code managé. Autrement dit, vous pouvez créer une procédure stockée ou une fonction en tant que méthode dans une classe Visual Basic. Ainsi, ces procédures stockées et les UDF pour utiliser la fonctionnalité dans le .NET Framework et à partir de vos propres classes personnalisées.
+Antérieures à Microsoft SQL Server 2005, les procédures stockées et les fonctions peut uniquement être définies comme une collection d’instructions T-SQL. SQL Server 2005, cependant, a été conçu pour permettre l’intégration avec les [Common Language Runtime (CLR)](https://msdn.microsoft.com/netframework/aa497266.aspx), qui est le runtime utilisé par tous les assemblys .NET. Par conséquent, les procédures stockées et les UDF dans une base de données SQL Server 2005 peuvent être créés à l’aide de code managé. Autrement dit, vous pouvez créer une procédure stockée ou une fonction en tant que méthode dans une classe Visual Basic. Ainsi, ces procédures stockées et les UDF pour utiliser la fonctionnalité dans le .NET Framework et à partir de vos propres classes personnalisées.
 
 Dans ce didacticiel, nous allons examiner comment créer managé procédures stockées et les fonctions définies par l’utilisateur et comment les intégrer dans notre base de données Northwind. Let s commencer !
 
 > [!NOTE]
-> Les objets de base de données managés offrent des avantages par rapport à leurs équivalents SQL. Richesse du langage et une connaissance et la possibilité de réutiliser la logique et le code existant sont les principaux avantages. Mais les objets de base de données managés sont susceptibles d’être moins efficace lorsque vous travaillez avec des jeux de données qui n’impliquent pas de logique procédurale. Pour une discussion plus approfondie sur les avantages de l’utilisation de code managé et T-SQL, passez en revue les [avantages d’à l’aide de Code managé pour créer des objets de base de données](https://msdn.microsoft.com/en-us/library/k2e1fb36(VS.80).aspx).
+> Les objets de base de données managés offrent des avantages par rapport à leurs équivalents SQL. Richesse du langage et une connaissance et la possibilité de réutiliser la logique et le code existant sont les principaux avantages. Mais les objets de base de données managés sont susceptibles d’être moins efficace lorsque vous travaillez avec des jeux de données qui n’impliquent pas de logique procédurale. Pour une discussion plus approfondie sur les avantages de l’utilisation de code managé et T-SQL, passez en revue les [avantages d’à l’aide de Code managé pour créer des objets de base de données](https://msdn.microsoft.com/library/k2e1fb36(VS.80).aspx).
 
 
 ## <a name="step-1-moving-the-northwind-database-out-ofappdata"></a>Étape 1 : Déplacer la base de données Northwind de`App_Data`
@@ -81,7 +81,7 @@ Cliquez sur le bouton OK pour attacher la base de données. La boîte de dialogu
 
 ## <a name="step-2-creating-a-new-solution-and-sql-server-project-in-visual-studio"></a>Étape 2 : Création d’une nouvelle Solution et le projet SQL Server dans Visual Studio
 
-Pour créer les procédures stockées managées ou UDF dans SQL Server 2005 nous écrirons la procédure stockée et la logique de l’UDF en tant que code Visual Basic dans une classe. Une fois que le code a été écrit, nous allons devoir compiler cette classe dans un assembly (un `.dll` fichier), inscrire l’assembly avec la base de données SQL Server, puis créer une procédure stockée ou un objet de fonction dans la base de données qui pointe vers la méthode correspondante dans l’assembly. Ces étapes peuvent toutes être effectuées manuellement. Nous pouvons créer le code dans n’importe quel texte éditeur, le compiler depuis la ligne de commande à l’aide du compilateur Visual Basic (`vbc.exe`), inscrire auprès de la base de données à l’aide de la [ `CREATE ASSEMBLY` ](https://msdn.microsoft.com/en-us/library/ms189524.aspx) commande ou à partir de Management Studio et ajouter les données stockées procédure ou un objet UDF via des moyens similaires. Heureusement, les versions Professional et les systèmes de l’équipe de Visual Studio incluent un type de projet SQL Server qui automatise les tâches. Dans ce didacticiel nous Guide à l’aide du type de projet SQL Server pour créer une procédure stockée managée et un fichier UDF.
+Pour créer les procédures stockées managées ou UDF dans SQL Server 2005 nous écrirons la procédure stockée et la logique de l’UDF en tant que code Visual Basic dans une classe. Une fois que le code a été écrit, nous allons devoir compiler cette classe dans un assembly (un `.dll` fichier), inscrire l’assembly avec la base de données SQL Server, puis créer une procédure stockée ou un objet de fonction dans la base de données qui pointe vers la méthode correspondante dans l’assembly. Ces étapes peuvent toutes être effectuées manuellement. Nous pouvons créer le code dans n’importe quel texte éditeur, le compiler depuis la ligne de commande à l’aide du compilateur Visual Basic (`vbc.exe`), inscrire auprès de la base de données à l’aide de la [ `CREATE ASSEMBLY` ](https://msdn.microsoft.com/library/ms189524.aspx) commande ou à partir de Management Studio et ajouter les données stockées procédure ou un objet UDF via des moyens similaires. Heureusement, les versions Professional et les systèmes de l’équipe de Visual Studio incluent un type de projet SQL Server qui automatise les tâches. Dans ce didacticiel nous Guide à l’aide du type de projet SQL Server pour créer une procédure stockée managée et un fichier UDF.
 
 > [!NOTE]
 > Si vous utilisez Visual Web Developer ou l’Édition Standard de Visual Studio, vous devez utiliser l’approche manuelle à la place. Étape 13 fournit des instructions détaillées pour effectuer ces étapes manuellement. Je vous encourage à lire les étapes 2 à 12 avant de lire l’étape 13 dans la mesure où ces étapes comprennent les instructions de configuration SQL Server importantes qui doivent être appliquées, quelle que soit la version de Visual Studio que vous utilisez.
@@ -149,14 +149,14 @@ Cela va créer un nouveau fichier de classe Visual Basic avec le contenu suivant
 
 [!code-vb[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample2.vb)]
 
-Notez que la procédure stockée est implémentée comme un `Shared` méthode dans un `Partial` fichier de classe nommé `StoredProcedures`. En outre, le `GetDiscontinuedProducts` est décorée avec le [ `SqlProcedure` attribut](https://msdn.microsoft.com/en-us/library/microsoft.sqlserver.server.sqlprocedureattribute.aspx), qui marque la méthode comme une procédure stockée.
+Notez que la procédure stockée est implémentée comme un `Shared` méthode dans un `Partial` fichier de classe nommé `StoredProcedures`. En outre, le `GetDiscontinuedProducts` est décorée avec le [ `SqlProcedure` attribut](https://msdn.microsoft.com/library/microsoft.sqlserver.server.sqlprocedureattribute.aspx), qui marque la méthode comme une procédure stockée.
 
 Le code suivant crée un `SqlCommand` objet et les jeux de son `CommandText` à un `SELECT` requête qui retourne toutes les colonnes à partir de la `Products` de table pour les produits dont `Discontinued` ont la valeur 1. Ensuite, il exécute la commande et renvoie les résultats à l’application cliente. Ajoutez ce code à la `GetDiscontinuedProducts` (méthode).
 
 
 [!code-vb[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample3.vb)]
 
-Tous les objets de base de données managés ont accès à un [ `SqlContext` objet](https://msdn.microsoft.com/en-us/library/ms131108.aspx) qui représente le contexte de l’appelant. Le `SqlContext` fournit l’accès à un [ `SqlPipe` objet](https://msdn.microsoft.com/en-us/library/microsoft.sqlserver.server.sqlpipe.aspx) via son [ `Pipe` propriété](https://msdn.microsoft.com/en-us/library/microsoft.sqlserver.server.sqlcontext.pipe.aspx). Cela `SqlPipe` objet est utilisé pour transbordeur des informations entre la base de données SQL Server et l’application appelante. Comme son nom l’indique, le [ `ExecuteAndSend` méthode](https://msdn.microsoft.com/en-us/library/microsoft.sqlserver.server.sqlpipe.executeandsend.aspx) exécute un passé dans `SqlCommand` objet et renvoient les résultats à l’application cliente.
+Tous les objets de base de données managés ont accès à un [ `SqlContext` objet](https://msdn.microsoft.com/library/ms131108.aspx) qui représente le contexte de l’appelant. Le `SqlContext` fournit l’accès à un [ `SqlPipe` objet](https://msdn.microsoft.com/library/microsoft.sqlserver.server.sqlpipe.aspx) via son [ `Pipe` propriété](https://msdn.microsoft.com/library/microsoft.sqlserver.server.sqlcontext.pipe.aspx). Cela `SqlPipe` objet est utilisé pour transbordeur des informations entre la base de données SQL Server et l’application appelante. Comme son nom l’indique, le [ `ExecuteAndSend` méthode](https://msdn.microsoft.com/library/microsoft.sqlserver.server.sqlpipe.executeandsend.aspx) exécute un passé dans `SqlCommand` objet et renvoient les résultats à l’application cliente.
 
 > [!NOTE]
 > Les objets de base de données managés sont mieux adaptées pour les procédures stockées et les fonctions qui utilisent la logique procédurale plutôt que d’une logique basée sur un jeu. Logique procédurale implique l’utilisation des jeux de données sur une ligne par ligne de base ou l’utilisation des données scalaires. Le `GetDiscontinuedProducts` n’implique la méthode que nous venons de créer, toutefois, aucune logique procédurale. Par conséquent, il serait dans l’idéal, être implémenté en tant qu’une procédure stockée T-SQL. Il est implémenté comme une procédure stockée managée pour illustrer les étapes nécessaires pour créer et déployer géré des procédures stockées.
@@ -214,7 +214,7 @@ Notez que chaque paramètre de configuration dans la Figure 12 a quatre valeurs 
 
 [!code-sql[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample5.sql)]
 
-Si vous exécutez de nouveau la `exec sp_configure` vous verrez que l’instruction ci-dessus mis à jour la valeur de configuration clr activé paramètre s à 1, mais que la valeur d’exécution est toujours définie à 0. Pour que cette modification de configuration prennent effet, nous devons exécuter le [ `RECONFIGURE` commande](https://msdn.microsoft.com/en-us/library/ms176069.aspx), qui définit la valeur d’exécution à la valeur actuelle de la configuration. Entrez simplement `RECONFIGURE` dans la fenêtre de requête et cliquez sur l’icône exécuter dans la barre d’outils. Si vous exécutez `exec sp_configure` maintenant vous devez voir une valeur de 1 dans la configuration du paramètre de clr activé s et exécuter les valeurs.
+Si vous exécutez de nouveau la `exec sp_configure` vous verrez que l’instruction ci-dessus mis à jour la valeur de configuration clr activé paramètre s à 1, mais que la valeur d’exécution est toujours définie à 0. Pour que cette modification de configuration prennent effet, nous devons exécuter le [ `RECONFIGURE` commande](https://msdn.microsoft.com/library/ms176069.aspx), qui définit la valeur d’exécution à la valeur actuelle de la configuration. Entrez simplement `RECONFIGURE` dans la fenêtre de requête et cliquez sur l’icône exécuter dans la barre d’outils. Si vous exécutez `exec sp_configure` maintenant vous devez voir une valeur de 1 dans la configuration du paramètre de clr activé s et exécuter les valeurs.
 
 La configuration du clr activé terminée, nous sommes prêts à exécuter la `GetDiscontinuedProducts` procédure stockée. Dans la fenêtre de requête, entrez et exécutez la commande `exec` `GetDiscontinuedProducts`. Le code managé correspondant dans l’appel à la procédure stockée entraîne le `GetDiscontinuedProducts` méthode à exécuter. Ce code émet une `SELECT` requête pour retourner tous les produits qui sont supprimées et retourne ces données à l’application appelante, qui est SQL Server Management Studio dans cette instance. Management Studio reçoit ces résultats et les affiche dans la fenêtre des résultats.
 
@@ -232,7 +232,7 @@ Pour créer une procédure stockée managée qui accepte des paramètres d’ent
 
 Pour ajouter une nouvelle procédure stockée pour le projet, cliquez sur le `ManagedDatabaseConstructs` nom du projet et choisissez d’ajouter une nouvelle procédure stockée. Nommez le fichier `GetProductsWithPriceLessThan.vb`. Comme nous l’avons vu à l’étape 3, cela va créer un nouveau fichier de classe Visual Basic avec une méthode nommée `GetProductsWithPriceLessThan` placé dans le `Partial` classe `StoredProcedures`.
 
-Mise à jour la `GetProductsWithPriceLessThan` définition de méthode s afin qu’il accepte un [ `SqlMoney` ](https://msdn.microsoft.com/en-us/library/system.data.sqltypes.sqlmoney.aspx) paramètre d’entrée nommé `price` , écrivez le code pour exécuter et renvoyer les résultats de requête :
+Mise à jour la `GetProductsWithPriceLessThan` définition de méthode s afin qu’il accepte un [ `SqlMoney` ](https://msdn.microsoft.com/library/system.data.sqltypes.sqlmoney.aspx) paramètre d’entrée nommé `price` , écrivez le code pour exécuter et renvoyer les résultats de requête :
 
 
 [!code-vb[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample6.vb)]
@@ -400,19 +400,19 @@ Pour ajouter un code UDF géré pour le `ManagedDatabaseConstructs` de projet, a
 **Figure 25**: ajouter un nouveau UDF géré pour le `ManagedDatabaseConstructs` projet ([cliquez pour afficher l’image en taille réelle](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image61.png))
 
 
-Le modèle de fonction de définis par l’utilisateur crée un `Partial` classe nommée `UserDefinedFunctions` avec une méthode dont le nom est le même que le nom de fichier s classe (`udf_ComputeInventoryValue_Managed`, dans cette instance). Cette méthode est décorée à l’aide de la [ `SqlFunction` attribut](https://msdn.microsoft.com/en-us/library/microsoft.sqlserver.server.sqlfunctionattribute.aspx), qui marque la méthode comme étant un fichier UDF géré.
+Le modèle de fonction de définis par l’utilisateur crée un `Partial` classe nommée `UserDefinedFunctions` avec une méthode dont le nom est le même que le nom de fichier s classe (`udf_ComputeInventoryValue_Managed`, dans cette instance). Cette méthode est décorée à l’aide de la [ `SqlFunction` attribut](https://msdn.microsoft.com/library/microsoft.sqlserver.server.sqlfunctionattribute.aspx), qui marque la méthode comme étant un fichier UDF géré.
 
 
 [!code-vb[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample13.vb)]
 
-Le `udf_ComputeInventoryValue` méthode retourne actuellement un [ `SqlString` objet](https://msdn.microsoft.com/en-us/library/system.data.sqltypes.sqlstring.aspx) et n’accepte pas les paramètres d’entrée. Nous devons mettre à jour la définition de méthode afin qu’il accepte trois paramètres - d’entrée `UnitPrice`, `UnitsInStock`, et `Discontinued` - et retourne un `SqlMoney` objet. La logique de calcul de la valeur d’inventaire est identique à celle de T-SQL `udf_ComputeInventoryValue` UDF.
+Le `udf_ComputeInventoryValue` méthode retourne actuellement un [ `SqlString` objet](https://msdn.microsoft.com/library/system.data.sqltypes.sqlstring.aspx) et n’accepte pas les paramètres d’entrée. Nous devons mettre à jour la définition de méthode afin qu’il accepte trois paramètres - d’entrée `UnitPrice`, `UnitsInStock`, et `Discontinued` - et retourne un `SqlMoney` objet. La logique de calcul de la valeur d’inventaire est identique à celle de T-SQL `udf_ComputeInventoryValue` UDF.
 
 
 [!code-vb[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample14.vb)]
 
-Notez que les paramètres d’entrée de méthode s UDF sont de leurs types SQL correspondantes : `SqlMoney` pour le `UnitPrice` champ, [ `SqlInt16` ](https://msdn.microsoft.com/en-us/library/system.data.sqltypes.sqlint16.aspx) pour `UnitsInStock`, et [ `SqlBoolean` ](https://msdn.microsoft.com/en-us/library/system.data.sqltypes.sqlboolean.aspx) pour `Discontinued`. Ces types de données reflètent les types définis dans le `Products` table : le `UnitPrice` colonne est de type `money`, le `UnitsInStock` colonne de type `smallint`et le `Discontinued` colonne de type `bit`.
+Notez que les paramètres d’entrée de méthode s UDF sont de leurs types SQL correspondantes : `SqlMoney` pour le `UnitPrice` champ, [ `SqlInt16` ](https://msdn.microsoft.com/library/system.data.sqltypes.sqlint16.aspx) pour `UnitsInStock`, et [ `SqlBoolean` ](https://msdn.microsoft.com/library/system.data.sqltypes.sqlboolean.aspx) pour `Discontinued`. Ces types de données reflètent les types définis dans le `Products` table : le `UnitPrice` colonne est de type `money`, le `UnitsInStock` colonne de type `smallint`et le `Discontinued` colonne de type `bit`.
 
-Le code commence par créer un `SqlMoney` instance nommée `inventoryValue` qui est assignée à la valeur 0. Le `Products` permet de table de base de données `NULL` des valeurs dans le `UnitsInPrice` et `UnitsInStock` colonnes. Par conséquent, nous devons d’abord pour vérifier si ces valeurs contiennent `NULL` s, ce qui nous faire la `SqlMoney` objet s [ `IsNull` propriété](https://msdn.microsoft.com/en-us/library/system.data.sqltypes.sqlmoney.isnull.aspx). Si les deux `UnitPrice` et `UnitsInStock` contenir non -`NULL` des valeurs, puis nous calculons la `inventoryValue` le produit des deux. Ensuite, si `Discontinued` a la valeur true, nous réduire de moitié la valeur.
+Le code commence par créer un `SqlMoney` instance nommée `inventoryValue` qui est assignée à la valeur 0. Le `Products` permet de table de base de données `NULL` des valeurs dans le `UnitsInPrice` et `UnitsInStock` colonnes. Par conséquent, nous devons d’abord pour vérifier si ces valeurs contiennent `NULL` s, ce qui nous faire la `SqlMoney` objet s [ `IsNull` propriété](https://msdn.microsoft.com/library/system.data.sqltypes.sqlmoney.isnull.aspx). Si les deux `UnitPrice` et `UnitsInStock` contenir non -`NULL` des valeurs, puis nous calculons la `inventoryValue` le produit des deux. Ensuite, si `Discontinued` a la valeur true, nous réduire de moitié la valeur.
 
 > [!NOTE]
 > Le `SqlMoney` objet permet uniquement de deux `SqlMoney` instances multiplication ensemble. Il n’autorise pas un `SqlMoney` instance par un nombre à virgule flottante littéral. Par conséquent, pour réduire de moitié `inventoryValue` nous multipliez-le par un nouveau `SqlMoney` instance qui a la valeur 0,5.
@@ -544,7 +544,7 @@ Comme le montre la Figure 32, la commande ci-dessus affiche des informations pou
 **La figure 32**: le `ManuallyCreatedDBObjects.dll` est répertorié dans l’Explorateur d’objets ([cliquez pour afficher l’image en taille réelle](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image78.png))
 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Microsoft SQL Server 2005 fournit l’intégration avec le Common Language Runtime (CLR), ce qui permet aux objets de base de données à l’aide de code managé. Auparavant, ces objets de base de données peuvent uniquement être créés à l’aide de T-SQL, mais nous pouvons maintenant créer ces objets à l’aide de la programmation des langages comme Visual Basic .NET. Dans ce didacticiel, nous avons créé deux gérés les procédures stockées et une fonction définie par l’utilisateur managés.
 
@@ -559,13 +559,13 @@ Pour plus d’informations sur les sujets abordés dans ce didacticiel, consulte
 - [Avantages et inconvénients des fonctions définies par l’utilisateur](http://www.samspublishing.com/articles/article.asp?p=31724&amp;rl=1)
 - [Création d’objets SQL Server 2005 dans le Code managé](https://channel9.msdn.com/Showpost.aspx?postid=142413)
 - [Création de déclencheurs à l’aide de Code managé dans SQL Server 2005](http://www.15seconds.com/issue/041006.htm)
-- [Comment : Créer et exécuter un CLR SQL Server de procédure stockée](https://msdn.microsoft.com/en-us/library/5czye81z(VS.80).aspx)
-- [Comment : Créer et exécuter une fonction définie par l’utilisateur de CLR SQL Server](https://msdn.microsoft.com/en-us/library/w2kae45k(VS.80).aspx)
-- [Comment : Modifier le `Test.sql` Script à exécuter des objets SQL](https://msdn.microsoft.com/en-us/library/ms233682(VS.80).aspx)
+- [Comment : Créer et exécuter un CLR SQL Server de procédure stockée](https://msdn.microsoft.com/library/5czye81z(VS.80).aspx)
+- [Comment : Créer et exécuter une fonction définie par l’utilisateur de CLR SQL Server](https://msdn.microsoft.com/library/w2kae45k(VS.80).aspx)
+- [Comment : Modifier le `Test.sql` Script à exécuter des objets SQL](https://msdn.microsoft.com/library/ms233682(VS.80).aspx)
 - [Fonctions définies par l’introduction à l’utilisateur](http://www.sqlteam.com/item.asp?ItemID=1955)
 - [Le Code managé et SQL Server 2005 (vidéo)](https://channel9.msdn.com/Showpost.aspx?postid=142413)
-- [Référence Transact-SQL](https://msdn.microsoft.com/en-us/library/aa299742(SQL.80).aspx)
-- [Procédure pas à pas : Création d’une procédure stockée dans le Code managé](https://msdn.microsoft.com/en-us/library/zxsa8hkf(VS.80).aspx)
+- [Référence Transact-SQL](https://msdn.microsoft.com/library/aa299742(SQL.80).aspx)
+- [Procédure pas à pas : Création d’une procédure stockée dans le Code managé](https://msdn.microsoft.com/library/zxsa8hkf(VS.80).aspx)
 
 ## <a name="about-the-author"></a>À propos de l’auteur
 
