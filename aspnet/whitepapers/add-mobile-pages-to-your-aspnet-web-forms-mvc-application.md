@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/add-mobile-pages-to-your-aspnet-web-forms-mvc-application
 msc.type: content
-ms.openlocfilehash: c7d893fb9633aaa8628f2f46a8db7f2c09f81830
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: aac359b26c508784793a67260dc2e65c30db687a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="how-to-add-mobile-pages-to-your-aspnet-web-forms--mvc-application"></a>Comment : Ajouter des Pages mobiles à ASP.NET Web Forms / Application MVC
 ====================
@@ -104,7 +104,7 @@ Le composant de clé requis pour toutes les techniques de côté serveur pour pr
 - Méthode d’entrée (de la souris et le clavier, tactile, clavier, manette,...)
 - Taille de l’écran (physiquement et en pixels)
 - Prise en charge multimédia et formats de données
-- etc.
+- Etc.
 
 Il est préférable de prendre des décisions basées sur les caractéristiques que le numéro de modèle, car, puis vous serez mieux équipées pour gérer les appareils.
 
@@ -118,7 +118,7 @@ Les développeurs ASP.NET Web Forms et MVC peuvent découvrir immédiatement des
 - Request.Browser.SupportsXmlHttp
 - .. .et beaucoup d’autres
 
-En arrière-plan, la plateforme ASP.NET correspond à entrant *User-Agent* en-tête HTTP de (l’agent utilisateur) par rapport aux expressions régulières dans un ensemble de fichiers XML de définition de navigateur. Par défaut la plateforme inclut les définitions pour de nombreux périphériques mobiles courantes, et vous pouvez ajouter des fichiers de définition de navigateur personnalisés pour d’autres que vous voulez reconnaître. Pour plus d’informations, consultez la page MSDN [des contrôles serveur Web ASP.NET et les fonctionnalités du navigateur](https://msdn.microsoft.com/en-us/library/x3k2ssx2.aspx).
+En arrière-plan, la plateforme ASP.NET correspond à entrant *User-Agent* en-tête HTTP de (l’agent utilisateur) par rapport aux expressions régulières dans un ensemble de fichiers XML de définition de navigateur. Par défaut la plateforme inclut les définitions pour de nombreux périphériques mobiles courantes, et vous pouvez ajouter des fichiers de définition de navigateur personnalisés pour d’autres que vous voulez reconnaître. Pour plus d’informations, consultez la page MSDN [des contrôles serveur Web ASP.NET et les fonctionnalités du navigateur](https://msdn.microsoft.com/library/x3k2ssx2.aspx).
 
 ### <a name="using-the-wurfl-device-database-via-51degreesmobi-foundation"></a>À l’aide de la base de données de périphérique WURFL via 51Degrees.mobi Foundation
 
@@ -213,9 +213,9 @@ Pour plus d’informations sur l’optimisation de votre balisage et le CSS pour
 
 Étant donné que le modèle Model-View-Controller dissocie la logique d’application (dans les contrôleurs) de la logique de présentation (dans les affichages), vous pouvez choisir à partir d’une des approches suivantes pour gérer la prise en charge mobile dans le code côté serveur :
 
-1. ***Utiliser les mêmes contrôleurs et vues pour les navigateurs de bureau et mobiles, mais les vues avec différentes dispositions Razor selon le type de périphérique de rendu*.** Cette option fonctionne mieux si vous affichez des données identiques sur tous les appareils, mais simplement fournir différentes feuilles de style CSS ou de modifier quelques éléments HTML de niveau supérieur pour les mobiles.
+1. ***Utiliser les mêmes contrôleurs et vues pour les navigateurs de bureau et mobiles, mais afficher les vues avec des dispositions différentes selon le type de périphérique * Razor.** Cette option fonctionne mieux si vous affichez des données identiques sur tous les appareils, mais simplement fournir différentes feuilles de style CSS ou de modifier quelques éléments HTML de niveau supérieur pour les mobiles.
 2. ***Utiliser les contrôleurs de mêmes pour les navigateurs de bureau et mobiles, mais effectuer le rendu des vues différentes selon le type d’appareil***. Cette option fonctionne mieux si vous êtes affichage à peu près les mêmes données et en fournissant le même flux de travail pour les utilisateurs finaux, mais souhaitez restituer un balisage HTML très différent en fonction de l’appareil utilisé.
-3. ***Créer des zones séparées pour les navigateurs de bureau et mobiles, implémentation des contrôleurs indépendants et les vues pour chaque*.** Cette option fonctionne mieux si vous êtes affichant les écrans très différentes, qui contient des informations différentes et début de l’utilisateur à travers différents flux de travail optimisé pour les types de périphériques. Cela peut signifier une répétition de code, mais vous pouvez réduire qui en factorisant logique commune dans une couche ou un service sous-jacent.
+3. ***Créer des zones séparées pour les navigateurs de bureau et mobiles, implémentation des contrôleurs indépendants et les vues pour chaque *.** Cette option fonctionne mieux si vous êtes affichant les écrans très différentes, qui contient des informations différentes et début de l’utilisateur à travers différents flux de travail optimisé pour les types de périphériques. Cela peut signifier une répétition de code, mais vous pouvez réduire qui en factorisant logique commune dans une couche ou un service sous-jacent.
 
 Si vous voulez prendre le **premier** option et modifier uniquement la mise en page Razor par type d’appareil, il est très facile. Il suffit de modifier votre \_ViewStart.cshtml de fichiers comme suit :
 
