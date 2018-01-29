@@ -10,17 +10,17 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/configuration/index
-ms.openlocfilehash: ee9bdc66d0bfa6433736fbc55126bdd37ba9d080
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 1afb32fb6c5fffd38b7028741bfd8199e2e23d21
+ms.sourcegitcommit: 09b342b45e7372ba9ebf17f35eee331e5a08fb26
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/26/2018
 ---
 # <a name="configure-an-aspnet-core-app"></a>Configurer une application ASP.NET Core
 
 Par [Rick Anderson](https://twitter.com/RickAndMSFT), [Mark Michaelis](http://intellitect.com/author/mark-michaelis/), [Steve Smith](https://ardalis.com/), [Daniel Roth](https://github.com/danroth27) et [Luke Latham](https://github.com/guardrex)
 
-L’API de configuration fournit un moyen de configurer une application web ASP.NET Core basé sur une liste de paires nom/valeur. La configuration est lue au moment de l’exécution à partir de plusieurs sources. Vous pouvez regrouper ces paires nom/valeur dans une hiérarchie à plusieurs niveaux.
+L’API de configuration fournit un moyen de configurer une application web ASP.NET Core basé sur une liste de paires nom/valeur. La configuration est lue au moment de l’exécution à partir de plusieurs sources. Les paires nom/valeur peuvent être regroupées dans une hiérarchie à plusieurs niveaux.
 
 Il existe des fournisseurs de configuration pour les éléments suivants :
 
@@ -59,7 +59,7 @@ Console.Write($"{Configuration["wizards:0:Name"]}");
 // Output: Gandalf
 ```
 
-Les paires nom/valeur écrites dans les fournisseurs [Configuration](/dotnet/api/microsoft.extensions.configuration) intégrés ne sont **pas** conservées. Toutefois, vous pouvez créer un fournisseur personnalisé qui enregistre les valeurs. Consultez la section relative à la création d’un [fournisseur de configuration personnalisé](xref:fundamentals/configuration/index#custom-config-providers).
+Les paires nom/valeur écrites dans les fournisseurs [Configuration](/dotnet/api/microsoft.extensions.configuration) intégrés ne sont **pas** conservées. Toutefois, un fournisseur personnalisé qui enregistre les valeurs peut être créé. Consultez la section relative à la création d’un [fournisseur de configuration personnalisé](xref:fundamentals/configuration/index#custom-config-providers).
 
 L’exemple précédent utilise l’indexeur de configuration pour lire des valeurs. Pour accéder à la configuration en dehors de `Startup`, utilisez le *modèle d’options*. Pour plus d’informations, consultez la rubrique [Options](xref:fundamentals/configuration/options).
 
@@ -93,8 +93,8 @@ Points à prendre en considération pour la configuration :
 
 * `IOptionsSnapshot` peut recharger les données de configuration quand elles changent. Pour plus d’informations, consultez [IOptionsSnapshot](xref:fundamentals/configuration/options#reload-configuration-data-with-ioptionssnapshot).
 * Les clés de configuration ne respectent **pas** la casse.
-* Ne stockez **jamais** des mots de passe ou d’autres données sensibles dans le code du fournisseur de configuration ou dans les fichiers de configuration en texte clair. N’utilisez aucun secret de production dans vos environnements de développement ou de test. Spécifiez les secrets en dehors du projet afin qu’ils ne puissent pas être validés par inadvertance dans votre référentiel. Découvrez des informations supplémentaires sur l’[Utilisation de plusieurs environnements](xref:fundamentals/environments) et la gestion du [Stockage sécurisé des secrets d’application lors du développement](xref:security/app-secrets).
-* S’il n’est pas possible d’utiliser un signe deux-points (`:`) dans les variables d’environnement de votre système, remplacez le signe deux-points (`:`) par un double trait de soulignement (`__`).
+* Ne stockez **jamais** des mots de passe ou d’autres données sensibles dans le code du fournisseur de configuration ou dans les fichiers de configuration en texte clair. N’utilisez aucun secret de production dans les environnements de développement ou de test. Spécifiez les secrets en dehors du projet afin qu’ils ne puissent pas être validés par inadvertance dans un référentiel de code source. Découvrez des informations supplémentaires sur l’[Utilisation de plusieurs environnements](xref:fundamentals/environments) et la gestion du [Stockage sécurisé des secrets d’application lors du développement](xref:security/app-secrets).
+* S’il n’est pas possible d’utiliser un signe deux-points (`:`) dans les variables d’environnement d’un système, remplacez le signe deux-points (`:`) par un double trait de soulignement (`__`).
 
 ## <a name="in-memory-provider-and-binding-to-a-poco-class"></a>Fournisseur en mémoire et liaison à une classe POCO
 
@@ -102,7 +102,7 @@ L’exemple suivant montre comment utiliser le fournisseur en mémoire et le lie
 
 [!code-csharp[Main](index/sample/InMemory/Program.cs)]
 
-Les valeurs de configuration sont retournées sous forme de chaînes, mais la liaison permet la construction d’objets. En effet, la liaison vous permet de récupérer des objets POCO ou même des graphes d’objets entiers.
+Les valeurs de configuration sont retournées sous forme de chaînes, mais la liaison permet la construction d’objets. En effet, la liaison permet la récupération des objets POCO ou même des graphes d’objets entiers.
 
 ### <a name="getvalue"></a>GetValue
 
@@ -110,11 +110,11 @@ L’exemple suivant illustre la méthode d’extension [GetValue&lt;T&gt;](/dotn
 
 [!code-csharp[Main](index/sample/InMemoryGetValue/Program.cs?highlight=31)]
 
-La méthode `GetValue<T>` de ConfigurationBinder vous permet de spécifier une valeur par défaut (80 dans l’exemple). `GetValue<T>` est destiné aux scénarios simples et n’établit pas de liaison à des sections entières. `GetValue<T>` obtient les valeurs scalaires de `GetSection(key).Value` converties en un type spécifique.
+La méthode `GetValue<T>` de ConfigurationBinder permet de spécifier une valeur par défaut (80 dans l’exemple). `GetValue<T>` est destiné aux scénarios simples et n’établit pas de liaison à des sections entières. `GetValue<T>` obtient les valeurs scalaires de `GetSection(key).Value` converties en un type spécifique.
 
 ## <a name="bind-to-an-object-graph"></a>Établir une liaison à un graphe d’objets
 
-Vous pouvez établir une liaison récursive à chaque objet d’une classe. Considérez la classe `AppSettings` suivante :
+Chaque objet d’une classe peut se voir établir une liaison récursive. Considérez la classe `AppSettings` suivante :
 
 [!code-csharp[Main](index/sample/ObjectGraph/AppSettings.cs)]
 
@@ -185,7 +185,7 @@ Créez le fournisseur de configuration personnalisé en héritant de [Configurat
 
 Les valeurs en surbrillance provenant de la base de données ("value_from_ef_1" et "value_from_ef_2") sont affichées quand l’exemple est exécuté.
 
-Vous pouvez ajouter une méthode d’extension `EFConfigSource` pour l’ajout de la source de configuration :
+Vous pouvez utiliser une méthode d’extension `EFConfigSource` pour l’ajout de la source de configuration :
 
 [!code-csharp[Main](index/sample/CustomConfigurationProvider/EntityFrameworkExtensions.cs?highlight=12)]
 
@@ -261,7 +261,7 @@ Pour les fichiers *appsettings* où :
 
 Si toutes les conditions précédentes sont remplies, les arguments de ligne de commande sont remplacés.
 
-L’application ASP.NET Core 2.x peut utiliser WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder) à la place de ``CreateDefaultBuilder`. When using `WebHostBuilder`, configuration définie manuellement avec [ConfigurationBuilder](/api/microsoft.extensions.configuration.configurationbuilder). Pour plus d’informations, consultez l’onglet ASP.NET Core 1.x.
+L’application ASP.NET Core 2.x peut utiliser [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder) au lieu de `CreateDefaultBuilder`. Lorsque vous utilisez `WebHostBuilder`, définissez manuellement la configuration avec [ConfigurationBuilder](/api/microsoft.extensions.configuration.configurationbuilder). Pour plus d’informations, consultez l’onglet ASP.NET Core 1.x.
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
@@ -331,7 +331,7 @@ Si des clés en double sont fournies, la dernière paire clé/valeur est utilis�
 
 ### <a name="switch-mappings"></a>Correspondances de commutateur
 
-Lors de la génération manuelle d’une configuration avec `ConfigurationBuilder`, vous pouvez éventuellement fournir un dictionnaire de correspondances de commutateur pour la méthode `AddCommandLine`. Les correspondances de commutateur vous permettent de fournir une logique de remplacement des noms de clés.
+Lors de la génération manuelle d’une configuration avec `ConfigurationBuilder`, un dictionnaire de correspondances de commutateur peut être ajouté à la méthode `AddCommandLine`. Les correspondances de commutateur permettent une logique de remplacement des noms de clés.
 
 Quand le dictionnaire de correspondances de commutateur est utilisé, il est vérifié afin de déterminer s’il contient une clé correspondant à celle fournie par un argument de ligne de commande. Si la clé de ligne de commande est trouvée dans le dictionnaire, la valeur du dictionnaire (le remplacement de la clé) est repassée pour définir la configuration. Une correspondance de commutateur est nécessaire pour chaque clé de ligne de commande préfixée avec un tiret unique (`-`).
 
@@ -340,7 +340,7 @@ Règles des clés du dictionnaire de correspondances de commutateur :
 * Les commutateurs doivent commencer par un tiret (`-`) ou un double tiret (`--`).
 * Le dictionnaire de correspondances de commutateur ne doit pas contenir de clés en double.
 
-Dans l’exemple suivant, la méthode `GetSwitchMappings` permet à vos arguments de ligne de commande d’utiliser un préfixe de clé composé d’un tiret unique (`-`) et d’éviter les préfixes de sous-clés.
+Dans l’exemple suivant, la méthode `GetSwitchMappings` permet aux arguments de ligne de commande d’utiliser un préfixe de clé composé d’un tiret unique (`-`) et d’éviter les préfixes de sous-clés.
 
 [!code-csharp[Main](index/sample/CommandLine/Program.cs?highlight=10-19,32)]
 
@@ -394,6 +394,10 @@ Left: 1988
 
 Un fichier *web.config* est nécessaire pour héberger l’application dans IIS ou IIS Express. Les paramètres de *web.config* permettent au [module ASP.NET Core](xref:fundamentals/servers/aspnet-core-module) de lancer l’application et de configurer d’autres modules et paramètres IIS. Si le fichier *web.config* n’est pas présent et que le fichier projet contient `<Project Sdk="Microsoft.NET.Sdk.Web">`, la publication du projet crée un fichier *web.config* dans la sortie publiée (le dossier *publish*). Pour plus d’informations, consultez [Héberger ASP.NET Core sur Windows avec IIS](xref:host-and-deploy/iis/index#webconfig).
 
+## <a name="accessing-configuration-during-startup"></a>Accès à la configuration au démarrage
+
+Pour accéder à la configuration dans `ConfigureServices` ou `Configure` au démarrage, consultez les exemples dans la rubrique [Démarrage de l’application](xref:fundamentals/startup).
+
 ## <a name="additional-notes"></a>Remarques supplémentaires
 
 * L’injection de dépendances n’est pas définie tant que `ConfigureServices` n’est pas appelé.
@@ -401,7 +405,7 @@ Un fichier *web.config* est nécessaire pour héberger l’application dans IIS 
 * `IConfiguration` a deux spécialisations :
   * `IConfigurationRoot` Utilisé pour le nœud racine. Peut déclencher un rechargement.
   * `IConfigurationSection` Représente une section de valeurs de configuration. Les méthodes `GetSection` et `GetChildren` retournent un `IConfigurationSection`.
-  * Utilisez [IConfigurationRoot](/dotnet/api/microsoft.extensions.configuration.iconfigurationroot) quand vous rechargez la configuration ou devez accéder à chaque fournisseur. Aucune de ces situations n’est courante.
+  * Utilisez [IConfigurationRoot](/dotnet/api/microsoft.extensions.configuration.iconfigurationroot) quand vous rechargez la configuration ou accéder à chaque fournisseur. Aucune de ces situations n’est courante.
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
