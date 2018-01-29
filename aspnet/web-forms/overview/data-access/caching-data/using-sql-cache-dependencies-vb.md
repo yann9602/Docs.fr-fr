@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/caching-data/using-sql-cache-dependencies-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 46521f48d31414ffff2707986d6f869ca2f9bc9a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: af302d67b009fc25e38fb33a5e2a623f7200bcd5
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-sql-cache-dependencies-vb"></a>À l’aide de dépendances de Cache SQL (VB)
 ====================
@@ -33,7 +33,7 @@ Les techniques de mise en cache est examiné dans le [mise en cache des données
 
 Lors de la mise en cache de la base de données, une expiration basée sur le temps est généralement utilisée pour sa facilité d’utilisation, mais est généralement une solution inadéquate. Dans l’idéal, la base de données reste en mémoire cache jusqu'à ce que les données sous-jacentes ont été modifiées dans la base de données ; alors seulement est supprimé du cache. Cette approche optimise les avantages de performances de mise en cache et réduit la durée des données périmées. Toutefois, pour profiter de ces avantages il doit être un système en place qui sait lorsque la base de données sous-jacente a été modifiée et supprime les éléments correspondants à partir du cache. Avant d’ASP.NET 2.0, les développeurs de pages ont été chargés de l’implémentation de ce système.
 
-ASP.NET 2.0 fournit un [ `SqlCacheDependency` classe](https://msdn.microsoft.com/en-us/library/system.web.caching.sqlcachedependency.aspx) et l’infrastructure nécessaire pour déterminer quand une modification s’est produite dans la base de données afin que les éléments correspondants mis en cache peut être supprimée. Il existe deux techniques pour déterminer quand les données sous-jacentes ont changé : notification et interrogation. Après avoir discuté les différences entre la notification et d’interrogation, nous allons créer l’infrastructure nécessaire pour prendre en charge l’interrogation et puis examiner comment utiliser la `SqlCacheDependency` classe déclarative et par programme des scénarios.
+ASP.NET 2.0 fournit un [ `SqlCacheDependency` classe](https://msdn.microsoft.com/library/system.web.caching.sqlcachedependency.aspx) et l’infrastructure nécessaire pour déterminer quand une modification s’est produite dans la base de données afin que les éléments correspondants mis en cache peut être supprimée. Il existe deux techniques pour déterminer quand les données sous-jacentes ont changé : notification et interrogation. Après avoir discuté les différences entre la notification et d’interrogation, nous allons créer l’infrastructure nécessaire pour prendre en charge l’interrogation et puis examiner comment utiliser la `SqlCacheDependency` classe déclarative et par programme des scénarios.
 
 ## <a name="understanding-notification-and-polling"></a>L’interrogation et la présentation des notifications
 
@@ -55,7 +55,7 @@ Avec l’approche d’interrogation de la base de données doit être configuré
 [!code-console[Main](using-sql-cache-dependencies-vb/samples/sample1.cmd)]
 
 > [!NOTE]
-> Pour exécuter ces commandes de la connexion de base de données spécifiée doit être dans le [ `db_securityadmin` ](https://msdn.microsoft.com/en-us/library/ms188685.aspx) et [ `db_ddladmin` ](https://msdn.microsoft.com/en-us/library/ms190667.aspx) rôles. Pour examiner le T-SQL envoyé à la base de données par le `aspnet_regsql.exe` programme de ligne de commande, consultez [cette entrée de blog](http://scottonwriting.net/sowblog/posts/10709.aspx).
+> Pour exécuter ces commandes de la connexion de base de données spécifiée doit être dans le [ `db_securityadmin` ](https://msdn.microsoft.com/library/ms188685.aspx) et [ `db_ddladmin` ](https://msdn.microsoft.com/library/ms190667.aspx) rôles. Pour examiner le T-SQL envoyé à la base de données par le `aspnet_regsql.exe` programme de ligne de commande, consultez [cette entrée de blog](http://scottonwriting.net/sowblog/posts/10709.aspx).
 
 
 Par exemple, pour ajouter l’infrastructure pour l’interrogation à une base de données Microsoft SQL Server nommé `pubs` sur un serveur de base de données nommé `ScottsServer` à l’aide de l’authentification Windows, accédez au répertoire approprié et, à partir de la ligne de commande, entrez :
@@ -77,7 +77,7 @@ Pour ce didacticiel, ajouter les déclencheurs à la `Products`, `Categories`, e
 
 ## <a name="step-2-referencing-a-microsoft-sql-server-2005-express-edition-database-inappdata"></a>Étape 2 : Faisant référence à un Microsoft SQL Server 2005 Express Edition de base de données dans`App_Data`
 
-Le `aspnet_regsql.exe` programme de ligne de commande nécessite le nom du serveur et de base de données afin d’ajouter l’infrastructure nécessaire d’interrogation. Mais ce qui est le nom du serveur et de base de données pour une base de données Microsoft SQL Server 2005 Express qui se trouve dans le `App_Data` dossier ? Au lieu de devoir découvrir quelles sont les noms de base de données et de serveur, je ve détecté que l’approche la plus simple pour attacher la base de données pour le `localhost\SQLExpress` instance de base de données et de renommer les données à l’aide [SQL Server Management Studio](https://msdn.microsoft.com/en-us/library/ms174173.aspx). Si vous disposez d’une des versions complètes de SQL Server 2005 est installé sur votre ordinateur, puis probablement avoir déjà installé sur votre ordinateur de SQL Server Management Studio. Si vous avez uniquement l’édition Express, vous pouvez télécharger gratuitement le [Microsoft SQL Server Management Studio Express Edition](https://www.microsoft.com/downloads/details.aspx?displaylang=en&amp;FamilyID=C243A5AE-4BD1-4E3D-94B8-5A0F62BF7796).
+Le `aspnet_regsql.exe` programme de ligne de commande nécessite le nom du serveur et de base de données afin d’ajouter l’infrastructure nécessaire d’interrogation. Mais ce qui est le nom du serveur et de base de données pour une base de données Microsoft SQL Server 2005 Express qui se trouve dans le `App_Data` dossier ? Au lieu de devoir découvrir quelles sont les noms de base de données et de serveur, je ve détecté que l’approche la plus simple pour attacher la base de données pour le `localhost\SQLExpress` instance de base de données et de renommer les données à l’aide [SQL Server Management Studio](https://msdn.microsoft.com/library/ms174173.aspx). Si vous disposez d’une des versions complètes de SQL Server 2005 est installé sur votre ordinateur, puis probablement avoir déjà installé sur votre ordinateur de SQL Server Management Studio. Si vous avez uniquement l’édition Express, vous pouvez télécharger gratuitement le [Microsoft SQL Server Management Studio Express Edition](https://www.microsoft.com/downloads/details.aspx?displaylang=en&amp;FamilyID=C243A5AE-4BD1-4E3D-94B8-5A0F62BF7796).
 
 Commencez par fermer Visual Studio. Ensuite, ouvrez SQL Server Management Studio et choisissez se connecter à la `localhost\SQLExpress` serveur à l’aide de l’authentification Windows.
 
@@ -186,7 +186,7 @@ Maintenant, visitez cette page via un navigateur. Dans la mesure où ve encore p
 **Figure 8**: ObjectDataSource le s `Selecting` événement se déclenche à chaque fois le contrôle GridView est paginé, modifiée ou Sorted ([cliquez pour afficher l’image en taille réelle](using-sql-cache-dependencies-vb/_static/image10.png))
 
 
-Comme nous l’avons vu dans la [mise en cache des données avec ObjectDataSource](caching-data-with-the-objectdatasource-vb.md) (didacticiel), définition de la `EnableCaching` propriété `True` provoque l’ObjectDataSource pour mettre en cache ses données pour la durée spécifiée par son `CacheDuration` propriété. ObjectDataSource possède également un [ `SqlCacheDependency` propriété](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.objectdatasource.sqlcachedependency.aspx), qui ajoute une ou plusieurs dépendances de cache SQL pour les données mises en cache à l’aide du modèle :
+Comme nous l’avons vu dans la [mise en cache des données avec ObjectDataSource](caching-data-with-the-objectdatasource-vb.md) (didacticiel), définition de la `EnableCaching` propriété `True` provoque l’ObjectDataSource pour mettre en cache ses données pour la durée spécifiée par son `CacheDuration` propriété. ObjectDataSource possède également un [ `SqlCacheDependency` propriété](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.sqlcachedependency.aspx), qui ajoute une ou plusieurs dépendances de cache SQL pour les données mises en cache à l’aide du modèle :
 
 
 [!code-css[Main](using-sql-cache-dependencies-vb/samples/sample9.css)]
@@ -282,7 +282,7 @@ N’oubliez pas que le `MasterCacheKeyArray` la dépendance de cache est utilis�
 
 En outre, lorsque vous travaillez avec des dépendances de cache SQL nous devons associer plusieurs tables de base de données en tant que dépendances. Par exemple, le `ProductsDataTable` mis en cache dans le `ProductsCL` classe contient les noms de catégorie et le fournisseur pour chaque produit, mais la `AddCacheItem` méthode utilise uniquement une dépendance sur `Products`. Dans ce cas, si l’utilisateur met à jour le nom d’une catégorie ou le fournisseur, les données de produit de mise en cache reste dans le cache et être obsolètes. Par conséquent, nous voulons que les données mises en cache de produit dépend non seulement le `Products` de table, mais sur le `Categories` et `Suppliers` également à des tables.
 
-Le [ `AggregateCacheDependency` classe](https://msdn.microsoft.com/en-us/library/system.web.caching.aggregatecachedependency.aspx) fournit un moyen d’associer plusieurs dépendances avec un élément de cache. Commencez par créer un `AggregateCacheDependency` instance. Ensuite, ajoutez le jeu de dépendances à l’aide de la `AggregateCacheDependency` s `Add` (méthode). Lorsque vous insérez l’élément dans le cache de données par la suite, passez le `AggregateCacheDependency` instance. Lorsque *tout* de la `AggregateCacheDependency` modifier les dépendances de l’instance s, l’élément mis en cache est supprimé.
+Le [ `AggregateCacheDependency` classe](https://msdn.microsoft.com/library/system.web.caching.aggregatecachedependency.aspx) fournit un moyen d’associer plusieurs dépendances avec un élément de cache. Commencez par créer un `AggregateCacheDependency` instance. Ensuite, ajoutez le jeu de dépendances à l’aide de la `AggregateCacheDependency` s `Add` (méthode). Lorsque vous insérez l’élément dans le cache de données par la suite, passez le `AggregateCacheDependency` instance. Lorsque *tout* de la `AggregateCacheDependency` modifier les dépendances de l’instance s, l’élément mis en cache est supprimé.
 
 L’exemple suivant montre le code de mise à jour de la `ProductsCL` classe s `AddCacheItem` (méthode). La méthode crée le `MasterCacheKeyArray` cache dépendance avec `SqlCacheDependency` des objets pour le `Products`, `Categories`, et `Suppliers` tables. Ils sont combinés en un seul `AggregateCacheDependency` objet nommé `aggregateDependencies`, qui est ensuite passé à la `Insert` (méthode).
 
@@ -292,10 +292,10 @@ L’exemple suivant montre le code de mise à jour de la `ProductsCL` classe s `
 Ce nouveau code de test. S’affiche désormais le `Products`, `Categories`, ou `Suppliers` tables provoquent les données mises en cache à supprimer. En outre, le `ProductsCL` classe s `UpdateProduct` (méthode), qui est appelée lors de la modification d’un produit par le biais du GridView, supprime la `MasterCacheKeyArray` la dépendance, ce qui entraîne la mise en cache de cache `ProductsDataTable` à supprimer et les données à récupérer de nouveau le prochain demande.
 
 > [!NOTE]
-> Dépendances de cache SQL peuvent également être utilisés avec [mise en cache de sortie](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/caching/output.aspx). Pour une démonstration de cette fonctionnalité, consultez : [à l’aide du cache de sortie ASP.NET avec SQL Server](https://msdn.microsoft.com/en-us/library/e3w8402y(VS.80).aspx).
+> Dépendances de cache SQL peuvent également être utilisés avec [mise en cache de sortie](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/caching/output.aspx). Pour une démonstration de cette fonctionnalité, consultez : [à l’aide du cache de sortie ASP.NET avec SQL Server](https://msdn.microsoft.com/library/e3w8402y(VS.80).aspx).
 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Lors de la mise en cache de la base de données, les données resteront dans l’idéal, dans le cache jusqu'à ce qu’il est modifié dans la base de données. Avec ASP.NET 2.0, les dépendances de cache SQL peuvent être créées et utilisées dans les scénarios déclaratives et par programme. L’une des difficultés avec cette approche est dans la découverte lorsque les données ont été modifiées. La version complète de Microsoft SQL Server 2005 fournit des fonctionnalités de notification qui peuvent avertir une application lorsqu’un résultat de requête a été modifiée. Pour l’édition Express de SQL Server 2005 et les versions antérieures de SQL Server, un système d’interrogation doit être utilisé à la place. Heureusement, la configuration de l’infrastructure nécessaire d’interrogation est assez simple.
 
@@ -305,10 +305,10 @@ Bonne programmation !
 
 Pour plus d’informations sur les sujets abordés dans ce didacticiel, consultez les ressources suivantes :
 
-- [À l’aide de Notifications de requête dans Microsoft SQL Server 2005](https://msdn.microsoft.com/en-us/library/ms175110.aspx)
-- [Création d’une Notification de requête](https://msdn.microsoft.com/en-us/library/ms188669.aspx)
-- [Mise en cache dans ASP.NET avec la `SqlCacheDependency` classe](https://msdn.microsoft.com/en-us/library/ms178604(VS.80).aspx)
-- [Outil d’inscription de serveur SQL d’ASP.NET (`aspnet_regsql.exe`)](https://msdn.microsoft.com/en-us/library/ms229862(vs.80).aspx)
+- [À l’aide de Notifications de requête dans Microsoft SQL Server 2005](https://msdn.microsoft.com/library/ms175110.aspx)
+- [Création d’une Notification de requête](https://msdn.microsoft.com/library/ms188669.aspx)
+- [Mise en cache dans ASP.NET avec la `SqlCacheDependency` classe](https://msdn.microsoft.com/library/ms178604(VS.80).aspx)
+- [Outil d’inscription de serveur SQL d’ASP.NET (`aspnet_regsql.exe`)](https://msdn.microsoft.com/library/ms229862(vs.80).aspx)
 - [Vue d’ensemble de`SqlCacheDependency`](http://www.aspnetresources.com/blog/sql_cache_depedency_overview.aspx)
 
 ## <a name="about-the-author"></a>À propos de l’auteur

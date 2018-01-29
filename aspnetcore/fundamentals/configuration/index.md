@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/configuration/index
-ms.openlocfilehash: c4f57d1e02ad5f4e235039999af9df9d236756a7
-ms.sourcegitcommit: 3d512ea991ac36dfd4c800b7d1f8a27bfc50635e
+ms.openlocfilehash: ee9bdc66d0bfa6433736fbc55126bdd37ba9d080
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="configure-an-aspnet-core-app"></a>Configurer une application ASP.NET Core
 

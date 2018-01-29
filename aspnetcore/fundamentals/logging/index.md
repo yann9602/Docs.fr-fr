@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/logging/index
-ms.openlocfilehash: 387d19af9165d4b54ce3cb1a9b04412271da6fb0
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: af8364c584b686fd5c0fe30a89e241d9d08a30c0
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="introduction-to-logging-in-aspnet-core"></a>Introduction à la journalisation dans ASP.NET Core
 
@@ -336,7 +336,7 @@ Vous pouvez utiliser le nom de type pour spécifier un fournisseur dans une conf
 
 **Niveau minimum par défaut**
 
-Un paramètre de niveau minimum est utilisé uniquement si aucune règle de la configuration ou du code ne s’applique à une catégorie ou fournisseur spécifique. L’exemple suivant montre comment définir le niveau minimum :
+Un paramètre de niveau minimum est utilisé uniquement si aucune règle de la configuration ou du code ne s’applique à une catégorie ou un fournisseur spécifique. L’exemple suivant montre comment définir le niveau minimum :
 
 [!code-csharp[](index/sample2/Program.cs?name=snippet_MinLevel&highlight=3)]
 
