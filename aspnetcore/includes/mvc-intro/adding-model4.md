@@ -30,7 +30,7 @@ Vous pouvez aussi passer `id` avec une requête de chaîne, comme suit :
 
 `http://localhost:1234/movies/details?id=1`
 
-Le paramètre `id` est défini en comme [type nullable](https://docs.microsoft.com/dotnet/csharp/programming-guide/nullable-types/index) (`int?`) au cas où la valeur d’ID n’est pas fournie.
+Le paramètre `id` est défini comme [type nullable](https://docs.microsoft.com/dotnet/csharp/programming-guide/nullable-types/index) (`int?`) au cas où la valeur d’ID n’est pas fournie.
 
 Une [expression lambda](https://docs.microsoft.com/dotnet/articles/csharp/programming-guide/statements-expressions-operators/lambda-expressions) est passée à `SingleOrDefaultAsync` pour sélectionner les entités de film qui correspondent aux données de routage ou à la valeur de la chaîne de requête.
 

@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/first-mvc-app-mac/controller-methods-views
-ms.openlocfilehash: 1c58a3bbac227e06a36df0b0d3ed6c2455eb46c4
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 71cdf9f0a4a72f375af094c7c0a446278f8aeeb5
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="controller-methods-and-views-in-an-aspnet-core-mvc-app"></a>Méthodes et vues de contrôleur dans une application ASP.NET Core MVC
 

@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: tutorials/razor-pages/new-field
-ms.openlocfilehash: cd804f127a32f0c6f9488b6bf7bf88be062335d0
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 54ba77cfc3ce87566db14509805a2809d3e460e6
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="adding-a-new-field-to-a-razor-page"></a>Ajout d’un nouveau champ à une page Razor
 
@@ -57,7 +57,7 @@ Cette erreur est due au fait que la classe du modèle Movie mise à jour est dif
 
 Plusieurs approches sont possibles pour résoudre l’erreur :
 
-1. Laisser Entity Framework supprimer et recréer automatiquement la base de données à l’aide du nouveau schéma de classe de modèle. Cette approche est très utile au début du cycle de développement. Elle permet de faire évoluer rapidement le modèle et le schéma de base de données ensemble. L’inconvénient est que vous perdez les données existantes dans la base de données. Il ne faut pas adopter cette approche sur une base de données de production. La suppression de la base de données lors des changements de schéma et l’utilisation d’un initialiseur pour amorcer automatiquement la base de données avec des données de test est souvent un moyen efficace pour développer une application.
+1. Laisser Entity Framework supprimer et recréer automatiquement la base de données à l’aide du nouveau schéma de classe de modèle. Cette approche est très utile au début du cycle de développement. Elle permet de faire évoluer rapidement le modèle et le schéma de base de données ensemble. L’inconvénient est que vous perdez les données existantes dans la base de données. Il ne faut pas adopter cette approche sur une base de données de production. La suppression de la base de données lors des changements de schéma et l’utilisation d’un initialiseur pour le seeding automatique de la base de données avec des données de test est souvent un moyen efficace pour développer une application.
 
 2. Modifier explicitement le schéma de la base de données existante pour le faire correspondre aux classes du modèle. L’avantage de cette approche est que vous conservez vos données. Vous pouvez apporter cette modification manuellement ou en créant un script de modification de la base de données.
 
@@ -100,7 +100,7 @@ Le nom « Rating » est arbitraire et utilisé pour nommer le fichier de migrati
   Update-Database
   ```
 
-Exécutez l’application et vérifiez que vous pouvez créer/modifier/afficher des films avec un champ `Rating`. Si la base de données n’est pas amorcée, arrêtez IIS Express puis exécutez l’application.
+Exécutez l’application et vérifiez que vous pouvez créer/modifier/afficher des films avec un champ `Rating`. Si la base de données ne fait pas l’objet d’un seed, arrêtez IIS Express puis exécutez l’application.
 
 >[!div class="step-by-step"]
 [Précédent : Ajout de la recherche](xref:tutorials/razor-pages/search)

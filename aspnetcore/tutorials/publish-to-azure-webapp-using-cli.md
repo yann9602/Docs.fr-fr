@@ -12,11 +12,11 @@ ms.technology: aspnet
 ms.custom: mvc
 ms.devlang: dotnet
 uid: tutorials/publish-to-azure-webapp-using-cli
-ms.openlocfilehash: 4797260f95443954e86aae1614140c0caa5ca8bd
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: de05c1688d7de6126434395042103d803ee3064e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="deploy-an-aspnet-core-application-to-azure-app-service-from-the-command-line"></a>Déployer une application ASP.NET Core sur Azure App Service en ligne de commande
 
@@ -150,7 +150,7 @@ git push azure master
 ```
 ---
 
-Git vous demande les identifiants de déploiement définis précédemment.  Après l’authentification, l’application sera envoyée sur l’emplacement distant, générée et déployée.
+Git vous demande les identifiants de déploiement définis précédemment. Après l’authentification, l’application sera envoyée sur l’emplacement distant, générée et déployée.
 
 ![Sortie du déploiement Git](publish-to-azure-webapp-using-cli/_static/post_deploy.png)
 

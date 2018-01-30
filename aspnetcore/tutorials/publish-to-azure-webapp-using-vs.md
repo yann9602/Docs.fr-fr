@@ -9,14 +9,12 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/publish-to-azure-webapp-using-vs
-ms.openlocfilehash: dd31e3a9583a0c152e97ae7cf6b215389298a20c
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: d0e64c967ff332365981338809a47faf35d499ab
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
-/en-us
-
 # <a name="publish-an-aspnet-core-web-app-to-azure-app-service-using-visual-studio"></a>Publier une application web ASP.NET Core sur Azure App Service à l’aide de Visual Studio
 
 Par [Rick Anderson](https://twitter.com/RickAndMSFT), [Cesar Blum Silveira](https://github.com/cesarbs) et [Rachel Appel](https://twitter.com/rachelappel)
@@ -25,7 +23,7 @@ Consultez la page [Publier sur Azure à partir de Visual Studio pour Mac](https:
 
 ## <a name="set-up"></a>Installer
 
-* Ouvrez un [compte Azure gratuit](https://aka.ms/K5y5yh) si vous n’en avez pas un. 
+* Ouvrez un [compte Azure gratuit](https://aka.ms/K5y5yh) si vous n’en avez pas. 
 
 ## <a name="create-a-web-app"></a>Créer une application web
 
@@ -184,6 +182,6 @@ Après avoir testé l’application, accédez au [portail Azure](https://portal.
 
 ## <a name="additonal-resources"></a>Ressources supplémentaires
 
-* [Azure App Service](https://docs.microsoft.com/en-us/azure/app-service/app-service-web-overview)
-* [Groupes de ressources Azure](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview#resource-groups)
-* [Azure SQL Database](https://docs.microsoft.com/en-us/azure/sql-database/)
+* [Azure App Service](https://docs.microsoft.com/azure/app-service/app-service-web-overview)
+* [Groupes de ressources Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview#resource-groups)
+* [Azure SQL Database](https://docs.microsoft.com/azure/sql-database/)

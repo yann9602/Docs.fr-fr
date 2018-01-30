@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/first-mvc-app-xplat/controller-methods-views
-ms.openlocfilehash: 1d9258d8f52bf7030ae34ac4069b1b02a51de51b
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 38a91fc6cac4a07f0d30fd9aaa45e473f1283e7d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="controller-methods-and-views"></a>Méthodes et vues de contrôleur
 

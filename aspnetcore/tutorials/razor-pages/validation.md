@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: tutorials/razor-pages/validation
-ms.openlocfilehash: 2c7473647f23daf20ce7b204f621fb34f1a528c2
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 43d9ecacc479dac3eff35cc745b30d859c5cfd1d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="adding-validation-to-a-razor-page"></a>Ajout de la validation à une page Razor
 
@@ -59,7 +59,7 @@ Notez que le formulaire a affiché automatiquement un message d’erreur de vali
 
 L’un des principaux avantages est qu’**aucun** changement de code n’a été nécessaire dans les pages Créer ou Modifier. Une fois les attributs DataAnnotations appliqués au modèle, l’interface utilisateur de validation a été activée. Les pages Razor créées dans ce didacticiel ont prélevé les règles de validation (à l’aide des attributs de validation définis sur les propriétés de la classe de modèle `Movie`). Testez la validation à l’aide de la page de modification. La même validation est appliquée.
 
-Les données de formulaire ne sont pas postées sur le serveur tant qu’il y a des erreurs de validation côté client. Vérifiez que les données du formulaire ne sont pas postées à l’aide d’une ou de plusieurs des approches suivantes :
+Les données de formulaire ne sont pas publiées sur le serveur tant qu’il y a des erreurs de validation côté client. Vérifiez que les données du formulaire ne sont pas publiées à l’aide d’une ou de plusieurs des approches suivantes :
 
 * Placez un point d’arrêt dans la méthode `OnPostAsync`. Envoyer le formulaire (en sélectionnant **Créer** ou **Enregistrer**). Le point d’arrêt n’est jamais atteint.
 * Utilisez l’[outil Fiddler](http://www.telerik.com/fiddler).
@@ -120,7 +120,7 @@ L’attribut `DisplayFormat` peut être utilisé seul, mais il est généralemen
 * Par défaut, le navigateur affiche les données à l’aide du format correspondant à vos paramètres régionaux.
 * L’attribut `DataType` peut permettre à l’infrastructure ASP.NET Core de choisir le modèle de champ approprié pour afficher les données. S’il est utilisé seul, `DisplayFormat` utilise le modèle de chaîne.
 
-Remarque : La validation jQuery ne fonctionne pas avec l’attribut `Range` et `DateTime`. Par exemple, le code suivant affiche toujours une erreur de validation côté client, même quand la date se trouve dans la plage spécifiée :
+Remarque : La validation jQuery ne fonctionne pas avec l’attribut `Range` et `DateTime`. Par exemple, le code suivant affiche toujours une erreur de validation côté client, même quand la date se trouve dans la plage spécifiée :
 
 ```csharp
 [Range(typeof(DateTime), "1/1/1966", "1/1/2020")]

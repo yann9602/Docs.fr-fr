@@ -59,6 +59,6 @@ La méthode `GetAll` retourne un `IEnumerable`. MVC sérialise automatiquement l
 
 En revanche, la méthode `GetById` retourne le type plus général `IActionResult`, qui représente une grande variété de types de retour. `GetById` a deux types de retour différents :
 
-* Si aucun élément ne correspond à l’ID demandé, la méthode retourne une erreur 404. Si l’on renvoie `NotFound`, une réponse HTTP 404 est renvoyée.
+* Si aucun élément ne correspond à l’ID demandé, la méthode retourne une erreur 404. Si `NotFound` es retourné, une réponse HTTP 404 est retournée.
 
-* Sinon, la méthode retourne 200 avec un corps de réponse JSON. Si l’on renvoie `ObjectResult`, une réponse HTTP 200 est renvoyée.
+* Sinon, la méthode retourne 200 avec un corps de réponse JSON. Si `ObjectResult` est retourné, une réponse HTTP 200 est retournée.

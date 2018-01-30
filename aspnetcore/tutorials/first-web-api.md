@@ -9,17 +9,17 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/first-web-api
-ms.openlocfilehash: 234dbf73f9751ad4f995d6e7471d94f060fb15bf
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: bfa6ae4b04628a4c0b868a054446843ee3401f8a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 #<a name="create-a-web-api-with-aspnet-core-and-visual-studio-for-windows"></a>Créer une API web avec ASP.NET Core et Visual Studio pour Windows
 
 Par [Rick Anderson](https://twitter.com/RickAndMSFT) et [Mike Wasson](https://github.com/mikewasson)
 
-Ce didacticiel génère une API web de gestion d’une liste de tâches. Aucune interface utilisateur (IU) n’est créée.
+Ce didacticiel génère une API web de gestion d’une liste de tâches. Aucune interface utilisateur n’est créée.
 
 Il existe trois versions de ce didacticiel :
 
@@ -63,7 +63,7 @@ Un modèle est un objet qui représente les données de l’application. Dans le
 
 Ajoutez un dossier nommé « Models ». Dans l’Explorateur de solutions, cliquez avec le bouton droit sur le projet. Sélectionnez **Ajouter** > **Nouveau dossier**. Nommez le dossier *Models*.
 
-Remarque : Les classes de modèles vont n’importe où dans le projet. Le dossier *Models* est utilisé par convention pour les classes de modèles.
+Remarque : Les classes de modèles vont n’importe où dans le projet. Le dossier *Modèles* est utilisé par convention pour les classes de modèles.
 
 Ajoutez une classe `TodoItem`. Cliquez avec le bouton droit sur le dossier *Models* et sélectionnez **Ajouter** > **Classe**. Nommez la classe `TodoItem` et sélectionnez **Ajouter**.
 

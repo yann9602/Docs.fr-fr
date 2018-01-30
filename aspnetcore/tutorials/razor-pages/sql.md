@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: tutorials/razor-pages/sql
-ms.openlocfilehash: 90aa194eda1c52afb1f299a0b95c7040e32a02fc
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 07f024e2e178828c4488adfd866fc6eec3b251dd
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="working-with-sql-server-localdb-and-aspnet-core"></a>Utilisation de SQL Server LocalDB et d’ASP.NET Core
 
@@ -50,13 +50,13 @@ Notez l’icône de clé en regard de `ID`. Par défaut, EF crée une propriét�
 
   ![Table Movie ouverte, affichant des données de table](sql/_static/vd22.png)
 
-## <a name="seed-the-database"></a>Amorcer la base de données
+## <a name="seed-the-database"></a>Effectuer un seed sur la base de données
 
 Créez une classe nommée `SeedData` dans l’espace de noms *Modèles*. Remplacez le code généré par ce qui suit :
 
 [!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Models/SeedData.cs?name=snippet_1)]
 
-Si la base de données contient des films, l’initialiseur de valeur initiale retourne une valeur et aucun film n’est ajouté.
+Si la base de données contient des films, l’initialiseur de seed retourne une valeur et aucun film n’est ajouté.
 
 ```csharp
 if (context.Movie.Any())
@@ -65,9 +65,9 @@ if (context.Movie.Any())
 }
 ```
 <a name="si"></a>
-### <a name="add-the-seed-initializer"></a>Ajouter l’initialiseur de valeur initiale
+### <a name="add-the-seed-initializer"></a>Ajouter l’initialiseur de seed
 
-Ajoutez l’initialiseur de valeur initiale à la fin de la méthode `Main` dans le fichier *Program.cs* :
+Ajoutez l’initialiseur de seed à la fin de la méthode `Main` dans le fichier *Program.cs* :
 
 [!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Program.cs)]
 
@@ -85,7 +85,7 @@ Tester l’application
    * Si vous exécutiez Visual Studio en mode de non-débogage, appuyez sur F5 pour l’exécuter en mode de débogage.
    * Si vous exécutiez Visual Studio en mode de débogage, arrêtez le débogueur et appuyez sur F5.
    
-L’application affiche les données de départ :
+L’application affiche les données seed :
 
 ![Application Movie ouverte dans Chrome, affichant les données relatives aux films](sql/_static/m55.png)
 

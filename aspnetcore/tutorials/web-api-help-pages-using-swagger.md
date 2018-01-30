@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/web-api-help-pages-using-swagger
-ms.openlocfilehash: d044c820057dba762d3a0f621855a8f4e298ab23
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 302199bb0b32d4f6610e04455bb28372095e9873
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="aspnet-core-web-api-help-pages-using-swagger"></a>Pages d’aide d’API web ASP.NET Core à l’aide de Swagger
 
@@ -363,4 +363,4 @@ Accédez à la page *index.html* à l’adresse `http://localhost:<random_port>/
 
 ![Interface utilisateur de Swagger avec titre d’en-tête personnalisé](web-api-help-pages-using-swagger/_static/custom-header.png)
 
-Vous pouvez faire bien d’autres choses avec cette page. Pour découvrir toutes les fonctionnalités pour les ressources d’interface utilisateur, accédez au [dépôt GitHub de l’interface utilisateur de Swagger](https://github.com/swagger-api/swagger-ui).
+Vous pouvez faire encore beaucoup avec cette page. Pour découvrir toutes les fonctionnalités pour les ressources d’interface utilisateur, accédez au [dépôt GitHub de l’interface utilisateur de Swagger](https://github.com/swagger-api/swagger-ui).

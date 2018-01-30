@@ -36,11 +36,11 @@ Vous voyez cette erreur car la classe du modèle Movie mise à jour est différe
 
 Plusieurs approches sont possibles pour résoudre l’erreur :
 
-1. Supprimez la base de données et laissez Entity Framework recréer automatiquement la base de données sur la base du nouveau schéma de la classe du modèle. Avec cette approche, vous perdez les données existantes de la base de données : vous ne pouvez donc pas l’appliquer à une base de données en production. L’utilisation d’un initialiseur pour amorcer automatiquement une base de données avec des données de test est souvent un moyen efficace pour développer une application.
+1. Supprimez la base de données et laissez Entity Framework recréer automatiquement la base de données sur la base du nouveau schéma de la classe du modèle. Avec cette approche, vous perdez les données existantes de la base de données : vous ne pouvez donc pas l’appliquer à une base de données en production. L’utilisation d’un initialiseur pour le seeding automatique d’une base de données avec des données de test est souvent un moyen efficace pour développer une application.
 
 2. Modifiez manuellement le schéma de la base de données existante pour le faire correspondre aux classes du modèle. L’avantage de cette approche est que vous conservez vos données. Vous pouvez apporter cette modification manuellement ou en créant un script de modification de la base de données.
 
-3. Utilisez Migrations Code First pour mettre à jour le schéma de base de données.
+3. Utilisez les migrations Code First pour mettre à jour le schéma de base de données.
 
 Pour ce didacticiel, nous supprimons puis nous recréons la base de données quand le schéma change. À partir d’un terminal, exécutez la commande suivante pour supprimer la base de données :
 
