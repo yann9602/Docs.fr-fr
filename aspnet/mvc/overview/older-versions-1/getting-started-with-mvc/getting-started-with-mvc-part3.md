@@ -2,7 +2,7 @@
 uid: mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part3
 title: "Ajout d’une vue | Documents Microsoft"
 author: shanselman
-description: "Il s’agit d’un didacticiel débutant qui présente les notions de base d’ASP.NET MVC. Vous allez créer une application web simple qui lit et écrit à partir d’une base de données."
+description: "Il s’agit d’un didacticiel débutant qui présente les notions de base d’ASP.NET MVC. Créez une application web simple qui lit et écrit à partir d’une base de données."
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/14/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part3
 msc.type: authoredcontent
-ms.openlocfilehash: 509dd301eef7c00431eae194a0df69d70e6d80f8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8725d054861c857ceac10a42b0cc3f2afe056aea
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 <a name="adding-a-view"></a>Ajout d’une vue
 ====================
@@ -77,7 +77,7 @@ Voici le Site.Master dans son intégralité avec notre titre modifié :
 
 Maintenant, nous allons modifier le titre de la page d’Index.
 
-Ouvrez /HelloWorld/Index.aspx. Il existe deux emplacements à modifier. Tout d’abord, le titre qui s’affiche dans le titre du navigateur, puis l’en-tête secondaire - qui est H2 - également. Vous allez rendre chaque légèrement différent afin de voir les bits de code modifie la partie de l’application.
+Open /HelloWorld/Index.aspx. Il existe deux emplacements à modifier. Tout d’abord, le titre qui s’affiche dans le titre du navigateur, puis l’en-tête secondaire - qui est H2 - également. Vous allez rendre chaque légèrement différent afin de voir les bits de code modifie la partie de l’application.
 
 [!code-aspx[Main](getting-started-with-mvc-part3/samples/sample7.aspx)]
 
@@ -112,7 +112,7 @@ Ajoutez ce code sous le &lt;h2&gt; dans votre nouvelle Welcome.aspx. Nous allons
 
 Notez également que lorsque vous tapez qui car nous dit à cette vue sur le WelcomeViewModel (ils sont mariés, n’oubliez pas ?) que nous obtenons Intellisense utile chaque fois que nous référençons notre objet modèle vu dans la capture d’écran ci-dessous :
 
-[![Code Source de NumTime](getting-started-with-mvc-part3/_static/image12.png)](getting-started-with-mvc-part3/_static/image11.png)
+[![NumTime Source Code](getting-started-with-mvc-part3/_static/image12.png)](getting-started-with-mvc-part3/_static/image11.png)
 
 Exécutez votre application, vous accédez à `http://localhost:xx/HelloWorld/Welcome?name=Scott&numtimes=4` à nouveau. Maintenant nous allons prenant des données à partir de l’URL, il a été passée dans notre contrôleur automatiquement, notre contrôleur regroupe les données en un ViewModel et passe cet objet sur notre affichage. La vue qu’affiche les données au format HTML à l’utilisateur.
 

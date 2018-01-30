@@ -2,18 +2,18 @@
 title: "À l’aide de l’authentification de Cookie sans ASP.NET Core identité"
 author: rick-anderson
 description: "Une explication de l’utilisation de l’authentification de cookie sans ASP.NET Core Identity"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/11/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/authentication/cookie
-ms.openlocfilehash: 781b89a222bbf26b51e56fad707c591779f2e4bd
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 5b2f70b1f1fc9805025d6fa2256fcfcecf808b9a
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="using-cookie-authentication-without-aspnet-core-identity"></a>À l’aide de l’authentification de Cookie sans ASP.NET Core identité
 

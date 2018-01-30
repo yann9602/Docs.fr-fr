@@ -2,18 +2,18 @@
 title: "Configurer l’identité de ASP.NET Core"
 author: AdrienTorris
 description: "Comprendre les valeurs par défaut de ASP.NET Core Identity et configurer les propriétés d’identité différents pour utiliser des valeurs personnalisées."
-ms.author: scaddie
 manager: wpickett
+ms.author: scaddie
 ms.date: 01/11/2018
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/authentication/identity-configuration
-ms.openlocfilehash: 9e79e670173952f1e791a0cefba61c41e1ad4437
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: cf7dcdb80f5edf9e10960cb08957793c36829a69
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="configure-identity"></a>Configurer l’identité
 

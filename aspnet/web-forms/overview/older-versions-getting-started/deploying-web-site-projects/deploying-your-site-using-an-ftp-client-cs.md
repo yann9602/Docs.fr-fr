@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-your-site-using-an-ftp-client-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 1edd53b1005449c060ff92fc7ebd02dbe7fa6ac2
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 3c53dcf40cde244a9df9afc27b20c9e7ef288198
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 <a name="deploying-your-site-using-an-ftp-client-c"></a>Déploiement de votre Site à l’aide d’un Client FTP (c#)
 ====================
@@ -48,7 +48,7 @@ Rappelez-vous qu’il existe deux versions de l’application web critique : un
 
 Lancer le projet BookReviewsWAP en accédant à la `BookReviewsWAP` dossier, en double-cliquant sur le `BookReviewsWAP.sln` fichier. Avant de déployer le projet, il est important de le générer pour vous assurer que toutes les modifications au code source sont incluses dans l’assembly compilé. Pour générer le projet dans le menu Build et choisissez l’option de menu BookReviewsWAP de Build. Le code source dans le projet est compilé dans un assembly unique, `BookReviewsWAP.dll`, qui est placé dans le `Bin` dossier.
 
-Nous sommes maintenant prêts à déployer les fichiers nécessaires. Lancez votre client FTP et connectez-vous au serveur web à votre fournisseur d’hébergement web. (Cela inclut l’adresse du serveur FTP ainsi que d’un nom d’utilisateur et mot de passe, lorsque vous vous inscrivez avec une société d’hébergement web il enverra un message électronique vous plus d’informations sur la façon de se connecter au serveur FTP.)
+Nous sommes maintenant prêts à déployer les fichiers nécessaires. Lancez votre client FTP et connectez-vous au serveur web à votre fournisseur d’hébergement web. (Cela inclut l’adresse du serveur FTP ainsi que d’un nom d’utilisateur et mot de passe, lorsque vous vous inscrivez avec une société d’hébergement web qu’ils vous enverrons plus d’informations sur la façon de se connecter au serveur FTP.)
 
 Copiez les fichiers suivants à partir de votre bureau vers le dossier du site Web racine à votre fournisseur d’hébergement web. Lorsque vous FTP sur le serveur web sur le site web hôte fournisseur, vous êtes susceptible de dans le répertoire du site Web racine. Toutefois, certains fournisseurs d’hébergement web ont un sous-dossier nommé `www` ou `wwwroot` qui sert le dossier racine pour les fichiers de votre site Web. Enfin, lorsque vous FTPing les fichiers vous devrez peut-être créer la structure de dossiers correspondants sur l’environnement de production - la `Bin` dossier, le `Fiction` dossier, le `Images` dossier et ainsi de suite.
 

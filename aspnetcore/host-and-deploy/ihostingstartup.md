@@ -2,19 +2,19 @@
 title: "Ajouter des fonctionnalités de l’application à partir d’un assembly externe à l’aide de IHostingStartup dans ASP.NET Core"
 author: guardrex
 description: "Découvrez comment ajouter des fonctionnalités à une application ASP.NET Core à partir d’un assembly externe à l’aide d’une implémentation IHostingStartup."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.custom: mvc
 ms.date: 12/07/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: host-and-deploy/ihostingstartup
-ms.openlocfilehash: 6013091d94302f0f9ecbc777d3ef64774b49aebe
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: bd2446d6133e0c06dc14509271c2d17be4c95b63
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="add-app-features-from-an-external-assembly-using-ihostingstartup-in-aspnet-core"></a>Ajouter des fonctionnalités de l’application à partir d’un assembly externe à l’aide de IHostingStartup dans ASP.NET Core
 

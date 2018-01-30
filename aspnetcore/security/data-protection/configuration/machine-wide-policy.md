@@ -2,18 +2,18 @@
 title: "Règle de Protection des données à l’échelle de l’ordinateur prend en charge dans ASP.NET Core"
 author: rick-anderson
 description: "En savoir plus sur la prise en charge pour la définition d’une stratégie d’ordinateur à l’échelle par défaut pour toutes les applications qui utilisent la Protection des données ASP.NET Core."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/14/2016
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/data-protection/configuration/machine-wide-policy
-ms.openlocfilehash: 4c3ae3b628ebe17c7926c71f1fad664d719d1706
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 53ded37e9fd5f1a2eaa37935d1c52efb1e9231ac
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="data-protection-machine-wide-policy-support-in-aspnet-core"></a>Règle de Protection des données à l’échelle de l’ordinateur prend en charge dans ASP.NET Core
 

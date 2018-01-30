@@ -2,18 +2,18 @@
 title: "Chaînes d’objectif"
 author: rick-anderson
 description: "Ce document décrit en détail comment les chaînes de fin sont utilisées dans l’API de protection des données ASP.NET Core."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/14/2016
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/data-protection/consumer-apis/purpose-strings
-ms.openlocfilehash: 181d2ae85f38051ea12c7b7ac79198ec05f36bec
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: b4a0db801ecc1c4ba0762f0c9faf7429b4ac097b
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="purpose-strings"></a>Chaînes d’objectif
 

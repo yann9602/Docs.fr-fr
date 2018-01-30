@@ -2,18 +2,18 @@
 title: "Pages Razor avec EF Core - modèle de données - 5 de 8"
 author: rick-anderson
 description: "Dans ce didacticiel, vous ajoutez des entités et relations et personnalisez le modèle de données en spécifiant la mise en forme, la validation et les règles de mappage de base de données."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/25/2017
-ms.topic: get-started-article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: get-started-article
 uid: data/ef-rp/complex-data-model
-ms.openlocfilehash: 2446f4734e9bb1ab6829001f6e7888c4c14ee1b7
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 58bb773ba16314827da84909def05a8ef370479b
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="creating-a-complex-data-model---ef-core-with-razor-pages-tutorial-5-of-8"></a>Création d’un modèle de données complexes - Core EF avec le didacticiel de Pages Razor (5 de 8)
 
@@ -51,7 +51,7 @@ Le [DataType](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataan
 
 Le `DataType` émet un attribut HTML 5 `data-` attributs (données prononcé tiret) qui utilisent des navigateurs de HTML 5. Le `DataType` attributs ne fournissent pas la validation.
 
-`DataType.Date`ne spécifie pas le format de la date qui s’affiche. Par défaut, le champ de date est affiché selon les formats par défaut basés sur le serveur [CultureInfo](https://docs.microsoft.com/aspnet/core/fundamentals/localization#provide-localized-resources-for-the-languages-and-cultures-you-support).
+`DataType.Date` ne spécifie pas le format de la date qui s’affiche. Par défaut, le champ de date est affiché selon les formats par défaut basés sur le serveur [CultureInfo](https://docs.microsoft.com/aspnet/core/fundamentals/localization#provide-localized-resources-for-the-languages-and-cultures-you-support).
 
 L’attribut `DisplayFormat` est utilisé pour spécifier explicitement le format de date :
 

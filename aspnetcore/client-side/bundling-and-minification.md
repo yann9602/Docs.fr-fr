@@ -11,11 +11,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/bundling-and-minification
-ms.openlocfilehash: ac8e7fee7600dabb8f4970b5bf87ad7a57ebf17f
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: 6c233d0957ce9974adbc6112e6194c072aab0b41
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="bundling-and-minification"></a>Groupement et minimisation
 
@@ -27,13 +27,13 @@ Cet article explique les avantages de l’application de groupement et la minimi
 
 Regroupement et la minimisation sont deux optimisations de performances distincts que vous pouvez appliquer dans une application web. Utilisées conjointement, groupement et la minimisation améliorent les performances en réduisant le nombre de demandes de serveur et de réduire la taille des actifs statiques demandés.
 
-Groupement et la minimisation principalement améliorent le premier temps de chargement de demande de page. Une fois qu’une page web a été demandée, le navigateur met en cache les ressources statiques (images, CSS et JavaScript). Par conséquent, groupement et la minimisation ne pas améliorer les performances lors de la demande de la même page, ou sur le même site demande les mêmes actifs. Si vous ne définissez pas l’en-tête correctement sur vos éléments multimédias d’expiration, et si vous n’utilisez pas groupement et la minimisation, heuristique d’actualisation du navigateur marque les ressources obsolètes après quelques jours. En outre, le navigateur requiert une demande de validation pour chaque élément multimédia. Dans ce cas, groupement et la minimisation fournissent une amélioration des performances même après la première demande de page.
+Groupement et la minimisation principalement améliorent le premier temps de chargement de demande de page. Une fois qu’une page web a été demandée, le navigateur met en cache les ressources statiques (images, CSS et JavaScript). Par conséquent, groupement et la minimisation ne pas améliorer les performances lors de la demande de la même page, ou sur le même site demande les mêmes actifs. Si l’expiration en-tête n’est pas défini correctement sur les ressources et si le groupement et la minimisation n’est pas utilisé, heuristique d’actualisation du navigateur marque les éléments multimédias obsolètes après quelques jours. En outre, le navigateur requiert une demande de validation pour chaque élément multimédia. Dans ce cas, groupement et la minimisation fournissent une amélioration des performances même après la première demande de page.
 
 ### <a name="bundling"></a>Regroupement
 
 Regroupement de combine plusieurs fichiers dans un seul fichier. Regroupement réduit le nombre de demandes de serveur qui sont nécessaires pour afficher une ressource web, par exemple une page web. Vous pouvez créer n’importe quel nombre de lots individuels spécifiquement pour CSS, JavaScript, etc. Moins de fichiers signifie moins de demandes HTTP à partir du navigateur sur le serveur ou dans le service de fourniture de votre application. Il en résulte dans amélioration des performances de charge première page.
 
-### <a name="minification"></a>Minimisation
+### <a name="minification"></a>Minification
 
 Minimisation supprime les caractères inutiles à partir de code sans modifier les fonctionnalités. Il en résulte une réduction de taille importante de ressources demandées (par exemple, CSS, des images et des fichiers JavaScript). Les effets secondaires communs de minimisation incluent raccourcir les noms de variables pour un caractère et de suppression de commentaires et espaces inutiles.
 
@@ -77,15 +77,15 @@ Les modèles de projet MVC et les Pages Razor fournissent une *bundleconfig.json
 
 Options de configuration sont les suivantes :
 
-* `outputFileName`: Le nom du fichier d’offre groupée de sortie. Peut contenir un chemin d’accès relatif à partir de la *bundleconfig.json* fichier. **Obligatoire**
+* `outputFileName`: Le nom du fichier d’offre groupée de sortie. Peut contenir un chemin d’accès relatif à partir de la *bundleconfig.json* fichier. **required**
 * `inputFiles`: Un tableau de fichiers à regrouper. Voici les chemins d’accès relatifs au fichier de configuration. **facultatif**, * une valeur vide entraîne un fichier de sortie vide. [la globalisation](http://www.tldp.org/LDP/abs/html/globbingref.html) modèles sont pris en charge.
-* `minify`: Options de réduction pour le type de sortie. **facultatif**, *par défaut :`minify: { enabled: true }`*
+* `minify`: Options de réduction pour le type de sortie. **optional**, *default - `minify: { enabled: true }`*
   * Options de configuration sont disponibles par type de fichier de sortie.
     * [Minimisation CSS](https://github.com/madskristensen/BundlerMinifier/wiki/cssminifier)
     * [Minimisation de JavaScript](https://github.com/madskristensen/BundlerMinifier/wiki/JavaScript-Minifier-settings)
     * [Minimisation de HTML](https://github.com/madskristensen/BundlerMinifier/wiki)
-* `includeInProject`: Indicateur indiquant s’il faut ajouter les fichiers générés au fichier projet. **facultatif**, *par défaut : false*
-* `sourceMap`: Indicateur précisant s’il faut générer une carte de code source pour le fichier regroupé. **facultatif**, *par défaut : false*
+* `includeInProject`: Indicateur indiquant s’il faut ajouter les fichiers générés au fichier projet. **optional**, *default - false*
+* `sourceMap`: Indicateur précisant s’il faut générer une carte de code source pour le fichier regroupé. **optional**, *default - false*
 * `sourceMapRootPath`: Le chemin d’accès racine pour stocker le fichier de mappage de source.
 
 ## <a name="build-time-execution-of-bundling-and-minification"></a>Exécution du moment de la génération du groupement et minimisation

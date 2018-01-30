@@ -1,19 +1,19 @@
 ---
 title: "Migration à partir de ASP.NET MVC à cœur d’ASP.NET MVC"
 author: ardalis
-description: 
-ms.author: riande
+description: "Découvrez comment commencer la migration vers ASP.NET MVC de base d’un projet ASP.NET MVC."
 manager: wpickett
+ms.author: riande
 ms.date: 03/07/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: migration/mvc
-ms.openlocfilehash: e3220fb32900aac42cf96497964936ad5b375a86
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 447b13eccf523cab81590405740bb194112b0dad
+ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="migrating-from-aspnet-mvc-to-aspnet-core-mvc"></a>Migration à partir de ASP.NET MVC à cœur d’ASP.NET MVC
 
@@ -94,7 +94,7 @@ Exécutez l’application.
 
 ![Application Web ouverte dans Microsoft Edge](mvc/_static/hello-world.png)
 
-Consultez [contrôleurs](../mvc/controllers/index.md) et [vues](../mvc/views/index.md) pour plus d’informations.
+Consultez [contrôleurs](xref:mvc/controllers/actions) et [vues](xref:mvc/views/overview) pour plus d’informations.
 
 Maintenant que nous avons un projet ASP.NET Core minimale, nous pouvons commencer la migration des fonctionnalités à partir du projet ASP.NET MVC. Vous devrez déplacer les éléments suivants :
 
@@ -156,7 +156,7 @@ Consultez [gérer les Packages côté Client avec Bower](../client-side/bower.md
 
 * Créer un *Views/Shared* dossier.
 
-* *Facultatif :* copie *_ViewImports.cshtml* à partir de la *FullAspNetCore* du projet MVC *vues* dossier du projet de ASP.NET Core *Vues* dossier. Supprimez toute déclaration d’espace de noms dans le *_ViewImports.cshtml* fichier. Le *_ViewImports.cshtml* fournit des espaces de noms pour tous les fichiers de l’affichage de fichiers et permet de bénéficier de [programmes d’assistance de balise](../mvc/views/tag-helpers/index.md). Programmes d’assistance de balise sont utilisés dans le nouveau fichier de disposition. Le *_ViewImports.cshtml* fichier est une nouveauté pour ASP.NET Core.
+* *Facultatif :* copie *_ViewImports.cshtml* à partir de la *FullAspNetCore* du projet MVC *vues* dossier du projet de ASP.NET Core *Vues* dossier. Supprimez toute déclaration d’espace de noms dans le *_ViewImports.cshtml* fichier. Le *_ViewImports.cshtml* fournit des espaces de noms pour tous les fichiers de l’affichage de fichiers et permet de bénéficier de [programmes d’assistance de balise](xref:mvc/views/tag-helpers/intro). Programmes d’assistance de balise sont utilisés dans le nouveau fichier de disposition. Le *_ViewImports.cshtml* fichier est une nouveauté pour ASP.NET Core.
 
 * Copie le *_Layout.cshtml* fichier à partir de l’ancien projet ASP.NET MVC *Views/Shared* dossier dans le projet de ASP.NET Core *Views/Shared* dossier.
 
@@ -191,9 +191,9 @@ La mise à jour *_Layout.cshtml* fichier est présenté ci-dessous :
 
 Afficher le site dans le navigateur. Il doit maintenant charger correctement, avec les styles attendus en place.
 
-* *Facultatif :* vous souhaiterez peut-être essayer d’utiliser le nouveau fichier de disposition. Pour ce projet, vous pouvez copier le fichier de disposition à partir de la *FullAspNetCore* projet. Le nouveau fichier de mise en page utilise [programmes d’assistance de balise](../mvc/views/tag-helpers/index.md) et a d’autres améliorations.
+* *Facultatif :* vous souhaiterez peut-être essayer d’utiliser le nouveau fichier de disposition. Pour ce projet, vous pouvez copier le fichier de disposition à partir de la *FullAspNetCore* projet. Le nouveau fichier de mise en page utilise [programmes d’assistance de balise](xref:mvc/views/tag-helpers/intro) et a d’autres améliorations.
 
-## <a name="configure-bundling--minification"></a>Configurer le regroupement des & réduction
+## <a name="configure-bundling-and-minification"></a>Configurer le regroupement et minimisation
 
 Pour plus d’informations sur la configuration de groupement et la minimisation, consultez [Bundling and Minification](../client-side/bundling-and-minification.md).
 
@@ -224,6 +224,5 @@ Consultez **à l’aide de la Page d’Exception Developer** dans [gestion des e
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-* [Développement côté client](../client-side/index.md)
-
-* [Tag Helpers](../mvc/views/tag-helpers/index.md)
+* [Développement côté client](xref:client-side/index)
+* [Tag Helpers](xref:mvc/views/tag-helpers/intro)

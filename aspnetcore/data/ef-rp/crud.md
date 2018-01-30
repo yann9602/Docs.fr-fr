@@ -2,18 +2,18 @@
 title: Pages Razor avec EF Core - CRUD - 2 de 8
 author: rick-anderson
 description: "Montre comment créer, lire, mettre à jour, supprimer avec EF de base"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/15/2017
-ms.topic: get-started-article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: get-started-article
 uid: data/ef-rp/crud
-ms.openlocfilehash: d9b34c141401fbeaafe439fae1a7a75f2fe7b4ae
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 757aeb713b645cea0fe633b150784184d2d3571e
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="create-read-update-and-delete---ef-core-with-razor-pages-2-of-8"></a>Créer, lire, mettre à jour et supprimer - Core EF avec les Pages Razor (2 de 8)
 
@@ -23,7 +23,7 @@ Par [Tom Dykstra](https://github.com/tdykstra), [Jon P Smith](https://twitter.co
 
 Dans ce didacticiel, le modèle généré automatiquement CRUD (créer, lire, mettre à jour, supprimer) code est révisé et personnalisé.
 
-Remarque : Pour réduire la complexité et de conserver ces didacticiels axés sur EF Core, code EF principal est utilisé dans les fichiers de code-behind des Pages Razor. Certains développeurs utilisent un modèle de couche ou le référentiel de service dans pour créer une couche d’abstraction entre l’interface utilisateur (Pages Razor) et la couche d’accès aux données.
+Remarque : Pour réduire la complexité et de conserver ces didacticiels axés sur EF Core, code EF principal est utilisé dans les modèles de page des Pages Razor. Certains développeurs utilisent un modèle de couche ou le référentiel de service dans pour créer une couche d’abstraction entre l’interface utilisateur (Pages Razor) et la couche d’accès aux données.
 
 Dans ce didacticiel, créer, modifier, supprimer et Pages Razor de détails dans le *étudiant* dossier sont modifiées.
 
@@ -147,7 +147,7 @@ La valeur « OverPost » est ajouté avec succès à la `Secret` la propriét�
 <a name="vm"></a>
 ### <a name="view-model"></a>Modèle d’affichage
 
-Un modèle d’affichage contient généralement un sous-ensemble des propriétés incluses dans le modèle utilisé par l’application. Le modèle d’application est souvent appelé le modèle de domaine. En règle générale, le modèle de domaine contient toutes les propriétés requises par l’entité correspondante dans la base de données. Le modèle d’affichage contient uniquement les propriétés requises pour la couche d’interface utilisateur (par exemple, la page Créer). Outre le modèle de vue, certaines applications utilisent un modèle de liaison ou d’entrée pour passer des données entre la classe code-behind Pages Razor et le navigateur. Considérez les éléments suivants `Student` modèle d’affichage :
+Un modèle d’affichage contient généralement un sous-ensemble des propriétés incluses dans le modèle utilisé par l’application. Le modèle d’application est souvent appelé le modèle de domaine. En règle générale, le modèle de domaine contient toutes les propriétés requises par l’entité correspondante dans la base de données. Le modèle d’affichage contient uniquement les propriétés requises pour la couche d’interface utilisateur (par exemple, la page Créer). Outre le modèle de vue, certaines applications utilisent un modèle de liaison ou d’entrée pour passer des données entre la classe de modèle de page de Pages Razor et le navigateur. Considérez les éléments suivants `Student` modèle d’affichage :
 
 [!code-csharp[Main](intro/samples/cu/Models/StudentVM.cs)]
 
@@ -165,7 +165,7 @@ Dans les Pages Razor, la `PageModel` classe dérivée est le modèle d’afficha
 
 ## <a name="update-the-edit-page"></a>Mise à jour de la page de modification
 
-Mettre à jour le fichier code-behind de page Modifier :
+Mettre à jour le modèle de page de la page de modification :
 
 [!code-csharp[Main](intro/samples/cu/Pages/Students/Edit.cshtml.cs?name=snippet_OnPostAsync&highlight=20,36)]
 

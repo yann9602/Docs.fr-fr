@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/configuration-and-instrumentation
 msc.type: authoredcontent
-ms.openlocfilehash: 5780bfde928011f46c3f504aec927f2127f10d0d
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 16dfe3c899dfa028d8a52b4b5f9c2868887e8fa9
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 <a name="configuration-and-instrumentation"></a>Configuration et Instrumentation
 ====================
@@ -138,7 +138,7 @@ Les types de fournisseurs disponibles vous permettent de vous permet d’envoyer
 
 ASP.NET 2.0 utilise le journal des événements fournisseur out-of-the-box pour enregistrer des événements basés sur les domaines d’application démarrage et arrêt, ainsi que pour la journalisation de toutes les exceptions non gérées. Cela permet de couvrir certains des scénarios de base. Par exemple, supposons que votre application lève une exception, mais l’utilisateur n’enregistre pas l’erreur et vous ne pouvez pas le reproduire. Avec la règle de journal des événements par défaut, vous ne pourrez pas collecter les informations d’exception et de la pile pour obtenir une meilleure idée de quel type d’erreur s’est produite. Un autre exemple s’applique si votre application perd l’état de session. Dans ce cas, vous pouvez rechercher dans le journal des événements pour déterminer si le domaine d’application est recyclé, et pourquoi le domaine d’application arrêté en premier lieu.
 
-En outre, le contrôle d’intégrité système de surveillance est extensible. Par exemple, vous pouvez définir des événements Web personnalisés, déclenchement au sein de votre application et puis définir une règle pour envoyer les informations d’événement à un fournisseur tel que votre adresse de messagerie. Cela vous permet de facilement lier votre instrumentation pour les fournisseurs de contrôle d’état. Comme autre exemple, vous pouvez déclencher un événement chaque fois qu’une commande est traitée et définir une règle qui envoie chaque événement à la base de données SQL Server. Vous pouvez également déclencher un événement lorsqu’un utilisateur ne parvient pas à se connecter plusieurs fois dans une ligne et définir l’événement d’utiliser le fournisseur basée sur le courrier électronique.
+En outre, le contrôle d’intégrité système de surveillance est extensible. Par exemple, vous pouvez définir des événements Web personnalisés, déclenchement au sein de votre application et puis définir une règle pour envoyer les informations d’événement à un fournisseur tel que votre adresse de messagerie. Cela vous permet de facilement lier votre instrumentation pour les fournisseurs de contrôle d’état. Comme autre exemple, vous pouvez déclencher un événement chaque fois qu’une commande est traitée et définir une règle qui envoie chaque événement à la base de données SQL Server. Vous pouvez également déclencher un événement lorsqu’un utilisateur ne parvient pas à se connecter plusieurs fois dans une ligne et définissez l’événement à utiliser les fournisseurs de messagerie.
 
 La configuration pour les événements et les fournisseurs par défaut est stockée dans le fichier Web.config global. Le fichier Web.config global stocke tous les paramètres basée sur le Web qui ont été stockés dans le fichier Machine.config dans ASP.NET 1 x. Le fichier Web.config global se trouve dans le répertoire suivant :
 
@@ -152,7 +152,7 @@ Le &lt;healthMonitoring&gt; section du fichier Web.config global contient les é
 | --- | --- |
 | **eventMappings** | Contient des mappages pour les différentes classes WebBase. Vous pouvez étendre cette liste si vous générez votre propre classe d’événements. Générer votre propre classe d’événements vous donne une granularité plus fine sur les fournisseurs de que vous envoyez des informations. Par exemple, vous pouvez configurer des exceptions non gérées à envoyer à SQL Server, lors de l’envoi de vos propres événements personnalisés à la messagerie électronique. |
 | **rules** | Lie l’eventMappings au fournisseur. |
-| **buffering** | Utilisé avec les fournisseurs SQL Server et par courrier électronique pour déterminer la fréquence à laquelle les événements de vidage pour le fournisseur. |
+| **buffering** | Utilisé avec les fournisseurs de messagerie et de SQL Server pour déterminer la fréquence à laquelle les événements de vidage pour le fournisseur. |
 
 Voici un exemple de code à partir du fichier Web.config global.
 
@@ -196,7 +196,7 @@ Vous devez ajouter une règle pour associer un eventMapping au fournisseur et é
 
 [!code-xml[Main](configuration-and-instrumentation/samples/sample10.xml)]
 
-## <a name="how-to-forward-events-to-e-mail"></a>Comment transférer des événements à la messagerie électronique
+## <a name="how-to-forward-events-to-email"></a>Comment transférer des événements à la messagerie électronique
 
 Vous pouvez également transférer des événements à la messagerie électronique. Soyez prudent sur les règles d’événement vous mappez à votre fournisseur de messagerie, comme vous pouvez involontairement envoyer vous-même de nombreuses informations qui peuvent être mieux adapté pour SQL Server ou le journal des événements. Il existe deux fournisseurs de messagerie ; SimpleMailWebEventProvider et TemplatedMailWebEventProvider. Chacun a les mêmes attributs de configuration, à l’exception des attributs de « modèle » et « detailedTemplateErrors », qui sont disponibles uniquement sur le TemplatedMailWebEventProvider.
 

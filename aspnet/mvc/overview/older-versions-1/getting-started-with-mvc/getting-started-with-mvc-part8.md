@@ -2,7 +2,7 @@
 uid: mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part8
 title: "Ajout d’une colonne au modèle | Documents Microsoft"
 author: shanselman
-description: "Il s’agit d’un didacticiel débutant qui présente les notions de base d’ASP.NET MVC. Vous allez créer une application web simple qui lit et écrit à partir d’une base de données."
+description: "Il s’agit d’un didacticiel débutant qui présente les notions de base d’ASP.NET MVC. Créez une application web simple qui lit et écrit à partir d’une base de données."
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/14/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part8
 msc.type: authoredcontent
-ms.openlocfilehash: 4a4fc144dcbed8ad14411332df7acccc032ddf46
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 17ee105f596319423ac83cf718683ed293f952f3
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 <a name="adding-a-column-to-the-model"></a>Ajout d’une colonne au modèle
 ====================
@@ -79,7 +79,7 @@ Ce didacticiel de base obtenu vous lancer dans la création de contrôleurs, leu
 
 Je maintenant vous encourage à passer à notre didacticiel de niveau intermédiaire «[magasin de musique MVC](../../older-versions/mvc-music-store/mvc-music-store-part-1.md)», ainsi que des vidéos et des ressources au nombre [https://asp.net/mvc](https://asp.net/mvc) pour en savoir plus sur ASP.NET MVC !
 
-Profitez de !
+Bonne lecture !
 
 - Scott Hanselman - [http://hanselman.com](http://hanselman.com) et [ @shanselman ](http://twitter.com/shanselman) sur Twitter.
 

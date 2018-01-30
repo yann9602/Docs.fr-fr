@@ -2,19 +2,19 @@
 title: "À l’aide des modules IIS avec ASP.NET Core"
 author: guardrex
 description: "Document de référence décrivant les modules IIS actifs et inactifs pour les applications ASP.NET Core."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.custom: mvc
 ms.date: 03/08/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: aspnet-core
+ms.technology: aspnet
+ms.topic: article
 uid: host-and-deploy/iis/modules
-ms.openlocfilehash: 405297bdd1ceac390b995ed6e15ae8d95bb8501f
-ms.sourcegitcommit: a3e88639a6bcf8fb4d634036dac93130c464a097
+ms.openlocfilehash: 1b5391c113ca0b980eb3c47bcce0717d4a4739ed
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/18/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="using-iis-modules-with-aspnet-core"></a>À l’aide des Modules IIS avec ASP.NET Core
 

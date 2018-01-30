@@ -2,18 +2,18 @@
 title: "Migration d’authentification et de l’identité au cœur d’ASP.NET 2.0"
 author: scottaddie
 description: "Cet article présente les étapes les plus courantes pour l’authentification de migration ASP.NET Core 1.x et l’identité pour ASP.NET 2.0 de base."
-ms.author: scaddie
 manager: wpickett
+ms.author: scaddie
 ms.date: 10/26/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: migration/1x-to-2x/identity-2x
-ms.openlocfilehash: 72ad31438a344fb5fa2b357c709b923b8077e742
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: dd48b2b027d22b570aa182e748ca91738e935f49
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="migrating-authentication-and-identity-to-aspnet-core-20"></a>Migration de l’authentification et identité au cœur d’ASP.NET 2.0
 
@@ -136,7 +136,7 @@ Apportez les modifications suivantes dans *Startup.cs*:
 
     Cet extrait de code n’utilise pas l’identité, afin du schéma par défaut doit être défini en passant `JwtBearerDefaults.AuthenticationScheme` à la `AddAuthentication` (méthode).
 
-### <a name="openid-connect-oidc-authentication"></a>OpenID Connect (OIDC) authentification
+### <a name="openid-connect-oidc-authentication"></a>Authentification de connexion OpenID (OIDC)
 Apportez les modifications suivantes dans *Startup.cs*:
 
 - Remplacez le `UseOpenIdConnectAuthentication` l’appel de méthode le `Configure` méthode avec `UseAuthentication`:
@@ -161,7 +161,7 @@ Apportez les modifications suivantes dans *Startup.cs*:
     });
     ```
 
-### <a name="facebook-authentication"></a>Authentification Facebook
+### <a name="facebook-authentication"></a>authentification Facebook
 Apportez les modifications suivantes dans *Startup.cs*:
 - Remplacez le `UseFacebookAuthentication` l’appel de méthode le `Configure` méthode avec `UseAuthentication`:
  
@@ -199,7 +199,7 @@ Apportez les modifications suivantes dans *Startup.cs*:
             });    
     ```
 
-### <a name="microsoft-account-authentication"></a>Authentification de compte Microsoft
+### <a name="microsoft-account-authentication"></a>Authentification de Microsoft Account
 Apportez les modifications suivantes dans *Startup.cs*:
 - Remplacez le `UseMicrosoftAccountAuthentication` l’appel de méthode le `Configure` méthode avec `UseAuthentication`:
 
@@ -266,7 +266,7 @@ Une exception à cette règle est le `AddIdentity` (méthode). Cette méthode aj
 
 <a name="obsolete-interface"></a>
 
-## <a name="use-httpcontext-authentication-extensions"></a>Utiliser les Extensions d’authentification HttpContext
+## <a name="use-httpcontext-authentication-extensions"></a>Utiliser les extensions d’authentification HttpContext
 Le `IAuthenticationManager` interface est le point d’entrée principal dans le système d’authentification 1.x. Elle a été remplacée par un nouvel ensemble de `HttpContext` les méthodes d’extension dans le `Microsoft.AspNetCore.Authentication` espace de noms.
 
 Par exemple, les projets 1.x référence un `Authentication` propriété :
@@ -313,7 +313,7 @@ Le `IdentityConstants.ExternalScheme` constante peut être utilisée directement
 
 <a name="navigation-properties"></a>
 
-## <a name="add-identityuser-poco-navigation-properties"></a>Ajouter des propriétés de Navigation IdentityUser POCO
+## <a name="add-identityuser-poco-navigation-properties"></a>Ajouter des propriétés de navigation IdentityUser POCO
 Les propriétés de navigation de base d’Entity Framework (EF) de la base de `IdentityUser` POCO (Plain objet CLR) ont été supprimées. Si votre projet 1.x utilisé ces propriétés, les ajouter manuellement au projet 2.0 :
 
 ```csharp
@@ -387,7 +387,7 @@ Dans *Login.cshtml*, le `AuthenticationScheme` propriété accédée dans le `fo
 
 <a name="property-change"></a>
 
-## <a name="manageloginsviewmodel-property-change"></a>Modification de la propriété de ManageLoginsViewModel
+## <a name="manageloginsviewmodel-property-change"></a>Modification de la propriété ManageLoginsViewModel
 A `ManageLoginsViewModel` objet est utilisé dans le `ManageLogins` action de *ManageController.cs*. Dans les projets 1.x, l’objet `OtherLogins` propriété type de retour est `IList<AuthenticationDescription>`. Ce type de retour nécessite une importation de `Microsoft.AspNetCore.Http.Authentication`:
 
 [!code-csharp[Main](../1x-to-2x/samples/AspNetCoreDotNetCore1App/AspNetCoreDotNetCore1App/Models/ManageViewModels/ManageLoginsViewModel.cs?name=snippet_ManageLoginsViewModel&highlight=2,11)]

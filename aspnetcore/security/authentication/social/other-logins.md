@@ -1,17 +1,17 @@
 ---
 title: "Brève enquête sur d'autres fournisseurs d’authentification."
 author: rick-anderson
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 11/03/2016
-ms.topic: article
 ms.prod: asp.net-core
+ms.topic: article
 uid: security/authentication/otherlogins
-ms.openlocfilehash: 9b061c66c8bf81f275ac35dc2e160feaf79eb21e
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 74d550115d0d58374494fc34a348d01abed9c664
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="short-survey-of-other-authentication-providers"></a>Brève enquête d’autres fournisseurs d’authentification
 

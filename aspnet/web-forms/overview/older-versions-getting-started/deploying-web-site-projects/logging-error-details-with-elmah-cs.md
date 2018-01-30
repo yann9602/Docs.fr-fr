@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-elmah-cs
 msc.type: authoredcontent
-ms.openlocfilehash: eeb1210038f4982d80352322842733c0e96300a7
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 26d40d17447b3b03d17265f291b8ac246a449966
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 <a name="logging-error-details-with-elmah-c"></a>Journalisation des détails de l’erreur avec ELMAH (c#)
 ====================
@@ -29,7 +29,7 @@ par [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 ## <a name="introduction"></a>Introduction
 
-Le [didacticiel précédent](logging-error-details-with-asp-net-health-monitoring-cs.md) examiné ASP. Contrôle d’intégrité de NET système, qui offre un hors de la bibliothèque pour l’enregistrement d’un large éventail d’événements Web de surveillance. De nombreux développeurs utilisent pour se connecter et envoyer par courrier électronique les détails d’exceptions non gérées d’analyse du fonctionnement. Toutefois, il existe quelques points faibles avec ce système. Tout d’abord est l’absence de tout type d’interface utilisateur pour afficher des informations sur les événements enregistrés. Si vous souhaitez afficher un récapitulatif des 10 dernières erreurs ou afficher les détails d’une erreur s’est produite la semaine dernière, vous devez soit réserver la base de données, une recherche dans votre boîte de réception ou créer une page web qui affiche des informations à partir de la `aspnet_WebEvent_Events` table.
+Le [didacticiel précédent](logging-error-details-with-asp-net-health-monitoring-cs.md) examiné ASP. Contrôle d’intégrité de NET système, qui offre un hors de la bibliothèque pour l’enregistrement d’un large éventail d’événements Web de surveillance. De nombreux développeurs utilisent pour se connecter et envoyer par courrier électronique les détails d’exceptions non gérées d’analyse du fonctionnement. Toutefois, il existe quelques points faibles avec ce système. Tout d’abord est l’absence de tout type d’interface utilisateur pour afficher des informations sur les événements enregistrés. Si vous souhaitez afficher un récapitulatif des 10 dernières erreurs ou afficher les détails d’une erreur s’est produite la semaine dernière, vous devez soit réserver la base de données, une recherche dans votre boîte de réception de courrier électronique ou créer une page web qui affiche des informations à partir de la `aspnet_WebEvent_Events` table.
 
 Un autre point de faibles tourne autour de la complexité de l’analyse de l’intégrité. Étant donné que le contrôle d’intégrité peut servir à enregistrer une multitude de différents événements, et comme il existe diverses options pour indiquer quand et comment les événements sont enregistrés, le configurer correctement le contrôle d’intégrité système de surveillance peut être une tâche onéreuse. Enfin, il existe des problèmes de compatibilité. Étant donné que le contrôle d’intégrité a été ajouté tout d’abord le .NET Framework version 2.0, il n’est pas disponible pour les applications web plus anciens créées à l’aide d’ASP.NET version 1.x. En outre, le `SqlWebEventProvider` (classe), que nous avons utilisée dans les détails des erreurs de journaux à une base de données du didacticiel précédent, ne fonctionne qu’avec les bases de données Microsoft SQL Server. Vous devez créer une classe de fournisseur de journal personnalisé si vous avez besoin consigner les erreurs dans un magasin de données différent, tel qu’un fichier XML ou une base de données Oracle.
 
@@ -199,23 +199,23 @@ Le journal des erreurs sur l’environnement de production peut désormais être
 
 De ELMAH `ErrorLogModule` HTTP Module exceptions non gérées se connecte automatiquement à la source de journal spécifié. Vous pouvez également enregistrer une erreur sans avoir à déclencher une exception non gérée à l’aide de la `ErrorSignal` classe et ses `Raise` (méthode). Le `Raise` méthode est passée un `Exception` de l’objet et l’enregistre comme si cette exception a été levée et a atteint le runtime ASP.NET sans être géré. Toutefois, la différence est que la demande continue de s’exécuter normalement après le `Raise` méthode a été appelée, tandis qu’une exception non gérée levée interrompt l’exécution normale de la demande et, le runtime ASP.NET afficher la configuration page d’erreur.
 
-La `ErrorSignal` classe est utile dans les situations où il existe des actions qui risquent d’échouer, mais son échec n’est pas grave à l’opération globale est en cours d’exécution. Par exemple, un site Web peut contenir un formulaire qui accepte l’entrée d’utilisateur, il stocke dans une base de données et envoie ensuite l’utilisateur un message électronique les informant qu’ils a été traitée. Ce qui doit se produire si les informations sont enregistrées avec succès à la base de données, mais il existe une erreur lors de l’envoi du message électronique ? Une option peut consister à lever une exception et l’envoyer à l’utilisateur à la page d’erreur. Toutefois, cela peut perturber l’utilisateur considèrent que les informations qu’ils entrées n’ont pas été enregistrées. Une autre approche consisterait à enregistrer l’erreur liés au courrier électronique, mais ne modifie pas l’expérience utilisateur en aucune façon. C’est là la `ErrorSignal` classe est utile.
+La `ErrorSignal` classe est utile dans les situations où il existe des actions qui risquent d’échouer, mais son échec n’est pas grave à l’opération globale est en cours d’exécution. Par exemple, un site Web peut contenir un formulaire qui accepte l’entrée d’utilisateur, il stocke dans une base de données et envoie ensuite l’utilisateur un message électronique les informant qu’ils a été traitée. Ce qui doit se produire si les informations sont enregistrées avec succès à la base de données, mais une erreur se produit lors de l’envoi du message électronique ? Une option peut consister à lever une exception et l’envoyer à l’utilisateur à la page d’erreur. Toutefois, cela peut perturber l’utilisateur considèrent que les informations qu’ils entrées n’ont pas été enregistrées. Une autre approche consisterait à enregistrer l’erreur de courrier électronique, mais ne modifie pas l’expérience utilisateur en aucune façon. C’est là la `ErrorSignal` classe est utile.
 
 [!code-csharp[Main](logging-error-details-with-elmah-cs/samples/sample6.cs)]
 
-## <a name="error-notification-via-e-mail"></a>Notification d’erreur par courrier électronique
+## <a name="error-notification-via-email"></a>Notification d’erreur par courrier électronique
 
-En même temps que la journalisation des erreurs à une base de données, ELMAH peut également être configuré pour envoyer par courrier électronique des détails de l’erreur à un destinataire spécifié. Cette fonctionnalité est fournie par le `ErrorMailModule` HTTP Module ; par conséquent, vous devez inscrire ce HTTP Module dans `Web.config` afin d’envoyer les détails de l’erreur par courrier électronique.
+En même temps que la journalisation des erreurs à une base de données, ELMAH peut également être configuré pour envoyer des détails de l’erreur à un destinataire spécifié. Cette fonctionnalité est fournie par le `ErrorMailModule` HTTP Module ; par conséquent, vous devez inscrire ce HTTP Module dans `Web.config` afin d’envoyer les détails de l’erreur par courrier électronique.
 
 [!code-xml[Main](logging-error-details-with-elmah-cs/samples/sample7.xml)]
 
-Ensuite, spécifiez les informations sur le message d’erreur dans le `<elmah>` l’élément `<errorMail>` section, qui indique l’expéditeur du message électronique et le destinataire, l’objet, et si le message électronique est envoyé de manière asynchrone.
+Ensuite, spécifiez les informations sur le message d’erreur dans le `<elmah>` l’élément `<errorMail>` section, indiquant l’adresse de messagerie expéditeur et destinataire, l’objet, et si le message électronique est envoyé de manière asynchrone.
 
 [!code-xml[Main](logging-error-details-with-elmah-cs/samples/sample8.xml)]
 
-Avec les paramètres ci-dessus en place, chaque fois qu’une erreur d’exécution se produit ELMAH envoie un message électronique à support@example.com avec les détails de l’erreur. Par courrier électronique des erreurs de ELMAH inclut les mêmes informations que celui indiquées dans la page de web de détails de l’erreur, à savoir le message d’erreur, la trace de pile et les variables de serveur (font référence aux **Figures 4** et **5**). Le message d’erreur inclut également le contenu de l’Exception détails de l’écran jaune de décès en tant que pièce jointe (`YSOD.html`).
+Avec les paramètres ci-dessus en place, chaque fois qu’une erreur d’exécution se produit ELMAH envoie un e-mail à support@example.com avec les détails de l’erreur. Par courrier électronique des erreurs de ELMAH inclut les mêmes informations que celui indiquées dans la page de web de détails de l’erreur, à savoir le message d’erreur, la trace de pile et les variables de serveur (font référence aux **Figures 4** et **5**). Le message d’erreur inclut également le contenu de l’Exception détails de l’écran jaune de décès en tant que pièce jointe (`YSOD.html`).
 
-**Figure 8** présente la messagerie d’erreur de ELMAH généré en vous rendant sur `Genre.aspx?ID=foo`. Alors que **Figure 8** affiche uniquement le message et la pile de trace d’erreur, les variables de serveur sont incluses plus bas dans les corps du message électronique.
+**Figure 8** montre par courrier électronique de l’erreur de ELMAH généré en vous rendant sur `Genre.aspx?ID=foo`. Alors que **Figure 8** affiche uniquement le message et la pile de trace d’erreur, les variables de serveur sont incluses plus bas dans les corps de l’e-mail.
 
 [![](logging-error-details-with-elmah-cs/_static/image21.png)](logging-error-details-with-elmah-cs/_static/image20.png)
 

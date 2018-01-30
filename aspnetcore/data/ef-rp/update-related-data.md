@@ -2,18 +2,18 @@
 title: "Les Pages Razor avec EF Core - mettre à jour les données connexes - 7 de 8"
 author: rick-anderson
 description: "Dans ce didacticiel vous allez mettre à jour les données associées en mettant à jour les propriétés de navigation et les champs de clé étrangère."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 11/15/2017
-ms.topic: get-started-article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: get-started-article
 uid: data/ef-rp/update-related-data
-ms.openlocfilehash: 236589d0202a7f30f1e1a9d69902000fd9a2dd71
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 5c91c91ab938f3aa4abc55049c54f399469f6163
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="updating-related-data---ef-core-razor-pages-7-of-8"></a>Mise à jour des données connexes - Pages Razor de noyaux EF (7 sur 8)
 

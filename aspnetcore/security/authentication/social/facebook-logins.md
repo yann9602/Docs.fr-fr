@@ -2,18 +2,18 @@
 title: "Programme d’installation de Facebook connexion externe dans ASP.NET Core"
 author: rick-anderson
 description: "Ce didacticiel illustre l’intégration de l’authentification d’utilisateur de compte Facebook dans une application ASP.NET Core existante."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 08/01/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/authentication/facebook-logins
-ms.openlocfilehash: cd86e089e4bbe0d4a18e49a9384753f4d2cd0c38
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 283de1df68c45fa1b41ed75710fe9eb7925f815f
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="configuring-facebook-authentication"></a>Configuration de l’authentification Facebook
 

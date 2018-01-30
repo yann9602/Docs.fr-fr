@@ -2,22 +2,25 @@
 title: "Réponse mise en cache dans ASP.NET Core"
 author: rick-anderson
 description: "Découvrez comment utiliser la réponse mise en cache à faible bande passante et améliorer les performances des applications ASP.NET Core."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 09/20/2017
-ms.topic: article
 ms.prod: asp.net-core
+ms.topic: article
 uid: performance/caching/response
-ms.openlocfilehash: d7726443dbcc34c21fd6cf0f56c4412863617b9f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: c38f9b9a1bf1c523951e2cf1f3070858fe5daf04
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="response-caching-in-aspnet-core"></a>Réponse mise en cache dans ASP.NET Core
 
 Par [John Luo](https://github.com/JunTaoLuo), [Rick Anderson](https://twitter.com/RickAndMSFT), [Steve Smith](https://ardalis.com/), et [Luke Latham](https://github.com/guardrex)
 
+> [!NOTE]
+> Réponse mise en cache [n’est pas pris en charge dans les Pages Razor avec ASP.NET Core 2.0](https://github.com/aspnet/Mvc/issues/6437). Cette fonctionnalité sera être pris en charge dans les [ASP.NET Core 2.1 version](https://github.com/aspnet/Home/wiki/Roadmap).
+  
 [Affichez ou téléchargez l’exemple de code](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/response/sample) ([procédure de téléchargement](xref:tutorials/index#how-to-download-a-sample))
 
 Réponse mise en cache réduit le nombre de demandes que de client ou de proxy permet à un serveur web. Réponse mise en cache réduit également la quantité de travail, le serveur web exécute pour générer une réponse. Mise en cache de la réponse est contrôlé par des en-têtes qui spécifient comment vous souhaitez que client, le proxy et intergiciel (middleware) en cache les réponses.

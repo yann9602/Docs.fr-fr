@@ -2,18 +2,18 @@
 title: Migration des gestionnaires HTTP et des modules pour ASP.NET Core intergiciel (middleware)
 author: rick-anderson
 description: 
-ms.author: tdykstra
 manager: wpickett
+ms.author: tdykstra
 ms.date: 12/07/2016
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: migration/http-modules
-ms.openlocfilehash: a38ddc64583de05b4088cd31d48fbd7ee949d4e5
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: f104c9116cfaa4a82ac88e4a83b4b6f172eb2aa1
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="migrating-http-handlers-and-modules-to-aspnet-core-middleware"></a>Migration des gestionnaires HTTP et des modules pour ASP.NET Core intergiciel (middleware) 
 
@@ -380,10 +380,7 @@ Le `SetCookies` méthode de rappel se présente comme suit :
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-* [Vue d’ensemble des Modules HTTP et les gestionnaires HTTP](https://docs.microsoft.com/iis/configuration/system.webserver/)
-
+* [Vue d’ensemble des Modules HTTP et les gestionnaires HTTP](/iis/configuration/system.webserver/)
 * [Configuration](xref:fundamentals/configuration/index)
-
-* [Démarrage d’une application](../fundamentals/startup.md)
-
-* [Intergiciel (middleware)](../fundamentals/middleware.md)
+* [Démarrage d’une application](xref:fundamentals/startup)
+* [Intergiciel (middleware)](xref:fundamentals/middleware)

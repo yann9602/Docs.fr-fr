@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/server-controls
 msc.type: authoredcontent
-ms.openlocfilehash: 09f1a2e4de024e5778e69fdd691d9cb0040459f3
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 72e9cac7cf9a01791c30783fa56ad7ea205a5a11
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 <a name="server-controls"></a>Contrôles serveur
 ====================
@@ -196,10 +196,10 @@ Dans ASP.NET 2.0, l’attribut de l’élément httpRuntime requestLengthDiskThr
 
 Il est assez courant de rencontrer des difficultés avec la tentative de collecte des informations dans une série de « pages » à l’aide des panneaux ou par le transfert d’une page les développeurs ASP.NET. Plus souvent non, le défi est frustrant et prend beaucoup de temps. Le contrôle de l’Assistant Nouvelle résout les problèmes en permettant aux étapes linéaires et non linéaires dans une interface que les utilisateurs sont familiarisés avec. Le contrôle de l’Assistant affiche les formulaires de saisie dans une série d’étapes. Chaque étape est d’un type particulier, spécifié par la propriété StepType du contrôle. Les types d’étape disponibles sont les suivantes :
 
-| **Type d’étape** | **Explication** |
+| **Type d’étape** | **Explanation** |
 | --- | --- |
 | Auto | L’Assistant détermine automatiquement le type d’étape en fonction de sa position dans la hiérarchie de l’étape. |
-| Démarrer | La première étape, souvent utilisée pour présenter une instruction d’introduction. |
+| Start | La première étape, souvent utilisée pour présenter une instruction d’introduction. |
 | Étape | Une étape normale. |
 | Terminer | L’étape finale, généralement utilisé pour présenter un bouton pour terminer l’Assistant. |
 | Terminé | Affiche un message de communiquer la réussite ou l’échec. |
@@ -221,7 +221,7 @@ Cette vidéo est une procédure pas à pas de contrôle de l’Assistant.
 
 Le contrôle Localize est similaire à un contrôle Literal. Toutefois, le contrôle Localize a un **Mode** propriété qui contrôle le rendu de balisage qui est ajouté à celle-ci. La propriété Mode prend en charge les valeurs suivantes :
 
-| **Mode** | **Explication** |
+| **Mode** | **Explanation** |
 | --- | --- |
 | Transformer | Balisage est transformé conformément au protocole du navigateur qui effectue la requête. |
 | Transfert direct | Balisage est restitué sous la forme-est. |

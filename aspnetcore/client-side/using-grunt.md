@@ -2,18 +2,18 @@
 title: "À l’aide de Grunt dans ASP.NET Core"
 author: rick-anderson
 description: 
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/14/2016
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: client-side/using-grunt
-ms.openlocfilehash: 527373829754757e52ab84b64e04702d649e9062
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: c23f170b36ac1b9623835337020f2b5ac9514971
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="using-grunt-in-aspnet-core"></a>À l’aide de Grunt dans ASP.NET Core 
 
@@ -51,7 +51,7 @@ Pour commencer, configurez une nouvelle application web vide et ajouter des fich
 
 4.  Ajouter un nouveau dossier nommé `TypeScript` à votre répertoire de projet.
 
-5.  Avant d’ajouter des fichiers, assurez-vous que Visual Studio propose l’option ' compiler lors de l’enregistrement ' pour les fichiers TypeScript activées. *Outils > Options > Éditeur de texte > Typescript > projet*
+5.  Avant d’ajouter des fichiers, assurez-vous que Visual Studio propose l’option ' compiler lors de l’enregistrement ' pour les fichiers TypeScript activées. Accédez à **outils** > **Options** > **éditeur de texte** > **Typescript**  >  **Projet**:
 
     ![Options de paramétrage compliation automatique des fichiers TypeScript](using-grunt/_static/typescript-options.png)
 

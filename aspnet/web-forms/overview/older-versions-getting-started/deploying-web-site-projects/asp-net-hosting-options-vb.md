@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/asp-net-hosting-options-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 6ca92737b506265d5dda66243fe684d2e57833fc
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 54bac82a96a35d871d764849856c8e31f6570666
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 <a name="aspnet-hosting-options-vb"></a>Options d’hébergement ASP.NET (VB)
 ====================
@@ -56,7 +56,7 @@ En bref, le déploiement d’une application ASP.NET implique les trois étapes 
 2. Synchroniser les pages ASP.NET, les fichiers de code, les assemblys dans le `Bin` dossier et les fichiers de prise en charge de HTML associés tels que les fichiers CSS et JavaScript.
 3. Synchroniser le schéma de base de données et/ou des données.
 
-Les informations de configuration pour une application web se trouve généralement dans le `Web.config` de fichiers et inclut des chaînes de connexion de base de données, de gestion des erreurs, critères de règles de réécriture d’URL et les informations du serveur de messagerie. Souvent, ces informations sont différentes pour une application en cours de développement par rapport à la même application en production. Par exemple, lorsque vous développez une application, il est préférable d’utiliser une base de données de développement afin que vous ne testez pas par rapport à la base de données de production. Par conséquent, les chaînes de connexion de base de données diffèrent généralement entre les applications de développement et de production. En raison de ces différences, phase de déploiement consiste à apporter des modifications aux informations de configuration de l’application web.
+Les informations de configuration pour une application web se trouve généralement dans le `Web.config` de fichiers et inclut des chaînes de connexion de base de données, les critères de la gestion des erreurs, URL de réécriture des règles et les informations de serveur de messagerie. Souvent, ces informations sont différentes pour une application en cours de développement par rapport à la même application en production. Par exemple, lorsque vous développez une application, il est préférable d’utiliser une base de données de développement afin que vous ne testez pas par rapport à la base de données de production. Par conséquent, les chaînes de connexion de base de données diffèrent généralement entre les applications de développement et de production. En raison de ces différences, phase de déploiement consiste à apporter des modifications aux informations de configuration de l’application web.
 
 En plus des modifications de configuration d’application web, étape 1 peut également impliquer le configuration pour le serveur web et la base de données. Par exemple, si une page ASP.NET crée ou supprime des fichiers à partir d’un répertoire sur le serveur web du serveur web doit être configuré pour autoriser ces modifications du système de fichiers. De même, il peut exister des paramètres d’autorisation ou d’authentification qui doivent être apportées à la base de données.
 
@@ -77,13 +77,13 @@ Avant de déployer votre site à un fournisseur d’hébergement web, vous devez
 
 En général, sociétés d’hébergement Web offrent des plans d’hébergements partagés et dédiée de plans d’hébergement. Avec partagé qui héberge un hôte de serveur web unique des dizaines si ce n’est pas des centaines de différents sites Web. Avec hébergement dédié vous bail d’un ordinateur à partir de l’entreprise qui sert votre site et votre site uniquement. Un plan d’hébergement partagé peut inclure la prise en charge pour les pages ASP.NET, la possibilité de travailler avec les bases de données Microsoft Access, 5 Go d’espace disque et de 100 Go de mensuel de trafic de la bande passante pour 9,95 $ par mois. Un autre plan d’hébergement partagé peut inclure la prise en charge pour les pages ASP.NET, l’accès au serveur de base de données Microsoft SQL Server 2008, 10 Go d’espace disque et 250 Go de mensuel de trafic de la bande passante pour 19,95 $ par mois. Dédié plans d’hébergement sont généralement beaucoup plus coûteuses, d’évaluation des coûts plusieurs centaines en dollars par mois, mais offre de meilleures performances et davantage de contrôle que partagé options d’hébergement. Le plan que vous choisissez dépend de votre budget, la quantité de trafic reçoit de votre site Web et les fonctionnalités que vous pensez que vous avez besoin.
 
-Deux considérations importantes lors du choix d’un fournisseur d’hébergement web sont le service clientèle et qualité de service. Si vous avez une question ou un problème de configuration, combien de temps faut-il de soumettre votre problème au support technique de l’hôte web jusqu'à ce que vous obtenez une réponse ? La fiabilité sont des services de l’entreprise ? Ils ont souvent des pannes de base de données ? La fréquence à laquelle leur serveur de messagerie passe en mode hors connexion ? Vous pouvez toujours demander une entreprise pour fournir des détails sur les temps de fonctionnement et obtenir des informations sur leur stratégie de service client, mais il n’est un moyen plus sûr pour solliciter les commentaires de clients actuelles et anciennes, vous pouvez effectuer via courrier électronique, groupes de discussion et forums en ligne serveurs de liste.
+Deux considérations importantes lors du choix d’un fournisseur d’hébergement web sont le service clientèle et qualité de service. Si vous avez une question ou un problème de configuration, combien de temps faut-il de soumettre votre problème au support technique de l’hôte web jusqu'à ce que vous obtenez une réponse ? La fiabilité sont des services de l’entreprise ? Ils ont souvent des pannes de base de données ? La fréquence à laquelle leur serveur de messagerie passe en mode hors connexion ? Vous pouvez toujours demander une entreprise pour fournir des détails sur les temps de fonctionnement et obtenir des informations sur leur stratégie de service client, mais il n’est un moyen plus sûr pour solliciter les commentaires de clients actuelles et anciennes, vous pouvez effectuer via les forums en ligne, les groupes de discussion et les serveurs de liste .
 
 > [!NOTE]
 > Certaines sociétés d’hébergement web concentrent leurs activités sur une pile de technologie particulière, comme .NET ou [feu](http://en.wikipedia.org/wiki/LAMP_stack) (**L** inux, **A** pache, **M** ySQL, et **P** HP), assurez-vous que la société que vous sélectionnez héberge des applications ASP.NET. Vérifiez également qu’ils prennent en charge la version de ASP.NET que vous utilisez pour générer votre application. Et si vous générez une application orientée données, assurez-vous que l’hôte web offre le même serveur de base de données et de la même version que vous utilisez.
 
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Les applications web ASP.NET sont généralement conçues, créées et testées dans un environnement de développement local. Une fois qu’une version est prête pour la mise en production, il est déplacé vers un environnement de production. Bien qu’il soit possible d’hôte ASP.NET des sites Web sur votre ordinateur personnel ou des serveurs au sein de votre société, de nombreuses entreprises et les personnes choisissent d’externaliser leur hébergement à un fournisseur d’hébergement web.
 

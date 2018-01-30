@@ -2,18 +2,18 @@
 title: "Cœur de ASP.NET MVC avec Entity Framework Core - didacticiel 1 sur 10"
 author: tdykstra
 description: 
-ms.author: tdykstra
 manager: wpickett
+ms.author: tdykstra
 ms.date: 03/15/2017
-ms.topic: get-started-article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: get-started-article
 uid: data/ef-mvc/intro
-ms.openlocfilehash: c30556368ba24fb38cf3347dd49f171b5246514c
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 7de43a390ee0e11f6eda811b0774343ab330c53b
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="getting-started-with-aspnet-core-mvc-and-entity-framework-core-using-visual-studio-1-of-10"></a>Mise en route avec ASP.NET MVC de base et d’Entity Framework Core, à l’aide de Visual Studio (1 / 10)
 
@@ -204,7 +204,7 @@ Ouvrez le *appsettings.json* et ajoutez une chaîne de connexion comme indiqué 
 
 ### <a name="sql-server-express-localdb"></a>SQL Server Express LocalDB
 
-La chaîne de connexion spécifie une base de données de la base de données SQL Server locale. LocalDB est une version légère de SQL Server Express Database Engine et est conçue pour le développement d’applications, pas les fins de production. LocalDB démarre à la demande et s’exécute en mode utilisateur, il n’existe aucune configuration complexe. Par défaut, LocalDB crée *.mdf* dans les fichiers de base de données la `C:/Users/<user>` active.
+La chaîne de connexion spécifie une base de données de la base de données SQL Server locale. LocalDB est une version légère de SQL Server Express Database Engine et est conçue pour le développement d’applications, pas les fins de production. LocalDB démarre à la demande et s’exécute en mode utilisateur, ce qui n’implique aucune configuration complexe. Par défaut, LocalDB crée *.mdf* dans les fichiers de base de données la `C:/Users/<user>` active.
 
 ## <a name="add-code-to-initialize-the-database-with-test-data"></a>Ajoutez du code pour initialiser la base de données de test
 

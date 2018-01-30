@@ -2,18 +2,18 @@
 title: "Extensibilité de la gestion de clés"
 author: rick-anderson
 description: "Ce document décrit l’extensibilité de la gestion de clés de protection de données ASP.NET Core."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 11/22/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/data-protection/extensibility/key-management
-ms.openlocfilehash: d748ee9d3edf9eed4285fab447d5b379dfcd937c
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 68f590dffe8bb98813f974a5ecb9b270a5419ddf
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="key-management-extensibility"></a>Extensibilité de la gestion de clés
 

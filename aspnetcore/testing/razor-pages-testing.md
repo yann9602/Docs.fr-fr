@@ -2,19 +2,19 @@
 title: "Unité de Pages Razor et les tests d’intégration dans ASP.NET Core"
 author: guardrex
 description: "Découvrez comment créer des tests unitaires et l’intégration pour les applications de Pages Razor."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.custom: mvc
 ms.date: 11/27/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: testing/razor-pages-testing
-ms.openlocfilehash: 1ecdf010f7c283a0a08b224d570a5bc5cdf536df
-ms.sourcegitcommit: 281f0c614543a6c3db565ea4655b70fe49b61d84
+ms.openlocfilehash: 5891b236306cd3790cbba14919796d6aa894ad53
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/03/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="razor-pages-unit-and-integration-testing-in-aspnet-core"></a>Unité de Pages Razor et les tests d’intégration dans ASP.NET Core
 
@@ -70,8 +70,8 @@ L’application de test est une application console à l’intérieur de la *tes
 | Dossier d’application de test    | Description |
 | ------------------ | ----------- |
 | *IntegrationTests* | <ul><li>*IndexPageTest.cs* contient les tests d’intégration pour la page d’Index.</li><li>*TestFixture.cs* crée l’hôte de test pour tester l’application de message.</li></ul> |
-| *UnitTests (TestsUnitaires)*        | <ul><li>*DataAccessLayerTest.cs* contient les tests unitaires pour la couche DAL.</li><li>*IndexPageTest.cs* contient les tests unitaires pour le modèle de page d’Index.</li></ul> |
-| *Utilitaires*        | *Utilities.cs* contient le :<ul><li>`TestingDbContextOptions`méthode utilisée pour créer les options de contexte pour chaque test unitaire de la couche DAL de base de données afin que la base de données est réinitialisée à son état initial pour chaque test.</li><li>`GetRequestContentAsync`méthode utilisée pour préparer le `HttpClient` et le contenu pour les demandes qui sont envoyées à l’application de message pendant le test d’intégration.</li></ul>
+| *UnitTests*        | <ul><li>*DataAccessLayerTest.cs* contient les tests unitaires pour la couche DAL.</li><li>*IndexPageTest.cs* contient les tests unitaires pour le modèle de page d’Index.</li></ul> |
+| *Utilities*        | *Utilities.cs* contient le :<ul><li>`TestingDbContextOptions`méthode utilisée pour créer les options de contexte pour chaque test unitaire de la couche DAL de base de données afin que la base de données est réinitialisée à son état initial pour chaque test.</li><li>`GetRequestContentAsync`méthode utilisée pour préparer le `HttpClient` et le contenu pour les demandes qui sont envoyées à l’application de message pendant le test d’intégration.</li></ul>
 
 L’infrastructure de test est [xUnit](https://xunit.github.io/). Est de l’objet de simulation framework [Moq](https://github.com/moq/moq4). Tests d’intégration sont effectuées à l’aide de la [hôte de Test ASP.NET Core](xref:testing/integration-testing#the-test-host).
 

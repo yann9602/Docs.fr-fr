@@ -2,18 +2,18 @@
 title: Pages Razor avec Entity Framework Core - didacticiel 1 de 8
 author: rick-anderson
 description: "Montre comment créer une application de Pages Razor à l’aide d’Entity Framework Core"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 11/15/2017
-ms.topic: get-started-article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: get-started-article
 uid: data/ef-rp/intro
-ms.openlocfilehash: 6d36c0f0cabaf99195470a212091bd5e35c8eb30
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 091f34da347d52ba8e3e87779ddc4aeb790c2800
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="getting-started-with-razor-pages-and-entity-framework-core-using-visual-studio-1-of-8"></a>Prise en main de Pages Razor et Entity Framework Core, à l’aide de Visual Studio (1 / 8)
 
@@ -179,7 +179,7 @@ La chaîne de connexion précédente utilise `ConnectRetryCount=0` pour empêche
 
 ### <a name="sql-server-express-localdb"></a>SQL Server Express LocalDB
 
-La chaîne de connexion spécifie une base de données SQL Server LocalDB. LocalDB est une version légère de SQL Server Express Database Engine et est prévu pour le développement d’applications, pas les fins de production. LocalDB démarre à la demande et s’exécute en mode utilisateur, il n’existe aucune configuration complexe. Par défaut, LocalDB crée *.mdf* les fichiers de base de données dans le `C:/Users/<user>` active.
+La chaîne de connexion spécifie une base de données SQL Server LocalDB. LocalDB est une version légère de SQL Server Express Database Engine et est prévu pour le développement d’applications, pas les fins de production. LocalDB démarre à la demande et s’exécute en mode utilisateur, ce qui n’implique aucune configuration complexe. Par défaut, LocalDB crée *.mdf* les fichiers de base de données dans le `C:/Users/<user>` active.
 
 ## <a name="add-code-to-initialize-the-db-with-test-data"></a>Ajoutez du code pour initialiser la base de données avec des données de test
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-asp-net-health-monitoring-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 85a8615bf71f58c58b9565da14bc3b3fbef9d264
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 5bbba0e4e8660dbc60b9f9ad220c923274144b89
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 <a name="logging-error-details-with-aspnet-health-monitoring-c"></a>Journalisation des détails de l’erreur avec le contrôle (c#) d’état ASP.NET
 ====================
@@ -24,7 +24,7 @@ par [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 [Télécharger le Code](http://download.microsoft.com/download/1/0/C/10CC829F-A808-4302-97D3-59989B8F9C01/ASPNET_Hosting_Tutorial_13_CS.zip) ou [télécharger le PDF](http://download.microsoft.com/download/5/C/5/5C57DB8C-5DEA-4B3A-92CA-4405544D313B/aspnet_tutorial13_HealthMonitoring_cs.pdf)
 
-> Système de surveillance de l’intégrité de Microsoft fournit un moyen simple et personnalisable pour se connecter à différents événements web, y compris les exceptions non gérées. Ce didacticiel décrit comment configurer le contrôle d’intégrité système de surveillance pour enregistrer les exceptions non gérées dans une base de données et pour avertir les développeurs par courrier électronique.
+> Système de surveillance de l’intégrité de Microsoft fournit un moyen simple et personnalisable pour se connecter à différents événements web, y compris les exceptions non gérées. Ce didacticiel décrit comment configurer le contrôle d’intégrité système de surveillance pour enregistrer les exceptions non gérées dans une base de données et pour avertir les développeurs via un message électronique.
 
 
 ## <a name="introduction"></a>Introduction
@@ -37,7 +37,7 @@ Le contrôle d’intégrité système de surveillance a été introduit dans ASP
 - Événements de sécurité, y compris l’échec de tentatives de connexion et les demandes d’autorisation d’URL
 - Erreurs d’application, y compris les exceptions non gérées, afficher l’état de l’analyse des exceptions, les exceptions de validation de demande et les erreurs de compilation, parmi les autres types d’erreurs.
 
-Lorsqu’un contrôle d’intégrité analyse d’événement est déclenché il peut être connecté à n’importe quel nombre de spécifié *connecter des sources de*. Le contrôle d’intégrité système de surveillance est fourni avec des sources de journal du journal des événements Web à une base de données Microsoft SQL Server, dans le journal des événements Windows ou par courrier électronique, entre autres. Vous pouvez également créer vos propres sources de journal.
+Lorsqu’un contrôle d’intégrité analyse d’événement est déclenché il peut être connecté à n’importe quel nombre de spécifié *connecter des sources de*. Le contrôle d’intégrité système de surveillance est fourni avec des sources de journal du journal des événements Web à une base de données Microsoft SQL Server, dans le journal des événements Windows, ou via un message électronique, entre autres. Vous pouvez également créer vos propres sources de journal.
 
 Les événements de journaux de l’intégrité système de surveillance, ainsi que les sources de journal utilisées, sont définis dans `Web.config`. Avec quelques lignes de balisage de la configuration, vous pouvez utiliser pour vous connecter toutes les exceptions non gérées dans une base de données et pour vous informer de l’exception par courrier électronique de contrôle d’intégrité.
 
@@ -104,17 +104,17 @@ Si vous créez une page de ce type, veillez à que prendre des mesures pour auto
 > Le didacticiel suivant explore un système de journalisation et de notification autre erreur nommé ELMAH. ELMAH inclut un mécanisme intégré pour afficher le journal des erreurs depuis les deux une page web et comme un flux RSS.
 
 
-## <a name="logging-events-to-e-mail"></a>Journalisation des événements de messagerie
+## <a name="logging-events-to-email"></a>Journalisation des événements à la messagerie électronique
 
-Le contrôle d’intégrité système de surveillance comprend un fournisseur de source de journal qui « consigne » d’un événement à un message électronique. La source du journal inclut les mêmes informations qui sont connectées à la base de données dans le corps du message. Vous pouvez utiliser cette source de journaux pour avertir un développeur lorsqu’un certain événement de contrôle d’intégrité se produit.
+Le contrôle d’intégrité système de surveillance comprend un fournisseur de source de journal qui « consigne » d’un événement à un message électronique. La source du journal inclut les mêmes informations qui sont connectées à la base de données dans le corps du message électronique. Vous pouvez utiliser cette source de journaux pour avertir un développeur lorsqu’un certain événement de contrôle d’intégrité se produit.
 
 Nous allons mettre à jour de la critiques de configuration du site Web afin que nous recevons un message électronique chaque fois qu’une exception se produit. Pour ce faire, nous devons effectuer trois tâches :
 
-1. Configurer l’application web ASP.NET pour envoyer des messages électroniques. Cela est accompli en spécifiant la façon dont les messages électroniques sont envoyés le `<system.net>` élément de configuration. Pour plus d’informations sur l’envoi de courrier électronique les messages dans une application ASP.NET font référence à [envoi de courrier électronique dans ASP.NET](http://aspnet.4guysfromrolla.com/articles/072606-1.aspx) et [System.Net.Mail FAQ](http://systemnetmail.com/).
+1. Configurer l’application web ASP.NET à envoyer un courrier électronique. Cela est accompli en spécifiant la façon dont les messages électroniques sont envoyés le `<system.net>` élément de configuration. Pour plus d’informations sur l’envoi de courrier électronique les messages dans une application ASP.NET font référence à [envoi de courrier électronique dans ASP.NET](http://aspnet.4guysfromrolla.com/articles/072606-1.aspx) et [System.Net.Mail FAQ](http://systemnetmail.com/).
 2. Inscrire le fournisseur de source de journal par courrier électronique dans le `<providers>` élément, et
 3. Ajouter une entrée à la `<rules>` élément qui mappe l’événement « Toutes les erreurs » dans le fournisseur de source de journal ajouté à l’étape (2).
 
-Le contrôle d’intégrité système de surveillance comprend deux classes du fournisseur de source journal par courrier électronique : `SimpleMailWebEventProvider` et `TemplatedMailWebEventProvider`. Le [ `SimpleMailWebEventProvider` classe](https://msdn.microsoft.com/library/system.web.management.simplemailwebeventprovider.aspx) envoie un message électronique en texte brut qui inclut l’événement détails et permet une personnalisation peu de corps du message électronique. Avec la [ `TemplatedMailWebEventProvider` classe](https://msdn.microsoft.com/library/system.web.management.templatedmailwebeventprovider.aspx) vous spécifiez une page ASP.NET dont le balisage rendu est utilisé en tant que le corps du message électronique. Le [ `TemplatedMailWebEventProvider` classe](https://msdn.microsoft.com/library/system.web.management.templatedmailwebeventprovider.aspx) vous donne un contrôle plus le contenu et le format du message électronique, mais nécessite un peu plus de travail initial que vous devez créer la page ASP.NET qui génère le corps du message de courrier électronique. Ce didacticiel se concentre sur l’utilisation de la `SimpleMailWebEventProvider` classe.
+Le contrôle d’intégrité système de surveillance comprend deux classes du fournisseur de source journal par courrier électronique : `SimpleMailWebEventProvider` et `TemplatedMailWebEventProvider`. Le [ `SimpleMailWebEventProvider` classe](https://msdn.microsoft.com/library/system.web.management.simplemailwebeventprovider.aspx) envoie un message en texte brut qui inclut l’événement détails et fournit très peu de personnalisation du corps du courrier électronique. Avec la [ `TemplatedMailWebEventProvider` classe](https://msdn.microsoft.com/library/system.web.management.templatedmailwebeventprovider.aspx) vous spécifiez une page ASP.NET dont le balisage rendu est utilisé comme corps pour le message électronique. Le [ `TemplatedMailWebEventProvider` classe](https://msdn.microsoft.com/library/system.web.management.templatedmailwebeventprovider.aspx) vous donne un contrôle plus le contenu et le format du message électronique, mais nécessite un peu plus de travail initial que vous devez créer la page ASP.NET qui génère le corps du message de courrier électronique. Ce didacticiel se concentre sur l’utilisation de la `SimpleMailWebEventProvider` classe.
 
 Mettre à jour de l’intégrité système de surveillance `<providers>` élément dans le `Web.config` fichier à inclure une source de journal pour la `SimpleMailWebEventProvider` classe :
 
@@ -126,7 +126,7 @@ Avec la source de journal de messagerie définie, il ne reste que pour indiquer 
 
 [!code-xml[Main](logging-error-details-with-asp-net-health-monitoring-cs/samples/sample4.xml)]
 
-Le `<rules>` comprend maintenant deux règles. Le, nommé « Toutes les erreurs de courrier électronique », envoie toutes les exceptions non gérées à la source du journal « EmailWebEventProvider ». Cette règle a pour effet d’envoyer les détails des erreurs sur le site Web spécifié à l’adresse. La règle « Toutes les erreurs de base de données » enregistre les détails de l’erreur à la base de données du site. Par conséquent, chaque fois qu’une exception non gérée produit sur le site, les détails sont tous deux enregistrés dans la base de données et envoyés à l’adresse de messagerie spécifiée.
+Le `<rules>` comprend maintenant deux règles. Le, nommé « Toutes les erreurs pour Email », envoie toutes les exceptions non gérées à la source du journal « EmailWebEventProvider ». Cette règle a pour effet d’envoyer les détails des erreurs sur le site Web spécifié à l’adresse. La règle « Toutes les erreurs de base de données » enregistre les détails de l’erreur à la base de données du site. Par conséquent, chaque fois qu’une exception non gérée produit sur le site, les détails sont tous deux enregistrés dans la base de données et envoyés à l’adresse de messagerie spécifiée.
 
 **Figure 2** affiche le message électronique généré par le `SimpleMailWebEventProvider` lors de la visite de la classe `Genre.aspx?ID=foo`.
 

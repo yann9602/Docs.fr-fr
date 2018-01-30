@@ -1,19 +1,19 @@
 ---
 title: "Prévention des attaques Cross-Site Request Forgery (XSRF/CSRF) ASP.NET Core"
 author: steve-smith
-ms.author: riande
 description: "Prévention des attaques Cross-Site Request Forgery (XSRF/CSRF) ASP.NET Core"
 manager: wpickett
+ms.author: riande
 ms.date: 7/14/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/anti-request-forgery
-ms.openlocfilehash: 3831bf737186d10eb1b298f5ec2da1fd33ebedd9
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: e076e301004c04b5c516d775353a4b6e50a3f36e
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="preventing-cross-site-request-forgery-xsrfcsrf-attacks-in-aspnet-core"></a>Prévention des attaques Cross-Site Request Forgery (XSRF/CSRF) ASP.NET Core
 
@@ -43,7 +43,7 @@ Voici un exemple d’une attaque CSRF :
 Notez que l’action de formulaire valide sur le site vulnérable, pas pour le site malveillant. Il s’agit de la partie « cross-site » de CSRF.
 
 4. L’utilisateur clique sur le bouton Envoyer. Le navigateur inclut automatiquement le cookie d’authentification pour le domaine demandé (le site vulnérable dans ce cas) avec la demande.
-5. La demande s’exécute sur le serveur avec le contexte de l’utilisateur d’authentification et peut faire tout ce qu’un utilisateur authentifié est autorisé à faire.
+5. La demande s’exécute sur le serveur avec le contexte de l’utilisateur d’authentification et peut exécuter toute action qu’un utilisateur authentifié est autorisé à faire.
 
 Cet exemple oblige l’utilisateur à cliquer sur le bouton du formulaire. La page malveillante pourrait :
 
@@ -353,12 +353,11 @@ Lorsqu’un utilisateur est connecté à un système, une session utilisateur es
 
 ### <a name="user-tokens"></a>Jetons d’utilisateur
 
-L’authentification basée sur le jeton ne stocke pas session sur le serveur. Au lieu de cela, lorsqu’un utilisateur est connecté, ils sont émis un jeton (pas un jeton côté). Ce jeton conserve toutes les données requises pour valider le jeton. Il contient également des informations d’utilisateur, sous la forme de [revendications](https://docs.microsoft.com/dotnet/framework/security/claims-based-identity-model). Lorsqu’un utilisateur souhaite accéder à une ressource de serveur nécessitant une authentification, le jeton est envoyé au serveur avec un en-tête d’autorisation supplémentaires sous forme de porteur {jeton}. Cela rend l’application sans état, car dans chaque demande ultérieure le jeton est passé dans la demande pour la validation côté serveur. Ce jeton n’est pas *chiffrées*; il s’agit plutôt *codé*. Sur le côté serveur, le jeton peut être décodé pour accéder aux informations brutes dans le jeton. Pour envoyer le jeton dans les demandes suivantes, vous pouvez soit l’enregistrer dans le stockage local du navigateur ou dans un cookie. Vous n’avez pas à vous soucier de vulnérabilité XSRF si ce dernier est stocké dans le stockage local, mais il s’agit d’un problème si le jeton est stocké dans un cookie.
+L’authentification basée sur le jeton ne stocke pas session sur le serveur. Lorsqu’un utilisateur est connecté, ils sont émis un jeton (pas un jeton côté). Ce jeton conserve les données requises pour valider le jeton. Il contient également des informations d’utilisateur sous la forme de [revendications](https://docs.microsoft.com/dotnet/framework/security/claims-based-identity-model). Lorsqu’un utilisateur souhaite accéder à une ressource de serveur nécessitant une authentification, le jeton est envoyé au serveur avec un en-tête d’autorisation supplémentaires sous forme de porteur {jeton}. Cela rend l’application sans état, car dans chaque demande ultérieure le jeton est passé dans la demande pour la validation côté serveur. Ce jeton n’est pas *chiffrées*; il s’agit plutôt *codé*. Sur le côté serveur, le jeton peut être décodé pour accéder aux informations brutes dans le jeton. Pour envoyer le jeton dans les demandes suivantes, soit stockez-le dans le stockage local du navigateur ou dans un cookie. Ne vous préoccupez vulnérabilité XSRF si le jeton est stocké dans le stockage local, mais il s’agit d’un problème si le jeton est stocké dans un cookie.
 
 ### <a name="multiple-applications-are-hosted-in-one-domain"></a>Plusieurs applications sont hébergées dans un domaine
 
-Bien que `example1.cloudapp.net` et `example2.cloudapp.net` sont des hôtes différents, il existe une relation d’approbation implicite entre tous les hôtes de le `*.cloudapp.net` domaine. Cette relation de confiance implicite permet à des hôtes potentiellement non fiables affecter l’autre les cookies (les même origine les stratégies qui régissent les requêtes AJAX ne pas nécessairement appliquer les cookies HTTP). Le runtime ASP.NET Core permet une limitation dans la mesure où le nom d’utilisateur est incorporée dans le jeton de champ, donc, même si un sous-domaine malveillant est en mesure de remplacer un jeton de session qu’il est impossible de générer un jeton de champ valide pour l’utilisateur. Toutefois, lorsqu’il est hébergé dans un tel environnement les routines intégrées anti-XSRF toujours ne peut pas protéger contre le piratage de session ou connexion CSRF contre les attaques. Environnements d’hébergement partagés sont vunerable le piratage de session, connexion CSRF et autres attaques.
-
+Bien que `example1.cloudapp.net` et `example2.cloudapp.net` sont des hôtes différents, il existe une relation de confiance implicite entre les hôtes sous le `*.cloudapp.net` domaine. Cette relation de confiance implicite permet à des hôtes potentiellement non fiables affecter l’autre les cookies (les même origine les stratégies qui régissent les requêtes AJAX ne pas nécessairement appliquer les cookies HTTP). Le runtime ASP.NET Core permet une limitation dans la mesure où le nom d’utilisateur est incorporée dans le jeton de champ. Même si un sous-domaine malveillant est en mesure de remplacer un jeton de session, il ne peut pas générer un jeton de champ valide pour l’utilisateur. Lorsqu’il est hébergé dans un tel environnement, les routines intégrées anti-XSRF toujours ne peut pas protéger contre le piratage de session ou connexion CSRF contre les attaques. Environnements d’hébergement partagés sont vunerable le piratage de session, connexion CSRF et autres attaques.
 
 ### <a name="additional-resources"></a>Ressources supplémentaires
 

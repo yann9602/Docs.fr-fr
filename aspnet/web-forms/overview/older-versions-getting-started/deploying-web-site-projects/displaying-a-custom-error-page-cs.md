@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/displaying-a-custom-error-page-cs
 msc.type: authoredcontent
-ms.openlocfilehash: e2fcaa615415b6f61e96e12dc77866d00110a33e
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 8d68dedfc1f606cc6f0381bcbdb3f65c1ea3b2e5
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 <a name="displaying-a-custom-error-page-c"></a>Affichage d’une Page d’erreur personnalisés (c#)
 ====================
@@ -31,7 +31,7 @@ par [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
 Dans un monde idéal ne serait aucune erreur d’exécution. Les programmeurs seraient écrire du code avec n-aires un bogue et la validation d’entrée utilisateur robuste et externes ressources telles que les serveurs de messagerie et les serveurs de base de données va jamais passer en mode hors connexion. Bien sûr, en réalité, les erreurs sont inévitables. Les classes dans le .NET Framework indiquent une erreur en levant une exception. Par exemple, la méthode d’ouverture de l’objet appelant un SqlConnection établit une connexion à la base de données spécifiée par une chaîne de connexion. Toutefois, si la base de données est arrêté, ou si les informations d’identification dans la chaîne de connexion ne sont pas valides la méthode Open lève une `SqlException`. Exceptions peuvent être gérées à l’aide de `try/catch/finally` blocs. Si le code situé dans un `try` bloc lève une exception, le contrôle est transféré au bloc catch approprié sur lequel le développeur peut tenter une récupération à partir de l’erreur. S’il n’existe aucun bloc catch correspondant, ou si le code qui a levé l’exception n’est pas dans un bloc try, l’exception percolates la pile des appels search de `try/catch/finally` blocs.
 
-Si l’exception se propage jusqu'à l’exécution d’ASP.NET sans être géré, le [ `HttpApplication` classe](https://msdn.microsoft.com/library/system.web.httpapplication.aspx)de [ `Error` événement](https://msdn.microsoft.com/library/system.web.httpapplication.error.aspx) est déclenché et configuré *page d’erreur*  s’affiche. Par défaut, ASP.NET affiche une page d’erreur affectueusement porte la [jaune écran de décès](http://en.wikipedia.org/wiki/Yellow_Screen_of_Death#Yellow) (YSOD). Il existe deux versions de la YSOD : un élément indique les détails de l’exception, une trace de pile et d’autres informations utiles aux développeurs de débogage de l’application (consultez **Figure 1**) ; l’autre déclare simplement une erreur d’exécution (voir  **Figure 2**).
+Si l’exception se propage jusqu'à l’exécution d’ASP.NET sans être géré, le [ `HttpApplication` classe](https://msdn.microsoft.com/library/system.web.httpapplication.aspx)de [ `Error` événement](https://msdn.microsoft.com/library/system.web.httpapplication.error.aspx) est déclenché et configuré *page d’erreur * s’affiche. Par défaut, ASP.NET affiche une page d’erreur affectueusement porte la [jaune écran de décès](http://en.wikipedia.org/wiki/Yellow_Screen_of_Death#Yellow) (YSOD). Il existe deux versions de la YSOD : un élément indique les détails de l’exception, une trace de pile et d’autres informations utiles aux développeurs de débogage de l’application (consultez **Figure 1**) ; l’autre déclare simplement une erreur d’exécution (voir ** Figure 2**).
 
 Détails de l’exception YSOD est très utile pour les développeurs de débogage de l’application, mais affichant un YSOD aux utilisateurs finaux est collant et un. Au lieu de cela, les utilisateurs finaux devra être prises pour une page d’erreur qui maintient l’apparence du site avec prose plus conviviale qui décrit la situation. La bonne nouvelle est que la création de ce une page d’erreur personnalisée est très simple. Ce didacticiel commence par examiner ASP. Pages d’erreur différentes du réseau. Il montre ensuite comment configurer l’application web pour afficher les utilisateurs à une page d’erreur personnalisée en dépit d’une erreur.
 

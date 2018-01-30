@@ -2,18 +2,18 @@
 title: "L’activation de demandes de Cross-Origin (CORS)"
 author: rick-anderson
 description: "Ce document présente les CORS comme une norme pour autoriser ou rejeter les demandes cross-origin dans une application ASP.NET Core."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 05/17/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/cors
-ms.openlocfilehash: 9f53ce11f1659aa3416fe4fbb94183c64ab0dab5
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 1c0d87b61882f69dbf2aeb0a896d9294bd029374
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="enabling-cross-origin-requests-cors"></a>L’activation de demandes de Cross-Origin (CORS)
 
@@ -209,7 +209,7 @@ La réponse HTTP inclut désormais un en-tête Access-contrôle-Allow-Credential
 
 Si le navigateur envoie des informations d’identification, mais la réponse n’inclut pas un en-tête Access-contrôle-Allow-Credentials valid, le navigateur ne sera pas exposer la réponse à l’application et la requête AJAX échoue.
 
-Soyez très prudent à l’autorisation d’informations d’identification de cross-origine, car cela signifie qu’un site Web à un autre domaine peut envoyer des informations d’identification d’un utilisateur de connecté à votre application sur l’utilisateur, sans l’utilisateur. CORS spec également États d’origine de ce paramètre à « * » (toutes les origines) n’est pas valide si l’en-tête Access-contrôle-Allow-Credentials est présent.
+Soyez prudent lorsque vous autorisez les informations d’identification cross-origin. Un site Web à un autre domaine peut envoyer des informations d’identification d’un utilisateur de connecté à l’application sur l’utilisateur sans avoir connaissance de l’utilisateur. La spécification CORS indique également ce paramètre origine à « * » (toutes les origines) n’est pas valide si le `Access-Control-Allow-Credentials` en-tête est présent.
 
 ### <a name="set-the-preflight-expiration-time"></a>Définir le délai d’expiration en amont
 
@@ -221,11 +221,11 @@ L’en-tête Access-contrôle-Max-Age spécifie la durée pendant laquelle la r�
 
 ## <a name="how-cors-works"></a>Fonctionnement des règles CORS
 
-Cette section décrit ce qui se passe dans une demande CORS, au niveau des messages HTTP. Il est important de comprendre le fonctionnement de CORS, afin que vous pouvez configurer votre stratégie CORS correctement et résoudre les problèmes si les éléments ne fonctionnent pas comme prévu.
+Cette section décrit ce qui se passe dans une demande CORS au niveau des messages HTTP. Il est important de comprendre le fonctionnement de CORS afin que la stratégie CORS peut être configurée correctement et devez lorsque des comportements inattendus se produisent.
 
-La spécification CORS introduit plusieurs nouveaux en-têtes HTTP qui permettent les demandes cross-origin. Si un navigateur prend en charge CORS, il définit ces en-têtes automatiquement pour les demandes cross-origin ; vous n’avez pas besoin de faire quelque chose de spécial dans votre code JavaScript.
+La spécification CORS introduit plusieurs nouveaux en-têtes HTTP qui permettent les demandes cross-origin. Si un navigateur prend en charge CORS, il définit ces en-têtes automatiquement pour les demandes cross-origin. Code JavaScript personnalisé n’est pas nécessaire pour activer CORS.
 
-Voici un exemple de demande cross-origin. L’en-tête « Origine » donne le domaine du site qui effectue la demande :
+Voici un exemple de demande cross-origin. Le `Origin` en-tête fournit le domaine du site qui effectue la demande :
 
 ```
 GET http://myservice.azurewebsites.net/api/test HTTP/1.1

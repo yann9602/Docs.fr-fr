@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/aspnet-error-handling
 msc.type: authoredcontent
-ms.openlocfilehash: c5ec43ac78be4a9452ebaa6495a6883506ac162f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 3f732ae6f1b7845bcae88912b4a4fe26574c10de
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 <a name="aspnet-error-handling"></a>Gestion des erreurs de ASP.NET
 ====================
@@ -273,7 +273,7 @@ ELMAH (gestionnaires et les Modules de journalisation de l’erreur) est une fon
 - Journalisation des exceptions non gérées.
 - Une page web pour afficher la totalité du journal d’exceptions non gérées recodées.
 - Une page web pour afficher les détails de chaque ouvert une exception.
-- Un message de notification de chaque erreur au moment où qu'il se produit.
+- Un e-mail de notification de chaque erreur au moment où qu'il se produit.
 - Un flux RSS des 15 dernières erreurs à partir du journal.
 
 Avant de pouvoir travailler avec ELMAH, vous devez l’installer. Il est facile à l’aide de la *NuGet* programme d’installation du package. Comme mentionné plus haut dans cette série de didacticiels, NuGet est une extension Visual Studio qui facilite l’installation et mettre à jour les bibliothèques open source et les outils de Visual Studio.

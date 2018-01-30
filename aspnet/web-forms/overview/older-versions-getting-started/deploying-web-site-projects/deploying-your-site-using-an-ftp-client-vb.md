@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-your-site-using-an-ftp-client-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 862f07defafb2d2613fef9f76f13aab0b11c5440
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 7792891aed6f0c5e952018dacb36a1d267cb6ae0
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 <a name="deploying-your-site-using-an-ftp-client-vb"></a>Déploiement de votre Site à l’aide d’un Client FTP (VB)
 ====================
@@ -48,7 +48,7 @@ Rappelez-vous qu’il existe deux versions de l’application web critique : un
 
 Lancer le projet BookReviewsWAP en accédant à la `BookReviewsWAP` dossier, en double-cliquant sur le `BookReviewsWAP.sln` fichier. Avant de déployer le projet, il est important de le générer pour vous assurer que toutes les modifications au code source sont incluses dans l’assembly compilé. Pour générer le projet dans le menu Build et choisissez l’option de menu BookReviewsWAP de Build. Le code source dans le projet est compilé dans un assembly unique, `BookReviewsWAP.dll`, qui est placé dans le `Bin` dossier.
 
-Nous sommes maintenant prêts à déployer les fichiers nécessaires. Lancez votre client FTP et connectez-vous au serveur web à votre fournisseur d’hébergement web. (Cela inclut l’adresse du serveur FTP ainsi que d’un nom d’utilisateur et mot de passe, lorsque vous vous inscrivez avec une société d’hébergement web il enverra un message électronique vous plus d’informations sur la façon de se connecter au serveur FTP.)
+Nous sommes maintenant prêts à déployer les fichiers nécessaires. Lancez votre client FTP et connectez-vous au serveur web à votre fournisseur d’hébergement web. (Cela inclut l’adresse du serveur FTP ainsi que d’un nom d’utilisateur et mot de passe, lorsque vous vous inscrivez avec une société d’hébergement web qu’ils vous enverrons plus d’informations sur la façon de se connecter au serveur FTP.)
 
 Copiez les fichiers suivants à partir de votre bureau vers le dossier du site Web racine à votre fournisseur d’hébergement web. Lorsque vous FTP sur le serveur web sur le site web hôte fournisseur, vous êtes susceptible de dans le répertoire du site Web racine. Toutefois, certains fournisseurs d’hébergement web ont un sous-dossier nommé `www` ou `wwwroot` qui sert le dossier racine pour les fichiers de votre site Web. Enfin, lorsque vous FTPing les fichiers vous devrez peut-être créer la structure de dossiers correspondants sur l’environnement de production - la `Bin` dossier, le `Fiction` dossier, le `Images` dossier et ainsi de suite.
 
@@ -77,7 +77,7 @@ La figure 1 montre FileZilla après avoir copié les fichiers nécessaires. File
 **Figure 1**: utiliser un FTP Client pour copier les fichiers nécessaires à partir de votre bureau sur le serveur Web au fournisseur de serveur Web ([cliquez pour afficher l’image en taille réelle](deploying-your-site-using-an-ftp-client-vb/_static/image3.png))
 
 
-Après avoir déployé votre site prendre quelques instants pour tester le site. Si vous avez acheté un nom de domaine et les paramètres DNS configurés correctement, vous pouvez visiter le site en entrant votre nom de domaine. Vous pouvez également votre fournisseur d’hébergement web doit avoir fourni vous avec une URL vers votre site, qui ressemble à ce qui *accountname*. *webhostprovider*.com ou *webhostprovider*.com /*accountname*. Par exemple, l’URL de mon compte sur ASP.NET de remise est : `http://httpruntime.web703.discountasp.net`.
+Après avoir déployé votre site prendre quelques instants pour tester le site. Si vous avez acheté un nom de domaine et les paramètres DNS configurés correctement, vous pouvez visiter le site en entrant votre nom de domaine. Vous pouvez également votre fournisseur d’hébergement web doit avoir fourni vous avec une URL vers votre site, qui ressemble à ce qui *accountname*.* webhostprovider*.com ou *webhostprovider*.com /*accountname*. Par exemple, l’URL de mon compte sur ASP.NET de remise est : `http://httpruntime.web703.discountasp.net`.
 
 Figure 2 montre le site critiques déployé. Notez que je suis l’affichage sur ASP de remise. Les serveurs du réseau, à `http://httpruntime.web703.discountasp.net`. À ce stade, toute personne disposant d’une connexion à Internet peut afficher mon site Web ! Comme nous l’attend, le site recherche et se comporte comme s’il était au moment de la tester dans l’environnement de développement.
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/membership
 msc.type: authoredcontent
-ms.openlocfilehash: 7e6bff33e9ec1de03c591de6eee2e632c7b7509d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1a5a495845b60f9aac51c9776311af67f5dc8767
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 <a name="membership"></a>Appartenance
 ====================
@@ -120,7 +120,7 @@ Le contrôle LoginView est un contrôle basé sur un modèle qui fournit deux mo
 
 ## <a name="passwordrecovery-control"></a>Contrôle PasswordRecovery
 
-Le contrôle PasswordRecovery permet aux utilisateurs de recevoir un message électronique avec son propre mot de passe actuel ou de réinitialiser son mot de passe. Texte clair et les mots de passe chiffrés peuvent récupérés et envoyé par courrier électronique aux utilisateurs. Si le mot de passe est haché, il ne peut pas être récupéré. Au lieu de cela, l’utilisateur sera nécessaire pour effectuer une réinitialisation de mot de passe.
+Le contrôle PasswordRecovery permet aux utilisateurs de recevoir un courrier électronique avec son propre mot de passe actuel ou de réinitialiser son mot de passe. Texte clair et les mots de passe chiffrés peuvent récupérés et envoyé par courrier électronique aux utilisateurs. Si le mot de passe est haché, il ne peut pas être récupéré. Au lieu de cela, l’utilisateur sera nécessaire pour effectuer une réinitialisation de mot de passe.
 
 ## <a name="loginstatus-control"></a>Contrôle LoginStatus
 
@@ -223,7 +223,7 @@ Chaque objet RoleGroup contient un tableau de chaînes qui définit les rôles R
 
 ![](membership/_static/image10.jpg)
 
-**La figure 10**
+**Figure 10**
 
 
 ## <a name="overriding-the-existing-membership-provider"></a>Substitution du fournisseur d’appartenances existantes

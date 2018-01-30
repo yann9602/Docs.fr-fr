@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/processing-unhandled-exceptions-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 95102e5e6b3e8b78e2757a2bdee39976003011e3
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 7be257faa350476bef9f6d372ea4f140fff8d136
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 <a name="processing-unhandled-exceptions-c"></a>Le traitement des Exceptions non gérées (c#)
 ====================
@@ -93,26 +93,26 @@ Lorsqu’une exception non gérée se produit dans l’environnement de producti
 Les classes .NET Framework dans le [ `System.Net.Mail` espace de noms](https://msdn.microsoft.com/library/system.net.mail.aspx) permet d’envoyer un courrier électronique. Le [ `MailMessage` classe](https://msdn.microsoft.com/library/system.net.mail.mailmessage.aspx) représente un message électronique et possède des propriétés comme `To`, `From`, `Subject`, `Body`, et `Attachments`. Le `SmtpClass` est utilisé pour envoyer un `MailMessage` l’objet à l’aide d’un serveur SMTP spécifié ; les paramètres du serveur SMTP peuvent être spécifiés par programme ou de façon déclarative dans le [ `<system.net>` élément](https://msdn.microsoft.com/library/6484zdc1.aspx) dans le `Web.config file`. Pour plus d’informations sur l’envoi de courrier électronique les messages dans une application ASP.NET vérifier mon article, [envoi de courrier électronique dans ASP.NET](http://aspnet.4guysfromrolla.com/articles/072606-1.aspx)et le [System.Net.Mail FAQ](http://systemnetmail.com/).
 
 > [!NOTE]
-> Le `<system.net>` élément contient les paramètres du serveur SMTP utilisés par le `SmtpClient` classe lors de l’envoi d’un message électronique. Votre entreprise d’hébergement web possède un serveur SMTP que vous pouvez utiliser pour envoyer des messages électroniques à partir de votre application. Pour plus d’informations sur les paramètres du serveur SMTP que vous devez utiliser dans votre application web, consultez la section de prise en charge de votre hôte web.
+> Le `<system.net>` élément contient les paramètres du serveur SMTP utilisés par le `SmtpClient` classe lors de l’envoi d’un message électronique. Votre entreprise d’hébergement web possède un serveur SMTP que vous pouvez utiliser pour envoyer un courrier électronique à partir de votre application. Pour plus d’informations sur les paramètres du serveur SMTP que vous devez utiliser dans votre application web, consultez la section de prise en charge de votre hôte web.
 
 
-Ajoutez le code suivant à la `Application_Error` Gestionnaire d’événements à envoyer à un développeur un message électronique lorsqu’une erreur se produit :
+Ajoutez le code suivant à la `Application_Error` Gestionnaire d’événements à envoyer à un développeur un courrier électronique lorsqu’une erreur se produit :
 
 [!code-csharp[Main](processing-unhandled-exceptions-cs/samples/sample4.cs)]
 
 Alors que le code ci-dessus est assez longs, la majeure partie de celui-ci crée le code HTML qui s’affiche dans l’e-mail envoyé au développeur. Le code commence par référencer le `HttpException` retournée par le `GetLastError` (méthode) (`lastErrorWrapper`). L’exception réelle qui a été levée par la demande est récupérée `lastErrorWrapper.InnerException` et est affectée à la variable `lastError`. Le type, le message et la pile des informations de trace sont extraites de `lastError` et stockées dans trois variables de chaîne.
 
-Ensuite, un `MailMessage` objet nommé `mm` est créé. Corps du message électronique est au format HTML et affiche l’URL de la page demandée, le nom de l’utilisateur actuellement connecté et des informations sur l’exception (type, message et trace de la pile). Un des aspects plus intéressants du `HttpException` classe est que vous pouvez générer le code HTML utilisé pour créer l’Exception détails jaune écran de décès (YSOD) en appelant le [GetHtmlErrorMessage méthode](https://msdn.microsoft.com/library/system.web.httpexception.gethtmlerrormessage.aspx). Cette méthode est utilisée ici pour récupérer le balisage YSOD des détails de l’Exception et l’ajouter au message électronique en tant que pièce jointe. Un mot d’attention : si l’exception qui a déclenché la `Error` événement a une exception basée sur HTTP (par exemple, une demande pour une page inexistante) le `GetHtmlErrorMessage` méthode retournera `null`.
+Ensuite, un `MailMessage` objet nommé `mm` est créé. Le corps du message électronique est au format HTML et affiche l’URL de la page demandée, le nom de l’utilisateur actuellement connecté et des informations sur l’exception (type, message et trace de la pile). Un des aspects plus intéressants du `HttpException` classe est que vous pouvez générer le code HTML utilisé pour créer l’Exception détails jaune écran de décès (YSOD) en appelant le [GetHtmlErrorMessage méthode](https://msdn.microsoft.com/library/system.web.httpexception.gethtmlerrormessage.aspx). Cette méthode est utilisée ici pour récupérer le balisage YSOD des détails de l’Exception et l’ajouter au message électronique en tant que pièce jointe. Un mot d’attention : si l’exception qui a déclenché la `Error` événement a une exception basée sur HTTP (par exemple, une demande pour une page inexistante) le `GetHtmlErrorMessage` méthode retournera `null`.
 
 L’étape finale consiste à envoyer le `MailMessage`. Cela est obtenu en créant un nouveau `SmtpClient` (méthode) et en appelant sa `Send` (méthode).
 
 > [!NOTE]
-> Avant d’utiliser ce code dans votre application web que vous souhaitez modifier les valeurs dans le `ToAddress` et `FromAddress` constantes de support@example.com à l’adresse de messagerie l’e-mail de notification d’erreur doit être envoyé et issus de. Vous devez également spécifier les paramètres du serveur SMTP dans le `<system.net>` section `Web.config`. Consultez votre fournisseur d’hébergement web pour déterminer les paramètres du serveur SMTP à utiliser.
+> Avant d’utiliser ce code dans votre application web que vous souhaitez modifier les valeurs dans le `ToAddress` et `FromAddress` constantes de support@example.com pour le courrier électronique adresse l’e-mail de notification d’erreur doit être envoyé à et issus de. Vous devez également spécifier les paramètres du serveur SMTP dans le `<system.net>` section `Web.config`. Consultez votre fournisseur d’hébergement web pour déterminer les paramètres du serveur SMTP à utiliser.
 
 
 Chaque fois qu’une erreur s’est le développeur est envoyé par le code en place un message électronique qui récapitule l’erreur et inclut le YSOD. Dans le didacticiel précédent, nous l’avons démontré une erreur d’exécution en visitant Genre.aspx et en passant un n’est pas valide `ID` valeur via la chaîne de requête, tel que `Genre.aspx?ID=foo`. Sur la page avec le `Global.asax` fichier sur place produit la même expérience utilisateur, comme dans le didacticiel précédent - dans l’environnement de développement vous allez continuer à voir l’Exception détails jaune écran de décès, tandis que dans l’environnement de production, vous allez consultez la page d’erreurs personnalisée. En plus de ce comportement existant, le développeur est envoyé un message électronique.
 
-**Figure 2** affiche le message électronique reçu lors de la visite `Genre.aspx?ID=foo`. Corps du message électronique résume les informations sur l’exception, tandis que la `YSOD.htm` pièce jointe affiche le contenu qui est indiqué dans le YSOD détails de l’Exception (voir **Figure 3**).
+**Figure 2** montre l’e-mail reçu lors de la visite `Genre.aspx?ID=foo`. Le corps du message électronique résume les informations sur l’exception, tandis que la `YSOD.htm` pièce jointe affiche le contenu qui est indiqué dans le YSOD détails de l’Exception (voir **Figure 3**).
 
 [![](processing-unhandled-exceptions-cs/_static/image5.png)](processing-unhandled-exceptions-cs/_static/image4.png)
 

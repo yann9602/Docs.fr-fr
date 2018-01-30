@@ -2,18 +2,18 @@
 title: "Détails de chiffrement authentifié"
 author: rick-anderson
 description: "Cette décrit document les détails d’implémentation de la protection des données ASP.NET Core authentifié de chiffrement."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/14/2016
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/data-protection/implementation/authenticated-encryption-details
-ms.openlocfilehash: 2a59a7531c946927b4b266d5dfa9af46afdae411
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: b58f36a5f0353da69d6f1ef4db542aba8267027a
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="authenticated-encryption-details"></a>Détails de chiffrement authentifié
 

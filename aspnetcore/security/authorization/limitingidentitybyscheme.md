@@ -2,18 +2,18 @@
 title: "Autoriser avec un schéma spécifique - ASP.NET Core"
 author: rick-anderson
 description: "Cet article explique comment limiter l’identité à un schéma spécifique lorsque vous travaillez avec plusieurs méthodes d’authentification."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/12/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/authorization/limitingidentitybyscheme
-ms.openlocfilehash: 099dba1a4235ef62ea298748645b99e2d6d12d44
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: dd044a0829382f9f7f0c3256c6e669340f2d5240
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="authorize-with-a-specific-scheme"></a>Autoriser avec un schéma spécifique
 

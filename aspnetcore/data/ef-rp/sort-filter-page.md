@@ -4,15 +4,15 @@ author: rick-anderson
 description: "Dans ce didacticiel, vous allez ajouter le tri, filtrage et d’échange vers la page à l’aide d’ASP.NET Core et Entity Framework Core."
 ms.author: riande
 ms.date: 10/22/2017
-ms.topic: get-started-article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: get-started-article
 uid: data/ef-rp/sort-filter-page
-ms.openlocfilehash: 24649374b71da39d638d943617a219d45f064846
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 9c1ee6f8c00f3cd501ea86fbf73f51ae540a010a
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="sorting-filtering-paging-and-grouping---ef-core-with-razor-pages-3-of-8"></a>Le tri, le filtrage, la pagination et le regroupement - Core EF avec les Pages Razor (3 sur 8)
 
@@ -107,7 +107,7 @@ Parcourez le débogueur.
 Pour ajouter le filtrage sur la page d’Index des étudiants :
 
 * Une zone de texte et un bouton d’envoi est ajouté à la Page Razor. La zone de texte fournit une chaîne de recherche sur le nom de la première ou la dernière.
-* Le fichier code-behind est mis à jour pour utiliser la valeur de zone de texte.
+* Le modèle de page est mise à jour pour utiliser la valeur de zone de texte.
 
 ### <a name="add-filtering-functionality-to-the-index-method"></a>Ajouter des fonctionnalités de filtrage à l’Index (méthode)
 
@@ -245,7 +245,7 @@ Parcourez le débogueur.
 Dans cette étape, *Pages/About.cshtml* est mis à jour pour afficher le nombre d’étudiants inscrits pour chaque date d’inscription. La mise à jour utilise le regroupement et comprend les étapes suivantes :
 
 * Créer une classe de modèle d’affichage pour les données utilisées par le **sur** Page.
-* Modifier le fichier code-behind et sur la Page de Razor.
+* Modifier le modèle sur la Page de Razor et page.
 
 ### <a name="create-the-view-model"></a>Créer le modèle d’affichage
 
@@ -255,7 +255,7 @@ Dans le *SchoolViewModels* dossier, ajoutez un *EnrollmentDateGroup.cs* avec le 
 
 [!code-csharp[Main](intro/samples/cu/Models/SchoolViewModels/EnrollmentDateGroup.cs)]
 
-### <a name="update-the-about-code-behind-page"></a>Mise à jour de la page code-behind à propos
+### <a name="update-the-about-page-model"></a>Mettre à jour le modèle de page à propos de
 
 Mise à jour la *Pages/About.cshtml.cs* fichier avec le code suivant :
 

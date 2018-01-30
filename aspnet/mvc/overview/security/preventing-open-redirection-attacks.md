@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/security/preventing-open-redirection-attacks
 msc.type: authoredcontent
-ms.openlocfilehash: 97e0aacbf21914bf95f01019cf4dcc9e7ca1c4be
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 17944c0600a174176e3e9940f414b34f0835b800
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 <a name="preventing-open-redirection-attacks-c"></a>Prévention des attaques de Redirection ouvert (c#)
 ====================
@@ -47,7 +47,7 @@ Les attaques par redirection ouverts sont particulièrement dangereux, car un ut
 
 Tout d’abord, un attaquant nous envoie un lien vers la page de connexion sur NerdDinner qui inclut une redirection pour leurs pages contrefaites :
 
-[http://NerdDinner.com/Account/Logon?returnUrl=http://nerddiner.com/Account/Logon](http://nerddinner.com/Account/LogOn?returnUrl=http://nerddiner.com/Account/LogOn)
+[http://nerddinner.com/Account/LogOn?returnUrl=http://nerddiner.com/Account/LogOn](http://nerddinner.com/Account/LogOn?returnUrl=http://nerddiner.com/Account/LogOn)
 
 Notez que l’URL de retour pointe vers nerddiner.com, ce qui n’a pas un « n » à partir du dîner de word. Dans cet exemple, il s’agit d’un domaine qu’il contrôle. Lorsque nous accéder au lien ci-dessus, nous mettons dirigés vers la page de connexion NerdDinner.com légitime.
 
@@ -119,6 +119,6 @@ Une fois connecté, nous allons redirigés à l’action du contrôleur d’accu
 
 **Figure 05**: attaque Redirection ouvrir mises en échec
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Les attaques par redirection ouvert peuvent se produire lors de la redirection des URL sont passés comme paramètres dans l’URL pour une application. Attaques de redirection d’ouvrir le modèle inclut le code pour vous protéger contre ASP.NET MVC 3. Vous pouvez ajouter ce code avec quelques modifications de la version 1.0 de ASP.NET MVC et les applications de 2. Pour protéger contre les attaques de redirection ouvert lors de la journalisation dans ASP.NET 1.0 et 2 applications, ajoutez une méthode IsLocalUrl() et valider le paramètre returnUrl dans l’action d’ouverture de session.
