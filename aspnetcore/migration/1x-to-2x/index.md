@@ -2,18 +2,18 @@
 title: "Migration d’ASP.NET Core 1.x vers la version 2.0"
 author: scottaddie
 description: "Cet article présente les prérequis et la plupart des étapes courantes nécessaires pour la migration d’un projet ASP.NET Core 1.x vers ASP.NET Core 2.0."
-ms.author: scaddie
 manager: wpickett
+ms.author: scaddie
 ms.date: 10/03/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: migration/1x-to-2x/index
-ms.openlocfilehash: 2ab6d72ca57332eb25435a144d77ea43203a7b4c
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: a88d22c88689d20376fec748b05fc4b5ecca3510
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="migrating-from-aspnet-core-1x-to-aspnet-core-20"></a>Migration d’ASP.NET Core 1.x vers ASP.NET Core 2.0
 
@@ -146,7 +146,7 @@ Dans les projets 2.0, déplacez l’appel de `SeedData.Initialize` vers la méth
 
 <a name="view-compilation"></a>
 
-## <a name="review-your-razor-view-compilation-setting"></a>Passer en revue votre paramètre de compilation de vue Razor
+## <a name="review-razor-view-compilation-setting"></a>Passer en revue le paramètre de compilation de vue Razor
 La vitesse de démarrage d’application et la taille des bundles publiés ont une importance capitale pour vous. Pour ces raisons, la [compilation de vue Razor](xref:mvc/views/view-compilation) est activée par défaut dans ASP.NET Core 2.0.
 
 L’affectation de la valeur true à la propriété `MvcRazorCompileOnPublish` n’est plus nécessaire. Vous pouvez supprimer la propriété du fichier *.csproj*, sauf si vous désactivez la compilation des vues.
@@ -178,8 +178,9 @@ Si vous utilisez le SDK Application Insights directement, continuez à le faire.
 
 <a name="auth-and-identity"></a>
 
-## <a name="adopt-authentication--identity-improvements"></a>Adopter les améliorations d’authentification / identité
+## <a name="adopt-authenticationidentity-improvements"></a>Adopter les améliorations d’authentification/identité
 ASP.NET Core 2.0 offre un nouveau modèle d’authentification, et plusieurs modifications importantes ont été apportées à ASP.NET Core Identity. Si vous avez créé votre projet avec l’option Comptes d’utilisateur individuels activée, ou si vous avez ajouté manuellement l’authentification ou Identity, consultez [Migrating Authentication and Identity to ASP.NET Core 2.0 (Migration de l’authentification et de l’identité vers ASP.NET Core 2.0)](xref:migration/1x-to-2x/identity-2x).
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
-- [Changements importants dans ASP.NET Core 2.0](https://github.com/aspnet/announcements/issues?page=1&q=is%3Aissue+is%3Aopen+label%3A2.0.0+label%3A%22Breaking+change%22&utf8=%E2%9C%93)
+
+* [Changements importants dans ASP.NET Core 2.0](https://github.com/aspnet/announcements/issues?page=1&q=is%3Aissue+is%3Aopen+label%3A2.0.0+label%3A%22Breaking+change%22&utf8=%E2%9C%93)

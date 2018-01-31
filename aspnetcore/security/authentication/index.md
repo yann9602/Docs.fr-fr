@@ -2,18 +2,18 @@
 title: Authentification
 author: rick-anderson
 description: "Ce document constitue la table des matières des différentes rubriques relatives à l’authentification ASP.NET Core."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/14/2016
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/authentication/index
-ms.openlocfilehash: 017aa939ce4c469c08d1cc3a63002ae24c66c096
-ms.sourcegitcommit: 459cb3289741a3f46325e605a617dc926ee0563d
+ms.openlocfilehash: fbef1545f3cdcbe3887a5dd9ceca0e9b420193f1
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/22/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="authentication"></a>Authentification
 
@@ -38,6 +38,8 @@ ms.lasthandoff: 01/22/2018
   * [Intégrer Azure AD dans une application web ASP.NET Core](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-openidconnect-aspnetcore/)
 
   * [Intégrer Azure AD B2C dans une application web ASP.NET Core orientée client](azure-ad-b2c.md)
+
+  * [Intégrer Azure AD B2C dans une API web ASP.NET Core](azure-ad-b2c-webapi.md)
 
   * [Appeler une API web ASP.NET Core à partir d’une application WPF via Azure AD](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-native-aspnetcore/)
 
