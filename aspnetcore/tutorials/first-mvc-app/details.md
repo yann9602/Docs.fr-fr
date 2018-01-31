@@ -2,18 +2,18 @@
 title: "Examen des méthodes Details et Delete"
 author: rick-anderson
 description: "La méthode et l’affichage du contrôleur Details dans une application ASP.NET Core MVC de base."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 03/07/2017
-ms.topic: get-started-article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: get-started-article
 uid: tutorials/first-mvc-app/details
-ms.openlocfilehash: 79eb352082da23400403ff8804d724256a2d3f07
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 4a0004fc79f8e1d334e3acb96b28b2954d19f0a1
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="examining-the-details-and-delete-methods"></a>Examen des méthodes Details et Delete
 

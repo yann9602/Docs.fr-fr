@@ -2,18 +2,18 @@
 title: "Ajout d’un nouveau champ à une page Razor"
 author: rick-anderson
 description: "Montre comment ajouter un nouveau champ à une page Razor avec Entity Framework Core"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 08/07/2017
-ms.topic: get-started-article
-ms.technology: aspnet
 ms.prod: aspnet-core
+ms.technology: aspnet
+ms.topic: get-started-article
 uid: tutorials/razor-pages/new-field
-ms.openlocfilehash: 54ba77cfc3ce87566db14509805a2809d3e460e6
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 36412e9d1f3143f0d1999d0e754e6627f0984ad5
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="adding-a-new-field-to-a-razor-page"></a>Ajout d’un nouveau champ à une page Razor
 
@@ -57,7 +57,7 @@ Cette erreur est due au fait que la classe du modèle Movie mise à jour est dif
 
 Plusieurs approches sont possibles pour résoudre l’erreur :
 
-1. Laisser Entity Framework supprimer et recréer automatiquement la base de données à l’aide du nouveau schéma de classe de modèle. Cette approche est très utile au début du cycle de développement. Elle permet de faire évoluer rapidement le modèle et le schéma de base de données ensemble. L’inconvénient est que vous perdez les données existantes dans la base de données. Il ne faut pas adopter cette approche sur une base de données de production. La suppression de la base de données lors des changements de schéma et l’utilisation d’un initialiseur pour le seeding automatique de la base de données avec des données de test est souvent un moyen efficace pour développer une application.
+1. Laisser Entity Framework supprimer et recréer automatiquement la base de données à l’aide du nouveau schéma de classe de modèle. Cette approche est très utile au début du cycle de développement. Elle permet de faire évoluer rapidement le modèle et le schéma de base de données ensemble. L’inconvénient est que vous perdez les données existantes dans la base de données. Il ne faut pas adopter cette approche sur une base de données de production. La suppression de la base de données lors des changements de schéma et l’utilisation d’un initialiseur pour amorcer automatiquement la base de données avec des données de test est souvent un moyen efficace pour développer une application.
 
 2. Modifier explicitement le schéma de la base de données existante pour le faire correspondre aux classes du modèle. L’avantage de cette approche est que vous conservez vos données. Vous pouvez apporter cette modification manuellement ou en créant un script de modification de la base de données.
 

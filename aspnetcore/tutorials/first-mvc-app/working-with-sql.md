@@ -2,18 +2,18 @@
 title: Utilisation de SQL Server LocalDB
 author: rick-anderson
 description: Utilisation de SQL Server LocalDB avec une application MVC simple
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 03/07/2017
-ms.topic: get-started-article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: get-started-article
 uid: tutorials/first-mvc-app/working-with-sql
-ms.openlocfilehash: 0394782d1318f810c2ffe6d2e08bcf082f490a7d
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: a0aa6fdfa51650628021a4ba6d0533e7e0e39200
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="working-with-sql-server-localdb"></a>Utilisation de SQL Server LocalDB
 
@@ -57,7 +57,7 @@ Créez une classe nommée `SeedData` dans l’espace de noms *Modèles*. Remplac
 
 [!code-csharp[Main](start-mvc/sample/MvcMovie/Models/SeedData.cs?name=snippet_1)]
 
-Si la base de données contient des films, l’initialiseur de seed retourne une valeur et aucun film n’est ajouté.
+Si la base de données contient des films, l’initialiseur de valeur initiale retourne une valeur et aucun film n’est ajouté.
 
 ```csharp
 if (context.Movie.Any())
@@ -67,17 +67,17 @@ if (context.Movie.Any())
 ```
 
 <a name="si"></a>
-### <a name="add-the-seed-initializer"></a>Ajouter l’initialiseur de seed
+### <a name="add-the-seed-initializer"></a>Ajouter l’initialiseur de valeur initiale
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
-Ajoutez l’initialiseur de seed à la méthode `Main` dans le fichier *Program.cs* :
+Ajoutez l’initialiseur de valeur initiale à la méthode `Main` dans le fichier *Program.cs* :
 
 [!code-csharp[Main](start-mvc/sample/MvcMovie/Program.cs?highlight=6,14-32)]
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
-Ajoutez l’initialiseur de seed à la fin de la méthode `Configure` dans le fichier *Startup.cs* :
+Ajoutez l’initialiseur de valeur initiale à la fin de la méthode `Configure` dans le fichier *Startup.cs* :
 
 [!code-csharp[Main](start-mvc/sample/MvcMovie/Startup.cs?highlight=9&name=snippet_seed)]
 
@@ -97,7 +97,7 @@ Tester l’application
    * Si vous exécutiez Visual Studio en mode non-débogage, appuyez sur F5 pour l’exécuter en mode débogage.
    * Si vous exécutiez Visual Studio en mode débogage, arrêtez le débogueur et appuyez sur F5.
    
-L’application affiche les données seed.
+L’application affiche les données de départ.
 
 ![Application MVC Movie ouverte dans Microsoft Edge, affichant les données relatives aux films](working-with-sql/_static/m55.png)
 

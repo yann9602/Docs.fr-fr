@@ -2,18 +2,18 @@
 title: "Ajout d’un modèle à une application ASP.NET Core MVC"
 author: rick-anderson
 description: "Ajoutez un modèle à une application ASP.NET Core simple."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 12/8/2017
-ms.topic: get-started-article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: get-started-article
 uid: tutorials/first-mvc-app/adding-model
-ms.openlocfilehash: bc7f016b734d42a59342cc9896b502624526359a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 1819aff0e6ae68ad3c609466e52fcb6510fe1dcd
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 [!INCLUDE[adding-model](../../includes/mvc-intro/adding-model1.md)]
 

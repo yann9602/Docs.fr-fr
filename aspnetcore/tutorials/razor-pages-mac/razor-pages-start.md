@@ -2,18 +2,18 @@
 title: "Bien démarrer avec des pages Razor dans ASP.NET Core sur Mac"
 author: rick-anderson
 description: "Bien démarrer avec des pages Razor dans ASP.NET Core à l’aide de Visual Studio pour Mac"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 07/27/2017
-ms.topic: get-started-article
-ms.technology: aspnet
 ms.prod: aspnet-core
+ms.technology: aspnet
+ms.topic: get-started-article
 uid: tutorials/razor-pages-mac/razor-pages-start
-ms.openlocfilehash: d4d8c7c543273aa38d1599b51d00a348df7182de
-ms.sourcegitcommit: 09b342b45e7372ba9ebf17f35eee331e5a08fb26
+ms.openlocfilehash: 9e7d1db47e4cc9d753b1629e20345ca1f4403b2f
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/26/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="getting-started-with-razor-pages-in-aspnet-core-with-visual-studio-for-mac"></a>Bien démarrer avec des pages Razor dans ASP.NET Core avec Visual Studio pour Mac
 

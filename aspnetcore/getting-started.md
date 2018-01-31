@@ -2,18 +2,18 @@
 title: "Bien démarrer avec ASP.NET Core 2.0"
 author: rick-anderson
 description: "Didacticiel rapide qui crée et exécute une application Hello World simple à l’aide d’ASP.NET Core."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/18/2017
-ms.topic: get-started-article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: get-started-article
 uid: getting-started
-ms.openlocfilehash: b5f1fb0de2776177374b8b4d5ea6041b0fc653a9
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: eb1fd748029743ca6991927cc95b612ed1975338
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="get-started-with-aspnet-core"></a>Bien démarrer avec ASP.NET Core
 
