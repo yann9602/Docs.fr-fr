@@ -2,18 +2,18 @@
 title: Mise en cache
 author: ardalis
 description: "Découvrez comment utiliser la mise en cache pour améliorer les performances des applications ASP.NET Core."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/14/2016
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: performance/caching/index
-ms.openlocfilehash: fc96850f726a5a2a9466691901b32001b8506e36
-ms.sourcegitcommit: 216dfac27542f10a79274a9ce60dc449e888ed20
+ms.openlocfilehash: 4864380508d8e063c9845b32df46120957dc080e
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="caching"></a>Mise en cache
 

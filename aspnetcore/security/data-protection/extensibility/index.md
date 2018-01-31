@@ -2,18 +2,18 @@
 title: "API d’extensibilité"
 author: rick-anderson
 description: "Ce document constitue la table des matières des différentes rubriques relatives à l’extensibilité de la protection des données ASP.NET Core."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/14/2016
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/data-protection/extensibility/index
-ms.openlocfilehash: 5360be0be7d1ea1daf3363a037347dea3af0671b
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: ca781bdecd258310e23ee78a1dcb37af012285e7
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="extensibility-apis"></a>API d’extensibilité
 

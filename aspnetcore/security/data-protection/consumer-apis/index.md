@@ -2,18 +2,18 @@
 title: "API de contrôle serveur consommateur"
 author: rick-anderson
 description: "Ce document constitue la table des matières des différentes rubriques relatives à la protection des données d’API consommateur ASP.NET Core."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/14/2016
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/data-protection/consumer-apis/index
-ms.openlocfilehash: 8ffba0079ce0ab4139115d9876e16a174685398d
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: a36dbaa7c34ed0cd99bfb2b27a9d59b81ffccbcf
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="consumer-apis"></a>API de contrôle serveur consommateur
 

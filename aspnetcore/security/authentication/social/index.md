@@ -2,18 +2,18 @@
 title: "Activation de l’authentification à l’aide de Facebook, Google et d’autres fournisseurs externes"
 author: rick-anderson
 description: "Ce didacticiel montre comment générer une application ASP.NET Core 2.x à l’aide d’OAuth 2.0 avec des fournisseurs d’authentification externes."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 11/01/2016
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/authentication/social/index
-ms.openlocfilehash: d6daad6298267956e7ac1f4b304c5eeaae231ba8
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 475656b03b0d1a3e79e78e6cf3816f091ccd640b
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="enabling-authentication-using-facebook-google-and-other-external-providers"></a>Activation de l’authentification à l’aide de Facebook, Google et d’autres fournisseurs externes
 
