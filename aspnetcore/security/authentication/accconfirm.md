@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/accconfirm
-ms.openlocfilehash: 459f1793b1f1f73792bb6537856cb739774c6261
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 8aeb04f772fa687706bd8080b4306ff0040a159f
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="account-confirmation-and-password-recovery-in-aspnet-core"></a>Confirmation du compte et récupération de mot de passe dans ASP.NET Core
 
@@ -114,7 +114,7 @@ La ligne précédente empêche les utilisateurs enregistrés d’étant connect�
 
 ### <a name="configure-email-provider"></a>Configurer le fournisseur de messagerie
 
-Dans ce didacticiel, SendGrid est utilisé pour envoyer un courrier électronique. Vous avez besoin d’un compte SendGrid et une clé pour envoyer un courrier électronique. Vous pouvez utiliser d’autres fournisseurs de messagerie. ASP.NET Core 2.x inclut `System.Net.Mail`, qui vous permet d’envoyer par courrier électronique à partir de votre application. Nous vous recommandons de qu'utiliser SendGrid ou un autre service de messagerie pour envoyer un courrier électronique.
+Dans ce didacticiel, SendGrid est utilisé pour envoyer un courrier électronique. Vous avez besoin d’un compte SendGrid et une clé pour envoyer un courrier électronique. Vous pouvez utiliser d’autres fournisseurs de messagerie. ASP.NET Core 2.x inclut `System.Net.Mail`, qui vous permet d’envoyer par courrier électronique à partir de votre application. Nous vous recommandons de qu'utiliser SendGrid ou un autre service de messagerie pour envoyer un courrier électronique. SMTP est difficile de sécuriser et correctement configuré.
 
 Le [modèle d’Options](xref:fundamentals/configuration/options) est utilisé pour accéder aux paramètres de compte et une clé utilisateur. Pour plus d’informations, consultez [configuration](xref:fundamentals/configuration/index).
 

@@ -10,11 +10,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 ms.custom: mvc
 uid: security/authentication/azure-ad-b2c-webapi
-ms.openlocfilehash: c79f1152afd2f55f53bf5deb9208fa5b4d5ef64d
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: a63bfc26bb6b0f5ea1c64641d6f57a3555d7f401
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="cloud-authentication-in-web-apis-with-azure-active-directory-b2c"></a>Authentification de cloud de site web d’API avec Azure Active Directory B2C
 
@@ -101,7 +101,8 @@ Visual Studio crée l’API web avec un contrôleur nommé *le fichier ValuesCon
 
 Dans Visual Studio, exécutez l’API. Visual Studio lance un navigateur pointé URL racine de l’API. Notez l’URL dans la barre d’adresses et laissez l’API en cours d’exécution en arrière-plan.
 
-> [!NOTE] Comme il n’existe aucun contrôleur défini pour l’URL racine, le navigateur affiche alors une erreur 404 (page introuvable). Ce comportement est normal.
+> [!NOTE]
+> Comme il n’existe aucun contrôleur défini pour l’URL racine, le navigateur affiche alors une erreur 404 (page introuvable). Ce comportement est normal.
 
 ## <a name="use-postman-to-get-a-token-and-test-the-api"></a>Postman permet d’obtenir un jeton et l’API de test
 

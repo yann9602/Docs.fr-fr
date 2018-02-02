@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/identity
-ms.openlocfilehash: 52b78922da54a2d4e66120552c2ffc9f585f406b
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 0c05c636a991371b1a1feec88b5393724a6dc629
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>Introduction à l’identité sur ASP.NET Core
 
@@ -65,7 +65,7 @@ Dans cette rubrique, vous allez apprendre à utiliser ASP.NET Core Identity pour
     
     Ces services sont accessibles à l’application via [injection de dépendance](xref:fundamentals/dependency-injection).
     
-    Identité est activée pour l’application en appelant `UseAuthentication` dans le `Configure` (méthode). `UseAuthentication`Ajoute l’authentification [intergiciel (middleware)](xref:fundamentals/middleware) au pipeline de demande.
+    Identité est activée pour l’application en appelant `UseAuthentication` dans le `Configure` (méthode). `UseAuthentication`Ajoute l’authentification [intergiciel (middleware)](xref:fundamentals/middleware/index) au pipeline de demande.
     
     [!code-csharp[Main](identity/sample/src/ASPNETv2-IdentityDemo/Startup.cs?name=snippet_configure&highlight=17)]
     
@@ -75,7 +75,7 @@ Dans cette rubrique, vous allez apprendre à utiliser ASP.NET Core Identity pour
     
     Ces services sont accessibles à l’application via [injection de dépendance](xref:fundamentals/dependency-injection).
     
-    Identité est activée pour l’application en appelant `UseIdentity` dans le `Configure` (méthode). `UseIdentity`Ajoute l’authentification par cookie [intergiciel (middleware)](xref:fundamentals/middleware) au pipeline de demande.
+    Identité est activée pour l’application en appelant `UseIdentity` dans le `Configure` (méthode). `UseIdentity`Ajoute l’authentification par cookie [intergiciel (middleware)](xref:fundamentals/middleware/index) au pipeline de demande.
         
     [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo/Startup.cs?name=snippet_configure&highlight=21)]
     

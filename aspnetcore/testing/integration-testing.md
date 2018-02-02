@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: testing/integration-testing
-ms.openlocfilehash: ebae76da01e1b24466174179a9d4bbe826202cc3
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 4a5f14e11de6ed91f67808c3ea8c78a7b1d43b03
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="integration-testing-in-aspnet-core"></a>Tests d’intégration dans ASP.NET Core
 
@@ -127,7 +127,7 @@ Ce code fonctionne, mais il est loin d’être comment vous voulez implémenter 
 
 Ajout d’une option à envisager [MVC](xref:mvc/overview) à l’application et la création d’un contrôleur pour gérer la vérification de la prime. Toutefois, si que vous n’avez pas actuellement doivent toutes les autres fonctionnalités MVC, qui sont un peu excessif.
 
-Vous pouvez, toutefois, parti d’ASP.NET Core [intergiciel (middleware)](xref:fundamentals/middleware), ce qui nous aideront à encapsuler la prime logique dans sa propre classe de contrôle et d’obtenir une meilleure [séparation des préoccupations](http://deviq.com/separation-of-concerns/) dans le `Configure` méthode.
+Vous pouvez, toutefois, parti d’ASP.NET Core [intergiciel (middleware)](xref:fundamentals/middleware/index), ce qui nous aideront à encapsuler la prime logique dans sa propre classe de contrôle et d’obtenir une meilleure [séparation des préoccupations](http://deviq.com/separation-of-concerns/) dans le `Configure` méthode.
 
 Vous souhaitez autoriser le chemin d’accès de l’intergiciel (middleware) utilise pour être spécifié en tant que paramètre, la classe de l’intergiciel (middleware) attend un `RequestDelegate` et un `PrimeCheckerOptions` instance dans son constructeur. Si le chemin d’accès de la demande ne correspond pas à ce que cet intergiciel (middleware) est configuré pour attendre, vous simplement appelez l’intergiciel (middleware) suivant dans la chaîne et ne font rien de plus. Le reste du code de mise en œuvre dans `Configure` figure désormais dans le `Invoke` (méthode).
 
@@ -150,5 +150,5 @@ Après cette refactorisation, vous êtes certain que l’application web fonctio
 ## <a name="resources"></a>Ressources
 
 * [Tests unitaires](https://docs.microsoft.com/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
-* [Intergiciel (middleware)](xref:fundamentals/middleware)
+* [Intergiciel (middleware)](xref:fundamentals/middleware/index)
 * [Test des contrôleurs](xref:mvc/controllers/testing)

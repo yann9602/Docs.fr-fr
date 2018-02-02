@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: performance/response-compression
-ms.openlocfilehash: b93b3fc6c3fafd3e45a5cd42f43aa06dc730db0f
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: eae51e74c7f2b2f038638c765d4e833a1d9b1232
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="response-compression-middleware-for-aspnet-core"></a>Intergiciel (middleware) de réponse Compression pour ASP.NET Core
 
@@ -196,7 +196,7 @@ Utiliser un outil tel que [Fiddler](http://www.telerik.com/fiddler), [Firebug](h
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 * [Démarrage d’une application](xref:fundamentals/startup)
-* [Intergiciel (middleware)](xref:fundamentals/middleware)
+* [Intergiciel (middleware)](xref:fundamentals/middleware/index)
 * [Mozilla MSDN : Accepter-Encoding](https://developer.mozilla.org/docs/Web/HTTP/Headers/Accept-Encoding)
 * [La Section 7231 relative aux RFC 3.1.2.1 : Codings de contenu](https://tools.ietf.org/html/rfc7231#section-3.1.2.1)
 * [La Section 7230 RFC 4.2.3 : Codage Gzip](https://tools.ietf.org/html/rfc7230#section-4.2.3)

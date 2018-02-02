@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/anti-request-forgery
-ms.openlocfilehash: e076e301004c04b5c516d775353a4b6e50a3f36e
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 079c36535b8c9e7229952a2f7bcd53174effa6af
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="preventing-cross-site-request-forgery-xsrfcsrf-attacks-in-aspnet-core"></a>Prévention des attaques Cross-Site Request Forgery (XSRF/CSRF) ASP.NET Core
 
@@ -345,7 +345,7 @@ Les attaques CSRF reposent sur le comportement du navigateur par défaut de l’
 
 ### <a name="cookie-based-authentication"></a>Authentification par cookie
 
-Une fois qu’un utilisateur est authentifié à l’aide de leur nom d’utilisateur et un mot de passe, ils sont émis un jeton qui peut être utilisé pour les identifier et de valider qu’ils ont été authentifiées. Le jeton est stocké en tant que permet d’un cookie qui accompagne chaque demande du client. Génération et la validation de ce cookie sont effectuée par l’intergiciel (middleware) d’authentification de cookie. ASP.NET Core fournit le cookie [intergiciel (middleware)](../fundamentals/middleware.md) qui sérialise un principal d’utilisateur dans un cookie chiffré et puis, sur les demandes suivantes, valide le cookie, recrée le principal et l’affecte à la `User` propriété sur `HttpContext`.
+Une fois qu’un utilisateur est authentifié à l’aide de leur nom d’utilisateur et un mot de passe, ils sont émis un jeton qui peut être utilisé pour les identifier et de valider qu’ils ont été authentifiées. Le jeton est stocké en tant que permet d’un cookie qui accompagne chaque demande du client. Génération et la validation de ce cookie sont effectuée par l’intergiciel (middleware) d’authentification de cookie. ASP.NET Core fournit le cookie [intergiciel (middleware)](xref:fundamentals/middleware/index) qui sérialise un principal d’utilisateur dans un cookie chiffré et puis, sur les demandes suivantes, valide le cookie, recrée le principal et l’affecte à la `User` propriété sur `HttpContext`.
 
 Lorsqu’un cookie est utilisé, le cookie d’authentification est simplement un conteneur pour le ticket d’authentification de formulaires. Le ticket est passé en tant que la valeur du cookie d’authentification forms avec chaque demande et est utilisé par l’authentification par formulaire, sur le serveur, pour identifier un utilisateur authentifié.
 

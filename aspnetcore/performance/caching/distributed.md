@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: performance/caching/distributed
-ms.openlocfilehash: 86fd40863f6eeef3c129335141d704769d36b4c1
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 877a3e1f8c3282fdd67a389ddf5b4ff49dea3b42
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="working-with-a-distributed-cache-in-aspnet-core"></a>Utilisation avec un cache distribué dans ASP.NET Core
 
@@ -66,7 +66,7 @@ Pour utiliser le `IDistributedCache` interface :
 
    2. Configurer l’implémentation spécifique de `IDistributedCache` dans votre `Startup` la classe `ConfigureServices` (méthode) et l’ajouter au conteneur il.
 
-   3. À partir de l’application [intergiciel (middleware)](../../fundamentals/middleware.md) ou classes de contrôleur MVC, demandez à une instance de `IDistributedCache` à partir du constructeur. L’instance est assurée par le [Injection de dépendance](../../fundamentals/dependency-injection.md) (DI).
+   3. À partir de l’application [intergiciel (middleware)](xref:fundamentals/middleware/index) ou classes de contrôleur MVC, demandez à une instance de `IDistributedCache` à partir du constructeur. L’instance est assurée par le [Injection de dépendance](../../fundamentals/dependency-injection.md) (DI).
 
 > [!NOTE]
 > Il est inutile d’utiliser une durée de vie Singleton ou inclus dans l’étendue pour `IDistributedCache` instances (au moins pour les implémentations intégrées). Vous pouvez également créer une instance de chaque fois que vous devrez peut-être une (au lieu d’utiliser [Injection de dépendance](../../fundamentals/dependency-injection.md)), mais cela peut rendre votre code plus difficile à tester et ne respecte pas la [principe de dépendances explicites](http://deviq.com/explicit-dependencies-principle/).

@@ -9,11 +9,11 @@ ms.date: 01/26/2017
 ms.prod: asp.net-core
 ms.topic: article
 uid: performance/caching/middleware
-ms.openlocfilehash: 9f8b5b2df43b03fa9200bd52a01d5d388153212b
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 78fa8fbe70eb7d6461b6e7340c6d57e330157911
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="response-caching-middleware-in-aspnet-core"></a>Réponse mise en cache d’intergiciel (middleware) dans ASP.NET Core
 
@@ -139,7 +139,7 @@ Lorsque les tests et le dépannage du comportement de mise en cache, un navigate
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
 * [Démarrage d’une application](xref:fundamentals/startup)
-* [Intergiciel (middleware)](xref:fundamentals/middleware)
+* [Intergiciel (middleware)](xref:fundamentals/middleware/index)
 * [Mise en cache en mémoire](xref:performance/caching/memory)
 * [Utilisation d’un cache distribué](xref:performance/caching/distributed)
 * [Détecter les modifications à l’aide de jetons de modification](xref:fundamentals/primitives/change-tokens)

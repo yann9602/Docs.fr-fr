@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/http-modules
-ms.openlocfilehash: f104c9116cfaa4a82ac88e4a83b4b6f172eb2aa1
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 8aac6c649b22dc8f6cfc916aa78d56efad7821a0
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="migrating-http-handlers-and-modules-to-aspnet-core-middleware"></a>Migration des gestionnaires HTTP et des modules pour ASP.NET Core intergiciel (middleware) 
 
 Par [Matt Perdeck](https://www.linkedin.com/in/mattperdeck)
 
-Cet article explique comment migrer ASP.NET existants [modules HTTP et des gestionnaires à partir de system.webserver](https://docs.microsoft.com/iis/configuration/system.webserver/) à ASP.NET Core [intergiciel (middleware)](../fundamentals/middleware.md).
+Cet article explique comment migrer ASP.NET existants [modules HTTP et des gestionnaires à partir de system.webserver](https://docs.microsoft.com/iis/configuration/system.webserver/) à ASP.NET Core [intergiciel (middleware)](xref:fundamentals/middleware/index).
 
 ## <a name="modules-and-handlers-revisited"></a>Modules et les gestionnaires revisitées
 
@@ -65,7 +65,7 @@ En plus des modules, vous pouvez ajouter des gestionnaires pour les événements
 
    * Intergiciel (middleware) sont configurés à l’aide de code plutôt que dans *Web.config*
 
-   * [Créer une branche de pipeline](../fundamentals/middleware.md#middleware-run-map-use) vous permet d’envoyer les demandes à un intergiciel (middleware) de spécifique, en fonction de non seulement l’URL, mais également sur les en-têtes de demande, les chaînes de requête, etc.
+   * [Créer une branche de pipeline](xref:fundamentals/middleware/index#middleware-run-map-use) vous permet d’envoyer les demandes à un intergiciel (middleware) de spécifique, en fonction de non seulement l’URL, mais également sur les en-têtes de demande, les chaînes de requête, etc.
 
 **Intergiciel (middleware) sont très semblables aux modules :**
 
@@ -81,7 +81,7 @@ En plus des modules, vous pouvez ajouter des gestionnaires pour les événements
 
    * Ordre de l’intergiciel (middleware) pour les réponses est l’inverse de celui pour les demandes, tandis que l’ordre des modules est le même pour les demandes et réponses
 
-   * Consultez [création d’un pipeline de l’intergiciel (middleware) avec IApplicationBuilder](../fundamentals/middleware.md#creating-a-middleware-pipeline-with-iapplicationbuilder)
+   * Consultez [création d’un pipeline de l’intergiciel (middleware) avec IApplicationBuilder](xref:fundamentals/middleware/index#creating-a-middleware-pipeline-with-iapplicationbuilder)
 
 ![Intergiciel (middleware)](http-modules/_static/middleware.png)
 
@@ -93,13 +93,13 @@ Un module HTTP existant doit ressembler à ceci :
 
 [!code-csharp[Main](../migration/http-modules/sample/Asp.Net4/Asp.Net4/Modules/MyModule.cs?highlight=6,8,24,31)]
 
-Comme indiqué dans le [intergiciel (middleware)](../fundamentals/middleware.md) page, un intergiciel (middleware) ASP.NET Core est une classe qui expose un `Invoke` prise de méthode un `HttpContext` et en retournant un `Task`. Votre nouveau middleware doit ressembler à ceci :
+Comme indiqué dans le [intergiciel (middleware)](xref:fundamentals/middleware/index) page, un intergiciel (middleware) ASP.NET Core est une classe qui expose un `Invoke` prise de méthode un `HttpContext` et en retournant un `Task`. Votre nouveau middleware doit ressembler à ceci :
 
 <a name="http-modules-usemiddleware"></a>
 
 [!code-csharp[Main](../migration/http-modules/sample/Asp.Net.Core/Middleware/MyMiddleware.cs?highlight=9,13,20,24,28,30,32)]
 
-Le modèle d’intergiciel (middleware) ci-dessus a été effectuée à partir de la section sur [l’écriture d’intergiciel (middleware)](../fundamentals/middleware.md#middleware-writing-middleware).
+Le modèle d’intergiciel (middleware) précédente a été effectuée à partir de la section sur [l’écriture d’intergiciel (middleware)](xref:fundamentals/middleware/index#middleware-writing-middleware).
 
 Le *MyMiddlewareExtensions* classe d’assistance rend plus facile à configurer votre intergiciel (middleware) dans votre `Startup` classe. Le `UseMyMiddleware` méthode ajoute votre classe d’intergiciel (middleware) au pipeline de demande. Les services requis par l’intergiciel (middleware) injectés dans le constructeur de d’intergiciel (middleware).
 
@@ -121,7 +121,7 @@ Les modules HTTP sont généralement ajoutés au pipeline de demande à l’aide
 
 [!code-xml[Main](../migration/http-modules/sample/Asp.Net4/Asp.Net4/Web.config?highlight=6&range=1-3,32-33,36,43,50,101)]
 
-Convertir en [ajoutant votre intergiciel (middleware) nouvelle](../fundamentals/middleware.md#creating-a-middleware-pipeline-with-iapplicationbuilder) vers le pipeline de demande dans votre `Startup` classe :
+Convertir en [ajoutant votre intergiciel (middleware) nouvelle](xref:fundamentals/middleware/index#creating-a-middleware-pipeline-with-iapplicationbuilder) vers le pipeline de demande dans votre `Startup` classe :
 
 [!code-csharp[Main](../migration/http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_Configure&highlight=16)]
 
@@ -383,4 +383,4 @@ Le `SetCookies` méthode de rappel se présente comme suit :
 * [Vue d’ensemble des Modules HTTP et les gestionnaires HTTP](/iis/configuration/system.webserver/)
 * [Configuration](xref:fundamentals/configuration/index)
 * [Démarrage d’une application](xref:fundamentals/startup)
-* [Intergiciel (middleware)](xref:fundamentals/middleware)
+* [Intergiciel (middleware)](xref:fundamentals/middleware/index)
