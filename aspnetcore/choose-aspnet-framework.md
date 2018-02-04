@@ -21,11 +21,11 @@ Quelle que soit l’application web à créer, ASP.NET a une solution pour vous 
 
 ## <a name="aspnet-core"></a>ASP.NET Core
 
-ASP.NET Core est un framework open source et multiplateforme pour générer des applications web cloud modernes sur Windows, macOS ou Linux.
+ASP.NET Core est un framework open source et multiplateforme pour créer des applications web cloud modernes sur Windows, macOS ou Linux.
 
 ## <a name="aspnet"></a>ASP.NET
 
-ASP.NET est un framework mature qui offre tous les services nécessaires pour générer sur Windows des applications web d’entreprise basées sur des serveurs.
+ASP.NET est un framework mature qui offre tous les services nécessaires pour créer des applications web d’entreprise sur Windows Serveur.
 
 ## <a name="which-one-is-right-for-me"></a>Laquelle des deux est adaptée à mes besoins ?
 
