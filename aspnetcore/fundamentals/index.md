@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: fundamentals/index
-ms.openlocfilehash: 946ccc80915c5de60976a98cbbb253cb8dfacaca
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 7f0e30b3ac7f9cc3a32bd96f45d83ba13505a475
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="aspnet-core-fundamentals"></a>Notions de base d’ASP.NET Core
 
@@ -71,7 +71,7 @@ public class Startup
 }
 ```
 
-`ConfigureServices` définit les [services](#dependency-injection-services) utilisés par votre application (par exemple, ASP.NET Core MVC, Entity Framework Core et Identity). `Configure` définit les [intergiciels (middleware)](xref:fundamentals/middleware) du pipeline de requêtes.
+`ConfigureServices` définit les [services](#dependency-injection-services) utilisés par votre application (par exemple, ASP.NET Core MVC, Entity Framework Core et Identity). `Configure` définit les [intergiciels (middleware)](xref:fundamentals/middleware/index) du pipeline de requêtes.
 
 Pour plus d’informations, consultez [Démarrage de l’application](xref:fundamentals/startup).
 
@@ -91,9 +91,9 @@ Pour plus d’informations, consultez [Injection de dépendances](xref:fundament
 
 ## <a name="middleware"></a>Intergiciel (middleware)
 
-Dans ASP.NET Core, vous composez votre pipeline de requêtes à l’aide d’un [intergiciel (middleware)](xref:fundamentals/middleware). Un intergiciel (middleware) ASP.NET Core suit une logique asynchrone sur `HttpContext`, puis appelle l’intergiciel suivant de la séquence ou met fin directement à la requête. Un composant intergiciel (middleware) appelé « XYZ » est ajouté via l’appel de la méthode d’extension `UseXYZ` dans la méthode `Configure`.
+Dans ASP.NET Core, vous composez votre pipeline de requêtes à l’aide d’un [intergiciel (middleware)](xref:fundamentals/middleware/index). Un intergiciel (middleware) ASP.NET Core suit une logique asynchrone sur `HttpContext`, puis appelle l’intergiciel suivant de la séquence ou met fin directement à la requête. Un composant intergiciel (middleware) appelé « XYZ » est ajouté via l’appel de la méthode d’extension `UseXYZ` dans la méthode `Configure`.
 
-ASP.NET Core est livré avec un vaste ensemble d’intergiciels (middleware) intégrés :
+ASP.NET Core comprend un ensemble complet d’intergiciels (middleware) intégrés :
 
 * [Fichiers statiques](xref:fundamentals/static-files)
 * [Routage](xref:fundamentals/routing)
@@ -103,7 +103,7 @@ ASP.NET Core est livré avec un vaste ensemble d’intergiciels (middleware) int
 
 L’intergiciel (middleware) [OWIN](http://owin.org) est disponible pour les applications ASP.NET Core. Vous pouvez aussi écrire votre propre intergiciel personnalisé.
 
-Pour plus d’informations, consultez [Intergiciel (middleware)](xref:fundamentals/middleware) et [OWIN (Open Web Interface pour .NET)](xref:fundamentals/owin).
+Pour plus d’informations, consultez [Intergiciel (middleware)](xref:fundamentals/middleware/index) et [OWIN (Open Web Interface pour .NET)](xref:fundamentals/owin).
 
 ## <a name="environments"></a>Environnements
 
@@ -169,9 +169,9 @@ Pour plus d’informations, consultez [Serveurs](xref:fundamentals/servers/index
 * [Module ASP.NET Core](xref:fundamentals/servers/aspnet-core-module)
 * [HTTP.sys](xref:fundamentals/servers/httpsys) (anciennement [WebListener](xref:fundamentals/servers/weblistener))
 
-## <a name="globalization-and-localization"></a>Globalisation et localisation
+## <a name="globalization-and-localization"></a>Internationalisation et traduction
 
-La création d’un site web multilingue avec ASP.NET Core vous permet d’atteindre un plus large public. ASP.NET Core offre des services et des intergiciels (middleware) de traduction dans différentes langues et cultures.
+La création d’un site web multilingue avec ASP.NET Core vous permet de toucher un plus large public. ASP.NET Core offre des services et des intergiciels (middleware) de traduction dans différentes langues et cultures.
 
 Pour plus d’informations, consultez [Internationalisation et traduction](xref:fundamentals/localization).
 

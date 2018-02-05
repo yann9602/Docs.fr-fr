@@ -36,13 +36,13 @@
 #### [Mettre à jour les pages](xref:tutorials/razor-pages-mac/da1)
 #### [Ajouter une recherche](xref:tutorials/razor-pages-mac/search)
 
-
 ### [Application web Razor Pages avec VS Code](xref:tutorials/razor-pages-vsc/index)
 #### [Bien démarrer avec les pages Razor](xref:tutorials/razor-pages-vsc/razor-pages-start)
 #### [Ajout d’un modèle](xref:tutorials/razor-pages-vsc/model)
 #### [Pages Razor obtenues par génération de modèles automatique](xref:tutorials/razor-pages-vsc/page)
 #### [Utilisation de SQLite](xref:tutorials/razor-pages-vsc/sql)
 #### [Mettre à jour les pages](xref:tutorials/razor-pages-vsc/da1)
+#### [Ajouter une recherche](xref:tutorials/razor-pages-vsc/search)
 
 ### [Application web MVC avec Visual Studio pour Mac](xref:tutorials/first-mvc-app-mac/index)
 #### [Prise en main](xref:tutorials/first-mvc-app-mac/start-mvc)
@@ -102,7 +102,9 @@
 # [Notions de base](fundamentals/index.md)
 ## [Démarrage d’une application](fundamentals/startup.md)
 ## [Injection de dépendances (services)](fundamentals/dependency-injection.md)
-## [Intergiciel (middleware)](fundamentals/middleware.md)
+## [Intergiciel (middleware)](xref:fundamentals/middleware/index)
+### [Intergiciel (middleware)](xref:fundamentals/middleware/index)
+### [Intergiciel (middleware) basé sur une fabrique](xref:fundamentals/middleware/extensibility)
 ## [Utiliser des fichiers statiques](fundamentals/static-files.md)
 ## [Routage](fundamentals/routing.md)
 ## [Intergiciel de réécriture d’URL](fundamentals/url-rewriting.md)
@@ -120,7 +122,7 @@
 ### [Kestrel](fundamentals/servers/kestrel.md)
 ### [Module ASP.NET Core](fundamentals/servers/aspnet-core-module.md)
 ### [HTTP.sys](fundamentals/servers/httpsys.md)
-## [Globalisation et localisation](xref:fundamentals/localization)
+## [Internationalisation et traduction](xref:fundamentals/localization)
 ### [Configurer la localisation d’objet portable avec Orchard Core](xref:fundamentals/portable-object-localization)
 ## [Fonctionnalités de requête](fundamentals/request-features.md)
 ## [Primitives](xref:fundamentals/primitives/index)
@@ -186,7 +188,7 @@
 ### [Ajouter Stockage Azure à l’aide des services connectés de Visual Studio](https://azure.microsoft.com/documentation/articles/vs-azure-tools-connected-services-storage/)
 ### [Bien démarrer avec le Stockage Blob et les Services connectés Visual Studio](https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-blobs/)
 ### [Bien démarrer avec le Stockage File d’attente et les Services connectés Visual Studio](https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-queues/)
-### [Mise en route avec le Stockage Table et les services connectés de Visual Studio](https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-tables/)
+### [Bien démarrer avec le Stockage Table et les services connectés de Visual Studio](https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-tables/)
 
 # [Développement côté client](xref:client-side/index)
 ## [Utiliser Gulp](xref:client-side/using-gulp)
@@ -330,6 +332,6 @@
 # [Notes de publication 2.0](aspnetcore-2.0.md)
 ## [Notes de publication 1.1](aspnetcore-1.1.md)
 ## [Notes de publication antérieures](https://github.com/aspnet/home/releases)
-## [Documents VS 2015/project.json](https://docs.microsoft.com/dotnet/articles/project-json)
+## [Documentation VS 2015/project.json](https://docs.microsoft.com/dotnet/articles/project-json)
 
 # [Contribuer](https://github.com/aspnet/Docs/blob/master/CONTRIBUTING.md)
