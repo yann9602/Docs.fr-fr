@@ -20,7 +20,7 @@ ms.lasthandoff: 01/25/2018
 
 Par [Steve Smith](https://ardalis.com), [Tom Dykstra](https://github.com/tdykstra), et [Luke Latham](https://github.com/guardrex)
 
-La `Startup` classe configure les services et le pipeline de demande de l’application.
+La classe`Startup` configure les services et le pipeline de demande de l’application.
 
 ## <a name="the-startup-class"></a>Classe de démarrage.
 
@@ -37,7 +37,7 @@ Spécifiez le `Startup` classe avec le [WebHostBuilderExtensions](/dotnet/api/Mi
 
 [!code-csharp[Main](../common/samples/WebApplication1DotNetCore2.0App/Program.cs?name=snippet_Main&highlight=10)]
 
-Le `Startup` constructeur de classe accepte les dépendances définies par l’hôte. Une utilisation courante de [injection de dépendance](xref:fundamentals/dependency-injection) dans la `Startup` classe consiste à injecter :
+Le constructeur de la classe `Startup`  accepte les dépendances définies par l’hôte. Une utilisation courante de [injection de dépendance](xref:fundamentals/dependency-injection) dans la `Startup` classe consiste à injecter :
 
 * [IHostingEnvironment](/dotnet/api/Microsoft.AspNetCore.Hosting.IHostingEnvironment) pour configurer les services à l’environnement.
 * [IConfiguration](/dotnet/api/microsoft.extensions.configuration.iconfiguration) pour configurer l’application lors du démarrage.
